@@ -1,22 +1,25 @@
 {
   "location": "Boston, Massachusetts",
-  "display_name": "Boston, Suffolk County, Massachusetts, United States",
-  "coordinates": {"lat": 42.3554334, "lon": -71.060511},
+  "display_name": "Boston, Suffolk County, Massachusetts, United States of America",
+  "coordinates": {
+    "lat": 42.3588336,
+    "lon": -71.0578303
+  },
   "current": {
-    "temperature": 8.2,
-    "wind_speed": 19.4,
-    "weathercode": 1,
+    "temperature": 5.6,
+    "wind_speed": 11.8,
+    "weathercode": 3,
     "is_day": 1,
-    "condition": "Mainly clear",
-    "emoji": "🌤️"
+    "condition": "Overcast",
+    "emoji": "☁️"
   },
   "daily": {
-    "temperature_max": 11.1,
-    "temperature_min": 3.9,
+    "temperature_max": 8.2,
+    "temperature_min": -3.1,
     "sunrise": "2025-11-30T06:53",
     "sunset": "2025-11-30T16:12",
-    "weathercode": 1
+    "weathercode": 53
   },
   "timezone": "America/New_York",
-  "updated_at": "2025-11-30 16:00 UTC"
+  "updated_at": "2025-11-30 16:25 UTC"
 }
