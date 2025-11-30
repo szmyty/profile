@@ -1,0 +1,110 @@
+name: SoundCloud Latest Release Card
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/fetch-soundcloud.sh'
+      - 'scripts/generate-card.py'
+      - '.github/workflows/soundcloud-card.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-soundcloud-card:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq curl
+
+      - name: Fetch SoundCloud data
+        id: fetch
+        env:
+          SOUNDCLOUD_USER: playfunction
+          OUTPUT_DIR: assets
+        run: |
+          chmod +x scripts/fetch-soundcloud.sh
+          scripts/fetch-soundcloud.sh > assets/metadata.json
+
+      - name: Generate SVG card
+        run: |
+          python scripts/generate-card.py assets/metadata.json assets/soundcloud-artwork.jpg assets/soundcloud-card.svg
+
+      - name: Update README with card
+        run: |
+          # Check if the card placeholder exists in README
+          if ! grep -q "<!-- SOUNDCLOUD-CARD:START -->" README.md; then
+            # Add the placeholder if it doesn't exist
+            echo "" >> README.md
+            echo "## 🎵 Latest SoundCloud Release" >> README.md
+            echo "" >> README.md
+            echo "<!-- SOUNDCLOUD-CARD:START -->" >> README.md
+            echo "<!-- SOUNDCLOUD-CARD:END -->" >> README.md
+          fi
+          
+          # Get the permalink URL from metadata
+          PERMALINK_URL=$(jq -r '.permalink_url' assets/metadata.json)
+          
+          # Update the README between markers using Python for reliability
+          python3 << 'PYTHON_SCRIPT'
+          import re
+          import json
+          
+          # Read metadata
+          with open('assets/metadata.json', 'r') as f:
+              metadata = json.load(f)
+          
+          permalink_url = metadata.get('permalink_url', 'https://soundcloud.com')
+          card_markdown = f"[![SoundCloud Latest Track](assets/soundcloud-card.svg)]({permalink_url})"
+          
+          with open('README.md', 'r') as f:
+              content = f.read()
+          
+          pattern = r'<!-- SOUNDCLOUD-CARD:START -->.*?<!-- SOUNDCLOUD-CARD:END -->'
+          replacement = f'''<!-- SOUNDCLOUD-CARD:START -->
+          {card_markdown}
+          <!-- SOUNDCLOUD-CARD:END -->'''
+          
+          updated = re.sub(pattern, replacement.strip(), content, flags=re.DOTALL)
+          
+          with open('README.md', 'w') as f:
+              f.write(updated)
+          
+          print(f"Updated README with card linking to: {permalink_url}")
+          PYTHON_SCRIPT
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Add all relevant files
+          git add assets/soundcloud-card.svg assets/soundcloud-artwork.jpg assets/metadata.json README.md
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            TRACK_TITLE=$(jq -r '.title' assets/metadata.json)
+            git commit -m "🎵 Update SoundCloud card: ${TRACK_TITLE}"
+            git push
+          fi
