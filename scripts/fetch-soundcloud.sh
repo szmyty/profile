@@ -17,19 +17,32 @@ get_client_id() {
     
     # Fetch the main page HTML
     local html
-    html=$(curl -s "https://soundcloud.com/${SOUNDCLOUD_USER}" \
-        -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
+    html=$(curl -sf "https://soundcloud.com/${SOUNDCLOUD_USER}" \
+        -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36") || {
+        echo "Error: Failed to fetch SoundCloud profile page" >&2
+        return 1
+    }
+    
+    if [ -z "$html" ]; then
+        echo "Error: Empty response from SoundCloud" >&2
+        return 1
+    fi
     
     # Extract JS asset URLs
     local js_urls
     js_urls=$(echo "$html" | grep -oE 'https://a-v2\.sndcdn\.com/assets/[^"]+\.js' | head -10)
     
+    if [ -z "$js_urls" ]; then
+        echo "Error: No JavaScript assets found in SoundCloud page" >&2
+        return 1
+    fi
+    
     # Search each JS file for client_id
     for url in $js_urls; do
         local js_content
-        js_content=$(curl -s "$url")
+        js_content=$(curl -sf "$url") || continue
         
-        # Look for client_id patterns - try multiple regex patterns
+        # Look for client_id patterns
         local client_id
         client_id=$(echo "$js_content" | grep -oE 'client_id[=:]["'"'"'][a-zA-Z0-9]+' | grep -oE '[a-zA-Z0-9]{20,}' | head -1 || true)
         
@@ -39,7 +52,7 @@ get_client_id() {
         fi
     done
     
-    echo "Failed to extract client_id" >&2
+    echo "Error: Failed to extract client_id from any JavaScript asset" >&2
     return 1
 }
 
@@ -49,9 +62,20 @@ get_user_id() {
     echo "Fetching user ID for ${SOUNDCLOUD_USER}..." >&2
     
     local user_data
-    user_data=$(curl -s "https://api-v2.soundcloud.com/resolve?url=https://soundcloud.com/${SOUNDCLOUD_USER}&client_id=${client_id}")
+    user_data=$(curl -sf "https://api-v2.soundcloud.com/resolve?url=https://soundcloud.com/${SOUNDCLOUD_USER}&client_id=${client_id}") || {
+        echo "Error: Failed to resolve SoundCloud user" >&2
+        return 1
+    }
     
-    echo "$user_data" | jq -r '.id'
+    local user_id
+    user_id=$(echo "$user_data" | jq -r '.id')
+    
+    if [ -z "$user_id" ] || [ "$user_id" = "null" ]; then
+        echo "Error: Invalid user data received from SoundCloud API" >&2
+        return 1
+    fi
+    
+    echo "$user_id"
 }
 
 # Function to fetch latest track
@@ -61,9 +85,20 @@ fetch_latest_track() {
     echo "Fetching latest track..." >&2
     
     local tracks
-    tracks=$(curl -s "https://api-v2.soundcloud.com/users/${user_id}/tracks?representation=&client_id=${client_id}&limit=1&offset=0")
+    tracks=$(curl -sf "https://api-v2.soundcloud.com/users/${user_id}/tracks?representation=&client_id=${client_id}&limit=1&offset=0") || {
+        echo "Error: Failed to fetch tracks from SoundCloud API" >&2
+        return 1
+    }
     
-    echo "$tracks" | jq '.collection[0]'
+    local track
+    track=$(echo "$tracks" | jq '.collection[0]')
+    
+    if [ -z "$track" ] || [ "$track" = "null" ]; then
+        echo "Error: No tracks found for user" >&2
+        return 1
+    fi
+    
+    echo "$track"
 }
 
 # Function to download artwork

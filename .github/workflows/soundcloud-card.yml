@@ -43,7 +43,16 @@ jobs:
           OUTPUT_DIR: assets
         run: |
           chmod +x scripts/fetch-soundcloud.sh
-          scripts/fetch-soundcloud.sh > assets/metadata.json
+          if ! scripts/fetch-soundcloud.sh > assets/metadata.json; then
+            echo "Error: Failed to fetch SoundCloud data"
+            exit 1
+          fi
+          
+          # Validate the metadata file
+          if ! jq empty assets/metadata.json 2>/dev/null; then
+            echo "Error: Invalid JSON in metadata file"
+            exit 1
+          fi
 
       - name: Generate SVG card
         run: |

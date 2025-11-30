@@ -48,7 +48,7 @@ def get_artwork_base64(artwork_path: str) -> str:
                 suffix = path.suffix.lower()
                 mime = "image/jpeg" if suffix in [".jpg", ".jpeg"] else "image/png"
                 return f"data:{mime};base64,{data}"
-    except Exception as e:
+    except (OSError, IOError) as e:
         print(f"Warning: Could not load artwork: {e}", file=sys.stderr)
     return ""
 
