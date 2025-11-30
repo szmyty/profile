@@ -1,5 +1,11 @@
 # profile
 
+## 🌦️ Today's Weather
+
+<!-- WEATHER-CARD:START -->
+![Today's Weather](./weather/weather-today.svg)
+<!-- WEATHER-CARD:END -->
+
 ## 🎵 Latest SoundCloud Release
 
 <!-- SOUNDCLOUD-CARD:START -->
