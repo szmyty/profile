@@ -149,6 +149,9 @@ def main():
     except FileNotFoundError:
         print(f"Error: Map image not found: {map_path}", file=sys.stderr)
         sys.exit(1)
+    except (IOError, OSError, PermissionError) as e:
+        print(f"Error: Failed to read map image: {e}", file=sys.stderr)
+        sys.exit(1)
 
     # Generate SVG
     svg = generate_svg(

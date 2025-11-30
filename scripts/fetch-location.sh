@@ -39,9 +39,9 @@ get_coordinates() {
     local location=$1
     echo "Converting location to coordinates: ${location}" >&2
     
-    # URL encode the location
+    # URL encode the location using jq for proper encoding
     local encoded_location
-    encoded_location=$(echo "$location" | sed 's/ /%20/g; s/,/%2C/g')
+    encoded_location=$(echo "$location" | jq -rR @uri)
     
     # Add delay to respect Nominatim rate limits
     sleep 1
