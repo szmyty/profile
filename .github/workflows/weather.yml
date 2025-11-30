@@ -1,0 +1,157 @@
+name: Weather Card — Daily Conditions + Forecast
+
+on:
+  schedule:
+    # Run once per day at 7 AM UTC
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-weather-card:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq curl
+
+      - name: Get GitHub profile location
+        id: location
+        run: |
+          LOCATION=$(curl -sf "https://api.github.com/users/${{ github.repository_owner }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "User-Agent: GitHub-Profile-Weather-Card" | jq -r '.location // empty')
+          
+          if [ -z "$LOCATION" ]; then
+            echo "Warning: No location found in GitHub profile"
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "value=$LOCATION" >> $GITHUB_OUTPUT
+            echo "skip=false" >> $GITHUB_OUTPUT
+            echo "Found location: $LOCATION"
+          fi
+
+      - name: Get coordinates from location
+        id: coords
+        if: steps.location.outputs.skip != 'true'
+        run: |
+          LOCATION="${{ steps.location.outputs.value }}"
+          ENCODED_LOCATION=$(echo "$LOCATION" | sed 's/ /%20/g; s/,/%2C/g')
+          
+          # Add delay to respect Nominatim rate limits
+          sleep 1
+          
+          NOMINATIM_RESPONSE=$(curl -sf "https://nominatim.openstreetmap.org/search?q=${ENCODED_LOCATION}&format=json&limit=1" \
+            -H "User-Agent: GitHub-Profile-Weather-Card/1.0")
+          
+          RESULT_COUNT=$(echo "$NOMINATIM_RESPONSE" | jq 'length')
+          
+          if [ "$RESULT_COUNT" -eq 0 ]; then
+            echo "Error: Nominatim returned no results for location: $LOCATION"
+            echo "skip=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          LAT=$(echo "$NOMINATIM_RESPONSE" | jq -r '.[0].lat')
+          LON=$(echo "$NOMINATIM_RESPONSE" | jq -r '.[0].lon')
+          
+          echo "lat=$LAT" >> $GITHUB_OUTPUT
+          echo "lon=$LON" >> $GITHUB_OUTPUT
+          echo "skip=false" >> $GITHUB_OUTPUT
+          echo "Found coordinates: $LAT, $LON"
+
+      - name: Fetch weather data
+        id: weather
+        if: steps.location.outputs.skip != 'true' && steps.coords.outputs.skip != 'true'
+        env:
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          OUTPUT_DIR: weather
+        run: |
+          chmod +x scripts/fetch-weather.sh
+          mkdir -p weather
+          
+          if ! scripts/fetch-weather.sh > weather/weather.json; then
+            echo "Error: Failed to fetch weather data"
+            exit 1
+          fi
+          
+          # Validate the weather JSON file
+          if ! jq empty weather/weather.json 2>/dev/null; then
+            echo "Error: Invalid JSON in weather file"
+            exit 1
+          fi
+          
+          echo "Weather data fetched successfully"
+          cat weather/weather.json
+
+      - name: Generate weather SVG card
+        if: steps.location.outputs.skip != 'true' && steps.coords.outputs.skip != 'true'
+        run: |
+          python scripts/generate-weather-card.py weather/weather.json weather/weather-today.svg
+
+      - name: Update README with weather card
+        if: steps.location.outputs.skip != 'true' && steps.coords.outputs.skip != 'true'
+        run: |
+          # Check if the weather card placeholder exists in README
+          if ! grep -q "<!-- WEATHER-CARD:START -->" README.md; then
+            # Add the weather section if it doesn't exist
+            echo "" >> README.md
+            echo "## 🌦️ Today's Weather" >> README.md
+            echo "" >> README.md
+            echo "<!-- WEATHER-CARD:START -->" >> README.md
+            echo "<!-- WEATHER-CARD:END -->" >> README.md
+          fi
+          
+          # Update the README between markers using Python for reliability
+          python3 << 'PYTHON_SCRIPT'
+          import re
+          
+          card_markdown = "![Today's Weather](./weather/weather-today.svg)"
+          
+          with open('README.md', 'r') as f:
+              content = f.read()
+          
+          pattern = r'<!-- WEATHER-CARD:START -->.*?<!-- WEATHER-CARD:END -->'
+          replacement = f'''<!-- WEATHER-CARD:START -->
+          {card_markdown}
+          <!-- WEATHER-CARD:END -->'''
+          
+          updated = re.sub(pattern, replacement.strip(), content, flags=re.DOTALL)
+          
+          with open('README.md', 'w') as f:
+              f.write(updated)
+          
+          print("Updated README with weather card")
+          PYTHON_SCRIPT
+
+      - name: Commit and push changes
+        if: steps.location.outputs.skip != 'true' && steps.coords.outputs.skip != 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Add all relevant files
+          git add weather/weather.json weather/weather-today.svg README.md
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            LOCATION=$(jq -r '.location' weather/weather.json)
+            git commit -m "🌦️ Update weather card for ${LOCATION}"
+            git push
+          fi
