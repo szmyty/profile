@@ -14,7 +14,12 @@ def format_time(time_str: str) -> str:
     """Format ISO time string to readable format (HH:MM AM/PM)."""
     try:
         dt = datetime.fromisoformat(time_str)
-        return dt.strftime("%-I:%M %p")
+        # Use %I for 12-hour format and strip leading zero manually for cross-platform compatibility
+        formatted = dt.strftime("%I:%M %p")
+        # Remove leading zero from hour if present
+        if formatted.startswith("0"):
+            formatted = formatted[1:]
+        return formatted
     except (ValueError, AttributeError):
         return time_str
 
