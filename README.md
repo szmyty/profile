@@ -1,5 +1,11 @@
 # profile
 
+## 📍 My Location
+
+<!-- LOCATION-CARD:START -->
+![My Location](./location/location-card.svg)
+<!-- LOCATION-CARD:END -->
+
 ## 🌦️ Today's Weather
 
 <!-- WEATHER-CARD:START -->

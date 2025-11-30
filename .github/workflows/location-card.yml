@@ -1,0 +1,128 @@
+name: Location Map Card — OpenStreetMap Static Map
+
+on:
+  schedule:
+    # Run once per day at 6 AM UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-location-card:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq curl
+
+      - name: Get GitHub profile location
+        id: location
+        run: |
+          LOCATION=$(curl -sf "https://api.github.com/users/${{ github.repository_owner }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "User-Agent: GitHub-Profile-Location-Card" | jq -r '.location // empty')
+          
+          if [ -z "$LOCATION" ]; then
+            echo "Warning: No location found in GitHub profile"
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "value=$LOCATION" >> $GITHUB_OUTPUT
+            echo "skip=false" >> $GITHUB_OUTPUT
+            echo "Found location: $LOCATION"
+          fi
+
+      - name: Fetch location data and static map
+        id: fetch
+        if: steps.location.outputs.skip != 'true'
+        env:
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          OUTPUT_DIR: location
+        run: |
+          chmod +x scripts/fetch-location.sh
+          mkdir -p location
+          
+          if ! scripts/fetch-location.sh > location/location.json; then
+            echo "Error: Failed to fetch location data"
+            exit 1
+          fi
+          
+          # Validate the location JSON file
+          if ! jq empty location/location.json 2>/dev/null; then
+            echo "Error: Invalid JSON in location file"
+            exit 1
+          fi
+          
+          echo "Location data fetched successfully"
+          cat location/location.json
+
+      - name: Generate location SVG card
+        if: steps.location.outputs.skip != 'true'
+        run: |
+          python scripts/generate-location-card.py location/location.json location/location-map.png location/location-card.svg
+
+      - name: Update README with location card
+        if: steps.location.outputs.skip != 'true'
+        run: |
+          # Check if the location card placeholder exists in README
+          if ! grep -q "<!-- LOCATION-CARD:START -->" README.md; then
+            # Add the location section if it doesn't exist
+            echo "" >> README.md
+            echo "## 📍 My Location" >> README.md
+            echo "" >> README.md
+            echo "<!-- LOCATION-CARD:START -->" >> README.md
+            echo "<!-- LOCATION-CARD:END -->" >> README.md
+          fi
+          
+          # Update the README between markers using Python for reliability
+          python3 << 'PYTHON_SCRIPT'
+          import re
+          
+          card_markdown = "![My Location](./location/location-card.svg)"
+          
+          with open('README.md', 'r') as f:
+              content = f.read()
+          
+          pattern = r'<!-- LOCATION-CARD:START -->.*?<!-- LOCATION-CARD:END -->'
+          replacement = f'''<!-- LOCATION-CARD:START -->
+          {card_markdown}
+          <!-- LOCATION-CARD:END -->'''
+          
+          updated = re.sub(pattern, replacement.strip(), content, flags=re.DOTALL)
+          
+          with open('README.md', 'w') as f:
+              f.write(updated)
+          
+          print("Updated README with location card")
+          PYTHON_SCRIPT
+
+      - name: Commit and push changes
+        if: steps.location.outputs.skip != 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Add all relevant files
+          git add location/location.json location/location-map.png location/location-card.svg README.md
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            LOCATION=$(jq -r '.location' location/location.json)
+            git commit -m "📍 Update location card for ${LOCATION}"
+            git push
+          fi
