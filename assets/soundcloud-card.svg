@@ -51,7 +51,7 @@
     <g transform="translate(0, 58)">
       <!-- Play count icon -->
       <polygon points="0,0 0,10 8,5" fill="#8892b0"/>
-      <text x="12" y="9" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#8892b0">163 plays</text>
+      <text x="12" y="9" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#8892b0">164 plays</text>
 
       <!-- Date -->
       <text x="80" y="9" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#8892b0">Released Nov 29, 2025</text>
