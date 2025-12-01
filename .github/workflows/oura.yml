@@ -1,4 +1,4 @@
-name: Oura Mood Dashboard — Daily Metrics + Mood
+name: Oura Health Dashboard — Full Metrics + Unified Snapshot
 
 on:
   schedule:
@@ -12,13 +12,15 @@ on:
       - 'scripts/fetch-oura.sh'
       - 'scripts/oura_mood_engine.py'
       - 'scripts/generate-oura-mood-card.py'
+      - 'scripts/generate-health-snapshot.py'
+      - 'scripts/generate-health-dashboard.py'
       - '.github/workflows/oura.yml'
 
 permissions:
   contents: write
 
 jobs:
-  update-oura-mood-card:
+  update-oura-health-dashboard:
     runs-on: ubuntu-latest
     
     steps:
@@ -60,6 +62,14 @@ jobs:
           echo "Oura metrics fetched successfully"
           cat oura/metrics.json
 
+      - name: Generate unified health snapshot
+        run: |
+          python scripts/generate-health-snapshot.py oura/metrics.json oura/health_snapshot.json
+
+      - name: Generate holistic health dashboard SVG
+        run: |
+          python scripts/generate-health-dashboard.py oura/health_snapshot.json oura/health_dashboard.svg
+
       - name: Compute mood state
         run: |
           python scripts/oura_mood_engine.py oura/metrics.json oura/mood.json
@@ -68,39 +78,31 @@ jobs:
         run: |
           python scripts/generate-oura-mood-card.py oura/mood.json oura/metrics.json oura/mood_dashboard.svg
 
-      - name: Update README with mood dashboard card
+      - name: Update README with dashboard cards
         run: |
-          # Check if the mood dashboard placeholder exists in README
-          if ! grep -q "<!-- OURA-MOOD-CARD:START -->" README.md; then
-            # Add the mood dashboard section if it doesn't exist
-            echo "" >> README.md
-            echo "## 💫 Oura Mood Dashboard" >> README.md
-            echo "" >> README.md
-            echo "<!-- OURA-MOOD-CARD:START -->" >> README.md
-            echo "<!-- OURA-MOOD-CARD:END -->" >> README.md
-          fi
-          
-          # Update the README between markers using Python for reliability
-          python3 << 'PYTHON_SCRIPT'
+          python3 -c "
           import re
-          
-          card_markdown = "![Oura Mood Dashboard](./oura/mood_dashboard.svg)"
           
           with open('README.md', 'r') as f:
               content = f.read()
           
-          pattern = r'<!-- OURA-MOOD-CARD:START -->.*?<!-- OURA-MOOD-CARD:END -->'
-          replacement = f'''<!-- OURA-MOOD-CARD:START -->
-          {card_markdown}
-          <!-- OURA-MOOD-CARD:END -->'''
+          # Update health dashboard card
+          health_card = '![Oura Health Dashboard](./oura/health_dashboard.svg)'
+          health_pattern = r'<!-- OURA-HEALTH-CARD:START -->.*?<!-- OURA-HEALTH-CARD:END -->'
+          health_replacement = '<!-- OURA-HEALTH-CARD:START -->\n' + health_card + '\n<!-- OURA-HEALTH-CARD:END -->'
+          content = re.sub(health_pattern, health_replacement, content, flags=re.DOTALL)
           
-          updated = re.sub(pattern, replacement.strip(), content, flags=re.DOTALL)
+          # Update mood dashboard card  
+          mood_card = '![Oura Mood Dashboard](./oura/mood_dashboard.svg)'
+          mood_pattern = r'<!-- OURA-MOOD-CARD:START -->.*?<!-- OURA-MOOD-CARD:END -->'
+          mood_replacement = '<!-- OURA-MOOD-CARD:START -->\n' + mood_card + '\n<!-- OURA-MOOD-CARD:END -->'
+          content = re.sub(mood_pattern, mood_replacement, content, flags=re.DOTALL)
           
           with open('README.md', 'w') as f:
-              f.write(updated)
+              f.write(content)
           
-          print("Updated README with Oura mood dashboard card")
-          PYTHON_SCRIPT
+          print('Updated README with Oura dashboard cards')
+          "
 
       - name: Commit and push changes
         run: |
@@ -108,7 +110,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
           
           # Add all relevant files
-          git add oura/metrics.json oura/mood.json oura/mood_dashboard.svg README.md
+          git add oura/metrics.json oura/mood.json oura/mood_dashboard.svg oura/health_snapshot.json oura/health_dashboard.svg README.md
           
           # Check if there are changes to commit
           if git diff --staged --quiet; then
@@ -116,6 +118,6 @@ jobs:
           else
             MOOD=$(jq -r '.mood_name' oura/mood.json)
             SCORE=$(jq -r '.mood_score' oura/mood.json)
-            git commit -m "💫 Update Oura mood dashboard: ${MOOD} (${SCORE}/100)"
+            git commit -m "🧬 Update Oura health dashboard: ${MOOD} (${SCORE}/100)"
             git push
           fi
