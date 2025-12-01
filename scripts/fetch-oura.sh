@@ -58,7 +58,7 @@ oura_api_request() {
         
         if [ "$attempt" -lt "$max_retries" ]; then
             echo "Attempt $attempt failed for endpoint: ${endpoint}. Retrying in ${retry_delay}s..." >&2
-            sleep $retry_delay
+            sleep "$retry_delay"
         fi
     done
     
@@ -152,7 +152,7 @@ fetch_heart_rate() {
     
     # Save raw response for debugging
     echo "$response" > "${OUTPUT_DIR}/raw_heart_rate.json"
-    echo "Heart rate JSON saved to raw_hr.json" >&2
+    echo "Heart rate JSON saved to raw_heart_rate.json" >&2
     
     # Get avg resting heart rate from recent data
     echo "$response" | jq '{
