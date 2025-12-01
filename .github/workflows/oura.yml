@@ -1,0 +1,113 @@
+name: Oura Mood Dashboard — Daily Metrics + Mood
+
+on:
+  schedule:
+    # Run once per day at 8 AM UTC (after Oura syncs overnight data)
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-oura-mood-card:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq curl
+
+      - name: Fetch Oura metrics
+        id: oura
+        env:
+          OURA_PAT: ${{ secrets.OURA_PAT }}
+          OUTPUT_DIR: oura
+        run: |
+          chmod +x scripts/fetch-oura.sh
+          mkdir -p oura
+          
+          if ! scripts/fetch-oura.sh > oura/metrics.json; then
+            echo "Error: Failed to fetch Oura data"
+            exit 1
+          fi
+          
+          # Validate the metrics JSON file
+          if ! jq empty oura/metrics.json 2>/dev/null; then
+            echo "Error: Invalid JSON in metrics file"
+            exit 1
+          fi
+          
+          echo "Oura metrics fetched successfully"
+          cat oura/metrics.json
+
+      - name: Compute mood state
+        run: |
+          python scripts/oura_mood_engine.py oura/metrics.json oura/mood.json
+
+      - name: Generate mood dashboard SVG card
+        run: |
+          python scripts/generate-oura-mood-card.py oura/mood.json oura/metrics.json oura/mood_dashboard.svg
+
+      - name: Update README with mood dashboard card
+        run: |
+          # Check if the mood dashboard placeholder exists in README
+          if ! grep -q "<!-- OURA-MOOD-CARD:START -->" README.md; then
+            # Add the mood dashboard section if it doesn't exist
+            echo "" >> README.md
+            echo "## 💫 Oura Mood Dashboard" >> README.md
+            echo "" >> README.md
+            echo "<!-- OURA-MOOD-CARD:START -->" >> README.md
+            echo "<!-- OURA-MOOD-CARD:END -->" >> README.md
+          fi
+          
+          # Update the README between markers using Python for reliability
+          python3 << 'PYTHON_SCRIPT'
+          import re
+          
+          card_markdown = "![Oura Mood Dashboard](./oura/mood_dashboard.svg)"
+          
+          with open('README.md', 'r') as f:
+              content = f.read()
+          
+          pattern = r'<!-- OURA-MOOD-CARD:START -->.*?<!-- OURA-MOOD-CARD:END -->'
+          replacement = f'''<!-- OURA-MOOD-CARD:START -->
+          {card_markdown}
+          <!-- OURA-MOOD-CARD:END -->'''
+          
+          updated = re.sub(pattern, replacement.strip(), content, flags=re.DOTALL)
+          
+          with open('README.md', 'w') as f:
+              f.write(updated)
+          
+          print("Updated README with Oura mood dashboard card")
+          PYTHON_SCRIPT
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Add all relevant files
+          git add oura/metrics.json oura/mood.json oura/mood_dashboard.svg README.md
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            MOOD=$(jq -r '.mood_name' oura/mood.json)
+            SCORE=$(jq -r '.mood_score' oura/mood.json)
+            git commit -m "💫 Update Oura mood dashboard: ${MOOD} (${SCORE}/100)"
+            git push
+          fi
