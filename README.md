@@ -17,3 +17,9 @@
 <!-- SOUNDCLOUD-CARD:START -->
 [![SoundCloud Latest Track](assets/soundcloud-card.svg)](https://soundcloud.com/playfunction/prescience_v2)
 <!-- SOUNDCLOUD-CARD:END -->
+
+## 💫 Oura Mood Dashboard
+
+<!-- OURA-MOOD-CARD:START -->
+![Oura Mood Dashboard](./oura/mood_dashboard.svg)
+<!-- OURA-MOOD-CARD:END -->
