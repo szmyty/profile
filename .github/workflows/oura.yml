@@ -2,9 +2,17 @@ name: Oura Mood Dashboard — Daily Metrics + Mood
 
 on:
   schedule:
-    # Run once per day at 8 AM UTC (after Oura syncs overnight data)
-    - cron: '0 8 * * *'
+    # Run once per hour for most up-to-date metrics
+    - cron: '0 * * * *'
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/fetch-oura.sh'
+      - 'scripts/oura_mood_engine.py'
+      - 'scripts/generate-oura-mood-card.py'
+      - '.github/workflows/oura.yml'
 
 permissions:
   contents: write
