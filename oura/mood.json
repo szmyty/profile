@@ -1,0 +1,26 @@
+{
+  "mood_name": "Quiet Neutrality",
+  "mood_score": 50.0,
+  "mood_icon": "\u2601\ufe0f",
+  "mood_color_gradient": [
+    "#a8c0ff",
+    "#3f2b96"
+  ],
+  "mood_description": "Balanced, steady state",
+  "mood_key": "quiet_neutrality",
+  "interpreted_metrics": {
+    "sleep": "Moderate sleep",
+    "readiness": "Take it easy",
+    "activity": "Moderate movement",
+    "hrv": "Moderate variability"
+  },
+  "raw_scores": {
+    "sleep_score": null,
+    "readiness_score": null,
+    "activity_score": null,
+    "hrv": null,
+    "resting_hr": null,
+    "temp_deviation": null
+  },
+  "computed_at": "2025-12-01 21:37 UTC"
+}

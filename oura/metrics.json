@@ -1,0 +1,13 @@
+{
+  "sleep_score": null,
+  "readiness_score": null,
+  "activity_score": null,
+  "hrv": null,
+  "resting_hr": null,
+  "temp_deviation": null,
+  "sleep": {},
+  "readiness": {},
+  "activity": {},
+  "heart_rate": {},
+  "updated_at": "2025-12-01 21:37 UTC"
+}
