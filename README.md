@@ -18,6 +18,12 @@
 [![SoundCloud Latest Track](assets/soundcloud-card.svg)](https://soundcloud.com/playfunction/prescience_v2)
 <!-- SOUNDCLOUD-CARD:END -->
 
+## 🧬 Oura Health Dashboard
+
+<!-- OURA-HEALTH-CARD:START -->
+![Oura Health Dashboard](./oura/health_dashboard.svg)
+<!-- OURA-HEALTH-CARD:END -->
+
 ## 💫 Oura Mood Dashboard
 
 <!-- OURA-MOOD-CARD:START -->

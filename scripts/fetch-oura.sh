@@ -1,10 +1,12 @@
 #!/bin/bash
-# Script to fetch Oura Ring health metrics from Oura Cloud API
+# Script to fetch ALL Oura Ring health metrics from Oura Cloud API v2
 # This script:
 # 1. Authenticates with Oura API using OURA_PAT secret
-# 2. Fetches daily sleep, readiness, activity metrics
-# 3. Optionally fetches heart rate data
-# 4. Outputs combined metrics as JSON
+# 2. Fetches personal_info (mandatory)
+# 3. Fetches daily sleep, readiness, activity metrics with ALL fields
+# 4. Fetches heart rate time series data
+# 5. Outputs combined health snapshot as JSON
+# 6. Creates a unified health_snapshot.json
 
 set -euo pipefail
 
@@ -28,7 +30,7 @@ echo "End date: $END_DATE" >&2
 # Create output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
 
-# Function to make Oura API request with retry logic
+# Function to make Oura API request with retry logic (3 retries, 5s delay)
 oura_api_request() {
     local endpoint=$1
     local params="${2:-}"
@@ -70,7 +72,24 @@ oura_api_request() {
     return 1
 }
 
-# Fetch daily sleep data
+# Fetch personal info (mandatory)
+fetch_personal_info() {
+    echo "Fetching personal info..." >&2
+    local response
+    response=$(oura_api_request "personal_info") || {
+        echo "Warning: Could not fetch personal info" >&2
+        echo "{}"
+        return 0
+    }
+    
+    # Save raw response for debugging
+    echo "$response" > "${OUTPUT_DIR}/raw_personal_info.json"
+    echo "Personal info JSON saved to raw_personal_info.json" >&2
+    
+    echo "$response"
+}
+
+# Fetch daily sleep data with ALL available fields
 fetch_daily_sleep() {
     echo "Fetching daily sleep data..." >&2
     local response
@@ -80,7 +99,7 @@ fetch_daily_sleep() {
     echo "$response" > "${OUTPUT_DIR}/raw_sleep.json"
     echo "Sleep JSON saved to raw_sleep.json" >&2
     
-    # Check if items array is empty
+    # Check if data array is empty (use .data NOT .items)
     local item_count
     item_count=$(echo "$response" | jq '.data | length')
     if [ "$item_count" -eq 0 ]; then
@@ -89,11 +108,11 @@ fetch_daily_sleep() {
         return 0
     fi
     
-    # Get the most recent entry
+    # Get the most recent entry with ALL available fields
     echo "$response" | jq '.data | sort_by(.day) | last // empty'
 }
 
-# Fetch daily readiness data
+# Fetch daily readiness data with ALL available fields
 fetch_daily_readiness() {
     echo "Fetching daily readiness data..." >&2
     local response
@@ -103,7 +122,7 @@ fetch_daily_readiness() {
     echo "$response" > "${OUTPUT_DIR}/raw_readiness.json"
     echo "Readiness JSON saved to raw_readiness.json" >&2
     
-    # Check if items array is empty
+    # Check if data array is empty (use .data NOT .items)
     local item_count
     item_count=$(echo "$response" | jq '.data | length')
     if [ "$item_count" -eq 0 ]; then
@@ -112,11 +131,11 @@ fetch_daily_readiness() {
         return 0
     fi
     
-    # Get the most recent entry
+    # Get the most recent entry with ALL available fields
     echo "$response" | jq '.data | sort_by(.day) | last // empty'
 }
 
-# Fetch daily activity data
+# Fetch daily activity data with ALL available fields
 fetch_daily_activity() {
     echo "Fetching daily activity data..." >&2
     local response
@@ -126,7 +145,7 @@ fetch_daily_activity() {
     echo "$response" > "${OUTPUT_DIR}/raw_activity.json"
     echo "Activity JSON saved to raw_activity.json" >&2
     
-    # Check if items array is empty
+    # Check if data array is empty (use .data NOT .items)
     local item_count
     item_count=$(echo "$response" | jq '.data | length')
     if [ "$item_count" -eq 0 ]; then
@@ -135,15 +154,15 @@ fetch_daily_activity() {
         return 0
     fi
     
-    # Get the most recent entry
+    # Get the most recent entry with ALL available fields
     echo "$response" | jq '.data | sort_by(.day) | last // empty'
 }
 
-# Fetch heart rate data (optional, may fail)
+# Fetch heart rate time series data (use heart_rate endpoint correctly)
 fetch_heart_rate() {
     echo "Fetching heart rate data..." >&2
     local response
-    # Note: Correct endpoint is "heart_rate" not "heartrate"
+    # Correct endpoint is "heart_rate" (with underscore)
     response=$(oura_api_request "heart_rate" "start_datetime=${START_DATE}T00:00:00&end_datetime=${END_DATE}T23:59:59") || {
         echo "Warning: Could not fetch heart rate data, continuing without it" >&2
         echo "{}"
@@ -154,11 +173,50 @@ fetch_heart_rate() {
     echo "$response" > "${OUTPUT_DIR}/raw_heart_rate.json"
     echo "Heart rate JSON saved to raw_heart_rate.json" >&2
     
-    # Get avg resting heart rate from recent data
-    echo "$response" | jq '{
-        data: (.data // []),
-        avg_bpm: (if (.data | length) > 0 then (.data | map(.bpm) | add / length | floor) else null end)
-    }'
+    # Check if data array is empty (use .data NOT .items)
+    local item_count
+    item_count=$(echo "$response" | jq '.data | length' 2>/dev/null || echo "0")
+    if [ "$item_count" -eq 0 ]; then
+        echo "::warning::No data returned for heart_rate" >&2
+        echo '{"data":[],"latest_bpm":null,"avg_bpm":null,"resting_bpm":null}'
+        return 0
+    fi
+    
+    # Process heart rate data with separate calculations for clarity:
+    # - latest_bpm: BPM from the most recent heart rate reading
+    # - avg_bpm: Average BPM across all readings
+    # - resting_bpm: Average BPM from readings where source is "rest"
+    # - trend_values: Last 24 BPM values for sparkline visualization
+    echo "$response" | jq '
+        # Extract data array with fallback
+        .data as $data |
+        
+        # Calculate latest BPM from last reading
+        (if ($data | length) > 0 then ($data | last | .bpm) else null end) as $latest |
+        
+        # Calculate average BPM across all readings
+        (if ($data | length) > 0 then (($data | map(.bpm) | add) / ($data | length) | floor) else null end) as $avg |
+        
+        # Calculate resting BPM from readings with source "rest"
+        (if ($data | length) > 0 then
+            ($data | map(select(.source == "rest"))) as $rest_data |
+            if ($rest_data | length) > 0 then
+                (($rest_data | map(.bpm) | add) / ($rest_data | length) | floor)
+            else null end
+        else null end) as $resting |
+        
+        # Get last 24 BPM values for trend visualization
+        (if ($data | length) > 0 then ($data | map(.bpm) | .[-24:]) else [] end) as $trend |
+        
+        # Build output object
+        {
+            data: ($data // []),
+            latest_bpm: $latest,
+            avg_bpm: $avg,
+            resting_bpm: $resting,
+            trend_values: $trend
+        }
+    '
 }
 
 # Main execution
@@ -166,15 +224,20 @@ main() {
     echo "Starting Oura data fetch..." >&2
     echo "Date range: ${START_DATE} to ${END_DATE}" >&2
     
-    # Fetch all data types
-    local sleep_data readiness_data activity_data hr_data
+    # Fetch all data types including personal info
+    local personal_info_data sleep_data readiness_data activity_data hr_data
     
+    personal_info_data=$(fetch_personal_info) || personal_info_data="{}"
     sleep_data=$(fetch_daily_sleep) || sleep_data="{}"
     readiness_data=$(fetch_daily_readiness) || readiness_data="{}"
     activity_data=$(fetch_daily_activity) || activity_data="{}"
     hr_data=$(fetch_heart_rate) || hr_data="{}"
     
     # Ensure all data variables contain valid JSON (default to empty object)
+    if [ -z "$personal_info_data" ] || ! echo "$personal_info_data" | jq empty 2>/dev/null; then
+        echo "Warning: personal_info_data is invalid, defaulting to empty object" >&2
+        personal_info_data="{}"
+    fi
     if [ -z "$sleep_data" ] || ! echo "$sleep_data" | jq empty 2>/dev/null; then
         echo "Warning: sleep_data is invalid, defaulting to empty object" >&2
         sleep_data="{}"
@@ -193,6 +256,7 @@ main() {
     fi
     
     # Log what data was received
+    echo "Personal info received: $(echo "$personal_info_data" | jq -c '.')" >&2
     echo "Sleep data received: $(echo "$sleep_data" | jq -c '.')" >&2
     echo "Readiness data received: $(echo "$readiness_data" | jq -c '.')" >&2
     echo "Activity data received: $(echo "$activity_data" | jq -c '.')" >&2
@@ -232,6 +296,7 @@ main() {
         --argjson hrv "$hrv" \
         --argjson resting_hr "$resting_hr" \
         --argjson temp_deviation "$temp_deviation" \
+        --argjson personal_info "$personal_info_data" \
         --argjson sleep "$sleep_data" \
         --argjson readiness "$readiness_data" \
         --argjson activity "$activity_data" \
@@ -244,6 +309,7 @@ main() {
             hrv: $hrv,
             resting_hr: $resting_hr,
             temp_deviation: $temp_deviation,
+            personal_info: $personal_info,
             sleep: $sleep,
             readiness: $readiness,
             activity: $activity,
