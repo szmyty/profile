@@ -1,26 +1,26 @@
 {
-  "mood_name": "Quiet Neutrality",
-  "mood_score": 50.0,
-  "mood_icon": "\u2601\ufe0f",
+  "mood_name": "Solar Focus",
+  "mood_score": 75.2,
+  "mood_icon": "\ud83d\udd25",
   "mood_color_gradient": [
-    "#a8c0ff",
-    "#3f2b96"
+    "#f093fb",
+    "#f5576c"
   ],
-  "mood_description": "Balanced, steady state",
-  "mood_key": "quiet_neutrality",
+  "mood_description": "High energy and sharp focus",
+  "mood_key": "solar_focus",
   "interpreted_metrics": {
-    "sleep": "Moderate sleep",
-    "readiness": "Take it easy",
-    "activity": "Moderate movement",
+    "sleep": "Good sleep",
+    "readiness": "Peak performance ready",
+    "activity": "Active day",
     "hrv": "Moderate variability"
   },
   "raw_scores": {
-    "sleep_score": null,
-    "readiness_score": null,
-    "activity_score": null,
+    "sleep_score": 75,
+    "readiness_score": 87,
+    "activity_score": 75,
     "hrv": null,
-    "resting_hr": null,
-    "temp_deviation": null
+    "resting_hr": 86,
+    "temp_deviation": 96
   },
-  "computed_at": "2025-12-01 22:04 UTC"
+  "computed_at": "2025-12-01 22:14 UTC"
 }
