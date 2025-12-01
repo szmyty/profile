@@ -130,7 +130,6 @@ def generate_svg(snapshot: dict) -> str:
     # Readiness metrics
     recovery_index = readiness.get("recovery_index")
     hrv_balance = readiness.get("hrv_balance")
-    resting_hr = readiness.get("resting_heart_rate")
     temp_deviation = readiness.get("temperature_deviation")
     
     # Activity metrics
@@ -140,9 +139,10 @@ def generate_svg(snapshot: dict) -> str:
     inactivity_alerts = activity.get("inactivity_alerts")
     avg_met = activity.get("average_met_minutes")
     
-    # Heart rate
+    # Heart rate - use heart_rate.resting_bpm as primary, fallback to readiness
     latest_bpm = heart_rate.get("latest_bpm")
     hr_trend = heart_rate.get("trend_values", [])
+    resting_hr = heart_rate.get("resting_bpm") or readiness.get("resting_heart_rate")
     
     # Generate sparkline for HR trend
     sparkline_path = generate_sparkline_path(hr_trend, 90, 22)
@@ -261,7 +261,7 @@ def generate_svg(snapshot: dict) -> str:
     {generate_metric_row("Total Cal", safe_value(total_calories, suffix=" kcal") if total_calories else "—", 10, 50)}
     {generate_metric_row("Active Cal", safe_value(active_calories, suffix=" kcal") if active_calories else "—", 10, 65)}
     {generate_metric_row("Inact Alerts", safe_value(inactivity_alerts, default="0"), 10, 80)}
-    {generate_metric_row("Avg MET", f"{avg_met:.2f}" if avg_met else "—", 10, 95)}
+    {generate_metric_row("Avg MET", f"{avg_met:.2f}" if avg_met is not None else "—", 10, 95)}
   </g>
 
   <!-- Heart Rate Mini Chart -->

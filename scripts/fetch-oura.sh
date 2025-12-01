@@ -182,14 +182,41 @@ fetch_heart_rate() {
         return 0
     fi
     
-    # Process heart rate data: extract trend values, latest bpm, and resting hr estimate
-    echo "$response" | jq '{
-        data: (.data // []),
-        latest_bpm: (if (.data | length) > 0 then (.data | last | .bpm) else null end),
-        avg_bpm: (if (.data | length) > 0 then ((.data | map(.bpm) | add) / (.data | length) | floor) else null end),
-        resting_bpm: (if (.data | length) > 0 then ((.data | map(select(.source == "rest")) | if length > 0 then (map(.bpm) | add / length | floor) else null end)) else null end),
-        trend_values: (if (.data | length) > 0 then (.data | map(.bpm) | .[-24:]) else [] end)
-    }'
+    # Process heart rate data with separate calculations for clarity:
+    # - latest_bpm: BPM from the most recent heart rate reading
+    # - avg_bpm: Average BPM across all readings
+    # - resting_bpm: Average BPM from readings where source is "rest"
+    # - trend_values: Last 24 BPM values for sparkline visualization
+    echo "$response" | jq '
+        # Extract data array with fallback
+        .data as $data |
+        
+        # Calculate latest BPM from last reading
+        (if ($data | length) > 0 then ($data | last | .bpm) else null end) as $latest |
+        
+        # Calculate average BPM across all readings
+        (if ($data | length) > 0 then (($data | map(.bpm) | add) / ($data | length) | floor) else null end) as $avg |
+        
+        # Calculate resting BPM from readings with source "rest"
+        (if ($data | length) > 0 then
+            ($data | map(select(.source == "rest"))) as $rest_data |
+            if ($rest_data | length) > 0 then
+                (($rest_data | map(.bpm) | add) / ($rest_data | length) | floor)
+            else null end
+        else null end) as $resting |
+        
+        # Get last 24 BPM values for trend visualization
+        (if ($data | length) > 0 then ($data | map(.bpm) | .[-24:]) else [] end) as $trend |
+        
+        # Build output object
+        {
+            data: ($data // []),
+            latest_bpm: $latest,
+            avg_bpm: $avg,
+            resting_bpm: $resting,
+            trend_values: $trend
+        }
+    '
 }
 
 # Main execution
