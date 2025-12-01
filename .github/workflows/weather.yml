@@ -5,6 +5,13 @@ on:
     # Run once per day at 7 AM UTC
     - cron: '0 7 * * *'
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/fetch-weather.sh'
+      - 'scripts/generate-weather-card.py'
+      - '.github/workflows/weather.yml'
 
 permissions:
   contents: write
