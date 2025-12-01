@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420" height="200" viewBox="0 0 420 200">
   <defs>
     <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#3d4f5f"/>
-      <stop offset="100%" style="stop-color:#4a5d6e"/>
+      <stop offset="0%" style="stop-color:#0f0f23"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
     </linearGradient>
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
@@ -27,7 +27,7 @@
   <!-- Current Condition -->
   <g transform="translate(20, 60)">
     <text font-family="'Segoe UI', Arial, sans-serif" font-size="36" fill="#ffffff" font-weight="bold" filter="url(#glow)">
-      42°F
+      39°F
     </text>
     <text x="110" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#8892b0">
       Overcast
@@ -37,9 +37,9 @@
   <!-- High/Low -->
   <g transform="translate(20, 95)">
     <text font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#8892b0">
-      <tspan fill="#ff6b6b">High: 47°F</tspan>
+      <tspan fill="#ff6b6b">High: 42°F</tspan>
       <tspan fill="#4a5568">  •  </tspan>
-      <tspan fill="#4ecdc4">Low: 26°F</tspan>
+      <tspan fill="#4ecdc4">Low: 30°F</tspan>
     </text>
   </g>
 
@@ -53,7 +53,7 @@
   <!-- Sunrise/Sunset -->
   <g transform="translate(20, 145)">
     <text font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#8892b0">
-      🌅 6:53 AM
+      🌅 6:54 AM
       <tspan fill="#4a5568">  •  </tspan>
       🌇 4:12 PM
     </text>
@@ -62,7 +62,7 @@
   <!-- Footer: Updated timestamp -->
   <g transform="translate(20, 180)">
     <text font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#4a5568">
-      Updated: 2025-11-30 16:25 UTC
+      Updated: 2025-12-01 07:09 UTC
     </text>
   </g>
 
