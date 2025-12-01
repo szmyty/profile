@@ -5,6 +5,14 @@
   "hrv": null,
   "resting_hr": 86,
   "temp_deviation": 96,
+  "personal_info": {
+    "id": "b72c5bd11a0342c1a85d8b76757874b5c268",
+    "age": 31,
+    "weight": 81.6,
+    "height": 1.8,
+    "biological_sex": "male",
+    "email": "szmyty@gmail.com"
+  },
   "sleep": {
     "id": "e7e77dfe-4ea8-433e-b0f6-d79b8311c0a1",
     "contributors": {
@@ -1520,5 +1528,5 @@
     "total_calories": 2261
   },
   "heart_rate": {},
-  "updated_at": "2025-12-01 22:14 UTC"
+  "updated_at": "2025-12-01 22:36 UTC"
 }
