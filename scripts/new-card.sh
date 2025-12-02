@@ -78,10 +78,6 @@ to_title_case() {
     echo "$1" | sed 's/-/ /g' | sed 's/\b\(.\)/\u\1/g'
 }
 
-to_pascal_case() {
-    echo "$1" | sed -r 's/(^|-)(\w)/\U\2/g'
-}
-
 # Generate fetch script
 generate_fetch_script() {
     local name="$1"
@@ -182,8 +178,6 @@ generate_generator_script() {
     local name="$1"
     local title_name
     title_name=$(to_title_case "$name")
-    local pascal_name
-    pascal_name=$(to_pascal_case "$name")
     local output_file="${SCRIPT_DIR}/generate-${name}-card.py"
     
     if [ -f "$output_file" ]; then
@@ -347,7 +341,6 @@ GENERATOR_TEMPLATE
     # Replace placeholders
     sed -i "s/__NAME__/${name}/g" "$output_file"
     sed -i "s/__TITLE_NAME__/${title_name}/g" "$output_file"
-    sed -i "s/__PASCAL_NAME__/${pascal_name}/g" "$output_file"
     
     chmod +x "$output_file"
     echo -e "${GREEN}Created generator script: ${output_file}${NC}"
