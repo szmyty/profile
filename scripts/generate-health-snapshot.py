@@ -38,15 +38,12 @@ def generate_health_snapshot(metrics: dict) -> dict:
     """
     Generate a unified health snapshot from raw Oura metrics.
     """
-    # Extract personal info
+    # Extract personal info (excluding private identifiers: email, id, biological_sex)
     personal_info = metrics.get("personal_info", {})
     
     height_m = safe_get(personal_info, "height")
     weight_kg = safe_get(personal_info, "weight")
     age = safe_get(personal_info, "age")
-    sex = safe_get(personal_info, "biological_sex")
-    email = safe_get(personal_info, "email")
-    user_id = safe_get(personal_info, "id")
     
     # Calculate derived values
     bmi = calculate_bmi(weight_kg, height_m)
@@ -69,7 +66,7 @@ def generate_health_snapshot(metrics: dict) -> dict:
     heart_rate_data = metrics.get("heart_rate", {})
     hr_trend_values = safe_get(heart_rate_data, "trend_values", default=[])
     
-    # Build unified snapshot
+    # Build unified snapshot (excluding private identifiers: email, id, sex)
     snapshot = {
         "personal": {
             "age": age,
@@ -78,9 +75,6 @@ def generate_health_snapshot(metrics: dict) -> dict:
             "weight_kg": weight_kg,
             "weight_lbs": weight_lbs,
             "bmi": bmi,
-            "sex": sex,
-            "email": email,
-            "id": user_id,
         },
         "sleep": {
             "score": safe_get(sleep_data, "score"),

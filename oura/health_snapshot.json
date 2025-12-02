@@ -5,10 +5,7 @@
     "height_cm": 180.0,
     "weight_kg": 81.6,
     "weight_lbs": 179.9,
-    "bmi": 25.2,
-    "sex": "male",
-    "email": "szmyty@gmail.com",
-    "id": "b72c5bd11a0342c1a85d8b76757874b5c268"
+    "bmi": 25.2
   },
   "sleep": {
     "score": 75,
