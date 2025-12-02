@@ -11,54 +11,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 from typing import Any
 
-
-def escape_xml(text: str) -> str:
-    """Escape special characters for XML/SVG."""
-    if not text:
-        return ""
-    return (
-        text.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-        .replace("'", "&#39;")
-    )
-
-
-def safe_value(value: Any, default: str = "—") -> str:
-    """Return value or default placeholder if None."""
-    if value is None:
-        return default
-    return str(value)
-
-
-def generate_sparkline_path(values: list, width: int = 120, height: int = 30) -> str:
-    """
-    Generate SVG path data for a sparkline visualization.
-    """
-    if not values or len(values) < 2:
-        # Default flat line if no data
-        return f"M0,{height // 2} L{width},{height // 2}"
-
-    # Filter out None values and convert to floats
-    clean_values = [v for v in values if v is not None]
-    if len(clean_values) < 2:
-        return f"M0,{height // 2} L{width},{height // 2}"
-
-    min_val = min(clean_values)
-    max_val = max(clean_values)
-    val_range = max_val - min_val if max_val != min_val else 1
-
-    step = width / (len(clean_values) - 1)
-    points = []
-
-    for i, val in enumerate(clean_values):
-        x = i * step
-        # Normalize to height (invert Y axis for SVG)
-        y = height - ((val - min_val) / val_range * height)
-        points.append(f"{x:.1f},{y:.1f}")
-
-    return f"M{' L'.join(points)}"
+from lib.utils import escape_xml, safe_value, load_json, generate_sparkline_path
 
 
 def generate_radial_bars(scores: dict, cx: int = 60, cy: int = 50, radius: int = 40) -> str:
@@ -143,7 +96,7 @@ def generate_svg(mood: dict, metrics: dict) -> str:
 
     # Generate sparkline from available scores
     sparkline_values = [sleep_score, readiness_score, activity_score, hrv or 50]
-    sparkline_path = generate_sparkline_path(sparkline_values)
+    sparkline_path = generate_sparkline_path(sparkline_values, width=120, height=30)
 
     # Generate score bars
     sleep_bar = generate_score_bar(sleep_score, 200, 75, 100, "😴 Sleep")
@@ -272,15 +225,7 @@ def main():
     output_path = sys.argv[3] if len(sys.argv) > 3 else "oura/mood_dashboard.svg"
 
     # Read mood data
-    try:
-        with open(mood_path, "r") as f:
-            mood = json.load(f)
-    except FileNotFoundError:
-        print(f"Error: Mood file not found: {mood_path}", file=sys.stderr)
-        sys.exit(1)
-    except json.JSONDecodeError as e:
-        print(f"Error: Invalid JSON in mood file: {e}", file=sys.stderr)
-        sys.exit(1)
+    mood = load_json(mood_path, "Mood file")
 
     # Read metrics data (optional, for additional visualizations)
     metrics = {}

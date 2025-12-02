@@ -5,32 +5,12 @@ This script reads the health snapshot JSON and creates a comprehensive SVG dashb
 with personal stats, sleep, readiness, activity panels, and optional HR trend chart.
 """
 
-import json
 import sys
 from pathlib import Path
 from datetime import datetime, timezone
-from typing import Any, List, Optional
+from typing import Optional, List
 
-
-def escape_xml(text: str) -> str:
-    """Escape special characters for XML/SVG."""
-    if not text:
-        return ""
-    return (
-        str(text)
-        .replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-        .replace("'", "&#39;")
-    )
-
-
-def safe_value(value: Any, default: str = "—", suffix: str = "") -> str:
-    """Return value or default placeholder if None."""
-    if value is None:
-        return default
-    return f"{value}{suffix}"
+from lib.utils import escape_xml, safe_value, load_json, generate_sparkline_path
 
 
 def format_temp(value: Optional[float]) -> str:
@@ -39,30 +19,6 @@ def format_temp(value: Optional[float]) -> str:
         return "—"
     sign = "+" if value > 0 else ""
     return f"{sign}{value:.2f}°C"
-
-
-def generate_sparkline_path(values: List[float], width: int = 100, height: int = 25) -> str:
-    """Generate SVG path data for a sparkline visualization."""
-    if not values or len(values) < 2:
-        return f"M0,{height // 2} L{width},{height // 2}"
-
-    clean_values = [v for v in values if v is not None]
-    if len(clean_values) < 2:
-        return f"M0,{height // 2} L{width},{height // 2}"
-
-    min_val = min(clean_values)
-    max_val = max(clean_values)
-    val_range = max_val - min_val if max_val != min_val else 1
-
-    step = width / (len(clean_values) - 1)
-    points = []
-
-    for i, val in enumerate(clean_values):
-        x = i * step
-        y = height - ((val - min_val) / val_range * height)
-        points.append(f"{x:.1f},{y:.1f}")
-
-    return f"M{' L'.join(points)}"
 
 
 def generate_score_ring(value: Optional[int], cx: int, cy: int, radius: int, color: str, label: str) -> str:
@@ -356,15 +312,7 @@ def main():
     output_path = sys.argv[2] if len(sys.argv) > 2 else "oura/health_dashboard.svg"
 
     # Read health snapshot
-    try:
-        with open(snapshot_path, "r") as f:
-            snapshot = json.load(f)
-    except FileNotFoundError:
-        print(f"Error: Health snapshot file not found: {snapshot_path}", file=sys.stderr)
-        sys.exit(1)
-    except json.JSONDecodeError as e:
-        print(f"Error: Invalid JSON in snapshot file: {e}", file=sys.stderr)
-        sys.exit(1)
+    snapshot = load_json(snapshot_path, "Health snapshot file")
 
     # Generate SVG
     svg = generate_svg(snapshot)
