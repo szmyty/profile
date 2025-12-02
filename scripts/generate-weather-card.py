@@ -19,6 +19,7 @@ from lib.utils import (
     get_theme_card_dimension,
     get_theme_border_radius,
     format_timestamp_local,
+    generate_card_with_fallback,
 )
 
 
@@ -221,27 +222,13 @@ def generate_svg(
     return svg
 
 
-def main():
-    """Main entry point."""
-    if len(sys.argv) < 2:
-        print(
-            "Usage: generate-weather-card.py <weather.json> [output_path]",
-            file=sys.stderr,
-        )
-        sys.exit(1)
-
-    metadata_path = sys.argv[1]
-    output_path = sys.argv[2] if len(sys.argv) > 2 else "weather/weather-today.svg"
-
-    # Read and validate metadata
-    metadata = load_and_validate_json(metadata_path, "weather", "Weather metadata file")
-
+def generate_weather_svg(metadata: dict) -> str:
+    """Generate weather SVG from metadata dictionary."""
     # Format updated_at to local time for display
     updated_at_raw = metadata.get("updated_at", "")
     updated_at_display = format_timestamp_local(updated_at_raw) if updated_at_raw else ""
 
-    # Generate SVG
-    svg = generate_svg(
+    return generate_svg(
         location=metadata.get("location", "Unknown Location"),
         condition=metadata.get("current", {}).get("condition", "Unknown"),
         emoji=metadata.get("current", {}).get("emoji", "🌡️"),
@@ -256,13 +243,33 @@ def main():
         weathercode=metadata.get("current", {}).get("weathercode", 0),
     )
 
-    # Write output
-    output = Path(output_path)
-    output.parent.mkdir(parents=True, exist_ok=True)
-    with open(output, "w") as f:
-        f.write(svg)
 
-    print(f"Generated weather SVG card: {output_path}", file=sys.stderr)
+def main():
+    """Main entry point."""
+    if len(sys.argv) < 2:
+        print(
+            "Usage: generate-weather-card.py <weather.json> [output_path]",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    metadata_path = sys.argv[1]
+    output_path = sys.argv[2] if len(sys.argv) > 2 else "weather/weather-today.svg"
+
+    # Use fallback mechanism to generate the card
+    success = generate_card_with_fallback(
+        card_type="weather",
+        output_path=output_path,
+        json_path=metadata_path,
+        schema_name="weather",
+        generator_func=generate_weather_svg,
+        description="Weather metadata file",
+    )
+
+    if success:
+        print(f"Generated weather SVG card: {output_path}", file=sys.stderr)
+    else:
+        print(f"Using fallback weather SVG card: {output_path}", file=sys.stderr)
 
 
 if __name__ == "__main__":

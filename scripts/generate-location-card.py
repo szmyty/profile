@@ -12,6 +12,7 @@ from pathlib import Path
 from lib.utils import (
     escape_xml,
     load_json,
+    try_load_json,
     load_theme,
     get_theme_color,
     get_theme_gradient,
@@ -21,6 +22,9 @@ from lib.utils import (
     get_theme_border_radius,
     format_timestamp_local,
     optimize_image_file,
+    fallback_exists,
+    log_fallback_used,
+    handle_error_with_fallback,
 )
 
 
@@ -189,40 +193,64 @@ def main():
     map_path = sys.argv[2]
     output_path = sys.argv[3] if len(sys.argv) > 3 else "location/location-card.svg"
 
-    # Read metadata
-    metadata = load_json(metadata_path, "Metadata file")
+    # Check if fallback exists before attempting generation
+    has_fallback = fallback_exists(output_path)
 
-    # Read and encode map image
+    # Try to read metadata
+    metadata, error = try_load_json(metadata_path, "Metadata file")
+    if error:
+        if handle_error_with_fallback("location", error, output_path, has_fallback):
+            print(f"Using fallback location SVG card: {output_path}", file=sys.stderr)
+            return
+
+    # Try to read and encode map image
     try:
         map_image_base64 = encode_image_base64(map_path)
     except FileNotFoundError:
-        print(f"Error: Map image not found: {map_path}", file=sys.stderr)
-        sys.exit(1)
+        if handle_error_with_fallback("location", f"Map image not found: {map_path}", output_path, has_fallback):
+            print(f"Using fallback location SVG card: {output_path}", file=sys.stderr)
+            return
     except (IOError, OSError, PermissionError) as e:
-        print(f"Error: Failed to read map image: {e}", file=sys.stderr)
-        sys.exit(1)
+        if handle_error_with_fallback("location", f"Failed to read map image: {e}", output_path, has_fallback):
+            print(f"Using fallback location SVG card: {output_path}", file=sys.stderr)
+            return
 
     # Format updated_at to local time for display
     updated_at_raw = metadata.get("updated_at", "")
     updated_at_display = format_timestamp_local(updated_at_raw) if updated_at_raw else ""
 
-    # Generate SVG
-    svg = generate_svg(
-        location=metadata.get("location", "Unknown Location"),
-        display_name=metadata.get("display_name", ""),
-        lat=metadata.get("coordinates", {}).get("lat", 0),
-        lon=metadata.get("coordinates", {}).get("lon", 0),
-        map_image_base64=map_image_base64,
-        updated_at=updated_at_display,
-    )
+    # Try to generate SVG
+    try:
+        svg = generate_svg(
+            location=metadata.get("location", "Unknown Location"),
+            display_name=metadata.get("display_name", ""),
+            lat=metadata.get("coordinates", {}).get("lat", 0),
+            lon=metadata.get("coordinates", {}).get("lon", 0),
+            map_image_base64=map_image_base64,
+            updated_at=updated_at_display,
+        )
+    except Exception as e:
+        if handle_error_with_fallback("location", f"SVG generation failed: {e}", output_path, has_fallback):
+            print(f"Using fallback location SVG card: {output_path}", file=sys.stderr)
+            return
 
-    # Write output
-    output = Path(output_path)
-    output.parent.mkdir(parents=True, exist_ok=True)
-    with open(output, "w") as f:
-        f.write(svg)
+    # Validate SVG looks correct
+    if not svg or not svg.strip().startswith("<svg"):
+        error_msg = "Generated SVG appears invalid (missing <svg> tag)"
+        if handle_error_with_fallback("location", error_msg, output_path, has_fallback):
+            print(f"Using fallback location SVG card: {output_path}", file=sys.stderr)
+            return
 
-    print(f"Generated location SVG card: {output_path}", file=sys.stderr)
+    # Try to write output
+    try:
+        output = Path(output_path)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        with open(output, "w") as f:
+            f.write(svg)
+        print(f"Generated location SVG card: {output_path}", file=sys.stderr)
+    except (IOError, OSError) as e:
+        if handle_error_with_fallback("location", f"Failed to write SVG: {e}", output_path, has_fallback):
+            print(f"Using fallback location SVG card: {output_path}", file=sys.stderr)
 
 
 if __name__ == "__main__":
