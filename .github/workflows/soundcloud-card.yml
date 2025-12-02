@@ -70,9 +70,13 @@ jobs:
         run: |
           npm install -g svgo
           ORIGINAL_SIZE=$(stat -c%s assets/soundcloud-card.svg)
-          svgo assets/soundcloud-card.svg -o assets/soundcloud-card.svg
-          OPTIMIZED_SIZE=$(stat -c%s assets/soundcloud-card.svg)
-          echo "SVG optimized: ${ORIGINAL_SIZE} bytes → ${OPTIMIZED_SIZE} bytes ($(( 100 - OPTIMIZED_SIZE * 100 / ORIGINAL_SIZE ))% reduction)"
+          if [ "$ORIGINAL_SIZE" -gt 0 ]; then
+            svgo assets/soundcloud-card.svg -o assets/soundcloud-card.svg
+            OPTIMIZED_SIZE=$(stat -c%s assets/soundcloud-card.svg)
+            echo "SVG optimized: ${ORIGINAL_SIZE} bytes → ${OPTIMIZED_SIZE} bytes ($(( 100 - OPTIMIZED_SIZE * 100 / ORIGINAL_SIZE ))% reduction)"
+          else
+            echo "Warning: SVG file is empty, skipping optimization"
+          fi
 
       - name: Update README with card
         run: |
