@@ -14,6 +14,8 @@ on:
       - 'scripts/generate-oura-mood-card.py'
       - 'scripts/generate-health-snapshot.py'
       - 'scripts/generate-health-dashboard.py'
+      - 'scripts/lib/utils.py'
+      - 'config/theme.json'
       - '.github/workflows/oura.yml'
 
 concurrency:
