@@ -45,6 +45,7 @@ jobs:
         run: |
           LOCATION=$(curl -sf "https://api.github.com/users/${{ github.repository_owner }}" \
             -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: Bearer ${{ github.token }}" \
             -H "User-Agent: GitHub-Profile-Location-Card" | jq -r '.location // empty')
           
           if [ -z "$LOCATION" ]; then
@@ -61,6 +62,7 @@ jobs:
         if: steps.location.outputs.skip != 'true'
         env:
           GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ github.token }}
           OUTPUT_DIR: location
         run: |
           chmod +x scripts/fetch-location.sh
