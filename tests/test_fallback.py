@@ -22,6 +22,7 @@ from lib.utils import (
     fallback_exists,
     log_fallback_used,
     generate_card_with_fallback,
+    handle_error_with_fallback,
 )
 
 
@@ -218,6 +219,27 @@ class TestLogFallbackUsed:
         assert "weather" in captured.err
         assert "Test error" in captured.err
         assert "/path/to/fallback.svg" in captured.err
+
+
+class TestHandleErrorWithFallback:
+    """Tests for handle_error_with_fallback function."""
+
+    def test_returns_true_when_fallback_exists(self, capsys):
+        """Test that function returns True when fallback is available."""
+        result = handle_error_with_fallback(
+            "test", "Test error", "/path/to/fallback.svg", has_fallback=True
+        )
+        assert result is True
+        captured = capsys.readouterr()
+        assert "FALLBACK" in captured.err
+
+    def test_exits_when_no_fallback(self):
+        """Test that function exits with code 1 when no fallback exists."""
+        with pytest.raises(SystemExit) as exc_info:
+            handle_error_with_fallback(
+                "test", "Test error", "/path/to/missing.svg", has_fallback=False
+            )
+        assert exc_info.value.code == 1
 
 
 class TestGenerateCardWithFallback:

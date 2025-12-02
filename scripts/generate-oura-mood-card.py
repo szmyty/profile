@@ -27,6 +27,7 @@ from lib.utils import (
     format_timestamp_local,
     fallback_exists,
     log_fallback_used,
+    handle_error_with_fallback,
 )
 
 
@@ -302,17 +303,9 @@ def main():
     # Try to read mood data
     mood, error = try_load_json(mood_path, "Mood file")
     if error:
-        if has_fallback:
-            log_fallback_used("mood", error, output_path)
+        if handle_error_with_fallback("mood", error, output_path, has_fallback):
             print(f"Using fallback mood dashboard SVG: {output_path}", file=sys.stderr)
             return
-        else:
-            print(f"Error: {error}", file=sys.stderr)
-            print(
-                f"No fallback SVG available at {output_path}. Cannot recover.",
-                file=sys.stderr,
-            )
-            sys.exit(1)
 
     # Read metrics data (optional, for additional visualizations)
     metrics = {}
@@ -327,33 +320,16 @@ def main():
     try:
         svg = generate_svg(mood, metrics)
     except Exception as e:
-        error_msg = f"SVG generation failed: {e}"
-        if has_fallback:
-            log_fallback_used("mood", error_msg, output_path)
+        if handle_error_with_fallback("mood", f"SVG generation failed: {e}", output_path, has_fallback):
             print(f"Using fallback mood dashboard SVG: {output_path}", file=sys.stderr)
             return
-        else:
-            print(f"Error: {error_msg}", file=sys.stderr)
-            print(
-                f"No fallback SVG available at {output_path}. Cannot recover.",
-                file=sys.stderr,
-            )
-            sys.exit(1)
 
     # Validate SVG looks correct
     if not svg or not svg.strip().startswith("<svg"):
         error_msg = "Generated SVG appears invalid (missing <svg> tag)"
-        if has_fallback:
-            log_fallback_used("mood", error_msg, output_path)
+        if handle_error_with_fallback("mood", error_msg, output_path, has_fallback):
             print(f"Using fallback mood dashboard SVG: {output_path}", file=sys.stderr)
             return
-        else:
-            print(f"Error: {error_msg}", file=sys.stderr)
-            print(
-                f"No fallback SVG available at {output_path}. Cannot recover.",
-                file=sys.stderr,
-            )
-            sys.exit(1)
 
     # Try to write output
     try:
@@ -363,17 +339,8 @@ def main():
             f.write(svg)
         print(f"Generated Oura mood dashboard SVG: {output_path}", file=sys.stderr)
     except (IOError, OSError) as e:
-        error_msg = f"Failed to write SVG: {e}"
-        if has_fallback:
-            log_fallback_used("mood", error_msg, output_path)
+        if handle_error_with_fallback("mood", f"Failed to write SVG: {e}", output_path, has_fallback):
             print(f"Using fallback mood dashboard SVG: {output_path}", file=sys.stderr)
-        else:
-            print(f"Error: {error_msg}", file=sys.stderr)
-            print(
-                f"No fallback SVG available at {output_path}. Cannot recover.",
-                file=sys.stderr,
-            )
-            sys.exit(1)
 
 
 if __name__ == "__main__":

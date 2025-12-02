@@ -358,19 +358,48 @@ def log_fallback_used(
         output_path: Path to the fallback SVG being used.
     """
     logger = _get_fallback_logger()
+    # Use a formatted message that includes emoji for workflow visibility
     logger.warning(
-        "Fallback used for %s card: %s. "
+        "⚠️ FALLBACK: %s card generation failed: %s. "
         "Preserving existing SVG at: %s",
         card_type,
         error,
         output_path,
     )
-    # Also print to stderr for workflow visibility
-    print(
-        f"⚠️ FALLBACK: {card_type} card generation failed: {error}. "
-        f"Using existing SVG at {output_path}",
-        file=sys.stderr,
-    )
+
+
+def handle_error_with_fallback(
+    card_type: str,
+    error: str,
+    output_path: str,
+    has_fallback: bool,
+) -> bool:
+    """
+    Handle an error during card generation, using fallback if available.
+
+    This is a helper function to reduce code duplication in card generators
+    that have complex generation flows (e.g., multiple input files).
+
+    Args:
+        card_type: Type of card being generated (e.g., "weather", "location").
+        error: The error message that occurred.
+        output_path: Path where the SVG would be written.
+        has_fallback: Whether a valid fallback SVG exists at output_path.
+
+    Returns:
+        True if fallback was used (caller should return early).
+        False is never returned; this function calls sys.exit(1) if no fallback.
+    """
+    if has_fallback:
+        log_fallback_used(card_type, error, output_path)
+        return True
+    else:
+        print(f"Error: {error}", file=sys.stderr)
+        print(
+            f"No fallback SVG available at {output_path}. Cannot recover.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
 
 
 def generate_card_with_fallback(
