@@ -22,6 +22,7 @@ get_github_location() {
     local user_data
     user_data=$(curl -sf "https://api.github.com/users/${GITHUB_OWNER}" \
         -H "Accept: application/vnd.github.v3+json" \
+        ${GITHUB_TOKEN:+-H "Authorization: Bearer ${GITHUB_TOKEN}"} \
         -H "User-Agent: GitHub-Profile-Location-Card") || {
         echo "Error: Failed to fetch GitHub profile" >&2
         return 1
