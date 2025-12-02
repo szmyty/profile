@@ -11,7 +11,7 @@ import json
 import os
 import sys
 from datetime import datetime, timedelta, timezone
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Union
 
 try:
     import jsonschema
@@ -514,3 +514,245 @@ def format_timestamp_iso(dt: Optional[datetime] = None) -> str:
         dt = dt.replace(tzinfo=timezone.utc)
 
     return dt.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+# Image optimization utilities
+
+# Try to import Pillow for image optimization
+try:
+    from PIL import Image
+    import io
+    PILLOW_AVAILABLE = True
+except ImportError:
+    PILLOW_AVAILABLE = False
+
+
+def get_image_optimization_settings() -> Dict[str, Union[int, bool]]:
+    """
+    Get image optimization settings from theme configuration.
+
+    Returns:
+        Dictionary with optimization settings:
+        - jpeg_quality: JPEG compression quality (1-100, default 85)
+        - png_colors: Number of colors for PNG quantization (default 256)
+        - max_width: Maximum width for image resizing (default 600)
+        - max_height: Maximum height for image resizing (default 400)
+        - enabled: Whether optimization is enabled (default True)
+    """
+    theme = load_theme()
+    optimization = theme.get("image_optimization", {})
+    return {
+        "jpeg_quality": optimization.get("jpeg_quality", 85),
+        "png_colors": optimization.get("png_colors", 256),
+        "max_width": optimization.get("max_width", 600),
+        "max_height": optimization.get("max_height", 400),
+        "enabled": optimization.get("enabled", True),
+    }
+
+
+def optimize_image(
+    image_data: bytes,
+    image_format: str,
+    max_width: Optional[int] = None,
+    max_height: Optional[int] = None,
+    jpeg_quality: Optional[int] = None,
+    png_colors: Optional[int] = None,
+) -> bytes:
+    """
+    Optimize an image for embedding in SVG.
+
+    This function reduces image file size while preserving visual quality by:
+    - Resizing large images to a maximum dimension
+    - Compressing JPEG images with configurable quality
+    - Quantizing PNG images to reduce color palette
+
+    Args:
+        image_data: Raw image bytes.
+        image_format: Image format ('jpeg', 'jpg', or 'png').
+        max_width: Maximum width in pixels. Uses theme default if None.
+        max_height: Maximum height in pixels. Uses theme default if None.
+        jpeg_quality: JPEG quality (1-100). Uses theme default if None.
+        png_colors: Number of colors for PNG quantization. Uses theme default if None.
+
+    Returns:
+        Optimized image bytes. Returns original if Pillow not available
+        or optimization disabled.
+    """
+    if not PILLOW_AVAILABLE:
+        print("Warning: Pillow not installed, skipping image optimization", file=sys.stderr)
+        return image_data
+
+    settings = get_image_optimization_settings()
+    if not settings["enabled"]:
+        return image_data
+
+    # Use provided values or fall back to theme settings
+    max_width = max_width if max_width is not None else settings["max_width"]
+    max_height = max_height if max_height is not None else settings["max_height"]
+    jpeg_quality = jpeg_quality if jpeg_quality is not None else settings["jpeg_quality"]
+    png_colors = png_colors if png_colors is not None else settings["png_colors"]
+
+    try:
+        # Open image from bytes
+        img = Image.open(io.BytesIO(image_data))
+
+        # Get original size for logging
+        original_size = len(image_data)
+        
+        # Track if we need to resize
+        needs_resize = img.width > max_width or img.height > max_height
+
+        # Normalize format
+        fmt = image_format.lower()
+        
+        # For PNG, try multiple optimization strategies and use the smallest result
+        if fmt == "png":
+            candidates = []
+            
+            # Strategy 1: Quantize + optimize (often best for photos/maps)
+            # Skip quantization for RGBA images to preserve transparency
+            try:
+                img_work = Image.open(io.BytesIO(image_data))
+                if needs_resize:
+                    img_work.thumbnail((max_width, max_height), Image.Resampling.LANCZOS)
+                if img_work.mode == "RGBA":
+                    # Preserve transparency - skip quantization, just optimize
+                    output1 = io.BytesIO()
+                    img_work.save(output1, format="PNG", optimize=True)
+                    candidates.append(("rgba_optimized", output1.getvalue()))
+                elif img_work.mode == "RGB":
+                    img_quant = img_work.quantize(
+                        colors=png_colors, method=Image.Quantize.MEDIANCUT
+                    )
+                    output1 = io.BytesIO()
+                    img_quant.save(output1, format="PNG", optimize=True)
+                    candidates.append(("quantized", output1.getvalue()))
+                elif img_work.mode != "P":
+                    img_quant = img_work.convert("RGB").quantize(
+                        colors=png_colors, method=Image.Quantize.MEDIANCUT
+                    )
+                    output1 = io.BytesIO()
+                    img_quant.save(output1, format="PNG", optimize=True)
+                    candidates.append(("quantized", output1.getvalue()))
+                else:
+                    output1 = io.BytesIO()
+                    img_work.save(output1, format="PNG", optimize=True)
+                    candidates.append(("palette_optimized", output1.getvalue()))
+            except (OSError, ValueError):
+                pass
+            
+            # Strategy 2: Just resize + optimize (better for some images)
+            try:
+                img_work = Image.open(io.BytesIO(image_data))
+                if needs_resize:
+                    img_work.thumbnail((max_width, max_height), Image.Resampling.LANCZOS)
+                output2 = io.BytesIO()
+                img_work.save(output2, format="PNG", optimize=True)
+                candidates.append(("resized", output2.getvalue()))
+            except (OSError, ValueError):
+                pass
+            
+            # Strategy 3: Original (if already optimal)
+            candidates.append(("original", image_data))
+            
+            # Pick the smallest
+            best_name, best_data = min(candidates, key=lambda x: len(x[1]))
+            optimized_data = best_data
+            optimized_size = len(optimized_data)
+            
+        elif fmt in ["jpeg", "jpg"]:
+            # Resize if needed
+            if needs_resize:
+                img.thumbnail((max_width, max_height), Image.Resampling.LANCZOS)
+            
+            # Convert to RGB if necessary (JPEG doesn't support alpha)
+            if img.mode in ("RGBA", "P"):
+                img = img.convert("RGB")
+            
+            output = io.BytesIO()
+            img.save(output, format="JPEG", quality=jpeg_quality, optimize=True)
+            optimized_data = output.getvalue()
+            optimized_size = len(optimized_data)
+            
+            # Use original if optimization didn't help
+            if optimized_size >= original_size:
+                optimized_data = image_data
+                optimized_size = original_size
+        else:
+            # Unknown format, return original
+            return image_data
+
+        # Log optimization results
+        if optimized_size < original_size:
+            reduction_pct = ((original_size - optimized_size) / original_size) * 100
+            print(
+                f"Image optimized: {original_size:,} -> {optimized_size:,} bytes "
+                f"({reduction_pct:.1f}% reduction)",
+                file=sys.stderr,
+            )
+        else:
+            print(
+                f"Image optimization skipped (no size reduction): "
+                f"{original_size:,} bytes",
+                file=sys.stderr,
+            )
+
+        return optimized_data
+
+    except (OSError, IOError, ValueError) as e:
+        print(f"Warning: Image optimization failed: {e}", file=sys.stderr)
+        return image_data
+
+
+def optimize_image_file(
+    file_path: str,
+    max_width: Optional[int] = None,
+    max_height: Optional[int] = None,
+    jpeg_quality: Optional[int] = None,
+    png_colors: Optional[int] = None,
+) -> bytes:
+    """
+    Read and optimize an image file for embedding in SVG.
+
+    Args:
+        file_path: Path to the image file.
+        max_width: Maximum width in pixels.
+        max_height: Maximum height in pixels.
+        jpeg_quality: JPEG quality (1-100).
+        png_colors: Number of colors for PNG quantization.
+
+    Returns:
+        Optimized image bytes.
+
+    Raises:
+        FileNotFoundError: If the image file doesn't exist.
+        IOError: If the file cannot be read.
+    """
+    from pathlib import Path
+
+    path = Path(file_path)
+    if not path.exists():
+        raise FileNotFoundError(f"Image file not found: {file_path}")
+
+    # Determine format from extension
+    suffix = path.suffix.lower()
+    if suffix in [".jpg", ".jpeg"]:
+        image_format = "jpeg"
+    elif suffix == ".png":
+        image_format = "png"
+    else:
+        image_format = suffix.lstrip(".")
+
+    # Read file
+    with open(path, "rb") as f:
+        image_data = f.read()
+
+    # Optimize
+    return optimize_image(
+        image_data,
+        image_format,
+        max_width=max_width,
+        max_height=max_height,
+        jpeg_quality=jpeg_quality,
+        png_colors=png_colors,
+    )

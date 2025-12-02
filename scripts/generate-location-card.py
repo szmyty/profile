@@ -20,13 +20,32 @@ from lib.utils import (
     get_theme_card_dimension,
     get_theme_border_radius,
     format_timestamp_local,
+    optimize_image_file,
 )
 
 
 def encode_image_base64(image_path: str) -> str:
-    """Encode an image file to base64 for embedding in SVG."""
-    with open(image_path, "rb") as f:
-        return base64.b64encode(f.read()).decode("utf-8")
+    """Encode and optimize an image file to base64 for embedding in SVG.
+    
+    The image is optimized by:
+    - Reducing resolution to fit the map display area
+    - Compressing PNG with color quantization from theme settings
+    """
+    # Get theme settings for map dimensions
+    theme = load_theme()
+    card_width = get_theme_card_dimension("widths", "location")
+    map_config = theme.get("cards", {}).get("map", {})
+    map_margin = map_config.get("margin", 20)
+    map_width = card_width - (map_margin * 2)  # Match the SVG map width
+    map_height = map_config.get("height", 350)  # Match the SVG map height
+    
+    # Optimize the image before encoding
+    optimized_data = optimize_image_file(
+        image_path,
+        max_width=map_width,
+        max_height=map_height,
+    )
+    return base64.b64encode(optimized_data).decode("utf-8")
 
 
 def generate_svg(
@@ -85,10 +104,11 @@ def generate_svg(
     lon_dir = "E" if lon >= 0 else "W"
     coords_display = f"{abs(lat):.4f}°{lat_dir}, {abs(lon):.4f}°{lon_dir}"
     
-    # Calculate map dimensions based on card size
-    map_margin = 20
+    # Calculate map dimensions from theme settings
+    map_config = theme.get("cards", {}).get("map", {})
+    map_margin = map_config.get("margin", 20)
     map_width = card_width - (map_margin * 2)
-    map_height = 350
+    map_height = map_config.get("height", 350)
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{card_width}" height="{card_height}" viewBox="0 0 {card_width} {card_height}">
   <defs>

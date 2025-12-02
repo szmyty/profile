@@ -99,6 +99,10 @@
       "health_dashboard": 365,
       "location": 400
     },
+    "map": {
+      "margin": 20,
+      "height": 350
+    },
     "stroke_width": 1,
     "stroke_opacity": 0.3
   },
@@ -112,5 +116,12 @@
       "stdDeviation": 3,
       "flood_opacity": 0.3
     }
+  },
+  "image_optimization": {
+    "enabled": true,
+    "jpeg_quality": 85,
+    "png_colors": 256,
+    "max_width": 600,
+    "max_height": 400
   }
 }

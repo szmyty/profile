@@ -20,6 +20,7 @@ from lib.utils import (
     get_theme_card_dimension,
     get_theme_border_radius,
     format_timestamp_local,
+    optimize_image_file,
 )
 
 
@@ -50,16 +51,26 @@ def format_date(date_str: str) -> str:
 
 
 def get_artwork_base64(artwork_path: str) -> str:
-    """Read artwork file and return base64 encoded data URI."""
+    """Read artwork file, optimize it, and return base64 encoded data URI.
+    
+    The image is optimized for embedding by:
+    - Reducing resolution to max 100x100 (artwork thumbnail size)
+    - Compressing JPEG with quality setting from theme
+    """
     try:
         path = Path(artwork_path)
         if path.exists():
-            with open(path, "rb") as f:
-                data = base64.b64encode(f.read()).decode("utf-8")
-                # Determine MIME type
-                suffix = path.suffix.lower()
-                mime = "image/jpeg" if suffix in [".jpg", ".jpeg"] else "image/png"
-                return f"data:{mime};base64,{data}"
+            # Optimize image before encoding (100x100 is the artwork display size)
+            optimized_data = optimize_image_file(
+                artwork_path,
+                max_width=100,
+                max_height=100,
+            )
+            data = base64.b64encode(optimized_data).decode("utf-8")
+            # Determine MIME type
+            suffix = path.suffix.lower()
+            mime = "image/jpeg" if suffix in [".jpg", ".jpeg"] else "image/png"
+            return f"data:{mime};base64,{data}"
     except (OSError, IOError) as e:
         print(f"Warning: Could not load artwork: {e}", file=sys.stderr)
     return ""
