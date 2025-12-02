@@ -68,10 +68,10 @@
     <g transform="translate(215, 45)">
       <circle r="30" fill="none" stroke="#2d3748" stroke-width="4"/>
       <circle r="30" fill="none" stroke="#f5576c" stroke-width="4"
-              stroke-dasharray="188.4954" stroke-dashoffset="47.12385"
+              stroke-dasharray="188.4954" stroke-dashoffset="62.20348199999999"
               stroke-linecap="round" transform="rotate(-90)"/>
       <text y="5" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#ffffff" 
-            font-weight="bold" text-anchor="middle">75</text>
+            font-weight="bold" text-anchor="middle">67</text>
       <text y="44" font-family="'Segoe UI', Arial, sans-serif" font-size="8" 
             fill="#8892b0" text-anchor="middle">Active</text>
     </g>
@@ -228,7 +228,7 @@
          Total Cal
       </text>
       <text x="100" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#ffffff" 
-            text-anchor="end" font-weight="500">2261 kcal</text>
+            text-anchor="end" font-weight="500">2348 kcal</text>
     </g>
     
     <g transform="translate(10, 65)">
@@ -236,7 +236,7 @@
          Active Cal
       </text>
       <text x="100" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#ffffff" 
-            text-anchor="end" font-weight="500">121 kcal</text>
+            text-anchor="end" font-weight="500">308 kcal</text>
     </g>
     
     <g transform="translate(10, 80)">
@@ -244,7 +244,7 @@
          Inact Alerts
       </text>
       <text x="100" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#ffffff" 
-            text-anchor="end" font-weight="500">1</text>
+            text-anchor="end" font-weight="500">0</text>
     </g>
     
     <g transform="translate(10, 95)">
@@ -252,7 +252,7 @@
          Avg MET
       </text>
       <text x="100" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#ffffff" 
-            text-anchor="end" font-weight="500">1.16</text>
+            text-anchor="end" font-weight="500">1.44</text>
     </g>
   </g>
 
@@ -292,7 +292,7 @@
     </text>
     <g transform="translate(10, 32)">
       <text font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#8892b0">
-        Training Freq: 98
+        Training Freq: 81
       </text>
       <text y="12" font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#8892b0">
         Recovery Time: 100
@@ -303,10 +303,10 @@
     </g>
     <g transform="translate(120, 32)">
       <text font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#8892b0">
-        Move/Hour: 95
+        Move/Hour: 100
       </text>
       <text y="12" font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#8892b0">
-        Stay Active: 86
+        Stay Active: 75
       </text>
       <text y="24" font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#8892b0">
         Activity Bal: 93
@@ -317,7 +317,7 @@
   <!-- Footer: Updated timestamp -->
   <g transform="translate(20, 340)">
     <text font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#4a5568">
-      Updated: 2025-12-01 23:04 UTC
+      Updated: 2025-12-02 00:17 UTC
     </text>
   </g>
 

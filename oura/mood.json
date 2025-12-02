@@ -1,26 +1,26 @@
 {
-  "mood_name": "Solar Focus",
-  "mood_score": 75.2,
-  "mood_icon": "\ud83d\udd25",
+  "mood_name": "Energetic Compression",
+  "mood_score": 73.9,
+  "mood_icon": "\u26a1",
   "mood_color_gradient": [
-    "#f093fb",
-    "#f5576c"
+    "#11998e",
+    "#38ef7d"
   ],
-  "mood_description": "High energy and sharp focus",
-  "mood_key": "solar_focus",
+  "mood_description": "Building energy, readying for action",
+  "mood_key": "energetic_compression",
   "interpreted_metrics": {
     "sleep": "Good sleep",
     "readiness": "Peak performance ready",
-    "activity": "Active day",
+    "activity": "Moderate movement",
     "hrv": "Moderate variability"
   },
   "raw_scores": {
     "sleep_score": 75,
     "readiness_score": 87,
-    "activity_score": 75,
+    "activity_score": 67,
     "hrv": null,
     "resting_hr": 86,
     "temp_deviation": 96
   },
-  "computed_at": "2025-12-01 23:04 UTC"
+  "computed_at": "2025-12-02 00:17 UTC"
 }
