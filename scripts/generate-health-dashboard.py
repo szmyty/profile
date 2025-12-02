@@ -10,7 +10,19 @@ from pathlib import Path
 from datetime import datetime, timezone
 from typing import Optional, List
 
-from lib.utils import escape_xml, safe_value, load_json, generate_sparkline_path
+from lib.utils import (
+    escape_xml,
+    safe_value,
+    load_json,
+    generate_sparkline_path,
+    load_theme,
+    get_theme_color,
+    get_theme_gradient,
+    get_theme_typography,
+    get_theme_font_size,
+    get_theme_card_dimension,
+    get_theme_border_radius,
+)
 
 
 def format_temp(value: Optional[float]) -> str:
@@ -23,6 +35,13 @@ def format_temp(value: Optional[float]) -> str:
 
 def generate_score_ring(value: Optional[int], cx: int, cy: int, radius: int, color: str, label: str) -> str:
     """Generate a circular score indicator."""
+    # Load theme values
+    font_family = get_theme_typography("font_family")
+    text_primary = get_theme_color("text", "primary")
+    text_secondary = get_theme_color("text", "secondary")
+    font_size_xs = get_theme_font_size("xs")
+    font_size_xl = get_theme_font_size("xl")
+    
     score = value if value is not None else 0
     score = min(100, max(0, score))
     circumference = 2 * 3.14159 * radius
@@ -34,27 +53,80 @@ def generate_score_ring(value: Optional[int], cx: int, cy: int, radius: int, col
       <circle r="{radius}" fill="none" stroke="{color}" stroke-width="4"
               stroke-dasharray="{circumference}" stroke-dashoffset="{dash_offset}"
               stroke-linecap="round" transform="rotate(-90)"/>
-      <text y="5" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#ffffff" 
+      <text y="5" font-family="{font_family}" font-size="{font_size_xl}" fill="{text_primary}" 
             font-weight="bold" text-anchor="middle">{score}</text>
-      <text y="{radius + 14}" font-family="'Segoe UI', Arial, sans-serif" font-size="8" 
-            fill="#8892b0" text-anchor="middle">{escape_xml(label)}</text>
+      <text y="{radius + 14}" font-family="{font_family}" font-size="{font_size_xs}" 
+            fill="{text_secondary}" text-anchor="middle">{escape_xml(label)}</text>
     </g>"""
 
 
 def generate_metric_row(label: str, value: str, x: int, y: int, icon: str = "") -> str:
     """Generate a single metric row."""
+    # Load theme values
+    font_family = get_theme_typography("font_family")
+    text_primary = get_theme_color("text", "primary")
+    text_secondary = get_theme_color("text", "secondary")
+    font_size_sm = get_theme_font_size("sm")
+    font_size_base = get_theme_font_size("base")
+    
     return f"""
     <g transform="translate({x}, {y})">
-      <text font-family="'Segoe UI', Arial, sans-serif" font-size="9" fill="#8892b0">
+      <text font-family="{font_family}" font-size="{font_size_sm}" fill="{text_secondary}">
         {icon} {escape_xml(label)}
       </text>
-      <text x="100" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#ffffff" 
+      <text x="100" font-family="{font_family}" font-size="{font_size_base}" fill="{text_primary}" 
             text-anchor="end" font-weight="500">{escape_xml(value)}</text>
     </g>"""
 
 
 def generate_svg(snapshot: dict) -> str:
     """Generate the holistic health dashboard SVG."""
+    
+    # Load theme values
+    theme = load_theme()
+    bg_gradient = get_theme_gradient("background.dark")
+    sleep_gradient = get_theme_gradient("sleep")
+    readiness_gradient = get_theme_gradient("readiness")
+    activity_gradient = get_theme_gradient("activity")
+    hr_gradient = get_theme_gradient("heart_rate")
+    font_family = get_theme_typography("font_family")
+    
+    # Colors from theme
+    bg_dark = bg_gradient[0]
+    bg_primary = bg_gradient[1]
+    text_primary = get_theme_color("text", "primary")
+    text_secondary = get_theme_color("text", "secondary")
+    text_muted = get_theme_color("text", "muted")
+    accent_teal = get_theme_color("text", "accent")
+    accent_sleep = get_theme_color("accent", "sleep")
+    accent_readiness = get_theme_color("accent", "readiness")
+    accent_activity = get_theme_color("accent", "activity")
+    accent_hr = get_theme_color("accent", "heart_rate")
+    panel_bg = get_theme_color("background", "panel")
+    panel_sleep = get_theme_color("background", "panel_sleep")
+    panel_readiness = get_theme_color("background", "panel_readiness")
+    panel_activity = get_theme_color("background", "panel_activity")
+    
+    # Card dimensions from theme
+    card_width = get_theme_card_dimension("widths", "health_dashboard")
+    card_height = get_theme_card_dimension("heights", "health_dashboard")
+    border_radius = get_theme_border_radius("xl")
+    border_radius_md = get_theme_border_radius("md")
+    border_radius_sm = get_theme_border_radius("sm")
+    
+    # Font sizes from theme
+    font_size_xs = get_theme_font_size("xs")
+    font_size_base = get_theme_font_size("base")
+    font_size_lg = get_theme_font_size("lg")
+    font_size_xl = get_theme_font_size("xl")
+    
+    # Card stroke settings from theme
+    stroke_width = theme.get("cards", {}).get("stroke_width", 1)
+    stroke_opacity = theme.get("cards", {}).get("stroke_opacity", 0.3)
+    
+    # Effect settings from theme
+    glow = theme.get("effects", {}).get("glow", {})
+    glow_std = glow.get("stdDeviation", 2)
     
     # Extract data sections
     personal = snapshot.get("personal", {})
@@ -103,10 +175,10 @@ def generate_svg(snapshot: dict) -> str:
     # Generate sparkline for HR trend
     sparkline_path = generate_sparkline_path(hr_trend, 90, 22)
     
-    # Generate score rings
-    sleep_ring = generate_score_ring(sleep_score, 55, 45, 30, "#4facfe", "Sleep")
-    readiness_ring = generate_score_ring(readiness_score, 135, 45, 30, "#38ef7d", "Ready")
-    activity_ring = generate_score_ring(activity_score, 215, 45, 30, "#f5576c", "Active")
+    # Generate score rings with theme colors
+    sleep_ring = generate_score_ring(sleep_score, 55, 45, 30, accent_sleep, "Sleep")
+    readiness_ring = generate_score_ring(readiness_score, 135, 45, 30, accent_readiness, "Ready")
+    activity_ring = generate_score_ring(activity_score, 215, 45, 30, accent_activity, "Active")
     
     # Format weight display
     weight_display = "—"
@@ -118,30 +190,30 @@ def generate_svg(snapshot: dict) -> str:
     # Format height display
     height_display = safe_value(height_cm, suffix="cm") if height_cm else "—"
     
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="500" height="380" viewBox="0 0 500 380">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{card_width}" height="{card_height}" viewBox="0 0 {card_width} {card_height}">
   <defs>
     <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0f0f23"/>
-      <stop offset="100%" style="stop-color:#1a1a2e"/>
+      <stop offset="0%" style="stop-color:{bg_dark}"/>
+      <stop offset="100%" style="stop-color:{bg_primary}"/>
     </linearGradient>
     <linearGradient id="sleep-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#667eea"/>
-      <stop offset="100%" style="stop-color:#764ba2"/>
+      <stop offset="0%" style="stop-color:{sleep_gradient[0]}"/>
+      <stop offset="100%" style="stop-color:{sleep_gradient[1]}"/>
     </linearGradient>
     <linearGradient id="readiness-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#11998e"/>
-      <stop offset="100%" style="stop-color:#38ef7d"/>
+      <stop offset="0%" style="stop-color:{readiness_gradient[0]}"/>
+      <stop offset="100%" style="stop-color:{readiness_gradient[1]}"/>
     </linearGradient>
     <linearGradient id="activity-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#f093fb"/>
-      <stop offset="100%" style="stop-color:#f5576c"/>
+      <stop offset="0%" style="stop-color:{activity_gradient[0]}"/>
+      <stop offset="100%" style="stop-color:{activity_gradient[1]}"/>
     </linearGradient>
     <linearGradient id="hr-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#ff6b6b"/>
-      <stop offset="100%" style="stop-color:#feca57"/>
+      <stop offset="0%" style="stop-color:{hr_gradient[0]}"/>
+      <stop offset="100%" style="stop-color:{hr_gradient[1]}"/>
     </linearGradient>
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="{glow_std}" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -150,12 +222,12 @@ def generate_svg(snapshot: dict) -> str:
   </defs>
 
   <!-- Background -->
-  <rect width="500" height="380" rx="12" fill="url(#bg-gradient)"/>
-  <rect width="500" height="380" rx="12" fill="none" stroke="#64ffda" stroke-width="1" stroke-opacity="0.3"/>
+  <rect width="{card_width}" height="{card_height}" rx="{border_radius}" fill="url(#bg-gradient)"/>
+  <rect width="{card_width}" height="{card_height}" rx="{border_radius}" fill="none" stroke="{accent_teal}" stroke-width="{stroke_width}" stroke-opacity="{stroke_opacity}"/>
 
   <!-- Header -->
   <g transform="translate(20, 20)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#64ffda" font-weight="600">
+    <text font-family="{font_family}" font-size="{font_size_xl}" fill="{accent_teal}" font-weight="600">
       🧬 OURA HEALTH DASHBOARD
     </text>
   </g>
@@ -169,22 +241,22 @@ def generate_svg(snapshot: dict) -> str:
 
   <!-- Personal Stats Panel (grey/white) -->
   <g transform="translate(280, 45)">
-    <rect width="200" height="75" rx="6" fill="#1e1e2e" stroke="#4a5568" stroke-width="1"/>
-    <text x="10" y="18" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#64ffda" font-weight="600">
+    <rect width="200" height="75" rx="{border_radius_md}" fill="{panel_bg}" stroke="{text_muted}" stroke-width="{stroke_width}"/>
+    <text x="10" y="18" font-family="{font_family}" font-size="{font_size_base}" fill="{accent_teal}" font-weight="600">
       👤 Personal Stats
     </text>
     {generate_metric_row("Age", safe_value(age, suffix=" yrs") if age else "—", 10, 35)}
     {generate_metric_row("Height", height_display, 10, 50)}
     {generate_metric_row("Weight", weight_display, 10, 65)}
-    <text x="180" y="65" font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#8892b0">
+    <text x="180" y="65" font-family="{font_family}" font-size="{font_size_xs}" fill="{text_secondary}">
       BMI: {safe_value(bmi)}
     </text>
   </g>
 
   <!-- Sleep Panel (blue/purple) -->
   <g transform="translate(20, 130)">
-    <rect width="145" height="105" rx="6" fill="#1a1a3e" stroke="#667eea" stroke-width="1" stroke-opacity="0.5"/>
-    <text x="10" y="18" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#4facfe" font-weight="600">
+    <rect width="145" height="105" rx="{border_radius_md}" fill="{panel_sleep}" stroke="{sleep_gradient[0]}" stroke-width="{stroke_width}" stroke-opacity="0.5"/>
+    <text x="10" y="18" font-family="{font_family}" font-size="{font_size_base}" fill="{accent_sleep}" font-weight="600">
       😴 Sleep
     </text>
     {generate_metric_row("Deep Sleep", safe_value(deep_sleep), 10, 35)}
@@ -196,8 +268,8 @@ def generate_svg(snapshot: dict) -> str:
 
   <!-- Readiness Panel (teal/green) -->
   <g transform="translate(175, 130)">
-    <rect width="145" height="105" rx="6" fill="#1a2e2e" stroke="#38ef7d" stroke-width="1" stroke-opacity="0.5"/>
-    <text x="10" y="18" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#38ef7d" font-weight="600">
+    <rect width="145" height="105" rx="{border_radius_md}" fill="{panel_readiness}" stroke="{accent_readiness}" stroke-width="{stroke_width}" stroke-opacity="0.5"/>
+    <text x="10" y="18" font-family="{font_family}" font-size="{font_size_base}" fill="{accent_readiness}" font-weight="600">
       💪 Readiness
     </text>
     {generate_metric_row("Recovery", safe_value(recovery_index), 10, 35)}
@@ -209,8 +281,8 @@ def generate_svg(snapshot: dict) -> str:
 
   <!-- Activity Panel (orange/yellow) -->
   <g transform="translate(330, 130)">
-    <rect width="150" height="105" rx="6" fill="#2e2a1a" stroke="#f5576c" stroke-width="1" stroke-opacity="0.5"/>
-    <text x="10" y="18" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#f5576c" font-weight="600">
+    <rect width="150" height="105" rx="{border_radius_md}" fill="{panel_activity}" stroke="{accent_activity}" stroke-width="{stroke_width}" stroke-opacity="0.5"/>
+    <text x="10" y="18" font-family="{font_family}" font-size="{font_size_base}" fill="{accent_activity}" font-weight="600">
       🏃 Activity
     </text>
     {generate_metric_row("Steps", safe_value(steps, default="0"), 10, 35)}
@@ -222,27 +294,27 @@ def generate_svg(snapshot: dict) -> str:
 
   <!-- Heart Rate Mini Chart -->
   <g transform="translate(20, 245)">
-    <rect width="225" height="70" rx="6" fill="#1e1e2e" stroke="#ff6b6b" stroke-width="1" stroke-opacity="0.3"/>
-    <text x="10" y="18" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#ff6b6b" font-weight="600">
+    <rect width="225" height="70" rx="{border_radius_md}" fill="{panel_bg}" stroke="{accent_hr}" stroke-width="{stroke_width}" stroke-opacity="{stroke_opacity}"/>
+    <text x="10" y="18" font-family="{font_family}" font-size="{font_size_base}" fill="{accent_hr}" font-weight="600">
       ❤️ Heart Rate Trend
     </text>
-    <text x="200" y="18" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold" text-anchor="end">
+    <text x="200" y="18" font-family="{font_family}" font-size="{font_size_lg}" fill="{text_primary}" font-weight="bold" text-anchor="end">
       {safe_value(latest_bpm, suffix=" bpm") if latest_bpm else "— bpm"}
     </text>
     <g transform="translate(10, 38)">
-      <rect width="100" height="25" rx="3" fill="#0f0f23"/>
+      <rect width="100" height="25" rx="{border_radius_sm}" fill="{bg_dark}"/>
       <g transform="translate(5, 1)">
         <path d="{sparkline_path}" fill="none" stroke="url(#hr-gradient)" stroke-width="1.5" stroke-linecap="round"/>
       </g>
     </g>
     <g transform="translate(120, 35)">
-      <text font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#8892b0">
+      <text font-family="{font_family}" font-size="{font_size_xs}" fill="{text_secondary}">
         Latest: {safe_value(latest_bpm, default="—")} bpm
       </text>
-      <text y="14" font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#8892b0">
+      <text y="14" font-family="{font_family}" font-size="{font_size_xs}" fill="{text_secondary}">
         Resting: {safe_value(resting_hr, default="—")}
       </text>
-      <text y="28" font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#8892b0">
+      <text y="28" font-family="{font_family}" font-size="{font_size_xs}" fill="{text_secondary}">
         HRV: {safe_value(hrv_balance, default="—")}
       </text>
     </g>
@@ -250,29 +322,29 @@ def generate_svg(snapshot: dict) -> str:
 
   <!-- Additional Metrics Panel -->
   <g transform="translate(255, 245)">
-    <rect width="225" height="70" rx="6" fill="#1e1e2e" stroke="#64ffda" stroke-width="1" stroke-opacity="0.3"/>
-    <text x="10" y="18" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#64ffda" font-weight="600">
+    <rect width="225" height="70" rx="{border_radius_md}" fill="{panel_bg}" stroke="{accent_teal}" stroke-width="{stroke_width}" stroke-opacity="{stroke_opacity}"/>
+    <text x="10" y="18" font-family="{font_family}" font-size="{font_size_base}" fill="{accent_teal}" font-weight="600">
       📊 Contributors
     </text>
     <g transform="translate(10, 32)">
-      <text font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#8892b0">
+      <text font-family="{font_family}" font-size="{font_size_xs}" fill="{text_secondary}">
         Training Freq: {safe_value(activity.get("training_frequency"))}
       </text>
-      <text y="12" font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#8892b0">
+      <text y="12" font-family="{font_family}" font-size="{font_size_xs}" fill="{text_secondary}">
         Recovery Time: {safe_value(activity.get("recovery_time"))}
       </text>
-      <text y="24" font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#8892b0">
+      <text y="24" font-family="{font_family}" font-size="{font_size_xs}" fill="{text_secondary}">
         Previous Night: {safe_value(readiness.get("previous_night"))}
       </text>
     </g>
     <g transform="translate(120, 32)">
-      <text font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#8892b0">
+      <text font-family="{font_family}" font-size="{font_size_xs}" fill="{text_secondary}">
         Move/Hour: {safe_value(activity.get("move_every_hour"))}
       </text>
-      <text y="12" font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#8892b0">
+      <text y="12" font-family="{font_family}" font-size="{font_size_xs}" fill="{text_secondary}">
         Stay Active: {safe_value(activity.get("stay_active"))}
       </text>
-      <text y="24" font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#8892b0">
+      <text y="24" font-family="{font_family}" font-size="{font_size_xs}" fill="{text_secondary}">
         Activity Bal: {safe_value(readiness.get("activity_balance"))}
       </text>
     </g>
@@ -280,20 +352,20 @@ def generate_svg(snapshot: dict) -> str:
 
   <!-- Footer: Updated timestamp -->
   <g transform="translate(20, 340)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#4a5568">
+    <text font-family="{font_family}" font-size="{font_size_base}" fill="{text_muted}">
       Updated: {escape_xml(str(updated_at))}
     </text>
   </g>
 
   <!-- Sex indicator if available -->
   <g transform="translate(465, 340)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#4a5568" text-anchor="end">
+    <text font-family="{font_family}" font-size="{font_size_xs}" fill="{text_muted}" text-anchor="end">
       {escape_xml(sex) if sex else ""}
     </text>
   </g>
 
   <!-- Decorative accent -->
-  <rect x="484" y="15" width="4" height="350" rx="2" fill="#64ffda" fill-opacity="0.3"/>
+  <rect x="{card_width - 16}" y="15" width="4" height="350" rx="2" fill="{accent_teal}" fill-opacity="{stroke_opacity}"/>
 </svg>"""
 
     return svg

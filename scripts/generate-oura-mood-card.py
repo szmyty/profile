@@ -11,18 +11,35 @@ from pathlib import Path
 from datetime import datetime, timezone
 from typing import Any
 
-from lib.utils import escape_xml, safe_value, load_json, generate_sparkline_path
+from lib.utils import (
+    escape_xml,
+    safe_value,
+    load_json,
+    generate_sparkline_path,
+    load_theme,
+    get_theme_color,
+    get_theme_gradient,
+    get_theme_typography,
+    get_theme_font_size,
+    get_theme_card_dimension,
+    get_theme_border_radius,
+)
 
 
 def generate_radial_bars(scores: dict, cx: int = 60, cy: int = 50, radius: int = 40) -> str:
     """
     Generate SVG elements for radial progress bars showing scores.
     """
+    # Load colors from theme
+    accent_sleep = get_theme_color("accent", "sleep")
+    sleep_gradient = get_theme_gradient("sleep")
+    activity_gradient = get_theme_gradient("activity")
+    
     elements = []
     metrics = [
-        ("sleep_score", "#4facfe", "Sleep"),
-        ("readiness_score", "#667eea", "Ready"),
-        ("activity_score", "#f093fb", "Active"),
+        ("sleep_score", accent_sleep, "Sleep"),
+        ("readiness_score", sleep_gradient[0], "Ready"),
+        ("activity_score", activity_gradient[0], "Active"),
     ]
 
     for i, (key, color, _) in enumerate(metrics):
@@ -48,35 +65,85 @@ def generate_radial_bars(scores: dict, cx: int = 60, cy: int = 50, radius: int =
 
 def generate_score_bar(value: Any, x: int, y: int, width: int = 80, label: str = "") -> str:
     """Generate a horizontal score bar."""
+    # Load colors from theme
+    theme = load_theme()
+    font_family = get_theme_typography("font_family")
+    font_size_base = get_theme_font_size("base")
+    text_secondary = get_theme_color("text", "secondary")
+    text_primary = get_theme_color("text", "primary")
+    score_high = get_theme_color("scores", "high")
+    score_medium = get_theme_color("scores", "medium")
+    score_low = get_theme_color("scores", "low")
+    
     score = value if value is not None else 0
     score = min(100, max(0, score))
     fill_width = int((score / 100) * width)
 
     # Color based on score
     if score >= 75:
-        color = "#4ade80"  # Green
+        color = score_high
     elif score >= 50:
-        color = "#fbbf24"  # Yellow
+        color = score_medium
     else:
-        color = "#f87171"  # Red
+        color = score_low
 
     return f"""
     <g transform="translate({x}, {y})">
-      <text font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#8892b0" y="-3">{escape_xml(label)}</text>
+      <text font-family="{font_family}" font-size="{font_size_base}" fill="{text_secondary}" y="-3">{escape_xml(label)}</text>
       <rect width="{width}" height="6" rx="3" fill="#2d3748"/>
       <rect width="{fill_width}" height="6" rx="3" fill="{color}"/>
-      <text x="{width + 8}" y="5" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#ffffff">{score}</text>
+      <text x="{width + 8}" y="5" font-family="{font_family}" font-size="{font_size_base}" fill="{text_primary}">{score}</text>
     </g>"""
 
 
 def generate_svg(mood: dict, metrics: dict) -> str:
     """Generate SVG card markup."""
+    
+    # Load theme values
+    theme = load_theme()
+    bg_gradient_default = get_theme_gradient("background.default")
+    font_family = get_theme_typography("font_family")
+    font_family_emoji = get_theme_typography("font_family_emoji")
+    
+    # Colors from theme
+    text_primary = get_theme_color("text", "primary")
+    text_secondary = get_theme_color("text", "secondary")
+    text_muted = get_theme_color("text", "muted")
+    accent_teal = get_theme_color("text", "accent")
+    bg_dark = get_theme_color("background", "dark")
+    
+    # Card dimensions from theme
+    card_width = get_theme_card_dimension("widths", "mood")
+    card_height = get_theme_card_dimension("heights", "mood")
+    border_radius = get_theme_border_radius("xl")
+    
+    # Font sizes from theme
+    font_size_sm = get_theme_font_size("sm")
+    font_size_base = get_theme_font_size("base")
+    font_size_md = get_theme_font_size("md")
+    font_size_2xl = get_theme_font_size("2xl")
+    font_size_4xl = get_theme_font_size("4xl")
+    font_size_5xl = get_theme_font_size("5xl")
+    font_size_6xl = get_theme_font_size("6xl")
+    
+    # Card stroke settings from theme
+    stroke_width = theme.get("cards", {}).get("stroke_width", 1)
+    stroke_opacity = theme.get("cards", {}).get("stroke_opacity", 0.3)
+    
+    # Effect settings from theme
+    glow = theme.get("effects", {}).get("glow", {})
+    glow_std = glow.get("stdDeviation", 2)
+    shadow = theme.get("effects", {}).get("shadow", {})
+    shadow_dx = shadow.get("dx", 0)
+    shadow_dy = shadow.get("dy", 2)
+    shadow_std = shadow.get("stdDeviation", 3)
+    shadow_opacity = shadow.get("flood_opacity", 0.3)
 
     # Extract mood data
     mood_name = escape_xml(mood.get("mood_name", "Unknown"))
     mood_icon = mood.get("mood_icon", "🌙")
     mood_score = mood.get("mood_score", 50)
-    gradient = mood.get("mood_color_gradient", ["#1a1a2e", "#16213e"])
+    gradient = mood.get("mood_color_gradient", bg_gradient_default)
     mood_description = escape_xml(mood.get("mood_description", ""))
 
     # Extract raw scores
@@ -103,7 +170,7 @@ def generate_svg(mood: dict, metrics: dict) -> str:
     readiness_bar = generate_score_bar(readiness_score, 200, 105, 100, "💪 Readiness")
     activity_bar = generate_score_bar(activity_score, 200, 135, 100, "🏃 Activity")
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="420" height="220" viewBox="0 0 420 220">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{card_width}" height="{card_height}" viewBox="0 0 {card_width} {card_height}">
   <defs>
     <linearGradient id="mood-bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:{gradient[0]}"/>
@@ -114,37 +181,37 @@ def generate_svg(mood: dict, metrics: dict) -> str:
       <stop offset="100%" style="stop-color:{gradient[1]}"/>
     </linearGradient>
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="{glow_std}" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
     <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+      <feDropShadow dx="{shadow_dx}" dy="{shadow_dy}" stdDeviation="{shadow_std}" flood-opacity="{shadow_opacity}"/>
     </filter>
   </defs>
 
   <!-- Background with mood gradient -->
-  <rect width="420" height="220" rx="12" fill="url(#mood-bg-gradient)"/>
-  <rect width="420" height="220" rx="12" fill="none" stroke="#64ffda" stroke-width="1" stroke-opacity="0.3"/>
+  <rect width="{card_width}" height="{card_height}" rx="{border_radius}" fill="url(#mood-bg-gradient)"/>
+  <rect width="{card_width}" height="{card_height}" rx="{border_radius}" fill="none" stroke="{accent_teal}" stroke-width="{stroke_width}" stroke-opacity="{stroke_opacity}"/>
 
   <!-- Header: Oura Ring badge -->
   <g transform="translate(20, 25)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#64ffda" font-weight="500">
+    <text font-family="{font_family}" font-size="{font_size_md}" fill="{accent_teal}" font-weight="500">
       ⭕ OURA RING
     </text>
   </g>
 
   <!-- Mood icon and name -->
   <g transform="translate(20, 55)">
-    <text font-family="Arial, sans-serif" font-size="32" filter="url(#glow)">
+    <text font-family="{font_family_emoji}" font-size="{font_size_6xl}" filter="url(#glow)">
       {mood_icon}
     </text>
-    <text x="45" y="5" font-family="'Segoe UI', Arial, sans-serif" font-size="22" fill="#ffffff" font-weight="bold" filter="url(#glow)">
+    <text x="45" y="5" font-family="{font_family}" font-size="{font_size_4xl}" fill="{text_primary}" font-weight="bold" filter="url(#glow)">
       {mood_name}
     </text>
-    <text x="45" y="22" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8892b0">
+    <text x="45" y="22" font-family="{font_family}" font-size="{font_size_md}" fill="{text_secondary}">
       {mood_description}
     </text>
   </g>
@@ -156,42 +223,42 @@ def generate_svg(mood: dict, metrics: dict) -> str:
 
   <!-- HRV and Resting HR display -->
   <g transform="translate(20, 95)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#8892b0">
+    <text font-family="{font_family}" font-size="{font_size_base}" fill="{text_secondary}">
       ❤️ HRV Balance
     </text>
-    <text y="14" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#ffffff" font-weight="600">
+    <text y="14" font-family="{font_family}" font-size="{font_size_2xl}" fill="{text_primary}" font-weight="600">
       {safe_value(hrv)}
     </text>
   </g>
 
   <g transform="translate(100, 95)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#8892b0">
+    <text font-family="{font_family}" font-size="{font_size_base}" fill="{text_secondary}">
       💓 Rest HR
     </text>
-    <text y="14" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#ffffff" font-weight="600">
+    <text y="14" font-family="{font_family}" font-size="{font_size_2xl}" fill="{text_primary}" font-weight="600">
       {safe_value(resting_hr)}
     </text>
   </g>
 
   <!-- Mood Score indicator -->
   <g transform="translate(20, 145)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#8892b0">
+    <text font-family="{font_family}" font-size="{font_size_base}" fill="{text_secondary}">
       🎯 Mood Score
     </text>
-    <text y="18" font-family="'Segoe UI', Arial, sans-serif" font-size="24" fill="#64ffda" font-weight="bold" filter="url(#glow)">
+    <text y="18" font-family="{font_family}" font-size="{font_size_5xl}" fill="{accent_teal}" font-weight="bold" filter="url(#glow)">
       {mood_score}
     </text>
-    <text x="45" y="14" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#4a5568">
+    <text x="45" y="14" font-family="{font_family}" font-size="{font_size_base}" fill="{text_muted}">
       / 100
     </text>
   </g>
 
   <!-- Sparkline visualization -->
   <g transform="translate(280, 165)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="9" fill="#4a5568" y="-5">
+    <text font-family="{font_family}" font-size="{font_size_sm}" fill="{text_muted}" y="-5">
       Metrics Trend
     </text>
-    <rect width="120" height="35" rx="4" fill="#1a1a2e" fill-opacity="0.5"/>
+    <rect width="120" height="35" rx="4" fill="{bg_dark}" fill-opacity="0.5"/>
     <g transform="translate(5, 2)">
       <path d="{sparkline_path}" fill="none" stroke="url(#sparkline-gradient)" stroke-width="2" stroke-linecap="round"/>
     </g>
@@ -199,13 +266,13 @@ def generate_svg(mood: dict, metrics: dict) -> str:
 
   <!-- Footer: Updated timestamp -->
   <g transform="translate(20, 205)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#4a5568">
+    <text font-family="{font_family}" font-size="{font_size_base}" fill="{text_muted}">
       Updated: {updated_at}
     </text>
   </g>
 
   <!-- Decorative accent -->
-  <rect x="400" y="15" width="4" height="190" rx="2" fill="#64ffda" fill-opacity="0.3"/>
+  <rect x="{card_width - 20}" y="15" width="4" height="190" rx="2" fill="{accent_teal}" fill-opacity="{stroke_opacity}"/>
 </svg>"""
 
     return svg

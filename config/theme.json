@@ -1,0 +1,114 @@
+{
+  "colors": {
+    "background": {
+      "primary": "#1a1a2e",
+      "secondary": "#16213e",
+      "dark": "#0f0f23",
+      "panel": "#1e1e2e",
+      "panel_sleep": "#1a1a3e",
+      "panel_readiness": "#1a2e2e",
+      "panel_activity": "#2e2a1a"
+    },
+    "text": {
+      "primary": "#ffffff",
+      "secondary": "#8892b0",
+      "muted": "#4a5568",
+      "accent": "#64ffda"
+    },
+    "accent": {
+      "teal": "#64ffda",
+      "orange": "#ff5500",
+      "sleep": "#4facfe",
+      "readiness": "#38ef7d",
+      "activity": "#f5576c",
+      "heart_rate": "#ff6b6b"
+    },
+    "scores": {
+      "high": "#4ade80",
+      "medium": "#fbbf24",
+      "low": "#f87171"
+    }
+  },
+  "gradients": {
+    "background": {
+      "default": ["#1a1a2e", "#16213e"],
+      "dark": ["#0f0f23", "#1a1a2e"]
+    },
+    "sleep": ["#667eea", "#764ba2"],
+    "readiness": ["#11998e", "#38ef7d"],
+    "activity": ["#f093fb", "#f5576c"],
+    "heart_rate": ["#ff6b6b", "#feca57"],
+    "weather": {
+      "clear_day": ["#1e3a5f", "#2d5a7b"],
+      "cloudy": ["#3d4f5f", "#4a5d6e"],
+      "fog": ["#4a5568", "#5a6578"],
+      "rain": ["#2d3748", "#3d4758"],
+      "snow": ["#4a5568", "#6b7280"],
+      "storm": ["#1a202c", "#2d3748"],
+      "night": ["#0f0f23", "#1a1a2e"]
+    }
+  },
+  "typography": {
+    "font_family": "'Segoe UI', Arial, sans-serif",
+    "font_family_emoji": "Arial, sans-serif",
+    "sizes": {
+      "xs": 8,
+      "sm": 9,
+      "base": 10,
+      "md": 11,
+      "lg": 12,
+      "xl": 14,
+      "2xl": 16,
+      "3xl": 18,
+      "4xl": 22,
+      "5xl": 24,
+      "6xl": 32,
+      "7xl": 36
+    }
+  },
+  "spacing": {
+    "xs": 4,
+    "sm": 8,
+    "md": 10,
+    "lg": 12,
+    "xl": 15,
+    "2xl": 20,
+    "3xl": 25,
+    "4xl": 30
+  },
+  "cards": {
+    "border_radius": {
+      "sm": 3,
+      "md": 6,
+      "lg": 8,
+      "xl": 12
+    },
+    "widths": {
+      "soundcloud": 400,
+      "weather": 420,
+      "mood": 420,
+      "health_dashboard": 500,
+      "location": 600
+    },
+    "heights": {
+      "soundcloud": 120,
+      "weather": 200,
+      "mood": 220,
+      "health_dashboard": 380,
+      "location": 480
+    },
+    "stroke_width": 1,
+    "stroke_opacity": 0.3
+  },
+  "effects": {
+    "glow": {
+      "stdDeviation": 2
+    },
+    "shadow": {
+      "dx": 0,
+      "dy": 2,
+      "stdDeviation": 3,
+      "flood_opacity": 0.3
+    }
+  }
+}
