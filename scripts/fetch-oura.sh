@@ -284,9 +284,9 @@ main() {
     # Temperature deviation from readiness
     temp_deviation=$(echo "$readiness_data" | jq '.contributors.body_temperature // null')
     
-    # Get current UTC time for update timestamp
+    # Get current UTC time for update timestamp in ISO 8601 format
     local updated_at
-    updated_at=$(date -u +"%Y-%m-%d %H:%M UTC")
+    updated_at=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
     
     # Output combined JSON - always include all categories
     jq -n \

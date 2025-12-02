@@ -19,6 +19,7 @@ from lib.utils import (
     get_theme_font_size,
     get_theme_card_dimension,
     get_theme_border_radius,
+    format_timestamp_local,
 )
 
 
@@ -40,10 +41,10 @@ def format_playcount(count: int) -> str:
 
 
 def format_date(date_str: str) -> str:
-    """Format ISO date string to readable format."""
+    """Format ISO date string to readable format using local timezone."""
     try:
-        dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
-        return dt.strftime("%b %d, %Y")
+        # Use the standardized format_timestamp_local function
+        return format_timestamp_local(date_str)
     except (ValueError, AttributeError):
         return date_str
 

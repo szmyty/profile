@@ -22,6 +22,7 @@ from lib.utils import (
     get_theme_font_size,
     get_theme_card_dimension,
     get_theme_border_radius,
+    format_timestamp_local,
 )
 
 
@@ -134,7 +135,8 @@ def generate_svg(snapshot: dict) -> str:
     readiness = snapshot.get("readiness", {})
     activity = snapshot.get("activity", {})
     heart_rate = snapshot.get("heart_rate", {})
-    updated_at = snapshot.get("updated_at", datetime.now(timezone.utc).strftime("%Y-%m-%d"))
+    updated_at_raw = snapshot.get("updated_at", datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
+    updated_at = format_timestamp_local(updated_at_raw) if updated_at_raw else ""
     
     # Personal stats
     age = personal.get("age")

@@ -244,9 +244,9 @@ main() {
     # Create output directory
     mkdir -p "$OUTPUT_DIR"
     
-    # Get current UTC time for update timestamp
+    # Get current UTC time for update timestamp in ISO 8601 format
     local updated_at
-    updated_at=$(date -u +"%Y-%m-%d %H:%M UTC")
+    updated_at=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
     
     # Output combined JSON
     jq -n \

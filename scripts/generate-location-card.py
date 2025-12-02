@@ -19,6 +19,7 @@ from lib.utils import (
     get_theme_font_size,
     get_theme_card_dimension,
     get_theme_border_radius,
+    format_timestamp_local,
 )
 
 
@@ -181,6 +182,10 @@ def main():
         print(f"Error: Failed to read map image: {e}", file=sys.stderr)
         sys.exit(1)
 
+    # Format updated_at to local time for display
+    updated_at_raw = metadata.get("updated_at", "")
+    updated_at_display = format_timestamp_local(updated_at_raw) if updated_at_raw else ""
+
     # Generate SVG
     svg = generate_svg(
         location=metadata.get("location", "Unknown Location"),
@@ -188,7 +193,7 @@ def main():
         lat=metadata.get("coordinates", {}).get("lat", 0),
         lon=metadata.get("coordinates", {}).get("lon", 0),
         map_image_base64=map_image_base64,
-        updated_at=metadata.get("updated_at", ""),
+        updated_at=updated_at_display,
     )
 
     # Write output

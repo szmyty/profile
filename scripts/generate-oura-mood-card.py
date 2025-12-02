@@ -23,6 +23,7 @@ from lib.utils import (
     get_theme_font_size,
     get_theme_card_dimension,
     get_theme_border_radius,
+    format_timestamp_local,
 )
 
 
@@ -158,8 +159,9 @@ def generate_svg(mood: dict, metrics: dict) -> str:
     # Get interpretations
     interpreted = mood.get("interpreted_metrics", {})
 
-    # Get timestamp
-    updated_at = mood.get("computed_at", datetime.now(timezone.utc).strftime("%Y-%m-%d"))
+    # Get timestamp and format to local time
+    updated_at_raw = mood.get("computed_at", datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
+    updated_at = format_timestamp_local(updated_at_raw) if updated_at_raw else ""
 
     # Generate sparkline from available scores
     sparkline_values = [sleep_score, readiness_score, activity_score, hrv or 50]

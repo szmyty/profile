@@ -18,6 +18,7 @@ from lib.utils import (
     get_theme_font_size,
     get_theme_card_dimension,
     get_theme_border_radius,
+    format_timestamp_local,
 )
 
 
@@ -235,6 +236,10 @@ def main():
     # Read and validate metadata
     metadata = load_and_validate_json(metadata_path, "weather", "Weather metadata file")
 
+    # Format updated_at to local time for display
+    updated_at_raw = metadata.get("updated_at", "")
+    updated_at_display = format_timestamp_local(updated_at_raw) if updated_at_raw else ""
+
     # Generate SVG
     svg = generate_svg(
         location=metadata.get("location", "Unknown Location"),
@@ -246,7 +251,7 @@ def main():
         wind_speed=metadata.get("current", {}).get("wind_speed", 0),
         sunrise=metadata.get("daily", {}).get("sunrise", ""),
         sunset=metadata.get("daily", {}).get("sunset", ""),
-        updated_at=metadata.get("updated_at", ""),
+        updated_at=updated_at_display,
         is_day=metadata.get("current", {}).get("is_day", 1),
         weathercode=metadata.get("current", {}).get("weathercode", 0),
     )
