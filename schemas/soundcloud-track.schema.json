@@ -41,6 +41,10 @@
     "created_at": {
       "type": "string",
       "description": "Track creation/upload date in ISO 8601 format"
+    },
+    "updated_at": {
+      "type": "string",
+      "description": "Timestamp when this data was last fetched in ISO 8601 format"
     }
   },
   "additionalProperties": true

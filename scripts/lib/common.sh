@@ -6,6 +6,56 @@
 CACHE_DIR="${CACHE_DIR:-cache}"
 CACHE_TTL_DAYS="${CACHE_TTL_DAYS:-7}"
 
+# Default retry configuration
+MAX_RETRIES="${MAX_RETRIES:-3}"
+INITIAL_RETRY_DELAY="${INITIAL_RETRY_DELAY:-5}"
+
+# Retry a command with exponential backoff.
+# Executes the given command, retrying on failure with increasing delays.
+# The delay follows an exponential backoff pattern: 5s → 10s → 20s
+#
+# Usage:
+#   retry_with_backoff "curl -sf https://api.example.com/data"
+#   retry_with_backoff wget -q -O output.json https://api.example.com/data
+#
+# Arguments:
+#   $@ - Command and arguments to execute
+#
+# Environment variables:
+#   MAX_RETRIES - Maximum number of retry attempts (default: 3)
+#   INITIAL_RETRY_DELAY - Initial delay in seconds (default: 5)
+#
+# Returns:
+#   Exit code of the command if successful, 1 if all retries exhausted
+retry_with_backoff() {
+    local max_attempts=$((MAX_RETRIES + 1))  # +1 for initial attempt
+    local attempt=1
+    local delay=$INITIAL_RETRY_DELAY
+    local exit_code=0
+    
+    while [ $attempt -le $max_attempts ]; do
+        # Execute the command
+        if "$@"; then
+            return 0
+        fi
+        exit_code=$?
+        
+        # Don't sleep after the last attempt
+        if [ $attempt -lt $max_attempts ]; then
+            echo "Attempt $attempt/$max_attempts failed, retrying in ${delay}s..." >&2
+            sleep $delay
+            # Exponential backoff: double the delay
+            delay=$((delay * 2))
+        else
+            echo "All $max_attempts attempts failed" >&2
+        fi
+        
+        attempt=$((attempt + 1))
+    done
+    
+    return $exit_code
+}
+
 # Initialize cache directory.
 # Creates the cache directory if it doesn't exist.
 #
@@ -139,12 +189,14 @@ encode_uri() {
     echo "$input" | jq -rR @uri
 }
 
-# Get the GitHub user's location from their profile.
+# Get the GitHub user's location from their profile with fallback support.
 # Uses the GitHub API to fetch the user's profile and extract the location.
+# If the API fails or returns no location, tries to use cached location.
 #
 # Environment variables:
 #   GITHUB_OWNER - GitHub username (default: szmyty)
 #   GITHUB_TOKEN - Optional GitHub token for authentication
+#   LOCATION_CACHE_FILE - Path to fallback location cache (default: cached/location.json)
 #
 # Output:
 #   The location string to stdout
@@ -153,26 +205,44 @@ encode_uri() {
 #   0 on success, 1 on failure
 get_github_location() {
     local github_owner="${GITHUB_OWNER:-szmyty}"
+    local location_cache="${LOCATION_CACHE_FILE:-cached/location.json}"
+    
     echo "Fetching GitHub profile location for ${github_owner}..." >&2
     
-    local user_data
-    user_data=$(curl -sf "https://api.github.com/users/${github_owner}" \
+    local user_data location
+    
+    # Try to fetch from GitHub API
+    if user_data=$(curl -sf "https://api.github.com/users/${github_owner}" \
         -H "Accept: application/vnd.github.v3+json" \
         ${GITHUB_TOKEN:+-H "Authorization: Bearer ${GITHUB_TOKEN}"} \
-        -H "User-Agent: GitHub-Profile-Scripts/1.0") || {
-        echo "Error: Failed to fetch GitHub profile" >&2
-        return 1
-    }
-    
-    local location
-    location=$(echo "$user_data" | jq -r '.location // empty')
-    
-    if [ -z "$location" ] || [ "$location" = "null" ]; then
-        echo "Warning: No location found in GitHub profile" >&2
-        return 1
+        -H "User-Agent: GitHub-Profile-Scripts/1.0" 2>/dev/null); then
+        
+        location=$(echo "$user_data" | jq -r '.location // empty')
+        
+        if [ -n "$location" ] && [ "$location" != "null" ]; then
+            # Save successful location to cache
+            mkdir -p "$(dirname "$location_cache")"
+            jq -n --arg location "$location" --arg updated_at "$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
+                '{location: $location, updated_at: $updated_at}' > "$location_cache"
+            echo "Location saved to cache: ${location}" >&2
+            echo "$location"
+            return 0
+        fi
     fi
     
-    echo "$location"
+    # Try fallback to cached location
+    echo "GitHub location not available, trying cached location..." >&2
+    if [ -f "$location_cache" ] && jq -e . "$location_cache" >/dev/null 2>&1; then
+        location=$(jq -r '.location // empty' "$location_cache")
+        if [ -n "$location" ] && [ "$location" != "null" ]; then
+            echo "Using cached location: ${location}" >&2
+            echo "$location"
+            return 0
+        fi
+    fi
+    
+    echo "Warning: No location found in GitHub profile or cache" >&2
+    return 1
 }
 
 # Convert a location string to coordinates using the Nominatim API.

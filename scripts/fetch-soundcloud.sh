@@ -14,6 +14,7 @@ SOUNDCLOUD_USER="${SOUNDCLOUD_USER:-playfunction}"
 OUTPUT_DIR="${OUTPUT_DIR:-assets}"
 CACHE_DIR="${CACHE_DIR:-${OUTPUT_DIR}/.cache}"
 CLIENT_ID_CACHE_FILE="${CACHE_DIR}/soundcloud_client_id.txt"
+FALLBACK_CACHE_FILE="${FALLBACK_CACHE_FILE:-soundcloud/last-success.json}"
 
 # Function to validate a client_id with a lightweight API request
 validate_client_id() {
@@ -230,43 +231,96 @@ download_artwork() {
     echo "Artwork saved to $output_path" >&2
 }
 
+# Function to save successful track data to fallback cache
+save_fallback_cache() {
+    local metadata=$1
+    local fallback_dir
+    fallback_dir=$(dirname "$FALLBACK_CACHE_FILE")
+    
+    mkdir -p "$fallback_dir"
+    echo "$metadata" > "$FALLBACK_CACHE_FILE"
+    echo "Saved fallback cache to ${FALLBACK_CACHE_FILE}" >&2
+}
+
+# Function to load track data from fallback cache
+load_fallback_cache() {
+    if [ ! -f "$FALLBACK_CACHE_FILE" ]; then
+        echo "No fallback cache available" >&2
+        return 1
+    fi
+    
+    # Validate the cached JSON
+    if ! jq empty "$FALLBACK_CACHE_FILE" 2>/dev/null; then
+        echo "Warning: Invalid JSON in fallback cache" >&2
+        return 1
+    fi
+    
+    echo "Using fallback cache from ${FALLBACK_CACHE_FILE}" >&2
+    cat "$FALLBACK_CACHE_FILE"
+    return 0
+}
+
 # Main execution
 main() {
+    local metadata
+    
+    # Try to fetch fresh data
+    if ! metadata=$(fetch_fresh_data); then
+        echo "Failed to fetch fresh SoundCloud data, attempting fallback..." >&2
+        
+        # Try to load from fallback cache
+        if metadata=$(load_fallback_cache); then
+            echo "$metadata"
+            return 0
+        else
+            echo "Error: No fallback cache available and fresh fetch failed" >&2
+            return 1
+        fi
+    fi
+    
+    # Save successful fetch to fallback cache
+    save_fallback_cache "$metadata"
+    
+    # Output metadata
+    echo "$metadata"
+}
+
+# Function to fetch fresh track data
+fetch_fresh_data() {
     # Get client_id
     local client_id
-    client_id=$(get_client_id)
+    client_id=$(get_client_id) || return 1
     echo "Got client_id: ${client_id:0:10}..." >&2
     
     # Get user ID
     local user_id
-    user_id=$(get_user_id "$client_id")
+    user_id=$(get_user_id "$client_id") || return 1
     echo "Got user_id: $user_id" >&2
     
     # Fetch latest track
     local track_data
-    track_data=$(fetch_latest_track "$client_id" "$user_id")
+    track_data=$(fetch_latest_track "$client_id" "$user_id") || return 1
     
     # Extract track info
-    local title
+    local title artwork_url permalink_url genre duration playback_count created_at user_username
     title=$(echo "$track_data" | jq -r '.title')
-    local artwork_url
     artwork_url=$(echo "$track_data" | jq -r '.artwork_url // .user.avatar_url')
-    local permalink_url
     permalink_url=$(echo "$track_data" | jq -r '.permalink_url')
-    local genre
     genre=$(echo "$track_data" | jq -r '.genre // "Electronic"')
-    local duration
     duration=$(echo "$track_data" | jq -r '.duration')
-    local playback_count
     playback_count=$(echo "$track_data" | jq -r '.playback_count // 0')
-    local created_at
     created_at=$(echo "$track_data" | jq -r '.created_at')
-    local user_username
     user_username=$(echo "$track_data" | jq -r '.user.username')
     
     # Download artwork
     mkdir -p "$OUTPUT_DIR"
-    download_artwork "$artwork_url" "${OUTPUT_DIR}/soundcloud-artwork.jpg"
+    download_artwork "$artwork_url" "${OUTPUT_DIR}/soundcloud-artwork.jpg" || {
+        echo "Warning: Failed to download artwork, continuing..." >&2
+    }
+    
+    # Get current UTC time for update timestamp
+    local updated_at
+    updated_at=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
     
     # Output track metadata as JSON using jq for proper escaping
     jq -n \
@@ -278,6 +332,7 @@ main() {
         --argjson duration_ms "$duration" \
         --argjson playback_count "$playback_count" \
         --arg created_at "$created_at" \
+        --arg updated_at "$updated_at" \
         '{
             title: $title,
             artist: $artist,
@@ -286,7 +341,8 @@ main() {
             genre: $genre,
             duration_ms: $duration_ms,
             playback_count: $playback_count,
-            created_at: $created_at
+            created_at: $created_at,
+            updated_at: $updated_at
         }'
 }
 
