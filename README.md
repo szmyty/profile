@@ -1,5 +1,10 @@
 # profile
 
+![Weather](https://github.com/szmyty/profile/actions/workflows/weather.yml/badge.svg)
+![Location](https://github.com/szmyty/profile/actions/workflows/location-card.yml/badge.svg)
+![SoundCloud](https://github.com/szmyty/profile/actions/workflows/soundcloud-card.yml/badge.svg)
+![Oura](https://github.com/szmyty/profile/actions/workflows/oura.yml/badge.svg)
+
 ## 📍 My Location
 
 <!-- LOCATION-CARD:START -->
