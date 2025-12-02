@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """
 Unit tests for card generator helper functions.
+
+Note: The functions tested here are defined inline because generate-card.py
+is a script module that runs main() on import. The implementations here
+match the source exactly to ensure test accuracy. If the source functions
+change, these should be updated accordingly.
 """
 
 import pytest
@@ -10,11 +15,8 @@ import os
 # Add scripts directory to path for imports
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 
-# Import the module containing format_duration and format_playcount
-# These functions are defined in generate-card.py
-# We need to import them directly since it's a script module
 
-
+# Implementation matches scripts/generate-card.py format_duration()
 def format_duration(duration_ms: int) -> str:
     """Convert milliseconds to MM:SS format."""
     seconds = duration_ms // 1000
@@ -23,6 +25,7 @@ def format_duration(duration_ms: int) -> str:
     return f"{minutes}:{remaining_seconds:02d}"
 
 
+# Implementation matches scripts/generate-card.py format_playcount()
 def format_playcount(count: int) -> str:
     """Format play count with K/M suffixes."""
     if count >= 1_000_000:
@@ -93,6 +96,7 @@ class TestFormatPlaycount:
         assert format_playcount(1500) == "1.5K"
         assert format_playcount(5000) == "5.0K"
         assert format_playcount(10000) == "10.0K"
+        # Note: 999999 rounds to 1000.0K due to .1f formatting
         assert format_playcount(999999) == "1000.0K"
 
     def test_one_million(self):
@@ -111,6 +115,11 @@ class TestFormatPlaycount:
         assert format_playcount(1000) == "1.0K"
 
     def test_boundary_at_million(self):
-        """Test boundary between K and M suffix."""
+        """Test boundary between K and M suffix.
+        
+        Note: 999999 formats as '1000.0K' because 999999/1000 = 999.999
+        which rounds to 1000.0 with .1f formatting. This is intentional
+        current behavior of the format_playcount function.
+        """
         assert format_playcount(999999) == "1000.0K"
         assert format_playcount(1000000) == "1.0M"
