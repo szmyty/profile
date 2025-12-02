@@ -205,14 +205,21 @@ test_cache_ttl_expired() {
     echo "$expected" | save_cached_response "test" "expiredkey"
     
     # Set cache TTL to 0 days to simulate expired cache
+    local original_ttl=$CACHE_TTL_DAYS
     CACHE_TTL_DAYS=0
     
+    local result=0
     if get_cached_response "test" "expiredkey" 2>/dev/null; then
-        CACHE_TTL_DAYS=7
-        test_fail "Should return non-zero for expired cache" "exit code 1" "exit code 0"
-    else
-        CACHE_TTL_DAYS=7
+        result=1
+    fi
+    
+    # Restore original TTL
+    CACHE_TTL_DAYS=$original_ttl
+    
+    if [ "$result" -eq 0 ]; then
         test_pass "Expired cache returns non-zero exit code"
+    else
+        test_fail "Should return non-zero for expired cache" "exit code 1" "exit code 0"
     fi
 }
 

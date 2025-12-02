@@ -61,8 +61,21 @@ get_cached_response() {
     fi
     
     # Check if cache is expired
+    # Use portable stat command (works on both Linux and macOS)
+    local file_mtime
+    if stat -c %Y "$cache_file" > /dev/null 2>&1; then
+        # Linux
+        file_mtime=$(stat -c %Y "$cache_file")
+    elif stat -f %m "$cache_file" > /dev/null 2>&1; then
+        # macOS/BSD
+        file_mtime=$(stat -f %m "$cache_file")
+    else
+        # Fallback: treat as expired if stat fails
+        file_mtime=0
+    fi
+    
     local file_age_days
-    file_age_days=$(( ( $(date +%s) - $(stat -c %Y "$cache_file" 2>/dev/null || echo 0) ) / 86400 ))
+    file_age_days=$(( ( $(date +%s) - file_mtime ) / 86400 ))
     
     if [ "$file_age_days" -ge "$CACHE_TTL_DAYS" ]; then
         echo "Cache expired for ${cache_type}:${cache_key}" >&2
