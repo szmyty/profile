@@ -89,6 +89,8 @@ extract_client_id() {
     fi
     
     # Search each JS file for client_id using multiple regex patterns
+    # Note: The pattern ["'"'"'] uses bash quote escaping to match both " and ' characters:
+    # ' ends the single quote, "'" adds a literal single quote, ' resumes single quoting
     for url in $js_urls; do
         local js_content
         js_content=$(curl -sf "$url" \
@@ -220,6 +222,7 @@ download_artwork() {
     echo "Downloading artwork..." >&2
     
     # Replace size placeholder with larger size
+    # Bash parameter expansion safely returns original string if pattern not found
     local large_url
     large_url="${artwork_url/-large./-t500x500.}"
     
