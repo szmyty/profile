@@ -93,6 +93,9 @@ def update_readme_section(marker: str, new_content: str, readme_path: Path = Non
 
     validate_markers(content, marker)
 
+    # Use non-greedy matching (.*?) to match the first occurrence of the marker pair.
+    # This correctly handles the case where content exists between START and END markers.
+    # Note: Each marker name should only appear once in the README.
     pattern = rf"<!-- {re.escape(marker)}:START -->.*?<!-- {re.escape(marker)}:END -->"
     replacement = f"<!-- {marker}:START -->\n{new_content}\n<!-- {marker}:END -->"
 
