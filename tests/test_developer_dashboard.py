@@ -3,12 +3,17 @@
 Unit tests for developer dashboard generator functions.
 """
 
-import pytest
-import sys
+import json
 import os
+import sys
+import tempfile
+
+import pytest
 
 # Add scripts directory to path for imports
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
+
+from lib.utils import try_load_and_validate_json, try_validate_json
 
 
 # Implementation matches scripts/generate-developer-dashboard.py format_count()
@@ -63,11 +68,6 @@ class TestDeveloperDashboardGeneration:
 
     def test_generate_svg_with_valid_data(self):
         """Test that SVG generation works with valid data."""
-        from lib.utils import try_load_and_validate_json
-        import json
-        import tempfile
-        import os as os_module
-
         # Create test data
         test_data = {
             "username": "testuser",
@@ -107,12 +107,10 @@ class TestDeveloperDashboardGeneration:
             assert data["username"] == "testuser"
             assert data["repos"] == 10
         finally:
-            os_module.unlink(temp_path)
+            os.unlink(temp_path)
 
     def test_schema_validation_missing_required_fields(self):
         """Test that validation fails when required fields are missing."""
-        from lib.utils import try_validate_json
-
         incomplete_data = {
             "username": "testuser",
             # Missing repos, stars, followers, etc.
@@ -124,8 +122,6 @@ class TestDeveloperDashboardGeneration:
 
     def test_schema_validation_invalid_types(self):
         """Test that validation fails with invalid types."""
-        from lib.utils import try_validate_json
-
         invalid_data = {
             "username": "testuser",
             "repos": "not-a-number",  # Should be integer

@@ -16,6 +16,7 @@ Usage:
 
 Environment Variables:
     GITHUB_TOKEN: Personal access token for GitHub API (optional but recommended)
+    MAX_REPOS_TO_ANALYZE: Maximum repositories to analyze for language/commit stats (default: 15)
 """
 
 import json
@@ -26,6 +27,11 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
+
+
+# Maximum number of repositories to analyze for detailed stats (language, commits)
+# This limit helps avoid GitHub API rate limits
+MAX_REPOS_TO_ANALYZE = int(os.environ.get("MAX_REPOS_TO_ANALYZE", "15"))
 
 
 def get_github_headers() -> Dict[str, str]:
@@ -127,7 +133,7 @@ def fetch_contributor_stats(username: str, repo: str, headers: Dict[str, str]) -
 def calculate_language_stats(repos: List[Dict], username: str, headers: Dict[str, str]) -> Dict[str, int]:
     """Calculate total bytes per language across all repos."""
     language_totals = {}
-    for repo in repos[:20]:  # Limit to 20 repos to avoid rate limits
+    for repo in repos[:MAX_REPOS_TO_ANALYZE]:
         repo_name = repo.get("name")
         if not repo_name:
             continue
@@ -247,7 +253,7 @@ def get_top_repos_by_commits(repos: List[Dict], username: str, headers: Dict[str
     """Get top repositories by commit count."""
     repo_commits = []
     
-    for repo in repos[:15]:  # Check first 15 repos to avoid rate limits
+    for repo in repos[:MAX_REPOS_TO_ANALYZE]:
         repo_name = repo.get("name")
         if not repo_name:
             continue

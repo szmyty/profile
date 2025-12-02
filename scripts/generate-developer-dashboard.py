@@ -225,8 +225,6 @@ def generate_language_bars(
         color = lang_colors.get(lang, "#8892b0")
         
         if bar_width > 1:
-            rx = "4" if idx == 0 else "0"
-            rx_end = "4" if idx == len(sorted_langs) - 1 else "0"
             bars.append(
                 f'<rect x="{current_x:.1f}" y="{y}" width="{bar_width:.1f}" height="{bar_height}" '
                 f'fill="{color}"/>'
