@@ -16,6 +16,10 @@ on:
       - 'scripts/generate-health-dashboard.py'
       - '.github/workflows/oura.yml'
 
+concurrency:
+  group: profile-update
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
