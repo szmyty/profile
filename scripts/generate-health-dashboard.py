@@ -23,6 +23,7 @@ from lib.utils import (
     get_theme_card_dimension,
     get_theme_border_radius,
     format_timestamp_local,
+    generate_card_with_fallback,
 )
 
 
@@ -385,21 +386,20 @@ def main():
     snapshot_path = sys.argv[1]
     output_path = sys.argv[2] if len(sys.argv) > 2 else "oura/health_dashboard.svg"
 
-    # Read and validate health snapshot
-    snapshot = load_and_validate_json(
-        snapshot_path, "health-snapshot", "Health snapshot file"
+    # Use fallback mechanism to generate the card
+    success = generate_card_with_fallback(
+        card_type="health_dashboard",
+        output_path=output_path,
+        json_path=snapshot_path,
+        schema_name="health-snapshot",
+        generator_func=generate_svg,
+        description="Health snapshot file",
     )
 
-    # Generate SVG
-    svg = generate_svg(snapshot)
-
-    # Write output
-    output = Path(output_path)
-    output.parent.mkdir(parents=True, exist_ok=True)
-    with open(output, "w") as f:
-        f.write(svg)
-
-    print(f"Generated Oura health dashboard SVG: {output_path}", file=sys.stderr)
+    if success:
+        print(f"Generated Oura health dashboard SVG: {output_path}", file=sys.stderr)
+    else:
+        print(f"Using fallback health dashboard SVG: {output_path}", file=sys.stderr)
 
 
 if __name__ == "__main__":

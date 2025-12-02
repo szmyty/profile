@@ -8,10 +8,34 @@ SVG visualization helpers.
 """
 
 import json
+import logging
 import os
 import sys
 from datetime import datetime, timedelta, timezone
-from typing import Any, Dict, List, Optional, Union
+from pathlib import Path
+from typing import Any, Callable, Dict, List, Optional, Tuple, Union
+
+
+# Configure module logger for fallback operations
+_fallback_logger: Optional[logging.Logger] = None
+
+
+def _get_fallback_logger() -> logging.Logger:
+    """Get or create the fallback logger."""
+    global _fallback_logger
+    if _fallback_logger is None:
+        _fallback_logger = logging.getLogger("card_fallback")
+        _fallback_logger.setLevel(logging.DEBUG)
+        # Add console handler if none exists
+        if not _fallback_logger.handlers:
+            handler = logging.StreamHandler(sys.stderr)
+            handler.setLevel(logging.DEBUG)
+            formatter = logging.Formatter(
+                "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+            )
+            handler.setFormatter(formatter)
+            _fallback_logger.addHandler(handler)
+    return _fallback_logger
 
 try:
     import jsonschema
@@ -202,6 +226,256 @@ def load_and_validate_json(
     data = load_json(path, description)
     validate_json(data, schema_name, description)
     return data
+
+
+def try_load_json(path: str, description: str = "file") -> Tuple[Optional[Dict], Optional[str]]:
+    """
+    Try to load a JSON file, returning the data or an error message.
+
+    Unlike load_json, this function does not exit on failure but returns
+    None and an error message instead.
+
+    Args:
+        path: Path to the JSON file.
+        description: Human-readable description for error messages.
+
+    Returns:
+        A tuple of (data, error). If successful, data is the parsed JSON
+        and error is None. If failed, data is None and error contains
+        the error message.
+    """
+    try:
+        with open(path, "r") as f:
+            return json.load(f), None
+    except FileNotFoundError:
+        return None, f"{description} not found: {path}"
+    except json.JSONDecodeError as e:
+        return None, f"Invalid JSON in {description}: {e}"
+
+
+def try_validate_json(
+    data: Dict, schema_name: str, description: str = "data"
+) -> Optional[str]:
+    """
+    Try to validate JSON data against a schema.
+
+    Unlike validate_json, this function does not exit on failure but returns
+    an error message instead.
+
+    Args:
+        data: The data dictionary to validate.
+        schema_name: Name of the schema file.
+        description: Human-readable description for error messages.
+
+    Returns:
+        None if validation succeeds, or an error message if it fails.
+    """
+    if not JSONSCHEMA_AVAILABLE:
+        return None  # Skip validation if jsonschema not available
+
+    try:
+        schema = load_schema(schema_name)
+    except SystemExit:
+        return f"Failed to load schema: {schema_name}"
+
+    try:
+        validate(instance=data, schema=schema)
+        return None
+    except ValidationError as e:
+        error_msg = f"{description} validation failed: {e.message}"
+        if e.absolute_path:
+            path_str = ".".join(str(p) for p in e.absolute_path)
+            error_msg += f" (at path: {path_str})"
+        return error_msg
+
+
+def try_load_and_validate_json(
+    path: str, schema_name: str, description: str = "file"
+) -> Tuple[Optional[Dict], Optional[str]]:
+    """
+    Try to load and validate a JSON file.
+
+    Unlike load_and_validate_json, this function does not exit on failure
+    but returns None and an error message instead.
+
+    Args:
+        path: Path to the JSON file.
+        schema_name: Name of the schema to validate against.
+        description: Human-readable description for error messages.
+
+    Returns:
+        A tuple of (data, error). If successful, data is the parsed and
+        validated JSON and error is None. If failed, data is None and
+        error contains the error message.
+    """
+    data, error = try_load_json(path, description)
+    if error:
+        return None, error
+
+    validation_error = try_validate_json(data, schema_name, description)
+    if validation_error:
+        return None, validation_error
+
+    return data, None
+
+
+def fallback_exists(output_path: str) -> bool:
+    """
+    Check if a valid fallback SVG exists at the given path.
+
+    Args:
+        output_path: Path where the SVG would be written.
+
+    Returns:
+        True if a valid SVG file exists at the path, False otherwise.
+    """
+    path = Path(output_path)
+    if not path.exists():
+        return False
+
+    # Check if file has content and looks like a valid SVG
+    try:
+        content = path.read_text()
+        return content.strip().startswith("<svg") and "</svg>" in content
+    except (IOError, OSError):
+        return False
+
+
+def log_fallback_used(
+    card_type: str,
+    error: str,
+    output_path: str,
+) -> None:
+    """
+    Log that a fallback SVG is being used due to an error.
+
+    This preserves error information for debugging while allowing
+    the workflow to continue with the existing SVG.
+
+    Args:
+        card_type: Type of card being generated (e.g., "weather", "location").
+        error: The error message that triggered the fallback.
+        output_path: Path to the fallback SVG being used.
+    """
+    logger = _get_fallback_logger()
+    logger.warning(
+        "Fallback used for %s card: %s. "
+        "Preserving existing SVG at: %s",
+        card_type,
+        error,
+        output_path,
+    )
+    # Also print to stderr for workflow visibility
+    print(
+        f"⚠️ FALLBACK: {card_type} card generation failed: {error}. "
+        f"Using existing SVG at {output_path}",
+        file=sys.stderr,
+    )
+
+
+def generate_card_with_fallback(
+    card_type: str,
+    output_path: str,
+    json_path: str,
+    schema_name: Optional[str],
+    generator_func: Callable[[Dict], str],
+    description: str = "data file",
+) -> bool:
+    """
+    Generate an SVG card with fallback to the existing card on failure.
+
+    This function attempts to:
+    1. Load and optionally validate the JSON data
+    2. Generate a new SVG using the provided generator function
+    3. Write the SVG to the output path
+
+    If any step fails and a valid SVG already exists at the output path,
+    the existing SVG is preserved and the error is logged.
+
+    Args:
+        card_type: Type of card (e.g., "weather", "location") for logging.
+        output_path: Path where the SVG should be written.
+        json_path: Path to the JSON data file.
+        schema_name: Optional schema name for validation. If None, skips validation.
+        generator_func: Function that takes the loaded JSON dict and returns SVG string.
+        description: Human-readable description of the JSON file for error messages.
+
+    Returns:
+        True if a new card was generated successfully, False if fallback was used.
+
+    Raises:
+        SystemExit: If generation fails and no fallback SVG exists.
+    """
+    # Check if fallback exists before attempting generation
+    has_fallback = fallback_exists(output_path)
+
+    # Try to load and validate JSON
+    if schema_name:
+        data, error = try_load_and_validate_json(json_path, schema_name, description)
+    else:
+        data, error = try_load_json(json_path, description)
+
+    if error:
+        if has_fallback:
+            log_fallback_used(card_type, error, output_path)
+            return False
+        else:
+            print(f"Error: {error}", file=sys.stderr)
+            print(
+                f"No fallback SVG available at {output_path}. Cannot recover.",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+
+    # Try to generate the SVG
+    try:
+        svg = generator_func(data)
+    except Exception as e:
+        error_msg = f"SVG generation failed: {e}"
+        if has_fallback:
+            log_fallback_used(card_type, error_msg, output_path)
+            return False
+        else:
+            print(f"Error: {error_msg}", file=sys.stderr)
+            print(
+                f"No fallback SVG available at {output_path}. Cannot recover.",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+
+    # Validate the generated SVG looks correct
+    if not svg or not svg.strip().startswith("<svg"):
+        error_msg = "Generated SVG appears invalid (missing <svg> tag)"
+        if has_fallback:
+            log_fallback_used(card_type, error_msg, output_path)
+            return False
+        else:
+            print(f"Error: {error_msg}", file=sys.stderr)
+            print(
+                f"No fallback SVG available at {output_path}. Cannot recover.",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+
+    # Try to write the SVG
+    try:
+        output = Path(output_path)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        with open(output, "w") as f:
+            f.write(svg)
+        return True
+    except (IOError, OSError) as e:
+        error_msg = f"Failed to write SVG: {e}"
+        if has_fallback:
+            log_fallback_used(card_type, error_msg, output_path)
+            return False
+        else:
+            print(f"Error: {error_msg}", file=sys.stderr)
+            print(
+                f"No fallback SVG available at {output_path}. Cannot recover.",
+                file=sys.stderr,
+            )
+            sys.exit(1)
 
 
 def generate_sparkline_path(
