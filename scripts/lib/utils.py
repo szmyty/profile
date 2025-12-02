@@ -11,7 +11,7 @@ import json
 import os
 import sys
 from datetime import datetime, timedelta, timezone
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Union
 
 try:
     import jsonschema
@@ -527,7 +527,7 @@ except ImportError:
     PILLOW_AVAILABLE = False
 
 
-def get_image_optimization_settings() -> Dict:
+def get_image_optimization_settings() -> Dict[str, Union[int, bool]]:
     """
     Get image optimization settings from theme configuration.
 
@@ -610,23 +610,34 @@ def optimize_image(
             candidates = []
             
             # Strategy 1: Quantize + optimize (often best for photos/maps)
+            # Skip quantization for RGBA images to preserve transparency
             try:
                 img_work = Image.open(io.BytesIO(image_data))
                 if needs_resize:
                     img_work.thumbnail((max_width, max_height), Image.Resampling.LANCZOS)
-                if img_work.mode in ("RGBA", "RGB"):
+                if img_work.mode == "RGBA":
+                    # Preserve transparency - skip quantization, just optimize
+                    output1 = io.BytesIO()
+                    img_work.save(output1, format="PNG", optimize=True)
+                    candidates.append(("rgba_optimized", output1.getvalue()))
+                elif img_work.mode == "RGB":
                     img_quant = img_work.quantize(
                         colors=png_colors, method=Image.Quantize.MEDIANCUT
                     )
+                    output1 = io.BytesIO()
+                    img_quant.save(output1, format="PNG", optimize=True)
+                    candidates.append(("quantized", output1.getvalue()))
                 elif img_work.mode != "P":
                     img_quant = img_work.convert("RGB").quantize(
                         colors=png_colors, method=Image.Quantize.MEDIANCUT
                     )
+                    output1 = io.BytesIO()
+                    img_quant.save(output1, format="PNG", optimize=True)
+                    candidates.append(("quantized", output1.getvalue()))
                 else:
-                    img_quant = img_work
-                output1 = io.BytesIO()
-                img_quant.save(output1, format="PNG", optimize=True)
-                candidates.append(("quantized", output1.getvalue()))
+                    output1 = io.BytesIO()
+                    img_work.save(output1, format="PNG", optimize=True)
+                    candidates.append(("palette_optimized", output1.getvalue()))
             except (OSError, ValueError):
                 pass
             
