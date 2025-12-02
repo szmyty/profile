@@ -91,6 +91,19 @@ jobs:
         run: |
           python scripts/generate-location-card.py location/location.json location/location-map.png location/location-card.svg
 
+      - name: Optimize SVG with SVGO
+        if: steps.location.outputs.skip != 'true'
+        run: |
+          npm install -g svgo
+          ORIGINAL_SIZE=$(stat -c%s location/location-card.svg)
+          if [ "$ORIGINAL_SIZE" -gt 0 ]; then
+            svgo location/location-card.svg -o location/location-card.svg
+            OPTIMIZED_SIZE=$(stat -c%s location/location-card.svg)
+            echo "SVG optimized: ${ORIGINAL_SIZE} bytes → ${OPTIMIZED_SIZE} bytes ($(( 100 - OPTIMIZED_SIZE * 100 / ORIGINAL_SIZE ))% reduction)"
+          else
+            echo "Warning: SVG file is empty, skipping optimization"
+          fi
+
       - name: Update README with location card
         if: steps.location.outputs.skip != 'true'
         run: |
