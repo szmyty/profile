@@ -8,6 +8,10 @@
 
 set -euo pipefail
 
+# Source common utilities
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "${SCRIPT_DIR}/lib/common.sh"
+
 GITHUB_OWNER="${GITHUB_OWNER:-szmyty}"
 OUTPUT_DIR="${OUTPUT_DIR:-weather}"
 
@@ -39,9 +43,9 @@ get_coordinates() {
     local location=$1
     echo "Converting location to coordinates: ${location}" >&2
     
-    # URL encode the location
+    # URL encode the location using the shared encode_uri function
     local encoded_location
-    encoded_location=$(echo "$location" | sed 's/ /%20/g; s/,/%2C/g')
+    encoded_location=$(encode_uri "$location")
     
     local nominatim_data
     nominatim_data=$(curl -sf "https://nominatim.openstreetmap.org/search?q=${encoded_location}&format=json&limit=1" \
