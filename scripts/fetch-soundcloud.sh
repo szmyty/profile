@@ -2,49 +2,117 @@
 # Script to fetch the latest SoundCloud track data
 # This script:
 # 1. Extracts the client_id from SoundCloud's JavaScript assets
-# 2. Fetches the user's latest track metadata
-# 3. Downloads the track artwork
-# 4. Outputs track metadata as JSON
+# 2. Validates the client_id with a lightweight API test
+# 3. Falls back to cached client_id if extraction fails
+# 4. Fetches the user's latest track metadata
+# 5. Downloads the track artwork
+# 6. Outputs track metadata as JSON
 
 set -euo pipefail
 
 SOUNDCLOUD_USER="${SOUNDCLOUD_USER:-playfunction}"
 OUTPUT_DIR="${OUTPUT_DIR:-assets}"
+CACHE_DIR="${CACHE_DIR:-${OUTPUT_DIR}/.cache}"
+CLIENT_ID_CACHE_FILE="${CACHE_DIR}/soundcloud_client_id.txt"
 
-# Function to extract client_id from SoundCloud
-get_client_id() {
-    echo "Fetching SoundCloud client_id..." >&2
+# Function to validate a client_id with a lightweight API request
+validate_client_id() {
+    local client_id=$1
+    echo "Validating client_id..." >&2
+    
+    # Use a lightweight /resolve request to validate the client_id
+    local http_code
+    http_code=$(curl -sf -o /dev/null -w "%{http_code}" \
+        "https://api-v2.soundcloud.com/resolve?url=https://soundcloud.com/${SOUNDCLOUD_USER}&client_id=${client_id}" \
+        -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
+        2>/dev/null) || http_code="000"
+    
+    if [ "$http_code" = "200" ]; then
+        echo "Client_id validated successfully" >&2
+        return 0
+    else
+        echo "Client_id validation failed (HTTP $http_code)" >&2
+        return 1
+    fi
+}
+
+# Function to save a valid client_id to cache
+save_client_id_to_cache() {
+    local client_id=$1
+    mkdir -p "$CACHE_DIR"
+    echo "$client_id" > "$CLIENT_ID_CACHE_FILE"
+    echo "Saved client_id to cache" >&2
+}
+
+# Function to load client_id from cache
+load_client_id_from_cache() {
+    if [ -f "$CLIENT_ID_CACHE_FILE" ]; then
+        local cached_id
+        cached_id=$(tr -d '[:space:]' < "$CLIENT_ID_CACHE_FILE" 2>/dev/null)
+        if [ -n "$cached_id" ]; then
+            echo "$cached_id"
+            return 0
+        fi
+    fi
+    return 1
+}
+
+# Function to extract client_id from SoundCloud JavaScript assets
+extract_client_id() {
+    echo "Extracting SoundCloud client_id from assets..." >&2
     
     # Fetch the main page HTML
     local html
     html=$(curl -sf "https://soundcloud.com/${SOUNDCLOUD_USER}" \
         -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36") || {
-        echo "Error: Failed to fetch SoundCloud profile page" >&2
+        echo "Warning: Failed to fetch SoundCloud profile page" >&2
         return 1
     }
     
     if [ -z "$html" ]; then
-        echo "Error: Empty response from SoundCloud" >&2
+        echo "Warning: Empty response from SoundCloud" >&2
         return 1
     fi
     
-    # Extract JS asset URLs
+    # Extract JS asset URLs - support multiple CDN patterns
     local js_urls
-    js_urls=$(echo "$html" | grep -oE 'https://a-v2\.sndcdn\.com/assets/[^"]+\.js' | head -10)
+    js_urls=$(echo "$html" | grep -oE 'https://a-v2\.sndcdn\.com/assets/[^"'\'']+\.js' | head -15)
+    
+    # Fallback to alternative CDN pattern
+    if [ -z "$js_urls" ]; then
+        js_urls=$(echo "$html" | grep -oE 'https://[a-z0-9-]+\.sndcdn\.com/assets/[^"'\'']+\.js' | head -15)
+    fi
     
     if [ -z "$js_urls" ]; then
-        echo "Error: No JavaScript assets found in SoundCloud page" >&2
+        echo "Warning: No JavaScript assets found in SoundCloud page" >&2
         return 1
     fi
     
-    # Search each JS file for client_id
+    # Search each JS file for client_id using multiple regex patterns
     for url in $js_urls; do
         local js_content
-        js_content=$(curl -sf "$url") || continue
+        js_content=$(curl -sf "$url" \
+            -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36") || continue
         
-        # Look for client_id patterns
-        local client_id
-        client_id=$(echo "$js_content" | grep -oE 'client_id[=:]["'"'"'][a-zA-Z0-9]+' | grep -oE '[a-zA-Z0-9]{20,}' | head -1 || true)
+        local client_id=""
+        
+        # Pattern 1: client_id="xxx" or client_id:'xxx'
+        client_id=$(echo "$js_content" | grep -oE 'client_id[=:]["'"'"'][a-zA-Z0-9]{20,40}["'"'"']' | grep -oE '[a-zA-Z0-9]{20,40}' | head -1 || true)
+        
+        # Pattern 2: clientId:"xxx" or clientId='xxx' (camelCase variant)
+        if [ -z "$client_id" ]; then
+            client_id=$(echo "$js_content" | grep -oE 'clientId[=:]["'"'"'][a-zA-Z0-9]{20,40}["'"'"']' | grep -oE '[a-zA-Z0-9]{20,40}' | head -1 || true)
+        fi
+        
+        # Pattern 3: "client_id":"xxx" (JSON-style)
+        if [ -z "$client_id" ]; then
+            client_id=$(echo "$js_content" | grep -oE '"client_id"\s*:\s*"[a-zA-Z0-9]{20,40}"' | grep -oE '[a-zA-Z0-9]{20,40}' | head -1 || true)
+        fi
+        
+        # Pattern 4: {client_id:"xxx"} (object literal)
+        if [ -z "$client_id" ]; then
+            client_id=$(echo "$js_content" | grep -oE '\{client_id:"[a-zA-Z0-9]{20,40}"' | grep -oE '[a-zA-Z0-9]{20,40}' | head -1 || true)
+        fi
         
         if [ -n "$client_id" ]; then
             echo "$client_id"
@@ -52,7 +120,50 @@ get_client_id() {
         fi
     done
     
-    echo "Error: Failed to extract client_id from any JavaScript asset" >&2
+    echo "Warning: Failed to extract client_id from any JavaScript asset" >&2
+    return 1
+}
+
+# Function to get a valid client_id (with extraction, validation, and fallback)
+get_client_id() {
+    echo "Fetching SoundCloud client_id..." >&2
+    
+    local client_id=""
+    local extraction_failed=false
+    
+    # Step 1: Try to extract a fresh client_id
+    client_id=$(extract_client_id) || extraction_failed=true
+    
+    # Step 2: If extraction succeeded, validate the client_id
+    if [ "$extraction_failed" = "false" ] && [ -n "$client_id" ]; then
+        if validate_client_id "$client_id"; then
+            # Save valid client_id to cache for future fallback
+            save_client_id_to_cache "$client_id"
+            echo "$client_id"
+            return 0
+        else
+            echo "Warning: Extracted client_id failed validation" >&2
+        fi
+    fi
+    
+    # Step 3: Fallback to cached client_id
+    echo "Attempting to use cached client_id..." >&2
+    local cached_id
+    if cached_id=$(load_client_id_from_cache); then
+        echo "Found cached client_id: ${cached_id:0:10}..." >&2
+        if validate_client_id "$cached_id"; then
+            echo "Cached client_id is valid, using it" >&2
+            echo "$cached_id"
+            return 0
+        else
+            echo "Warning: Cached client_id is no longer valid" >&2
+        fi
+    else
+        echo "No cached client_id available" >&2
+    fi
+    
+    # Step 4: All methods failed
+    echo "Error: Failed to obtain a valid client_id" >&2
     return 1
 }
 
@@ -110,7 +221,7 @@ download_artwork() {
     
     # Replace size placeholder with larger size
     local large_url
-    large_url=$(echo "$artwork_url" | sed 's/-large\./-t500x500./')
+    large_url="${artwork_url/-large./-t500x500.}"
     
     curl -s -o "$output_path" "$large_url" || curl -s -o "$output_path" "$artwork_url"
     echo "Artwork saved to $output_path" >&2

@@ -11,3 +11,6 @@ Thumbs.db
 # Oura raw debug files (saved for debugging but not committed)
 oura/raw_*.json
 oura/debug_*.txt
+
+# SoundCloud cache files (runtime cache)
+assets/.cache/
