@@ -9,7 +9,17 @@ import base64
 import sys
 from pathlib import Path
 
-from lib.utils import escape_xml, load_json
+from lib.utils import (
+    escape_xml,
+    load_json,
+    load_theme,
+    get_theme_color,
+    get_theme_gradient,
+    get_theme_typography,
+    get_theme_font_size,
+    get_theme_card_dimension,
+    get_theme_border_radius,
+)
 
 
 def encode_image_base64(image_path: str) -> str:
@@ -27,6 +37,39 @@ def generate_svg(
     updated_at: str,
 ) -> str:
     """Generate SVG card markup with embedded map."""
+    
+    # Load theme values
+    theme = load_theme()
+    bg_gradient = get_theme_gradient("background.default")
+    font_family = get_theme_typography("font_family")
+    
+    # Colors from theme
+    bg_primary = bg_gradient[0]
+    bg_secondary = bg_gradient[1]
+    text_primary = get_theme_color("text", "primary")
+    text_secondary = get_theme_color("text", "secondary")
+    text_muted = get_theme_color("text", "muted")
+    accent_teal = get_theme_color("text", "accent")
+    
+    # Card dimensions from theme
+    card_width = get_theme_card_dimension("widths", "location")
+    card_height = get_theme_card_dimension("heights", "location")
+    border_radius = get_theme_border_radius("xl")
+    border_radius_lg = get_theme_border_radius("lg")
+    
+    # Font sizes from theme
+    font_size_base = get_theme_font_size("base")
+    font_size_lg = get_theme_font_size("lg")
+    font_size_xl = get_theme_font_size("xl")
+    font_size_3xl = get_theme_font_size("3xl")
+    
+    # Card stroke settings from theme
+    stroke_width = theme.get("cards", {}).get("stroke_width", 1)
+    stroke_opacity = theme.get("cards", {}).get("stroke_opacity", 0.3)
+    
+    # Effect settings from theme
+    glow = theme.get("effects", {}).get("glow", {})
+    glow_std = glow.get("stdDeviation", 2)
 
     # Escape text for XML
     location_escaped = escape_xml(location)
@@ -40,18 +83,23 @@ def generate_svg(
     lat_dir = "N" if lat >= 0 else "S"
     lon_dir = "E" if lon >= 0 else "W"
     coords_display = f"{abs(lat):.4f}°{lat_dir}, {abs(lon):.4f}°{lon_dir}"
+    
+    # Calculate map dimensions based on card size
+    map_margin = 20
+    map_width = card_width - (map_margin * 2)
+    map_height = 350
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="480" viewBox="0 0 600 480">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{card_width}" height="{card_height}" viewBox="0 0 {card_width} {card_height}">
   <defs>
     <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1a2e"/>
-      <stop offset="100%" style="stop-color:#16213e"/>
+      <stop offset="0%" style="stop-color:{bg_primary}"/>
+      <stop offset="100%" style="stop-color:{bg_secondary}"/>
     </linearGradient>
     <clipPath id="map-clip">
-      <rect x="20" y="70" width="560" height="350" rx="8"/>
+      <rect x="{map_margin}" y="70" width="{map_width}" height="{map_height}" rx="{border_radius_lg}"/>
     </clipPath>
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="{glow_std}" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -60,48 +108,48 @@ def generate_svg(
   </defs>
 
   <!-- Background -->
-  <rect width="600" height="480" rx="12" fill="url(#bg-gradient)"/>
-  <rect width="600" height="480" rx="12" fill="none" stroke="#64ffda" stroke-width="1" stroke-opacity="0.3"/>
+  <rect width="{card_width}" height="{card_height}" rx="{border_radius}" fill="url(#bg-gradient)"/>
+  <rect width="{card_width}" height="{card_height}" rx="{border_radius}" fill="none" stroke="{accent_teal}" stroke-width="{stroke_width}" stroke-opacity="{stroke_opacity}"/>
 
   <!-- Header: Location title -->
-  <g transform="translate(20, 35)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#64ffda" font-weight="600" filter="url(#glow)">
+  <g transform="translate({map_margin}, 35)">
+    <text font-family="{font_family}" font-size="{font_size_3xl}" fill="{accent_teal}" font-weight="600" filter="url(#glow)">
       📍 My Location
     </text>
   </g>
 
   <!-- Location name -->
-  <g transform="translate(20, 58)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#ffffff">
+  <g transform="translate({map_margin}, 58)">
+    <text font-family="{font_family}" font-size="{font_size_xl}" fill="{text_primary}">
       {display_location}
     </text>
   </g>
 
   <!-- Map image -->
   <g clip-path="url(#map-clip)">
-    <image x="20" y="70" width="560" height="350" preserveAspectRatio="xMidYMid slice"
+    <image x="{map_margin}" y="70" width="{map_width}" height="{map_height}" preserveAspectRatio="xMidYMid slice"
            xlink:href="data:image/png;base64,{map_image_base64}"/>
   </g>
 
   <!-- Map border -->
-  <rect x="20" y="70" width="560" height="350" rx="8" fill="none" stroke="#64ffda" stroke-width="1" stroke-opacity="0.5"/>
+  <rect x="{map_margin}" y="70" width="{map_width}" height="{map_height}" rx="{border_radius_lg}" fill="none" stroke="{accent_teal}" stroke-width="{stroke_width}" stroke-opacity="0.5"/>
 
   <!-- Coordinates display -->
-  <g transform="translate(20, 445)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#8892b0">
+  <g transform="translate({map_margin}, 445)">
+    <text font-family="{font_family}" font-size="{font_size_lg}" fill="{text_secondary}">
       🌐 {coords_display}
     </text>
   </g>
 
   <!-- Footer: Updated timestamp -->
-  <g transform="translate(20, 465)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#4a5568">
+  <g transform="translate({map_margin}, 465)">
+    <text font-family="{font_family}" font-size="{font_size_base}" fill="{text_muted}">
       Updated: {updated_at}
     </text>
   </g>
 
   <!-- Decorative accent -->
-  <rect x="580" y="15" width="4" height="450" rx="2" fill="#64ffda" fill-opacity="0.3"/>
+  <rect x="{card_width - 20}" y="15" width="4" height="450" rx="2" fill="{accent_teal}" fill-opacity="{stroke_opacity}"/>
 </svg>"""
 
     return svg

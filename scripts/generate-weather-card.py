@@ -8,7 +8,17 @@ import sys
 from pathlib import Path
 from datetime import datetime
 
-from lib.utils import escape_xml, load_json
+from lib.utils import (
+    escape_xml,
+    load_json,
+    load_theme,
+    get_theme_color,
+    get_theme_gradient,
+    get_theme_typography,
+    get_theme_font_size,
+    get_theme_card_dimension,
+    get_theme_border_radius,
+)
 
 
 def format_time(time_str: str) -> str:
@@ -37,23 +47,30 @@ def kmh_to_mph(kmh: float) -> float:
 
 def get_background_gradient(is_day: int, weathercode: int) -> tuple:
     """Get background gradient colors based on time of day and weather."""
+    # Load weather gradients from theme
+    theme = load_theme()
+    weather_gradients = theme.get("gradients", {}).get("weather", {})
+    
     if is_day:
         if weathercode in [0, 1]:  # Clear/Mainly clear
-            return ("#1e3a5f", "#2d5a7b")  # Clear day blue
+            gradient = weather_gradients.get("clear_day", ["#1e3a5f", "#2d5a7b"])
         elif weathercode in [2, 3]:  # Cloudy
-            return ("#3d4f5f", "#4a5d6e")  # Cloudy gray-blue
+            gradient = weather_gradients.get("cloudy", ["#3d4f5f", "#4a5d6e"])
         elif weathercode in [45, 48]:  # Fog
-            return ("#4a5568", "#5a6578")  # Foggy gray
+            gradient = weather_gradients.get("fog", ["#4a5568", "#5a6578"])
         elif weathercode in range(51, 68) or weathercode in range(80, 83):  # Rain
-            return ("#2d3748", "#3d4758")  # Rainy dark blue
+            gradient = weather_gradients.get("rain", ["#2d3748", "#3d4758"])
         elif weathercode in range(71, 78) or weathercode in range(85, 87):  # Snow
-            return ("#4a5568", "#6b7280")  # Snowy gray
+            gradient = weather_gradients.get("snow", ["#4a5568", "#6b7280"])
         elif weathercode in range(95, 100):  # Thunderstorm
-            return ("#1a202c", "#2d3748")  # Stormy dark
+            gradient = weather_gradients.get("storm", ["#1a202c", "#2d3748"])
         else:
-            return ("#1a1a2e", "#16213e")  # Default
+            bg_default = get_theme_gradient("background.default")
+            gradient = bg_default
     else:
-        return ("#0f0f23", "#1a1a2e")  # Night theme
+        gradient = weather_gradients.get("night", ["#0f0f23", "#1a1a2e"])
+    
+    return (gradient[0], gradient[1])
 
 
 def generate_svg(
@@ -71,6 +88,39 @@ def generate_svg(
     weathercode: int,
 ) -> str:
     """Generate SVG card markup."""
+    
+    # Load theme values
+    theme = load_theme()
+    font_family = get_theme_typography("font_family")
+    
+    # Colors from theme
+    text_primary = get_theme_color("text", "primary")
+    text_secondary = get_theme_color("text", "secondary")
+    text_muted = get_theme_color("text", "muted")
+    accent_teal = get_theme_color("text", "accent")
+    accent_cyan = get_theme_color("accent", "cyan")
+    accent_hr = get_theme_color("accent", "heart_rate")
+    
+    # Card dimensions from theme
+    card_width = get_theme_card_dimension("widths", "weather")
+    card_height = get_theme_card_dimension("heights", "weather")
+    border_radius = get_theme_border_radius("xl")
+    
+    # Font sizes from theme
+    font_size_base = get_theme_font_size("base")
+    font_size_lg = get_theme_font_size("lg")
+    font_size_lg_plus = get_theme_font_size("lg-plus")
+    font_size_xl = get_theme_font_size("xl")
+    font_size_2xl = get_theme_font_size("2xl")
+    font_size_7xl = get_theme_font_size("7xl")
+    
+    # Card stroke settings from theme
+    stroke_width = theme.get("cards", {}).get("stroke_width", 1)
+    stroke_opacity = theme.get("cards", {}).get("stroke_opacity", 0.3)
+    
+    # Effect settings from theme
+    glow = theme.get("effects", {}).get("glow", {})
+    glow_std = glow.get("stdDeviation", 2)
 
     # Convert units (API returns Celsius and km/h by default)
     current_temp_f = celsius_to_fahrenheit(current_temp)
@@ -95,14 +145,14 @@ def generate_svg(
     # Get background colors
     bg_start, bg_end = get_background_gradient(is_day, weathercode)
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="420" height="200" viewBox="0 0 420 200">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{card_width}" height="{card_height}" viewBox="0 0 {card_width} {card_height}">
   <defs>
     <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:{bg_start}"/>
       <stop offset="100%" style="stop-color:{bg_end}"/>
     </linearGradient>
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="{glow_std}" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -111,60 +161,60 @@ def generate_svg(
   </defs>
 
   <!-- Background -->
-  <rect width="420" height="200" rx="12" fill="url(#bg-gradient)"/>
-  <rect width="420" height="200" rx="12" fill="none" stroke="#64ffda" stroke-width="1" stroke-opacity="0.3"/>
+  <rect width="{card_width}" height="{card_height}" rx="{border_radius}" fill="url(#bg-gradient)"/>
+  <rect width="{card_width}" height="{card_height}" rx="{border_radius}" fill="none" stroke="{accent_teal}" stroke-width="{stroke_width}" stroke-opacity="{stroke_opacity}"/>
 
   <!-- Header: Location + Weather Icon -->
   <g transform="translate(20, 30)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#64ffda" font-weight="600">
+    <text font-family="{font_family}" font-size="{font_size_xl}" fill="{accent_teal}" font-weight="600">
       {emoji_escaped} {display_location}
     </text>
   </g>
 
   <!-- Current Condition -->
   <g transform="translate(20, 60)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="36" fill="#ffffff" font-weight="bold" filter="url(#glow)">
+    <text font-family="{font_family}" font-size="{font_size_7xl}" fill="{text_primary}" font-weight="bold" filter="url(#glow)">
       {current_temp_f:.0f}°F
     </text>
-    <text x="110" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#8892b0">
+    <text x="110" y="0" font-family="{font_family}" font-size="{font_size_2xl}" fill="{text_secondary}">
       {condition_escaped}
     </text>
   </g>
 
   <!-- High/Low -->
   <g transform="translate(20, 95)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#8892b0">
-      <tspan fill="#ff6b6b">High: {temp_max_f:.0f}°F</tspan>
-      <tspan fill="#4a5568">  •  </tspan>
-      <tspan fill="#4ecdc4">Low: {temp_min_f:.0f}°F</tspan>
+    <text font-family="{font_family}" font-size="{font_size_lg_plus}" fill="{text_secondary}">
+      <tspan fill="{accent_hr}">High: {temp_max_f:.0f}°F</tspan>
+      <tspan fill="{text_muted}">  •  </tspan>
+      <tspan fill="{accent_cyan}">Low: {temp_min_f:.0f}°F</tspan>
     </text>
   </g>
 
   <!-- Wind -->
   <g transform="translate(20, 120)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#8892b0">
+    <text font-family="{font_family}" font-size="{font_size_lg}" fill="{text_secondary}">
       💨 Wind: {wind_mph:.0f} mph
     </text>
   </g>
 
   <!-- Sunrise/Sunset -->
   <g transform="translate(20, 145)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#8892b0">
+    <text font-family="{font_family}" font-size="{font_size_lg}" fill="{text_secondary}">
       🌅 {sunrise_formatted}
-      <tspan fill="#4a5568">  •  </tspan>
+      <tspan fill="{text_muted}">  •  </tspan>
       🌇 {sunset_formatted}
     </text>
   </g>
 
   <!-- Footer: Updated timestamp -->
   <g transform="translate(20, 180)">
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#4a5568">
+    <text font-family="{font_family}" font-size="{font_size_base}" fill="{text_muted}">
       Updated: {updated_at}
     </text>
   </g>
 
   <!-- Decorative accent -->
-  <rect x="400" y="15" width="4" height="170" rx="2" fill="#64ffda" fill-opacity="0.3"/>
+  <rect x="{card_width - 20}" y="15" width="4" height="170" rx="2" fill="{accent_teal}" fill-opacity="{stroke_opacity}"/>
 </svg>"""
 
     return svg

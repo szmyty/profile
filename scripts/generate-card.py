@@ -9,7 +9,17 @@ import base64
 from pathlib import Path
 from datetime import datetime
 
-from lib.utils import escape_xml, load_json
+from lib.utils import (
+    escape_xml,
+    load_json,
+    load_theme,
+    get_theme_color,
+    get_theme_gradient,
+    get_theme_typography,
+    get_theme_font_size,
+    get_theme_card_dimension,
+    get_theme_border_radius,
+)
 
 
 def format_duration(duration_ms: int) -> str:
@@ -66,6 +76,43 @@ def generate_svg(
 ) -> str:
     """Generate SVG card markup."""
 
+    # Load theme values
+    theme = load_theme()
+    bg_gradient = get_theme_gradient("background.default")
+    font_family = get_theme_typography("font_family")
+    
+    # Colors from theme
+    bg_primary = bg_gradient[0]
+    bg_secondary = bg_gradient[1]
+    text_primary = get_theme_color("text", "primary")
+    text_secondary = get_theme_color("text", "secondary")
+    text_muted = get_theme_color("text", "muted")
+    accent_teal = get_theme_color("text", "accent")
+    accent_orange = get_theme_color("accent", "orange")
+    
+    # Card dimensions from theme
+    card_width = get_theme_card_dimension("widths", "soundcloud")
+    card_height = get_theme_card_dimension("heights", "soundcloud")
+    border_radius = get_theme_border_radius("xl")
+    border_radius_lg = get_theme_border_radius("lg")
+    
+    # Font sizes from theme
+    font_size_base = get_theme_font_size("base")
+    font_size_md = get_theme_font_size("md")
+    font_size_lg = get_theme_font_size("lg")
+    font_size_2xl = get_theme_font_size("2xl")
+    
+    # Card stroke settings from theme
+    stroke_width = theme.get("cards", {}).get("stroke_width", 1)
+    stroke_opacity = theme.get("cards", {}).get("stroke_opacity", 0.3)
+    
+    # Effect settings from theme
+    shadow = theme.get("effects", {}).get("shadow", {})
+    shadow_dx = shadow.get("dx", 0)
+    shadow_dy = shadow.get("dy", 2)
+    shadow_std = shadow.get("stdDeviation", 3)
+    shadow_opacity = shadow.get("flood_opacity", 0.3)
+
     # Format values
     duration = format_duration(duration_ms)
     plays = format_playcount(playback_count)
@@ -80,69 +127,69 @@ def generate_svg(
     # Truncate title if too long
     display_title = title_escaped[:35] + "..." if len(title_escaped) > 35 else title_escaped
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="120" viewBox="0 0 400 120">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{card_width}" height="{card_height}" viewBox="0 0 {card_width} {card_height}">
   <defs>
     <clipPath id="artwork-clip">
-      <rect x="10" y="10" width="100" height="100" rx="8"/>
+      <rect x="10" y="10" width="100" height="100" rx="{border_radius_lg}"/>
     </clipPath>
     <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1a2e"/>
-      <stop offset="100%" style="stop-color:#16213e"/>
+      <stop offset="0%" style="stop-color:{bg_primary}"/>
+      <stop offset="100%" style="stop-color:{bg_secondary}"/>
     </linearGradient>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+      <feDropShadow dx="{shadow_dx}" dy="{shadow_dy}" stdDeviation="{shadow_std}" flood-opacity="{shadow_opacity}"/>
     </filter>
   </defs>
 
   <!-- Background -->
-  <rect width="400" height="120" rx="12" fill="url(#bg-gradient)"/>
-  <rect width="400" height="120" rx="12" fill="none" stroke="#ff5500" stroke-width="1" stroke-opacity="0.3"/>
+  <rect width="{card_width}" height="{card_height}" rx="{border_radius}" fill="url(#bg-gradient)"/>
+  <rect width="{card_width}" height="{card_height}" rx="{border_radius}" fill="none" stroke="{accent_orange}" stroke-width="{stroke_width}" stroke-opacity="{stroke_opacity}"/>
 
   <!-- Artwork -->
   <g clip-path="url(#artwork-clip)">
     <image x="10" y="10" width="100" height="100" preserveAspectRatio="xMidYMid slice" href="{artwork_data_uri}"/>
   </g>
-  <rect x="10" y="10" width="100" height="100" rx="8" fill="none" stroke="#ff5500" stroke-width="2" stroke-opacity="0.5"/>
+  <rect x="10" y="10" width="100" height="100" rx="{border_radius_lg}" fill="none" stroke="{accent_orange}" stroke-width="2" stroke-opacity="0.5"/>
 
   <!-- SoundCloud Logo/Icon -->
   <g transform="translate(370, 10)">
-    <circle cx="10" cy="10" r="10" fill="#ff5500"/>
-    <text x="10" y="14" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">SC</text>
+    <circle cx="10" cy="10" r="10" fill="{accent_orange}"/>
+    <text x="10" y="14" font-family="Arial, sans-serif" font-size="{font_size_base}" fill="white" text-anchor="middle" font-weight="bold">SC</text>
   </g>
 
   <!-- Track Info -->
   <g transform="translate(125, 25)">
     <!-- Title -->
-    <text font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">
+    <text font-family="{font_family}" font-size="{font_size_2xl}" font-weight="bold" fill="{text_primary}">
       {display_title}
     </text>
 
     <!-- Artist -->
-    <text y="22" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#ff5500">
+    <text y="22" font-family="{font_family}" font-size="{font_size_lg}" fill="{accent_orange}">
       {artist_escaped}
     </text>
 
     <!-- Genre & Duration -->
-    <text y="42" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8892b0">
-      <tspan fill="#64ffda">{genre_escaped}</tspan>
-      <tspan fill="#4a5568"> · </tspan>
+    <text y="42" font-family="{font_family}" font-size="{font_size_md}" fill="{text_secondary}">
+      <tspan fill="{accent_teal}">{genre_escaped}</tspan>
+      <tspan fill="{text_muted}"> · </tspan>
       <tspan>{duration}</tspan>
     </text>
 
     <!-- Stats -->
     <g transform="translate(0, 58)">
       <!-- Play count icon -->
-      <polygon points="0,0 0,10 8,5" fill="#8892b0"/>
-      <text x="12" y="9" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#8892b0">{plays} plays</text>
+      <polygon points="0,0 0,10 8,5" fill="{text_secondary}"/>
+      <text x="12" y="9" font-family="{font_family}" font-size="{font_size_base}" fill="{text_secondary}">{plays} plays</text>
 
       <!-- Date -->
-      <text x="80" y="9" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#8892b0">Released {date}</text>
+      <text x="80" y="9" font-family="{font_family}" font-size="{font_size_base}" fill="{text_secondary}">Released {date}</text>
     </g>
   </g>
 
   <!-- Clickable overlay (for GitHub markdown) -->
   <a href="{permalink_escaped}" target="_blank">
-    <rect width="400" height="120" fill="transparent" style="cursor: pointer;"/>
+    <rect width="{card_width}" height="{card_height}" fill="transparent" style="cursor: pointer;"/>
   </a>
 </svg>"""
 
