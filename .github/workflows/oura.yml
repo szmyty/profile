@@ -2,8 +2,8 @@ name: Oura Health Dashboard — Full Metrics + Unified Snapshot
 
 on:
   schedule:
-    # Run once per hour for most up-to-date metrics
-    - cron: '0 * * * *'
+    # Run every 6 hours (Oura data updates once daily)
+    - cron: '0 */6 * * *'
   workflow_dispatch:
   push:
     branches:
