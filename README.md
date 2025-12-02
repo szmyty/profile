@@ -4,6 +4,13 @@
 ![Location](https://github.com/szmyty/profile/actions/workflows/location-card.yml/badge.svg)
 ![SoundCloud](https://github.com/szmyty/profile/actions/workflows/soundcloud-card.yml/badge.svg)
 ![Oura](https://github.com/szmyty/profile/actions/workflows/oura.yml/badge.svg)
+![Developer](https://github.com/szmyty/profile/actions/workflows/developer.yml/badge.svg)
+
+## 💻 Developer Dashboard
+
+<!-- DEVELOPER-DASHBOARD:START -->
+![Developer Dashboard](./developer/developer_dashboard.svg)
+<!-- DEVELOPER-DASHBOARD:END -->
 
 ## 📍 My Location
 
