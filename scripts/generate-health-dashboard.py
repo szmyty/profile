@@ -13,7 +13,7 @@ from typing import Optional, List
 from lib.utils import (
     escape_xml,
     safe_value,
-    load_json,
+    load_and_validate_json,
     generate_sparkline_path,
     load_theme,
     get_theme_color,
@@ -383,8 +383,10 @@ def main():
     snapshot_path = sys.argv[1]
     output_path = sys.argv[2] if len(sys.argv) > 2 else "oura/health_dashboard.svg"
 
-    # Read health snapshot
-    snapshot = load_json(snapshot_path, "Health snapshot file")
+    # Read and validate health snapshot
+    snapshot = load_and_validate_json(
+        snapshot_path, "health-snapshot", "Health snapshot file"
+    )
 
     # Generate SVG
     svg = generate_svg(snapshot)

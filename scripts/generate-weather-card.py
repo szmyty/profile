@@ -10,7 +10,7 @@ from datetime import datetime
 
 from lib.utils import (
     escape_xml,
-    load_json,
+    load_and_validate_json,
     load_theme,
     get_theme_color,
     get_theme_gradient,
@@ -232,8 +232,8 @@ def main():
     metadata_path = sys.argv[1]
     output_path = sys.argv[2] if len(sys.argv) > 2 else "weather/weather-today.svg"
 
-    # Read metadata
-    metadata = load_json(metadata_path, "Metadata file")
+    # Read and validate metadata
+    metadata = load_and_validate_json(metadata_path, "weather", "Weather metadata file")
 
     # Generate SVG
     svg = generate_svg(

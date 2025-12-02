@@ -10,7 +10,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 from typing import Optional
 
-from lib.utils import safe_get, load_json
+from lib.utils import safe_get, load_and_validate_json
 
 
 def calculate_bmi(weight_kg: Optional[float], height_m: Optional[float]) -> Optional[float]:
@@ -147,8 +147,10 @@ def main():
     metrics_path = sys.argv[1]
     output_path = sys.argv[2] if len(sys.argv) > 2 else "oura/health_snapshot.json"
 
-    # Read metrics
-    metrics = load_json(metrics_path, "Metrics file")
+    # Read and validate metrics
+    metrics = load_and_validate_json(
+        metrics_path, "oura-metrics", "Oura metrics file"
+    )
 
     # Generate health snapshot
     snapshot = generate_health_snapshot(metrics)

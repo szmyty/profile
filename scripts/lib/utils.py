@@ -12,8 +12,18 @@ import os
 import sys
 from typing import Any, Dict, List, Optional
 
+try:
+    import jsonschema
+    from jsonschema import validate, ValidationError
+    JSONSCHEMA_AVAILABLE = True
+except ImportError:
+    JSONSCHEMA_AVAILABLE = False
+    ValidationError = Exception  # Fallback type for type hints
+
 # Cache for loaded theme to avoid re-reading file
 _theme_cache: Optional[Dict] = None
+# Cache for loaded schemas to avoid re-reading files
+_schema_cache: Dict[str, Dict] = {}
 
 
 def escape_xml(text: str) -> str:
@@ -99,6 +109,96 @@ def load_json(path: str, description: str = "file") -> dict:
     except json.JSONDecodeError as e:
         print(f"Error: Invalid JSON in {description}: {e}", file=sys.stderr)
         sys.exit(1)
+
+
+def load_schema(schema_name: str) -> Dict:
+    """
+    Load a JSON schema from the schemas directory.
+
+    Args:
+        schema_name: Name of the schema file (e.g., 'weather.schema.json'
+                    or just 'weather' which will have '.schema.json' appended).
+
+    Returns:
+        Parsed schema as a dictionary.
+
+    Raises:
+        SystemExit: If schema file not found or invalid.
+    """
+    global _schema_cache
+
+    # Normalize schema name
+    if not schema_name.endswith('.schema.json'):
+        schema_name = f"{schema_name}.schema.json"
+
+    if schema_name in _schema_cache:
+        return _schema_cache[schema_name]
+
+    # Find schema relative to this file's location
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    repo_root = os.path.dirname(os.path.dirname(script_dir))
+    schema_path = os.path.join(repo_root, "schemas", schema_name)
+
+    schema = load_json(schema_path, f"Schema file '{schema_name}'")
+    _schema_cache[schema_name] = schema
+    return schema
+
+
+def validate_json(data: Dict, schema_name: str, description: str = "data") -> None:
+    """
+    Validate JSON data against a schema.
+
+    Args:
+        data: The data dictionary to validate.
+        schema_name: Name of the schema file (e.g., 'weather' or 'weather.schema.json').
+        description: Human-readable description for error messages.
+
+    Raises:
+        SystemExit: If validation fails or jsonschema is not available.
+    """
+    if not JSONSCHEMA_AVAILABLE:
+        print(
+            "Warning: jsonschema not installed, skipping validation",
+            file=sys.stderr,
+        )
+        return
+
+    schema = load_schema(schema_name)
+
+    try:
+        validate(instance=data, schema=schema)
+    except ValidationError as e:
+        print(
+            f"Error: {description} validation failed: {e.message}",
+            file=sys.stderr,
+        )
+        # Provide more context for nested errors
+        if e.absolute_path:
+            path = ".".join(str(p) for p in e.absolute_path)
+            print(f"  At path: {path}", file=sys.stderr)
+        sys.exit(1)
+
+
+def load_and_validate_json(
+    path: str, schema_name: str, description: str = "file"
+) -> Dict:
+    """
+    Load a JSON file and validate it against a schema.
+
+    Args:
+        path: Path to the JSON file.
+        schema_name: Name of the schema to validate against.
+        description: Human-readable description for error messages.
+
+    Returns:
+        Parsed and validated JSON as a dictionary.
+
+    Raises:
+        SystemExit: If file not found, JSON invalid, or validation fails.
+    """
+    data = load_json(path, description)
+    validate_json(data, schema_name, description)
+    return data
 
 
 def generate_sparkline_path(
