@@ -6,22 +6,10 @@ with the static map image embedded.
 """
 
 import base64
-import json
 import sys
 from pathlib import Path
 
-
-def escape_xml(text: str) -> str:
-    """Escape special characters for XML/SVG."""
-    if not text:
-        return ""
-    return (
-        text.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-        .replace("'", "&#39;")
-    )
+from lib.utils import escape_xml, load_json
 
 
 def encode_image_base64(image_path: str) -> str:
@@ -133,15 +121,7 @@ def main():
     output_path = sys.argv[3] if len(sys.argv) > 3 else "location/location-card.svg"
 
     # Read metadata
-    try:
-        with open(metadata_path, "r") as f:
-            metadata = json.load(f)
-    except FileNotFoundError:
-        print(f"Error: Metadata file not found: {metadata_path}", file=sys.stderr)
-        sys.exit(1)
-    except json.JSONDecodeError as e:
-        print(f"Error: Invalid JSON in metadata file: {e}", file=sys.stderr)
-        sys.exit(1)
+    metadata = load_json(metadata_path, "Metadata file")
 
     # Read and encode map image
     try:

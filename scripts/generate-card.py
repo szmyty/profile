@@ -4,11 +4,12 @@ Generate a styled SVG card for SoundCloud latest release.
 This script reads track metadata from JSON and creates an SVG card.
 """
 
-import json
 import sys
 import base64
 from pathlib import Path
 from datetime import datetime
+
+from lib.utils import escape_xml, load_json
 
 
 def format_duration(duration_ms: int) -> str:
@@ -51,19 +52,6 @@ def get_artwork_base64(artwork_path: str) -> str:
     except (OSError, IOError) as e:
         print(f"Warning: Could not load artwork: {e}", file=sys.stderr)
     return ""
-
-
-def escape_xml(text: str) -> str:
-    """Escape special characters for XML/SVG."""
-    if not text:
-        return ""
-    return (
-        text.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-        .replace("'", "&#39;")
-    )
 
 
 def generate_svg(
@@ -172,15 +160,7 @@ def main():
     output_path = sys.argv[3] if len(sys.argv) > 3 else "assets/soundcloud-card.svg"
 
     # Read metadata
-    try:
-        with open(metadata_path, "r") as f:
-            metadata = json.load(f)
-    except FileNotFoundError:
-        print(f"Error: Metadata file not found: {metadata_path}", file=sys.stderr)
-        sys.exit(1)
-    except json.JSONDecodeError as e:
-        print(f"Error: Invalid JSON in metadata file: {e}", file=sys.stderr)
-        sys.exit(1)
+    metadata = load_json(metadata_path, "Metadata file")
 
     # Get artwork as base64
     artwork_data_uri = get_artwork_base64(artwork_path)

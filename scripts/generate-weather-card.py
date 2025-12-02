@@ -4,10 +4,11 @@ Generate a styled SVG card for daily weather conditions and forecast.
 This script reads weather metadata from JSON and creates an SVG card.
 """
 
-import json
 import sys
 from pathlib import Path
 from datetime import datetime
+
+from lib.utils import escape_xml, load_json
 
 
 def format_time(time_str: str) -> str:
@@ -32,19 +33,6 @@ def celsius_to_fahrenheit(celsius: float) -> float:
 def kmh_to_mph(kmh: float) -> float:
     """Convert km/h to mph."""
     return kmh * 0.621371
-
-
-def escape_xml(text: str) -> str:
-    """Escape special characters for XML/SVG."""
-    if not text:
-        return ""
-    return (
-        text.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-        .replace("'", "&#39;")
-    )
 
 
 def get_background_gradient(is_day: int, weathercode: int) -> tuple:
@@ -195,15 +183,7 @@ def main():
     output_path = sys.argv[2] if len(sys.argv) > 2 else "weather/weather-today.svg"
 
     # Read metadata
-    try:
-        with open(metadata_path, "r") as f:
-            metadata = json.load(f)
-    except FileNotFoundError:
-        print(f"Error: Metadata file not found: {metadata_path}", file=sys.stderr)
-        sys.exit(1)
-    except json.JSONDecodeError as e:
-        print(f"Error: Invalid JSON in metadata file: {e}", file=sys.stderr)
-        sys.exit(1)
+    metadata = load_json(metadata_path, "Metadata file")
 
     # Generate SVG
     svg = generate_svg(

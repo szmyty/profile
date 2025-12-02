@@ -8,18 +8,9 @@ import json
 import sys
 from pathlib import Path
 from datetime import datetime, timezone
-from typing import Any, Optional
+from typing import Optional
 
-
-def safe_get(data: dict, *keys, default: Any = None) -> Any:
-    """Safely get nested dictionary values."""
-    value = data
-    for key in keys:
-        if isinstance(value, dict):
-            value = value.get(key, default)
-        else:
-            return default
-    return value if value is not None else default
+from lib.utils import safe_get, load_json
 
 
 def calculate_bmi(weight_kg: Optional[float], height_m: Optional[float]) -> Optional[float]:
@@ -163,15 +154,7 @@ def main():
     output_path = sys.argv[2] if len(sys.argv) > 2 else "oura/health_snapshot.json"
 
     # Read metrics
-    try:
-        with open(metrics_path, "r") as f:
-            metrics = json.load(f)
-    except FileNotFoundError:
-        print(f"Error: Metrics file not found: {metrics_path}", file=sys.stderr)
-        sys.exit(1)
-    except json.JSONDecodeError as e:
-        print(f"Error: Invalid JSON in metrics file: {e}", file=sys.stderr)
-        sys.exit(1)
+    metrics = load_json(metrics_path, "Metrics file")
 
     # Generate health snapshot
     snapshot = generate_health_snapshot(metrics)

@@ -11,6 +11,8 @@ from pathlib import Path
 from datetime import datetime, timezone
 from typing import Any
 
+from lib.utils import safe_get, load_json
+
 
 # Mood definitions with thresholds and visual attributes
 MOOD_CATEGORIES = {
@@ -57,17 +59,6 @@ MOOD_CATEGORIES = {
         "description": "Building energy, readying for action",
     },
 }
-
-
-def safe_get(data: dict, *keys, default: Any = None) -> Any:
-    """Safely get nested dictionary values."""
-    value = data
-    for key in keys:
-        if isinstance(value, dict):
-            value = value.get(key, default)
-        else:
-            return default
-    return value if value is not None else default
 
 
 def normalize_score(value: Any, min_val: float = 0, max_val: float = 100) -> float:
@@ -250,15 +241,7 @@ def main():
     output_path = sys.argv[2] if len(sys.argv) > 2 else "oura/mood.json"
 
     # Read metrics
-    try:
-        with open(metrics_path, "r") as f:
-            metrics = json.load(f)
-    except FileNotFoundError:
-        print(f"Error: Metrics file not found: {metrics_path}", file=sys.stderr)
-        sys.exit(1)
-    except json.JSONDecodeError as e:
-        print(f"Error: Invalid JSON in metrics file: {e}", file=sys.stderr)
-        sys.exit(1)
+    metrics = load_json(metrics_path, "Metrics file")
 
     # Compute mood
     mood = compute_mood(metrics)
