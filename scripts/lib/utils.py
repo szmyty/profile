@@ -10,7 +10,7 @@ SVG visualization helpers.
 import json
 import os
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, List, Optional
 
 try:
@@ -458,7 +458,7 @@ def format_timestamp_local(dt_utc_str: str, tzinfo_str: Optional[str] = None) ->
         dt_utc_str = dt_utc_str.strip()
         if dt_utc_str.endswith('Z'):
             dt_utc_str = dt_utc_str[:-1] + '+00:00'
-        elif '+' not in dt_utc_str and '-' not in dt_utc_str[-6:]:
+        elif len(dt_utc_str) >= 6 and '+' not in dt_utc_str and '-' not in dt_utc_str[-6:]:
             # No timezone info, assume UTC
             dt_utc_str = dt_utc_str + '+00:00'
 
@@ -468,22 +468,23 @@ def format_timestamp_local(dt_utc_str: str, tzinfo_str: Optional[str] = None) ->
         if dt_utc.tzinfo is None:
             dt_utc = dt_utc.replace(tzinfo=timezone.utc)
 
-        # Get timezone info
+        # Get timezone info - always use loaded timezone offset as the source of truth
+        tz_data = load_timezone()
+        loaded_timezone = tz_data.get("timezone", "UTC")
+        loaded_offset = tz_data.get("utc_offset_hours", 0)
+
         if tzinfo_str is None:
-            tz_data = load_timezone()
-            tzinfo_str = tz_data.get("timezone", "UTC")
-            offset_hours = tz_data.get("utc_offset_hours", 0)
+            # Use loaded timezone
+            offset_hours = loaded_offset
+        elif tzinfo_str == loaded_timezone:
+            # Requested timezone matches loaded, use loaded offset
+            offset_hours = loaded_offset
         else:
-            # Try to get offset from loaded timezone if it matches
-            tz_data = load_timezone()
-            if tzinfo_str == tz_data.get("timezone"):
-                offset_hours = tz_data.get("utc_offset_hours", 0)
-            else:
-                # Default to 0 if we can't determine offset
-                offset_hours = 0
+            # Requested timezone differs - use loaded timezone offset as fallback
+            # This ensures consistent behavior even if the requested timezone differs
+            offset_hours = loaded_offset
 
         # Apply timezone offset manually (since zoneinfo may not be available)
-        from datetime import timedelta
         offset = timedelta(hours=offset_hours)
         dt_local = dt_utc + offset
 
@@ -492,7 +493,7 @@ def format_timestamp_local(dt_utc_str: str, tzinfo_str: Optional[str] = None) ->
 
         return formatted
 
-    except (ValueError, AttributeError, TypeError) as e:
+    except (ValueError, AttributeError, TypeError):
         # Return original string if parsing fails
         return dt_utc_str
 
