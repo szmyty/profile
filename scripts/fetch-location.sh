@@ -8,6 +8,10 @@
 
 set -euo pipefail
 
+# Source common utilities
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "${SCRIPT_DIR}/lib/common.sh"
+
 GITHUB_OWNER="${GITHUB_OWNER:-szmyty}"
 OUTPUT_DIR="${OUTPUT_DIR:-location}"
 
@@ -39,9 +43,9 @@ get_coordinates() {
     local location=$1
     echo "Converting location to coordinates: ${location}" >&2
     
-    # URL encode the location using jq for proper encoding
+    # URL encode the location using the shared encode_uri function
     local encoded_location
-    encoded_location=$(echo "$location" | jq -rR @uri)
+    encoded_location=$(encode_uri "$location")
     
     # Add delay to respect Nominatim rate limits
     sleep 1
