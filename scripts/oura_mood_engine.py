@@ -224,7 +224,7 @@ def compute_mood(metrics: dict) -> dict:
             "resting_hr": metrics.get("resting_hr"),
             "temp_deviation": metrics.get("temp_deviation"),
         },
-        "computed_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+        "computed_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
 
 

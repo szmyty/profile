@@ -129,7 +129,7 @@ def generate_health_snapshot(metrics: dict) -> dict:
             "resting_bpm": safe_get(heart_rate_data, "resting_bpm"),
             "trend_values": hr_trend_values if hr_trend_values else [],
         },
-        "updated_at": metrics.get("updated_at", datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")),
+        "updated_at": metrics.get("updated_at", datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")),
     }
     
     return snapshot

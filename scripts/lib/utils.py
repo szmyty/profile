@@ -10,6 +10,7 @@ SVG visualization helpers.
 import json
 import os
 import sys
+from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
 try:
@@ -386,3 +387,129 @@ def get_theme_border_radius(size: str = "xl", fallback: int = 12) -> int:
     """
     theme = load_theme()
     return safe_get(theme, "cards", "border_radius", size, default=fallback)
+
+
+# Cache for loaded timezone to avoid re-reading file
+_timezone_cache: Optional[Dict] = None
+
+
+def load_timezone(timezone_path: Optional[str] = None) -> Dict:
+    """
+    Load timezone configuration from JSON file.
+
+    Args:
+        timezone_path: Optional path to timezone.json. If not provided,
+                      defaults to data/timezone.json relative to the repository root.
+
+    Returns:
+        Timezone configuration dictionary with keys:
+        - timezone: Timezone identifier (e.g., "America/New_York")
+        - utc_offset_hours: UTC offset in hours (e.g., -5)
+        - abbreviation: Timezone abbreviation (e.g., "EST")
+
+    Note:
+        The timezone is cached after first load to avoid repeated file reads.
+        Returns default UTC timezone if file not found.
+    """
+    global _timezone_cache
+
+    if _timezone_cache is not None:
+        return _timezone_cache
+
+    if timezone_path is None:
+        # Find timezone.json relative to this file's location
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        repo_root = os.path.dirname(os.path.dirname(script_dir))
+        timezone_path = os.path.join(repo_root, "data", "timezone.json")
+
+    try:
+        with open(timezone_path, "r") as f:
+            _timezone_cache = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        # Default to UTC if timezone file not found
+        _timezone_cache = {
+            "timezone": "UTC",
+            "utc_offset_hours": 0,
+            "abbreviation": "UTC"
+        }
+
+    return _timezone_cache
+
+
+def format_timestamp_local(dt_utc_str: str, tzinfo_str: Optional[str] = None) -> str:
+    """
+    Convert ISO 8601 UTC timestamp to local time display format.
+
+    Args:
+        dt_utc_str: UTC timestamp string in ISO 8601 format (e.g., "2025-12-01T06:22:41Z")
+        tzinfo_str: Optional timezone identifier (e.g., "America/New_York").
+                   If not provided, uses timezone from data/timezone.json.
+
+    Returns:
+        Human-readable local time string in format "YYYY-MM-DD HH:MM AM/PM"
+
+    Example:
+        >>> format_timestamp_local("2025-12-01T06:22:41Z", "America/New_York")
+        "2025-12-01 01:22 AM"
+    """
+    try:
+        # Parse the UTC timestamp
+        # Handle various ISO 8601 formats
+        dt_utc_str = dt_utc_str.strip()
+        if dt_utc_str.endswith('Z'):
+            dt_utc_str = dt_utc_str[:-1] + '+00:00'
+        elif '+' not in dt_utc_str and '-' not in dt_utc_str[-6:]:
+            # No timezone info, assume UTC
+            dt_utc_str = dt_utc_str + '+00:00'
+
+        dt_utc = datetime.fromisoformat(dt_utc_str)
+
+        # Ensure it's UTC
+        if dt_utc.tzinfo is None:
+            dt_utc = dt_utc.replace(tzinfo=timezone.utc)
+
+        # Get timezone info
+        if tzinfo_str is None:
+            tz_data = load_timezone()
+            tzinfo_str = tz_data.get("timezone", "UTC")
+            offset_hours = tz_data.get("utc_offset_hours", 0)
+        else:
+            # Try to get offset from loaded timezone if it matches
+            tz_data = load_timezone()
+            if tzinfo_str == tz_data.get("timezone"):
+                offset_hours = tz_data.get("utc_offset_hours", 0)
+            else:
+                # Default to 0 if we can't determine offset
+                offset_hours = 0
+
+        # Apply timezone offset manually (since zoneinfo may not be available)
+        from datetime import timedelta
+        offset = timedelta(hours=offset_hours)
+        dt_local = dt_utc + offset
+
+        # Format as "YYYY-MM-DD HH:MM AM/PM"
+        formatted = dt_local.strftime("%Y-%m-%d %I:%M %p")
+
+        return formatted
+
+    except (ValueError, AttributeError, TypeError) as e:
+        # Return original string if parsing fails
+        return dt_utc_str
+
+
+def format_timestamp_iso(dt: Optional[datetime] = None) -> str:
+    """
+    Format a datetime object to ISO 8601 UTC format with Zulu time.
+
+    Args:
+        dt: datetime object to format. If None, uses current UTC time.
+
+    Returns:
+        ISO 8601 formatted string (e.g., "2025-12-01T06:22:41Z")
+    """
+    if dt is None:
+        dt = datetime.now(timezone.utc)
+    elif dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+
+    return dt.strftime("%Y-%m-%dT%H:%M:%SZ")
