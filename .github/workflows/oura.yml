@@ -14,6 +14,7 @@ on:
       - 'scripts/generate-oura-mood-card.py'
       - 'scripts/generate-health-snapshot.py'
       - 'scripts/generate-health-dashboard.py'
+      - 'scripts/update_readme.py'
       - 'scripts/lib/utils.py'
       - 'config/theme.json'
       - '.github/workflows/oura.yml'
@@ -86,29 +87,13 @@ jobs:
 
       - name: Update README with dashboard cards
         run: |
-          python3 -c "
-          import re
+          python scripts/update_readme.py \
+            --marker OURA-HEALTH-CARD \
+            --content "![Oura Health Dashboard](./oura/health_dashboard.svg)"
           
-          with open('README.md', 'r') as f:
-              content = f.read()
-          
-          # Update health dashboard card
-          health_card = '![Oura Health Dashboard](./oura/health_dashboard.svg)'
-          health_pattern = r'<!-- OURA-HEALTH-CARD:START -->.*?<!-- OURA-HEALTH-CARD:END -->'
-          health_replacement = '<!-- OURA-HEALTH-CARD:START -->\n' + health_card + '\n<!-- OURA-HEALTH-CARD:END -->'
-          content = re.sub(health_pattern, health_replacement, content, flags=re.DOTALL)
-          
-          # Update mood dashboard card  
-          mood_card = '![Oura Mood Dashboard](./oura/mood_dashboard.svg)'
-          mood_pattern = r'<!-- OURA-MOOD-CARD:START -->.*?<!-- OURA-MOOD-CARD:END -->'
-          mood_replacement = '<!-- OURA-MOOD-CARD:START -->\n' + mood_card + '\n<!-- OURA-MOOD-CARD:END -->'
-          content = re.sub(mood_pattern, mood_replacement, content, flags=re.DOTALL)
-          
-          with open('README.md', 'w') as f:
-              f.write(content)
-          
-          print('Updated README with Oura dashboard cards')
-          "
+          python scripts/update_readme.py \
+            --marker OURA-MOOD-CARD \
+            --content "![Oura Mood Dashboard](./oura/mood_dashboard.svg)"
 
       - name: Commit and push changes
         run: |

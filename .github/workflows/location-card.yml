@@ -11,6 +11,7 @@ on:
     paths:
       - 'scripts/fetch-location.sh'
       - 'scripts/generate-location-card.py'
+      - 'scripts/update_readme.py'
       - 'scripts/lib/utils.py'
       - 'config/theme.json'
       - '.github/workflows/location-card.yml'
@@ -92,37 +93,9 @@ jobs:
       - name: Update README with location card
         if: steps.location.outputs.skip != 'true'
         run: |
-          # Check if the location card placeholder exists in README
-          if ! grep -q "<!-- LOCATION-CARD:START -->" README.md; then
-            # Add the location section if it doesn't exist
-            echo "" >> README.md
-            echo "## 📍 My Location" >> README.md
-            echo "" >> README.md
-            echo "<!-- LOCATION-CARD:START -->" >> README.md
-            echo "<!-- LOCATION-CARD:END -->" >> README.md
-          fi
-          
-          # Update the README between markers using Python for reliability
-          python3 << 'PYTHON_SCRIPT'
-          import re
-          
-          card_markdown = "![My Location](./location/location-card.svg)"
-          
-          with open('README.md', 'r') as f:
-              content = f.read()
-          
-          pattern = r'<!-- LOCATION-CARD:START -->.*?<!-- LOCATION-CARD:END -->'
-          replacement = f'''<!-- LOCATION-CARD:START -->
-          {card_markdown}
-          <!-- LOCATION-CARD:END -->'''
-          
-          updated = re.sub(pattern, replacement.strip(), content, flags=re.DOTALL)
-          
-          with open('README.md', 'w') as f:
-              f.write(updated)
-          
-          print("Updated README with location card")
-          PYTHON_SCRIPT
+          python scripts/update_readme.py \
+            --marker LOCATION-CARD \
+            --content "![My Location](./location/location-card.svg)"
 
       - name: Commit and push changes
         if: steps.location.outputs.skip != 'true'

@@ -11,6 +11,7 @@ on:
     paths:
       - 'scripts/fetch-soundcloud.sh'
       - 'scripts/generate-card.py'
+      - 'scripts/update_readme.py'
       - 'scripts/lib/utils.py'
       - 'config/theme.json'
       - '.github/workflows/soundcloud-card.yml'
@@ -66,46 +67,13 @@ jobs:
 
       - name: Update README with card
         run: |
-          # Check if the card placeholder exists in README
-          if ! grep -q "<!-- SOUNDCLOUD-CARD:START -->" README.md; then
-            # Add the placeholder if it doesn't exist
-            echo "" >> README.md
-            echo "## 🎵 Latest SoundCloud Release" >> README.md
-            echo "" >> README.md
-            echo "<!-- SOUNDCLOUD-CARD:START -->" >> README.md
-            echo "<!-- SOUNDCLOUD-CARD:END -->" >> README.md
-          fi
-          
           # Get the permalink URL from metadata
           PERMALINK_URL=$(jq -r '.permalink_url' assets/metadata.json)
+          CARD_CONTENT="[![SoundCloud Latest Track](assets/soundcloud-card.svg)](${PERMALINK_URL})"
           
-          # Update the README between markers using Python for reliability
-          python3 << 'PYTHON_SCRIPT'
-          import re
-          import json
-          
-          # Read metadata
-          with open('assets/metadata.json', 'r') as f:
-              metadata = json.load(f)
-          
-          permalink_url = metadata.get('permalink_url', 'https://soundcloud.com')
-          card_markdown = f"[![SoundCloud Latest Track](assets/soundcloud-card.svg)]({permalink_url})"
-          
-          with open('README.md', 'r') as f:
-              content = f.read()
-          
-          pattern = r'<!-- SOUNDCLOUD-CARD:START -->.*?<!-- SOUNDCLOUD-CARD:END -->'
-          replacement = f'''<!-- SOUNDCLOUD-CARD:START -->
-          {card_markdown}
-          <!-- SOUNDCLOUD-CARD:END -->'''
-          
-          updated = re.sub(pattern, replacement.strip(), content, flags=re.DOTALL)
-          
-          with open('README.md', 'w') as f:
-              f.write(updated)
-          
-          print(f"Updated README with card linking to: {permalink_url}")
-          PYTHON_SCRIPT
+          python scripts/update_readme.py \
+            --marker SOUNDCLOUD-CARD \
+            --content "${CARD_CONTENT}"
 
       - name: Commit and push changes
         run: |

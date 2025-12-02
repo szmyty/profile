@@ -11,6 +11,7 @@ on:
     paths:
       - 'scripts/fetch-weather.sh'
       - 'scripts/generate-weather-card.py'
+      - 'scripts/update_readme.py'
       - 'scripts/lib/utils.py'
       - 'config/theme.json'
       - '.github/workflows/weather.yml'
@@ -121,37 +122,9 @@ jobs:
       - name: Update README with weather card
         if: steps.location.outputs.skip != 'true' && steps.coords.outputs.skip != 'true'
         run: |
-          # Check if the weather card placeholder exists in README
-          if ! grep -q "<!-- WEATHER-CARD:START -->" README.md; then
-            # Add the weather section if it doesn't exist
-            echo "" >> README.md
-            echo "## 🌦️ Today's Weather" >> README.md
-            echo "" >> README.md
-            echo "<!-- WEATHER-CARD:START -->" >> README.md
-            echo "<!-- WEATHER-CARD:END -->" >> README.md
-          fi
-          
-          # Update the README between markers using Python for reliability
-          python3 << 'PYTHON_SCRIPT'
-          import re
-          
-          card_markdown = "![Today's Weather](./weather/weather-today.svg)"
-          
-          with open('README.md', 'r') as f:
-              content = f.read()
-          
-          pattern = r'<!-- WEATHER-CARD:START -->.*?<!-- WEATHER-CARD:END -->'
-          replacement = f'''<!-- WEATHER-CARD:START -->
-          {card_markdown}
-          <!-- WEATHER-CARD:END -->'''
-          
-          updated = re.sub(pattern, replacement.strip(), content, flags=re.DOTALL)
-          
-          with open('README.md', 'w') as f:
-              f.write(updated)
-          
-          print("Updated README with weather card")
-          PYTHON_SCRIPT
+          python scripts/update_readme.py \
+            --marker WEATHER-CARD \
+            --content "![Today's Weather](./weather/weather-today.svg)"
 
       - name: Commit and push changes
         if: steps.location.outputs.skip != 'true' && steps.coords.outputs.skip != 'true'
