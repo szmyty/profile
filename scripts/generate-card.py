@@ -11,7 +11,7 @@ from datetime import datetime
 
 from lib.utils import (
     escape_xml,
-    load_json,
+    load_and_validate_json,
     load_theme,
     get_theme_color,
     get_theme_gradient,
@@ -206,8 +206,10 @@ def main():
     artwork_path = sys.argv[2] if len(sys.argv) > 2 else "assets/soundcloud-artwork.jpg"
     output_path = sys.argv[3] if len(sys.argv) > 3 else "assets/soundcloud-card.svg"
 
-    # Read metadata
-    metadata = load_json(metadata_path, "Metadata file")
+    # Read and validate metadata
+    metadata = load_and_validate_json(
+        metadata_path, "soundcloud-track", "SoundCloud track metadata file"
+    )
 
     # Get artwork as base64
     artwork_data_uri = get_artwork_base64(artwork_path)
