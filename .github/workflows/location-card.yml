@@ -13,6 +13,10 @@ on:
       - 'scripts/generate-location-card.py'
       - '.github/workflows/location-card.yml'
 
+concurrency:
+  group: profile-update
+  cancel-in-progress: false
+
 permissions:
   contents: write
 

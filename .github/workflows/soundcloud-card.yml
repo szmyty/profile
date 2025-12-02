@@ -13,6 +13,10 @@ on:
       - 'scripts/generate-card.py'
       - '.github/workflows/soundcloud-card.yml'
 
+concurrency:
+  group: profile-update
+  cancel-in-progress: false
+
 permissions:
   contents: write
 

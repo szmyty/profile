@@ -13,6 +13,10 @@ on:
       - 'scripts/generate-weather-card.py'
       - '.github/workflows/weather.yml'
 
+concurrency:
+  group: profile-update
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
