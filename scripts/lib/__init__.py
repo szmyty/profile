@@ -9,6 +9,7 @@ from .utils import (
     load_json,
     generate_sparkline_path,
 )
+from .card_base import CardBase
 
 __all__ = [
     "escape_xml",
@@ -16,4 +17,5 @@ __all__ = [
     "safe_value",
     "load_json",
     "generate_sparkline_path",
+    "CardBase",
 ]
