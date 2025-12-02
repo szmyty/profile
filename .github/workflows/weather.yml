@@ -11,6 +11,8 @@ on:
     paths:
       - 'scripts/fetch-weather.sh'
       - 'scripts/generate-weather-card.py'
+      - 'scripts/lib/utils.py'
+      - 'config/theme.json'
       - '.github/workflows/weather.yml'
 
 concurrency:

@@ -11,6 +11,8 @@ on:
     paths:
       - 'scripts/fetch-soundcloud.sh'
       - 'scripts/generate-card.py'
+      - 'scripts/lib/utils.py'
+      - 'config/theme.json'
       - '.github/workflows/soundcloud-card.yml'
 
 concurrency:

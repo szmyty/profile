@@ -11,6 +11,8 @@ on:
     paths:
       - 'scripts/fetch-location.sh'
       - 'scripts/generate-location-card.py'
+      - 'scripts/lib/utils.py'
+      - 'config/theme.json'
       - '.github/workflows/location-card.yml'
 
 concurrency:
