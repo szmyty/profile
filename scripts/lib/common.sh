@@ -43,7 +43,7 @@ get_github_location() {
     user_data=$(curl -sf "https://api.github.com/users/${github_owner}" \
         -H "Accept: application/vnd.github.v3+json" \
         ${GITHUB_TOKEN:+-H "Authorization: Bearer ${GITHUB_TOKEN}"} \
-        -H "User-Agent: GitHub-Profile-Scripts") || {
+        -H "User-Agent: GitHub-Profile-Scripts/1.0") || {
         echo "Error: Failed to fetch GitHub profile" >&2
         return 1
     }
