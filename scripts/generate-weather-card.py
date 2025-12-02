@@ -98,6 +98,7 @@ def generate_svg(
     text_secondary = get_theme_color("text", "secondary")
     text_muted = get_theme_color("text", "muted")
     accent_teal = get_theme_color("text", "accent")
+    accent_cyan = get_theme_color("accent", "cyan")
     accent_hr = get_theme_color("accent", "heart_rate")
     
     # Card dimensions from theme
@@ -108,6 +109,7 @@ def generate_svg(
     # Font sizes from theme
     font_size_base = get_theme_font_size("base")
     font_size_lg = get_theme_font_size("lg")
+    font_size_lg_plus = get_theme_font_size("lg-plus")
     font_size_xl = get_theme_font_size("xl")
     font_size_2xl = get_theme_font_size("2xl")
     font_size_7xl = get_theme_font_size("7xl")
@@ -181,10 +183,10 @@ def generate_svg(
 
   <!-- High/Low -->
   <g transform="translate(20, 95)">
-    <text font-family="{font_family}" font-size="13" fill="{text_secondary}">
+    <text font-family="{font_family}" font-size="{font_size_lg_plus}" fill="{text_secondary}">
       <tspan fill="{accent_hr}">High: {temp_max_f:.0f}°F</tspan>
       <tspan fill="{text_muted}">  •  </tspan>
-      <tspan fill="#4ecdc4">Low: {temp_min_f:.0f}°F</tspan>
+      <tspan fill="{accent_cyan}">Low: {temp_min_f:.0f}°F</tspan>
     </text>
   </g>
 

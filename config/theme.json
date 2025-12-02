@@ -17,6 +17,7 @@
     },
     "accent": {
       "teal": "#64ffda",
+      "cyan": "#4ecdc4",
       "orange": "#ff5500",
       "sleep": "#4facfe",
       "readiness": "#38ef7d",
@@ -57,6 +58,7 @@
       "base": 10,
       "md": 11,
       "lg": 12,
+      "lg-plus": 13,
       "xl": 14,
       "2xl": 16,
       "3xl": 18,
