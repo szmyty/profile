@@ -217,9 +217,14 @@ graph TD
 ```
 
 ### Notes
-- Client ID extraction relies on scraping SoundCloud's JavaScript
-- Pattern matching may break with SoundCloud updates
-- Consider caching last successful client_id
+
+The SoundCloud client ID extraction uses web scraping patterns to extract the API client ID from SoundCloud's JavaScript assets. The fragile patterns are located in `scripts/fetch-soundcloud.sh`:
+
+- **Pattern matching**: The script searches for `client_id` or `clientId` patterns in JavaScript files
+- **CDN URL extraction**: Relies on parsing HTML for asset URLs matching `https://a-v2.sndcdn.com/assets/*.js`
+- **Fallback mechanism**: Caches the last valid client ID for use when extraction fails
+
+If SoundCloud changes their JavaScript bundling or obfuscation, these patterns may break.
 
 ---
 

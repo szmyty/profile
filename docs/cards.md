@@ -147,12 +147,13 @@ Displays computed mood state based on Oura health metrics.
 | Low | 0-49 | Red to Orange |
 
 **Mood Computation**:
-The mood engine (`scripts/oura_mood_engine.py`) computes mood from:
-- Sleep score (weighted 30%)
-- Readiness score (weighted 30%)
-- Activity score (weighted 20%)
-- HRV balance (weighted 10%)
-- Recovery time (weighted 10%)
+The mood engine (`scripts/oura_mood_engine.py`) computes the mood score as a weighted average:
+- Sleep score (30%)
+- Readiness score (30%)
+- Activity score (15%)
+- HRV (10%)
+- Temperature deviation (10%)
+- Resting HR inverted (5%) — lower HR contributes positively
 
 ---
 

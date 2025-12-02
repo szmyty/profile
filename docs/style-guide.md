@@ -76,6 +76,9 @@ All visual styling is centralized in `config/theme.json`. This enables consisten
 | `background.secondary` | `#16213e` | Secondary backgrounds |
 | `background.dark` | `#0f0f23` | Darkest backgrounds |
 | `background.panel` | `#1e1e2e` | Panel backgrounds |
+| `background.panel_sleep` | `#1a1a3e` | Sleep metric panels |
+| `background.panel_readiness` | `#1a2e2e` | Readiness metric panels |
+| `background.panel_activity` | `#2e2a1a` | Activity metric panels |
 
 #### Text Colors
 | Token | Hex | Usage |
