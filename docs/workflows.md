@@ -220,11 +220,23 @@ graph TD
 
 The SoundCloud client ID extraction uses web scraping patterns to extract the API client ID from SoundCloud's JavaScript assets. The fragile patterns are located in `scripts/fetch-soundcloud.sh`:
 
-- **Pattern matching**: The script searches for `client_id` or `clientId` patterns in JavaScript files
+- **Pattern matching**: The script searches for `client_id` or `clientId` patterns in JavaScript files using regex like `'client_id[=:]["'"'"'][a-zA-Z0-9]{20,40}'`
 - **CDN URL extraction**: Relies on parsing HTML for asset URLs matching `https://a-v2.sndcdn.com/assets/*.js`
 - **Fallback mechanism**: Caches the last valid client ID for use when extraction fails
 
-If SoundCloud changes their JavaScript bundling or obfuscation, these patterns may break.
+#### Potential Failure Scenarios
+
+1. **JavaScript obfuscation changes**: If SoundCloud minifies or renames `client_id` to something else
+2. **CDN URL pattern changes**: If SoundCloud changes their asset URL structure from `a-v2.sndcdn.com`
+3. **API version changes**: If SoundCloud deprecates the `api-v2` endpoint
+4. **Rate limiting**: If requests are blocked due to excessive access
+
+#### Troubleshooting
+
+1. Check if the cached client ID file exists: `assets/.cache/soundcloud_client_id.txt`
+2. Manually test the validation endpoint in a browser
+3. Inspect the SoundCloud page source for new JavaScript URL patterns
+4. Check workflow logs for HTTP status codes from the validation step
 
 ---
 

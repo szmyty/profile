@@ -269,3 +269,14 @@ Use emoji prefixes for different card types:
 - 🌦️ Weather updates
 - 🎵 SoundCloud updates
 - 🧬 Oura health updates
+
+### Examples
+
+```
+📍 Update location card for San Francisco
+🌦️ Update weather card for Boston, MA
+🎵 Update SoundCloud card: New Track Title
+🧬 Update Oura health dashboard: Cosmic Clarity (85/100)
+```
+
+The emoji prefix indicates the card type, followed by a brief description of the update. For Oura updates, the mood name and score are included.

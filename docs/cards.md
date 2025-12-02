@@ -153,7 +153,7 @@ The mood engine (`scripts/oura_mood_engine.py`) computes the mood score as a wei
 - Activity score (15%)
 - HRV (10%)
 - Temperature deviation (10%)
-- Resting HR inverted (5%) — lower HR contributes positively
+- Resting HR inverted (5%) — calculated as `(100 - resting_hr) * 0.05`, so lower heart rate contributes more positively to the score
 
 ---
 
