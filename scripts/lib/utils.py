@@ -116,8 +116,10 @@ def load_schema(schema_name: str) -> Dict:
     Load a JSON schema from the schemas directory.
 
     Args:
-        schema_name: Name of the schema file (e.g., 'weather.schema.json'
-                    or just 'weather' which will have '.schema.json' appended).
+        schema_name: Name of the schema file. Can be provided with the full
+                     '.schema.json' suffix (e.g., 'weather.schema.json') or
+                     without it (e.g., 'weather'), in which case the suffix
+                     will be automatically appended.
 
     Returns:
         Parsed schema as a dictionary.
