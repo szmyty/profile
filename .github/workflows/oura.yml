@@ -85,6 +85,16 @@ jobs:
         run: |
           python scripts/generate-oura-mood-card.py oura/mood.json oura/metrics.json oura/mood_dashboard.svg
 
+      - name: Optimize SVGs with SVGO
+        run: |
+          npm install -g svgo
+          for svg in oura/health_dashboard.svg oura/mood_dashboard.svg; do
+            ORIGINAL_SIZE=$(stat -c%s "$svg")
+            svgo "$svg" -o "$svg"
+            OPTIMIZED_SIZE=$(stat -c%s "$svg")
+            echo "$(basename "$svg") optimized: ${ORIGINAL_SIZE} bytes → ${OPTIMIZED_SIZE} bytes ($(( 100 - OPTIMIZED_SIZE * 100 / ORIGINAL_SIZE ))% reduction)"
+          done
+
       - name: Update README with dashboard cards
         run: |
           python scripts/update_readme.py \
