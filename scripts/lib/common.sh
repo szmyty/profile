@@ -254,13 +254,14 @@ retry_api_call() {
     temp_headers=$(mktemp)
     
     while [ $attempt -le $max_attempts ]; do
-        # Execute curl with header capture
-        # Add -w flag to write http_code if not present
+        # Execute curl with header capture and HTTP code tracking
+        # Note: We use -w to get the HTTP code reliably
         local curl_exit=0
-        "$@" -D "$temp_headers" > "$temp_output" 2>/dev/null || curl_exit=$?
+        local http_code
+        http_code=$("$@" -D "$temp_headers" -w "%{http_code}" -o "$temp_output" 2>/dev/null) || curl_exit=$?
         
-        # Check if curl succeeded
-        if [ $curl_exit -eq 0 ]; then
+        # Check if curl succeeded and HTTP status is 2xx
+        if [ $curl_exit -eq 0 ] && [ "$http_code" -ge 200 ] && [ "$http_code" -lt 300 ]; then
             # Success - output the response and reset circuit breaker
             cat "$temp_output"
             rm -f "$temp_output" "$temp_headers"
@@ -270,23 +271,26 @@ retry_api_call() {
         
         exit_code=$curl_exit
         
-        # Check for rate limiting in headers
-        local http_code
-        http_code=$(grep -E "^HTTP/[0-9.]+ [0-9]+" "$temp_headers" 2>/dev/null | tail -1 | grep -oE "[0-9]{3}" || echo "000")
+        # Default to 000 if http_code is empty or curl failed completely
+        http_code="${http_code:-000}"
         
         if [ "$http_code" = "429" ]; then
             echo "🚫 Rate limit detected (HTTP 429) from ${api_name}" >&2
             
-            # Check for Retry-After header
+            # Check for Retry-After header (only accept numeric values in seconds)
             local retry_after
             retry_after=$(grep -i "^retry-after:" "$temp_headers" 2>/dev/null | cut -d: -f2 | tr -d ' \r\n' || echo "")
             
-            if [ -n "$retry_after" ] && [ "$retry_after" -gt 0 ] 2>/dev/null; then
+            # Validate retry_after is numeric before using it
+            if [ -n "$retry_after" ] && echo "$retry_after" | grep -qE '^[0-9]+$'; then
                 echo "   → Server requested ${retry_after}s wait time" >&2
                 delay=$retry_after
             else
-                # Use longer delay for rate limits
+                # Use longer delay for rate limits if no valid Retry-After header
                 delay=$((delay * 3))
+                if [ -n "$retry_after" ]; then
+                    echo "   → Retry-After header present but not numeric (HTTP-date format not supported)" >&2
+                fi
             fi
             
             record_api_failure "$api_name"
