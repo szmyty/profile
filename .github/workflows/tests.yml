@@ -1,4 +1,4 @@
-name: Python Unit Tests
+name: Unit Tests
 
 on:
   push:
@@ -7,14 +7,18 @@ on:
       - master
     paths:
       - 'scripts/**/*.py'
+      - 'scripts/**/*.sh'
       - 'tests/**/*.py'
+      - 'tests/**/*.sh'
       - '.github/workflows/tests.yml'
   pull_request:
     branches:
       - main
     paths:
       - 'scripts/**/*.py'
+      - 'scripts/**/*.sh'
       - 'tests/**/*.py'
+      - 'tests/**/*.sh'
       - '.github/workflows/tests.yml'
   workflow_dispatch:
 
@@ -22,8 +26,9 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  test-python:
     runs-on: ubuntu-latest
+    name: Python Tests
 
     steps:
       - name: Setup environment
@@ -32,6 +37,23 @@ jobs:
           install-jq: 'false'
           install-curl: 'false'
 
-      - name: Run tests
+      - name: Run Python tests
         run: |
           python -m pytest tests/ -v --tb=short
+
+  test-shell:
+    runs-on: ubuntu-latest
+    name: Shell Script Tests
+
+    steps:
+      - name: Setup environment
+        uses: ./.github/actions/setup-environment
+        with:
+          install-python-deps: 'false'
+
+      - name: Run shell script tests
+        run: |
+          echo "Running shell script tests..."
+          bash tests/test_retry_logic.sh
+          bash tests/test_health_checks.sh
+          bash tests/test_cache.sh
