@@ -98,9 +98,12 @@ steps:
 
 ## Performance Optimizations
 
-1. **Pip Caching**: Uses `actions/setup-python@v5` with built-in pip caching, which significantly speeds up workflow runs by caching installed packages
+1. **Pip Caching**: Uses `actions/setup-python@v5` with built-in pip caching, which significantly speeds up workflow runs by caching installed packages based on requirements file hashes
 2. **Shallow Clone**: Uses `fetch-depth: 1` for faster repository checkout
 3. **Conditional Installation**: Only installs requested system packages
+4. **Smart Dependency Detection**: Automatically detects and uses Poetry or pip based on project structure
+
+For additional package caching beyond base requirements, see the [pip-install action](../pip-install/README.md).
 
 ## Notes
 
