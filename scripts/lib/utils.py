@@ -761,7 +761,7 @@ def format_timestamp_local(dt_utc_str: str, tzinfo_str: Optional[str] = None) ->
         dt_utc_str = dt_utc_str.strip()
         if dt_utc_str.endswith('Z'):
             dt_utc_str = dt_utc_str[:-1] + '+00:00'
-        elif len(dt_utc_str) >= 6 and '+' not in dt_utc_str and '-' not in dt_utc_str[-6:]:
+        elif not (dt_utc_str.endswith('+00:00') or '+' in dt_utc_str[-6:] or dt_utc_str.endswith('Z')):
             # No timezone info, assume UTC
             dt_utc_str = dt_utc_str + '+00:00'
 
@@ -817,6 +817,58 @@ def format_timestamp_iso(dt: Optional[datetime] = None) -> str:
         dt = dt.replace(tzinfo=timezone.utc)
 
     return dt.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def format_time_since(timestamp_str: str) -> str:
+    """
+    Calculate and format the time elapsed since a given timestamp.
+    
+    Args:
+        timestamp_str: ISO 8601 timestamp string (e.g., "2025-12-01T06:22:41Z")
+    
+    Returns:
+        Human-readable time elapsed string (e.g., "2h ago", "5m ago", "just now")
+    
+    Example:
+        >>> format_time_since("2025-12-01T06:22:41Z")
+        "2h ago"
+    """
+    try:
+        # Parse the timestamp
+        timestamp_str = timestamp_str.strip()
+        if timestamp_str.endswith('Z'):
+            timestamp_str = timestamp_str[:-1] + '+00:00'
+        elif not (timestamp_str.endswith('+00:00') or '+' in timestamp_str[-6:] or timestamp_str.endswith('Z')):
+            # No timezone info, assume UTC
+            timestamp_str = timestamp_str + '+00:00'
+        
+        dt = datetime.fromisoformat(timestamp_str)
+        
+        # Ensure it's UTC
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        
+        # Calculate time difference
+        now = datetime.now(timezone.utc)
+        delta = now - dt
+        
+        # Format based on duration
+        total_seconds = int(delta.total_seconds())
+        
+        if total_seconds < 60:
+            return "just now"
+        elif total_seconds < 3600:  # Less than 1 hour
+            minutes = total_seconds // 60
+            return f"{minutes}m ago"
+        elif total_seconds < 86400:  # Less than 1 day
+            hours = total_seconds // 3600
+            return f"{hours}h ago"
+        else:  # 1 day or more
+            days = total_seconds // 86400
+            return f"{days}d ago"
+            
+    except (ValueError, AttributeError, TypeError):
+        return "unknown"
 
 
 # Image optimization utilities

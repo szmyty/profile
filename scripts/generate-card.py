@@ -8,6 +8,7 @@ import sys
 import base64
 from pathlib import Path
 from datetime import datetime
+from typing import Optional
 
 from lib.utils import (
     escape_xml,
@@ -21,6 +22,7 @@ from lib.utils import (
     get_theme_card_dimension,
     get_theme_border_radius,
     format_timestamp_local,
+    format_time_since,
     optimize_image_file,
     fallback_exists,
     log_fallback_used,
@@ -89,6 +91,7 @@ def generate_svg(
     created_at: str,
     permalink_url: str,
     artwork_data_uri: str,
+    updated_at: Optional[str] = None,
 ) -> str:
     """Generate SVG card markup."""
 
@@ -117,6 +120,7 @@ def generate_svg(
     font_size_md = get_theme_font_size("md")
     font_size_lg = get_theme_font_size("lg")
     font_size_2xl = get_theme_font_size("2xl")
+    font_size_xs = get_theme_font_size("xs")
     
     # Card stroke settings from theme
     stroke_width = theme.get("cards", {}).get("stroke_width", 1)
@@ -133,12 +137,18 @@ def generate_svg(
     duration = format_duration(duration_ms)
     plays = format_playcount(playback_count)
     date = format_date(created_at)
+    
+    # Calculate staleness indicator
+    staleness = ""
+    if updated_at:
+        staleness = format_time_since(updated_at)
 
     # Escape text for XML
     title_escaped = escape_xml(title)
     artist_escaped = escape_xml(artist)
     genre_escaped = escape_xml(genre)
     permalink_escaped = escape_xml(permalink_url)
+    staleness_escaped = escape_xml(staleness)
 
     # Truncate title if too long
     display_title = title_escaped[:35] + "..." if len(title_escaped) > 35 else title_escaped
@@ -172,6 +182,11 @@ def generate_svg(
     <circle cx="10" cy="10" r="10" fill="{accent_orange}"/>
     <text x="10" y="14" font-family="Arial, sans-serif" font-size="{font_size_base}" fill="white" text-anchor="middle" font-weight="bold">SC</text>
   </g>
+
+  <!-- Staleness Badge -->
+  {f'''<g transform="translate({card_width - 10}, 10)">
+    <text x="0" y="12" font-family="{font_family}" font-size="{font_size_xs}" fill="{text_muted}" text-anchor="end">Updated: {staleness_escaped}</text>
+  </g>''' if staleness else ''}
 
   <!-- Track Info -->
   <g transform="translate(125, 25)">
@@ -248,6 +263,7 @@ def main():
             created_at=metadata.get("created_at", ""),
             permalink_url=metadata.get("permalink_url", "https://soundcloud.com"),
             artwork_data_uri=artwork_data_uri,
+            updated_at=metadata.get("updated_at"),
         )
     except Exception as e:
         if handle_error_with_fallback("soundcloud", f"SVG generation failed: {e}", output_path, has_fallback):

@@ -26,10 +26,16 @@ download_static_map() {
     # OpenStreetMap static map API
     local map_url="https://staticmap.openstreetmap.de/staticmap.php?center=${lat},${lon}&zoom=12&size=600x400&markers=${lat},${lon},blue"
     
-    curl -sf -o "$output_path" "$map_url" || {
-        echo "Error: Failed to download static map" >&2
+    if ! retry_with_backoff curl -sf -o "$output_path" "$map_url"; then
+        echo "Error: Failed to download static map after retries" >&2
         return 1
-    }
+    fi
+    
+    # Verify the downloaded file is not empty
+    if [ ! -s "$output_path" ]; then
+        echo "Error: Downloaded map file is empty" >&2
+        return 1
+    fi
     
     echo "Static map saved to ${output_path}" >&2
 }
