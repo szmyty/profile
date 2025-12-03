@@ -25,11 +25,12 @@ runs:
       shell: bash
       run: |
         # Sort packages alphabetically for consistent cache keys
+        # Use printf for safer handling of package names
         PACKAGES="${{ inputs.packages }}"
-        SORTED_PACKAGES=$(echo "$PACKAGES" | tr ' ' '\n' | sort | tr '\n' ' ' | xargs)
+        SORTED_PACKAGES=$(printf '%s\n' $PACKAGES | sort | tr '\n' ' ' | xargs)
         
         # Create a hash of the package list for cache key
-        PACKAGE_HASH=$(echo "$SORTED_PACKAGES" | sha256sum | cut -d' ' -f1 | cut -c1-8)
+        PACKAGE_HASH=$(printf '%s' "$SORTED_PACKAGES" | sha256sum | cut -d' ' -f1 | cut -c1-8)
         
         # Construct cache key
         CACHE_KEY="pip-packages-${{ runner.os }}-py${{ steps.python-version.outputs.version }}-${PACKAGE_HASH}"
@@ -66,4 +67,5 @@ runs:
         pip install ${{ steps.cache-key.outputs.packages }}
         
         # Show installed package versions for debugging
-        pip list | grep -E "$(echo '${{ steps.cache-key.outputs.packages }}' | tr ' ' '|')" || true
+        # Use grep -F for fixed string matching (no regex interpretation)
+        pip list | grep -F "$(printf '%s\n' ${{ steps.cache-key.outputs.packages }})" || true

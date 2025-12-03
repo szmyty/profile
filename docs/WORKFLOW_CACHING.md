@@ -155,7 +155,7 @@ Expected execution times with cache hits:
 - **Time saved per run**: 15-35 seconds
 - **Percentage improvement**: ~60-75% faster Python setup
 - **Daily runs**: ~20 workflow runs (various schedules)
-- **Daily time saved**: ~5-12 minutes
+- **Daily time saved**: ~5-12 minutes (calculation: 20 runs × 15-35 seconds)
 - **Monthly time saved**: ~2.5-6 hours
 
 ## Cache Management
@@ -311,6 +311,6 @@ To track caching effectiveness over time:
 
 ---
 
-**Last Updated**: 2025-12-03  
+**Last Updated**: 2024-12-03  
 **Optimization Version**: v1.0  
 **Contact**: @szmyty
