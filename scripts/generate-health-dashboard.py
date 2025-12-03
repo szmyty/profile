@@ -377,8 +377,14 @@ def generate_svg(snapshot: dict) -> str:
     return svg
 
 
-def main():
-    """Main entry point."""
+def main() -> None:
+    """
+    Main entry point for health dashboard generation.
+    
+    Reads health snapshot data and generates a holistic SVG dashboard
+    with personal stats, sleep, readiness, and activity metrics.
+    Uses fallback mechanism to preserve existing card on errors.
+    """
     if len(sys.argv) < 2:
         print(
             "Usage: generate-health-dashboard.py <health_snapshot.json> [output_path]",

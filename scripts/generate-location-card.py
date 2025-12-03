@@ -60,7 +60,20 @@ def generate_svg(
     map_image_base64: str,
     updated_at: str,
 ) -> str:
-    """Generate SVG card markup with embedded map."""
+    """
+    Generate SVG card markup with embedded map.
+    
+    Args:
+        location: Short location identifier (e.g., city code).
+        display_name: Full human-readable location name.
+        lat: Latitude coordinate.
+        lon: Longitude coordinate.
+        map_image_base64: Base64-encoded map image.
+        updated_at: ISO 8601 timestamp when card was generated.
+    
+    Returns:
+        Complete SVG markup as a string.
+    """
     
     # Load theme values
     theme = load_theme()
@@ -180,8 +193,13 @@ def generate_svg(
     return svg
 
 
-def main():
-    """Main entry point."""
+def main() -> None:
+    """
+    Main entry point for location card generation.
+    
+    Reads location data and map image, generates SVG card.
+    Uses fallback mechanism to preserve existing card on errors.
+    """
     if len(sys.argv) < 3:
         print(
             "Usage: generate-location-card.py <location.json> <map.png> [output_path]",

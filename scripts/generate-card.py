@@ -93,7 +93,23 @@ def generate_svg(
     artwork_data_uri: str,
     updated_at: Optional[str] = None,
 ) -> str:
-    """Generate SVG card markup."""
+    """
+    Generate SVG card markup for SoundCloud track.
+    
+    Args:
+        title: Track title.
+        artist: Artist name.
+        genre: Music genre.
+        duration_ms: Track duration in milliseconds.
+        playback_count: Number of plays.
+        created_at: ISO 8601 timestamp when track was created.
+        permalink_url: SoundCloud track URL.
+        artwork_data_uri: Base64-encoded data URI for artwork image.
+        updated_at: Optional ISO 8601 timestamp when card was generated.
+    
+    Returns:
+        Complete SVG markup as a string.
+    """
 
     # Load theme values
     theme = load_theme()
@@ -227,8 +243,13 @@ def generate_svg(
     return svg
 
 
-def main():
-    """Main entry point."""
+def main() -> None:
+    """
+    Main entry point for SoundCloud card generation.
+    
+    Reads track metadata and artwork, generates SVG card.
+    Uses fallback mechanism to preserve existing card on errors.
+    """
     if len(sys.argv) < 2:
         print("Usage: generate-card.py <metadata.json> [artwork_path] [output_path]", file=sys.stderr)
         sys.exit(1)

@@ -442,8 +442,13 @@ def generate_svg(stats: Dict) -> str:
     return svg
 
 
-def main():
-    """Main entry point."""
+def main() -> None:
+    """
+    Main entry point for developer dashboard generation.
+    
+    Reads developer statistics and generates a comprehensive SVG dashboard
+    with metrics, activity charts, and language statistics.
+    """
     if len(sys.argv) < 2:
         print(
             "Usage: generate-developer-dashboard.py <stats.json> [output_path]",
