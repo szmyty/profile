@@ -21,6 +21,18 @@ fetch_weather() {
     local lon=$2
     echo "Fetching weather data from Open-Meteo..." >&2
     
+    # Generate cache key from coordinates
+    local cache_key
+    cache_key=$(generate_cache_key "${lat},${lon}")
+    
+    # Try to get cached weather (cache for 1 hour by setting CACHE_TTL_DAYS=0.042)
+    local cached_weather
+    if CACHE_TTL_DAYS=0.042 cached_weather=$(get_cached_response "weather" "$cache_key"); then
+        echo "Using cached weather data" >&2
+        echo "$cached_weather"
+        return 0
+    fi
+    
     local weather_data
     if ! weather_data=$(retry_with_backoff curl -sf "https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=auto"); then
         echo "Error: Failed to fetch weather from Open-Meteo API after retries" >&2
@@ -32,6 +44,9 @@ fetch_weather() {
         echo "Error: Invalid weather data from Open-Meteo API" >&2
         return 1
     fi
+    
+    # Cache the weather data
+    echo "$weather_data" | save_cached_response "weather" "$cache_key"
     
     echo "$weather_data"
 }

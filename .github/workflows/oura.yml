@@ -59,13 +59,21 @@ jobs:
           echo "Oura metrics fetched successfully"
           cat oura/metrics.json
 
+      - name: Restore SVG hash cache
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: svg-hash-cache-${{ github.run_id }}
+          restore-keys: |
+            svg-hash-cache-
+
       - name: Generate unified health snapshot
         run: |
           python scripts/generate-health-snapshot.py oura/metrics.json oura/health_snapshot.json
 
       - name: Generate holistic health dashboard SVG
         run: |
-          python scripts/generate-health-dashboard.py oura/health_snapshot.json oura/health_dashboard.svg
+          python scripts/incremental-generate.py oura/health_snapshot.json oura/health_dashboard.svg scripts/generate-health-dashboard.py oura_health
 
       - name: Compute mood state
         run: |
@@ -73,7 +81,7 @@ jobs:
 
       - name: Generate mood dashboard SVG card
         run: |
-          python scripts/generate-oura-mood-card.py oura/mood.json oura/metrics.json oura/mood_dashboard.svg
+          python scripts/incremental-generate.py oura/mood.json oura/mood_dashboard.svg scripts/generate-oura-mood-card.py oura_mood oura/metrics.json
 
       - name: Optimize SVGs with SVGO
         run: |

@@ -104,22 +104,35 @@ jobs:
           echo "Weather data fetched successfully"
           cat weather/weather.json
 
+      - name: Restore SVG hash cache
+        if: steps.location.outputs.skip != 'true' && steps.coords.outputs.skip != 'true'
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: svg-hash-cache-${{ github.run_id }}
+          restore-keys: |
+            svg-hash-cache-
+
       - name: Generate weather SVG card
         if: steps.location.outputs.skip != 'true' && steps.coords.outputs.skip != 'true'
         run: |
-          python scripts/generate-weather-card.py weather/weather.json weather/weather-today.svg
+          python scripts/incremental-generate.py weather/weather.json weather/weather-today.svg scripts/generate-weather-card.py weather
 
       - name: Optimize SVG with SVGO
         if: steps.location.outputs.skip != 'true' && steps.coords.outputs.skip != 'true'
         run: |
           npm install -g svgo
-          ORIGINAL_SIZE=$(stat -c%s weather/weather-today.svg)
-          if [ "$ORIGINAL_SIZE" -gt 0 ]; then
-            svgo weather/weather-today.svg -o weather/weather-today.svg
-            OPTIMIZED_SIZE=$(stat -c%s weather/weather-today.svg)
-            echo "SVG optimized: ${ORIGINAL_SIZE} bytes → ${OPTIMIZED_SIZE} bytes ($(( 100 - OPTIMIZED_SIZE * 100 / ORIGINAL_SIZE ))% reduction)"
+          if [ -f weather/weather-today.svg ]; then
+            ORIGINAL_SIZE=$(stat -c%s weather/weather-today.svg)
+            if [ "$ORIGINAL_SIZE" -gt 0 ]; then
+              svgo weather/weather-today.svg -o weather/weather-today.svg
+              OPTIMIZED_SIZE=$(stat -c%s weather/weather-today.svg)
+              echo "SVG optimized: ${ORIGINAL_SIZE} bytes → ${OPTIMIZED_SIZE} bytes ($(( 100 - OPTIMIZED_SIZE * 100 / ORIGINAL_SIZE ))% reduction)"
+            else
+              echo "Warning: SVG file is empty, skipping optimization"
+            fi
           else
-            echo "Warning: SVG file is empty, skipping optimization"
+            echo "SVG generation was skipped (data unchanged)"
           fi
 
       - name: Update README with weather card
