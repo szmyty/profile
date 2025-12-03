@@ -21,6 +21,7 @@ from lib.utils import (
     format_timestamp_local,
     generate_card_with_fallback,
 )
+from lib.weather_alerts import get_weather_alert, format_alert_badge
 
 
 def format_time(time_str: str) -> str:
@@ -155,6 +156,17 @@ def generate_svg(
 
     # Get background colors
     bg_start, bg_end = get_background_gradient(is_day, weathercode)
+    
+    # Check for weather alerts
+    weather_alert = get_weather_alert(weathercode, current_temp, wind_speed, is_day)
+    alert_badge = ""
+    if weather_alert:
+        alert_type, alert_message, alert_emoji = weather_alert
+        alert_color = accent_hr if alert_type in ["heat", "severe_thunderstorm", "blizzard"] else accent_cyan
+        alert_badge = format_alert_badge(
+            alert_type, alert_message, alert_emoji,
+            20, 200, font_family, alert_color
+        )
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{card_width}" height="{card_height}" viewBox="0 0 {card_width} {card_height}">
   <defs>
@@ -223,6 +235,9 @@ def generate_svg(
       Updated: {updated_at}
     </text>
   </g>
+
+  <!-- Weather Alert Badge -->
+  {alert_badge}
 
   <!-- Decorative accent -->
   <rect x="{card_width - 20}" y="15" width="4" height="170" rx="2" fill="{accent_teal}" fill-opacity="{stroke_opacity}"/>
