@@ -961,6 +961,53 @@ def format_time_since(timestamp_str: str) -> str:
         return "unknown"
 
 
+def format_large_number(count: int) -> str:
+    """
+    Format large numbers with K/M suffixes for readability.
+    
+    Args:
+        count: The number to format.
+    
+    Returns:
+        Formatted string with K/M suffix (e.g., "1.5K", "2.3M").
+    
+    Examples:
+        >>> format_large_number(1500)
+        "1.5K"
+        >>> format_large_number(2_300_000)
+        "2.3M"
+        >>> format_large_number(500)
+        "500"
+    """
+    if count >= 1_000_000:
+        return f"{count / 1_000_000:.1f}M"
+    elif count >= 1_000:
+        return f"{count / 1_000:.1f}K"
+    return str(count)
+
+
+def format_duration_ms(duration_ms: int) -> str:
+    """
+    Convert milliseconds to MM:SS format.
+    
+    Args:
+        duration_ms: Duration in milliseconds.
+    
+    Returns:
+        Formatted duration string (e.g., "3:45", "12:03").
+    
+    Examples:
+        >>> format_duration_ms(225000)
+        "3:45"
+        >>> format_duration_ms(60000)
+        "1:00"
+    """
+    seconds = duration_ms // 1000
+    minutes = seconds // 60
+    remaining_seconds = seconds % 60
+    return f"{minutes}:{remaining_seconds:02d}"
+
+
 # Image optimization utilities
 
 # Try to import Pillow for image optimization

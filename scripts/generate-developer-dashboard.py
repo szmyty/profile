@@ -28,19 +28,12 @@ from lib.utils import (
     get_theme_font_size,
     get_theme_card_dimension,
     get_theme_border_radius,
+    get_theme_chart_value,
     format_timestamp_local,
+    format_large_number,
     generate_card_with_fallback,
     generate_sparkline_path,
 )
-
-
-def format_count(count: int) -> str:
-    """Format large numbers with K/M suffixes."""
-    if count >= 1_000_000:
-        return f"{count / 1_000_000:.1f}M"
-    elif count >= 1_000:
-        return f"{count / 1_000:.1f}K"
-    return str(count)
 
 
 def generate_metric_badge(
@@ -172,7 +165,7 @@ def generate_bar_chart(
                 rx="2" fill="{color}"/>
           <text x="{label_width + bar_len + 5}" y="{bar_height // 2}" font-family="{font_family}" 
                 font-size="9" fill="{text_secondary}" dominant-baseline="middle">
-            {format_count(int(value))}
+            {format_large_number(int(value))}
           </text>
         </g>""")
     
@@ -319,11 +312,11 @@ def generate_svg(stats: Dict) -> str:
     metrics_row = f"""
     <g transform="translate(25, {metrics_y})">
       {generate_metric_badge("Repos", str(repos), "📦", 0, accent_repos, font_family, text_primary, text_secondary)}
-      {generate_metric_badge("Stars", format_count(stars), "⭐", 120, accent_stars, font_family, text_primary, text_secondary)}
+      {generate_metric_badge("Stars", format_large_number(stars), "⭐", 120, accent_stars, font_family, text_primary, text_secondary)}
       {generate_metric_badge("PRs", f"{prs_opened}/{prs_merged}", "🔀", 240, accent_prs, font_family, text_primary, text_secondary)}
       {generate_metric_badge("Issues", str(issues_opened), "🐛", 360, accent_issues, font_family, text_primary, text_secondary)}
-      {generate_metric_badge("Followers", format_count(followers), "👥", 480, accent_teal, font_family, text_primary, text_secondary)}
-      {generate_metric_badge("Commits", format_count(total_commits), "📊", 600, accent_commits, font_family, text_primary, text_secondary)}
+      {generate_metric_badge("Followers", format_large_number(followers), "👥", 480, accent_teal, font_family, text_primary, text_secondary)}
+      {generate_metric_badge("Commits", format_large_number(total_commits), "📊", 600, accent_commits, font_family, text_primary, text_secondary)}
     </g>"""
     
     # Generate sparkline for recent commits
