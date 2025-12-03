@@ -212,7 +212,12 @@ def main() -> None:
     output_path = sys.argv[3] if len(sys.argv) > 3 else "location/location-card.svg"
 
     # Check if fallback exists before attempting generation
-    has_fallback = fallback_exists(output_path)
+    # Only check for fallback if output path is an SVG file
+    output_file = Path(output_path)
+    if output_file.exists() and output_file.suffix.lower() == ".svg":
+        has_fallback = fallback_exists(output_path)
+    else:
+        has_fallback = False
 
     # Try to read metadata
     metadata, error = try_load_json(metadata_path, "Metadata file")

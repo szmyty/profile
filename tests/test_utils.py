@@ -6,6 +6,8 @@ Unit tests for scripts/lib/utils.py utility functions.
 import pytest
 import sys
 import os
+import tempfile
+from pathlib import Path
 
 # Add scripts directory to path for imports
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
@@ -15,6 +17,7 @@ from lib.utils import (
     safe_get,
     safe_value,
     generate_sparkline_path,
+    fallback_exists,
 )
 
 
@@ -222,3 +225,131 @@ class TestGenerateSparklinePath:
         parts = path.split(" L")
         assert len(parts) == 3  # M + 2 L segments
         assert parts[0].startswith("M")
+
+
+class TestFallbackExists:
+    """Tests for fallback_exists function."""
+
+    def test_nonexistent_file(self):
+        """Test that nonexistent file returns False."""
+        assert fallback_exists("/tmp/nonexistent_file.svg") is False
+
+    def test_valid_svg_file(self):
+        """Test that valid SVG file returns True."""
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.svg', delete=False) as f:
+            f.write('<svg xmlns="http://www.w3.org/2000/svg"><rect/></svg>')
+            temp_path = f.name
+        
+        try:
+            assert fallback_exists(temp_path) is True
+        finally:
+            Path(temp_path).unlink()
+
+    def test_invalid_svg_missing_closing_tag(self):
+        """Test that SVG without closing tag returns False."""
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.svg', delete=False) as f:
+            f.write('<svg xmlns="http://www.w3.org/2000/svg"><rect/>')
+            temp_path = f.name
+        
+        try:
+            assert fallback_exists(temp_path) is False
+        finally:
+            Path(temp_path).unlink()
+
+    def test_invalid_svg_missing_opening_tag(self):
+        """Test that file without <svg> opening tag returns False."""
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.svg', delete=False) as f:
+            f.write('<html><body>Not SVG</body></html>')
+            temp_path = f.name
+        
+        try:
+            assert fallback_exists(temp_path) is False
+        finally:
+            Path(temp_path).unlink()
+
+    def test_empty_svg_file(self):
+        """Test that empty SVG file returns False."""
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.svg', delete=False) as f:
+            f.write('')
+            temp_path = f.name
+        
+        try:
+            assert fallback_exists(temp_path) is False
+        finally:
+            Path(temp_path).unlink()
+
+    def test_png_file_returns_false(self):
+        """Test that PNG file returns False (not an SVG)."""
+        # Create a minimal PNG file (PNG magic bytes + minimal structure)
+        png_data = (
+            b'\x89PNG\r\n\x1a\n'  # PNG signature
+            b'\x00\x00\x00\rIHDR'  # IHDR chunk
+            b'\x00\x00\x00\x01\x00\x00\x00\x01'  # 1x1 image
+            b'\x08\x06\x00\x00\x00\x1f\x15\xc4\x89'
+            b'\x00\x00\x00\nIDATx\x9cc\x00\x01\x00\x00\x05\x00\x01\r\n-\xb4'
+            b'\x00\x00\x00\x00IEND\xaeB`\x82'
+        )
+        
+        with tempfile.NamedTemporaryFile(mode='wb', suffix='.png', delete=False) as f:
+            f.write(png_data)
+            temp_path = f.name
+        
+        try:
+            # Should return False because it's not an SVG file
+            assert fallback_exists(temp_path) is False
+        finally:
+            Path(temp_path).unlink()
+
+    def test_png_with_svg_extension(self):
+        """Test that PNG with .svg extension returns False (binary content)."""
+        # Create a PNG file but with .svg extension
+        png_data = (
+            b'\x89PNG\r\n\x1a\n'  # PNG signature
+            b'\x00\x00\x00\rIHDR'
+            b'\x00\x00\x00\x01\x00\x00\x00\x01'
+            b'\x08\x06\x00\x00\x00\x1f\x15\xc4\x89'
+        )
+        
+        with tempfile.NamedTemporaryFile(mode='wb', suffix='.svg', delete=False) as f:
+            f.write(png_data)
+            temp_path = f.name
+        
+        try:
+            # Should return False because read_text will fail or content won't start with <svg
+            assert fallback_exists(temp_path) is False
+        finally:
+            Path(temp_path).unlink()
+
+    def test_svg_with_whitespace(self):
+        """Test that SVG with leading/trailing whitespace is handled correctly."""
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.svg', delete=False) as f:
+            f.write('\n  <svg xmlns="http://www.w3.org/2000/svg"><rect/></svg>  \n')
+            temp_path = f.name
+        
+        try:
+            assert fallback_exists(temp_path) is True
+        finally:
+            Path(temp_path).unlink()
+
+    def test_txt_file_with_svg_content(self):
+        """Test that .txt file with SVG content returns False (wrong extension)."""
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as f:
+            f.write('<svg xmlns="http://www.w3.org/2000/svg"><rect/></svg>')
+            temp_path = f.name
+        
+        try:
+            # Should return False because extension is not .svg
+            assert fallback_exists(temp_path) is False
+        finally:
+            Path(temp_path).unlink()
+
+    def test_svg_uppercase_extension(self):
+        """Test that .SVG uppercase extension works."""
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.SVG', delete=False) as f:
+            f.write('<svg xmlns="http://www.w3.org/2000/svg"><rect/></svg>')
+            temp_path = f.name
+        
+        try:
+            assert fallback_exists(temp_path) is True
+        finally:
+            Path(temp_path).unlink()
