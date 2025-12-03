@@ -818,6 +818,51 @@ def get_theme_decorative_accent_value(key: str, fallback: int = 4) -> int:
     return safe_get(theme, "cards", "decorative_accent", key, default=fallback)
 
 
+def get_theme_language_color(language: str, fallback: str = "#8892b0") -> str:
+    """
+    Get a color for a programming language from the theme.
+
+    Args:
+        language: Language name (e.g., 'Python', 'JavaScript').
+        fallback: Default color if not found.
+
+    Returns:
+        Hex color string.
+    """
+    theme = load_theme()
+    return safe_get(theme, "colors", "languages", language, default=fallback)
+
+
+def get_theme_status_color(status: str, fallback: str = "#6b7280") -> str:
+    """
+    Get a color for a status indicator from the theme.
+
+    Args:
+        status: Status name (e.g., 'success', 'warning', 'error', 'unknown').
+        fallback: Default color if not found.
+
+    Returns:
+        Hex color string.
+    """
+    theme = load_theme()
+    return safe_get(theme, "colors", "status", status, default=fallback)
+
+
+def get_theme_chart_color(name: str, fallback: str = "#2d3748") -> str:
+    """
+    Get a chart-related color from the theme.
+
+    Args:
+        name: Color name (e.g., 'bar_background').
+        fallback: Default color if not found.
+
+    Returns:
+        Hex color string.
+    """
+    theme = load_theme()
+    return safe_get(theme, "colors", "chart", name, default=fallback)
+
+
 # Cache for loaded timezone to avoid re-reading file
 _timezone_cache: Optional[Dict] = None
 

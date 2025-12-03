@@ -150,6 +150,71 @@ class CardBase(ABC):
             "flood_opacity": 0.3,
         })
 
+    def get_spacing(self, size: str, fallback: int = 10) -> int:
+        """
+        Get a spacing value from the theme.
+
+        Args:
+            size: Size name (e.g., 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl').
+            fallback: Default value if not found.
+
+        Returns:
+            Spacing value in pixels.
+        """
+        return self.theme.get("spacing", {}).get(size, fallback)
+
+    def get_chart_value(self, key: str, fallback: int = 0) -> int:
+        """
+        Get a chart-related dimension value from the theme.
+
+        Args:
+            key: Chart setting key (e.g., 'bar_height', 'bar_gap', 'label_width').
+            fallback: Default value if not found.
+
+        Returns:
+            Chart dimension value.
+        """
+        return self.theme.get("cards", {}).get("chart", {}).get(key, fallback)
+
+    def get_language_color(self, language: str, fallback: str = "#8892b0") -> str:
+        """
+        Get a color for a programming language from the theme.
+
+        Args:
+            language: Language name (e.g., 'Python', 'JavaScript').
+            fallback: Default color if not found.
+
+        Returns:
+            Hex color string.
+        """
+        return self.theme.get("colors", {}).get("languages", {}).get(language, fallback)
+
+    def get_status_color(self, status: str, fallback: str = "#6b7280") -> str:
+        """
+        Get a color for a status indicator from the theme.
+
+        Args:
+            status: Status name (e.g., 'success', 'warning', 'error', 'unknown').
+            fallback: Default color if not found.
+
+        Returns:
+            Hex color string.
+        """
+        return self.theme.get("colors", {}).get("status", {}).get(status, fallback)
+
+    def get_chart_color(self, name: str, fallback: str = "#2d3748") -> str:
+        """
+        Get a chart-related color from the theme.
+
+        Args:
+            name: Color name (e.g., 'bar_background').
+            fallback: Default color if not found.
+
+        Returns:
+            Hex color string.
+        """
+        return self.theme.get("colors", {}).get("chart", {}).get(name, fallback)
+
     # -------------------------------------------------------------------------
     # SVG building blocks
     # -------------------------------------------------------------------------

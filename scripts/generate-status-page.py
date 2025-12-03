@@ -24,20 +24,14 @@ from lib.utils import (
     get_theme_color,
     get_theme_font_size,
     get_theme_spacing,
+    get_theme_status_color,
     load_theme
 )
 
 
 def generate_status_indicator(status: str, x: int, y: int) -> str:
     """Generate a colored status indicator circle."""
-    colors = {
-        "success": "#4ade80",  # green
-        "warning": "#fbbf24",  # yellow
-        "error": "#ef4444",    # red
-        "unknown": "#6b7280"   # gray
-    }
-    
-    color = colors.get(status, colors["unknown"])
+    color = get_theme_status_color(status)
     
     return f'''
         <circle cx="{x}" cy="{y}" r="6" fill="{color}">
@@ -205,7 +199,7 @@ def generate_status_page_svg(output_path: str = "data/status/status-page.svg") -
         
         if last_failure:
             time_ago = format_time_since(last_failure)
-            failure_color = "#ef4444" if consecutive_failures >= 3 else text_color
+            failure_color = get_theme_status_color("error") if consecutive_failures >= 3 else text_color
             svg_parts.append(f'''
         <text x="{width - 240}" y="{y_pos + 20}" 
               font-size="{font_size_sm}" fill="{failure_color}" class="value">
@@ -231,7 +225,7 @@ def generate_status_page_svg(output_path: str = "data/status/status-page.svg") -
         # Success rate
         if total_runs > 0:
             success_rate = (successful_runs / total_runs) * 100
-            rate_color = "#4ade80" if success_rate >= 90 else "#fbbf24" if success_rate >= 70 else "#ef4444"
+            rate_color = get_theme_status_color("success") if success_rate >= 90 else get_theme_status_color("warning") if success_rate >= 70 else get_theme_status_color("error")
             svg_parts.append(f'''
         <text x="{width - 90}" y="{y_pos + 20}" 
               font-size="{font_size_base}" fill="{rate_color}" class="value" text-anchor="end">

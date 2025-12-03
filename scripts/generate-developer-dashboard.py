@@ -29,6 +29,7 @@ from lib.utils import (
     get_theme_card_dimension,
     get_theme_border_radius,
     get_theme_chart_value,
+    get_theme_language_color,
     format_timestamp_local,
     format_large_number,
     generate_card_with_fallback,
@@ -185,26 +186,6 @@ def generate_language_bars(
     if not languages:
         return ""
     
-    # Language colors (fallback colors for common languages)
-    lang_colors = {
-        "Python": "#3572A5",
-        "JavaScript": "#f1e05a",
-        "TypeScript": "#3178c6",
-        "Java": "#b07219",
-        "Go": "#00ADD8",
-        "Rust": "#dea584",
-        "C++": "#f34b7d",
-        "C": "#555555",
-        "Shell": "#89e051",
-        "Ruby": "#701516",
-        "PHP": "#4F5D95",
-        "HTML": "#e34c26",
-        "CSS": "#563d7c",
-        "Kotlin": "#A97BFF",
-        "Swift": "#F05138",
-        "Other": "#8892b0",
-    }
-    
     # Sort languages by percentage
     sorted_langs = sorted(languages.items(), key=lambda x: -x[1])[:6]
     
@@ -215,7 +196,7 @@ def generate_language_bars(
     
     for idx, (lang, pct) in enumerate(sorted_langs):
         bar_width = (pct / 100) * width
-        color = lang_colors.get(lang, "#8892b0")
+        color = get_theme_language_color(lang)
         
         if bar_width > 1:
             bars.append(
