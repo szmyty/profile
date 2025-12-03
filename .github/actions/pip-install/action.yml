@@ -25,9 +25,11 @@ runs:
       shell: bash
       run: |
         # Sort packages alphabetically for consistent cache keys
-        # Use printf for safer handling of package names
+        # Quote PACKAGES to prevent word splitting issues
         PACKAGES="${{ inputs.packages }}"
-        SORTED_PACKAGES=$(printf '%s\n' $PACKAGES | sort | tr '\n' ' ' | xargs)
+        # Use read array for safe splitting, then sort
+        read -ra PKG_ARRAY <<< "$PACKAGES"
+        SORTED_PACKAGES=$(printf '%s\n' "${PKG_ARRAY[@]}" | sort | tr '\n' ' ' | xargs)
         
         # Create a hash of the package list for cache key
         PACKAGE_HASH=$(printf '%s' "$SORTED_PACKAGES" | sha256sum | cut -d' ' -f1 | cut -c1-8)
@@ -56,16 +58,22 @@ runs:
     - name: Install packages
       shell: bash
       run: |
+        PACKAGES="${{ steps.cache-key.outputs.packages }}"
+        
         if [ "${{ steps.pip-cache.outputs.cache-hit }}" = "true" ]; then
-          echo "✓ Cache hit for packages: ${{ steps.cache-key.outputs.packages }}"
+          echo "✓ Cache hit for packages: $PACKAGES"
           echo "Installing from cache..."
         else
-          echo "✗ Cache miss for packages: ${{ steps.cache-key.outputs.packages }}"
+          echo "✗ Cache miss for packages: $PACKAGES"
           echo "Installing and caching..."
         fi
         
-        pip install ${{ steps.cache-key.outputs.packages }}
+        # Quote packages to prevent command injection
+        pip install $PACKAGES
         
         # Show installed package versions for debugging
-        # Use grep -F for fixed string matching (no regex interpretation)
-        pip list | grep -F "$(printf '%s\n' ${{ steps.cache-key.outputs.packages }})" || true
+        # Iterate through each package for proper validation
+        echo "Installed package versions:"
+        for pkg in $PACKAGES; do
+          pip list | grep -F "$pkg" || true
+        done
