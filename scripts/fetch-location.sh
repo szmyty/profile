@@ -12,6 +12,7 @@ set -euo pipefail
 # Source common utilities
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "${SCRIPT_DIR}/lib/common.sh"
+source "${SCRIPT_DIR}/lib/logging.sh"
 
 GITHUB_OWNER="${GITHUB_OWNER:-szmyty}"
 OUTPUT_DIR="${OUTPUT_DIR:-location}"
@@ -289,18 +290,26 @@ File Size: $(stat -f%z "$temp_file" 2>/dev/null || stat -c%s "$temp_file" 2>/dev
 
 # Main execution
 main() {
+    # Initialize logging
+    init_logging "location"
+    log_workflow_start "Location Card - Fetch Data"
+    
     # Get GitHub location
     local location
+    log_info "Fetching GitHub location..."
     location=$(get_github_location) || {
-        echo "Skipping location card generation: No location found" >&2
+        log_error "Skipping location card generation: No location found"
+        log_workflow_end "Location Card - Fetch Data" 1
         exit 1
     }
-    echo "GitHub location: ${location}" >&2
+    log_info "GitHub location: ${location}"
     
     # Get coordinates
     local coord_data
+    log_info "Converting location to coordinates..."
     coord_data=$(get_coordinates "$location") || {
-        echo "Skipping location card generation: Could not get coordinates" >&2
+        log_error "Skipping location card generation: Could not get coordinates"
+        log_workflow_end "Location Card - Fetch Data" 1
         exit 1
     }
     
@@ -308,31 +317,40 @@ main() {
     lat=$(echo "$coord_data" | jq -r '.lat')
     lon=$(echo "$coord_data" | jq -r '.lon')
     display_name=$(echo "$coord_data" | jq -r '.display_name')
+    log_info "Coordinates: lat=${lat}, lon=${lon}"
     
     # Create output directory
     mkdir -p "$OUTPUT_DIR"
+    log_info "Output directory: ${OUTPUT_DIR}"
     
     # Download static map (with fallback handling)
     local map_status=0
+    log_info "Downloading static map..."
     download_static_map "$lat" "$lon" "${OUTPUT_DIR}/location-map.png" || map_status=$?
     
     # Check if we have a map file (either from Mapbox or fallback)
     if [ ! -f "${OUTPUT_DIR}/location-map.png" ]; then
-        echo "❌ FAILURE: Could not download map and fallback generation failed" >&2
+        log_error "Could not download map and fallback generation failed"
+        log_workflow_end "Location Card - Fetch Data" 1
         exit 1
     fi
     
     # Log if we're using fallback
     if [ $map_status -ne 0 ]; then
-        echo "⚠️ Using fallback map image (Mapbox unavailable)" >&2
+        log_warn "Using fallback map image (Mapbox unavailable)"
+    else
+        log_info "Static map downloaded successfully"
     fi
     
     # Get current UTC time for update timestamp in ISO 8601 format
     local updated_at
     updated_at=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
     
+    log_info "Generating location JSON output..."
+    
     # Output combined JSON
-    jq -n \
+    local json_output
+    json_output=$(jq -n \
         --arg location "$location" \
         --arg display_name "$display_name" \
         --arg lat "$lat" \
@@ -345,7 +363,12 @@ main() {
             coordinates: {lat: ($lat | tonumber), lon: ($lon | tonumber)},
             map_path: $map_path,
             updated_at: $updated_at
-        }'
+        }')
+    
+    log_info "Location data generated successfully"
+    log_workflow_end "Location Card - Fetch Data" 0
+    
+    echo "$json_output"
 }
 
 main "$@"
