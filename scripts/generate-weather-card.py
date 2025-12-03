@@ -20,6 +20,8 @@ from lib.utils import (
     get_theme_card_dimension,
     get_theme_border_radius,
     format_timestamp_local,
+    format_time_since,
+    is_data_stale,
     generate_card_with_fallback,
 )
 from lib.weather_alerts import get_weather_alert, format_alert_badge
@@ -158,6 +160,30 @@ def generate_svg(
     # Get background colors
     bg_start, bg_end = get_background_gradient(is_day, weathercode)
     
+    # Calculate staleness badge
+    font_size_xs = get_theme_font_size("xs")
+    staleness_badge = ""
+    if updated_at:
+        time_since = format_time_since(updated_at)
+        is_stale = is_data_stale(updated_at, stale_threshold_hours=24)
+        
+        # Use warning color if data is stale
+        if is_stale:
+            badge_color = accent_hr  # Warning/error color
+            badge_icon = "⚠️ "
+        else:
+            badge_color = text_muted
+            badge_icon = ""
+        
+        time_since_escaped = escape_xml(time_since)
+        staleness_badge = f'''
+  <!-- Staleness Badge -->
+  <g transform="translate({card_width - 10}, 10)">
+    <text x="0" y="12" font-family="{font_family}" font-size="{font_size_xs}" fill="{badge_color}" text-anchor="end">
+      {badge_icon}Updated: {time_since_escaped}
+    </text>
+  </g>'''
+    
     # Check for weather alerts
     weather_alert = get_weather_alert(weathercode, current_temp, wind_speed, is_day)
     alert_badge = ""
@@ -230,15 +256,10 @@ def generate_svg(
     </text>
   </g>
 
-  <!-- Footer: Updated timestamp -->
-  <g transform="translate(20, 180)">
-    <text font-family="{font_family}" font-size="{font_size_base}" fill="{text_muted}">
-      Updated: {updated_at}
-    </text>
-  </g>
-
   <!-- Weather Alert Badge -->
   {alert_badge}
+
+  {staleness_badge}
 
   <!-- Decorative accent -->
   <rect x="{card_width - 20}" y="15" width="4" height="170" rx="2" fill="{accent_teal}" fill-opacity="{stroke_opacity}"/>
@@ -249,9 +270,8 @@ def generate_svg(
 
 def generate_weather_svg(metadata: dict) -> str:
     """Generate weather SVG from metadata dictionary."""
-    # Format updated_at to local time for display
+    # Pass raw updated_at timestamp for staleness calculation
     updated_at_raw = metadata.get("updated_at", "")
-    updated_at_display = format_timestamp_local(updated_at_raw) if updated_at_raw else ""
 
     return generate_svg(
         location=metadata.get("location", "Unknown Location"),
@@ -263,7 +283,7 @@ def generate_weather_svg(metadata: dict) -> str:
         wind_speed=metadata.get("current", {}).get("wind_speed", 0),
         sunrise=metadata.get("daily", {}).get("sunrise", ""),
         sunset=metadata.get("daily", {}).get("sunset", ""),
-        updated_at=updated_at_display,
+        updated_at=updated_at_raw,
         is_day=metadata.get("current", {}).get("is_day", 1),
         weathercode=metadata.get("current", {}).get("weathercode", 0),
     )
