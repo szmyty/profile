@@ -185,7 +185,7 @@ def generate_svg(
 
   <!-- Staleness Badge -->
   {f'''<g transform="translate({card_width - 10}, 10)">
-    <text x="0" y="0" font-family="{font_family}" font-size="{font_size_xs}" fill="{text_muted}" text-anchor="end">Updated: {staleness_escaped}</text>
+    <text x="0" y="12" font-family="{font_family}" font-size="{font_size_xs}" fill="{text_muted}" text-anchor="end">Updated: {staleness_escaped}</text>
   </g>''' if staleness else ''}
 
   <!-- Track Info -->

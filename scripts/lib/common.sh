@@ -271,12 +271,15 @@ get_github_location() {
     
     # Try fallback to cached location
     echo "GitHub location not available, trying cached location..." >&2
-    if [ -f "$location_cache" ] && jq -e . "$location_cache" >/dev/null 2>&1; then
-        location=$(jq -r '.location // empty' "$location_cache")
-        if [ -n "$location" ] && [ "$location" != "null" ]; then
-            echo "Using cached location: ${location}" >&2
-            echo "$location"
-            return 0
+    if [ -f "$location_cache" ]; then
+        # Validate cache file once
+        if jq -e . "$location_cache" >/dev/null 2>&1; then
+            location=$(jq -r '.location // empty' "$location_cache")
+            if [ -n "$location" ] && [ "$location" != "null" ]; then
+                echo "Using cached location: ${location}" >&2
+                echo "$location"
+                return 0
+            fi
         fi
     fi
     

@@ -761,7 +761,7 @@ def format_timestamp_local(dt_utc_str: str, tzinfo_str: Optional[str] = None) ->
         dt_utc_str = dt_utc_str.strip()
         if dt_utc_str.endswith('Z'):
             dt_utc_str = dt_utc_str[:-1] + '+00:00'
-        elif len(dt_utc_str) >= 6 and '+' not in dt_utc_str and '-' not in dt_utc_str[-6:]:
+        elif not (dt_utc_str.endswith('+00:00') or '+' in dt_utc_str[-6:] or dt_utc_str.endswith('Z')):
             # No timezone info, assume UTC
             dt_utc_str = dt_utc_str + '+00:00'
 
@@ -838,7 +838,8 @@ def format_time_since(timestamp_str: str) -> str:
         timestamp_str = timestamp_str.strip()
         if timestamp_str.endswith('Z'):
             timestamp_str = timestamp_str[:-1] + '+00:00'
-        elif len(timestamp_str) >= 6 and '+' not in timestamp_str and '-' not in timestamp_str[-6:]:
+        elif not (timestamp_str.endswith('+00:00') or '+' in timestamp_str[-6:] or timestamp_str.endswith('Z')):
+            # No timezone info, assume UTC
             timestamp_str = timestamp_str + '+00:00'
         
         dt = datetime.fromisoformat(timestamp_str)

@@ -330,11 +330,12 @@ fetch_fresh_data() {
     created_at=$(echo "$track_data" | jq -r '.created_at')
     user_username=$(echo "$track_data" | jq -r '.user.username')
     
-    # Download artwork
+    # Download artwork (with retry)
     mkdir -p "$OUTPUT_DIR"
-    download_artwork "$artwork_url" "${OUTPUT_DIR}/soundcloud-artwork.jpg" || {
-        echo "Warning: Failed to download artwork, continuing..." >&2
-    }
+    if ! retry_with_backoff download_artwork "$artwork_url" "${OUTPUT_DIR}/soundcloud-artwork.jpg"; then
+        echo "Warning: Failed to download artwork after retries, card may use stale artwork" >&2
+        # Continue anyway - the card generator can handle missing artwork
+    fi
     
     # Get current UTC time for update timestamp
     local updated_at
