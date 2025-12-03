@@ -9,7 +9,7 @@ import json
 import sys
 from pathlib import Path
 from datetime import datetime, timezone
-from typing import Any
+from typing import Any, Dict, Optional
 
 from lib.utils import (
     escape_xml,
@@ -35,7 +35,7 @@ from lib.utils import (
 )
 
 
-def generate_radial_bars(scores: dict, cx: int = 60, cy: int = 50, radius: int = 40) -> str:
+def generate_radial_bars(scores: Dict[str, Any], cx: int = 60, cy: int = 50, radius: int = 40) -> str:
     """
     Generate SVG elements for radial progress bars showing scores.
     """
@@ -77,7 +77,7 @@ def generate_radial_bars(scores: dict, cx: int = 60, cy: int = 50, radius: int =
     return "".join(elements)
 
 
-def generate_score_bar(value: Any, x: int, y: int, width: int = None, label: str = "") -> str:
+def generate_score_bar(value: Any, x: int, y: int, width: Optional[int] = None, label: str = "") -> str:
     """Generate a horizontal score bar."""
     # Load colors from theme
     theme = load_theme()
@@ -309,7 +309,7 @@ def generate_svg(mood: dict, metrics: dict) -> str:
     return svg
 
 
-def main():
+def main() -> None:
     """Main entry point."""
     if len(sys.argv) < 2:
         print(

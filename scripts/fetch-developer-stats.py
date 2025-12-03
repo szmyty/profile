@@ -353,7 +353,7 @@ def save_raw_data(output_dir: Path, data: Dict[str, Any], filename: str) -> None
     print(f"Saved raw data: {raw_path}", file=sys.stderr)
 
 
-def main():
+def main() -> None:
     """Main entry point."""
     # Set up logging
     try:

@@ -10,6 +10,7 @@ import sys
 import argparse
 import json
 from pathlib import Path
+from typing import Optional, Dict, Any
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
@@ -17,7 +18,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 from lib.data_quality import validate_data_quality, log_data_quality_summary
 
 
-def main():
+def main() -> None:
+    """Parse arguments and validate data quality of a JSON file."""
     parser = argparse.ArgumentParser(
         description="Validate data quality for JSON files"
     )

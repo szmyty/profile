@@ -6,6 +6,7 @@ Creates a simple PNG with location coordinates.
 
 import sys
 from pathlib import Path
+from typing import Tuple
 from PIL import Image, ImageDraw, ImageFont
 
 

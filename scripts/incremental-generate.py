@@ -8,6 +8,7 @@ significantly reducing unnecessary processing.
 import sys
 import subprocess
 from pathlib import Path
+from typing import List, Optional
 
 from lib.change_detection import should_regenerate_svg, update_hash_cache
 
@@ -22,7 +23,7 @@ def generate_with_change_detection(
     svg_path: str,
     generator_script: str,
     cache_key: str,
-    extra_args: list = None,
+    extra_args: Optional[List[str]] = None,
     force: bool = False
 ) -> bool:
     """
@@ -82,7 +83,7 @@ def generate_with_change_detection(
         return False
 
 
-def main():
+def main() -> None:
     """Main entry point for CLI usage."""
     if len(sys.argv) < 5:
         print("Usage: incremental-generate.py <data_path> <svg_path> <generator_script> <cache_key> [extra_args...]")
