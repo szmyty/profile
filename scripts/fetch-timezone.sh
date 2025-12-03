@@ -22,8 +22,8 @@ fetch_timezone() {
     echo "Fetching timezone from Open-Meteo..." >&2
     
     local timezone_data
-    timezone_data=$(curl -sf "https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&timezone=auto&forecast_days=1") || {
-        echo "Error: Failed to fetch timezone from Open-Meteo API" >&2
+    timezone_data=$(retry_with_backoff curl -sf --max-time 10 "https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&timezone=auto&forecast_days=1") || {
+        echo "Error: Failed to fetch timezone from Open-Meteo API after retries" >&2
         return 1
     }
     
