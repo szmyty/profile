@@ -113,7 +113,36 @@
       "height": 350
     },
     "stroke_width": 1,
-    "stroke_opacity": 0.3
+    "stroke_opacity": 0.3,
+    "decorative_accent": {
+      "width": 4,
+      "x_offset": 20,
+      "y_offset": 15
+    },
+    "score_bar": {
+      "height": 6,
+      "width": 80,
+      "text_offset": 8
+    },
+    "radial_bar": {
+      "stroke_width": 6,
+      "opacity": 0.8,
+      "ring_spacing": 8
+    },
+    "score_ring": {
+      "stroke_width": 4,
+      "label_offset": 14
+    },
+    "chart": {
+      "bar_height": 16,
+      "bar_gap": 8,
+      "label_width": 100,
+      "sparkline": {
+        "width": 120,
+        "height": 30,
+        "stroke_width": 2
+      }
+    }
   },
   "effects": {
     "glow": {

@@ -151,7 +151,7 @@ def generate_bar_chart(
         max_value = 1
     
     bars = []
-    label_width = 100
+    label_width = get_theme_chart_value("label_width", 100)
     bar_width = width - label_width - 40
     
     for idx, item in enumerate(items):
@@ -215,7 +215,7 @@ def generate_language_bars(
     # Sort languages by percentage
     sorted_langs = sorted(languages.items(), key=lambda x: -x[1])[:6]
     
-    bar_height = 16
+    bar_height = get_theme_chart_value("bar_height", 16)
     current_x = x
     bars = []
     legends = []

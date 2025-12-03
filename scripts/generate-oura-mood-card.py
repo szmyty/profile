@@ -24,6 +24,10 @@ from lib.utils import (
     get_theme_font_size,
     get_theme_card_dimension,
     get_theme_border_radius,
+    get_theme_sparkline_value,
+    get_theme_score_bar_value,
+    get_theme_radial_bar_value,
+    get_theme_decorative_accent_value,
     format_timestamp_local,
     fallback_exists,
     log_fallback_used,
@@ -39,6 +43,11 @@ def generate_radial_bars(scores: dict, cx: int = 60, cy: int = 50, radius: int =
     accent_sleep = get_theme_color("accent", "sleep")
     sleep_gradient = get_theme_gradient("sleep")
     activity_gradient = get_theme_gradient("activity")
+    
+    # Load dimensions from theme
+    stroke_width = get_theme_radial_bar_value("stroke_width", 6)
+    opacity = get_theme_radial_bar_value("opacity", 0.8)
+    ring_spacing = get_theme_radial_bar_value("ring_spacing", 8)
     
     elements = []
     metrics = [
@@ -58,17 +67,17 @@ def generate_radial_bars(scores: dict, cx: int = 60, cy: int = 50, radius: int =
         rotation = -90 + (i * 120)
 
         elements.append(f"""
-    <circle cx="{cx}" cy="{cy}" r="{radius - (i * 8)}"
-            fill="none" stroke="{color}" stroke-width="6"
+    <circle cx="{cx}" cy="{cy}" r="{radius - (i * ring_spacing)}"
+            fill="none" stroke="{color}" stroke-width="{stroke_width}"
             stroke-dasharray="{circumference * 0.33} {circumference}"
             stroke-dashoffset="{dash_offset * 0.33}"
-            stroke-linecap="round" opacity="0.8"
+            stroke-linecap="round" opacity="{opacity}"
             transform="rotate({rotation} {cx} {cy})"/>""")
 
     return "".join(elements)
 
 
-def generate_score_bar(value: Any, x: int, y: int, width: int = 80, label: str = "") -> str:
+def generate_score_bar(value: Any, x: int, y: int, width: int = None, label: str = "") -> str:
     """Generate a horizontal score bar."""
     # Load colors from theme
     theme = load_theme()
@@ -79,6 +88,12 @@ def generate_score_bar(value: Any, x: int, y: int, width: int = 80, label: str =
     score_high = get_theme_color("scores", "high")
     score_medium = get_theme_color("scores", "medium")
     score_low = get_theme_color("scores", "low")
+    
+    # Load dimensions from theme
+    if width is None:
+        width = get_theme_score_bar_value("width", 80)
+    bar_height = get_theme_score_bar_value("height", 6)
+    text_offset = get_theme_score_bar_value("text_offset", 8)
     
     score = value if value is not None else 0
     score = min(100, max(0, score))
@@ -95,9 +110,9 @@ def generate_score_bar(value: Any, x: int, y: int, width: int = 80, label: str =
     return f"""
     <g transform="translate({x}, {y})">
       <text font-family="{font_family}" font-size="{font_size_base}" fill="{text_secondary}" y="-3">{escape_xml(label)}</text>
-      <rect width="{width}" height="6" rx="3" fill="#2d3748"/>
-      <rect width="{fill_width}" height="6" rx="3" fill="{color}"/>
-      <text x="{width + 8}" y="5" font-family="{font_family}" font-size="{font_size_base}" fill="{text_primary}">{score}</text>
+      <rect width="{width}" height="{bar_height}" rx="3" fill="#2d3748"/>
+      <rect width="{fill_width}" height="{bar_height}" rx="3" fill="{color}"/>
+      <text x="{width + text_offset}" y="5" font-family="{font_family}" font-size="{font_size_base}" fill="{text_primary}">{score}</text>
     </g>"""
 
 
@@ -169,7 +184,10 @@ def generate_svg(mood: dict, metrics: dict) -> str:
 
     # Generate sparkline from available scores
     sparkline_values = [sleep_score, readiness_score, activity_score, hrv or 50]
-    sparkline_path = generate_sparkline_path(sparkline_values, width=120, height=30)
+    sparkline_width = get_theme_sparkline_value("width", 120)
+    sparkline_height = get_theme_sparkline_value("height", 30)
+    sparkline_stroke_width = get_theme_sparkline_value("stroke_width", 2)
+    sparkline_path = generate_sparkline_path(sparkline_values, width=sparkline_width, height=sparkline_height)
 
     # Generate score bars
     sleep_bar = generate_score_bar(sleep_score, 200, 75, 100, "😴 Sleep")
@@ -264,9 +282,9 @@ def generate_svg(mood: dict, metrics: dict) -> str:
     <text font-family="{font_family}" font-size="{font_size_sm}" fill="{text_muted}" y="-5">
       Metrics Trend
     </text>
-    <rect width="120" height="35" rx="4" fill="{bg_dark}" fill-opacity="0.5"/>
+    <rect width="{sparkline_width}" height="35" rx="4" fill="{bg_dark}" fill-opacity="0.5"/>
     <g transform="translate(5, 2)">
-      <path d="{sparkline_path}" fill="none" stroke="url(#sparkline-gradient)" stroke-width="2" stroke-linecap="round"/>
+      <path d="{sparkline_path}" fill="none" stroke="url(#sparkline-gradient)" stroke-width="{sparkline_stroke_width}" stroke-linecap="round"/>
     </g>
   </g>
 
@@ -278,7 +296,7 @@ def generate_svg(mood: dict, metrics: dict) -> str:
   </g>
 
   <!-- Decorative accent -->
-  <rect x="{card_width - 20}" y="15" width="4" height="190" rx="2" fill="{accent_teal}" fill-opacity="{stroke_opacity}"/>
+  <rect x="{card_width - get_theme_decorative_accent_value('x_offset', 20)}" y="{get_theme_decorative_accent_value('y_offset', 15)}" width="{get_theme_decorative_accent_value('width', 4)}" height="190" rx="2" fill="{accent_teal}" fill-opacity="{stroke_opacity}"/>
 </svg>"""
 
     return svg

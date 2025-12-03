@@ -22,6 +22,7 @@ from lib.utils import (
     get_theme_font_size,
     get_theme_card_dimension,
     get_theme_border_radius,
+    get_theme_score_ring_value,
     format_timestamp_local,
     generate_card_with_fallback,
 )
@@ -43,6 +44,8 @@ def generate_score_ring(value: Optional[int], cx: int, cy: int, radius: int, col
     text_secondary = get_theme_color("text", "secondary")
     font_size_xs = get_theme_font_size("xs")
     font_size_xl = get_theme_font_size("xl")
+    stroke_width = get_theme_score_ring_value("stroke_width", 4)
+    label_offset = get_theme_score_ring_value("label_offset", 14)
     
     score = value if value is not None else 0
     score = min(100, max(0, score))
@@ -51,13 +54,13 @@ def generate_score_ring(value: Optional[int], cx: int, cy: int, radius: int, col
     
     return f"""
     <g transform="translate({cx}, {cy})">
-      <circle r="{radius}" fill="none" stroke="#2d3748" stroke-width="4"/>
-      <circle r="{radius}" fill="none" stroke="{color}" stroke-width="4"
+      <circle r="{radius}" fill="none" stroke="#2d3748" stroke-width="{stroke_width}"/>
+      <circle r="{radius}" fill="none" stroke="{color}" stroke-width="{stroke_width}"
               stroke-dasharray="{circumference}" stroke-dashoffset="{dash_offset}"
               stroke-linecap="round" transform="rotate(-90)"/>
       <text y="5" font-family="{font_family}" font-size="{font_size_xl}" fill="{text_primary}" 
             font-weight="bold" text-anchor="middle">{score}</text>
-      <text y="{radius + 14}" font-family="{font_family}" font-size="{font_size_xs}" 
+      <text y="{radius + label_offset}" font-family="{font_family}" font-size="{font_size_xs}" 
             fill="{text_secondary}" text-anchor="middle">{escape_xml(label)}</text>
     </g>"""
 
