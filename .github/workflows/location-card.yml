@@ -1,20 +1,13 @@
-name: Location Map Card — OpenStreetMap Static Map
+name: Location Map Card — Mapbox Static Map with Day/Night Theme
 
 on:
-  schedule:
-    # Run once per day at 6 AM UTC
-    - cron: '0 6 * * *'
-  workflow_dispatch:
   push:
     branches:
       - main
-    paths:
-      - 'scripts/fetch-location.sh'
-      - 'scripts/generate-location-card.py'
-      - 'scripts/update-readme.py'
-      - 'scripts/lib/utils.py'
-      - 'config/theme.json'
-      - '.github/workflows/location-card.yml'
+  schedule:
+    # Run once per day at 7 AM UTC
+    - cron: '0 7 * * *'
+  workflow_dispatch:
 
 concurrency:
   group: profile-update
@@ -62,6 +55,7 @@ jobs:
           GITHUB_OWNER: ${{ github.repository_owner }}
           GITHUB_TOKEN: ${{ github.token }}
           OUTPUT_DIR: location
+          MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
         run: |
           chmod +x scripts/fetch-location.sh
           mkdir -p location
@@ -126,6 +120,9 @@ jobs:
           
           # Add all relevant files
           git add location/location.json location/location-map.png location/location-card.svg README.md
+          
+          # Add debug files for diagnostics (if they exist)
+          git add location/debug_*.txt 2>/dev/null || true
           
           # Check if there are changes to commit
           if git diff --staged --quiet; then

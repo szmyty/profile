@@ -1,20 +1,13 @@
 name: Developer Dashboard — GitHub Metrics + Visualization
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     # Run once per day at 6 AM UTC
     - cron: '0 6 * * *'
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - 'scripts/fetch-developer-stats.py'
-      - 'scripts/generate-developer-dashboard.py'
-      - 'scripts/update-readme.py'
-      - 'scripts/lib/utils.py'
-      - 'config/theme.json'
-      - '.github/workflows/developer.yml'
 
 concurrency:
   group: profile-update

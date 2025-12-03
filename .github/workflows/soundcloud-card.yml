@@ -1,20 +1,13 @@
 name: SoundCloud Latest Release Card
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     # Run every 6 hours
     - cron: '0 */6 * * *'
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - 'scripts/fetch-soundcloud.sh'
-      - 'scripts/generate-card.py'
-      - 'scripts/update-readme.py'
-      - 'scripts/lib/utils.py'
-      - 'config/theme.json'
-      - '.github/workflows/soundcloud-card.yml'
 
 concurrency:
   group: profile-update
