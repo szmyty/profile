@@ -73,10 +73,12 @@ def get_weather_alert(
     
     # High wind alerts
     if wind_speed is not None:
-        if wind_speed >= 60:  # ~37 mph - High wind
-            return ("wind", "High wind warning", "💨")
-        elif wind_speed >= 40 and weathercode in range(61, 68):  # Wind + Rain
+        # Check combined conditions first (more specific alert)
+        if wind_speed >= 40 and weathercode in range(61, 68):  # Wind + Rain
             return ("wind_rain", "Strong winds with rain", "🌧️")
+        # Then check high wind alone (general alert)
+        elif wind_speed >= 60:  # ~37 mph - High wind
+            return ("wind", "High wind warning", "💨")
     
     # Dense fog (45, 48)
     if weathercode in [45, 48]:

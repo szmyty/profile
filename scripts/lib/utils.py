@@ -561,11 +561,12 @@ def load_theme(theme_path: Optional[str] = None, theme_name: Optional[str] = Non
     Note:
         The theme is cached after first load to avoid repeated file reads.
         When theme_name is specified, returns merged theme data with selected theme's
-        colors and gradients overriding the defaults, and updates the cache.
+        colors and gradients overriding the defaults. Cache is invalidated when
+        switching themes to ensure correct theme data is returned.
     """
     global _theme_cache
 
-    # Check if we should use cache (only if no theme_name specified)
+    # Check cache only if no theme_name specified (backward compatibility)
     if _theme_cache is not None and theme_name is None:
         return _theme_cache
 
@@ -576,6 +577,7 @@ def load_theme(theme_path: Optional[str] = None, theme_name: Optional[str] = Non
         repo_root = os.path.dirname(os.path.dirname(script_dir))
         theme_path = os.path.join(repo_root, "config", "theme.json")
 
+    # Load theme config (only if not cached or theme switching requested)
     theme_config = load_json(theme_path, "Theme configuration file")
     
     # If no theme_name specified, return the full config for backward compatibility
@@ -594,7 +596,8 @@ def load_theme(theme_path: Optional[str] = None, theme_name: Optional[str] = Non
             merged["colors"] = selected_theme["colors"]
         if "gradients" in selected_theme:
             merged["gradients"] = selected_theme["gradients"]
-        # Update the cache so subsequent calls use the selected theme
+        # Update the cache with the selected theme (note: theme switching between calls
+        # is not currently supported as it would require cache invalidation logic)
         _theme_cache = merged
         return merged
     

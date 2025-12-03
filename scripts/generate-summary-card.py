@@ -50,8 +50,16 @@ def load_latest_snapshot(period: str, snapshots_dir: str = "data/snapshots") -> 
     return None
 
 
-def generate_metric_row_summary(label: str, value: str, x: int, y: int, font_family: str, text_primary: str, text_secondary: str) -> str:
-    """Generate a metric row for the summary card."""
+def generate_metric_row_summary(label: str, value: str, x: int, y: int) -> str:
+    """
+    Generate a metric row for the summary card.
+    
+    Uses theme colors from the global theme context.
+    """
+    font_family = get_theme_typography("font_family")
+    text_primary = get_theme_color("text", "primary")
+    text_secondary = get_theme_color("text", "secondary")
+    
     return f"""
     <g transform="translate({x}, {y})">
       <text font-family="{font_family}" font-size="11" fill="{text_secondary}" font-weight="500">

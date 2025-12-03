@@ -174,7 +174,7 @@ def aggregate_weekly_snapshot(snapshots: List[Dict]) -> Dict:
     readiness_scores = [s.get("health", {}).get("readiness_score") for s in snapshots if s.get("health", {}).get("readiness_score") is not None]
     activity_scores = [s.get("health", {}).get("activity_score") for s in snapshots if s.get("health", {}).get("activity_score") is not None]
     steps = [s.get("health", {}).get("activity_steps") for s in snapshots if s.get("health", {}).get("activity_steps") is not None]
-    commits = [s.get("developer", {}).get("commits_30d", 0) for s in snapshots]
+    commits = [s.get("developer", {}).get("commits_30d") for s in snapshots if s.get("developer", {}).get("commits_30d") is not None]
     
     first_snapshot = snapshots[0]
     last_snapshot = snapshots[-1]
@@ -207,7 +207,7 @@ def aggregate_monthly_snapshot(snapshots: List[Dict]) -> Dict:
     readiness_scores = [s.get("health", {}).get("readiness_score") for s in snapshots if s.get("health", {}).get("readiness_score") is not None]
     activity_scores = [s.get("health", {}).get("activity_score") for s in snapshots if s.get("health", {}).get("activity_score") is not None]
     steps = [s.get("health", {}).get("activity_steps") for s in snapshots if s.get("health", {}).get("activity_steps") is not None]
-    commits = [s.get("developer", {}).get("commits_30d", 0) for s in snapshots]
+    commits = [s.get("developer", {}).get("commits_30d") for s in snapshots if s.get("developer", {}).get("commits_30d") is not None]
     
     first_snapshot = snapshots[0]
     last_snapshot = snapshots[-1]
