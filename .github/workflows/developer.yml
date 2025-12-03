@@ -39,7 +39,8 @@ jobs:
           chmod +x scripts/fetch-developer-stats.py
           mkdir -p developer/raw
           
-          if ! python scripts/fetch-developer-stats.py "${{ github.repository_owner }}" developer/stats.json; then
+          # Run script with logging (tee to both console and log file)
+          if ! python scripts/fetch-developer-stats.py "${{ github.repository_owner }}" developer/stats.json 2>&1 | tee -a logs/developer/developer.log; then
             echo "Error: Failed to fetch developer statistics"
             exit 1
           fi
@@ -91,6 +92,9 @@ jobs:
           if [ -d "developer/raw" ] && [ "$(ls -A developer/raw)" ]; then
             git add developer/raw/*.json
           fi
+          
+          # Add logs (always commit logs)
+          git add logs/developer/
           
           # Check if there are changes to commit
           if git diff --staged --quiet; then

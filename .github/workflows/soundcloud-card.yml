@@ -35,7 +35,9 @@ jobs:
           OUTPUT_DIR: assets
         run: |
           chmod +x scripts/fetch-soundcloud.sh
-          if ! scripts/fetch-soundcloud.sh > assets/metadata.json; then
+          
+          # Run script with logging (tee to both console and log file)
+          if ! scripts/fetch-soundcloud.sh 2>&1 | tee -a logs/soundcloud/soundcloud.log > assets/metadata.json; then
             echo "Error: Failed to fetch SoundCloud data"
             exit 1
           fi
@@ -91,6 +93,9 @@ jobs:
           
           # Add all relevant files
           git add assets/soundcloud-card.svg assets/soundcloud-artwork.jpg assets/metadata.json README.md
+          
+          # Add logs (always commit logs)
+          git add logs/soundcloud/
           
           # Check if there are changes to commit
           if git diff --staged --quiet; then

@@ -21,6 +21,9 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 if [ -f "${SCRIPT_DIR}/lib/common.sh" ]; then
     source "${SCRIPT_DIR}/lib/common.sh"
 fi
+if [ -f "${SCRIPT_DIR}/lib/logging.sh" ]; then
+    source "${SCRIPT_DIR}/lib/logging.sh"
+fi
 
 # Function to validate a client_id with a lightweight API request
 validate_client_id() {
@@ -280,26 +283,37 @@ load_fallback_cache() {
 
 # Main execution
 main() {
+    # Initialize logging
+    init_logging "soundcloud"
+    log_workflow_start "SoundCloud Card - Fetch Data"
+    
     local metadata
     
     # Try to fetch fresh data
+    log_info "Fetching fresh SoundCloud data..."
     if ! metadata=$(fetch_fresh_data); then
-        echo "Failed to fetch fresh SoundCloud data, attempting fallback..." >&2
+        log_warn "Failed to fetch fresh SoundCloud data, attempting fallback..."
         
         # Try to load from fallback cache
         if metadata=$(load_fallback_cache); then
+            log_info "Using fallback cache successfully"
+            log_workflow_end "SoundCloud Card - Fetch Data" 0
             echo "$metadata"
             return 0
         else
-            echo "Error: No fallback cache available and fresh fetch failed" >&2
+            log_error "No fallback cache available and fresh fetch failed"
+            log_workflow_end "SoundCloud Card - Fetch Data" 1
             return 1
         fi
     fi
+    
+    log_info "Successfully fetched fresh SoundCloud data"
     
     # Save successful fetch to fallback cache
     save_fallback_cache "$metadata"
     
     # Output metadata
+    log_workflow_end "SoundCloud Card - Fetch Data" 0
     echo "$metadata"
 }
 
@@ -307,16 +321,19 @@ main() {
 fetch_fresh_data() {
     # Get client_id
     local client_id
+    log_info "Obtaining SoundCloud client_id..."
     client_id=$(get_client_id) || return 1
-    echo "Got client_id: ${client_id:0:10}..." >&2
+    log_info "Got client_id: ${client_id:0:10}..."
     
     # Get user ID
     local user_id
+    log_info "Resolving user ID for ${SOUNDCLOUD_USER}..."
     user_id=$(get_user_id "$client_id") || return 1
-    echo "Got user_id: $user_id" >&2
+    log_info "Got user_id: $user_id"
     
     # Fetch latest track
     local track_data
+    log_info "Fetching latest track for user..."
     track_data=$(fetch_latest_track "$client_id" "$user_id") || return 1
     
     # Extract track info
@@ -330,11 +347,17 @@ fetch_fresh_data() {
     created_at=$(echo "$track_data" | jq -r '.created_at')
     user_username=$(echo "$track_data" | jq -r '.user.username')
     
+    log_info "Track: ${title} by ${user_username}"
+    log_info "Genre: ${genre}, Plays: ${playback_count}"
+    
     # Download artwork (with retry)
     mkdir -p "$OUTPUT_DIR"
+    log_info "Downloading track artwork..."
     if ! retry_with_backoff download_artwork "$artwork_url" "${OUTPUT_DIR}/soundcloud-artwork.jpg"; then
-        echo "Warning: Failed to download artwork after retries, card may use stale artwork" >&2
+        log_warn "Failed to download artwork after retries, card may use stale artwork"
         # Continue anyway - the card generator can handle missing artwork
+    else
+        log_info "Artwork downloaded successfully"
     fi
     
     # Get current UTC time for update timestamp

@@ -33,3 +33,8 @@ dev-output/
 
 # Pre-commit
 .pre-commit-config.yaml.bak
+
+# Logs - ALWAYS commit workflow logs
+# Note: We explicitly want to track logs/ directory
+# *.log files should be committed
+# Rotated logs (*.log.1, *.log.2, etc.) should be committed

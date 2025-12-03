@@ -60,7 +60,8 @@ jobs:
           chmod +x scripts/fetch-location.sh
           mkdir -p location
           
-          if ! scripts/fetch-location.sh > location/location.json; then
+          # Run script with logging (tee to both console and log file)
+          if ! scripts/fetch-location.sh 2>&1 | tee -a logs/location/location.log > location/location.json; then
             echo "Error: Failed to fetch location data"
             exit 1
           fi
@@ -123,6 +124,9 @@ jobs:
           
           # Add debug files for diagnostics (if they exist)
           git add location/debug_*.txt 2>/dev/null || true
+          
+          # Add logs (always commit logs)
+          git add logs/location/
           
           # Check if there are changes to commit
           if git diff --staged --quiet; then

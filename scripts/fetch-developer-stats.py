@@ -355,10 +355,22 @@ def save_raw_data(output_dir: Path, data: Dict[str, Any], filename: str) -> None
 
 def main():
     """Main entry point."""
+    # Set up logging
+    try:
+        sys.path.insert(0, str(Path(__file__).parent / "lib"))
+        from logging_utils import setup_logging
+        logger = setup_logging("developer")
+        logger.log_workflow_start("Developer Statistics - Fetch Data")
+    except ImportError:
+        logger = None
+    
     if len(sys.argv) < 2:
         # Try to get username from GITHUB_REPOSITORY_OWNER environment variable
         username = os.environ.get("GITHUB_REPOSITORY_OWNER")
         if not username:
+            if logger:
+                logger.error("Missing username argument and GITHUB_REPOSITORY_OWNER not set")
+                logger.log_workflow_end(1)
             print(
                 "Usage: fetch-developer-stats.py <username> [output_path]",
                 file=sys.stderr,
@@ -368,6 +380,9 @@ def main():
         username = sys.argv[1]
     
     output_path = sys.argv[2] if len(sys.argv) > 2 else "developer/stats.json"
+    
+    if logger:
+        logger.info(f"Fetching developer statistics for: {username}")
     
     # Fetch stats
     stats = fetch_developer_stats(username)
@@ -379,11 +394,18 @@ def main():
     with open(output, "w") as f:
         json.dump(stats, f, indent=2)
     
+    if logger:
+        logger.info(f"Developer stats saved to: {output_path}")
+        logger.info(f"Total repositories: {stats.get('total_repos', 'N/A')}")
+        logger.info(f"Total commits (30 days): {stats.get('commit_activity', {}).get('total_30_days', 'N/A')}")
     print(f"Developer stats saved to: {output_path}", file=sys.stderr)
     
     # Also save a copy of the raw stats data
     output_dir = output.parent
     save_raw_data(output_dir, stats, "stats_raw.json")
+    
+    if logger:
+        logger.log_workflow_end(0)
 
 
 if __name__ == "__main__":

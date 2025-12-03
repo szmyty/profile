@@ -11,6 +11,7 @@ set -euo pipefail
 # Source common utilities
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "${SCRIPT_DIR}/lib/common.sh"
+source "${SCRIPT_DIR}/lib/logging.sh"
 
 GITHUB_OWNER="${GITHUB_OWNER:-szmyty}"
 OUTPUT_DIR="${OUTPUT_DIR:-weather}"
@@ -141,18 +142,26 @@ get_weather_condition() {
 
 # Main execution
 main() {
+    # Initialize logging
+    init_logging "weather"
+    log_workflow_start "Weather Card - Fetch Data"
+    
     # Get GitHub location
     local location
+    log_info "Fetching GitHub location..."
     location=$(get_github_location) || {
-        echo "Skipping weather card generation: No location found" >&2
+        log_error "Skipping weather card generation: No location found"
+        log_workflow_end "Weather Card - Fetch Data" 1
         exit 1
     }
-    echo "GitHub location: ${location}" >&2
+    log_info "GitHub location: ${location}"
     
     # Get coordinates
     local coord_data
+    log_info "Converting location to coordinates..."
     coord_data=$(get_coordinates "$location") || {
-        echo "Skipping weather card generation: Could not get coordinates" >&2
+        log_error "Skipping weather card generation: Could not get coordinates"
+        log_workflow_end "Weather Card - Fetch Data" 1
         exit 1
     }
     
@@ -160,13 +169,17 @@ main() {
     lat=$(echo "$coord_data" | jq -r '.lat')
     lon=$(echo "$coord_data" | jq -r '.lon')
     display_name=$(echo "$coord_data" | jq -r '.display_name')
+    log_info "Coordinates: lat=${lat}, lon=${lon}"
     
     # Fetch weather data
     local weather_data
+    log_info "Fetching weather data from Open-Meteo..."
     weather_data=$(fetch_weather "$lat" "$lon") || {
-        echo "Skipping weather card generation: Could not fetch weather" >&2
+        log_error "Skipping weather card generation: Could not fetch weather"
+        log_workflow_end "Weather Card - Fetch Data" 1
         exit 1
     }
+    log_info "Weather data fetched successfully"
     
     # Extract current weather
     local current_temp wind_speed weathercode is_day
@@ -193,13 +206,18 @@ main() {
     
     # Create output directory
     mkdir -p "$OUTPUT_DIR"
+    log_info "Output directory: ${OUTPUT_DIR}"
     
     # Get current UTC time for update timestamp in ISO 8601 format
     local updated_at
     updated_at=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
     
+    log_info "Generating weather JSON output..."
+    log_info "Current conditions: ${condition} (${emoji}), ${current_temp}°C"
+    
     # Output combined JSON
-    jq -n \
+    local json_output
+    json_output=$(jq -n \
         --arg location "$location" \
         --arg display_name "$display_name" \
         --arg lat "$lat" \
@@ -238,7 +256,12 @@ main() {
             },
             timezone: $timezone,
             updated_at: $updated_at
-        }'
+        }')
+    
+    log_info "Weather data generated successfully"
+    log_workflow_end "Weather Card - Fetch Data" 0
+    
+    echo "$json_output"
 }
 
 main "$@"
