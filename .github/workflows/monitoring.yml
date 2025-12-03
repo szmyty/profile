@@ -1,6 +1,10 @@
 name: Monitoring & Alerts
 
 on:
+  push:
+    branches:
+      - main
+      - master
   schedule:
     # Run every hour to check for issues
     - cron: '0 * * * *'

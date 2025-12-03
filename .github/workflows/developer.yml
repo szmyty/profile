@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - master
   schedule:
     # Run once per day at 6 AM UTC
     - cron: '0 6 * * *'
