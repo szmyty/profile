@@ -21,6 +21,7 @@ assets/.cache/
 
 # API response cache
 cache/
+.cache/
 
 # Development output
 dev-output/
