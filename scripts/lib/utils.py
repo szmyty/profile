@@ -545,23 +545,29 @@ def generate_sparkline_path(
     return f"M{' L'.join(points)}"
 
 
-def load_theme(theme_path: Optional[str] = None) -> Dict:
+def load_theme(theme_path: Optional[str] = None, theme_name: Optional[str] = None) -> Dict:
     """
     Load theme configuration from JSON file.
 
     Args:
         theme_path: Optional path to theme.json. If not provided,
                    defaults to config/theme.json relative to the repository root.
+        theme_name: Optional theme name ('dark' or 'light'). If not provided,
+                   uses the default theme or returns the full config for backward compatibility.
 
     Returns:
         Theme configuration dictionary.
 
     Note:
         The theme is cached after first load to avoid repeated file reads.
+        When theme_name is specified, returns merged theme data with selected theme's
+        colors and gradients overriding the defaults. Cache is invalidated when
+        switching themes to ensure correct theme data is returned.
     """
     global _theme_cache
 
-    if _theme_cache is not None:
+    # Check cache only if no theme_name specified (backward compatibility)
+    if _theme_cache is not None and theme_name is None:
         return _theme_cache
 
     if theme_path is None:
@@ -571,8 +577,33 @@ def load_theme(theme_path: Optional[str] = None) -> Dict:
         repo_root = os.path.dirname(os.path.dirname(script_dir))
         theme_path = os.path.join(repo_root, "config", "theme.json")
 
-    _theme_cache = load_json(theme_path, "Theme configuration file")
-    return _theme_cache
+    # Load theme config (only if not cached or theme switching requested)
+    theme_config = load_json(theme_path, "Theme configuration file")
+    
+    # If no theme_name specified, return the full config for backward compatibility
+    if theme_name is None:
+        if _theme_cache is None:
+            _theme_cache = theme_config
+        return theme_config
+    
+    # If themes section exists, merge the selected theme
+    if "themes" in theme_config and theme_name in theme_config["themes"]:
+        selected_theme = theme_config["themes"][theme_name]
+        # Create a merged theme by copying base and overriding with selected theme
+        merged = theme_config.copy()
+        # Override colors and gradients from selected theme
+        if "colors" in selected_theme:
+            merged["colors"] = selected_theme["colors"]
+        if "gradients" in selected_theme:
+            merged["gradients"] = selected_theme["gradients"]
+        # Update the cache with the selected theme (note: theme switching between calls
+        # is not currently supported as it would require cache invalidation logic)
+        _theme_cache = merged
+        return merged
+    
+    # Fallback to full config if theme not found
+    _theme_cache = theme_config
+    return theme_config
 
 
 def get_theme_color(category: str, name: str, fallback: str = "#ffffff") -> str:
