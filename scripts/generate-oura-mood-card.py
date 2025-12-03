@@ -295,8 +295,15 @@ def generate_svg(mood: dict, metrics: dict) -> str:
     </text>
   </g>
 
-  <!-- Decorative accent -->
-  <rect x="{card_width - get_theme_decorative_accent_value('x_offset', 20)}" y="{get_theme_decorative_accent_value('y_offset', 15)}" width="{get_theme_decorative_accent_value('width', 4)}" height="190" rx="2" fill="{accent_teal}" fill-opacity="{stroke_opacity}"/>
+  <!-- Decorative accent -->"""
+    
+    # Calculate decorative accent position and dimensions
+    accent_x_offset = get_theme_decorative_accent_value('x_offset', 20)
+    accent_y_offset = get_theme_decorative_accent_value('y_offset', 15)
+    accent_width = get_theme_decorative_accent_value('width', 4)
+    
+    svg += f"""
+  <rect x="{card_width - accent_x_offset}" y="{accent_y_offset}" width="{accent_width}" height="190" rx="2" fill="{accent_teal}" fill-opacity="{stroke_opacity}"/>
 </svg>"""
 
     return svg

@@ -7,12 +7,12 @@ markers in README.md with new content. It is used by GitHub Actions workflows
 to update various card sections.
 
 Usage:
-    python update_readme.py --marker MARKER_NAME --content "new content"
-    python update_readme.py --marker MARKER_NAME --content-file path/to/content.txt
+    python update-readme.py --marker MARKER_NAME --content "new content"
+    python update-readme.py --marker MARKER_NAME --content-file path/to/content.txt
 
 Examples:
-    python update_readme.py --marker LOCATION-CARD --content "![Location](./location/card.svg)"
-    python update_readme.py --marker WEATHER-CARD --content "![Weather](./weather/card.svg)"
+    python update-readme.py --marker LOCATION-CARD --content "![Location](./location/card.svg)"
+    python update-readme.py --marker WEATHER-CARD --content "![Weather](./weather/card.svg)"
 """
 
 import argparse

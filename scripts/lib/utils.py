@@ -737,16 +737,17 @@ def get_theme_score_bar_value(key: str, fallback: int = 6) -> int:
     return safe_get(theme, "cards", "score_bar", key, default=fallback)
 
 
-def get_theme_radial_bar_value(key: str, fallback: Union[int, float] = 6) -> Union[int, float]:
+def get_theme_radial_bar_value(key: str, fallback: Union[int, float] = 6.0) -> Union[int, float]:
     """
     Get a radial bar value from the theme.
 
     Args:
         key: Key name (e.g., 'stroke_width', 'opacity', 'ring_spacing').
-        fallback: Default value if not found.
+        fallback: Default value if not found (use float for opacity, int for dimensions).
 
     Returns:
-        Radial bar value (int for dimensions, float for opacity).
+        Radial bar value (int for dimensions like stroke_width/ring_spacing, 
+        float for opacity).
     """
     theme = load_theme()
     return safe_get(theme, "cards", "radial_bar", key, default=fallback)

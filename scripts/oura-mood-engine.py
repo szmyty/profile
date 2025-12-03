@@ -232,7 +232,7 @@ def main():
     """Main entry point."""
     if len(sys.argv) < 2:
         print(
-            "Usage: oura_mood_engine.py <metrics.json> [output_path]",
+            "Usage: oura-mood-engine.py <metrics.json> [output_path]",
             file=sys.stderr,
         )
         sys.exit(1)
