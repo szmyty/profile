@@ -110,43 +110,48 @@ jobs:
                   const successRate = totalRuns > 0 ? 
                     ((metrics.successful_runs / totalRuns) * 100).toFixed(1) : 'N/A';
                   
-                  metricsDetails = `
-## Metrics
-
-- **Consecutive Failures:** ${consecutiveFailures}
-- **Total Runs:** ${totalRuns}
-- **Success Rate:** ${successRate}%
-- **Last Failure:** ${lastFailure}
-
-## Recent Run History
-
-\`\`\`json
-${JSON.stringify(metrics.run_history?.slice(-5) || [], null, 2)}
-\`\`\`
-                  `;
+                  const metricsLines = [
+                    '## Metrics',
+                    '',
+                    `* **Consecutive Failures:** ${consecutiveFailures}`,
+                    `* **Total Runs:** ${totalRuns}`,
+                    `* **Success Rate:** ${successRate}%`,
+                    `* **Last Failure:** ${lastFailure}`,
+                    '',
+                    '## Recent Run History',
+                    '',
+                    '```json',
+                    JSON.stringify(metrics.run_history?.slice(-5) || [], null, 2),
+                    '```'
+                  ];
+                  metricsDetails = metricsLines.join('\n');
                 } catch (e) {
-                  metricsDetails = `\n_Unable to load detailed metrics: ${e.message}_\n`;
+                  metricsDetails = '\n_Unable to load detailed metrics: ' + e.message + '_\n';
                 }
+                
+                const issueBody = [
+                  `The \`${workflow}\` workflow has failed **3 or more times** consecutively.`,
+                  '',
+                  metricsDetails,
+                  '',
+                  '## Recommended Actions',
+                  '',
+                  `1. Check the [workflow runs](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/workflows/${workflow}.yml) for error details`,
+                  '2. Review recent changes to the workflow or related scripts',
+                  '3. Verify that required secrets and environment variables are properly configured',
+                  '4. Check if external API services are experiencing issues',
+                  '',
+                  '---',
+                  '',
+                  'This issue was automatically created by the monitoring system. The issue will not be recreated while it remains open.'
+                ].join('\n');
                 
                 // Create new issue
                 await github.rest.issues.create({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   title: `🚨 Workflow Failure Alert: ${workflow}`,
-                  body: `The \`${workflow}\` workflow has failed **3 or more times** consecutively.
-
-${metricsDetails}
-
-## Recommended Actions
-
-1. Check the [workflow runs](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/workflows/${workflow}.yml) for error details
-2. Review recent changes to the workflow or related scripts
-3. Verify that required secrets and environment variables are properly configured
-4. Check if external API services are experiencing issues
-
----
-
-This issue was automatically created by the monitoring system. The issue will not be recreated while it remains open.`,
+                  body: issueBody,
                   labels: ['monitoring', 'automated', 'bug']
                 });
                 
