@@ -971,7 +971,7 @@ def parse_timestamp(timestamp_str: str) -> Optional[datetime]:
         # Normalize timestamp format
         if timestamp_str.endswith('Z'):
             timestamp_str = timestamp_str[:-1] + '+00:00'
-        elif not (timestamp_str.endswith('+00:00') or '+' in timestamp_str[-6:] or timestamp_str.endswith('Z')):
+        elif not (timestamp_str.endswith('+00:00') or '+' in timestamp_str[-6:]):
             # No timezone info, assume UTC
             timestamp_str = timestamp_str + '+00:00'
         
