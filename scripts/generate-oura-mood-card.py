@@ -28,6 +28,7 @@ from lib.utils import (
     get_theme_score_bar_value,
     get_theme_radial_bar_value,
     get_theme_decorative_accent_value,
+    get_theme_chart_color,
     format_timestamp_local,
     fallback_exists,
     log_fallback_used,
@@ -88,6 +89,7 @@ def generate_score_bar(value: Any, x: int, y: int, width: Optional[int] = None, 
     score_high = get_theme_color("scores", "high")
     score_medium = get_theme_color("scores", "medium")
     score_low = get_theme_color("scores", "low")
+    bar_background = get_theme_chart_color("bar_background")
     
     # Load dimensions from theme
     if width is None:
@@ -110,7 +112,7 @@ def generate_score_bar(value: Any, x: int, y: int, width: Optional[int] = None, 
     return f"""
     <g transform="translate({x}, {y})">
       <text font-family="{font_family}" font-size="{font_size_base}" fill="{text_secondary}" y="-3">{escape_xml(label)}</text>
-      <rect width="{width}" height="{bar_height}" rx="3" fill="#2d3748"/>
+      <rect width="{width}" height="{bar_height}" rx="3" fill="{bar_background}"/>
       <rect width="{fill_width}" height="{bar_height}" rx="3" fill="{color}"/>
       <text x="{width + text_offset}" y="5" font-family="{font_family}" font-size="{font_size_base}" fill="{text_primary}">{score}</text>
     </g>"""

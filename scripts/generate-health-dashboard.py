@@ -23,6 +23,7 @@ from lib.utils import (
     get_theme_card_dimension,
     get_theme_border_radius,
     get_theme_score_ring_value,
+    get_theme_chart_color,
     format_timestamp_local,
     generate_card_with_fallback,
 )
@@ -46,6 +47,7 @@ def generate_score_ring(value: Optional[int], cx: int, cy: int, radius: int, col
     font_size_xl = get_theme_font_size("xl")
     stroke_width = get_theme_score_ring_value("stroke_width", 4)
     label_offset = get_theme_score_ring_value("label_offset", 14)
+    ring_background = get_theme_chart_color("bar_background")
     
     score = value if value is not None else 0
     score = min(100, max(0, score))
@@ -54,7 +56,7 @@ def generate_score_ring(value: Optional[int], cx: int, cy: int, radius: int, col
     
     return f"""
     <g transform="translate({cx}, {cy})">
-      <circle r="{radius}" fill="none" stroke="#2d3748" stroke-width="{stroke_width}"/>
+      <circle r="{radius}" fill="none" stroke="{ring_background}" stroke-width="{stroke_width}"/>
       <circle r="{radius}" fill="none" stroke="{color}" stroke-width="{stroke_width}"
               stroke-dasharray="{circumference}" stroke-dashoffset="{dash_offset}"
               stroke-linecap="round" transform="rotate(-90)"/>

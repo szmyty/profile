@@ -37,6 +37,33 @@
           "high": "#4ade80",
           "medium": "#fbbf24",
           "low": "#f87171"
+        },
+        "status": {
+          "success": "#4ade80",
+          "warning": "#fbbf24",
+          "error": "#ef4444",
+          "unknown": "#6b7280"
+        },
+        "languages": {
+          "Python": "#3572A5",
+          "JavaScript": "#f1e05a",
+          "TypeScript": "#3178c6",
+          "Java": "#b07219",
+          "Go": "#00ADD8",
+          "Rust": "#dea584",
+          "C++": "#f34b7d",
+          "C": "#555555",
+          "Shell": "#89e051",
+          "Ruby": "#701516",
+          "PHP": "#4F5D95",
+          "HTML": "#e34c26",
+          "CSS": "#563d7c",
+          "Kotlin": "#A97BFF",
+          "Swift": "#F05138",
+          "Other": "#8892b0"
+        },
+        "chart": {
+          "bar_background": "#2d3748"
         }
       },
       "gradients": {
@@ -96,6 +123,33 @@
           "high": "#16a34a",
           "medium": "#ca8a04",
           "low": "#dc2626"
+        },
+        "status": {
+          "success": "#16a34a",
+          "warning": "#ca8a04",
+          "error": "#dc2626",
+          "unknown": "#94a3b8"
+        },
+        "languages": {
+          "Python": "#3572A5",
+          "JavaScript": "#f1e05a",
+          "TypeScript": "#3178c6",
+          "Java": "#b07219",
+          "Go": "#00ADD8",
+          "Rust": "#dea584",
+          "C++": "#f34b7d",
+          "C": "#555555",
+          "Shell": "#89e051",
+          "Ruby": "#701516",
+          "PHP": "#4F5D95",
+          "HTML": "#e34c26",
+          "CSS": "#563d7c",
+          "Kotlin": "#A97BFF",
+          "Swift": "#F05138",
+          "Other": "#8892b0"
+        },
+        "chart": {
+          "bar_background": "#e5e7eb"
         }
       },
       "gradients": {
@@ -155,6 +209,33 @@
       "high": "#4ade80",
       "medium": "#fbbf24",
       "low": "#f87171"
+    },
+    "status": {
+      "success": "#4ade80",
+      "warning": "#fbbf24",
+      "error": "#ef4444",
+      "unknown": "#6b7280"
+    },
+    "languages": {
+      "Python": "#3572A5",
+      "JavaScript": "#f1e05a",
+      "TypeScript": "#3178c6",
+      "Java": "#b07219",
+      "Go": "#00ADD8",
+      "Rust": "#dea584",
+      "C++": "#f34b7d",
+      "C": "#555555",
+      "Shell": "#89e051",
+      "Ruby": "#701516",
+      "PHP": "#4F5D95",
+      "HTML": "#e34c26",
+      "CSS": "#563d7c",
+      "Kotlin": "#A97BFF",
+      "Swift": "#F05138",
+      "Other": "#8892b0"
+    },
+    "chart": {
+      "bar_background": "#2d3748"
     }
   },
   "gradients": {
