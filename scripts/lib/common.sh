@@ -346,6 +346,8 @@ get_coordinates() {
     nominatim_data=$(cat "$temp_response")
     
     # Save diagnostic information
+    # Note: These files contain the location query and may be sensitive.
+    # They are excluded from git commits via .gitignore
     mkdir -p "$debug_dir"
     echo "$nominatim_data" > "${debug_dir}/debug_nominatim.json"
     echo "URL: https://nominatim.openstreetmap.org/search?q=${encoded_location}&format=json&limit=1
@@ -358,6 +360,7 @@ Response Body:
 $nominatim_data" > "${debug_dir}/debug_nominatim_response.txt"
     
     echo "Diagnostic info saved to ${debug_dir}/debug_nominatim.json" >&2
+    echo "Note: Debug files contain location data and are excluded from git commits" >&2
     
     rm -f "$temp_response" "$temp_headers"
     

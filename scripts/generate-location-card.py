@@ -275,10 +275,13 @@ def main() -> None:
         sys.exit(1)
 
     # Validate map image base64 is not empty
-    if not map_image_base64 or len(map_image_base64) < 100:
+    # Base64 encoding of even a minimal 1x1 PNG is ~100 chars, so this is a reasonable sanity check
+    MIN_BASE64_LENGTH = 100
+    if not map_image_base64 or len(map_image_base64) < MIN_BASE64_LENGTH:
         error_msg = "Map image encoding produced empty or invalid result"
         print(f"❌ FAILURE: {error_msg}", file=sys.stderr)
         print(f"   → The map file may be empty or corrupted", file=sys.stderr)
+        print(f"   → Encoded length: {len(map_image_base64) if map_image_base64 else 0} (minimum: {MIN_BASE64_LENGTH})", file=sys.stderr)
         if handle_error_with_fallback("location", error_msg, output_path, has_fallback):
             print(f"   → Using fallback location SVG card: {output_path}", file=sys.stderr)
             return

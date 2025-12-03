@@ -112,6 +112,8 @@ echo "--------------------------------------------------------"
 source "${PROJECT_ROOT}/scripts/lib/common.sh"
 
 TEST_OUTPUT_DIR2=$(mktemp -d)
+# Ensure cleanup even on unexpected exit
+trap "rm -rf '$TEST_OUTPUT_DIR2'" EXIT
 export OUTPUT_DIR="$TEST_OUTPUT_DIR2"
 
 # Try to get coordinates (will fail)
@@ -120,8 +122,6 @@ get_coordinates "Test Location" 2>/dev/null || true
 # Verify files were created
 assert_file_exists "$TEST_OUTPUT_DIR2/debug_nominatim.json" "Nominatim JSON created by get_coordinates"
 assert_file_exists "$TEST_OUTPUT_DIR2/debug_nominatim_response.txt" "Nominatim response created by get_coordinates"
-
-rm -rf "$TEST_OUTPUT_DIR2"
 
 echo ""
 echo "=================================================="
