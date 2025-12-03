@@ -1324,10 +1324,6 @@ def safe_write_json(data: Dict, output_path: str, indent: int = 2) -> None:
         temp_path.replace(output)
         
     except (IOError, OSError, ValueError, json.JSONDecodeError) as e:
-        # Clean up temp file on failure
-        if temp_path.exists():
-            try:
-                temp_path.unlink()
-            except OSError:
-                pass
+        # Clean up temp file on failure (missing_ok=True available in Python 3.8+)
+        temp_path.unlink(missing_ok=True)
         raise IOError(f"Failed to write JSON to {output_path}: {e}") from e

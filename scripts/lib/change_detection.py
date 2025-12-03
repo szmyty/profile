@@ -101,12 +101,8 @@ def save_hash_cache(cache_path: Path, cache_data: dict) -> None:
         temp_path.replace(cache_path)
         
     except (IOError, OSError, json.JSONDecodeError) as e:
-        # Clean up temp file on failure
-        if temp_path.exists():
-            try:
-                temp_path.unlink()
-            except OSError:
-                pass
+        # Clean up temp file on failure (missing_ok=True available in Python 3.8+)
+        temp_path.unlink(missing_ok=True)
         # Log cache write failure but don't fail the operation
         print(f"Warning: Could not save hash cache to {cache_path}: {e}", file=sys.stderr)
 

@@ -103,12 +103,8 @@ def save_workflow_metrics(workflow_name: str, metrics: Dict) -> None:
         temp_file.replace(metrics_file)
         
     except (IOError, OSError, json.JSONDecodeError) as e:
-        # Clean up temp file on failure
-        if temp_file.exists():
-            try:
-                temp_file.unlink()
-            except OSError:
-                pass
+        # Clean up temp file on failure (missing_ok=True available in Python 3.8+)
+        temp_file.unlink(missing_ok=True)
         print(f"Error: Failed to save metrics for {workflow_name}: {e}", file=sys.stderr)
         sys.exit(1)
 
