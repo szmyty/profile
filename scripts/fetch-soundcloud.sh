@@ -16,6 +16,12 @@ CACHE_DIR="${CACHE_DIR:-${OUTPUT_DIR}/.cache}"
 CLIENT_ID_CACHE_FILE="${CACHE_DIR}/soundcloud_client_id.txt"
 FALLBACK_CACHE_FILE="${FALLBACK_CACHE_FILE:-soundcloud/last-success.json}"
 
+# Source common utilities for retry logic
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [ -f "${SCRIPT_DIR}/lib/common.sh" ]; then
+    source "${SCRIPT_DIR}/lib/common.sh"
+fi
+
 # Function to validate a client_id with a lightweight API request
 validate_client_id() {
     local client_id=$1
@@ -176,10 +182,16 @@ get_user_id() {
     echo "Fetching user ID for ${SOUNDCLOUD_USER}..." >&2
     
     local user_data
-    user_data=$(curl -sf "https://api-v2.soundcloud.com/resolve?url=https://soundcloud.com/${SOUNDCLOUD_USER}&client_id=${client_id}") || {
-        echo "Error: Failed to resolve SoundCloud user" >&2
+    if ! user_data=$(retry_with_backoff curl -sf "https://api-v2.soundcloud.com/resolve?url=https://soundcloud.com/${SOUNDCLOUD_USER}&client_id=${client_id}"); then
+        echo "Error: Failed to resolve SoundCloud user after retries" >&2
         return 1
-    }
+    fi
+    
+    # Validate JSON response
+    if ! validate_api_response "$user_data" "id"; then
+        echo "Error: Invalid user data from SoundCloud API" >&2
+        return 1
+    fi
     
     local user_id
     user_id=$(echo "$user_data" | jq -r '.id')
@@ -199,10 +211,16 @@ fetch_latest_track() {
     echo "Fetching latest track..." >&2
     
     local tracks
-    tracks=$(curl -sf "https://api-v2.soundcloud.com/users/${user_id}/tracks?representation=&client_id=${client_id}&limit=1&offset=0") || {
-        echo "Error: Failed to fetch tracks from SoundCloud API" >&2
+    if ! tracks=$(retry_with_backoff curl -sf "https://api-v2.soundcloud.com/users/${user_id}/tracks?representation=&client_id=${client_id}&limit=1&offset=0"); then
+        echo "Error: Failed to fetch tracks from SoundCloud API after retries" >&2
         return 1
-    }
+    fi
+    
+    # Validate JSON response
+    if ! validate_api_response "$tracks" "collection"; then
+        echo "Error: Invalid tracks data from SoundCloud API" >&2
+        return 1
+    fi
     
     local track
     track=$(echo "$tracks" | jq '.collection[0]')

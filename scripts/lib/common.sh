@@ -168,6 +168,45 @@ save_cached_response() {
     echo "Cached response for ${cache_type}:${cache_key}" >&2
 }
 
+# Validate JSON response from an API.
+# Checks if the response is valid JSON and optionally validates structure.
+#
+# Usage:
+#   validate_api_response "$response_data" "temperature"
+#
+# Arguments:
+#   $1 - JSON response data to validate
+#   $2 - Optional: required field name to check for
+#
+# Returns:
+#   0 if valid, 1 if invalid
+validate_api_response() {
+    local response=$1
+    local required_field="${2:-}"
+    
+    # Check if response is non-empty
+    if [ -z "$response" ]; then
+        echo "Error: Empty API response" >&2
+        return 1
+    fi
+    
+    # Validate JSON structure
+    if ! echo "$response" | jq empty 2>/dev/null; then
+        echo "Error: Invalid JSON in API response" >&2
+        return 1
+    fi
+    
+    # Check for required field if specified
+    if [ -n "$required_field" ]; then
+        if ! echo "$response" | jq -e ".$required_field" >/dev/null 2>&1; then
+            echo "Error: Required field '$required_field' not found in API response" >&2
+            return 1
+        fi
+    fi
+    
+    return 0
+}
+
 # Encode a string for use in URLs.
 # Uses jq's @uri filter for proper RFC 3986 percent-encoding.
 #
@@ -284,12 +323,19 @@ get_coordinates() {
     # Add delay to respect Nominatim rate limits
     sleep 1
     
+    # Fetch from Nominatim with retry and backoff
     local nominatim_data
-    nominatim_data=$(curl -sf "https://nominatim.openstreetmap.org/search?q=${encoded_location}&format=json&limit=1" \
-        -H "User-Agent: GitHub-Profile-Scripts/1.0") || {
-        echo "Error: Failed to query Nominatim API" >&2
+    if ! nominatim_data=$(retry_with_backoff curl -sf "https://nominatim.openstreetmap.org/search?q=${encoded_location}&format=json&limit=1" \
+        -H "User-Agent: GitHub-Profile-Scripts/1.0"); then
+        echo "Error: Failed to query Nominatim API after retries" >&2
         return 1
-    }
+    fi
+    
+    # Validate the JSON response
+    if ! validate_api_response "$nominatim_data"; then
+        echo "Error: Invalid response from Nominatim API" >&2
+        return 1
+    fi
     
     # Check if we got results
     local result_count

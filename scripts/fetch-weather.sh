@@ -22,10 +22,16 @@ fetch_weather() {
     echo "Fetching weather data from Open-Meteo..." >&2
     
     local weather_data
-    weather_data=$(curl -sf "https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=auto") || {
-        echo "Error: Failed to fetch weather from Open-Meteo API" >&2
+    if ! weather_data=$(retry_with_backoff curl -sf "https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=auto"); then
+        echo "Error: Failed to fetch weather from Open-Meteo API after retries" >&2
         return 1
-    }
+    fi
+    
+    # Validate JSON response
+    if ! validate_api_response "$weather_data" "current_weather"; then
+        echo "Error: Invalid weather data from Open-Meteo API" >&2
+        return 1
+    fi
     
     echo "$weather_data"
 }
