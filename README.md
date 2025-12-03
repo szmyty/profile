@@ -95,6 +95,12 @@ I build high-quality, scalable platforms with strong emphasis on automation, sec
 ![Oura](https://github.com/szmyty/profile/actions/workflows/oura.yml/badge.svg)
 ![Developer](https://github.com/szmyty/profile/actions/workflows/developer.yml/badge.svg)
 
+## 📊 Workflow Performance Dashboard
+
+![Workflow Performance](./dashboard.svg)
+
+Real-time monitoring of workflow execution metrics including success rates, run times, and failure tracking. Generated automatically from workflow metrics and logs.
+
 ## 💻 Developer Dashboard
 
 <!-- DEVELOPER-DASHBOARD:START -->
