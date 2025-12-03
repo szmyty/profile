@@ -4,6 +4,7 @@ Tests for change detection module.
 """
 
 import json
+import subprocess
 import tempfile
 from pathlib import Path
 
@@ -279,3 +280,34 @@ class TestShouldRegenerateSvg:
             # Should skip regeneration
             result = should_regenerate_svg(data_path, svg_path, cache_path, "test")
             assert result is False
+
+
+class TestIncrementalGenerate:
+    """Test incremental-generate.py wrapper functionality."""
+    
+    def test_generator_path_validation(self):
+        """Test that generator script path is validated for security."""
+        # Test the validation logic by calling the wrapper as subprocess
+        import subprocess
+        
+        with tempfile.TemporaryDirectory() as tmpdir:
+            data_path = Path(tmpdir) / "data.json"
+            svg_path = Path(tmpdir) / "output.svg"
+            
+            # Create data file
+            with open(data_path, 'w') as f:
+                json.dump({"key": "value"}, f)
+            
+            # Get path to incremental-generate.py
+            script_path = Path(__file__).parent.parent / "scripts" / "incremental-generate.py"
+            
+            # Try to use a script outside scripts/ directory
+            result = subprocess.run(
+                ["python", str(script_path), str(data_path), str(svg_path), "/etc/passwd", "test"],
+                capture_output=True,
+                text=True
+            )
+            
+            # Should fail with error message about generator script
+            assert result.returncode != 0
+            assert "Generator script must be in scripts/ directory" in result.stdout or "Generator script must be in scripts/ directory" in result.stderr

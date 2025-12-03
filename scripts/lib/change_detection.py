@@ -7,6 +7,7 @@ when the source data hasn't changed.
 
 import hashlib
 import json
+import sys
 from pathlib import Path
 from typing import Optional
 
@@ -88,8 +89,9 @@ def save_hash_cache(cache_path: Path, cache_data: dict) -> None:
     try:
         with open(cache_path, 'w', encoding='utf-8') as f:
             json.dump(cache_data, f, indent=2)
-    except (IOError, OSError):
-        pass  # Silently fail if we can't write cache
+    except (IOError, OSError) as e:
+        # Log cache write failure but don't fail the operation
+        print(f"Warning: Could not save hash cache to {cache_path}: {e}", file=sys.stderr)
 
 
 def has_data_changed(

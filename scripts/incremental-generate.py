@@ -31,7 +31,7 @@ def generate_with_change_detection(
     Args:
         data_path: Path to source data file
         svg_path: Path to output SVG file
-        generator_script: Path to the generator script
+        generator_script: Path to the generator script (must be in scripts/ directory)
         cache_key: Unique key for this generation task
         extra_args: Additional arguments for the generator
         force: Force regeneration even if data unchanged
@@ -41,6 +41,16 @@ def generate_with_change_detection(
     """
     data_file = Path(data_path)
     svg_file = Path(svg_path)
+    generator_path = Path(generator_script)
+    
+    # Validate generator script is in scripts/ directory for security
+    # This prevents arbitrary code execution
+    scripts_dir = Path(__file__).parent.parent / "scripts"
+    try:
+        generator_path.resolve().relative_to(scripts_dir.resolve())
+    except (ValueError, RuntimeError):
+        print(f"❌ Error: Generator script must be in scripts/ directory: {generator_script}", file=sys.stderr)
+        return False
     
     # Check if we should regenerate
     if not should_regenerate_svg(data_file, svg_file, HASH_CACHE_FILE, cache_key, force):

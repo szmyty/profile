@@ -256,15 +256,19 @@ jobs:
           };
           EOF
           
-          # Find and optimize all SVG files in parallel
-          find oura weather assets -name "*.svg" -type f 2>/dev/null | while read svg; do
+          # Find and optimize all SVG files
+          # Use null delimiter for safe handling of filenames with spaces/special chars
+          find oura weather assets -name "*.svg" -type f -print0 2>/dev/null | while IFS= read -r -d '' svg; do
             if [ -f "$svg" ]; then
               ORIGINAL_SIZE=$(stat -c%s "$svg")
               if [ "$ORIGINAL_SIZE" -gt 0 ]; then
                 svgo "$svg" -o "$svg" --config=/tmp/svgo.config.js --quiet
                 OPTIMIZED_SIZE=$(stat -c%s "$svg")
-                REDUCTION=$(( 100 - OPTIMIZED_SIZE * 100 / ORIGINAL_SIZE ))
-                echo "$(basename "$svg"): ${ORIGINAL_SIZE} → ${OPTIMIZED_SIZE} bytes (${REDUCTION}% reduction)"
+                # Prevent division by zero
+                if [ "$ORIGINAL_SIZE" -gt 0 ]; then
+                  REDUCTION=$(( 100 - OPTIMIZED_SIZE * 100 / ORIGINAL_SIZE ))
+                  echo "$(basename "$svg"): ${ORIGINAL_SIZE} → ${OPTIMIZED_SIZE} bytes (${REDUCTION}% reduction)"
+                fi
               fi
             fi
           done
