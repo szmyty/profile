@@ -48,12 +48,9 @@ determine_time_of_day() {
         return 0
     fi
     
-    local curl_exit=0
-    local http_code=200
-    
-    # Save diagnostic info
+    # Save diagnostic info (note: retry_with_backoff abstracts HTTP details)
     save_diagnostic "debug_meteo_response.txt" "URL: $meteo_url
-HTTP Code: $http_code
+Status: Success (via retry_with_backoff)
 Response:
 $meteo_data"
     
