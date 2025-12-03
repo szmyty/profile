@@ -22,9 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
       - name: Setup environment
         uses: ./.github/actions/setup-environment
 
@@ -58,7 +55,6 @@ jobs:
           OUTPUT_DIR: location
           MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
         run: |
-          chmod +x scripts/fetch-location.sh
           mkdir -p location logs/location
           
           # Run script with safe JSON write pattern: output to temp file first
