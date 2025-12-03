@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="365" viewBox="0 0 480 365"><defs><linearGradient id="a" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" style="stop-color:#0f0f23"/><stop offset="100%" style="stop-color:#1a1a2e"/></linearGradient><linearGradient id="b" x1="0%" x2="100%" y1="0%" y2="0%"><stop offset="0%" style="stop-color:#ff6b6b"/><stop offset="100%" style="stop-color:#feca57"/></linearGradient></defs><rect width="480" height="365" fill="url(#a)" rx="12"/><rect width="480" height="365" fill="none" stroke="#64ffda" stroke-opacity=".3" rx="12"/><text fill="#64ffda" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="600" transform="translate(20 20)">
       🧬 OURA HEALTH DASHBOARD
-    </text><g transform="translate(75 90)"><circle r="30" fill="none" stroke="#2d3748" stroke-width="4"/><circle r="30" fill="none" stroke="#4facfe" stroke-dasharray="188.495" stroke-dashoffset="47.124" stroke-linecap="round" stroke-width="4" transform="rotate(-90)"/><text y="5" fill="#fff" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">75</text><text y="44" fill="#8892b0" font-family="'Segoe UI', Arial, sans-serif" font-size="8" text-anchor="middle">Sleep</text></g><g transform="translate(155 90)"><circle r="30" fill="none" stroke="#2d3748" stroke-width="4"/><circle r="30" fill="none" stroke="#38ef7d" stroke-dasharray="188.495" stroke-dashoffset="24.504" stroke-linecap="round" stroke-width="4" transform="rotate(-90)"/><text y="5" fill="#fff" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">87</text><text y="44" fill="#8892b0" font-family="'Segoe UI', Arial, sans-serif" font-size="8" text-anchor="middle">Ready</text></g><g transform="translate(235 90)"><circle r="30" fill="none" stroke="#2d3748" stroke-width="4"/><circle r="30" fill="none" stroke="#f5576c" stroke-dasharray="188.495" stroke-dashoffset="62.203" stroke-linecap="round" stroke-width="4" transform="rotate(-90)"/><text y="5" fill="#fff" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">67</text><text y="44" fill="#8892b0" font-family="'Segoe UI', Arial, sans-serif" font-size="8" text-anchor="middle">Active</text></g><g transform="translate(280 45)"><rect width="200" height="75" fill="#1e1e2e" stroke="#4a5568" rx="6"/><text x="10" y="18" fill="#64ffda" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="600">
+    </text><g transform="translate(75 90)"><circle r="30" fill="none" stroke="#2d3748" stroke-width="4"/><circle r="30" fill="none" stroke="#4facfe" stroke-dasharray="188.495" stroke-dashoffset="47.124" stroke-linecap="round" stroke-width="4" transform="rotate(-90)"/><text y="5" fill="#fff" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">75</text><text y="44" fill="#8892b0" font-family="'Segoe UI', Arial, sans-serif" font-size="8" text-anchor="middle">Sleep</text></g><g transform="translate(155 90)"><circle r="30" fill="none" stroke="#2d3748" stroke-width="4"/><circle r="30" fill="none" stroke="#38ef7d" stroke-dasharray="188.495" stroke-dashoffset="24.504" stroke-linecap="round" stroke-width="4" transform="rotate(-90)"/><text y="5" fill="#fff" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">87</text><text y="44" fill="#8892b0" font-family="'Segoe UI', Arial, sans-serif" font-size="8" text-anchor="middle">Ready</text></g><g transform="translate(235 90)"><circle r="30" fill="none" stroke="#2d3748" stroke-width="4"/><circle r="30" fill="none" stroke="#f5576c" stroke-dasharray="188.495" stroke-dashoffset="105.557" stroke-linecap="round" stroke-width="4" transform="rotate(-90)"/><text y="5" fill="#fff" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">44</text><text y="44" fill="#8892b0" font-family="'Segoe UI', Arial, sans-serif" font-size="8" text-anchor="middle">Active</text></g><g transform="translate(280 45)"><rect width="200" height="75" fill="#1e1e2e" stroke="#4a5568" rx="6"/><text x="10" y="18" fill="#64ffda" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="600">
       👤 Personal Stats
     </text><g font-family="'Segoe UI', Arial, sans-serif"><text fill="#8892b0" font-size="9" transform="translate(10 35)">
          Age
@@ -38,15 +38,15 @@
       🏃 Activity
     </text><g font-family="'Segoe UI', Arial, sans-serif"><text fill="#8892b0" font-size="9" transform="translate(10 35)">
          Steps
-      </text><text x="100" fill="#fff" font-size="10" font-weight="500" text-anchor="end" transform="translate(10 35)">0</text></g><g font-family="'Segoe UI', Arial, sans-serif"><text fill="#8892b0" font-size="9" transform="translate(10 50)">
+      </text><text x="100" fill="#fff" font-size="10" font-weight="500" text-anchor="end" transform="translate(10 35)">3357</text></g><g font-family="'Segoe UI', Arial, sans-serif"><text fill="#8892b0" font-size="9" transform="translate(10 50)">
          Total Cal
-      </text><text x="100" fill="#fff" font-size="10" font-weight="500" text-anchor="end" transform="translate(10 50)">2348 kcal</text></g><g font-family="'Segoe UI', Arial, sans-serif"><text fill="#8892b0" font-size="9" transform="translate(10 65)">
+      </text><text x="100" fill="#fff" font-size="10" font-weight="500" text-anchor="end" transform="translate(10 50)">2277 kcal</text></g><g font-family="'Segoe UI', Arial, sans-serif"><text fill="#8892b0" font-size="9" transform="translate(10 65)">
          Active Cal
-      </text><text x="100" fill="#fff" font-size="10" font-weight="500" text-anchor="end" transform="translate(10 65)">308 kcal</text></g><g font-family="'Segoe UI', Arial, sans-serif"><text fill="#8892b0" font-size="9" transform="translate(10 80)">
+      </text><text x="100" fill="#fff" font-size="10" font-weight="500" text-anchor="end" transform="translate(10 65)">179 kcal</text></g><g font-family="'Segoe UI', Arial, sans-serif"><text fill="#8892b0" font-size="9" transform="translate(10 80)">
          Inact Alerts
-      </text><text x="100" fill="#fff" font-size="10" font-weight="500" text-anchor="end" transform="translate(10 80)">0</text></g><g font-family="'Segoe UI', Arial, sans-serif"><text fill="#8892b0" font-size="9" transform="translate(10 95)">
+      </text><text x="100" fill="#fff" font-size="10" font-weight="500" text-anchor="end" transform="translate(10 80)">1</text></g><g font-family="'Segoe UI', Arial, sans-serif"><text fill="#8892b0" font-size="9" transform="translate(10 95)">
          Avg MET
-      </text><text x="100" fill="#fff" font-size="10" font-weight="500" text-anchor="end" transform="translate(10 95)">1.44</text></g></g><g transform="translate(20 245)"><rect width="225" height="70" fill="#1e1e2e" stroke="#ff6b6b" stroke-opacity=".3" rx="6"/><text x="10" y="18" fill="#ff6b6b" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="600">
+      </text><text x="100" fill="#fff" font-size="10" font-weight="500" text-anchor="end" transform="translate(10 95)">1.50</text></g></g><g transform="translate(20 245)"><rect width="225" height="70" fill="#1e1e2e" stroke="#ff6b6b" stroke-opacity=".3" rx="6"/><text x="10" y="18" fill="#ff6b6b" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="600">
       ❤️ Heart Rate Trend
     </text><text x="200" y="18" fill="#fff" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="end">
       — bpm
@@ -59,19 +59,19 @@
       </text></g></g><g transform="translate(255 245)"><rect width="225" height="70" fill="#1e1e2e" stroke="#64ffda" stroke-opacity=".3" rx="6"/><text x="10" y="18" fill="#64ffda" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="600">
       📊 Contributors
     </text><g fill="#8892b0" font-family="'Segoe UI', Arial, sans-serif" font-size="8"><text transform="translate(10 32)">
-        Training Freq: 81
+        Training Freq: 1
       </text><text y="12" transform="translate(10 32)">
         Recovery Time: 100
       </text><text y="24" transform="translate(10 32)">
         Previous Night: 79
       </text></g><g fill="#8892b0" font-family="'Segoe UI', Arial, sans-serif" font-size="8"><text transform="translate(120 32)">
-        Move/Hour: 100
+        Move/Hour: 95
       </text><text y="12" transform="translate(120 32)">
-        Stay Active: 75
+        Stay Active: 47
       </text><text y="24" transform="translate(120 32)">
         Activity Bal: 93
       </text></g></g><text fill="#4a5568" font-family="'Segoe UI', Arial, sans-serif" font-size="10" transform="translate(20 340)">
-      Updated: 2025-12-02 01:13 PM
+      Updated: 2025-12-02 07:36 PM
     </text><text fill="#4a5568" font-family="'Segoe UI', Arial, sans-serif" font-size="8" text-anchor="end" transform="translate(465 340)">
       
     </text><rect width="4" height="350" x="464" y="15" fill="#64ffda" fill-opacity=".3" rx="2"/></svg>
