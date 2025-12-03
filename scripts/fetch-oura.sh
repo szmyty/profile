@@ -12,6 +12,9 @@ set -euo pipefail
 
 # Source common utilities
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [ -f "${SCRIPT_DIR}/lib/common.sh" ]; then
+    source "${SCRIPT_DIR}/lib/common.sh"
+fi
 if [ -f "${SCRIPT_DIR}/lib/logging.sh" ]; then
     source "${SCRIPT_DIR}/lib/logging.sh"
 fi
@@ -43,12 +46,10 @@ echo "End date: $END_DATE" >&2
 # Create output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
 
-# Function to make Oura API request with retry logic (3 retries, 5s delay)
+# Function to make Oura API request with retry logic using exponential backoff
 oura_api_request() {
     local endpoint=$1
     local params="${2:-}"
-    local max_retries=3
-    local retry_delay=5
     
     local url="https://api.ouraring.com/v2/usercollection/${endpoint}"
     if [ -n "$params" ]; then
@@ -58,31 +59,22 @@ oura_api_request() {
     echo "Fetching from: ${url}" >&2
     
     local response
-    local attempt
-    for attempt in $(seq 1 $max_retries); do
-        response=$(curl -sf "$url" \
-            -H "Authorization: Bearer ${OURA_PAT}" \
-            -H "Content-Type: application/json" \
-            -H "User-Agent: GitHub-Profile-Oura-Card/1.0" 2>/dev/null) || response=""
-        
-        # Check if response is valid JSON
-        if [ -n "$response" ] && echo "$response" | jq empty 2>/dev/null; then
-            echo "$response"
-            return 0
-        fi
-        
-        if [ "$attempt" -lt "$max_retries" ]; then
-            echo "Attempt $attempt failed for endpoint: ${endpoint}. Retrying in ${retry_delay}s..." >&2
-            sleep "$retry_delay"
-        fi
-    done
-    
-    echo "Error: Failed to fetch valid JSON from Oura API endpoint after $max_retries attempts: ${endpoint}" >&2
-    if [ -n "$response" ]; then
-        echo "Invalid response saved for debugging" >&2
-        echo "$response" > "${OUTPUT_DIR}/debug_invalid_response_${endpoint}.txt"
+    if ! response=$(retry_with_backoff curl -sf --max-time 10 "$url" \
+        -H "Authorization: Bearer ${OURA_PAT}" \
+        -H "Content-Type: application/json" \
+        -H "User-Agent: GitHub-Profile-Oura-Card/1.0"); then
+        echo "Error: Failed to fetch from Oura API endpoint after retries: ${endpoint}" >&2
+        return 1
     fi
-    return 1
+    
+    # Validate JSON response
+    if ! validate_api_response "$response"; then
+        echo "Error: Invalid JSON from Oura API endpoint: ${endpoint}" >&2
+        echo "$response" > "${OUTPUT_DIR}/debug_invalid_response_${endpoint}.txt"
+        return 1
+    fi
+    
+    echo "$response"
 }
 
 # Fetch personal info (mandatory)

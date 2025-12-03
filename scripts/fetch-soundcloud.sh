@@ -33,6 +33,7 @@ validate_client_id() {
     # Use a lightweight /resolve request to validate the client_id
     local http_code
     http_code=$(curl -sf -o /dev/null -w "%{http_code}" \
+        --max-time 10 \
         "https://api-v2.soundcloud.com/resolve?url=https://soundcloud.com/${SOUNDCLOUD_USER}&client_id=${client_id}" \
         -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
         2>/dev/null) || http_code="000"
@@ -73,7 +74,7 @@ extract_client_id() {
     
     # Fetch the main page HTML
     local html
-    html=$(curl -sf "https://soundcloud.com/${SOUNDCLOUD_USER}" \
+    html=$(curl -sf --max-time 10 "https://soundcloud.com/${SOUNDCLOUD_USER}" \
         -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36") || {
         echo "Warning: Failed to fetch SoundCloud profile page" >&2
         return 1
@@ -103,7 +104,7 @@ extract_client_id() {
     # ' ends the single quote, "'" adds a literal single quote, ' resumes single quoting
     for url in $js_urls; do
         local js_content
-        js_content=$(curl -sf "$url" \
+        js_content=$(curl -sf --max-time 10 "$url" \
             -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36") || continue
         
         local client_id=""
@@ -185,7 +186,7 @@ get_user_id() {
     echo "Fetching user ID for ${SOUNDCLOUD_USER}..." >&2
     
     local user_data
-    if ! user_data=$(retry_with_backoff curl -sf "https://api-v2.soundcloud.com/resolve?url=https://soundcloud.com/${SOUNDCLOUD_USER}&client_id=${client_id}"); then
+    if ! user_data=$(retry_with_backoff curl -sf --max-time 10 "https://api-v2.soundcloud.com/resolve?url=https://soundcloud.com/${SOUNDCLOUD_USER}&client_id=${client_id}"); then
         echo "Error: Failed to resolve SoundCloud user after retries" >&2
         return 1
     fi
@@ -214,7 +215,7 @@ fetch_latest_track() {
     echo "Fetching latest track..." >&2
     
     local tracks
-    if ! tracks=$(retry_with_backoff curl -sf "https://api-v2.soundcloud.com/users/${user_id}/tracks?representation=&client_id=${client_id}&limit=1&offset=0"); then
+    if ! tracks=$(retry_with_backoff curl -sf --max-time 10 "https://api-v2.soundcloud.com/users/${user_id}/tracks?representation=&client_id=${client_id}&limit=1&offset=0"); then
         echo "Error: Failed to fetch tracks from SoundCloud API after retries" >&2
         return 1
     fi
@@ -248,7 +249,7 @@ download_artwork() {
     local large_url
     large_url="${artwork_url/-large./-t500x500.}"
     
-    curl -s -o "$output_path" "$large_url" || curl -s -o "$output_path" "$artwork_url"
+    curl -s --max-time 10 -o "$output_path" "$large_url" || curl -s --max-time 10 -o "$output_path" "$artwork_url"
     echo "Artwork saved to $output_path" >&2
 }
 

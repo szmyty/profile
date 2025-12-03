@@ -39,27 +39,23 @@ determine_time_of_day() {
     
     # Fetch sunrise/sunset data from Open-Meteo
     local meteo_url="https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=sunrise,sunset&timezone=auto&forecast_days=1"
-    local meteo_data http_code temp_file
-    temp_file=$(mktemp)
+    local meteo_data
     
-    http_code=$(curl -w "%{http_code}" -o "$temp_file" -s "$meteo_url")
-    local curl_exit=$?
-    meteo_data=$(cat "$temp_file")
-    rm -f "$temp_file"
+    # Use retry_with_backoff with better error handling
+    if ! meteo_data=$(retry_with_backoff curl -sf --max-time 10 "$meteo_url"); then
+        echo "Warning: Failed to fetch sunrise/sunset data after retries, defaulting to light mode" >&2
+        echo "light"
+        return 0
+    fi
+    
+    local curl_exit=0
+    local http_code=200
     
     # Save diagnostic info
     save_diagnostic "debug_meteo_response.txt" "URL: $meteo_url
 HTTP Code: $http_code
-Curl Exit Code: $curl_exit
 Response:
 $meteo_data"
-    
-    # Check for errors
-    if [ $curl_exit -ne 0 ] || [ "$http_code" -ge 400 ]; then
-        echo "Warning: Failed to fetch sunrise/sunset data, defaulting to light mode" >&2
-        echo "light"
-        return 0
-    fi
     
     # Validate JSON
     if ! echo "$meteo_data" | jq empty 2>/dev/null; then
@@ -177,7 +173,7 @@ download_static_map() {
     temp_file=$(mktemp)
     response_headers=$(mktemp)
     
-    http_code=$(curl -w "%{http_code}" -o "$temp_file" -D "$response_headers" -s "$map_url")
+    http_code=$(curl -w "%{http_code}" --max-time 10 -o "$temp_file" -D "$response_headers" -s "$map_url")
     local curl_exit=$?
     
     # Save diagnostic information (without exposing full token)

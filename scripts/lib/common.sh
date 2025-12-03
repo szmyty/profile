@@ -251,7 +251,7 @@ get_github_location() {
     local user_data location
     
     # Try to fetch from GitHub API
-    if user_data=$(curl -sf "https://api.github.com/users/${github_owner}" \
+    if user_data=$(curl -sf --max-time 10 "https://api.github.com/users/${github_owner}" \
         -H "Accept: application/vnd.github.v3+json" \
         ${GITHUB_TOKEN:+-H "Authorization: Bearer ${GITHUB_TOKEN}"} \
         -H "User-Agent: GitHub-Profile-Scripts/1.0" 2>/dev/null); then
@@ -337,6 +337,7 @@ get_coordinates() {
     temp_headers=$(mktemp)
     
     http_code=$(curl -w "%{http_code}" \
+        --max-time 10 \
         -o "$temp_response" \
         -D "$temp_headers" \
         -s "https://nominatim.openstreetmap.org/search?q=${encoded_location}&format=json&limit=1" \

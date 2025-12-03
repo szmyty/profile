@@ -35,7 +35,7 @@ fetch_weather() {
     fi
     
     local weather_data
-    if ! weather_data=$(retry_with_backoff curl -sf "https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=auto"); then
+    if ! weather_data=$(retry_with_backoff curl -sf --max-time 10 "https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=auto"); then
         echo "Error: Failed to fetch weather from Open-Meteo API after retries" >&2
         return 1
     fi
