@@ -333,11 +333,15 @@ def fallback_exists(output_path: str) -> bool:
     if not path.exists():
         return False
 
+    # Only SVG files can be valid fallbacks
+    if path.suffix.lower() != ".svg":
+        return False
+
     # Check if file has content and looks like a valid SVG
     try:
         content = path.read_text()
         return content.strip().startswith("<svg") and "</svg>" in content
-    except (IOError, OSError):
+    except (IOError, OSError, UnicodeDecodeError):
         return False
 
 
