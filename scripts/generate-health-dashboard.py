@@ -24,6 +24,8 @@ from lib.utils import (
     get_theme_border_radius,
     get_theme_score_ring_value,
     format_timestamp_local,
+    format_time_since,
+    is_data_stale,
     generate_card_with_fallback,
 )
 
@@ -140,7 +142,6 @@ def generate_svg(snapshot: dict) -> str:
     activity = snapshot.get("activity", {})
     heart_rate = snapshot.get("heart_rate", {})
     updated_at_raw = snapshot.get("updated_at", datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
-    updated_at = format_timestamp_local(updated_at_raw) if updated_at_raw else ""
     
     # Personal stats
     age = personal.get("age")
@@ -195,6 +196,29 @@ def generate_svg(snapshot: dict) -> str:
     
     # Format height display
     height_display = safe_value(height_cm, suffix="cm") if height_cm else "—"
+    
+    # Calculate staleness badge
+    staleness_badge = ""
+    if updated_at_raw:
+        time_since = format_time_since(updated_at_raw)
+        is_stale = is_data_stale(updated_at_raw, stale_threshold_hours=24)
+        
+        # Use warning color if data is stale
+        if is_stale:
+            badge_color = accent_hr  # Warning/error color
+            badge_icon = "⚠️ "
+        else:
+            badge_color = text_muted
+            badge_icon = ""
+        
+        time_since_escaped = escape_xml(time_since)
+        staleness_badge = f'''
+  <!-- Staleness Badge -->
+  <g transform="translate({card_width - 10}, 10)">
+    <text x="0" y="12" font-family="{font_family}" font-size="{font_size_xs}" fill="{badge_color}" text-anchor="end">
+      {badge_icon}Updated: {time_since_escaped}
+    </text>
+  </g>'''
     
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{card_width}" height="{card_height}" viewBox="0 0 {card_width} {card_height}">
   <defs>
@@ -356,12 +380,7 @@ def generate_svg(snapshot: dict) -> str:
     </g>
   </g>
 
-  <!-- Footer: Updated timestamp -->
-  <g transform="translate(20, 340)">
-    <text font-family="{font_family}" font-size="{font_size_base}" fill="{text_muted}">
-      Updated: {escape_xml(str(updated_at))}
-    </text>
-  </g>
+  {staleness_badge}
 
   <!-- Sex indicator if available -->
   <g transform="translate(465, 340)">

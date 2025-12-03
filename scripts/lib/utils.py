@@ -997,6 +997,48 @@ def format_time_since(timestamp_str: str) -> str:
         return "unknown"
 
 
+def is_data_stale(timestamp_str: str, stale_threshold_hours: int = 24) -> bool:
+    """
+    Check if data is stale based on the timestamp.
+    
+    Args:
+        timestamp_str: ISO 8601 timestamp string (e.g., "2025-12-01T06:22:41Z")
+        stale_threshold_hours: Number of hours after which data is considered stale (default: 24)
+    
+    Returns:
+        True if the data is older than the threshold, False otherwise
+    
+    Example:
+        >>> is_data_stale("2025-12-01T06:22:41Z", 24)
+        True  # if more than 24 hours old
+    """
+    try:
+        # Parse the timestamp
+        timestamp_str = timestamp_str.strip()
+        if timestamp_str.endswith('Z'):
+            timestamp_str = timestamp_str[:-1] + '+00:00'
+        elif not (timestamp_str.endswith('+00:00') or '+' in timestamp_str[-6:] or timestamp_str.endswith('Z')):
+            # No timezone info, assume UTC
+            timestamp_str = timestamp_str + '+00:00'
+        
+        dt = datetime.fromisoformat(timestamp_str)
+        
+        # Ensure it's UTC
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        
+        # Calculate time difference
+        now = datetime.now(timezone.utc)
+        delta = now - dt
+        
+        # Check if data is stale
+        return delta.total_seconds() > (stale_threshold_hours * 3600)
+            
+    except (ValueError, AttributeError, TypeError):
+        # If we can't parse the timestamp, consider it stale to be safe
+        return True
+
+
 def format_large_number(count: int) -> str:
     """
     Format large numbers with K/M suffixes for readability.
