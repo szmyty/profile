@@ -111,7 +111,7 @@ def generate_sparkline_chart(
     bg_color: str,
 ) -> str:
     """Generate a sparkline chart for activity."""
-    path = generate_sparkline_path(values, width, height)
+    path = generate_sparkline_path(values, width, height)  # type: ignore[arg-type]
     
     return f"""
     <g transform="translate({x}, {y})">
@@ -190,7 +190,7 @@ def generate_language_bars(
     sorted_langs = sorted(languages.items(), key=lambda x: -x[1])[:6]
     
     bar_height = get_theme_chart_value("bar_height", 16)
-    current_x = x
+    current_x: float = float(x)
     bars = []
     legends = []
     

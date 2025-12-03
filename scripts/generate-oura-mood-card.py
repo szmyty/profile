@@ -329,10 +329,12 @@ def main() -> None:
 
     # Try to read mood data
     mood, error = try_load_json(mood_path, "Mood file")
-    if error:
-        if handle_error_with_fallback("mood", error, output_path, has_fallback):
+    if error or mood is None:
+        if handle_error_with_fallback("mood", error or "No data loaded", output_path, has_fallback):
             print(f"Using fallback mood dashboard SVG: {output_path}", file=sys.stderr)
             return
+        # If we get here without a fallback, mood must be None and we should exit
+        sys.exit(1)
 
     # Read metrics data (optional, for additional visualizations)
     metrics = {}

@@ -32,6 +32,12 @@ jobs:
           install-jq: 'false'
           install-curl: 'false'
 
+      - name: Run type checking with mypy
+        run: |
+          python -m mypy scripts/
+        env:
+          MYPYPATH: scripts
+
       - name: Run tests
         run: |
           python -m pytest tests/ -v --tb=short
