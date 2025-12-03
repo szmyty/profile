@@ -38,19 +38,24 @@ jobs:
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
         run: |
           chmod +x scripts/fetch-developer-stats.py
-          mkdir -p developer/raw
+          mkdir -p developer/raw logs/developer
           
-          # Run script with logging (tee to both console and log file)
-          if ! python scripts/fetch-developer-stats.py "${{ github.repository_owner }}" developer/stats.json 2>&1 | tee -a logs/developer/developer.log; then
+          # Safe JSON write pattern: output to temp file first
+          if ! python scripts/fetch-developer-stats.py "${{ github.repository_owner }}" developer/stats.json.tmp 2>> logs/developer/developer.log; then
             echo "Error: Failed to fetch developer statistics"
+            rm -f developer/stats.json.tmp
             exit 1
           fi
           
-          # Validate the stats JSON file
-          if ! jq empty developer/stats.json 2>/dev/null; then
+          # Validate the temp JSON file before moving
+          if ! jq empty developer/stats.json.tmp 2>/dev/null; then
             echo "Error: Invalid JSON in stats file"
+            rm -f developer/stats.json.tmp
             exit 1
           fi
+          
+          # Move temp to final location (atomic operation)
+          mv developer/stats.json.tmp developer/stats.json
           
           echo "Developer statistics fetched successfully"
           cat developer/stats.json

@@ -36,18 +36,24 @@ jobs:
           OUTPUT_DIR: assets
         run: |
           chmod +x scripts/fetch-soundcloud.sh
+          mkdir -p assets logs/soundcloud
           
-          # Run script with logging (tee to both console and log file)
-          if ! scripts/fetch-soundcloud.sh 2>&1 | tee -a logs/soundcloud/soundcloud.log > assets/metadata.json; then
+          # Safe JSON write pattern: output to temp file first
+          if ! scripts/fetch-soundcloud.sh > assets/metadata.json.tmp 2>> logs/soundcloud/soundcloud.log; then
             echo "Error: Failed to fetch SoundCloud data"
+            rm -f assets/metadata.json.tmp
             exit 1
           fi
           
-          # Validate the metadata file
-          if ! jq empty assets/metadata.json 2>/dev/null; then
+          # Validate the temp JSON file before moving
+          if ! jq empty assets/metadata.json.tmp 2>/dev/null; then
             echo "Error: Invalid JSON in metadata file"
+            rm -f assets/metadata.json.tmp
             exit 1
           fi
+          
+          # Move temp to final location (atomic operation)
+          mv assets/metadata.json.tmp assets/metadata.json
 
       - name: Restore SVG hash cache
         uses: actions/cache@v4
