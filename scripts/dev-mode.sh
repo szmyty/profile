@@ -23,35 +23,58 @@ echo -e "${BLUE}🚀 Running in Development Mode${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 
+create_placeholder_artwork() {
+    local output_file="$1"
+    python -c "
+from PIL import Image
+img = Image.new('RGB', (400, 400), color='#1e1e1e')
+img.save('$output_file')
+"
+}
+
 generate_soundcloud() {
     echo -e "${GREEN}🎵 Generating SoundCloud card...${NC}"
-    python "$SCRIPT_DIR/generate-card.py" \
+    
+    # Create placeholder artwork if it doesn't exist
+    if [ ! -f "$MOCK_DATA_DIR/soundcloud-artwork.jpg" ]; then
+        echo "   Creating placeholder artwork..."
+        create_placeholder_artwork "$MOCK_DATA_DIR/soundcloud-artwork.jpg"
+    fi
+    
+    if ! python "$SCRIPT_DIR/generate-card.py" \
         "$MOCK_DATA_DIR/soundcloud-metadata.json" \
         "$MOCK_DATA_DIR/soundcloud-artwork.jpg" \
-        "$OUTPUT_DIR/soundcloud-card.svg" 2>/dev/null || {
-        # If artwork doesn't exist, create a placeholder
-        python -c "from PIL import Image; img = Image.new('RGB', (400, 400), color='#1e1e1e'); img.save('$MOCK_DATA_DIR/soundcloud-artwork.jpg')"
-        python "$SCRIPT_DIR/generate-card.py" \
-            "$MOCK_DATA_DIR/soundcloud-metadata.json" \
-            "$MOCK_DATA_DIR/soundcloud-artwork.jpg" \
-            "$OUTPUT_DIR/soundcloud-card.svg"
-    }
+        "$OUTPUT_DIR/soundcloud-card.svg"; then
+        echo "   Error: Failed to generate SoundCloud card"
+        return 1
+    fi
+    
     echo -e "   → Saved to: ${YELLOW}$OUTPUT_DIR/soundcloud-card.svg${NC}"
 }
 
 generate_weather() {
     echo -e "${GREEN}🌦️  Generating Weather card...${NC}"
-    python "$SCRIPT_DIR/generate-weather-card.py" \
+    
+    if ! python "$SCRIPT_DIR/generate-weather-card.py" \
         "$MOCK_DATA_DIR/weather.json" \
-        "$OUTPUT_DIR/weather-today.svg"
+        "$OUTPUT_DIR/weather-today.svg"; then
+        echo "   Error: Failed to generate weather card"
+        return 1
+    fi
+    
     echo -e "   → Saved to: ${YELLOW}$OUTPUT_DIR/weather-today.svg${NC}"
 }
 
 generate_developer() {
     echo -e "${GREEN}💻 Generating Developer dashboard...${NC}"
-    python "$SCRIPT_DIR/generate-developer-dashboard.py" \
+    
+    if ! python "$SCRIPT_DIR/generate-developer-dashboard.py" \
         "$MOCK_DATA_DIR/developer-stats.json" \
-        "$OUTPUT_DIR/developer-dashboard.svg"
+        "$OUTPUT_DIR/developer-dashboard.svg"; then
+        echo "   Error: Failed to generate developer dashboard"
+        return 1
+    fi
+    
     echo -e "   → Saved to: ${YELLOW}$OUTPUT_DIR/developer-dashboard.svg${NC}"
 }
 
@@ -59,25 +82,37 @@ generate_oura() {
     echo -e "${GREEN}🧬 Generating Oura health dashboard...${NC}"
     
     # Generate health snapshot
-    python "$SCRIPT_DIR/generate-health-snapshot.py" \
+    if ! python "$SCRIPT_DIR/generate-health-snapshot.py" \
         "$MOCK_DATA_DIR/oura-metrics.json" \
-        "$OUTPUT_DIR/health-snapshot.json"
+        "$OUTPUT_DIR/health-snapshot.json"; then
+        echo "   Error: Failed to generate health snapshot"
+        return 1
+    fi
     
     # Generate health dashboard
-    python "$SCRIPT_DIR/generate-health-dashboard.py" \
+    if ! python "$SCRIPT_DIR/generate-health-dashboard.py" \
         "$OUTPUT_DIR/health-snapshot.json" \
-        "$OUTPUT_DIR/health-dashboard.svg"
+        "$OUTPUT_DIR/health-dashboard.svg"; then
+        echo "   Error: Failed to generate health dashboard"
+        return 1
+    fi
     
     # Generate mood data
-    python "$SCRIPT_DIR/oura-mood-engine.py" \
+    if ! python "$SCRIPT_DIR/oura-mood-engine.py" \
         "$MOCK_DATA_DIR/oura-metrics.json" \
-        "$OUTPUT_DIR/mood.json"
+        "$OUTPUT_DIR/mood.json"; then
+        echo "   Error: Failed to generate mood data"
+        return 1
+    fi
     
     # Generate mood dashboard
-    python "$SCRIPT_DIR/generate-oura-mood-card.py" \
+    if ! python "$SCRIPT_DIR/generate-oura-mood-card.py" \
         "$OUTPUT_DIR/mood.json" \
         "$MOCK_DATA_DIR/oura-metrics.json" \
-        "$OUTPUT_DIR/mood-dashboard.svg"
+        "$OUTPUT_DIR/mood-dashboard.svg"; then
+        echo "   Error: Failed to generate mood dashboard"
+        return 1
+    fi
     
     echo -e "   → Saved to: ${YELLOW}$OUTPUT_DIR/health-dashboard.svg${NC}"
     echo -e "   → Saved to: ${YELLOW}$OUTPUT_DIR/mood-dashboard.svg${NC}"
