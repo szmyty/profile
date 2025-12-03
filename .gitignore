@@ -13,6 +13,10 @@ Thumbs.db
 oura/raw_*.json
 oura/debug_*.txt
 
+# Location debug files (saved for debugging but not committed)
+location/debug_*.json
+location/debug_*.txt
+
 # Developer raw debug files (runtime only)
 developer/raw/
 
@@ -22,6 +26,7 @@ assets/.cache/
 # API response cache
 cache/
 .cache/
+cached/
 
 # Development output
 dev-output/
