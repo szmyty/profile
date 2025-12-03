@@ -551,7 +551,7 @@ def generate_sparkline_path(
 
 def load_theme(theme_path: Optional[str] = None, theme_name: Optional[str] = None) -> Dict:
     """
-    Load theme configuration from JSON file.
+    Load theme configuration from JSON file with schema validation.
 
     Args:
         theme_path: Optional path to theme.json. If not provided,
@@ -567,6 +567,9 @@ def load_theme(theme_path: Optional[str] = None, theme_name: Optional[str] = Non
         When theme_name is specified, returns merged theme data with selected theme's
         colors and gradients overriding the defaults. Cache is invalidated when
         switching themes to ensure correct theme data is returned.
+        
+        Theme validation is performed on first load to ensure structural integrity.
+        If validation fails, the script exits with a readable error message.
     """
     global _theme_cache
 
@@ -581,8 +584,8 @@ def load_theme(theme_path: Optional[str] = None, theme_name: Optional[str] = Non
         repo_root = os.path.dirname(os.path.dirname(script_dir))
         theme_path = os.path.join(repo_root, "config", "theme.json")
 
-    # Load theme config (only if not cached or theme switching requested)
-    theme_config = load_json(theme_path, "Theme configuration file")
+    # Load and validate theme config (only if not cached or theme switching requested)
+    theme_config = load_and_validate_json(theme_path, "theme", "Theme configuration file")
     
     # If no theme_name specified, return the full config for backward compatibility
     if theme_name is None:
