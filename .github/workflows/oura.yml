@@ -10,11 +10,11 @@ on:
       - main
     paths:
       - 'scripts/fetch-oura.sh'
-      - 'scripts/oura_mood_engine.py'
+      - 'scripts/oura-mood-engine.py'
       - 'scripts/generate-oura-mood-card.py'
       - 'scripts/generate-health-snapshot.py'
       - 'scripts/generate-health-dashboard.py'
-      - 'scripts/update_readme.py'
+      - 'scripts/update-readme.py'
       - 'scripts/lib/utils.py'
       - 'config/theme.json'
       - '.github/workflows/oura.yml'
@@ -79,7 +79,7 @@ jobs:
 
       - name: Compute mood state
         run: |
-          python scripts/oura_mood_engine.py oura/metrics.json oura/mood.json
+          python scripts/oura-mood-engine.py oura/metrics.json oura/mood.json
 
       - name: Generate mood dashboard SVG card
         run: |
@@ -105,11 +105,11 @@ jobs:
 
       - name: Update README with dashboard cards
         run: |
-          python scripts/update_readme.py \
+          python scripts/update-readme.py \
             --marker OURA-HEALTH-CARD \
             --content "![Oura Health Dashboard](./oura/health_dashboard.svg)"
           
-          python scripts/update_readme.py \
+          python scripts/update-readme.py \
             --marker OURA-MOOD-CARD \
             --content "![Oura Mood Dashboard](./oura/mood_dashboard.svg)"
 

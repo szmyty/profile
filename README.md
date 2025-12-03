@@ -41,3 +41,20 @@
 <!-- OURA-MOOD-CARD:START -->
 ![Oura Mood Dashboard](./oura/mood_dashboard.svg)
 <!-- OURA-MOOD-CARD:END -->
+
+---
+
+## 🛠️ Development
+
+### Code Conventions
+
+**Script Naming**: All Python scripts use dash-case naming (e.g., `generate-card.py`, `update-readme.py`).
+
+**Script Permissions**: Python scripts that are directly executed by workflows are marked as executable. Library modules in `scripts/lib/` are not executable.
+
+**Dependencies**: Install required Python packages with:
+```bash
+pip install -r requirements.txt
+```
+
+**Theme Configuration**: All visual styling (colors, fonts, spacing, dimensions) is centralized in `config/theme.json`.

@@ -23,28 +23,13 @@ from lib.utils import (
     get_theme_border_radius,
     format_timestamp_local,
     format_time_since,
+    format_large_number,
+    format_duration_ms,
     optimize_image_file,
     fallback_exists,
     log_fallback_used,
     handle_error_with_fallback,
 )
-
-
-def format_duration(duration_ms: int) -> str:
-    """Convert milliseconds to MM:SS format."""
-    seconds = duration_ms // 1000
-    minutes = seconds // 60
-    remaining_seconds = seconds % 60
-    return f"{minutes}:{remaining_seconds:02d}"
-
-
-def format_playcount(count: int) -> str:
-    """Format play count with K/M suffixes."""
-    if count >= 1_000_000:
-        return f"{count / 1_000_000:.1f}M"
-    elif count >= 1_000:
-        return f"{count / 1_000:.1f}K"
-    return str(count)
 
 
 def format_date(date_str: str) -> str:
@@ -93,7 +78,23 @@ def generate_svg(
     artwork_data_uri: str,
     updated_at: Optional[str] = None,
 ) -> str:
-    """Generate SVG card markup."""
+    """
+    Generate SVG card markup for SoundCloud track.
+    
+    Args:
+        title: Track title.
+        artist: Artist name.
+        genre: Music genre.
+        duration_ms: Track duration in milliseconds.
+        playback_count: Number of plays.
+        created_at: ISO 8601 timestamp when track was created.
+        permalink_url: SoundCloud track URL.
+        artwork_data_uri: Base64-encoded data URI for artwork image.
+        updated_at: Optional ISO 8601 timestamp when card was generated.
+    
+    Returns:
+        Complete SVG markup as a string.
+    """
 
     # Load theme values
     theme = load_theme()
@@ -134,8 +135,8 @@ def generate_svg(
     shadow_opacity = shadow.get("flood_opacity", 0.3)
 
     # Format values
-    duration = format_duration(duration_ms)
-    plays = format_playcount(playback_count)
+    duration = format_duration_ms(duration_ms)
+    plays = format_large_number(playback_count)
     date = format_date(created_at)
     
     # Calculate staleness indicator
@@ -227,8 +228,13 @@ def generate_svg(
     return svg
 
 
-def main():
-    """Main entry point."""
+def main() -> None:
+    """
+    Main entry point for SoundCloud card generation.
+    
+    Reads track metadata and artwork, generates SVG card.
+    Uses fallback mechanism to preserve existing card on errors.
+    """
     if len(sys.argv) < 2:
         print("Usage: generate-card.py <metadata.json> [artwork_path] [output_path]", file=sys.stderr)
         sys.exit(1)

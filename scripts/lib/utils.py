@@ -692,6 +692,97 @@ def get_theme_border_radius(size: str = "xl", fallback: int = 12) -> int:
     return safe_get(theme, "cards", "border_radius", size, default=fallback)
 
 
+def get_theme_chart_value(key: str, fallback: int = 10) -> int:
+    """
+    Get a chart dimension value from the theme.
+
+    Args:
+        key: Key name (e.g., 'bar_height', 'bar_gap', 'label_width').
+        fallback: Default value if not found.
+
+    Returns:
+        Chart dimension value in pixels.
+    """
+    theme = load_theme()
+    return safe_get(theme, "cards", "chart", key, default=fallback)
+
+
+def get_theme_sparkline_value(key: str, fallback: int = 100) -> int:
+    """
+    Get a sparkline dimension value from the theme.
+
+    Args:
+        key: Key name (e.g., 'width', 'height', 'stroke_width').
+        fallback: Default value if not found.
+
+    Returns:
+        Sparkline dimension value in pixels.
+    """
+    theme = load_theme()
+    return safe_get(theme, "cards", "chart", "sparkline", key, default=fallback)
+
+
+def get_theme_score_bar_value(key: str, fallback: int = 6) -> int:
+    """
+    Get a score bar dimension value from the theme.
+
+    Args:
+        key: Key name (e.g., 'height', 'width', 'text_offset').
+        fallback: Default value if not found.
+
+    Returns:
+        Score bar dimension value in pixels.
+    """
+    theme = load_theme()
+    return safe_get(theme, "cards", "score_bar", key, default=fallback)
+
+
+def get_theme_radial_bar_value(key: str, fallback: Union[int, float] = 6.0) -> Union[int, float]:
+    """
+    Get a radial bar value from the theme.
+
+    Args:
+        key: Key name (e.g., 'stroke_width', 'opacity', 'ring_spacing').
+        fallback: Default value if not found (use float for opacity, int for dimensions).
+
+    Returns:
+        Radial bar value (int for dimensions like stroke_width/ring_spacing, 
+        float for opacity).
+    """
+    theme = load_theme()
+    return safe_get(theme, "cards", "radial_bar", key, default=fallback)
+
+
+def get_theme_score_ring_value(key: str, fallback: int = 4) -> int:
+    """
+    Get a score ring value from the theme.
+
+    Args:
+        key: Key name (e.g., 'stroke_width', 'label_offset').
+        fallback: Default value if not found.
+
+    Returns:
+        Score ring dimension value in pixels.
+    """
+    theme = load_theme()
+    return safe_get(theme, "cards", "score_ring", key, default=fallback)
+
+
+def get_theme_decorative_accent_value(key: str, fallback: int = 4) -> int:
+    """
+    Get a decorative accent dimension value from the theme.
+
+    Args:
+        key: Key name (e.g., 'width', 'x_offset', 'y_offset').
+        fallback: Default value if not found.
+
+    Returns:
+        Decorative accent dimension value in pixels.
+    """
+    theme = load_theme()
+    return safe_get(theme, "cards", "decorative_accent", key, default=fallback)
+
+
 # Cache for loaded timezone to avoid re-reading file
 _timezone_cache: Optional[Dict] = None
 
@@ -869,6 +960,53 @@ def format_time_since(timestamp_str: str) -> str:
             
     except (ValueError, AttributeError, TypeError):
         return "unknown"
+
+
+def format_large_number(count: int) -> str:
+    """
+    Format large numbers with K/M suffixes for readability.
+    
+    Args:
+        count: The number to format.
+    
+    Returns:
+        Formatted string with K/M suffix (e.g., "1.5K", "2.3M").
+    
+    Examples:
+        >>> format_large_number(1500)
+        "1.5K"
+        >>> format_large_number(2_300_000)
+        "2.3M"
+        >>> format_large_number(500)
+        "500"
+    """
+    if count >= 1_000_000:
+        return f"{count / 1_000_000:.1f}M"
+    elif count >= 1_000:
+        return f"{count / 1_000:.1f}K"
+    return str(count)
+
+
+def format_duration_ms(duration_ms: int) -> str:
+    """
+    Convert milliseconds to MM:SS format.
+    
+    Args:
+        duration_ms: Duration in milliseconds.
+    
+    Returns:
+        Formatted duration string (e.g., "3:45", "12:03").
+    
+    Examples:
+        >>> format_duration_ms(225000)
+        "3:45"
+        >>> format_duration_ms(60000)
+        "1:00"
+    """
+    seconds = duration_ms // 1000
+    minutes = seconds // 60
+    remaining_seconds = seconds % 60
+    return f"{minutes}:{remaining_seconds:02d}"
 
 
 # Image optimization utilities

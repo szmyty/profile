@@ -47,8 +47,17 @@ def kmh_to_mph(kmh: float) -> float:
     return kmh * 0.621371
 
 
-def get_background_gradient(is_day: int, weathercode: int) -> tuple:
-    """Get background gradient colors based on time of day and weather."""
+def get_background_gradient(is_day: int, weathercode: int) -> tuple[str, str]:
+    """
+    Get background gradient colors based on time of day and weather.
+    
+    Args:
+        is_day: 1 if daytime, 0 if nighttime.
+        weathercode: WMO weather code (0-99).
+    
+    Returns:
+        Tuple of (start_color, end_color) for background gradient.
+    """
     # Load weather gradients from theme
     theme = load_theme()
     weather_gradients = theme.get("gradients", {}).get("weather", {})
@@ -244,8 +253,13 @@ def generate_weather_svg(metadata: dict) -> str:
     )
 
 
-def main():
-    """Main entry point."""
+def main() -> None:
+    """
+    Main entry point for weather card generation.
+    
+    Reads weather data from JSON file and generates an SVG card.
+    Uses fallback mechanism to preserve existing card on errors.
+    """
     if len(sys.argv) < 2:
         print(
             "Usage: generate-weather-card.py <weather.json> [output_path]",

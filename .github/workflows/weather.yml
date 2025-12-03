@@ -11,7 +11,7 @@ on:
     paths:
       - 'scripts/fetch-weather.sh'
       - 'scripts/generate-weather-card.py'
-      - 'scripts/update_readme.py'
+      - 'scripts/update-readme.py'
       - 'scripts/lib/utils.py'
       - 'config/theme.json'
       - '.github/workflows/weather.yml'
@@ -135,7 +135,7 @@ jobs:
       - name: Update README with weather card
         if: steps.location.outputs.skip != 'true' && steps.coords.outputs.skip != 'true'
         run: |
-          python scripts/update_readme.py \
+          python scripts/update-readme.py \
             --marker WEATHER-CARD \
             --content "![Today's Weather](./weather/weather-today.svg)"
 
