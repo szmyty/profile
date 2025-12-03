@@ -373,3 +373,9 @@ Workflows use output flags to skip subsequent steps:
 2. Use manual trigger to test
 3. Review generated artifacts
 4. Merge to main when satisfied
+
+---
+
+## Troubleshooting
+
+For comprehensive troubleshooting guidance including rate limiting, JSON validation, API failures, timeout handling, and more, see the [Troubleshooting Guide](TROUBLESHOOTING.md).

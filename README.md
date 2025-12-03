@@ -172,6 +172,22 @@ See [MONITORING.md](docs/MONITORING.md) for detailed documentation.
 
 ---
 
+## 🔧 Troubleshooting
+
+Encountering workflow failures? The troubleshooting guide covers common issues and solutions:
+
+- **🚦 Rate Limiting** - GitHub API, Nominatim, and external API rate limits
+- **📋 Invalid JSON** - Validation errors and malformed responses
+- **🌐 API Failures** - SoundCloud, Open-Meteo, Mapbox, and Oura issues
+- **🔑 Missing Keys** - Handling missing fields and data validation
+- **⚡ Concurrency** - Git conflicts and workflow collision prevention
+- **⏱️ Timeouts** - HTTP request and workflow timeout handling
+- **✅ Schema Validation** - Setting up and troubleshooting data validation
+
+See [TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) for detailed solutions.
+
+---
+
 ## 📜 Logs
 
 All workflow logs are stored in the `logs/` directory with automatic rotation to prevent excessive file growth.

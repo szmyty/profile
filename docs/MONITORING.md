@@ -335,5 +335,6 @@ Potential improvements to the monitoring system:
 ## Related Documentation
 
 - [Workflows Guide](WORKFLOWS.md)
+- [Troubleshooting Guide](TROUBLESHOOTING.md)
 - [Optimization Guide](OPTIMIZATION_GUIDE.md)
 - [Development Guide](../README.md#development)
