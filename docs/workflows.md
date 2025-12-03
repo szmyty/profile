@@ -54,6 +54,28 @@ permissions:
 
 Required for committing changes back to the repository.
 
+### Artifact Management
+
+The parallel fetch workflow uses GitHub Actions artifacts to pass data between jobs:
+
+```yaml
+retention-days: 3
+```
+
+**Retention Rationale**:
+- **3-day retention** balances workflow reliability with storage efficiency
+- Allows workflows to chain properly even during slow or failed runs
+- Provides sufficient time for debugging issues without excessive storage costs
+- Artifacts are automatically compressed and optimized (SVGs use SVGO with aggressive settings)
+- JSON files are minimal (~1-5KB each)
+- Total storage impact: negligible due to small file sizes and optimization
+
+**Storage Optimization**:
+- All SVG files are optimized with SVGO using multipass compression
+- Floating-point precision reduced to 2 decimal places
+- Unnecessary XML elements and attributes removed
+- Typical SVG size reduction: 20-40%
+
 ### Common Steps
 
 1. **Checkout**: Fetch repository with depth 1
