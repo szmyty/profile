@@ -6,7 +6,7 @@ Provides centralized logging functionality with rotation support.
 import logging
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from logging.handlers import RotatingFileHandler
 from typing import Optional
@@ -62,7 +62,7 @@ class WorkflowLogger:
             '[%(asctime)s] [%(levelname)s] %(message)s',
             datefmt='%Y-%m-%dT%H:%M:%SZ'
         )
-        formatter.converter = lambda *args: datetime.utcnow().timetuple()
+        formatter.converter = lambda *args: datetime.now(timezone.utc).timetuple()
         
         file_handler.setFormatter(formatter)
         console_handler.setFormatter(formatter)
@@ -101,7 +101,7 @@ class WorkflowLogger:
         self.logger.info(f"Workflow: {self.workflow_name}")
         if description:
             self.logger.info(f"Description: {description}")
-        self.logger.info(f"Started at: {datetime.utcnow().isoformat()}Z")
+        self.logger.info(f"Started at: {datetime.now(timezone.utc).isoformat()}Z")
         self.logger.info(separator)
     
     def log_workflow_end(self, exit_code: int = 0):
@@ -117,7 +117,7 @@ class WorkflowLogger:
             self.logger.info(f"Workflow: {self.workflow_name} - COMPLETED SUCCESSFULLY")
         else:
             self.logger.error(f"Workflow: {self.workflow_name} - FAILED (exit code: {exit_code})")
-        self.logger.info(f"Ended at: {datetime.utcnow().isoformat()}Z")
+        self.logger.info(f"Ended at: {datetime.now(timezone.utc).isoformat()}Z")
         self.logger.info(separator)
     
     def log_command(self, command: str, output: Optional[str] = None, exit_code: int = 0):

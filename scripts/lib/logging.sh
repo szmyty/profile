@@ -65,12 +65,12 @@ rotate_log_if_needed() {
     echo "Log rotation triggered (size: ${file_size} bytes, max: ${LOG_MAX_SIZE} bytes)" >&2
     
     # Rotate existing log files
-    for i in $(seq $((LOG_MAX_ROTATIONS - 1)) -1 1); do
+    for i in $(seq $((LOG_MAX_ROTATIONS)) -1 1); do
         local current="${LOG_FILE}.${i}"
         local next="${LOG_FILE}.$((i + 1))"
         
         if [ -f "$current" ]; then
-            if [ "$i" -eq $((LOG_MAX_ROTATIONS - 1)) ]; then
+            if [ "$i" -eq $((LOG_MAX_ROTATIONS)) ]; then
                 # Delete the oldest log
                 rm -f "$current"
                 echo "Deleted oldest log: $current" >&2
@@ -137,13 +137,14 @@ log_command() {
     local output
     local exit_code
     
-    if output=$($cmd 2>&1); then
-        exit_code=$?
+    output=$($cmd 2>&1)
+    exit_code=$?
+    
+    if [ $exit_code -eq 0 ]; then
         log_info "Command succeeded (exit code: ${exit_code})"
         echo "$output"
         return 0
     else
-        exit_code=$?
         log_error "Command failed (exit code: ${exit_code})"
         log_error "Output: ${output}"
         return $exit_code
@@ -154,7 +155,7 @@ log_command() {
 # Usage: log_workflow_start "Location Card Update"
 log_workflow_start() {
     local workflow_name="${1:-Unknown Workflow}"
-    local separator="========================================"
+    local separator="============================================================"
     
     log_info "$separator"
     log_info "Workflow: ${workflow_name}"
@@ -167,7 +168,7 @@ log_workflow_start() {
 log_workflow_end() {
     local workflow_name="${1:-Unknown Workflow}"
     local exit_code="${2:-0}"
-    local separator="========================================"
+    local separator="============================================================"
     
     log_info "$separator"
     if [ "$exit_code" -eq 0 ]; then

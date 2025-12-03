@@ -14,20 +14,19 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 if [ -f "${SCRIPT_DIR}/lib/logging.sh" ]; then
     source "${SCRIPT_DIR}/lib/logging.sh"
-    # Initialize logging
-    init_logging "oura"
-    log_workflow_start "Oura Health - Fetch Data"
 fi
+
+# Initialize logging early
+init_logging "oura"
+log_workflow_start "Oura Health - Fetch Data"
 
 OURA_PAT="${OURA_PAT:-}"
 OUTPUT_DIR="${OUTPUT_DIR:-oura}"
 
 # Validate that we have the Oura Personal Access Token
 if [ -z "$OURA_PAT" ]; then
-    if [ -n "${LOG_FILE:-}" ]; then
-        log_error "OURA_PAT environment variable is not set"
-        log_workflow_end "Oura Health - Fetch Data" 1
-    fi
+    log_error "OURA_PAT environment variable is not set"
+    log_workflow_end "Oura Health - Fetch Data" 1
     echo "Error: OURA_PAT environment variable is not set" >&2
     exit 1
 fi
@@ -37,9 +36,7 @@ END_DATE=$(date -u +"%Y-%m-%d")
 START_DATE=$(date -u -d "7 days ago" +"%Y-%m-%d" 2>/dev/null || date -u -v-7d +"%Y-%m-%d")
 
 # Logging: Show date range being used
-if [ -n "${LOG_FILE:-}" ]; then
-    log_info "Date range: ${START_DATE} to ${END_DATE}"
-fi
+log_info "Date range: ${START_DATE} to ${END_DATE}"
 echo "Start date: $START_DATE" >&2
 echo "End date: $END_DATE" >&2
 
@@ -334,11 +331,9 @@ main() {
         }'
     
     # Log completion
-    if [ -n "${LOG_FILE:-}" ]; then
-        log_info "Oura metrics fetched successfully"
-        log_info "Scores - Sleep: ${sleep_score}, Readiness: ${readiness_score}, Activity: ${activity_score}"
-        log_workflow_end "Oura Health - Fetch Data" 0
-    fi
+    log_info "Oura metrics fetched successfully"
+    log_info "Scores - Sleep: ${sleep_score}, Readiness: ${readiness_score}, Activity: ${activity_score}"
+    log_workflow_end "Oura Health - Fetch Data" 0
 }
 
 main "$@"
