@@ -34,7 +34,7 @@ def generate_fallback_map(output_path: str, lat: float, lon: float) -> None:
         draw.rectangle([(0, i), (width, i + 1)], fill=color)
     
     # Draw grid pattern
-    grid_color = (15, 52, 96, 77)  # #0f3460 with opacity
+    grid_color = (15, 52, 96)  # #0f3460
     for x in range(0, width, 40):
         draw.line([(x, 0), (x, height)], fill=grid_color, width=1)
     for y in range(0, height, 40):
@@ -107,8 +107,27 @@ if __name__ == "__main__":
         sys.exit(1)
     
     output_path = sys.argv[1]
-    lat = float(sys.argv[2])
-    lon = float(sys.argv[3])
+    
+    # Validate and parse coordinates
+    try:
+        lat = float(sys.argv[2])
+        lon = float(sys.argv[3])
+    except ValueError as e:
+        print(f"❌ Invalid coordinates: {e}", file=sys.stderr)
+        print(f"   Latitude and longitude must be numeric values", file=sys.stderr)
+        print(f"   Example: 40.7128 -74.0060", file=sys.stderr)
+        sys.exit(1)
+    
+    # Validate coordinate ranges
+    if not (-90 <= lat <= 90):
+        print(f"❌ Invalid latitude: {lat}", file=sys.stderr)
+        print(f"   Latitude must be between -90 and 90 degrees", file=sys.stderr)
+        sys.exit(1)
+    
+    if not (-180 <= lon <= 180):
+        print(f"❌ Invalid longitude: {lon}", file=sys.stderr)
+        print(f"   Longitude must be between -180 and 180 degrees", file=sys.stderr)
+        sys.exit(1)
     
     try:
         generate_fallback_map(output_path, lat, lon)
