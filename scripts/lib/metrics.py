@@ -81,18 +81,34 @@ def load_workflow_metrics(workflow_name: str) -> Dict:
 
 def save_workflow_metrics(workflow_name: str, metrics: Dict) -> None:
     """
-    Save workflow metrics to file.
+    Save workflow metrics to file using safe write pattern.
     
     Args:
         workflow_name: Name of the workflow
         metrics: Dictionary containing workflow metrics
     """
     metrics_file = get_workflow_metrics_file(workflow_name)
+    temp_file = metrics_file.parent / f"{metrics_file.name}.tmp"
     
     try:
-        with open(metrics_file, 'w') as f:
+        # Write to temporary file
+        with open(temp_file, 'w') as f:
             json.dump(metrics, f, indent=2)
-    except IOError as e:
+        
+        # Validate the temp file can be loaded
+        with open(temp_file, 'r') as f:
+            json.load(f)
+        
+        # Atomic move to final location
+        temp_file.replace(metrics_file)
+        
+    except (IOError, OSError, json.JSONDecodeError) as e:
+        # Clean up temp file on failure
+        if temp_file.exists():
+            try:
+                temp_file.unlink()
+            except OSError:
+                pass
         print(f"Error: Failed to save metrics for {workflow_name}: {e}", file=sys.stderr)
         sys.exit(1)
 

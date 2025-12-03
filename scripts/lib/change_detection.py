@@ -79,17 +79,34 @@ def load_hash_cache(cache_path: Path) -> dict:
 
 def save_hash_cache(cache_path: Path, cache_data: dict) -> None:
     """
-    Save hash cache to JSON file.
+    Save hash cache to JSON file using safe write pattern.
     
     Args:
         cache_path: Path to the cache file
         cache_data: Dictionary with hashes to save
     """
     cache_path.parent.mkdir(parents=True, exist_ok=True)
+    temp_path = cache_path.parent / f"{cache_path.name}.tmp"
+    
     try:
-        with open(cache_path, 'w', encoding='utf-8') as f:
+        # Write to temporary file
+        with open(temp_path, 'w', encoding='utf-8') as f:
             json.dump(cache_data, f, indent=2)
-    except (IOError, OSError) as e:
+        
+        # Validate the temp file can be loaded
+        with open(temp_path, 'r', encoding='utf-8') as f:
+            json.load(f)
+        
+        # Atomic move to final location
+        temp_path.replace(cache_path)
+        
+    except (IOError, OSError, json.JSONDecodeError) as e:
+        # Clean up temp file on failure
+        if temp_path.exists():
+            try:
+                temp_path.unlink()
+            except OSError:
+                pass
         # Log cache write failure but don't fail the operation
         print(f"Warning: Could not save hash cache to {cache_path}: {e}", file=sys.stderr)
 
