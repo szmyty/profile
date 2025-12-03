@@ -53,20 +53,32 @@ jobs:
             exit 1
           fi
 
+      - name: Restore SVG hash cache
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: svg-hash-cache-${{ github.run_id }}
+          restore-keys: |
+            svg-hash-cache-
+
       - name: Generate SVG card
         run: |
-          python scripts/generate-card.py assets/metadata.json assets/soundcloud-artwork.jpg assets/soundcloud-card.svg
+          python scripts/incremental-generate.py assets/metadata.json assets/soundcloud-card.svg scripts/generate-card.py soundcloud assets/soundcloud-artwork.jpg
 
       - name: Optimize SVG with SVGO
         run: |
           npm install -g svgo
-          ORIGINAL_SIZE=$(stat -c%s assets/soundcloud-card.svg)
-          if [ "$ORIGINAL_SIZE" -gt 0 ]; then
-            svgo assets/soundcloud-card.svg -o assets/soundcloud-card.svg
-            OPTIMIZED_SIZE=$(stat -c%s assets/soundcloud-card.svg)
-            echo "SVG optimized: ${ORIGINAL_SIZE} bytes → ${OPTIMIZED_SIZE} bytes ($(( 100 - OPTIMIZED_SIZE * 100 / ORIGINAL_SIZE ))% reduction)"
+          if [ -f assets/soundcloud-card.svg ]; then
+            ORIGINAL_SIZE=$(stat -c%s assets/soundcloud-card.svg)
+            if [ "$ORIGINAL_SIZE" -gt 0 ]; then
+              svgo assets/soundcloud-card.svg -o assets/soundcloud-card.svg
+              OPTIMIZED_SIZE=$(stat -c%s assets/soundcloud-card.svg)
+              echo "SVG optimized: ${ORIGINAL_SIZE} bytes → ${OPTIMIZED_SIZE} bytes ($(( 100 - OPTIMIZED_SIZE * 100 / ORIGINAL_SIZE ))% reduction)"
+            else
+              echo "Warning: SVG file is empty, skipping optimization"
+            fi
           else
-            echo "Warning: SVG file is empty, skipping optimization"
+            echo "SVG generation was skipped (data unchanged)"
           fi
 
       - name: Update README with card
