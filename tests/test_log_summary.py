@@ -3,18 +3,15 @@
 Unit tests for scripts/log_summary.py
 """
 
-import json
-import pytest
 import sys
 import os
 from pathlib import Path
 import tempfile
-import shutil
 
 # Add scripts directory to path for imports
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
 
-from log_summary import (
+from log_summary import (  # noqa: E402
     WorkflowPerformanceCard,
     aggregate_log_summary,
     generate_dashboard_svg,
@@ -28,7 +25,7 @@ class TestWorkflowPerformanceCard:
         """Card initializes with correct dimensions."""
         metrics = []
         card = WorkflowPerformanceCard(metrics)
-        
+
         assert card.width == 800
         assert card.height == 400
         assert card.workflow_metrics == []
@@ -37,7 +34,7 @@ class TestWorkflowPerformanceCard:
         """Card generates no-data message when metrics are empty."""
         card = WorkflowPerformanceCard([])
         content = card.generate_content()
-        
+
         assert "Workflow Performance Dashboard" in content
         assert "No workflow metrics available yet" in content
 
@@ -55,7 +52,7 @@ class TestWorkflowPerformanceCard:
         ]
         card = WorkflowPerformanceCard(metrics)
         content = card.generate_content()
-        
+
         assert "Workflow Performance Dashboard" in content
         assert "Summary" in content
         assert "test-workflow" in content
@@ -75,7 +72,7 @@ class TestWorkflowPerformanceCard:
         ]
         card = WorkflowPerformanceCard(metrics)
         content = card.generate_content()
-        
+
         assert "failing-workflow" in content
         assert "⚠ Failing" in content or "Failing" in content
 
@@ -101,7 +98,7 @@ class TestWorkflowPerformanceCard:
         ]
         card = WorkflowPerformanceCard(metrics)
         content = card.generate_content()
-        
+
         assert "workflow-1" in content
         assert "workflow-2" in content
         assert "Total Workflows" in content
@@ -120,7 +117,7 @@ class TestWorkflowPerformanceCard:
         ]
         card = WorkflowPerformanceCard(metrics)
         content = card.generate_content()
-        
+
         assert "no-time-workflow" in content
         assert "N/A" in content
 
@@ -138,7 +135,7 @@ class TestWorkflowPerformanceCard:
         ]
         card = WorkflowPerformanceCard(metrics)
         svg = card.generate_svg(footer_text="Test Footer")
-        
+
         assert svg.startswith("<svg")
         assert svg.endswith("</svg>")
         assert "Workflow Performance Dashboard" in svg
@@ -150,32 +147,22 @@ class TestWorkflowPerformanceCard:
 class TestAggregateLogSummary:
     """Tests for aggregate_log_summary function."""
 
-    def test_aggregate_with_no_logs(self, monkeypatch):
+    def test_aggregate_with_no_logs(self):
         """Returns empty summary when no logs exist."""
-        with tempfile.TemporaryDirectory() as temp_dir:
-            # Create a temporary logs directory with no files
-            logs_dir = Path(temp_dir) / "logs"
-            logs_dir.mkdir()
-            
-            # Monkey patch the logs directory path
-            original_file = Path(__file__).parent.parent / "scripts" / "log_summary.py"
-            
-            def mock_parent():
-                return Path(temp_dir)
-            
-            # This test may be difficult to mock properly, so we'll just check it doesn't crash
-            summary = aggregate_log_summary()
-            
-            assert isinstance(summary, dict)
-            assert "total_log_files" in summary
-            assert "total_log_size_bytes" in summary
-            assert "workflows_with_logs" in summary
-            assert "errors_found" in summary
+        # This test may be difficult to mock properly,
+        # so we'll just check it doesn't crash
+        summary = aggregate_log_summary()
+
+        assert isinstance(summary, dict)
+        assert "total_log_files" in summary
+        assert "total_log_size_bytes" in summary
+        assert "workflows_with_logs" in summary
+        assert "errors_found" in summary
 
     def test_aggregate_summary_structure(self):
         """Aggregate summary has correct structure."""
         summary = aggregate_log_summary()
-        
+
         assert isinstance(summary, dict)
         assert "total_log_files" in summary
         assert isinstance(summary["total_log_files"], int)
@@ -195,9 +182,9 @@ class TestGenerateDashboardSVG:
         with tempfile.TemporaryDirectory() as temp_dir:
             output_path = Path(temp_dir) / "test-dashboard.svg"
             generate_dashboard_svg(str(output_path))
-            
+
             assert output_path.exists()
-            
+
             # Verify it's a valid SVG
             content = output_path.read_text()
             assert content.startswith("<svg")
@@ -217,16 +204,17 @@ class TestGenerateDashboardSVG:
                 "avg_run_time_seconds": 25.0,
             }
         ]
-        
+
         def mock_get_all():
             return mock_metrics
-        
+
         import log_summary
+
         monkeypatch.setattr(log_summary, "get_all_workflow_metrics", mock_get_all)
-        
+
         with tempfile.TemporaryDirectory() as temp_dir:
             output_path = Path(temp_dir) / "test-dashboard.svg"
             generate_dashboard_svg(str(output_path))
-            
+
             content = output_path.read_text()
             assert "test-workflow" in content

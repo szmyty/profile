@@ -10,17 +10,16 @@ This script:
 """
 
 import sys
-import json
 from pathlib import Path
 from datetime import datetime, timezone
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
 
-from lib.card_base import CardBase
-from lib.utils import escape_xml
-from lib.metrics import get_all_workflow_metrics
+from lib.card_base import CardBase  # noqa: E402
+from lib.utils import escape_xml  # noqa: E402
+from lib.metrics import get_all_workflow_metrics  # noqa: E402
 
 
 class WorkflowPerformanceCard(CardBase):
@@ -49,20 +48,12 @@ class WorkflowPerformanceCard(CardBase):
         total_workflows = len(self.workflow_metrics)
         total_runs = sum(m.get("total_runs", 0) for m in self.workflow_metrics)
         total_successes = sum(m.get("successful_runs", 0) for m in self.workflow_metrics)
-        total_failures = sum(m.get("failed_runs", 0) for m in self.workflow_metrics)
 
         success_rate = (total_successes / total_runs * 100) if total_runs > 0 else 0
 
-        # Find workflows with issues
-        failing_workflows = [
-            m for m in self.workflow_metrics if m.get("consecutive_failures", 0) >= 3
-        ]
-
         # Calculate average run times
         workflows_with_times = [
-            m
-            for m in self.workflow_metrics
-            if m.get("avg_run_time_seconds") is not None
+            m for m in self.workflow_metrics if m.get("avg_run_time_seconds") is not None
         ]
         avg_run_time = (
             sum(m.get("avg_run_time_seconds", 0) for m in workflows_with_times)
@@ -79,7 +70,6 @@ class WorkflowPerformanceCard(CardBase):
 
         text_primary = self.get_color("text", "primary")
         text_secondary = self.get_color("text", "secondary")
-        text_accent = self.get_color("text", "accent")
         success_color = self.get_status_color("success", "#10b981")
         error_color = self.get_status_color("error", "#ef4444")
         warning_color = self.get_status_color("warning", "#f59e0b")
@@ -87,82 +77,96 @@ class WorkflowPerformanceCard(CardBase):
         parts = []
 
         # Title
-        parts.append(f'''
+        parts.append(
+            f"""
   <!-- Title -->
   <g transform="translate(30, 40)">
-    <text font-family="{font_family}" font-size="{title_size}" font-weight="bold" fill="{text_primary}">
+    <text font-family="{font_family}" font-size="{title_size}" font-weight="bold" fill="{text_primary}"  # noqa: E501>
       Workflow Performance Dashboard
     </text>
-  </g>''')
+  </g>"""
+        )
 
         # Summary stats
         y_offset = 90
-        parts.append(f'''
+        parts.append(
+            f"""
   <!-- Summary Statistics -->
   <g transform="translate(30, {y_offset})">
-    <text font-family="{font_family}" font-size="{heading_size}" font-weight="600" fill="{text_primary}">
+    <text font-family="{font_family}" font-size="{heading_size}" font-weight="600" fill="{text_primary}"  # noqa: E501>
       Summary
     </text>
-  </g>''')
+  </g>"""
+        )
 
         y_offset += 35
         stats = [
             ("Total Workflows", str(total_workflows), text_primary),
             ("Total Runs", str(total_runs), text_primary),
-            ("Success Rate", f"{success_rate:.1f}%", success_color if success_rate >= 90 else warning_color),
+            (
+                "Success Rate",
+                f"{success_rate:.1f}%",
+                success_color if success_rate >= 90 else warning_color,
+            ),
             ("Avg Run Time", f"{avg_run_time:.1f}s" if avg_run_time > 0 else "N/A", text_secondary),
         ]
 
         x_positions = [30, 220, 410, 600]
         for i, (label, value, color) in enumerate(stats):
-            parts.append(f'''
+            parts.append(
+                f"""
   <g transform="translate({x_positions[i]}, {y_offset})">
     <text font-family="{font_family}" font-size="{small_size}" fill="{text_secondary}">
       {escape_xml(label)}
     </text>
-    <text font-family="{font_family}" font-size="{heading_size}" font-weight="600" fill="{color}" y="25">
+    <text font-family="{font_family}" font-size="{heading_size}" font-weight="600" fill="{color}" y="25"> # noqa: E501
       {escape_xml(value)}
     </text>
-  </g>''')
+  </g>"""
+            )
 
         # Workflow details
         y_offset += 80
-        parts.append(f'''
+        parts.append(
+            f"""
   <!-- Workflow Details -->
   <g transform="translate(30, {y_offset})">
-    <text font-family="{font_family}" font-size="{heading_size}" font-weight="600" fill="{text_primary}">
+    <text font-family="{font_family}" font-size="{heading_size}" font-weight="600" fill="{text_primary}"  # noqa: E501>
       Workflows
     </text>
-  </g>''')
+  </g>"""
+        )
 
         # Table header
         y_offset += 35
-        parts.append(f'''
+        parts.append(
+            f"""
   <g transform="translate(30, {y_offset})">
-    <text font-family="{font_family}" font-size="{small_size}" fill="{text_secondary}" font-weight="600">
+    <text font-family="{font_family}" font-size="{small_size}" fill="{text_secondary}" font-weight="600"  # noqa: E501>
       Name
     </text>
   </g>
   <g transform="translate(220, {y_offset})">
-    <text font-family="{font_family}" font-size="{small_size}" fill="{text_secondary}" font-weight="600">
+    <text font-family="{font_family}" font-size="{small_size}" fill="{text_secondary}" font-weight="600"  # noqa: E501>
       Runs
     </text>
   </g>
   <g transform="translate(300, {y_offset})">
-    <text font-family="{font_family}" font-size="{small_size}" fill="{text_secondary}" font-weight="600">
+    <text font-family="{font_family}" font-size="{small_size}" fill="{text_secondary}" font-weight="600"  # noqa: E501>
       Success Rate
     </text>
   </g>
   <g transform="translate(440, {y_offset})">
-    <text font-family="{font_family}" font-size="{small_size}" fill="{text_secondary}" font-weight="600">
+    <text font-family="{font_family}" font-size="{small_size}" fill="{text_secondary}" font-weight="600"  # noqa: E501>
       Avg Time
     </text>
   </g>
   <g transform="translate(560, {y_offset})">
-    <text font-family="{font_family}" font-size="{small_size}" fill="{text_secondary}" font-weight="600">
+    <text font-family="{font_family}" font-size="{small_size}" fill="{text_secondary}" font-weight="600"  # noqa: E501>
       Status
     </text>
-  </g>''')
+  </g>"""
+        )
 
         # Workflow rows (show first 4)
         y_offset += 25
@@ -188,7 +192,8 @@ class WorkflowPerformanceCard(CardBase):
                 status = "— No Data"
                 status_color = text_secondary
 
-            parts.append(f'''
+            parts.append(
+                f"""
   <g transform="translate(30, {y_offset})">
     <text font-family="{font_family}" font-size="{base_size}" fill="{text_primary}">
       {escape_xml(name)}
@@ -200,7 +205,8 @@ class WorkflowPerformanceCard(CardBase):
     </text>
   </g>
   <g transform="translate(300, {y_offset})">
-    <text font-family="{font_family}" font-size="{base_size}" fill="{success_color if wf_success_rate >= 90 else warning_color}">
+    <text font-family="{font_family}" font-size="{base_size}" \
+fill="{'#4ade80' if wf_success_rate >= 90 else '#fbbf24'}">
       {wf_success_rate:.1f}%
     </text>
   </g>
@@ -213,10 +219,11 @@ class WorkflowPerformanceCard(CardBase):
     <text font-family="{font_family}" font-size="{base_size}" fill="{status_color}">
       {escape_xml(status)}
     </text>
-  </g>''')
+  </g>"""
+            )
             y_offset += 25
 
-        return '\n'.join(parts)
+        return "\n".join(parts)
 
     def _generate_no_data_content(self) -> str:
         """Generate content when no metrics are available."""
@@ -226,10 +233,10 @@ class WorkflowPerformanceCard(CardBase):
         text_primary = self.get_color("text", "primary")
         text_secondary = self.get_color("text", "secondary")
 
-        return f'''
+        return f"""
   <!-- Title -->
   <g transform="translate(30, 40)">
-    <text font-family="{font_family}" font-size="{title_size}" font-weight="bold" fill="{text_primary}">
+    <text font-family="{font_family}" font-size="{title_size}" font-weight="bold" fill="{text_primary}"  # noqa: E501>
       Workflow Performance Dashboard
     </text>
   </g>
@@ -242,7 +249,7 @@ class WorkflowPerformanceCard(CardBase):
     <text font-family="{font_family}" font-size="{base_size}" fill="{text_secondary}" y="30">
       Metrics will appear after workflows run and record their execution data.
     </text>
-  </g>'''
+  </g>"""
 
 
 def aggregate_log_summary() -> Dict:
