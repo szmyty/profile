@@ -589,6 +589,11 @@ get_coordinates() {
     local encoded_location
     encoded_location=$(encode_uri "$location")
     
+    # Perform health check for Nominatim API
+    if ! health_check_api "https://nominatim.openstreetmap.org/" "Nominatim API"; then
+        echo "Warning: Nominatim API health check failed, but continuing anyway..." >&2
+    fi
+    
     # Add delay to respect Nominatim rate limits
     sleep 1
     
@@ -642,15 +647,18 @@ $nominatim_data" > "${debug_dir}/debug_nominatim_response.txt"
                 echo "   → Nominatim has strict rate limits (1 request per second)" >&2
                 echo "   → Wait at least 1 hour before retrying or use caching" >&2
                 echo "   → Consider using a commercial geocoding service for production" >&2
+                record_api_failure "Nominatim API"
                 ;;
             403)
                 echo "   → Access forbidden" >&2
                 echo "   → Your IP may be blocked due to excessive requests" >&2
                 echo "   → Check Nominatim usage policy: https://operations.osmfoundation.org/policies/nominatim/" >&2
+                record_api_failure "Nominatim API"
                 ;;
             500|502|503|504)
                 echo "   → Nominatim service error" >&2
                 echo "   → Try again later" >&2
+                record_api_failure "Nominatim API"
                 ;;
         esac
         return 1
@@ -697,6 +705,9 @@ $nominatim_data" > "${debug_dir}/debug_nominatim_response.txt"
     
     echo "✅ Found coordinates: ${lat}, ${lon}" >&2
     echo "   Display name: ${display_name}" >&2
+    
+    # Record API success
+    record_api_success "Nominatim API"
     
     # Build result JSON
     local result
