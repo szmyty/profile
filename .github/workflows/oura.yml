@@ -1,23 +1,13 @@
 name: Oura Health Dashboard — Full Metrics + Unified Snapshot
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     # Run every 6 hours (Oura data updates once daily)
     - cron: '0 */6 * * *'
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - 'scripts/fetch-oura.sh'
-      - 'scripts/oura-mood-engine.py'
-      - 'scripts/generate-oura-mood-card.py'
-      - 'scripts/generate-health-snapshot.py'
-      - 'scripts/generate-health-dashboard.py'
-      - 'scripts/update-readme.py'
-      - 'scripts/lib/utils.py'
-      - 'config/theme.json'
-      - '.github/workflows/oura.yml'
 
 concurrency:
   group: profile-update
