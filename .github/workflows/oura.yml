@@ -33,7 +33,6 @@ jobs:
           OURA_PAT: ${{ secrets.OURA_PAT }}
           OUTPUT_DIR: oura
         run: |
-          chmod +x scripts/fetch-oura.sh
           mkdir -p oura logs/oura
           
           # Safe JSON write pattern: output to temp file first

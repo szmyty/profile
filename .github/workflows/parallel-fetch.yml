@@ -39,7 +39,6 @@ jobs:
           OURA_PAT: ${{ secrets.OURA_PAT }}
           OUTPUT_DIR: oura
         run: |
-          chmod +x scripts/fetch-oura.sh
           mkdir -p oura logs/oura
           
           # Safe JSON write pattern: output to temp file first
@@ -101,7 +100,6 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           OUTPUT_DIR: weather
         run: |
-          chmod +x scripts/fetch-weather.sh
           mkdir -p weather logs/weather
           
           # Safe JSON write pattern: output to temp file first
@@ -147,7 +145,6 @@ jobs:
           SOUNDCLOUD_USER: playfunction
           OUTPUT_DIR: assets
         run: |
-          chmod +x scripts/fetch-soundcloud.sh
           mkdir -p assets logs/soundcloud
           
           # Safe JSON write pattern: output to temp file first

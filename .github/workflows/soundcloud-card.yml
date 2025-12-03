@@ -35,7 +35,6 @@ jobs:
           SOUNDCLOUD_USER: playfunction
           OUTPUT_DIR: assets
         run: |
-          chmod +x scripts/fetch-soundcloud.sh
           mkdir -p assets logs/soundcloud
           
           # Safe JSON write pattern: output to temp file first
