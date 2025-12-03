@@ -21,3 +21,9 @@ assets/.cache/
 
 # API response cache
 cache/
+
+# Development output
+dev-output/
+
+# Pre-commit
+.pre-commit-config.yaml.bak

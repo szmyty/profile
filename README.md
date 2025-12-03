@@ -46,6 +46,26 @@
 
 ## 🛠️ Development
 
+### Quick Start
+
+#### Using GitHub Codespaces (Recommended)
+1. Click "Code" → "Create codespace on main"
+2. Wait for the environment to set up automatically
+3. Start developing!
+
+#### Local Development
+```bash
+# Install dependencies
+pip install -r requirements.txt
+pip install -r requirements-dev.txt
+
+# Install pre-commit hooks
+pre-commit install
+
+# Generate cards with mock data (no API keys needed)
+./scripts/dev-mode.sh all
+```
+
 ### Code Conventions
 
 **Script Naming**: All Python scripts use dash-case naming (e.g., `generate-card.py`, `update-readme.py`).
@@ -54,7 +74,44 @@
 
 **Dependencies**: Install required Python packages with:
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt        # Core dependencies
+pip install -r requirements-dev.txt    # Development tools
 ```
 
 **Theme Configuration**: All visual styling (colors, fonts, spacing, dimensions) is centralized in `config/theme.json`.
+
+**Pre-commit Hooks**: Run `pre-commit run --all-files` before committing to validate:
+- JSON schemas
+- SVG formatting
+- Python linting (black, flake8, isort)
+- Shell script validation (shellcheck)
+- File permissions
+
+### Development Mode
+
+Test card generation locally without API keys using mock data:
+
+```bash
+# Generate all cards
+./scripts/dev-mode.sh all
+
+# Generate specific cards
+./scripts/dev-mode.sh soundcloud
+./scripts/dev-mode.sh weather
+./scripts/dev-mode.sh developer
+./scripts/dev-mode.sh oura
+```
+
+Output is saved to `dev-output/` directory. See [`data/mock/README.md`](data/mock/README.md) for details on mock data.
+
+### Documentation
+
+- **[Workflows](docs/WORKFLOWS.md)**: Complete guide to GitHub Actions workflows and their dependencies
+- **[Mock Data](data/mock/README.md)**: Information about development mode and mock data
+
+### Testing
+
+Run the test suite:
+```bash
+python -m pytest tests/ -v
+```
