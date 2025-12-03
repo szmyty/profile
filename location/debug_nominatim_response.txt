@@ -1,8 +1,0 @@
-URL: https://nominatim.openstreetmap.org/search?q=New%20York%2C%20NY&format=json&limit=1
-Location Query: New York, NY
-HTTP Code: 000
-Curl Exit Code: 6
-Response Headers:
-
-Response Body:
-
