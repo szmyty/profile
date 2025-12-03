@@ -14,6 +14,17 @@ source "${SCRIPT_DIR}/lib/common.sh"
 
 GITHUB_OWNER="${GITHUB_OWNER:-szmyty}"
 OUTPUT_DIR="${OUTPUT_DIR:-location}"
+DEBUG_DIR="${OUTPUT_DIR}"
+
+# Function to save diagnostic information
+save_diagnostic() {
+    local filename=$1
+    local content=$2
+    
+    mkdir -p "$DEBUG_DIR"
+    echo "$content" > "${DEBUG_DIR}/${filename}"
+    echo "Diagnostic info saved to ${DEBUG_DIR}/${filename}" >&2
+}
 
 # Function to download static map from OpenStreetMap
 download_static_map() {
@@ -26,18 +37,75 @@ download_static_map() {
     # OpenStreetMap static map API
     local map_url="https://staticmap.openstreetmap.de/staticmap.php?center=${lat},${lon}&zoom=12&size=600x400&markers=${lat},${lon},blue"
     
-    if ! retry_with_backoff curl -sf -o "$output_path" "$map_url"; then
-        echo "Error: Failed to download static map after retries" >&2
+    # Capture HTTP response with headers
+    local http_code response_headers temp_file
+    temp_file=$(mktemp)
+    response_headers=$(mktemp)
+    
+    http_code=$(curl -w "%{http_code}" -o "$temp_file" -D "$response_headers" -s "$map_url")
+    local curl_exit=$?
+    
+    # Save diagnostic information
+    save_diagnostic "debug_map_response.txt" "URL: $map_url
+HTTP Code: $http_code
+Curl Exit Code: $curl_exit
+Response Headers:
+$(cat "$response_headers")
+File Size: $(stat -f%z "$temp_file" 2>/dev/null || stat -c%s "$temp_file" 2>/dev/null || echo "unknown")"
+    
+    # Check curl exit code
+    if [ $curl_exit -ne 0 ]; then
+        echo "❌ FAILURE: Map retrieval failed (Curl exit code: ${curl_exit})" >&2
+        echo "   → This usually indicates a network error or DNS resolution failure" >&2
+        echo "   → Check your network connection and try again" >&2
+        rm -f "$temp_file" "$response_headers"
+        return 1
+    fi
+    
+    # Check HTTP status code
+    if [ "$http_code" -ge 400 ]; then
+        echo "❌ FAILURE: Map retrieval failed (HTTP Code: ${http_code})" >&2
+        case "$http_code" in
+            401|403)
+                echo "   → Authentication required or access forbidden" >&2
+                echo "   → Map service may require API key or token" >&2
+                echo "   → Check if the service has changed its authentication requirements" >&2
+                ;;
+            404)
+                echo "   → Map service endpoint not found" >&2
+                echo "   → The static map service URL may have changed" >&2
+                ;;
+            429)
+                echo "   → Rate limit exceeded" >&2
+                echo "   → Wait before retrying or use a different service" >&2
+                ;;
+            500|502|503|504)
+                echo "   → Map service is experiencing issues" >&2
+                echo "   → Try again later or use an alternative service" >&2
+                ;;
+            *)
+                echo "   → Unexpected HTTP error" >&2
+                echo "   → Check debug_map_response.txt for details" >&2
+                ;;
+        esac
+        rm -f "$temp_file" "$response_headers"
         return 1
     fi
     
     # Verify the downloaded file is not empty
-    if [ ! -s "$output_path" ]; then
-        echo "Error: Downloaded map file is empty" >&2
+    if [ ! -s "$temp_file" ]; then
+        echo "❌ FAILURE: Downloaded map file is empty" >&2
+        echo "   → The map service returned an empty response" >&2
+        echo "   → This may indicate rate limiting, service issues, or invalid parameters" >&2
+        rm -f "$temp_file" "$response_headers"
         return 1
     fi
     
-    echo "Static map saved to ${output_path}" >&2
+    # Move temp file to final location
+    mv "$temp_file" "$output_path"
+    rm -f "$response_headers"
+    
+    echo "✅ Static map saved to ${output_path}" >&2
 }
 
 # Main execution

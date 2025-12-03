@@ -301,10 +301,15 @@ get_github_location() {
 # Output:
 #   JSON object with lat, lon, and display_name fields to stdout
 #
+# Environment variables:
+#   OUTPUT_DIR - Directory for diagnostic output (default: location)
+#
 # Returns:
 #   0 on success, 1 on failure
 get_coordinates() {
     local location=$1
+    local debug_dir="${OUTPUT_DIR:-location}"
+    
     echo "Converting location to coordinates: ${location}" >&2
     
     # Generate cache key from location
@@ -326,26 +331,89 @@ get_coordinates() {
     # Add delay to respect Nominatim rate limits
     sleep 1
     
-    # Fetch from Nominatim with retry and backoff
-    local nominatim_data
-    if ! nominatim_data=$(retry_with_backoff curl -sf "https://nominatim.openstreetmap.org/search?q=${encoded_location}&format=json&limit=1" \
-        -H "User-Agent: GitHub-Profile-Scripts/1.0"); then
-        echo "Error: Failed to query Nominatim API after retries" >&2
+    # Fetch from Nominatim with detailed error capture
+    local nominatim_data http_code temp_response temp_headers
+    temp_response=$(mktemp)
+    temp_headers=$(mktemp)
+    
+    http_code=$(curl -w "%{http_code}" \
+        -o "$temp_response" \
+        -D "$temp_headers" \
+        -s "https://nominatim.openstreetmap.org/search?q=${encoded_location}&format=json&limit=1" \
+        -H "User-Agent: GitHub-Profile-Scripts/1.0")
+    local curl_exit=$?
+    
+    nominatim_data=$(cat "$temp_response")
+    
+    # Save diagnostic information
+    mkdir -p "$debug_dir"
+    echo "$nominatim_data" > "${debug_dir}/debug_nominatim.json"
+    echo "URL: https://nominatim.openstreetmap.org/search?q=${encoded_location}&format=json&limit=1
+Location Query: $location
+HTTP Code: $http_code
+Curl Exit Code: $curl_exit
+Response Headers:
+$(cat "$temp_headers")
+Response Body:
+$nominatim_data" > "${debug_dir}/debug_nominatim_response.txt"
+    
+    echo "Diagnostic info saved to ${debug_dir}/debug_nominatim.json" >&2
+    
+    rm -f "$temp_response" "$temp_headers"
+    
+    # Check curl exit code
+    if [ $curl_exit -ne 0 ]; then
+        echo "❌ FAILURE: Nominatim API request failed (Curl exit code: ${curl_exit})" >&2
+        echo "   → Network error or DNS resolution failure" >&2
+        return 1
+    fi
+    
+    # Check HTTP status code
+    if [ "$http_code" -ge 400 ]; then
+        echo "❌ FAILURE: Nominatim API returned error (HTTP Code: ${http_code})" >&2
+        case "$http_code" in
+            429)
+                echo "   → Rate limiting detected" >&2
+                echo "   → Nominatim has strict rate limits (1 request per second)" >&2
+                echo "   → Wait at least 1 hour before retrying or use caching" >&2
+                echo "   → Consider using a commercial geocoding service for production" >&2
+                ;;
+            403)
+                echo "   → Access forbidden" >&2
+                echo "   → Your IP may be blocked due to excessive requests" >&2
+                echo "   → Check Nominatim usage policy: https://operations.osmfoundation.org/policies/nominatim/" >&2
+                ;;
+            500|502|503|504)
+                echo "   → Nominatim service error" >&2
+                echo "   → Try again later" >&2
+                ;;
+        esac
+        return 1
+    fi
+    
+    # Check if response is empty
+    if [ -z "$nominatim_data" ]; then
+        echo "❌ FAILURE: Nominatim returned empty response" >&2
+        echo "   → This may indicate rate limiting or service issues" >&2
         return 1
     fi
     
     # Validate the JSON response
-    if ! validate_api_response "$nominatim_data"; then
-        echo "Error: Invalid response from Nominatim API" >&2
+    if ! echo "$nominatim_data" | jq empty 2>/dev/null; then
+        echo "❌ FAILURE: Nominatim returned invalid JSON" >&2
+        echo "   → Response is not valid JSON format" >&2
+        echo "   → See ${debug_dir}/debug_nominatim.json for raw response" >&2
         return 1
     fi
     
     # Check if we got results
     local result_count
-    result_count=$(echo "$nominatim_data" | jq 'length')
+    result_count=$(echo "$nominatim_data" | jq 'length' 2>/dev/null || echo "0")
     
     if [ "$result_count" -eq 0 ]; then
-        echo "Error: Nominatim returned no results for location: ${location}" >&2
+        echo "❌ FAILURE: Nominatim returned no results for location: ${location}" >&2
+        echo "   → The location string may be too vague or invalid" >&2
+        echo "   → Try a more specific location (e.g., 'New York, NY, USA' instead of 'NYC')" >&2
         return 1
     fi
     
@@ -356,12 +424,14 @@ get_coordinates() {
     display_name=$(echo "$nominatim_data" | jq -r '.[0].display_name')
     
     if [ -z "$lat" ] || [ -z "$lon" ] || [ "$lat" = "null" ] || [ "$lon" = "null" ]; then
-        echo "Error: Could not extract coordinates from Nominatim response" >&2
+        echo "❌ FAILURE: Could not extract coordinates from Nominatim response" >&2
+        echo "   → Response structure is unexpected" >&2
+        echo "   → See ${debug_dir}/debug_nominatim.json for details" >&2
         return 1
     fi
     
-    echo "Found coordinates: ${lat}, ${lon}" >&2
-    echo "Display name: ${display_name}" >&2
+    echo "✅ Found coordinates: ${lat}, ${lon}" >&2
+    echo "   Display name: ${display_name}" >&2
     
     # Build result JSON
     local result
