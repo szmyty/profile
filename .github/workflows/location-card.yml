@@ -11,7 +11,7 @@ on:
     paths:
       - 'scripts/fetch-location.sh'
       - 'scripts/generate-location-card.py'
-      - 'scripts/update_readme.py'
+      - 'scripts/update-readme.py'
       - 'scripts/lib/utils.py'
       - 'config/theme.json'
       - '.github/workflows/location-card.yml'
@@ -107,7 +107,7 @@ jobs:
       - name: Update README with location card
         if: steps.location.outputs.skip != 'true'
         run: |
-          python scripts/update_readme.py \
+          python scripts/update-readme.py \
             --marker LOCATION-CARD \
             --content "![My Location](./location/location-card.svg)"
 

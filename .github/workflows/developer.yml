@@ -11,7 +11,7 @@ on:
     paths:
       - 'scripts/fetch-developer-stats.py'
       - 'scripts/generate-developer-dashboard.py'
-      - 'scripts/update_readme.py'
+      - 'scripts/update-readme.py'
       - 'scripts/lib/utils.py'
       - 'config/theme.json'
       - '.github/workflows/developer.yml'
@@ -89,7 +89,7 @@ jobs:
 
       - name: Update README with developer dashboard
         run: |
-          python scripts/update_readme.py \
+          python scripts/update-readme.py \
             --marker DEVELOPER-DASHBOARD \
             --content "![Developer Dashboard](./developer/developer_dashboard.svg)"
 

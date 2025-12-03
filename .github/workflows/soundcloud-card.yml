@@ -11,7 +11,7 @@ on:
     paths:
       - 'scripts/fetch-soundcloud.sh'
       - 'scripts/generate-card.py'
-      - 'scripts/update_readme.py'
+      - 'scripts/update-readme.py'
       - 'scripts/lib/utils.py'
       - 'config/theme.json'
       - '.github/workflows/soundcloud-card.yml'
@@ -84,7 +84,7 @@ jobs:
           PERMALINK_URL=$(jq -r '.permalink_url' assets/metadata.json)
           CARD_CONTENT="[![SoundCloud Latest Track](assets/soundcloud-card.svg)](${PERMALINK_URL})"
           
-          python scripts/update_readme.py \
+          python scripts/update-readme.py \
             --marker SOUNDCLOUD-CARD \
             --content "${CARD_CONTENT}"
 
