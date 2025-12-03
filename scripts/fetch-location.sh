@@ -241,7 +241,7 @@ File Size: $(stat -f%z "$temp_file" 2>/dev/null || stat -c%s "$temp_file" 2>/dev
         # Try to parse error message from response
         if command -v jq >/dev/null 2>&1; then
             local error_msg
-            error_msg=$(cat "$temp_file" | jq -r '.message // empty' 2>/dev/null)
+            error_msg=$(jq -r '.message // empty' < "$temp_file" 2>/dev/null)
             if [ -n "$error_msg" ]; then
                 echo "   → Mapbox error: $error_msg" >&2
             fi
