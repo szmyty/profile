@@ -1,4 +1,93 @@
-# profile
+#
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- 🎯 HERO SECTION                                                            -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<!-- markdownlint-disable MD033 -->
+<div align="center">
+
+<!-- Branded Header Banner -->
+<img src="branding/header.svg" alt="Alan Szmyt - Software Engineer • DevOps & Cloud • AI-Assisted Systems" width="100%"/>
+
+<br/><br/>
+
+<!-- Badges Row -->
+[![GitHub followers](https://img.shields.io/github/followers/szmyty?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e&color=4a4e69)](https://github.com/szmyty?tab=followers)
+![Profile Views](https://komarev.com/ghpvc/?username=szmyty&style=for-the-badge&color=4a4e69&labelColor=1a1a2e)
+[![GitHub Stars](https://img.shields.io/github/stars/szmyty?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e&color=4a4e69)](https://github.com/szmyty?tab=repositories)
+[![CI](https://img.shields.io/github/actions/workflow/status/szmyty/szmyty/metrics.yml?style=for-the-badge&logo=github-actions&logoColor=white&labelColor=1a1a2e&color=4a4e69&label=CI)](https://github.com/szmyty/szmyty/actions)
+
+</div>
+
+<br/>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- 👤 ABOUT ME                                                                 -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<div align="center">
+
+## 👤 About Me
+
+</div>
+
+<p align="center" width="90%">
+🚀 Software engineer focusing on cloud-native systems, developer experience, creative automation, and AI-assisted tooling.  
+I build high-quality, scalable platforms with strong emphasis on automation, security, and clarity.
+</p>
+
+<br/>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- 💡 DEVELOPER EXPERIENCE                                                      -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<div align="center">
+
+## 💡 Developer Experience
+
+</div>
+
+<table align="center">
+<tr>
+
+<td width="33%" align="center" valign="top">
+
+### 🎯 DX Philosophy  
+
+- ⚡ Automate the mundane  
+- 🔄 Fast feedback loops  
+- 📚 Self-documenting code  
+- 🧩 Composable architectures  
+
+</td>
+
+<td width="33%" align="center" valign="top">
+
+### 🏛️ Engineering Pillars  
+
+- 🔒 Secure by default  
+- 📈 Scalable by design  
+- 🧪 Test-driven quality  
+- 🔧 Continuous improvement  
+
+</td>
+
+<td width="33%" align="center" valign="top">
+
+### 🚀 What I Build  
+
+- 🛠 Developer tooling & CLIs  
+- ☁ Cloud-native platforms  
+- 🤖 AI-augmented workflows  
+- 🔁 CI/CD & automation systems  
+
+</td>
+
+</tr>
+</table>
+
+<br/>
 
 ![Weather](https://github.com/szmyty/profile/actions/workflows/weather.yml/badge.svg)
 ![Location](https://github.com/szmyty/profile/actions/workflows/location-card.yml/badge.svg)
@@ -110,11 +199,13 @@ All workflow logs are stored in the `logs/` directory with automatic rotation to
 ### Quick Start
 
 #### Using GitHub Codespaces (Recommended)
+
 1. Click "Code" → "Create codespace on main"
 2. Wait for the environment to set up automatically
 3. Start developing!
 
 #### Local Development
+
 ```bash
 # Install dependencies
 pip install -r requirements.txt
@@ -134,6 +225,7 @@ pre-commit install
 **Script Permissions**: Python scripts that are directly executed by workflows are marked as executable. Library modules in `scripts/lib/` are not executable.
 
 **Dependencies**: Install required Python packages with:
+
 ```bash
 pip install -r requirements.txt        # Core dependencies
 pip install -r requirements-dev.txt    # Development tools
@@ -142,6 +234,7 @@ pip install -r requirements-dev.txt    # Development tools
 **Theme Configuration**: All visual styling (colors, fonts, spacing, dimensions) is centralized in `config/theme.json`.
 
 **Pre-commit Hooks**: Run `pre-commit run --all-files` before committing to validate:
+
 - JSON schemas
 - SVG formatting
 - Python linting (black, flake8, isort)
@@ -175,6 +268,28 @@ Output is saved to `dev-output/` directory. See [`data/mock/README.md`](data/moc
 ### Testing
 
 Run the test suite:
+
 ```bash
 python -m pytest tests/ -v
 ```
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- 📫 FOOTER                                        -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<div align="center">
+
+<img src="branding/footer.svg" alt="Footer" width="100%"/>
+
+<br/><br/>
+
+[![GitHub](https://img.shields.io/badge/GitHub-szmyty-181717?style=for-the-badge&logo=github)](https://github.com/szmyty)
+[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:szmyty@gmail.com)
+
+<br/>
+
+### *Made with ❤️ by Alan*
+
+</div>
