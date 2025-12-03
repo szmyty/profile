@@ -1,0 +1,157 @@
+name: Monitoring & Alerts
+
+on:
+  schedule:
+    # Run every hour to check for issues
+    - cron: '0 * * * *'
+  workflow_dispatch:
+  workflow_run:
+    workflows: 
+      - "Oura Health Dashboard — Full Metrics + Unified Snapshot"
+      - "Weather Card"
+      - "Developer Dashboard"
+      - "Location Card"
+      - "SoundCloud Card"
+      - "Parallel Data Fetch & Card Generation"
+    types:
+      - completed
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  generate-status-page:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup environment
+        uses: ./.github/actions/setup-environment
+
+      - name: Generate status page
+        run: |
+          python scripts/generate-status-page.py data/status/status-page.svg
+
+      - name: Commit and push status page
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          git add data/status/status-page.svg data/metrics/*.json 2>/dev/null || true
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "📊 Update status page and metrics"
+            git push
+          fi
+
+  check-failures:
+    runs-on: ubuntu-latest
+    needs: generate-status-page
+    steps:
+      - name: Setup environment
+        uses: ./.github/actions/setup-environment
+
+      - name: Check for consecutive failures
+        id: check
+        run: |
+          # Check each workflow for 3+ consecutive failures
+          FAILURES_FOUND=false
+          FAILED_WORKFLOWS=""
+          
+          for metrics_file in data/metrics/*.json; do
+            if [ -f "$metrics_file" ]; then
+              WORKFLOW_NAME=$(basename "$metrics_file" .json)
+              CONSECUTIVE=$(jq -r '.consecutive_failures // 0' "$metrics_file")
+              
+              if [ "$CONSECUTIVE" -ge 3 ]; then
+                FAILURES_FOUND=true
+                FAILED_WORKFLOWS="${FAILED_WORKFLOWS}${WORKFLOW_NAME},"
+                echo "⚠️ Workflow $WORKFLOW_NAME has $CONSECUTIVE consecutive failures"
+              fi
+            fi
+          done
+          
+          echo "failures_found=$FAILURES_FOUND" >> $GITHUB_OUTPUT
+          echo "failed_workflows=$FAILED_WORKFLOWS" >> $GITHUB_OUTPUT
+
+      - name: Create issue for repeated failures
+        if: steps.check.outputs.failures_found == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const failedWorkflows = '${{ steps.check.outputs.failed_workflows }}'.split(',').filter(w => w);
+            
+            for (const workflow of failedWorkflows) {
+              // Check if issue already exists
+              const existingIssues = await github.rest.issues.listForRepo({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'open',
+                labels: 'monitoring,automated',
+                creator: 'github-actions[bot]'
+              });
+              
+              const issueExists = existingIssues.data.some(issue => 
+                issue.title.includes(workflow)
+              );
+              
+              if (!issueExists) {
+                // Read metrics file for details
+                const fs = require('fs');
+                const metricsPath = `data/metrics/${workflow}.json`;
+                let metricsDetails = '';
+                
+                try {
+                  const metrics = JSON.parse(fs.readFileSync(metricsPath, 'utf8'));
+                  const lastFailure = metrics.last_failure || 'Unknown';
+                  const consecutiveFailures = metrics.consecutive_failures || 0;
+                  const totalRuns = metrics.total_runs || 0;
+                  const successRate = totalRuns > 0 ? 
+                    ((metrics.successful_runs / totalRuns) * 100).toFixed(1) : 'N/A';
+                  
+                  metricsDetails = `
+## Metrics
+
+- **Consecutive Failures:** ${consecutiveFailures}
+- **Total Runs:** ${totalRuns}
+- **Success Rate:** ${successRate}%
+- **Last Failure:** ${lastFailure}
+
+## Recent Run History
+
+\`\`\`json
+${JSON.stringify(metrics.run_history?.slice(-5) || [], null, 2)}
+\`\`\`
+                  `;
+                } catch (e) {
+                  metricsDetails = `\n_Unable to load detailed metrics: ${e.message}_\n`;
+                }
+                
+                // Create new issue
+                await github.rest.issues.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: `🚨 Workflow Failure Alert: ${workflow}`,
+                  body: `The \`${workflow}\` workflow has failed **3 or more times** consecutively.
+
+${metricsDetails}
+
+## Recommended Actions
+
+1. Check the [workflow runs](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/workflows/${workflow}.yml) for error details
+2. Review recent changes to the workflow or related scripts
+3. Verify that required secrets and environment variables are properly configured
+4. Check if external API services are experiencing issues
+
+---
+
+This issue was automatically created by the monitoring system. The issue will not be recreated while it remains open.`,
+                  labels: ['monitoring', 'automated', 'bug']
+                });
+                
+                console.log(`Created issue for workflow: ${workflow}`);
+              } else {
+                console.log(`Issue already exists for workflow: ${workflow}`);
+              }
+            }

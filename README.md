@@ -44,6 +44,16 @@
 
 ---
 
+## 📊 System Status
+
+<!-- STATUS-PAGE:START -->
+![System Status](./data/status/status-page.svg)
+<!-- STATUS-PAGE:END -->
+
+[View detailed monitoring documentation](docs/MONITORING.md)
+
+---
+
 ## ⚡ Performance Optimizations
 
 This repository implements several performance optimizations to improve speed and reduce GitHub Actions usage:
@@ -57,6 +67,19 @@ This repository implements several performance optimizations to improve speed an
 **Results**: 60-75% faster workflows, 60-70% lower GitHub Actions usage
 
 See [OPTIMIZATION_GUIDE.md](docs/OPTIMIZATION_GUIDE.md) for detailed documentation.
+
+---
+
+## 🔍 Monitoring & Observability
+
+This repository includes comprehensive monitoring features:
+
+- **📈 Workflow Metrics** - Track run times, success/failure rates, and API call counts
+- **🎯 Status Dashboard** - Visual display of system health and recent updates
+- **🚨 Automated Alerts** - Automatic issue creation for repeated failures (3+ consecutive)
+- **✅ Data Quality Checks** - Detection of missing fields, NaN values, and out-of-range metrics
+
+See [MONITORING.md](docs/MONITORING.md) for detailed documentation.
 
 ---
 
@@ -122,6 +145,7 @@ Output is saved to `dev-output/` directory. See [`data/mock/README.md`](data/moc
 
 ### Documentation
 
+- **[Monitoring Guide](docs/MONITORING.md)**: Monitoring, observability, and alerting features
 - **[Optimization Guide](docs/OPTIMIZATION_GUIDE.md)**: Performance optimizations and caching strategies
 - **[Workflows](docs/WORKFLOWS.md)**: Complete guide to GitHub Actions workflows and their dependencies
 - **[Mock Data](data/mock/README.md)**: Information about development mode and mock data
