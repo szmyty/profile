@@ -14,9 +14,13 @@ inputs:
     required: false
     default: 'true'
   install-python-deps:
-    description: 'Install Python dependencies from requirements.txt'
+    description: 'Install Python dependencies (uses Poetry if pyproject.toml exists, otherwise pip with requirements.txt)'
     required: false
     default: 'true'
+  use-poetry:
+    description: 'Force use of Poetry for dependency management'
+    required: false
+    default: 'auto'
   extra-apt-packages:
     description: 'Additional apt packages to install (space-separated)'
     required: false
@@ -35,7 +39,10 @@ runs:
       with:
         python-version: ${{ inputs.python-version }}
         cache: 'pip'
-        cache-dependency-path: 'requirements.txt'
+        cache-dependency-path: |
+          **/requirements*.txt
+          **/pyproject.toml
+          **/poetry.lock
 
     - name: Install system dependencies
       shell: bash
@@ -60,6 +67,22 @@ runs:
       shell: bash
       run: |
         python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then
+        
+        # Determine whether to use Poetry
+        USE_POETRY="false"
+        if [ "${{ inputs.use-poetry }}" = "true" ]; then
+          USE_POETRY="true"
+        elif [ "${{ inputs.use-poetry }}" = "auto" ] && [ -f pyproject.toml ]; then
+          USE_POETRY="true"
+        fi
+        
+        if [ "$USE_POETRY" = "true" ]; then
+          echo "Installing dependencies using Poetry..."
+          pip install poetry
+          poetry install --no-root
+        elif [ -f requirements.txt ]; then
+          echo "Installing dependencies using pip..."
           pip install -r requirements.txt
+        else
+          echo "No dependency file found (requirements.txt or pyproject.toml)"
         fi

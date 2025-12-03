@@ -4,6 +4,8 @@ __pycache__/
 *$py.class
 *.pyc
 .pytest_cache/
+.venv/
+venv/
 
 # OS files
 .DS_Store

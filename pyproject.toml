@@ -1,0 +1,28 @@
+[project]
+name = "profile"
+version = "0.1.0"
+description = "GitHub Profile with Dynamic Cards"
+authors = [
+    {name = "szmyty"}
+]
+readme = "README.md"
+requires-python = "^3.11"
+dependencies = [
+    "jsonschema (==4.23.0)",
+    "pillow (==10.4.0)",
+    "pytest (==8.3.3)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pre-commit (==4.0.1)",
+    "black (==24.10.0)",
+    "isort (==5.13.2)",
+    "flake8 (==7.1.1)",
+    "check-jsonschema (==0.30.0)"
+]
