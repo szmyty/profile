@@ -9,7 +9,7 @@ import json
 import sys
 from pathlib import Path
 from datetime import datetime, timezone
-from typing import Any
+from typing import Any, Dict
 
 from lib.utils import safe_get, load_json
 
@@ -73,7 +73,7 @@ def normalize_score(value: Any, min_val: float = 0, max_val: float = 100) -> flo
         return 50.0
 
 
-def compute_mood_score(metrics: dict) -> float:
+def compute_mood_score(metrics: Dict[str, Any]) -> float:
     """
     Compute overall mood score from 0-100 based on metrics.
     Higher score = better overall state.
@@ -228,7 +228,7 @@ def compute_mood(metrics: dict) -> dict:
     }
 
 
-def main():
+def main() -> None:
     """Main entry point."""
     if len(sys.argv) < 2:
         print(

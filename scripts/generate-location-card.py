@@ -8,6 +8,7 @@ with the static map image embedded.
 import base64
 import sys
 from pathlib import Path
+from typing import Dict, Any
 
 from lib.utils import (
     escape_xml,

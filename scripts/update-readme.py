@@ -19,6 +19,7 @@ import argparse
 import re
 import sys
 from pathlib import Path
+from typing import Optional
 
 
 def find_readme() -> Path:
@@ -70,7 +71,7 @@ def validate_markers(content: str, marker: str) -> bool:
     return True
 
 
-def update_readme_section(marker: str, new_content: str, readme_path: Path = None) -> None:
+def update_readme_section(marker: str, new_content: str, readme_path: Optional[Path] = None) -> None:
     """
     Update content between marker comments in README.md.
 
@@ -110,7 +111,7 @@ def update_readme_section(marker: str, new_content: str, readme_path: Path = Non
     print(f"Updated README section: {marker}", flush=True)
 
 
-def main():
+def main() -> None:
     """Main entry point for the script."""
     parser = argparse.ArgumentParser(
         description="Update README.md content between marker comments."

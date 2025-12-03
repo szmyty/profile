@@ -7,6 +7,7 @@ This script reads weather metadata from JSON and creates an SVG card.
 import sys
 from pathlib import Path
 from datetime import datetime
+from typing import Dict, Any
 
 from lib.utils import (
     escape_xml,

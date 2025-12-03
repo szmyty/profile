@@ -12,6 +12,7 @@ This script creates a visual status dashboard displaying:
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Dict, Any
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
@@ -48,7 +49,7 @@ def generate_status_indicator(status: str, x: int, y: int) -> str:
     '''
 
 
-def determine_workflow_status(metrics: dict) -> str:
+def determine_workflow_status(metrics: Dict[str, Any]) -> str:
     """Determine the status of a workflow based on metrics."""
     if metrics["total_runs"] == 0:
         return "unknown"

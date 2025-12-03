@@ -8,7 +8,7 @@ import json
 import sys
 from pathlib import Path
 from datetime import datetime, timezone
-from typing import Optional
+from typing import Optional, Dict, Any
 
 from lib.utils import safe_get, load_and_validate_json
 
@@ -34,7 +34,7 @@ def kg_to_lbs(weight_kg: Optional[float]) -> Optional[float]:
     return round(weight_kg * 2.20462, 1)
 
 
-def generate_health_snapshot(metrics: dict) -> dict:
+def generate_health_snapshot(metrics: Dict[str, Any]) -> Dict[str, Any]:
     """
     Generate a unified health snapshot from raw Oura metrics.
     """
@@ -135,7 +135,7 @@ def generate_health_snapshot(metrics: dict) -> dict:
     return snapshot
 
 
-def main():
+def main() -> None:
     """Main entry point."""
     if len(sys.argv) < 2:
         print(

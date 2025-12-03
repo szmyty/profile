@@ -16,7 +16,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 from lib.metrics import record_workflow_run
 
 
-def main():
+def main() -> None:
+    """Parse arguments and record workflow execution metrics."""
     parser = argparse.ArgumentParser(
         description="Record workflow execution metrics"
     )
