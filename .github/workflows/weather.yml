@@ -83,7 +83,8 @@ jobs:
           chmod +x scripts/fetch-weather.sh
           mkdir -p weather
           
-          if ! scripts/fetch-weather.sh > weather/weather.json; then
+          # Run script with logging (tee to both console and log file)
+          if ! scripts/fetch-weather.sh 2>&1 | tee -a logs/weather/weather.log > weather/weather.json; then
             echo "Error: Failed to fetch weather data"
             exit 1
           fi
@@ -143,6 +144,9 @@ jobs:
           
           # Add all relevant files
           git add weather/weather.json weather/weather-today.svg README.md
+          
+          # Add logs (always commit logs)
+          git add logs/weather/
           
           # Check if there are changes to commit
           if git diff --staged --quiet; then

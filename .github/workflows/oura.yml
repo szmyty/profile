@@ -35,7 +35,8 @@ jobs:
           chmod +x scripts/fetch-oura.sh
           mkdir -p oura
           
-          if ! scripts/fetch-oura.sh > oura/metrics.json; then
+          # Run script with logging (tee to both console and log file)
+          if ! scripts/fetch-oura.sh 2>&1 | tee -a logs/oura/oura.log > oura/metrics.json; then
             echo "Error: Failed to fetch Oura data"
             exit 1
           fi
@@ -108,6 +109,9 @@ jobs:
           
           # Add all relevant files
           git add oura/metrics.json oura/mood.json oura/mood_dashboard.svg oura/health_snapshot.json oura/health_dashboard.svg README.md
+          
+          # Add logs (always commit logs)
+          git add logs/oura/
           
           # Check if there are changes to commit
           if git diff --staged --quiet; then

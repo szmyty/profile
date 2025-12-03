@@ -1,0 +1,13 @@
+[2025-12-03T08:03:11Z] [INFO] Logging initialized: logs/test/test.log
+[2025-12-03T08:03:11Z] [INFO] ============================================================
+[2025-12-03T08:03:11Z] [INFO] Workflow: test
+[2025-12-03T08:03:11Z] [INFO] Description: Test Workflow
+[2025-12-03T08:03:11Z] [INFO] Started at: 2025-12-03T08:03:11.943907Z
+[2025-12-03T08:03:11Z] [INFO] ============================================================
+[2025-12-03T08:03:11Z] [INFO] This is an info message
+[2025-12-03T08:03:11Z] [WARNING] This is a warning message
+[2025-12-03T08:03:11Z] [ERROR] This is an error message
+[2025-12-03T08:03:11Z] [INFO] ============================================================
+[2025-12-03T08:03:11Z] [INFO] Workflow: test - COMPLETED SUCCESSFULLY
+[2025-12-03T08:03:11Z] [INFO] Ended at: 2025-12-03T08:03:11.944442Z
+[2025-12-03T08:03:11Z] [INFO] ============================================================

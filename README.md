@@ -83,6 +83,28 @@ See [MONITORING.md](docs/MONITORING.md) for detailed documentation.
 
 ---
 
+## 📜 Logs
+
+All workflow logs are stored in the `logs/` directory with automatic rotation to prevent excessive file growth.
+
+- **`logs/location/`** - Location card workflow logs
+- **`logs/weather/`** - Weather card workflow logs
+- **`logs/oura/`** - Oura health workflow logs
+- **`logs/developer/`** - Developer dashboard workflow logs
+- **`logs/soundcloud/`** - SoundCloud card workflow logs
+- **`logs/avatar/`** - Avatar workflow logs (if applicable)
+- **`logs/ai/`** - AI workflow logs (if applicable)
+
+### Log Features
+
+- **Persistent Logging**: All logs are committed on every workflow run, even if the workflow fails
+- **Automatic Rotation**: Logs automatically rotate when they exceed 5MB
+- **Timestamped Entries**: Each log entry includes UTC timestamps and severity levels (INFO, WARN, ERROR)
+- **Command Tracking**: All API calls, script executions, and their exit codes are logged
+- **Troubleshooting**: Use logs to debug workflow failures and track historical execution
+
+---
+
 ## 🛠️ Development
 
 ### Quick Start
