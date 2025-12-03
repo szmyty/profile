@@ -149,7 +149,7 @@ This repository implements several performance optimizations to improve speed an
 
 - **🔄 Parallel API Fetching** - Fetch Oura, Weather, and SoundCloud data simultaneously (3x faster)
 - **📊 Incremental SVG Generation** - Skip regeneration when data hasn't changed (50-80% time savings)
-- **📦 Python Dependency Caching** - Reuse installed packages between runs (6x faster setup)
+- **📦 Python Dependency Caching** - Reuse installed packages with Poetry lock file (6x faster setup)
 - **🎨 Enhanced SVG Optimization** - Advanced compression with path simplification (30-50% smaller files)
 - **💾 Multi-Level Caching** - Cache API responses, client IDs, and geocoding results
 
@@ -207,12 +207,18 @@ All workflow logs are stored in the `logs/` directory with automatic rotation to
 #### Local Development
 
 ```bash
-# Install dependencies
+# Install dependencies with Poetry (recommended)
+pip install poetry
+poetry install
+
+# Or use pip with requirements.txt (alternative)
 pip install -r requirements.txt
 pip install -r requirements-dev.txt
 
 # Install pre-commit hooks
-pre-commit install
+poetry run pre-commit install  # if using Poetry
+# or
+pre-commit install              # if using pip
 
 # Generate cards with mock data (no API keys needed)
 ./scripts/dev-mode.sh all
@@ -224,12 +230,19 @@ pre-commit install
 
 **Script Permissions**: Python scripts that are directly executed by workflows are marked as executable. Library modules in `scripts/lib/` are not executable.
 
-**Dependencies**: Install required Python packages with:
+**Dependencies**: Install required Python packages with Poetry (recommended) or pip:
 
 ```bash
+# Using Poetry (pinned dependencies in poetry.lock for reproducibility)
+pip install poetry
+poetry install
+
+# Or using pip (alternative)
 pip install -r requirements.txt        # Core dependencies
 pip install -r requirements-dev.txt    # Development tools
 ```
+
+All dependencies are pinned to exact versions in `pyproject.toml` and `poetry.lock` to ensure reproducible builds and prevent breakage from upstream changes.
 
 **Theme Configuration**: All visual styling (colors, fonts, spacing, dimensions) is centralized in `config/theme.json`.
 
