@@ -12,7 +12,7 @@
 - Good: Schemas directory for JSON validation shows attention to data quality
 
 [CODE QUALITY]
-- Type hints: Present in most Python scripts (12 of 28 py files import typing) but not universal
+- Type hints: Present in most Python scripts (19 of 28 py files import typing) but not universal
 - Docstrings: Good coverage in lib/ modules (logging_utils.py, utils.py, card_base.py) with comprehensive function documentation
 - Naming conventions: Mostly consistent (snake_case for Python, kebab-case for shell scripts)
 - Script permissions: 8 shell scripts use 'set -euo pipefail' which is excellent for error handling
@@ -20,7 +20,7 @@
 - Magic numbers: Some hardcoded values (e.g., cache TTL of 0.042 days = 1 hour in fetch-weather.sh) could use named constants
 - Good: Safe JSON write pattern using temp files (*.tmp) before atomic move is consistently applied
 - Good: XML escaping utility prevents injection issues
-- Issue: Not all Python scripts have type hints (16 without typing imports)
+- Issue: Not all Python scripts have type hints (9 without typing imports)
 - Issue: Some scripts lack comprehensive docstrings at the module level
 - Opportunity: Consider adding mypy or pyright for type checking enforcement
 - Good: Error messages are descriptive and logged properly
@@ -139,7 +139,7 @@
 - Opportunity: Add theme.json schema validation on load
 
 [RECOMMENDED TASKS]
-- Add type hints to all Python scripts (16 remaining)
+- Add type hints to all Python scripts (9 remaining)
 - Create composite action for git commit/push to eliminate duplication
 - Add timeout configuration for all curl/API calls (--max-time flag)
 - Pin Python dependency versions in requirements.txt with exact versions
