@@ -1284,3 +1284,46 @@ def optimize_image_file(
         jpeg_quality=jpeg_quality,
         png_colors=png_colors,
     )
+
+
+def safe_write_json(data: Dict, output_path: str, indent: int = 2) -> None:
+    """
+    Safely write JSON data to a file using the temp→validate→move pattern.
+    
+    This function implements the repository-wide safe JSON write pattern:
+    1. Write to a temporary file
+    2. Validate the JSON can be loaded
+    3. Atomically move to the final location
+    4. Clean up on failure
+    
+    Args:
+        data: Dictionary to write as JSON.
+        output_path: Path where the JSON file should be written.
+        indent: JSON indentation level (default: 2).
+    
+    Raises:
+        IOError: If file cannot be written.
+        ValueError: If data cannot be serialized to JSON.
+    """
+    output = Path(output_path)
+    temp_path = output.parent / f"{output.name}.tmp"
+    
+    try:
+        # Ensure parent directory exists
+        output.parent.mkdir(parents=True, exist_ok=True)
+        
+        # Write to temporary file
+        with open(temp_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=indent)
+        
+        # Validate the temp file can be loaded
+        with open(temp_path, 'r', encoding='utf-8') as f:
+            json.load(f)
+        
+        # Atomic move to final location
+        temp_path.replace(output)
+        
+    except (IOError, OSError, ValueError, json.JSONDecodeError) as e:
+        # Clean up temp file on failure (missing_ok=True available in Python 3.8+)
+        temp_path.unlink(missing_ok=True)
+        raise IOError(f"Failed to write JSON to {output_path}: {e}") from e

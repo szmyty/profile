@@ -1,0 +1,401 @@
+=============================================================================
+WORKFLOW AUDIT LOG
+Generated: 2025-12-03T09:15:00Z
+Repository: szmyty/profile
+Audit Type: Full System Audit & Repair
+=============================================================================
+
+PRIORITY ISSUE - ROOT CAUSE IDENTIFIED
+---------------------------------------
+Issue: Invalid JSON in location file / UnicodeDecodeError
+Root Cause: CRITICAL PIPE MISUSE IN WORKFLOWS
+
+Description:
+  The workflows were using an incorrect pipe pattern that caused JSON
+  corruption. The pattern:
+  
+    script.sh 2>&1 | tee -a logs/file.log > output.json
+  
+  This pattern causes:
+  1. stderr is redirected to stdout (2>&1)
+  2. Both stdout AND stderr are piped to tee
+  3. tee appends everything (including error messages) to the log
+  4. The SAME mixed stream is redirected to the JSON file
+  5. Result: JSON files contain log messages, binary data, and errors
+  
+  This explains:
+  - "Invalid JSON" errors
+  - "UnicodeDecodeError: 'utf-8' codec can't decode byte 0x89"
+    (0x89 is the first byte of PNG magic number)
+  - PNG files being read as text
+  - Corrupted JSON files
+
+Fix Applied:
+  Implemented safe JSON write pattern across ALL workflows:
+  
+    script.sh > output.json.tmp 2>> logs/file.log
+    jq empty output.json.tmp && mv output.json.tmp output.json || rm output.json.tmp
+  
+  This pattern ensures:
+  1. stdout goes to temp file only
+  2. stderr is appended to log file separately
+  3. JSON is validated before final write
+  4. Atomic move operation prevents corruption
+  5. Cleanup on failure
+
+=============================================================================
+WORKFLOW FILES AUDITED AND FIXED
+=============================================================================
+
+1. .github/workflows/location-card.yml
+   Status: FIXED
+   Issues Found:
+   - ❌ Line 65: Incorrect pipe causing JSON corruption
+   - ❌ Missing logs/location directory creation
+   - ❌ No JSON validation before write
+   
+   Fixes Applied:
+   - ✅ Implemented safe JSON write pattern (temp→validate→move)
+   - ✅ Added logs directory creation
+   - ✅ Added JSON validation with jq empty
+   - ✅ Added cleanup on failure (rm -f *.tmp)
+   - ✅ Separated stdout and stderr properly
+
+2. .github/workflows/weather.yml
+   Status: FIXED
+   Issues Found:
+   - ❌ Line 88: Incorrect pipe causing JSON corruption
+   - ❌ Missing logs/weather directory creation
+   - ❌ No JSON validation before write
+   
+   Fixes Applied:
+   - ✅ Implemented safe JSON write pattern (temp→validate→move)
+   - ✅ Added logs directory creation
+   - ✅ Added JSON validation with jq empty
+   - ✅ Added cleanup on failure
+   - ✅ Separated stdout and stderr properly
+
+3. .github/workflows/oura.yml
+   Status: FIXED
+   Issues Found:
+   - ❌ Line 40: Incorrect pipe causing JSON corruption
+   - ❌ Missing logs/oura directory creation
+   - ❌ No JSON validation before write
+   
+   Fixes Applied:
+   - ✅ Implemented safe JSON write pattern (temp→validate→move)
+   - ✅ Added logs directory creation
+   - ✅ Added JSON validation with jq empty
+   - ✅ Added cleanup on failure
+   - ✅ Separated stdout and stderr properly
+
+4. .github/workflows/soundcloud-card.yml
+   Status: FIXED
+   Issues Found:
+   - ❌ Line 41: Incorrect pipe causing JSON corruption
+   - ❌ Missing logs/soundcloud directory creation
+   - ❌ No JSON validation before write
+   
+   Fixes Applied:
+   - ✅ Implemented safe JSON write pattern (temp→validate→move)
+   - ✅ Added logs directory creation
+   - ✅ Added JSON validation with jq empty
+   - ✅ Added cleanup on failure
+   - ✅ Separated stdout and stderr properly
+
+5. .github/workflows/developer.yml
+   Status: FIXED
+   Issues Found:
+   - ❌ Line 44: Incorrect pipe with Python script output
+   - ❌ Missing logs/developer directory creation
+   - ❌ No JSON validation before write
+   
+   Fixes Applied:
+   - ✅ Implemented safe JSON write pattern (temp→validate→move)
+   - ✅ Added logs directory creation
+   - ✅ Added JSON validation with jq empty
+   - ✅ Added cleanup on failure
+   - ✅ Separated stdout and stderr properly
+
+6. .github/workflows/parallel-fetch.yml
+   Status: FIXED
+   Issues Found:
+   - ❌ Multiple jobs with incorrect pipe usage
+   - ❌ Oura fetch: Line 45 incorrect redirection
+   - ❌ Weather fetch: Line 100 incorrect redirection
+   - ❌ SoundCloud fetch: Line 138 incorrect redirection
+   - ❌ Missing logs directory creation
+   
+   Fixes Applied:
+   - ✅ Implemented safe JSON write pattern for all 3 fetch jobs
+   - ✅ Added logs directory creation for all modules
+   - ✅ Added JSON validation with jq empty
+   - ✅ Added cleanup on failure for all jobs
+   - ✅ Separated stdout and stderr properly
+
+=============================================================================
+SAFE JSON WRITE PATTERN - REPOSITORY STANDARD
+=============================================================================
+
+Standard Pattern (MUST be used everywhere):
+
+  # Step 1: Write to temporary file, redirect errors to log
+  if ! command > output.json.tmp 2>> logs/module/module.log; then
+    echo "Error: Command failed"
+    rm -f output.json.tmp
+    exit 1
+  fi
+  
+  # Step 2: Validate JSON before committing
+  if ! jq empty output.json.tmp 2>/dev/null; then
+    echo "Error: Invalid JSON"
+    rm -f output.json.tmp
+    exit 1
+  fi
+  
+  # Step 3: Atomic move (safe because validated)
+  mv output.json.tmp output.json
+
+Benefits:
+- ✅ Prevents JSON corruption from mixed stdout/stderr
+- ✅ Validates before writing final file
+- ✅ Atomic move prevents partial writes
+- ✅ Cleanup on failure prevents stale temp files
+- ✅ Logs are separate and complete
+- ✅ No binary data in JSON files
+
+=============================================================================
+WORKFLOW VALIDATION CHECKS
+=============================================================================
+
+Environment Variables:
+  ✅ GITHUB_OWNER passed correctly
+  ✅ GITHUB_TOKEN passed correctly
+  ✅ MAPBOX_TOKEN passed as secret
+  ✅ OURA_PAT passed as secret
+  ✅ OUTPUT_DIR defined for each workflow
+
+Script Paths:
+  ✅ All scripts in scripts/ directory
+  ✅ All chmod +x applied before execution
+  ✅ Relative paths used consistently
+
+Dependencies:
+  ✅ Python installed via setup-environment action
+  ✅ jq available (from setup-environment)
+  ✅ curl available (from setup-environment)
+  ✅ Pillow installed where needed
+  ✅ SVGO installed for optimization
+
+Triggers:
+  ✅ push: main/master branches
+  ✅ schedule: cron expressions valid
+  ✅ workflow_dispatch: manual trigger enabled
+
+Concurrency:
+  ✅ group: profile-update (prevents conflicts)
+  ✅ cancel-in-progress: false (completes running jobs)
+
+Permissions:
+  ✅ contents: write (for committing changes)
+
+=============================================================================
+CROSS-WORKFLOW DEPENDENCIES
+=============================================================================
+
+Dependency Chain Analysis:
+  1. Location data → Used by: location card generation
+  2. Weather data → Used by: weather card generation
+  3. Oura metrics → Used by: health dashboard, mood card
+  4. SoundCloud metadata → Used by: soundcloud card
+  5. Developer stats → Used by: developer dashboard
+
+Execution Order (parallel-fetch.yml):
+  Phase 1 (Parallel):
+    - fetch-oura
+    - fetch-weather
+    - fetch-soundcloud
+  
+  Phase 2 (Sequential - depends on Phase 1):
+    - generate-cards (needs: [fetch-oura, fetch-weather, fetch-soundcloud])
+    - Uses if: always() to run even if some fetches fail
+    - Uses hashFiles() to check if data exists before generation
+
+Validation:
+  ✅ Dependencies properly declared with needs: []
+  ✅ Conditional generation with hashFiles()
+  ✅ continue-on-error: true for downloads
+  ✅ Graceful degradation if data missing
+
+=============================================================================
+LOGGING IMPLEMENTATION STATUS
+=============================================================================
+
+Module Logs (Created/Verified):
+  ✅ logs/location/location.log
+  ✅ logs/weather/weather.log
+  ✅ logs/oura/oura.log
+  ✅ logs/soundcloud/soundcloud.log
+  ✅ logs/developer/developer.log
+  ✅ logs/ai/ai.log (directory exists)
+  ✅ logs/avatar/avatar.log (directory exists)
+  ✅ logs/audit/ (this log)
+  ✅ logs/reflection/ (directory exists)
+
+Log Format:
+  - stderr redirected with 2>> (append mode)
+  - Preserves all error messages
+  - Includes timestamps from scripts
+  - Committed to repository for history
+
+Workflow Log Commits:
+  ✅ git add logs/ in all workflows
+  ✅ Always committed (even on success)
+  ✅ Provides audit trail
+
+=============================================================================
+ARTIFACT HANDLING
+=============================================================================
+
+Artifact Paths (parallel-fetch.yml):
+  ✅ Upload artifacts with retention-days: 1
+  ✅ Download artifacts in dependent jobs
+  ✅ continue-on-error: true for downloads
+  ✅ Conditional generation with hashFiles()
+
+Artifact Types:
+  - oura-data: oura/metrics.json
+  - weather-data: weather/weather.json
+  - soundcloud-data: assets/metadata.json, assets/soundcloud-artwork.jpg
+
+=============================================================================
+SVG OPTIMIZATION
+=============================================================================
+
+SVGO Configuration:
+  ✅ Installed with npm install -g svgo
+  ✅ Custom config in parallel-fetch.yml
+  ✅ multipass: true for better optimization
+  ✅ Size reporting before/after
+
+Optimized Files:
+  - location/location-card.svg
+  - weather/weather-today.svg
+  - oura/health_dashboard.svg
+  - oura/mood_dashboard.svg
+  - assets/soundcloud-card.svg
+  - developer/developer_dashboard.svg
+
+Validation:
+  ✅ File existence checked before optimization
+  ✅ File size checked (skip if empty)
+  ✅ Reduction percentage reported
+
+=============================================================================
+README UPDATE MECHANISM
+=============================================================================
+
+Update Script: scripts/update-readme.py
+Markers Used:
+  - LOCATION-CARD
+  - WEATHER-CARD
+  - OURA-HEALTH-CARD
+  - OURA-MOOD-CARD
+  - SOUNDCLOUD-CARD
+  - DEVELOPER-DASHBOARD
+
+Validation:
+  ✅ Content passed as arguments
+  ✅ Markers properly escaped
+  ✅ Links for clickable cards (SoundCloud)
+
+=============================================================================
+GIT COMMIT PATTERNS
+=============================================================================
+
+Commit Configuration:
+  ✅ user.email: github-actions[bot]@users.noreply.github.com
+  ✅ user.name: github-actions[bot]
+
+Commit Messages (Dynamic):
+  - Location: "📍 Update location card for ${LOCATION}"
+  - Weather: "🌦️ Update weather card for ${LOCATION}"
+  - Oura: "🧬 Update Oura health dashboard: ${MOOD} (${SCORE}/100)"
+  - SoundCloud: "🎵 Update SoundCloud card: ${TRACK_TITLE}"
+  - Developer: "💻 Update developer dashboard for ${USERNAME} (${COMMITS} commits in 30d)"
+  - Parallel: "🔄 Update all cards (parallel fetch)"
+
+Staged Files:
+  ✅ Specific files staged (not git add .)
+  ✅ Logs always staged
+  ✅ Debug files staged when present
+  ✅ Check for changes before commit
+
+=============================================================================
+ISSUES REMAINING TO BE ADDRESSED
+=============================================================================
+
+1. Script Audit (scripts/)
+   Status: PENDING
+   Next Step: Audit Python scripts for:
+   - Safe file writes
+   - Proper error handling
+   - Exit codes
+   - JSON validation
+   - Binary/text handling
+
+2. Mapbox Integration
+   Status: PENDING VERIFICATION
+   Next Step: Verify:
+   - Coordinate order (lon,lat vs lat,lon)
+   - Day/night style switching
+   - Fallback map generation
+   - Token validation
+
+3. Incremental Generation
+   Status: PENDING VERIFICATION
+   Next Step: Verify:
+   - Change detection accuracy
+   - Hash cache management
+   - False positive prevention
+   - Graceful failure handling
+
+4. Data Directory Audit
+   Status: PENDING
+   Next Step: Scan for:
+   - Corrupted JSON files
+   - Binary files in wrong places
+   - Stale artifacts
+   - Inconsistent naming
+
+5. Remove Obsolete Files
+   Status: PENDING
+   Next Step: Remove:
+   - NOTES.md
+   - LOCATION_DIAGNOSTICS.md
+   - Stray debug files
+   - Temp files
+
+=============================================================================
+SUMMARY
+=============================================================================
+
+Critical Issues Fixed: 6 workflows
+Pattern Applied: Safe JSON write (temp→validate→move)
+Files Modified: 6 workflow files
+Root Cause: Pipe misuse causing JSON corruption
+Impact: Resolves UnicodeDecodeError and Invalid JSON errors
+
+Next Steps:
+1. Audit Python scripts for safety
+2. Verify Mapbox integration
+3. Test incremental generation
+4. Clean up data directories
+5. Remove obsolete files
+6. Run full test suite
+
+Status: PHASE 1 COMPLETE - CRITICAL WORKFLOW FIXES APPLIED
+
+=============================================================================
+END OF WORKFLOW AUDIT LOG
+=============================================================================

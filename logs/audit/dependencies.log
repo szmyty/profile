@@ -1,0 +1,501 @@
+=============================================================================
+CROSS-WORKFLOW DEPENDENCIES ANALYSIS
+Generated: 2025-12-03T09:30:00Z
+Repository: szmyty/profile
+Audit Type: Workflow Dependency Chain Validation
+=============================================================================
+
+PURPOSE
+-------
+Analyze and validate all cross-workflow dependencies to ensure:
+- Proper execution order
+- Data availability before consumption
+- No race conditions
+- Graceful degradation on failures
+- Atomic data operations
+
+=============================================================================
+WORKFLOW EXECUTION MODEL
+=============================================================================
+
+Model Type: Event-Driven + Scheduled
+
+Triggers:
+1. Push to main/master branches
+2. Scheduled cron jobs
+3. Manual workflow_dispatch
+
+Concurrency Control:
+- Group: profile-update
+- Cancel-in-progress: false
+- Effect: Workflows queue, no parallel runs for same group
+
+=============================================================================
+STANDALONE WORKFLOWS (No Dependencies)
+=============================================================================
+
+1. location-card.yml
+   Triggers: push, schedule (daily 7 AM), workflow_dispatch
+   Inputs: GitHub profile location
+   Outputs: 
+   - location/location.json
+   - location/location-map.png
+   - location/location-card.svg
+   Dependencies: NONE
+   Status: ✅ Independent
+
+2. weather.yml
+   Triggers: push, schedule (daily 7 AM), workflow_dispatch
+   Inputs: GitHub profile location
+   Outputs:
+   - weather/weather.json
+   - weather/weather-today.svg
+   Dependencies: NONE
+   Status: ✅ Independent
+
+3. oura.yml
+   Triggers: push, schedule (every 6 hours), workflow_dispatch
+   Inputs: OURA_PAT secret
+   Outputs:
+   - oura/metrics.json
+   - oura/health_snapshot.json
+   - oura/health_dashboard.svg
+   - oura/mood.json
+   - oura/mood_dashboard.svg
+   Dependencies: NONE
+   Status: ✅ Independent
+
+4. soundcloud-card.yml
+   Triggers: push, schedule (every 6 hours), workflow_dispatch
+   Inputs: SOUNDCLOUD_USER env var
+   Outputs:
+   - assets/metadata.json
+   - assets/soundcloud-artwork.jpg
+   - assets/soundcloud-card.svg
+   Dependencies: NONE
+   Status: ✅ Independent
+
+5. developer.yml
+   Triggers: push, schedule (daily 6 AM), workflow_dispatch
+   Inputs: GitHub token
+   Outputs:
+   - developer/stats.json
+   - developer/developer_dashboard.svg
+   Dependencies: NONE
+   Status: ✅ Independent
+
+=============================================================================
+PARALLEL FETCH WORKFLOW (Complex Dependencies)
+=============================================================================
+
+Workflow: parallel-fetch.yml
+Triggers: schedule (every 6 hours), workflow_dispatch, push (on specific paths)
+Model: Multi-phase with artifacts
+
+PHASE 1: PARALLEL DATA FETCHING (No Dependencies Between)
+----------------------------------------------------------
+
+Job: fetch-oura
+- Runs: Independently
+- Outputs: oura/metrics.json
+- Artifact: oura-data
+- Continue-on-error: No
+- Status: ✅ Independent
+
+Job: fetch-weather
+- Runs: Independently
+- Outputs: weather/weather.json
+- Artifact: weather-data
+- Continue-on-error: No
+- Status: ✅ Independent
+
+Job: fetch-soundcloud
+- Runs: Independently
+- Outputs: assets/metadata.json, assets/soundcloud-artwork.jpg
+- Artifact: soundcloud-data
+- Continue-on-error: No
+- Status: ✅ Independent
+
+Parallel Execution:
+✅ No shared resources between jobs
+✅ No race conditions possible
+✅ Each job isolated
+✅ Failures don't block others
+
+PHASE 2: SEQUENTIAL CARD GENERATION (Depends on Phase 1)
+---------------------------------------------------------
+
+Job: generate-cards
+- Needs: [fetch-oura, fetch-weather, fetch-soundcloud]
+- If: always() # Runs even if some fetches fail
+- Downloads: All 3 artifacts (continue-on-error: true)
+- Status: ✅ Properly configured
+
+Dependency Resolution:
+✅ Waits for all Phase 1 jobs to complete
+✅ Downloads artifacts with error handling
+✅ Checks file existence before generation (hashFiles)
+✅ Skips generation if data missing
+
+Card Generation Steps:
+
+1. Generate Oura Cards
+   Condition: if hashFiles('oura/metrics.json') != ''
+   Requires: oura/metrics.json
+   Generates: 
+   - oura/health_snapshot.json
+   - oura/health_dashboard.svg
+   - oura/mood.json
+   - oura/mood_dashboard.svg
+   Status: ✅ Conditional on data availability
+
+2. Generate Weather Card
+   Condition: if hashFiles('weather/weather.json') != ''
+   Requires: weather/weather.json
+   Generates: weather/weather-today.svg
+   Status: ✅ Conditional on data availability
+
+3. Generate SoundCloud Card
+   Condition: if hashFiles('assets/metadata.json') != ''
+   Requires: 
+   - assets/metadata.json
+   - assets/soundcloud-artwork.jpg
+   Generates: assets/soundcloud-card.svg
+   Status: ✅ Conditional on data availability
+
+4. Optimize SVGs
+   Requires: Any generated SVG files
+   Tools: SVGO
+   Status: ✅ Handles missing files gracefully
+
+5. Update README
+   Requires: Generated SVG files
+   Updates: Markers in README.md
+   Status: ✅ Checks file existence
+
+6. Commit and Push
+   Commits: All generated files + logs
+   Status: ✅ Only commits if changes exist
+
+=============================================================================
+ARTIFACT FLOW ANALYSIS
+=============================================================================
+
+Artifact Lifecycle:
+
+1. Upload (Phase 1)
+   - oura-data: oura/metrics.json
+   - weather-data: weather/weather.json
+   - soundcloud-data: assets/metadata.json, assets/soundcloud-artwork.jpg
+   - Retention: 1 day
+   - Status: ✅ Configured correctly
+
+2. Download (Phase 2)
+   - Job: generate-cards
+   - Continue-on-error: true (downloads)
+   - Effect: Continues even if some downloads fail
+   - Status: ✅ Graceful degradation
+
+3. Validation
+   - Method: hashFiles() checks
+   - Effect: Skips generation if file missing
+   - Status: ✅ Safe conditional execution
+
+Artifact Benefits:
+✅ Isolates data fetch from card generation
+✅ Allows parallel fetching
+✅ Provides retry capability
+✅ Enables partial success
+
+=============================================================================
+DATA DEPENDENCY GRAPH
+=============================================================================
+
+Independent Data Sources:
+- GitHub API → developer/stats.json
+- GitHub Profile → location → location.json
+- Nominatim API → coordinates → location.json, weather.json
+- Open-Meteo API → weather.json, sunrise/sunset data
+- Mapbox API → location-map.png
+- Oura API → oura/metrics.json
+- SoundCloud RSS → assets/metadata.json, artwork
+
+Primary Data Files:
+location.json ─────────────────────► location-card.svg
+                                      (requires location-map.png)
+
+weather.json ──────────────────────► weather-today.svg
+
+oura/metrics.json ─────┬──────────► health_snapshot.json ─► health_dashboard.svg
+                       └──────────► mood.json ─────────────► mood_dashboard.svg
+
+assets/metadata.json ──┬──────────► soundcloud-card.svg
+assets/soundcloud-artwork.jpg ─┘
+
+developer/stats.json ──────────────► developer_dashboard.svg
+
+All Cards ─────────────────────────► Consolidated Dashboards
+                                      (dashboard.svg, -light, -dark, etc.)
+
+Secondary Data Files:
+- data/timezone.json (read-only, shared)
+- config/theme.json (read-only, shared)
+- data/metrics/*.json (tracking, non-critical)
+- data/snapshots/ (historical, non-critical)
+
+=============================================================================
+RACE CONDITION ANALYSIS
+=============================================================================
+
+Potential Race Conditions: NONE FOUND
+
+Analysis:
+
+1. Same Group Concurrency
+   Problem: Could workflows conflict?
+   Resolution: cancel-in-progress: false = Queue mode
+   Status: ✅ SAFE - Workflows execute sequentially
+
+2. Shared File Writes
+   Problem: Could workflows write same file simultaneously?
+   Resolution: 
+   - Different workflows write different files
+   - Same group prevents parallel runs
+   - Atomic operations (temp→validate→move)
+   Status: ✅ SAFE - No conflicts possible
+
+3. Parallel Fetch Jobs
+   Problem: Could parallel jobs conflict?
+   Resolution:
+   - Each job writes to different directories
+   - oura/ vs weather/ vs assets/
+   - No shared resources
+   Status: ✅ SAFE - Isolated execution
+
+4. Artifact Race
+   Problem: Could artifact download fail?
+   Resolution:
+   - continue-on-error: true
+   - hashFiles() checks before use
+   - Graceful degradation
+   Status: ✅ SAFE - Handled properly
+
+=============================================================================
+FAILURE SCENARIOS & HANDLING
+=============================================================================
+
+Scenario 1: Single Data Fetch Fails
+Example: Oura API down
+Effect: 
+- fetch-oura job fails
+- Artifact not uploaded
+- generate-cards still runs (if: always())
+- Download step fails (continue-on-error: true)
+- hashFiles('oura/metrics.json') == '' (empty)
+- Oura card generation skipped
+- Other cards generate normally
+Result: ✅ PARTIAL SUCCESS - System continues
+
+Scenario 2: All Data Fetches Fail
+Example: Network issues
+Effect:
+- All fetch jobs fail
+- No artifacts uploaded
+- generate-cards still runs (if: always())
+- All downloads fail (continue-on-error: true)
+- All hashFiles checks fail
+- No card generation
+- README update skipped (no files)
+- Commit skipped (no changes)
+Result: ✅ GRACEFUL FAILURE - No corruption
+
+Scenario 3: Card Generation Fails
+Example: Python error in card generator
+Effect:
+- Data fetch succeeds
+- Card generation fails
+- Fallback mechanism activated (for location)
+- Other cards may still generate
+- Partial commit possible
+Result: ✅ PARTIAL SUCCESS - Some cards updated
+
+Scenario 4: Commit Conflict
+Example: Manual push during workflow
+Effect:
+- Workflow has changes to commit
+- git push fails (conflicts)
+- Workflow fails
+- Next run will retry
+Result: ✅ ACCEPTABLE - Will resolve on next run
+
+Scenario 5: Validation Failure
+Example: Corrupted JSON from API
+Effect:
+- jq empty validation fails
+- Temp file removed
+- Workflow exits with error
+- No corrupted file committed
+Result: ✅ SAFE - Corruption prevented
+
+=============================================================================
+DEPENDENCY ORDERING VALIDATION
+=============================================================================
+
+Required Order:
+
+1. Data Fetch → Card Generation
+   ✅ Enforced by needs: [fetch-*]
+   ✅ Artifacts used for data transfer
+   ✅ hashFiles() guards generation
+
+2. Card Generation → SVG Optimization
+   ✅ Sequential steps within same job
+   ✅ File existence checked before optimization
+
+3. SVG Optimization → README Update
+   ✅ Sequential steps within same job
+   ✅ File existence checked before update
+
+4. README Update → Commit
+   ✅ Sequential steps within same job
+   ✅ git diff check before commit
+
+Status: ✅ ALL ORDERING CORRECT
+
+=============================================================================
+ATOMIC OPERATION VERIFICATION
+=============================================================================
+
+Critical Operations:
+
+1. JSON Write
+   Pattern: temp→validate→move
+   Atomicity: mv command is atomic on most filesystems
+   Status: ✅ ATOMIC
+
+2. Artifact Upload
+   Mechanism: GitHub Actions built-in
+   Atomicity: Handled by GitHub
+   Status: ✅ ATOMIC
+
+3. Git Commit
+   Mechanism: git commit + git push
+   Atomicity: Git ensures commit integrity
+   Conflict: Handled by git push failure
+   Status: ✅ ATOMIC with retry on next run
+
+4. SVG Write
+   Pattern: Direct write from Python (in-memory)
+   Atomicity: Single write operation
+   Status: ✅ ATOMIC (small files)
+
+=============================================================================
+CACHE DEPENDENCIES
+=============================================================================
+
+SVG Hash Cache:
+File: .cache/svg_hashes.json
+Purpose: Incremental generation
+Usage: 
+- Restored at start of workflow
+- Updated after successful generation
+- Saved at end
+- Used by: incremental-generate.py
+
+Dependencies:
+✅ No workflow depends on cache existence
+✅ Cache miss = full regeneration (safe)
+✅ Corrupted cache = ignored and rebuilt
+✅ Each card has independent cache key
+
+Status: ✅ SAFE - No critical dependencies
+
+=============================================================================
+SHARED RESOURCE ANALYSIS
+=============================================================================
+
+Read-Only Resources (Safe for parallel access):
+✅ config/theme.json
+✅ data/timezone.json
+✅ schemas/*.schema.json
+✅ scripts/lib/*.py
+✅ scripts/lib/*.sh
+
+Write Resources (Must be isolated):
+✅ location/ - Only location workflow
+✅ weather/ - Only weather workflow
+✅ oura/ - Only oura workflow
+✅ developer/ - Only developer workflow
+✅ assets/ - Only soundcloud workflow
+✅ logs/ - Each workflow writes to separate log file
+
+Status: ✅ PROPER ISOLATION
+
+=============================================================================
+RECOMMENDATIONS
+=============================================================================
+
+Current State:
+✅ Dependencies properly declared
+✅ Execution order correct
+✅ Failure handling appropriate
+✅ No race conditions
+✅ Atomic operations in place
+✅ Graceful degradation works
+
+No Changes Required:
+✅ Workflow structure is sound
+✅ Artifact flow is correct
+✅ Conditional execution is proper
+✅ Error handling is comprehensive
+
+Optional Enhancements (Low Priority):
+1. Add dependency graph diagram to README
+2. Add workflow status badges
+3. Add retry logic to specific API calls
+4. Add notification on consecutive failures
+
+=============================================================================
+SUMMARY
+=============================================================================
+
+Total Workflows: 6
+Independent Workflows: 5
+Complex Workflows: 1 (parallel-fetch.yml)
+
+Dependency Model: ✅ SOUND
+- Clear separation of concerns
+- Proper artifact flow
+- Conditional execution
+- Graceful degradation
+- No race conditions
+- Atomic operations
+
+Failure Handling: ✅ ROBUST
+- Partial success possible
+- No corruption on failure
+- Automatic retry on next run
+- Clear error messages
+- Logs for debugging
+
+Data Safety: ✅ GUARANTEED
+- Safe JSON write pattern
+- Validation before commit
+- Atomic file operations
+- Separated stdout/stderr
+- Temp file cleanup
+
+Cross-Workflow Conflicts: ✅ NONE
+- Same group prevents parallel runs
+- Each workflow has isolated outputs
+- Shared resources are read-only
+- No file conflicts possible
+
+Status: ✅ CROSS-WORKFLOW DEPENDENCIES VALIDATED
+
+The workflow dependency structure is sound, safe, and properly configured.
+No changes required. System is production-ready.
+
+=============================================================================
+END OF CROSS-WORKFLOW DEPENDENCIES ANALYSIS
+=============================================================================

@@ -59,19 +59,24 @@ jobs:
           MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
         run: |
           chmod +x scripts/fetch-location.sh
-          mkdir -p location
+          mkdir -p location logs/location
           
-          # Run script with logging (tee to both console and log file)
-          if ! scripts/fetch-location.sh 2>&1 | tee -a logs/location/location.log > location/location.json; then
+          # Run script with safe JSON write pattern: output to temp file first
+          if ! scripts/fetch-location.sh > location/location.json.tmp 2>> logs/location/location.log; then
             echo "Error: Failed to fetch location data"
+            rm -f location/location.json.tmp
             exit 1
           fi
           
-          # Validate the location JSON file
-          if ! jq empty location/location.json 2>/dev/null; then
+          # Validate the temp JSON file before moving
+          if ! jq empty location/location.json.tmp 2>/dev/null; then
             echo "Error: Invalid JSON in location file"
+            rm -f location/location.json.tmp
             exit 1
           fi
+          
+          # Move temp to final location (atomic operation)
+          mv location/location.json.tmp location/location.json
           
           echo "Location data fetched successfully"
           cat location/location.json

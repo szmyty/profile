@@ -82,19 +82,24 @@ jobs:
           OUTPUT_DIR: weather
         run: |
           chmod +x scripts/fetch-weather.sh
-          mkdir -p weather
+          mkdir -p weather logs/weather
           
-          # Run script with logging (tee to both console and log file)
-          if ! scripts/fetch-weather.sh 2>&1 | tee -a logs/weather/weather.log > weather/weather.json; then
+          # Run script with safe JSON write pattern: output to temp file first
+          if ! scripts/fetch-weather.sh > weather/weather.json.tmp 2>> logs/weather/weather.log; then
             echo "Error: Failed to fetch weather data"
+            rm -f weather/weather.json.tmp
             exit 1
           fi
           
-          # Validate the weather JSON file
-          if ! jq empty weather/weather.json 2>/dev/null; then
+          # Validate the temp JSON file before moving
+          if ! jq empty weather/weather.json.tmp 2>/dev/null; then
             echo "Error: Invalid JSON in weather file"
+            rm -f weather/weather.json.tmp
             exit 1
           fi
+          
+          # Move temp to final location (atomic operation)
+          mv weather/weather.json.tmp weather/weather.json
           
           echo "Weather data fetched successfully"
           cat weather/weather.json
