@@ -22,6 +22,8 @@ from lib.utils import (
     get_theme_card_dimension,
     get_theme_border_radius,
     format_timestamp_local,
+    format_time_since,
+    is_data_stale,
     optimize_image_file,
     fallback_exists,
     log_fallback_used,
@@ -127,6 +129,31 @@ def generate_svg(
     map_margin = map_config.get("margin", 20)
     map_width = card_width - (map_margin * 2)
     map_height = map_config.get("height", 350)
+    
+    # Calculate staleness badge
+    font_size_xs = get_theme_font_size("xs")
+    accent_hr = get_theme_color("accent", "heart_rate")
+    staleness_badge = ""
+    if updated_at:
+        time_since = format_time_since(updated_at)
+        is_stale = is_data_stale(updated_at, stale_threshold_hours=24)
+        
+        # Use warning color if data is stale
+        if is_stale:
+            badge_color = accent_hr  # Warning/error color
+            badge_icon = "⚠️ "
+        else:
+            badge_color = text_muted
+            badge_icon = ""
+        
+        time_since_escaped = escape_xml(time_since)
+        staleness_badge = f'''
+  <!-- Staleness Badge -->
+  <g transform="translate({card_width - 10}, 10)">
+    <text x="0" y="12" font-family="{font_family}" font-size="{font_size_xs}" fill="{badge_color}" text-anchor="end">
+      {badge_icon}Updated: {time_since_escaped}
+    </text>
+  </g>'''
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{card_width}" height="{card_height}" viewBox="0 0 {card_width} {card_height}">
   <defs>
@@ -180,12 +207,7 @@ def generate_svg(
     </text>
   </g>
 
-  <!-- Footer: Updated timestamp -->
-  <g transform="translate({map_margin}, 465)">
-    <text font-family="{font_family}" font-size="{font_size_base}" fill="{text_muted}">
-      Updated: {updated_at}
-    </text>
-  </g>
+  {staleness_badge}
 
   <!-- Decorative accent -->
   <rect x="{card_width - 20}" y="15" width="4" height="450" rx="2" fill="{accent_teal}" fill-opacity="{stroke_opacity}"/>
@@ -293,9 +315,8 @@ def main() -> None:
             return
         sys.exit(1)
 
-    # Format updated_at to local time for display
+    # Get raw updated_at timestamp for staleness calculation
     updated_at_raw = metadata.get("updated_at", "")
-    updated_at_display = format_timestamp_local(updated_at_raw) if updated_at_raw else ""
 
     # Try to generate SVG
     try:
@@ -305,7 +326,7 @@ def main() -> None:
             lat=coordinates.get("lat", 0),
             lon=coordinates.get("lon", 0),
             map_image_base64=map_image_base64,
-            updated_at=updated_at_display,
+            updated_at=updated_at_raw,
         )
     except Exception as e:
         error_msg = f"SVG generation failed: {e}"

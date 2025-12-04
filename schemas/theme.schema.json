@@ -308,6 +308,31 @@
             "low": {"$ref": "#/$defs/hexColor"}
           },
           "additionalProperties": false
+        },
+        "status": {
+          "type": "object",
+          "properties": {
+            "success": {"$ref": "#/$defs/hexColor"},
+            "warning": {"$ref": "#/$defs/hexColor"},
+            "error": {"$ref": "#/$defs/hexColor"},
+            "unknown": {"$ref": "#/$defs/hexColor"}
+          },
+          "additionalProperties": false
+        },
+        "languages": {
+          "type": "object",
+          "patternProperties": {
+            "^[A-Za-z0-9+#\\-\\.\\s]+$": {"$ref": "#/$defs/hexColor"}
+          },
+          "additionalProperties": false
+        },
+        "chart": {
+          "type": "object",
+          "properties": {
+            "bar_background": {"$ref": "#/$defs/hexColor"},
+            "bar_fill": {"$ref": "#/$defs/hexColor"}
+          },
+          "additionalProperties": false
         }
       },
       "additionalProperties": false
