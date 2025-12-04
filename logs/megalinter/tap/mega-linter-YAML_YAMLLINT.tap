@@ -1,0 +1,61 @@
+TAP version 13
+1..59
+ok 1 - .github/FUNDING.yml
+ok 2 - .github/actionlint.yaml
+not ok 3 - .github/actions/setup-environment/action.yml
+not ok 4 - .github/workflows/developer.yml
+not ok 5 - .github/workflows/location-card.yml
+not ok 6 - .github/workflows/megalinter.yml
+not ok 7 - .github/workflows/monitoring.yml
+not ok 8 - .github/workflows/oura.yml
+not ok 9 - .github/workflows/parallel-fetch.yml
+not ok 10 - .github/workflows/soundcloud-card.yml
+ok 11 - .github/workflows/tests.yml
+not ok 12 - .github/workflows/weather.yml
+not ok 13 - .megalinter.yml
+not ok 14 - .pre-commit-config.yaml
+ok 15 - config/analysis_options.yml
+ok 16 - config/styles/proselint/Airlinese.yml
+not ok 17 - config/styles/proselint/AnimalLabels.yml
+ok 18 - config/styles/proselint/Annotations.yml
+ok 19 - config/styles/proselint/Apologizing.yml
+ok 20 - config/styles/proselint/Archaisms.yml
+ok 21 - config/styles/proselint/But.yml
+ok 22 - config/styles/proselint/Cliches.yml
+ok 23 - config/styles/proselint/CorporateSpeak.yml
+ok 24 - config/styles/proselint/Currency.yml
+ok 25 - config/styles/proselint/Cursing.yml
+ok 26 - config/styles/proselint/DateCase.yml
+ok 27 - config/styles/proselint/DateMidnight.yml
+ok 28 - config/styles/proselint/DateRedundancy.yml
+ok 29 - config/styles/proselint/DateSpacing.yml
+not ok 30 - config/styles/proselint/DenizenLabels.yml
+ok 31 - config/styles/proselint/Diacritical.yml
+not ok 32 - config/styles/proselint/GenderBias.yml
+not ok 33 - config/styles/proselint/GroupTerms.yml
+ok 34 - config/styles/proselint/Hedging.yml
+ok 35 - config/styles/proselint/Hyperbole.yml
+ok 36 - config/styles/proselint/Jargon.yml
+ok 37 - config/styles/proselint/LGBTOffensive.yml
+not ok 38 - config/styles/proselint/LGBTTerms.yml
+ok 39 - config/styles/proselint/Malapropisms.yml
+ok 40 - config/styles/proselint/Needless.yml
+ok 41 - config/styles/proselint/Nonwords.yml
+ok 42 - config/styles/proselint/Oxymorons.yml
+ok 43 - config/styles/proselint/P-Value.yml
+not ok 44 - config/styles/proselint/RASSyndrome.yml
+ok 45 - config/styles/proselint/Skunked.yml
+ok 46 - config/styles/proselint/Spelling.yml
+ok 47 - config/styles/proselint/Typography.yml
+not ok 48 - config/styles/proselint/Uncomparables.yml
+ok 49 - config/styles/proselint/Very.yml
+ok 50 - config/styles/write-good/Cliches.yml
+ok 51 - config/styles/write-good/E-Prime.yml
+ok 52 - config/styles/write-good/Illusions.yml
+ok 53 - config/styles/write-good/Passive.yml
+ok 54 - config/styles/write-good/So.yml
+ok 55 - config/styles/write-good/ThereIs.yml
+ok 56 - config/styles/write-good/TooWordy.yml
+ok 57 - config/styles/write-good/Weasel.yml
+ok 58 - config/trivy-sbom.yaml
+ok 59 - config/trivy.yaml

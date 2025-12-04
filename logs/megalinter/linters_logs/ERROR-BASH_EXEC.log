@@ -1,0 +1,25 @@
+Results of bash-exec linter (version 5.2.37)
+See documentation on https://megalinter.io/8.8.0/descriptors/bash_bash_exec/
+-----------------------------------------------
+
+✅ [SUCCESS] .devcontainer/postCreate.sh
+✅ [SUCCESS] scripts/dev-mode.sh
+✅ [SUCCESS] scripts/fetch-location.sh
+✅ [SUCCESS] scripts/fetch-oura.sh
+✅ [SUCCESS] scripts/fetch-soundcloud.sh
+✅ [SUCCESS] scripts/fetch-timezone.sh
+✅ [SUCCESS] scripts/fetch-weather.sh
+✅ [SUCCESS] scripts/health_check.sh
+❌ [ERROR] scripts/lib/common.sh
+    Error: File:[scripts/lib/common.sh] is not executable
+
+❌ [ERROR] scripts/lib/logging.sh
+    Error: File:[scripts/lib/logging.sh] is not executable
+
+✅ [SUCCESS] scripts/new-card.sh
+✅ [SUCCESS] tests/test_cache.sh
+✅ [SUCCESS] tests/test_health_checks.sh
+✅ [SUCCESS] tests/test_location_shell_diagnostics.sh
+✅ [SUCCESS] tests/test_new_card.sh
+✅ [SUCCESS] tests/test_retry_logic.sh
+✅ [SUCCESS] tests/test_timeout_coverage.sh

@@ -1,0 +1,49 @@
+Results of markdown-link-check linter (version 3.12.2)
+See documentation on https://megalinter.io/8.8.0/descriptors/markdown_markdown_link_check/
+-----------------------------------------------
+
+❌ [ERROR] .github/GOVERNANCE.md
+    
+      ERROR: 2 dead links found in .github/GOVERNANCE.md !
+      [✖] ./CONTRIBUTING.md → Status: 400
+      [✖] ./CODE_OF_CONDUCT.md → Status: 400
+
+✅ [SUCCESS] .github/actions/setup-environment/README.md
+✅ [SUCCESS] GITHUB_MARKDOWN_AUDIT_COMPLETE.md
+✅ [SUCCESS] IMPLEMENTATION_SUMMARY.md
+✅ [SUCCESS] PERFORMANCE_IMPROVEMENTS_SUMMARY.md
+❌ [ERROR] README.md
+    
+      ERROR: 2 dead links found in README.md !
+      [✖] https://www.linkedin.com/in/szmyty → Status: 999
+      [✖] branding/footer.svg → Status: 400
+
+✅ [SUCCESS] REPORT.md
+✅ [SUCCESS] SECURITY_SUMMARY.md
+✅ [SUCCESS] SECURITY_SUMMARY_API_RESILIENCE.md
+✅ [SUCCESS] config/styles/proselint/README.md
+✅ [SUCCESS] config/styles/write-good/README.md
+✅ [SUCCESS] data/mock/README.md
+✅ [SUCCESS] data/snapshots/README.md
+✅ [SUCCESS] docs/API_RESILIENCE.md
+✅ [SUCCESS] docs/API_TIMEOUT_RETRY_GUIDE.md
+✅ [SUCCESS] docs/INTEGRATION_EXAMPLE.md
+✅ [SUCCESS] docs/LOCATION_CARD_CHANGES.md
+✅ [SUCCESS] docs/MONITORING.md
+✅ [SUCCESS] docs/OPTIMIZATION_GUIDE.md
+✅ [SUCCESS] docs/README_LAYOUT_BEFORE_AFTER.md
+✅ [SUCCESS] docs/README_LAYOUT_CHANGELOG.md
+❌ [ERROR] docs/README_SECTION_CHANGES.md
+    
+      ERROR: 1 dead links found in docs/README_SECTION_CHANGES.md !
+      [✖] #performance--monitoring → Status: 404
+
+✅ [SUCCESS] docs/ROBUSTNESS_IMPROVEMENTS.md
+✅ [SUCCESS] docs/WORKFLOWS.md
+✅ [SUCCESS] docs/architecture.md
+✅ [SUCCESS] docs/cards.md
+✅ [SUCCESS] docs/markdown_valid_elements.md
+✅ [SUCCESS] docs/style-guide.md
+✅ [SUCCESS] docs/workflows.md
+✅ [SUCCESS] footer/README.md
+✅ [SUCCESS] schemas/README.md

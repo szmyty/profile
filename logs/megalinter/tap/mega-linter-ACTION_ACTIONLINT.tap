@@ -1,0 +1,11 @@
+TAP version 13
+1..9
+ok 1 - .github/workflows/developer.yml
+not ok 2 - .github/workflows/location-card.yml
+ok 3 - .github/workflows/megalinter.yml
+not ok 4 - .github/workflows/monitoring.yml
+ok 5 - .github/workflows/oura.yml
+not ok 6 - .github/workflows/parallel-fetch.yml
+ok 7 - .github/workflows/soundcloud-card.yml
+ok 8 - .github/workflows/tests.yml
+not ok 9 - .github/workflows/weather.yml

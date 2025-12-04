@@ -1,0 +1,81 @@
+Results of actionlint linter (version 1.7.7)
+See documentation on https://megalinter.io/8.8.0/descriptors/action_actionlint/
+-----------------------------------------------
+
+✅ [SUCCESS] .github/workflows/developer.yml
+❌ [ERROR] .github/workflows/location-card.yml
+    .github/workflows/location-card.yml:34:9: shellcheck reported issue in this script: SC2086:info:8:23: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    34 |         run: |
+       |         ^~~~
+    .github/workflows/location-card.yml:34:9: shellcheck reported issue in this script: SC2086:info:10:29: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    34 |         run: |
+       |         ^~~~
+    .github/workflows/location-card.yml:34:9: shellcheck reported issue in this script: SC2086:info:11:24: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    34 |         run: |
+       |         ^~~~
+
+✅ [SUCCESS] .github/workflows/megalinter.yml
+❌ [ERROR] .github/workflows/monitoring.yml
+    .github/workflows/monitoring.yml:97:9: shellcheck reported issue in this script: SC2086:info:18:42: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    97 |         run: |
+       |         ^~~~
+    .github/workflows/monitoring.yml:97:9: shellcheck reported issue in this script: SC2086:info:19:46: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    97 |         run: |
+       |         ^~~~
+
+✅ [SUCCESS] .github/workflows/oura.yml
+❌ [ERROR] .github/workflows/parallel-fetch.yml
+    .github/workflows/parallel-fetch.yml:81:9: shellcheck reported issue in this script: SC2086:info:8:23: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    81 |         run: |
+       |         ^~~~
+    .github/workflows/parallel-fetch.yml:81:9: shellcheck reported issue in this script: SC2086:info:10:29: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    81 |         run: |
+       |         ^~~~
+    .github/workflows/parallel-fetch.yml:81:9: shellcheck reported issue in this script: SC2086:info:11:24: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    81 |         run: |
+       |         ^~~~
+
+✅ [SUCCESS] .github/workflows/soundcloud-card.yml
+✅ [SUCCESS] .github/workflows/tests.yml
+❌ [ERROR] .github/workflows/weather.yml
+    .github/workflows/weather.yml:32:9: shellcheck reported issue in this script: SC2086:info:8:23: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    32 |         run: |
+       |         ^~~~
+    .github/workflows/weather.yml:32:9: shellcheck reported issue in this script: SC2086:info:10:29: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    32 |         run: |
+       |         ^~~~
+    .github/workflows/weather.yml:32:9: shellcheck reported issue in this script: SC2086:info:11:24: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    32 |         run: |
+       |         ^~~~
+    .github/workflows/weather.yml:50:9: shellcheck reported issue in this script: SC2086:info:14:23: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    50 |         run: |
+       |         ^~~~
+    .github/workflows/weather.yml:50:9: shellcheck reported issue in this script: SC2129:style:21:1: Consider using { cmd1; cmd2; } >> file instead of individual redirects [shellcheck]
+       |
+    50 |         run: |
+       |         ^~~~
+    .github/workflows/weather.yml:50:9: shellcheck reported issue in this script: SC2086:info:21:20: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    50 |         run: |
+       |         ^~~~
+    .github/workflows/weather.yml:50:9: shellcheck reported issue in this script: SC2086:info:22:20: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    50 |         run: |
+       |         ^~~~
+    .github/workflows/weather.yml:50:9: shellcheck reported issue in this script: SC2086:info:23:22: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    50 |         run: |
+       |         ^~~~
+

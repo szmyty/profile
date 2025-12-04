@@ -98,9 +98,9 @@ I build high-quality, scalable platforms with strong emphasis on automation, sec
 ![Developer](https://github.com/szmyty/profile/actions/workflows/developer.yml/badge.svg)
 ![Dashboard](https://github.com/szmyty/profile/actions/workflows/deploy-dashboard.yml/badge.svg)
 
-</div>
+## 📊 Workflow Performance Dashboard
 
-<br/>
+![Workflow Performance](./dashboard.svg)
 
 <!-- ═══════════════════════════════════════════════════════════════════════════ -->
 <!-- 🌐 LIVE DASHBOARD                                                          -->
@@ -250,17 +250,13 @@ This repository implements several performance optimizations to improve speed an
 
 - **🔄 Parallel API Fetching** - Fetch Oura, Weather, and SoundCloud data simultaneously (3x faster)
 - **📊 Incremental SVG Generation** - Skip regeneration when data hasn't changed (50-80% time savings)
-- **📦 Python Dependency Caching** - Reuse installed packages with Poetry lock file (6x faster setup)
+- **📦 Smart Python Dependency Caching** - Multi-layer pip caching with composite actions (60-75% faster Python setup)
 - **🎨 Enhanced SVG Optimization** - Advanced compression with path simplification (30-50% smaller files)
 - **💾 Multi-Level Caching** - Cache API responses, client IDs, and geocoding results
 
 **Results**: 60-75% faster workflows, 60-70% lower GitHub Actions usage
 
-<p align="center">
-📖 <a href="docs/OPTIMIZATION_GUIDE.md">View Optimization Guide</a>
-</p>
-
-<br/>
+**Documentation**: See [WORKFLOW_CACHING.md](docs/WORKFLOW_CACHING.md) for caching strategy and [CACHING_BENCHMARKS.md](docs/CACHING_BENCHMARKS.md) for performance metrics.
 
 ---
 
@@ -287,9 +283,21 @@ This repository includes comprehensive monitoring features:
 
 ---
 
-<br/>
+## 🔧 Troubleshooting
 
-<div align="center">
+Encountering workflow failures? The troubleshooting guide covers common issues and solutions:
+
+- **🚦 Rate Limiting** - GitHub API, Nominatim, and external API rate limits
+- **📋 Invalid JSON** - Validation errors and malformed responses
+- **🌐 API Failures** - SoundCloud, Open-Meteo, Mapbox, and Oura issues
+- **🔑 Missing Keys** - Handling missing fields and data validation
+- **⚡ Concurrency** - Git conflicts and workflow collision prevention
+- **⏱️ Timeouts** - HTTP request and workflow timeout handling
+- **✅ Schema Validation** - Setting up and troubleshooting data validation
+
+See [TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) for detailed solutions.
+
+---
 
 ## 📜 Logs
 

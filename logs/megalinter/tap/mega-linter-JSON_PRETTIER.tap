@@ -1,0 +1,38 @@
+TAP version 13
+1..36
+not ok 1 - .devcontainer/devcontainer.json
+ok 2 - .vscode/extensions.json
+ok 3 - .vscode/launch.json
+not ok 4 - .vscode/settings.json
+ok 5 - .vscode/tasks.json
+not ok 6 - assets/metadata.json
+not ok 7 - config/META6.json
+not ok 8 - config/pyrightconfig.json
+not ok 9 - config/styles/proselint/meta.json
+not ok 10 - config/styles/write-good/meta.json
+not ok 11 - config/theme.json
+not ok 12 - data/metrics/developer.json
+not ok 13 - data/metrics/location.json
+not ok 14 - data/metrics/oura.json
+not ok 15 - data/metrics/parallel-fetch.json
+not ok 16 - data/metrics/soundcloud.json
+not ok 17 - data/metrics/test-workflow.json
+not ok 18 - data/metrics/weather.json
+not ok 19 - data/mock/developer-stats.json
+not ok 20 - data/mock/oura-metrics.json
+not ok 21 - data/mock/soundcloud-metadata.json
+not ok 22 - data/mock/weather.json
+not ok 23 - data/snapshots/daily/2025/12/2025-12-03.json
+not ok 24 - data/snapshots/monthly/2025-12.json
+not ok 25 - data/snapshots/weekly/2025-W49.json
+not ok 26 - data/timezone.json
+not ok 27 - oura/health_snapshot.json
+not ok 28 - oura/metrics.json
+not ok 29 - oura/mood.json
+not ok 30 - schemas/developer-stats.schema.json
+not ok 31 - schemas/health-snapshot.schema.json
+not ok 32 - schemas/oura-metrics.schema.json
+not ok 33 - schemas/soundcloud-track.schema.json
+not ok 34 - schemas/theme.schema.json
+not ok 35 - schemas/weather.schema.json
+not ok 36 - weather/weather.json

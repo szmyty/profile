@@ -26,8 +26,9 @@ jobs:
         uses: ./.github/actions/setup-environment
 
       - name: Install additional dependencies
-        run: |
-          pip install Pillow
+        uses: ./.github/actions/pip-install
+        with:
+          packages: 'Pillow'
 
       - name: Get GitHub profile location
         id: location

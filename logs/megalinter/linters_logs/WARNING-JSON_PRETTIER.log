@@ -1,0 +1,172 @@
+Results of prettier linter (version 3.5.3)
+See documentation on https://megalinter.io/8.8.0/descriptors/json_prettier/
+-----------------------------------------------
+
+❌ [ERROR] .devcontainer/devcontainer.json
+    Checking formatting...
+    [warn] .devcontainer/devcontainer.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+✅ [SUCCESS] .vscode/extensions.json
+✅ [SUCCESS] .vscode/launch.json
+❌ [ERROR] .vscode/settings.json
+    Checking formatting...
+    [warn] .vscode/settings.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+✅ [SUCCESS] .vscode/tasks.json
+❌ [ERROR] assets/metadata.json
+    Checking formatting...
+    [warn] assets/metadata.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] config/META6.json
+    Checking formatting...
+    [warn] config/META6.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] config/pyrightconfig.json
+    Checking formatting...
+    [warn] config/pyrightconfig.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] config/styles/proselint/meta.json
+    Checking formatting...
+    [warn] config/styles/proselint/meta.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] config/styles/write-good/meta.json
+    Checking formatting...
+    [warn] config/styles/write-good/meta.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] config/theme.json
+    Checking formatting...
+    [warn] config/theme.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] data/metrics/developer.json
+    Checking formatting...
+    [warn] data/metrics/developer.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] data/metrics/location.json
+    Checking formatting...
+    [warn] data/metrics/location.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] data/metrics/oura.json
+    Checking formatting...
+    [warn] data/metrics/oura.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] data/metrics/parallel-fetch.json
+    Checking formatting...
+    [warn] data/metrics/parallel-fetch.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] data/metrics/soundcloud.json
+    Checking formatting...
+    [warn] data/metrics/soundcloud.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] data/metrics/test-workflow.json
+    Checking formatting...
+    [warn] data/metrics/test-workflow.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] data/metrics/weather.json
+    Checking formatting...
+    [warn] data/metrics/weather.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] data/mock/developer-stats.json
+    Checking formatting...
+    [warn] data/mock/developer-stats.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] data/mock/oura-metrics.json
+    Checking formatting...
+    [warn] data/mock/oura-metrics.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] data/mock/soundcloud-metadata.json
+    Checking formatting...
+    [warn] data/mock/soundcloud-metadata.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] data/mock/weather.json
+    Checking formatting...
+    [warn] data/mock/weather.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] data/snapshots/daily/2025/12/2025-12-03.json
+    Checking formatting...
+    [warn] data/snapshots/daily/2025/12/2025-12-03.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] data/snapshots/monthly/2025-12.json
+    Checking formatting...
+    [warn] data/snapshots/monthly/2025-12.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] data/snapshots/weekly/2025-W49.json
+    Checking formatting...
+    [warn] data/snapshots/weekly/2025-W49.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] data/timezone.json
+    Checking formatting...
+    [warn] data/timezone.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] oura/health_snapshot.json
+    Checking formatting...
+    [warn] oura/health_snapshot.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] oura/metrics.json
+    Checking formatting...
+    [warn] oura/metrics.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] oura/mood.json
+    Checking formatting...
+    [warn] oura/mood.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] schemas/developer-stats.schema.json
+    Checking formatting...
+    [warn] schemas/developer-stats.schema.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] schemas/health-snapshot.schema.json
+    Checking formatting...
+    [warn] schemas/health-snapshot.schema.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] schemas/oura-metrics.schema.json
+    Checking formatting...
+    [warn] schemas/oura-metrics.schema.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] schemas/soundcloud-track.schema.json
+    Checking formatting...
+    [warn] schemas/soundcloud-track.schema.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] schemas/theme.schema.json
+    Checking formatting...
+    [warn] schemas/theme.schema.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] schemas/weather.schema.json
+    Checking formatting...
+    [warn] schemas/weather.schema.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] weather/weather.json
+    Checking formatting...
+    [warn] weather/weather.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+

@@ -1,0 +1,1102 @@
+Results of lychee linter (version 0.18.0)
+See documentation on https://megalinter.io/8.8.0/descriptors/spell_lychee/
+-----------------------------------------------
+
+❌ [ERROR] .devcontainer/devcontainer.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .github/FUNDING.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .github/GOVERNANCE.md
+    [EXCLUDED] file://.github/CONTRIBUTING.md
+    [EXCLUDED] file://.github/CODE_OF_CONDUCT.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .github/actionlint.yaml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .github/actions/setup-environment/README.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .github/actions/setup-environment/action.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .github/workflows/developer.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .github/workflows/location-card.yml
+    [404] https://api.github.com/users/$ | Network error: Not Found
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .github/workflows/megalinter.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .github/workflows/monitoring.yml
+    [404] https://github.com/$%7Bcontext.repo.owner%7D/$%7Bcontext.repo.repo%7D/actions/workflows/$%7Bworkflow%7D.yml | Network error: Not Found
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .github/workflows/oura.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .github/workflows/parallel-fetch.yml
+    [404] https://api.github.com/users/$ | Network error: Not Found
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .github/workflows/soundcloud-card.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .github/workflows/tests.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .github/workflows/weather.yml
+    [404] https://api.github.com/users/$ | Network error: Not Found
+    [200] https://nominatim.openstreetmap.org/search?q=${ENCODED_LOCATION}&format=json&limit=1
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .megalinter.yml
+    [200] https://bandit.readthedocs.io/en/latest/
+    [200] https://megalinter.io/latest/descriptors/makefile_checkmake/
+    [200] https://megalinter.io/latest/descriptors/repository_grype/
+    [200] https://megalinter.io/latest/descriptors/rst_rstcheck/
+    [200] https://pmd.github.io/
+    [200] https://megalinter.io/latest/descriptors/repository_gitleaks/
+    [200] https://prettier.io/
+    [200] https://megalinter.io/latest/descriptors/raku_raku/
+    [200] https://megalinter.io/latest/descriptors/sql_sqlfluff/
+    [200] https://megalinter.io/latest/descriptors/terraform_terragrunt/
+    [404] https://megalinter.io/latest/descriptors/coffee_coffee_lint/ | Network error: Not Found
+    [200] https://megalinter.io/latest/descriptors/markdown_remark_lint/
+    [200] https://dart.dev/tools/dart-analyze
+    [200] https://megalinter.io/latest/descriptors/repository_kics/
+    [200] https://megalinter.io/latest/descriptors/powershell_powershell/
+    [200] https://megalinter.io/latest/descriptors/python_bandit/
+    [200] https://megalinter.io/latest/descriptors/editorconfig_editorconfig_checker/
+    [200] https://megalinter.io/latest/descriptors/spell_cspell/
+    [200] https://github.com/DavidAnson/markdownlint
+    [200] https://api.github.com/
+    [200] https://megalinter.io/latest/descriptors/sql_tsqllint/
+    [200] https://github.com/anchore/grype
+    [200] https://github.com/checkmake/checkmake
+    [200] https://flake8.pycqa.org/en/latest/
+    [200] https://github.com/yoheimuta/protolint
+    [200] https://megalinter.io/latest/descriptors/dart_dartanalyzer/
+    [200] https://megalinter.io/latest/descriptors/r_lintr/
+    [200] https://github.com/IBM/tekton-lint
+    [200] https://github.com/tclindner/npm-package-json-lint
+    [200] https://stylelint.io/
+    [200] https://github.com/editorconfig-checker/editorconfig-checker
+    [200] https://github.com/errata-ai/vale
+    [200] https://github.com/realm/SwiftLint
+    [200] https://black.readthedocs.io/en/stable/
+    [200] https://megalinter.io/latest/descriptors/php_phpstan/
+    [200] https://megalinter.io/latest/descriptors/python_black/
+    [200] https://megalinter.io/latest/descriptors/python_mypy/
+    [200] https://megalinter.io/latest/descriptors/typescript_eslint/
+    [200] https://megalinter.io/latest/descriptors/repository_trivy/
+    [200] https://megalinter.io/latest/descriptors/html_htmlhint/
+    [200] https://github.com/puppetlabs/puppet-lint
+    [200] https://github.com/
+    [200] https://megalinter.io/latest/descriptors/javascript_eslint/
+    [200] https://megalinter.io/latest/descriptors/spell_proselint/
+    [200] https://megalinter.io/latest/json-schemas/configuration.html
+    [200] https://megalinter.io/latest/descriptors/spell_vale/
+    [200] https://megalinter.io/latest/descriptors/spell_lychee/
+    [200] https://github.com/PowerShell/PSScriptAnalyzer
+    [200] https://megalinter.io/latest/descriptors/python_isort/
+    [200] https://github.com/remarkjs/remark-lint
+    [200] https://eslint.org/
+    [200] https://megalinter.io/latest/descriptors/repository_trivy_sbom/
+    [200] https://megalinter.io/latest/descriptors/salesforce_sfdx_scanner_apex/
+    [200] https://github.com/amperser/proselint
+    [ERROR] https://pyrightlang.org/ | Network error: error sending request for url (https://pyrightlang.org/) Maybe a certificate error?
+    [200] https://github.com/microsoft/DevSkim
+    [200] https://github.com/rhysd/actionlint
+    [200] https://megalinter.io/latest/descriptors/ruby_rubocop/
+    [200] https://megalinter.io/latest/descriptors/python_pylint/
+    [200] https://github.com/aws-cloudformation/cfn-lint
+    [200] https://megalinter.io/latest/descriptors/cloudformation_cfn_lint/
+    [200] https://megalinter.io/latest/descriptors/protobuf_protolint/
+    [200] https://megalinter.io/latest/descriptors/cpp_clang_format/
+    [200] https://raku.org/
+    [200] https://github.com/Azure/arm-ttk
+    [200] https://megalinter.io/latest/descriptors/python_pyright/
+    [200] https://ansible.readthedocs.io/projects/lint/
+    [200] https://pycqa.github.io/isort/
+    [200] https://megalinter.io/latest/descriptors/php_phpcs/
+    [200] https://megalinter.io/latest/descriptors/dockerfile_hadolint/
+    [200] https://megalinter.io/latest/descriptors/terraform_terrascan/
+    [200] https://megalinter.io/latest/descriptors/groovy_npm_groovy_lint/
+    [200] https://github.com/clj-kondo/clj-kondo
+    [200] https://megalinter.io/latest/descriptors/gherkin_gherkin_lint/
+    [EXCLUDED] mailto:szmyty@gmail.com
+    [200] https://megalinter.io/latest/descriptors/arm_arm_ttk/
+    [200] https://github.com/ota-meshi/eslint-plugin-jsonc
+    [200] https://clang.llvm.org/docs/ClangFormat.html
+    [200] https://github.com/chris48s/v8r
+    [200] https://github.com/snakemake/snakefmt
+    [200] https://megalinter.io/latest/descriptors/json_eslint_plugin_jsonc/
+    [200] https://github.com/scalacenter/scalafix
+    [200] https://megalinter.io/latest/descriptors/scala_scalafix/
+    [200] https://megalinter.io/latest/descriptors/repository_devskim/
+    [200] https://megalinter.io/latest/descriptors/clojure_clj_kondo/
+    [200] https://github.com/rstcheck/rstcheck
+    [200] https://megalinter.io/latest/descriptors/powershell_powershell_formatter/
+    [200] https://megalinter.io/latest/supported-linters/
+    [200] https://megalinter.io/latest/descriptors/css_stylelint/
+    [200] https://github.com/overtrue/phplint
+    [404] https://megalinter.io/latest/descriptors/markdown_markdown_link_check/ | Network error: Not Found
+    [200] https://yamllint.readthedocs.io/en/stable/
+    [200] https://github.com/r-lib/lintr
+    [200] https://megalinter.io/latest/descriptors/python_ruff/
+    [200] https://mypy.readthedocs.io/en/stable/
+    [200] https://github.com/checkmarx/kics
+    [200] https://megalinter.io/latest/descriptors/yaml_prettier/
+    [200] https://www.checkov.io/
+    [200] https://github.com/tcort/markdown-link-check
+    [200] https://raw.githubusercontent.com/megalinter/megalinter/main/megalinter/descriptors/schemas/megalinter-configuration.jsonschema.json
+    [200] https://megalinter.io/latest/descriptors/snakemake_snakefmt/
+    [200] https://megalinter.io/latest/config-variables/
+    [200] https://megalinter.io/latest/descriptors/latex_chktex/
+    [200] https://github.com/gitleaks/gitleaks
+    [200] https://megalinter.io/latest/descriptors/swift_swiftlint/
+    [200] https://megalinter.io/latest/descriptors/tekton_tekton_lint/
+    [200] https://rubocop.org/
+    [200] https://megalinter.io/latest/descriptors/javascript_prettier/
+    [200] https://megalinter.io/latest/descriptors/php_phplint/
+    [200] https://megalinter.io/latest/descriptors/salesforce_lightning_flow_scanner/
+    [200] https://github.com/coffeelint/coffeelint
+    [200] https://megalinter.io/latest/descriptors/ansible_ansible_lint/
+    [200] https://megalinter.io/latest/descriptors/puppet_puppet_lint/
+    [200] https://github.com/hadolint/hadolint
+    [200] https://megalinter.io/latest/descriptors/lua_luacheck/
+    [200] https://github.com/trufflesecurity/trufflehog
+    [200] https://megalinter.io/latest/descriptors/api_spectral/
+    [200] https://megalinter.io/latest/descriptors/json_jsonlint/
+    [200] https://megalinter.io/latest/descriptors/typescript_prettier/
+    [200] https://phpstan.org/
+    [200] https://github.com/aquasecurity/trivy
+    [200] https://megalinter.io/latest/descriptors/markdown_markdownlint/
+    [200] https://github.com/tenable/terrascan
+    [200] https://megalinter.io/latest/descriptors/repository_trufflehog/
+    [200] https://github.com/anchore/syft
+    [200] https://megalinter.io/latest/descriptors/c_clang_format/
+    [200] https://megalinter.io/latest/descriptors/java_pmd/
+    [200] https://github.com/gruntwork-io/terragrunt
+    [200] https://github.com/PHPCSStandards/PHP_CodeSniffer/
+    [200] https://megalinter.io/latest/descriptors/jsx_eslint/
+    [200] https://github.com/cjoudrey/graphql-schema-linter
+    [200] https://megalinter.io/latest/descriptors/go_revive/
+    [200] https://pylint.pycqa.org/en/latest/
+    [200] https://github.com/mgechev/revive
+    [200] https://megalinter.io/latest/descriptors/copypaste_jscpd/
+    [200] https://megalinter.io/latest/descriptors/java_checkstyle/
+    [200] https://github.com/kucherenko/jscpd
+    [200] https://github.com/greglook/cljstyle
+    [200] https://checkstyle.org/
+    [200] https://megalinter.io/latest/descriptors/repository_syft/
+    [200] https://megalinter.io/latest/descriptors/json_prettier/
+    [200] https://megalinter.io/latest/descriptors/clojure_cljstyle/
+    [200] https://megalinter.io/latest/descriptors/action_actionlint/
+    [200] https://github.com/nvuillam/npm-groovy-lint
+    [200] https://megalinter.io/latest/descriptors/yaml_v8r/
+    [200] https://megalinter.io/latest/descriptors/php_psalm/
+    [200] https://megalinter.io/latest/descriptors/json_npm_package_json_lint/
+    [200] https://megalinter.io/latest/descriptors/python_flake8/
+    [200] https://megalinter.io/latest/descriptors/rust_clippy/
+    [200] https://www.nongnu.org/chktex/
+    [200] https://megalinter.io/latest/descriptors/repository_checkov/
+    [200] https://megalinter.io/latest/descriptors/graphql_graphql_schema_linter/
+    [200] https://psalm.dev/
+    [200] https://megalinter.io/latest/descriptors/terraform_tflint/
+    [200] https://megalinter.io/latest/descriptors/repository_secretlint/
+    [200] https://megalinter.io/latest/descriptors/yaml_yamllint/
+    [200] https://stoplight.io/open-source/spectral
+    [200] https://github.com/tsqllint/tsqllint
+    [200] https://github.com/Lightning-Flow-Scanner/lightning-flow-scanner-sfdx
+    [200] https://github.com/zaach/jsonlint
+    [200] https://github.com/sqlfluff/sqlfluff
+    [200] https://github.com/rust-lang/rust-clippy
+    [200] https://github.com/mpeterv/luacheck
+    [200] https://github.com/forcedotcom/code-analyzer
+    [200] https://ruff.rs/
+    [200] https://github.com/terraform-linters/tflint
+    [200] https://github.com/streetsidesoftware/cspell
+    [200] https://github.com/gherkin-lint/gherkin-lint
+    [200] https://github.com/lycheeverse/lychee
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .pre-commit-config.yaml
+    [200] https://github.com/python-jsonschema/check-jsonschema
+    [200] https://github.com/shellcheck-py/shellcheck-py
+    [200] https://github.com/psf/black
+    [200] https://github.com/pre-commit/pre-commit-hooks
+    [200] https://github.com/pycqa/flake8
+    [200] https://github.com/pre-commit/mirrors-prettier
+    [200] https://github.com/pycqa/isort
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .vscode/extensions.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .vscode/launch.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .vscode/settings.json
+    [200] https://www.schemastore.org/yamllint.json
+    [200] https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/pyproject.json
+    [200] https://json.schemastore.org/prettierrc.json
+    [404] https://json.schemastore.org/npm-package-json-lint.json | Network error: Not Found
+    [404] https://json.schemastore.org/luacheckrc.json | Network error: Not Found
+    [200] https://json.schemastore.org/htmlhint.json
+    [200] https://json.schemastore.org/web-manifest-combined.json
+    [200] https://www.schemastore.org/markdown-link-check.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] .vscode/tasks.json
+    [200] https://www.schemastore.org/task.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] GITHUB_MARKDOWN_AUDIT_COMPLETE.md
+    [EXCLUDED] file://docs/README_LAYOUT_BEFORE_AFTER.md
+    [EXCLUDED] file://logs/markdown_audit/invalid_html.txt
+    [EXCLUDED] file://docs/README_LAYOUT_CHANGELOG.md
+    [EXCLUDED] file://docs/markdown_valid_elements.md
+    [EXCLUDED] file://GITHUB_MARKDOWN_AUDIT_COMPLETE.md
+    [EXCLUDED] file://footer/README.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] IMPLEMENTATION_SUMMARY.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] PERFORMANCE_IMPROVEMENTS_SUMMARY.md
+    [EXCLUDED] file://docs/OPTIMIZATION_GUIDE.md
+    [200] https://github.com/svg/svgo
+    [200] https://github.com/szmyty/profile/issues/XXX
+    [200] https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] README.md
+    [EXCLUDED] file://docs/MONITORING.md
+    [EXCLUDED] file://docs/WORKFLOWS.md
+    [EXCLUDED] file://dashboard.svg
+    [EXCLUDED] file://docs/OPTIMIZATION_GUIDE.md
+    [EXCLUDED] file://branding/header.svg
+    [200] https://img.shields.io/github/stars/szmyty?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e&color=4a4e69
+    [200] https://img.shields.io/badge/CNCF-Cloud%20Native-436fb5?style=for-the-badge&logo=cncf&logoColor=white
+    [200] https://img.shields.io/badge/Powered%20by-GitHub%20Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white
+    [200] https://img.shields.io/badge/Linux%20Foundation-Member-003366?style=for-the-badge&logo=linux&logoColor=white
+    [200] https://img.shields.io/badge/EFF-Digital%20Rights-d32027?style=for-the-badge&logo=eff&logoColor=white
+    [EXCLUDED] mailto:szmyty@gmail.com
+    [200] https://img.shields.io/badge/Apache-Foundation-d22128?style=for-the-badge&logo=apache&logoColor=white
+    [200] https://img.shields.io/badge/GitHub-szmyty-181717?style=for-the-badge&logo=github&logoColor=white
+    [200] https://img.shields.io/badge/Made%20with-Python-3776AB?style=flat-square&logo=python&logoColor=white
+    [200] https://img.shields.io/badge/Mozilla-Contributor-000000?style=for-the-badge&logo=mozilla&logoColor=white
+    [EXCLUDED] file://data/mock/README.md
+    [200] https://img.shields.io/badge/Open%20Collective-Supporter-7fadf2?style=for-the-badge&logo=opencollective&logoColor=white
+    [200] https://img.shields.io/github/followers/szmyty?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e&color=4a4e69
+    [200] https://www.cncf.io/
+    [200] https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white
+    [200] https://img.shields.io/badge/OSI-Open%20Source-3da639?style=for-the-badge&logo=opensourceinitiative&logoColor=white
+    [200] https://img.shields.io/badge/FSF-Free%20Software-0d47a1?style=for-the-badge&logo=gnu&logoColor=white
+    [200] https://www.eff.org/
+    [200] https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white
+    [200] https://creativecommons.org/
+    [EXCLUDED] file://branding/footer.svg
+    [200] https://img.shields.io/badge/Automated%20with-Poetry-60A5FA?style=flat-square&logo=poetry&logoColor=white
+    [200] https://img.shields.io/badge/Creative%20Commons-Supporter-ef9421?style=for-the-badge&logo=creativecommons&logoColor=white
+    [200] https://www.apache.org/
+    [999] https://www.linkedin.com/in/szmyty | Unknown status (999 <unknown status code>)
+    [200] https://www.mozilla.org/
+    [200] https://www.linuxfoundation.org/
+    [200] https://img.shields.io/github/actions/workflow/status/szmyty/szmyty/metrics.yml?style=for-the-badge&logo=github-actions&logoColor=white&labelColor=1a1a2e&color=4a4e69&label=CI
+    [200] https://opensource.org/
+    [200] https://github.com/szmyty/profile/actions/workflows/oura.yml/badge.svg
+    [200] https://github.com/szmyty/profile/actions/workflows/developer.yml/badge.svg
+    [200] https://github.com/szmyty/profile/actions/workflows/weather.yml/badge.svg
+    [200] https://github.com/szmyty/profile/actions/workflows/location-card.yml/badge.svg
+    [200] https://github.com/szmyty/profile/actions/workflows/soundcloud-card.yml/badge.svg
+    [200] https://github.com/szmyty
+    [200] https://opencollective.com/
+    [200] https://github.com/szmyty?tab=followers
+    [200] https://www.fsf.org/
+    [200] https://github.com/szmyty?tab=repositories
+    [200] https://github.com/szmyty/szmyty/actions
+    [200] https://komarev.com/ghpvc/?username=szmyty&style=for-the-badge&color=4a4e69&labelColor=1a1a2e
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] REPORT.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] SECURITY_SUMMARY.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] SECURITY_SUMMARY_API_RESILIENCE.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] assets/metadata.json
+    [200] https://i1.sndcdn.com/artworks-U5KDnSThJNapSDwO-F08hwA-large.png
+    [200] https://soundcloud.com/playfunction/prescience_v2
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/META6.json
+    [EXCLUDED] mailto:you@example.com
+    [404] https://github.com/yourusername/your-module-name/issues | Network error: Not Found
+    [404] https://github.com/yourusername/your-module-name | Network error: Not Found
+    [404] https://github.com/yourusername/your-module-name.git | Network error: Not Found
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/analysis_options.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/pyrightconfig.json
+    [200] https://raw.githubusercontent.com/microsoft/pyright/main/packages/vscode-pyright/schemas/pyrightconfig.schema.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Airlinese.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/AnimalLabels.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Annotations.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Apologizing.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Archaisms.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/But.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Cliches.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/CorporateSpeak.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Currency.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Cursing.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/DateCase.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/DateMidnight.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/DateRedundancy.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/DateSpacing.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/DenizenLabels.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Diacritical.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/GenderBias.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/GroupTerms.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Hedging.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Hyperbole.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Jargon.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/LGBTOffensive.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/LGBTTerms.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Malapropisms.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Needless.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Nonwords.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Oxymorons.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/P-Value.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/RASSyndrome.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/README.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Skunked.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Spelling.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Typography.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Uncomparables.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/Very.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/proselint/meta.json
+    [EXCLUDED] mailto:support@errata.ai
+    [200] https://github.com/amperser/proselint
+    [200] https://github.com/errata-ai/proselint/issues/new
+    [200] https://github.com/errata-ai/proselint/releases/latest/download/proselint.zip
+    [200] https://github.com/errata-ai/proselint/releases.atom
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/write-good/Cliches.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/write-good/E-Prime.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/write-good/Illusions.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/write-good/Passive.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/write-good/README.md
+    [200] https://github.com/btford/write-good
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/write-good/So.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/write-good/ThereIs.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/write-good/TooWordy.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/write-good/Weasel.yml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/styles/write-good/meta.json
+    [200] https://github.com/errata-ai/write-good/releases.atom
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/theme.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/trivy-sbom.yaml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] config/trivy.yaml
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/metrics/developer.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/metrics/location.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/metrics/oura.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/metrics/parallel-fetch.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/metrics/soundcloud.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/metrics/test-workflow.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/metrics/weather.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/mock/README.md
+    [EXCLUDED] file://schemas/soundcloud-track.schema.json
+    [EXCLUDED] file://schemas/oura-metrics.schema.json
+    [EXCLUDED] file://schemas/developer-stats.schema.json
+    [EXCLUDED] file://schemas/weather.schema.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/mock/developer-stats.json
+    [404] https://github.com/identicons/mockdev.png | Network error: Not Found
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/mock/oura-metrics.json
+    [EXCLUDED] mailto:mock@example.com
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/mock/soundcloud-metadata.json
+    [200] https://soundcloud.com/mock-artist/mock-track
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/mock/weather.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/snapshots/README.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/snapshots/daily/2025/12/2025-12-03.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/snapshots/monthly/2025-12.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/snapshots/weekly/2025-W49.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] data/timezone.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] docs/API_RESILIENCE.md
+    [200] https://martinfowler.com/bliki/CircuitBreaker.html
+    [200] https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+    [200] https://cloud.google.com/architecture/rate-limiting-strategies-techniques
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] docs/API_TIMEOUT_RETRY_GUIDE.md
+    [200] https://curl.se/docs/manpage.html#-m
+    [200] https://operations.osmfoundation.org/policies/nominatim/
+    [200] https://en.wikipedia.org/wiki/Exponential_backoff
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] docs/INTEGRATION_EXAMPLE.md
+    [EXCLUDED] file://docs/MONITORING.md
+    [EXCLUDED] file://docs/WORKFLOWS.md
+    [EXCLUDED] file://docs/OPTIMIZATION_GUIDE.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] docs/LOCATION_CARD_CHANGES.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] docs/MONITORING.md
+    [EXCLUDED] file://docs/WORKFLOWS.md
+    [EXCLUDED] file://docs/OPTIMIZATION_GUIDE.md
+    [EXCLUDED] file://README.md#development
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] docs/OPTIMIZATION_GUIDE.md
+    [200] https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows
+    [200] https://github.com/svg/svgo
+    [200] https://github.com/actions/setup-python
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] docs/README_LAYOUT_BEFORE_AFTER.md
+    [EXCLUDED] file://docs/markdown_valid_elements.md
+    [EXCLUDED] file://logs/markdown_audit/invalid_html.txt
+    [EXCLUDED] file://footer/README.md
+    [EXCLUDED] file://docs/README_LAYOUT_CHANGELOG.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] docs/README_LAYOUT_CHANGELOG.md
+    [EXCLUDED] file://footer/README.md
+    [EXCLUDED] file://logs/markdown_audit/invalid_html.txt
+    [EXCLUDED] file://README.md
+    [EXCLUDED] file://docs/markdown_valid_elements.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] docs/README_SECTION_CHANGES.md
+    [EXCLUDED] file://docs/README_SECTION_CHANGES.md#development
+    [EXCLUDED] file://docs/README_SECTION_CHANGES.md#dashboard-cards
+    [EXCLUDED] file://docs/markdown_valid_elements.md
+    [EXCLUDED] file://docs/README_SECTION_CHANGES.md#footer
+    [EXCLUDED] file://docs/README_SECTION_CHANGES.md#hero-section
+    [EXCLUDED] file://docs/README_SECTION_CHANGES.md#system-status
+    [EXCLUDED] file://docs/README_SECTION_CHANGES.md#performance--monitoring
+    [EXCLUDED] file://docs/README_SECTION_CHANGES.md#logs
+    [EXCLUDED] file://docs/README_SECTION_CHANGES.md#about-me
+    [EXCLUDED] file://docs/README_LAYOUT_CHANGELOG.md
+    [EXCLUDED] file://docs/README_LAYOUT_BEFORE_AFTER.md
+    [EXCLUDED] file://docs/README_SECTION_CHANGES.md#developer-experience
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] docs/ROBUSTNESS_IMPROVEMENTS.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] docs/WORKFLOWS.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] docs/architecture.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] docs/cards.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] docs/markdown_valid_elements.md
+    [200] https://shields.io/
+    [200] https://github.github.com/gfm/
+    [200] https://spec.commonmark.org/
+    [200] https://github.com/gjtorikian/html-pipeline
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] docs/style-guide.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] docs/workflows.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] footer/README.md
+    [EXCLUDED] file://docs/markdown_valid_elements.md
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] footer/footer.html
+    [EXCLUDED] file://footer/branding/footer.svg
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] oura/health_snapshot.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] oura/metrics.json
+    [EXCLUDED] mailto:szmyty@gmail.com
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] oura/mood.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] requirements-dev.txt
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] requirements.txt
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] schemas/README.md
+    [200] https://json-schema.org/draft/2020-12/schema
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] schemas/developer-stats.schema.json
+    [200] https://json-schema.org/draft/2020-12/schema
+    [404] https://github.com/szmyty/profile/schemas/developer-stats.schema.json | Network error: Not Found
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] schemas/health-snapshot.schema.json
+    [200] https://json-schema.org/draft/2020-12/schema
+    [404] https://github.com/szmyty/profile/schemas/health-snapshot.schema.json | Network error: Not Found
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] schemas/oura-metrics.schema.json
+    [200] https://json-schema.org/draft/2020-12/schema
+    [404] https://github.com/szmyty/profile/schemas/oura-metrics.schema.json | Network error: Not Found
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] schemas/soundcloud-track.schema.json
+    [200] https://json-schema.org/draft/2020-12/schema
+    [404] https://github.com/szmyty/profile/schemas/soundcloud-track.schema.json | Network error: Not Found
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] schemas/theme.schema.json
+    [200] https://json-schema.org/draft/2020-12/schema
+    [404] https://github.com/szmyty/profile/schemas/theme.schema.json | Network error: Not Found
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] schemas/weather.schema.json
+    [200] https://json-schema.org/draft/2020-12/schema
+    [404] https://github.com/szmyty/profile/schemas/weather.schema.json | Network error: Not Found
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+
+❌ [ERROR] weather/weather.json
+    Error: Cannot write status output to file
+    
+    Caused by:
+        No such file or directory (os error 2)
+

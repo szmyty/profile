@@ -250,10 +250,12 @@ def main() -> None:
     metadata, error = try_load_and_validate_json(
         metadata_path, "soundcloud-track", "SoundCloud track metadata file"
     )
-    if error:
-        if handle_error_with_fallback("soundcloud", error, output_path, has_fallback):
+    if error or metadata is None:
+        if handle_error_with_fallback("soundcloud", error or "No data loaded", output_path, has_fallback):
             print(f"Using fallback SoundCloud SVG card: {output_path}", file=sys.stderr)
             return
+        # If we get here without a fallback, metadata must be None and we should exit
+        sys.exit(1)
 
     # Get artwork as base64 (optional, continue without it if missing)
     artwork_data_uri = get_artwork_base64(artwork_path)

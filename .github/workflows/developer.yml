@@ -28,8 +28,9 @@ jobs:
           extra-apt-packages: ''
 
       - name: Install additional dependencies
-        run: |
-          pip install jsonschema
+        uses: ./.github/actions/pip-install
+        with:
+          packages: 'jsonschema'
 
       - name: Fetch developer statistics
         id: fetch
