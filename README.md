@@ -96,12 +96,41 @@ I build high-quality, scalable platforms with strong emphasis on automation, sec
 ![SoundCloud](https://github.com/szmyty/profile/actions/workflows/soundcloud-card.yml/badge.svg)
 ![Oura](https://github.com/szmyty/profile/actions/workflows/oura.yml/badge.svg)
 ![Developer](https://github.com/szmyty/profile/actions/workflows/developer.yml/badge.svg)
+![Dashboard](https://github.com/szmyty/profile/actions/workflows/deploy-dashboard.yml/badge.svg)
 
 ## 📊 Workflow Performance Dashboard
 
 ![Workflow Performance](./dashboard.svg)
 
-Real-time monitoring of workflow execution metrics including success rates, run times, and failure tracking. Generated automatically from workflow metrics and logs.
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- 🌐 LIVE DASHBOARD                                                          -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<div align="center">
+
+## 🌐 Live Dashboard
+
+</div>
+
+<p align="center">
+View the full interactive dashboard at:  
+<br/>
+<a href="https://szmyty.github.io/profile/" target="_blank" rel="noopener noreferrer">
+  <strong>🚀 https://szmyty.github.io/profile/</strong>
+</a>
+</p>
+
+<p align="center">
+<em>The dashboard automatically updates daily with the latest metrics from all workflows.</em>
+</p>
+
+<br/>
+
+---
+
+<br/>
+
+<div align="center">
 
 ## 💻 Developer Dashboard
 
