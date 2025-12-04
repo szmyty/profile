@@ -24,7 +24,7 @@ import os
 import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Union
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 
@@ -132,7 +132,7 @@ def fetch_contributor_stats(username: str, repo: str, headers: Dict[str, str]) -
 
 def calculate_language_stats(repos: List[Dict], username: str, headers: Dict[str, str]) -> Dict[str, int]:
     """Calculate total bytes per language across all repos."""
-    language_totals = {}
+    language_totals: Dict[str, int] = {}
     for repo in repos[:MAX_REPOS_TO_ANALYZE]:
         repo_name = repo.get("name")
         if not repo_name:
@@ -183,7 +183,7 @@ def extract_commit_timestamps(events: List[Dict], username: str) -> List[str]:
     return timestamps
 
 
-def calculate_commit_activity_distribution(timestamps: List[str]) -> Dict[str, List[int]]:
+def calculate_commit_activity_distribution(timestamps: List[str]) -> Dict[str, Union[List[List[int]], List[str]]]:
     """Calculate commit activity distribution by hour and day."""
     # Initialize 7x24 grid (day_of_week x hour_of_day)
     activity_grid = [[0] * 24 for _ in range(7)]
@@ -358,7 +358,7 @@ def main() -> None:
     # Set up logging
     try:
         sys.path.insert(0, str(Path(__file__).parent / "lib"))
-        from logging_utils import setup_logging
+        from logging_utils import setup_logging  # type: ignore[import-not-found]
         logger = setup_logging("developer")
         logger.log_workflow_start("Developer Statistics - Fetch Data")
     except ImportError:

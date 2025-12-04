@@ -1,0 +1,3617 @@
+Results of editorconfig-checker linter (version 3.3.0)
+See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editorconfig_checker/
+-----------------------------------------------
+
+✅ [SUCCESS] .czrc
+❌ [ERROR] .devcontainer/devcontainer.json
+    .devcontainer/devcontainer.json:
+    	2-3: Wrong amount of left-padding spaces(want multiple of 4)
+    	4: Trailing whitespace
+    	4-5: Wrong amount of left-padding spaces(want multiple of 4)
+    	7: Wrong amount of left-padding spaces(want multiple of 4)
+    	10: Wrong amount of left-padding spaces(want multiple of 4)
+    	12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14: Wrong amount of left-padding spaces(want multiple of 4)
+    	16: Wrong amount of left-padding spaces(want multiple of 4)
+    	25-26: Wrong amount of left-padding spaces(want multiple of 4)
+    	33: Wrong amount of left-padding spaces(want multiple of 4)
+    	36: Wrong amount of left-padding spaces(want multiple of 4)
+    	38: Wrong amount of left-padding spaces(want multiple of 4)
+    	40: Wrong amount of left-padding spaces(want multiple of 4)
+    	42: Wrong amount of left-padding spaces(want multiple of 4)
+    	44: Wrong amount of left-padding spaces(want multiple of 4)
+    	46: Wrong amount of left-padding spaces(want multiple of 4)
+    	48: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    17 errors found
+
+✅ [SUCCESS] .devcontainer/postCreate.sh
+✅ [SUCCESS] .editorconfig
+✅ [SUCCESS] .gitattributes
+❌ [ERROR] .github/CODEOWNERS
+    .github/CODEOWNERS:
+    	Wrong line endings or no final newline
+    
+    1 errors found
+
+✅ [SUCCESS] .github/FUNDING.yml
+✅ [SUCCESS] .github/GOVERNANCE.md
+✅ [SUCCESS] .github/actionlint.yaml
+❌ [ERROR] .github/actions/setup-environment/README.md
+    .github/actions/setup-environment/README.md:
+    	19: Wrong amount of left-padding spaces(want multiple of 4)
+    	34: Wrong amount of left-padding spaces(want multiple of 4)
+    	37: Wrong amount of left-padding spaces(want multiple of 4)
+    	46: Wrong amount of left-padding spaces(want multiple of 4)
+    	49: Wrong amount of left-padding spaces(want multiple of 4)
+    	58: Wrong amount of left-padding spaces(want multiple of 4)
+    	61-62: Wrong amount of left-padding spaces(want multiple of 4)
+    	69: Wrong amount of left-padding spaces(want multiple of 4)
+    	72: Wrong amount of left-padding spaces(want multiple of 4)
+    	79: Wrong amount of left-padding spaces(want multiple of 4)
+    	82-86: Wrong amount of left-padding spaces(want multiple of 4)
+    	117: Wrong amount of left-padding spaces(want multiple of 4)
+    	120: Wrong amount of left-padding spaces(want multiple of 4)
+    	123-124: Wrong amount of left-padding spaces(want multiple of 4)
+    	126: Wrong amount of left-padding spaces(want multiple of 4)
+    	128-129: Wrong amount of left-padding spaces(want multiple of 4)
+    	131: Wrong amount of left-padding spaces(want multiple of 4)
+    	133: Wrong amount of left-padding spaces(want multiple of 4)
+    	135: Wrong amount of left-padding spaces(want multiple of 4)
+    	143: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    20 errors found
+
+❌ [ERROR] .github/actions/setup-environment/action.yml
+    .github/actions/setup-environment/action.yml:
+    	70: Trailing whitespace
+    	78: Trailing whitespace
+    
+    2 errors found
+
+✅ [SUCCESS] .github/linters/.gitkeep
+❌ [ERROR] .github/workflows/developer.yml
+    .github/workflows/developer.yml:
+    	23: Trailing whitespace
+    	41: Trailing whitespace
+    	48: Trailing whitespace
+    	55: Trailing whitespace
+    	58: Trailing whitespace
+    	92: Trailing whitespace
+    	95: Trailing whitespace
+    	100: Trailing whitespace
+    	103: Trailing whitespace
+    
+    9 errors found
+
+❌ [ERROR] .github/workflows/location-card.yml
+    .github/workflows/location-card.yml:
+    	23: Trailing whitespace
+    	39: Trailing whitespace
+    	59: Trailing whitespace
+    	66: Trailing whitespace
+    	73: Trailing whitespace
+    	76: Trailing whitespace
+    	123: Trailing whitespace
+    	126: Trailing whitespace
+    	129: Trailing whitespace
+    	132: Trailing whitespace
+    
+    10 errors found
+
+✅ [SUCCESS] .github/workflows/megalinter.yml
+✅ [SUCCESS] .github/workflows/monitoring.yml
+❌ [ERROR] .github/workflows/oura.yml
+    .github/workflows/oura.yml:
+    	23: Trailing whitespace
+    	37: Trailing whitespace
+    	44: Trailing whitespace
+    	51: Trailing whitespace
+    	54: Trailing whitespace
+    	105: Trailing whitespace
+    	114: Trailing whitespace
+    	117: Trailing whitespace
+    	120: Trailing whitespace
+    
+    9 errors found
+
+❌ [ERROR] .github/workflows/parallel-fetch.yml
+    .github/workflows/parallel-fetch.yml:
+    	43: Trailing whitespace
+    	50: Trailing whitespace
+    	57: Trailing whitespace
+    	60: Trailing whitespace
+    	86: Trailing whitespace
+    	104: Trailing whitespace
+    	111: Trailing whitespace
+    	118: Trailing whitespace
+    	121: Trailing whitespace
+    	149: Trailing whitespace
+    	156: Trailing whitespace
+    	163: Trailing whitespace
+    	279: Trailing whitespace
+    	305: Trailing whitespace
+    	311: Trailing whitespace
+    	317: Trailing whitespace
+    	331: Trailing whitespace
+    	334: Trailing whitespace
+    
+    18 errors found
+
+❌ [ERROR] .github/workflows/soundcloud-card.yml
+    .github/workflows/soundcloud-card.yml:
+    	23: Trailing whitespace
+    	39: Trailing whitespace
+    	46: Trailing whitespace
+    	53: Trailing whitespace
+    	90: Trailing whitespace
+    	99: Trailing whitespace
+    	102: Trailing whitespace
+    	105: Trailing whitespace
+    
+    8 errors found
+
+✅ [SUCCESS] .github/workflows/tests.yml
+❌ [ERROR] .github/workflows/weather.yml
+    .github/workflows/weather.yml:
+    	23: Trailing whitespace
+    	37: Trailing whitespace
+    	53: Trailing whitespace
+    	56: Trailing whitespace
+    	59: Trailing whitespace
+    	61: Trailing whitespace
+    	67: Trailing whitespace
+    	70: Trailing whitespace
+    	85: Trailing whitespace
+    	92: Trailing whitespace
+    	99: Trailing whitespace
+    	102: Trailing whitespace
+    	149: Trailing whitespace
+    	152: Trailing whitespace
+    	155: Trailing whitespace
+    
+    15 errors found
+
+✅ [SUCCESS] .gitignore
+✅ [SUCCESS] .mailmap
+✅ [SUCCESS] .megalinter.yml
+✅ [SUCCESS] .pre-commit-config.yaml
+✅ [SUCCESS] .vscode/dictionaries/backend-terms.dictionary
+✅ [SUCCESS] .vscode/dictionaries/devops-cloud-terms.dictionary
+✅ [SUCCESS] .vscode/dictionaries/frontend-terms.dictionary
+✅ [SUCCESS] .vscode/dictionaries/programming-terms.dictionary
+✅ [SUCCESS] .vscode/dictionaries/project-words.dictionary
+✅ [SUCCESS] .vscode/dictionaries/software-terms.dictionary
+✅ [SUCCESS] .vscode/extensions.json
+✅ [SUCCESS] .vscode/launch.json
+❌ [ERROR] .vscode/settings.json
+    .vscode/settings.json:
+    	24: Wrong amount of left-padding spaces(want multiple of 4)
+    	27-28: Wrong amount of left-padding spaces(want multiple of 4)
+    	31-32: Wrong amount of left-padding spaces(want multiple of 4)
+    	35-36: Wrong amount of left-padding spaces(want multiple of 4)
+    	39-40: Wrong amount of left-padding spaces(want multiple of 4)
+    	43-44: Wrong amount of left-padding spaces(want multiple of 4)
+    	47: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    7 errors found
+
+✅ [SUCCESS] .vscode/tasks.json
+❌ [ERROR] GITHUB_MARKDOWN_AUDIT_COMPLETE.md
+    GITHUB_MARKDOWN_AUDIT_COMPLETE.md:
+    	33-36: Wrong amount of left-padding spaces(want multiple of 4)
+    	41-45: Wrong amount of left-padding spaces(want multiple of 4)
+    	49-50: Wrong amount of left-padding spaces(want multiple of 4)
+    	52-55: Wrong amount of left-padding spaces(want multiple of 4)
+    	107-109: Wrong amount of left-padding spaces(want multiple of 4)
+    	112-113: Wrong amount of left-padding spaces(want multiple of 4)
+    	116-117: Wrong amount of left-padding spaces(want multiple of 4)
+    	120-121: Wrong amount of left-padding spaces(want multiple of 4)
+    	247-249: Wrong amount of left-padding spaces(want multiple of 4)
+    	252-254: Wrong amount of left-padding spaces(want multiple of 4)
+    	257-259: Wrong amount of left-padding spaces(want multiple of 4)
+    	262-264: Wrong amount of left-padding spaces(want multiple of 4)
+    	267-269: Wrong amount of left-padding spaces(want multiple of 4)
+    	272-274: Wrong amount of left-padding spaces(want multiple of 4)
+    	283-285: Wrong amount of left-padding spaces(want multiple of 4)
+    	288-290: Wrong amount of left-padding spaces(want multiple of 4)
+    	293-295: Wrong amount of left-padding spaces(want multiple of 4)
+    	298-300: Wrong amount of left-padding spaces(want multiple of 4)
+    	303-305: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    19 errors found
+
+❌ [ERROR] IMPLEMENTATION_SUMMARY.md
+    IMPLEMENTATION_SUMMARY.md:
+    	20-22: Wrong amount of left-padding spaces(want multiple of 4)
+    	25-26: Wrong amount of left-padding spaces(want multiple of 4)
+    	29-31: Wrong amount of left-padding spaces(want multiple of 4)
+    	34-36: Wrong amount of left-padding spaces(want multiple of 4)
+    	39-42: Wrong amount of left-padding spaces(want multiple of 4)
+    	45-47: Wrong amount of left-padding spaces(want multiple of 4)
+    	52-54: Wrong amount of left-padding spaces(want multiple of 4)
+    	59-62: Wrong amount of left-padding spaces(want multiple of 4)
+    	89-92: Wrong amount of left-padding spaces(want multiple of 4)
+    	94-96: Wrong amount of left-padding spaces(want multiple of 4)
+    	98-100: Wrong amount of left-padding spaces(want multiple of 4)
+    	105-107: Wrong amount of left-padding spaces(want multiple of 4)
+    	113-118: Wrong amount of left-padding spaces(want multiple of 4)
+    	125-128: Wrong amount of left-padding spaces(want multiple of 4)
+    	180-185: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    15 errors found
+
+❌ [ERROR] PERFORMANCE_IMPROVEMENTS_SUMMARY.md
+    PERFORMANCE_IMPROVEMENTS_SUMMARY.md:
+    	94-98: Wrong amount of left-padding spaces(want multiple of 4)
+    	191-194: Wrong amount of left-padding spaces(want multiple of 4)
+    	197-199: Wrong amount of left-padding spaces(want multiple of 4)
+    	208-209: Wrong amount of left-padding spaces(want multiple of 4)
+    	212-213: Wrong amount of left-padding spaces(want multiple of 4)
+    	216-217: Wrong amount of left-padding spaces(want multiple of 4)
+    	220: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    7 errors found
+
+✅ [SUCCESS] README.md
+❌ [ERROR] REPORT.md
+    REPORT.md:
+    	69-70: Wrong amount of left-padding spaces(want multiple of 4)
+    	73-74: Wrong amount of left-padding spaces(want multiple of 4)
+    	77-78: Wrong amount of left-padding spaces(want multiple of 4)
+    	83-90: Wrong amount of left-padding spaces(want multiple of 4)
+    	93-98: Wrong amount of left-padding spaces(want multiple of 4)
+    	101-114: Wrong amount of left-padding spaces(want multiple of 4)
+    	125-127: Wrong amount of left-padding spaces(want multiple of 4)
+    	129: Wrong amount of left-padding spaces(want multiple of 4)
+    	134-135: Wrong amount of left-padding spaces(want multiple of 4)
+    	137: Wrong amount of left-padding spaces(want multiple of 4)
+    	142-144: Wrong amount of left-padding spaces(want multiple of 4)
+    	150-152: Wrong amount of left-padding spaces(want multiple of 4)
+    	154: Wrong amount of left-padding spaces(want multiple of 4)
+    	161-165: Wrong amount of left-padding spaces(want multiple of 4)
+    	172-176: Wrong amount of left-padding spaces(want multiple of 4)
+    	179-182: Wrong amount of left-padding spaces(want multiple of 4)
+    	203-206: Wrong amount of left-padding spaces(want multiple of 4)
+    	209-212: Wrong amount of left-padding spaces(want multiple of 4)
+    	215-218: Wrong amount of left-padding spaces(want multiple of 4)
+    	221-224: Wrong amount of left-padding spaces(want multiple of 4)
+    	237-246: Wrong amount of left-padding spaces(want multiple of 4)
+    	249-252: Wrong amount of left-padding spaces(want multiple of 4)
+    	257-268: Wrong amount of left-padding spaces(want multiple of 4)
+    	271-274: Wrong amount of left-padding spaces(want multiple of 4)
+    	277-286: Wrong amount of left-padding spaces(want multiple of 4)
+    	291-292: Wrong amount of left-padding spaces(want multiple of 4)
+    	295-296: Wrong amount of left-padding spaces(want multiple of 4)
+    	299: Wrong amount of left-padding spaces(want multiple of 4)
+    	341-346: Wrong amount of left-padding spaces(want multiple of 4)
+    	349-353: Wrong amount of left-padding spaces(want multiple of 4)
+    	356-359: Wrong amount of left-padding spaces(want multiple of 4)
+    	364-369: Wrong amount of left-padding spaces(want multiple of 4)
+    	372-375: Wrong amount of left-padding spaces(want multiple of 4)
+    	378-383: Wrong amount of left-padding spaces(want multiple of 4)
+    	392-394: Wrong amount of left-padding spaces(want multiple of 4)
+    	397-398: Wrong amount of left-padding spaces(want multiple of 4)
+    	401-403: Wrong amount of left-padding spaces(want multiple of 4)
+    	406-408: Wrong amount of left-padding spaces(want multiple of 4)
+    	413-419: Wrong amount of left-padding spaces(want multiple of 4)
+    	422-425: Wrong amount of left-padding spaces(want multiple of 4)
+    	428-432: Wrong amount of left-padding spaces(want multiple of 4)
+    	435-438: Wrong amount of left-padding spaces(want multiple of 4)
+    	443-444: Wrong amount of left-padding spaces(want multiple of 4)
+    	447-467: Wrong amount of left-padding spaces(want multiple of 4)
+    	470-471: Wrong amount of left-padding spaces(want multiple of 4)
+    	476-477: Wrong amount of left-padding spaces(want multiple of 4)
+    	480-481: Wrong amount of left-padding spaces(want multiple of 4)
+    	484-485: Wrong amount of left-padding spaces(want multiple of 4)
+    	494-495: Wrong amount of left-padding spaces(want multiple of 4)
+    	498-500: Wrong amount of left-padding spaces(want multiple of 4)
+    	505-506: Wrong amount of left-padding spaces(want multiple of 4)
+    	509-510: Wrong amount of left-padding spaces(want multiple of 4)
+    	513: Wrong amount of left-padding spaces(want multiple of 4)
+    	518-525: Wrong amount of left-padding spaces(want multiple of 4)
+    	528-531: Wrong amount of left-padding spaces(want multiple of 4)
+    	534: Wrong amount of left-padding spaces(want multiple of 4)
+    	539-546: Wrong amount of left-padding spaces(want multiple of 4)
+    	549-550: Wrong amount of left-padding spaces(want multiple of 4)
+    	555-561: Wrong amount of left-padding spaces(want multiple of 4)
+    	564-567: Wrong amount of left-padding spaces(want multiple of 4)
+    	570-573: Wrong amount of left-padding spaces(want multiple of 4)
+    	588-599: Wrong amount of left-padding spaces(want multiple of 4)
+    	602-604: Wrong amount of left-padding spaces(want multiple of 4)
+    	607-609: Wrong amount of left-padding spaces(want multiple of 4)
+    	614-618: Wrong amount of left-padding spaces(want multiple of 4)
+    	621-623: Wrong amount of left-padding spaces(want multiple of 4)
+    	628-631: Wrong amount of left-padding spaces(want multiple of 4)
+    	634-638: Wrong amount of left-padding spaces(want multiple of 4)
+    	641-643: Wrong amount of left-padding spaces(want multiple of 4)
+    	646-649: Wrong amount of left-padding spaces(want multiple of 4)
+    	671-676: Wrong amount of left-padding spaces(want multiple of 4)
+    	679-689: Wrong amount of left-padding spaces(want multiple of 4)
+    	696-700: Wrong amount of left-padding spaces(want multiple of 4)
+    	703-711: Wrong amount of left-padding spaces(want multiple of 4)
+    	714-718: Wrong amount of left-padding spaces(want multiple of 4)
+    	725-730: Wrong amount of left-padding spaces(want multiple of 4)
+    	733-736: Wrong amount of left-padding spaces(want multiple of 4)
+    	739-742: Wrong amount of left-padding spaces(want multiple of 4)
+    	826-828: Wrong amount of left-padding spaces(want multiple of 4)
+    	831-833: Wrong amount of left-padding spaces(want multiple of 4)
+    	836-838: Wrong amount of left-padding spaces(want multiple of 4)
+    	843-846: Wrong amount of left-padding spaces(want multiple of 4)
+    	849-852: Wrong amount of left-padding spaces(want multiple of 4)
+    	855-856: Wrong amount of left-padding spaces(want multiple of 4)
+    	875-880: Wrong amount of left-padding spaces(want multiple of 4)
+    	883-884: Wrong amount of left-padding spaces(want multiple of 4)
+    	887-891: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    87 errors found
+
+❌ [ERROR] SECURITY_SUMMARY.md
+    SECURITY_SUMMARY.md:
+    	219-220: Wrong amount of left-padding spaces(want multiple of 4)
+    	223-225: Wrong amount of left-padding spaces(want multiple of 4)
+    	228-230: Wrong amount of left-padding spaces(want multiple of 4)
+    	233-235: Wrong amount of left-padding spaces(want multiple of 4)
+    	238-241: Wrong amount of left-padding spaces(want multiple of 4)
+    	244-246: Wrong amount of left-padding spaces(want multiple of 4)
+    	249-252: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    7 errors found
+
+❌ [ERROR] SECURITY_SUMMARY_API_RESILIENCE.md
+    SECURITY_SUMMARY_API_RESILIENCE.md:
+    	94-96: Wrong amount of left-padding spaces(want multiple of 4)
+    	99-101: Wrong amount of left-padding spaces(want multiple of 4)
+    	104-106: Wrong amount of left-padding spaces(want multiple of 4)
+    	111-113: Wrong amount of left-padding spaces(want multiple of 4)
+    	116-118: Wrong amount of left-padding spaces(want multiple of 4)
+    	121-123: Wrong amount of left-padding spaces(want multiple of 4)
+    	126-128: Wrong amount of left-padding spaces(want multiple of 4)
+    	135-137: Wrong amount of left-padding spaces(want multiple of 4)
+    	140-141: Wrong amount of left-padding spaces(want multiple of 4)
+    	144-146: Wrong amount of left-padding spaces(want multiple of 4)
+    	153-155: Wrong amount of left-padding spaces(want multiple of 4)
+    	158-160: Wrong amount of left-padding spaces(want multiple of 4)
+    	163-165: Wrong amount of left-padding spaces(want multiple of 4)
+    	170-172: Wrong amount of left-padding spaces(want multiple of 4)
+    	175-177: Wrong amount of left-padding spaces(want multiple of 4)
+    	180-182: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    16 errors found
+
+✅ [SUCCESS] assets/.gitkeep
+❌ [ERROR] assets/metadata.json
+    assets/metadata.json:
+    	2-9: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    1 errors found
+
+✅ [SUCCESS] assets/soundcloud-artwork.jpg
+✅ [SUCCESS] assets/soundcloud-card.svg
+✅ [SUCCESS] branding/badges/badge-template.svg
+✅ [SUCCESS] branding/badges/social-badge.svg
+✅ [SUCCESS] branding/badges/status-badge.svg
+✅ [SUCCESS] branding/badges/tech-badge.svg
+✅ [SUCCESS] branding/header.png
+✅ [SUCCESS] branding/header.svg
+✅ [SUCCESS] branding/logo.svg
+❌ [ERROR] config/META6.json
+    config/META6.json:
+    	2-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	10-11: Wrong amount of left-padding spaces(want multiple of 4)
+    	13: Wrong amount of left-padding spaces(want multiple of 4)
+    	15-17: Wrong amount of left-padding spaces(want multiple of 4)
+    	21-24: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    5 errors found
+
+✅ [SUCCESS] config/analysis_options.yml
+❌ [ERROR] config/apex-pmd-ruleset.xml
+    config/apex-pmd-ruleset.xml:
+    	Wrong line endings or no final newline
+    
+    1 errors found
+
+✅ [SUCCESS] config/apt.conf
+✅ [SUCCESS] config/dpkg.cfg
+❌ [ERROR] config/java-pmd-ruleset.xml
+    config/java-pmd-ruleset.xml:
+    	3-7: Wrong amount of left-padding spaces(want multiple of 2)
+    
+    1 errors found
+
+✅ [SUCCESS] config/lychee.toml
+✅ [SUCCESS] config/lynis/custom.prf
+✅ [SUCCESS] config/phpcs.xml
+❌ [ERROR] config/phpstan.neon.dist
+    config/phpstan.neon.dist:
+    	6: Wrong amount of left-padding spaces(want multiple of 4)
+    	8: Wrong amount of left-padding spaces(want multiple of 4)
+    	14: Wrong amount of left-padding spaces(want multiple of 4)
+    	18-21: Wrong amount of left-padding spaces(want multiple of 4)
+    	23-24: Wrong amount of left-padding spaces(want multiple of 4)
+    	26-27: Wrong amount of left-padding spaces(want multiple of 4)
+    	29: Wrong amount of left-padding spaces(want multiple of 4)
+    	36-37: Wrong amount of left-padding spaces(want multiple of 4)
+    	41: Wrong amount of left-padding spaces(want multiple of 4)
+    	44: Wrong amount of left-padding spaces(want multiple of 4)
+    	53: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    11 errors found
+
+❌ [ERROR] config/psalm.xml
+    config/psalm.xml:
+    	4-7: Wrong amount of left-padding spaces(want multiple of 2)
+    
+    1 errors found
+
+❌ [ERROR] config/pyrightconfig.json
+    config/pyrightconfig.json:
+    	2-3: Wrong amount of left-padding spaces(want multiple of 4)
+    	5-6: Wrong amount of left-padding spaces(want multiple of 4)
+    	8-13: Wrong amount of left-padding spaces(want multiple of 4)
+    	15: Wrong amount of left-padding spaces(want multiple of 4)
+    	17: Wrong amount of left-padding spaces(want multiple of 4)
+    	19-20: Wrong amount of left-padding spaces(want multiple of 4)
+    	23-24: Wrong amount of left-padding spaces(want multiple of 4)
+    	26: Wrong amount of left-padding spaces(want multiple of 4)
+    	28-29: Wrong amount of left-padding spaces(want multiple of 4)
+    	31: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    10 errors found
+
+✅ [SUCCESS] config/styles/proselint/Airlinese.yml
+✅ [SUCCESS] config/styles/proselint/AnimalLabels.yml
+✅ [SUCCESS] config/styles/proselint/Annotations.yml
+✅ [SUCCESS] config/styles/proselint/Apologizing.yml
+✅ [SUCCESS] config/styles/proselint/Archaisms.yml
+✅ [SUCCESS] config/styles/proselint/But.yml
+✅ [SUCCESS] config/styles/proselint/Cliches.yml
+✅ [SUCCESS] config/styles/proselint/CorporateSpeak.yml
+✅ [SUCCESS] config/styles/proselint/Currency.yml
+✅ [SUCCESS] config/styles/proselint/Cursing.yml
+✅ [SUCCESS] config/styles/proselint/DateCase.yml
+✅ [SUCCESS] config/styles/proselint/DateMidnight.yml
+✅ [SUCCESS] config/styles/proselint/DateRedundancy.yml
+✅ [SUCCESS] config/styles/proselint/DateSpacing.yml
+✅ [SUCCESS] config/styles/proselint/DenizenLabels.yml
+✅ [SUCCESS] config/styles/proselint/Diacritical.yml
+✅ [SUCCESS] config/styles/proselint/GenderBias.yml
+✅ [SUCCESS] config/styles/proselint/GroupTerms.yml
+✅ [SUCCESS] config/styles/proselint/Hedging.yml
+✅ [SUCCESS] config/styles/proselint/Hyperbole.yml
+✅ [SUCCESS] config/styles/proselint/Jargon.yml
+✅ [SUCCESS] config/styles/proselint/LGBTOffensive.yml
+✅ [SUCCESS] config/styles/proselint/LGBTTerms.yml
+✅ [SUCCESS] config/styles/proselint/Malapropisms.yml
+✅ [SUCCESS] config/styles/proselint/Needless.yml
+✅ [SUCCESS] config/styles/proselint/Nonwords.yml
+✅ [SUCCESS] config/styles/proselint/Oxymorons.yml
+✅ [SUCCESS] config/styles/proselint/P-Value.yml
+❌ [ERROR] config/styles/proselint/RASSyndrome.yml
+    config/styles/proselint/RASSyndrome.yml:
+    	7-9: Wrong amount of left-padding spaces(want multiple of 2)
+    
+    1 errors found
+
+✅ [SUCCESS] config/styles/proselint/README.md
+✅ [SUCCESS] config/styles/proselint/Skunked.yml
+✅ [SUCCESS] config/styles/proselint/Spelling.yml
+✅ [SUCCESS] config/styles/proselint/Typography.yml
+❌ [ERROR] config/styles/proselint/Uncomparables.yml
+    config/styles/proselint/Uncomparables.yml:
+    	8-10: Wrong amount of left-padding spaces(want multiple of 2)
+    
+    1 errors found
+
+✅ [SUCCESS] config/styles/proselint/Very.yml
+❌ [ERROR] config/styles/proselint/meta.json
+    config/styles/proselint/meta.json:
+    	2-11: Wrong amount of left-padding spaces(want multiple of 4)
+    	13-16: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    2 errors found
+
+✅ [SUCCESS] config/styles/write-good/Cliches.yml
+✅ [SUCCESS] config/styles/write-good/E-Prime.yml
+✅ [SUCCESS] config/styles/write-good/Illusions.yml
+✅ [SUCCESS] config/styles/write-good/Passive.yml
+✅ [SUCCESS] config/styles/write-good/README.md
+✅ [SUCCESS] config/styles/write-good/So.yml
+✅ [SUCCESS] config/styles/write-good/ThereIs.yml
+✅ [SUCCESS] config/styles/write-good/TooWordy.yml
+✅ [SUCCESS] config/styles/write-good/Weasel.yml
+❌ [ERROR] config/styles/write-good/meta.json
+    config/styles/write-good/meta.json:
+    	2-3: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    1 errors found
+
+✅ [SUCCESS] config/sun_checks.xml
+✅ [SUCCESS] config/terragrunt.hcl
+✅ [SUCCESS] config/terrascan-config.toml
+❌ [ERROR] config/theme.json
+    config/theme.json:
+    	2-3: Wrong amount of left-padding spaces(want multiple of 4)
+    	5: Wrong amount of left-padding spaces(want multiple of 4)
+    	7-13: Wrong amount of left-padding spaces(want multiple of 4)
+    	16-19: Wrong amount of left-padding spaces(want multiple of 4)
+    	22-34: Wrong amount of left-padding spaces(want multiple of 4)
+    	37-39: Wrong amount of left-padding spaces(want multiple of 4)
+    	42-45: Wrong amount of left-padding spaces(want multiple of 4)
+    	48-63: Wrong amount of left-padding spaces(want multiple of 4)
+    	66: Wrong amount of left-padding spaces(want multiple of 4)
+    	68-69: Wrong amount of left-padding spaces(want multiple of 4)
+    	71-72: Wrong amount of left-padding spaces(want multiple of 4)
+    	80-86: Wrong amount of left-padding spaces(want multiple of 4)
+    	88: Wrong amount of left-padding spaces(want multiple of 4)
+    	91: Wrong amount of left-padding spaces(want multiple of 4)
+    	93-99: Wrong amount of left-padding spaces(want multiple of 4)
+    	102-105: Wrong amount of left-padding spaces(want multiple of 4)
+    	108-120: Wrong amount of left-padding spaces(want multiple of 4)
+    	123-125: Wrong amount of left-padding spaces(want multiple of 4)
+    	128-131: Wrong amount of left-padding spaces(want multiple of 4)
+    	134-149: Wrong amount of left-padding spaces(want multiple of 4)
+    	152: Wrong amount of left-padding spaces(want multiple of 4)
+    	154-155: Wrong amount of left-padding spaces(want multiple of 4)
+    	157-158: Wrong amount of left-padding spaces(want multiple of 4)
+    	166-172: Wrong amount of left-padding spaces(want multiple of 4)
+    	174: Wrong amount of left-padding spaces(want multiple of 4)
+    	176-177: Wrong amount of left-padding spaces(want multiple of 4)
+    	179-185: Wrong amount of left-padding spaces(want multiple of 4)
+    	188-191: Wrong amount of left-padding spaces(want multiple of 4)
+    	194-206: Wrong amount of left-padding spaces(want multiple of 4)
+    	209-211: Wrong amount of left-padding spaces(want multiple of 4)
+    	214-217: Wrong amount of left-padding spaces(want multiple of 4)
+    	220-235: Wrong amount of left-padding spaces(want multiple of 4)
+    	238: Wrong amount of left-padding spaces(want multiple of 4)
+    	240-241: Wrong amount of left-padding spaces(want multiple of 4)
+    	243-244: Wrong amount of left-padding spaces(want multiple of 4)
+    	252-258: Wrong amount of left-padding spaces(want multiple of 4)
+    	260-261: Wrong amount of left-padding spaces(want multiple of 4)
+    	265-277: Wrong amount of left-padding spaces(want multiple of 4)
+    	279-280: Wrong amount of left-padding spaces(want multiple of 4)
+    	289-290: Wrong amount of left-padding spaces(want multiple of 4)
+    	292-295: Wrong amount of left-padding spaces(want multiple of 4)
+    	298-303: Wrong amount of left-padding spaces(want multiple of 4)
+    	306-311: Wrong amount of left-padding spaces(want multiple of 4)
+    	314-315: Wrong amount of left-padding spaces(want multiple of 4)
+    	320-322: Wrong amount of left-padding spaces(want multiple of 4)
+    	325-327: Wrong amount of left-padding spaces(want multiple of 4)
+    	330-332: Wrong amount of left-padding spaces(want multiple of 4)
+    	335-336: Wrong amount of left-padding spaces(want multiple of 4)
+    	339-342: Wrong amount of left-padding spaces(want multiple of 4)
+    	346: Wrong amount of left-padding spaces(want multiple of 4)
+    	348-349: Wrong amount of left-padding spaces(want multiple of 4)
+    	351: Wrong amount of left-padding spaces(want multiple of 4)
+    	354-357: Wrong amount of left-padding spaces(want multiple of 4)
+    	359-360: Wrong amount of left-padding spaces(want multiple of 4)
+    	366: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    55 errors found
+
+✅ [SUCCESS] config/trivy-sbom.yaml
+✅ [SUCCESS] config/trivy.yaml
+✅ [SUCCESS] dashboard-dark.svg
+✅ [SUCCESS] dashboard-interactive.svg
+✅ [SUCCESS] dashboard-light.svg
+✅ [SUCCESS] dashboard.svg
+❌ [ERROR] data/metrics/developer.json
+    data/metrics/developer.json:
+    	Wrong line endings or no final newline
+    	2-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14-17: Wrong amount of left-padding spaces(want multiple of 4)
+    	19: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
+
+❌ [ERROR] data/metrics/location.json
+    data/metrics/location.json:
+    	Wrong line endings or no final newline
+    	2-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14-17: Wrong amount of left-padding spaces(want multiple of 4)
+    	19: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
+
+❌ [ERROR] data/metrics/oura.json
+    data/metrics/oura.json:
+    	Wrong line endings or no final newline
+    	2-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14-17: Wrong amount of left-padding spaces(want multiple of 4)
+    	19: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
+
+❌ [ERROR] data/metrics/parallel-fetch.json
+    data/metrics/parallel-fetch.json:
+    	Wrong line endings or no final newline
+    	2-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14-17: Wrong amount of left-padding spaces(want multiple of 4)
+    	20-23: Wrong amount of left-padding spaces(want multiple of 4)
+    	26-29: Wrong amount of left-padding spaces(want multiple of 4)
+    	31: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    6 errors found
+
+❌ [ERROR] data/metrics/soundcloud.json
+    data/metrics/soundcloud.json:
+    	Wrong line endings or no final newline
+    	2-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14-17: Wrong amount of left-padding spaces(want multiple of 4)
+    	19: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
+
+❌ [ERROR] data/metrics/test-workflow.json
+    data/metrics/test-workflow.json:
+    	Wrong line endings or no final newline
+    	2-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14-17: Wrong amount of left-padding spaces(want multiple of 4)
+    	19: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
+
+❌ [ERROR] data/metrics/weather.json
+    data/metrics/weather.json:
+    	Wrong line endings or no final newline
+    	2-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14-17: Wrong amount of left-padding spaces(want multiple of 4)
+    	19: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
+
+✅ [SUCCESS] data/mock/README.md
+❌ [ERROR] data/mock/developer-stats.json
+    data/mock/developer-stats.json:
+    	2-10: Wrong amount of left-padding spaces(want multiple of 4)
+    	14-20: Wrong amount of left-padding spaces(want multiple of 4)
+    	23-24: Wrong amount of left-padding spaces(want multiple of 4)
+    	27-28: Wrong amount of left-padding spaces(want multiple of 4)
+    	30-31: Wrong amount of left-padding spaces(want multiple of 4)
+    	37-38: Wrong amount of left-padding spaces(want multiple of 4)
+    	42-43: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    7 errors found
+
+❌ [ERROR] data/mock/oura-metrics.json
+    data/mock/oura-metrics.json:
+    	2-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	15-16: Wrong amount of left-padding spaces(want multiple of 4)
+    	19-25: Wrong amount of left-padding spaces(want multiple of 4)
+    	30-31: Wrong amount of left-padding spaces(want multiple of 4)
+    	34-42: Wrong amount of left-padding spaces(want multiple of 4)
+    	49-50: Wrong amount of left-padding spaces(want multiple of 4)
+    	56-61: Wrong amount of left-padding spaces(want multiple of 4)
+    	73-75: Wrong amount of left-padding spaces(want multiple of 4)
+    	88-89: Wrong amount of left-padding spaces(want multiple of 4)
+    	94-95: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    10 errors found
+
+✅ [SUCCESS] data/mock/soundcloud-artwork.jpg
+❌ [ERROR] data/mock/soundcloud-metadata.json
+    data/mock/soundcloud-metadata.json:
+    	2-10: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    1 errors found
+
+❌ [ERROR] data/mock/weather.json
+    data/mock/weather.json:
+    	2-4: Wrong amount of left-padding spaces(want multiple of 4)
+    	7-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	15-16: Wrong amount of left-padding spaces(want multiple of 4)
+    	22-24: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
+
+✅ [SUCCESS] data/snapshots/README.md
+✅ [SUCCESS] data/snapshots/daily/.gitkeep
+❌ [ERROR] data/snapshots/daily/2025/12/2025-12-03.json
+    data/snapshots/daily/2025/12/2025-12-03.json:
+    	Wrong line endings or no final newline
+    	2-4: Wrong amount of left-padding spaces(want multiple of 4)
+    	18-19: Wrong amount of left-padding spaces(want multiple of 4)
+    	23-24: Wrong amount of left-padding spaces(want multiple of 4)
+    	31-32: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    5 errors found
+
+✅ [SUCCESS] data/snapshots/monthly/.gitkeep
+❌ [ERROR] data/snapshots/monthly/2025-12.json
+    data/snapshots/monthly/2025-12.json:
+    	Wrong line endings or no final newline
+    	2-6: Wrong amount of left-padding spaces(want multiple of 4)
+    	14-15: Wrong amount of left-padding spaces(want multiple of 4)
+    	17: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
+
+✅ [SUCCESS] data/snapshots/weekly/.gitkeep
+❌ [ERROR] data/snapshots/weekly/2025-W49.json
+    data/snapshots/weekly/2025-W49.json:
+    	Wrong line endings or no final newline
+    	2-6: Wrong amount of left-padding spaces(want multiple of 4)
+    	12-13: Wrong amount of left-padding spaces(want multiple of 4)
+    	15: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
+
+✅ [SUCCESS] data/status/status-page.svg
+❌ [ERROR] data/timezone.json
+    data/timezone.json:
+    	2-4: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    1 errors found
+
+✅ [SUCCESS] developer/.gitkeep
+✅ [SUCCESS] developer/developer_dashboard.svg
+❌ [ERROR] docs/API_RESILIENCE.md
+    docs/API_RESILIENCE.md:
+    	50: Wrong amount of left-padding spaces(want multiple of 4)
+    	82: Wrong amount of left-padding spaces(want multiple of 4)
+    	85: Wrong amount of left-padding spaces(want multiple of 4)
+    	88-90: Wrong amount of left-padding spaces(want multiple of 4)
+    	93: Wrong amount of left-padding spaces(want multiple of 4)
+    	96: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    6 errors found
+
+❌ [ERROR] docs/API_TIMEOUT_RETRY_GUIDE.md
+    docs/API_TIMEOUT_RETRY_GUIDE.md:
+    	172-174: Wrong amount of left-padding spaces(want multiple of 4)
+    	177-182: Wrong amount of left-padding spaces(want multiple of 4)
+    	185-190: Wrong amount of left-padding spaces(want multiple of 4)
+    	193-197: Wrong amount of left-padding spaces(want multiple of 4)
+    	200-203: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    5 errors found
+
+❌ [ERROR] docs/INTEGRATION_EXAMPLE.md
+    docs/INTEGRATION_EXAMPLE.md:
+    	13: Wrong amount of left-padding spaces(want multiple of 4)
+    	15: Wrong amount of left-padding spaces(want multiple of 4)
+    	18: Wrong amount of left-padding spaces(want multiple of 4)
+    	21: Wrong amount of left-padding spaces(want multiple of 4)
+    	24: Wrong amount of left-padding spaces(want multiple of 4)
+    	27-28: Wrong amount of left-padding spaces(want multiple of 4)
+    	32-33: Wrong amount of left-padding spaces(want multiple of 4)
+    	37: Wrong amount of left-padding spaces(want multiple of 4)
+    	39: Wrong amount of left-padding spaces(want multiple of 4)
+    	42: Wrong amount of left-padding spaces(want multiple of 4)
+    	44-45: Wrong amount of left-padding spaces(want multiple of 4)
+    	49: Wrong amount of left-padding spaces(want multiple of 4)
+    	54-55: Wrong amount of left-padding spaces(want multiple of 4)
+    	59: Wrong amount of left-padding spaces(want multiple of 4)
+    	61: Wrong amount of left-padding spaces(want multiple of 4)
+    	63: Wrong amount of left-padding spaces(want multiple of 4)
+    	65-66: Wrong amount of left-padding spaces(want multiple of 4)
+    	70-73: Wrong amount of left-padding spaces(want multiple of 4)
+    	75-76: Wrong amount of left-padding spaces(want multiple of 4)
+    	79: Wrong amount of left-padding spaces(want multiple of 4)
+    	84-85: Wrong amount of left-padding spaces(want multiple of 4)
+    	88-89: Wrong amount of left-padding spaces(want multiple of 4)
+    	94-95: Wrong amount of left-padding spaces(want multiple of 4)
+    	98-103: Wrong amount of left-padding spaces(want multiple of 4)
+    	105: Wrong amount of left-padding spaces(want multiple of 4)
+    	108: Wrong amount of left-padding spaces(want multiple of 4)
+    	119-120: Wrong amount of left-padding spaces(want multiple of 4)
+    	125-127: Wrong amount of left-padding spaces(want multiple of 4)
+    	140-142: Wrong amount of left-padding spaces(want multiple of 4)
+    	144-146: Wrong amount of left-padding spaces(want multiple of 4)
+    	155-156: Wrong amount of left-padding spaces(want multiple of 4)
+    	158-160: Wrong amount of left-padding spaces(want multiple of 4)
+    	169-170: Wrong amount of left-padding spaces(want multiple of 4)
+    	172-174: Wrong amount of left-padding spaces(want multiple of 4)
+    	183: Wrong amount of left-padding spaces(want multiple of 4)
+    	191: Wrong amount of left-padding spaces(want multiple of 4)
+    	193-194: Wrong amount of left-padding spaces(want multiple of 4)
+    	204-205: Wrong amount of left-padding spaces(want multiple of 4)
+    	210-211: Wrong amount of left-padding spaces(want multiple of 4)
+    	213-214: Wrong amount of left-padding spaces(want multiple of 4)
+    	222: Wrong amount of left-padding spaces(want multiple of 4)
+    	225: Wrong amount of left-padding spaces(want multiple of 4)
+    	227: Wrong amount of left-padding spaces(want multiple of 4)
+    	237: Wrong amount of left-padding spaces(want multiple of 4)
+    	239-240: Wrong amount of left-padding spaces(want multiple of 4)
+    	247: Wrong amount of left-padding spaces(want multiple of 4)
+    	249-250: Wrong amount of left-padding spaces(want multiple of 4)
+    	254-255: Wrong amount of left-padding spaces(want multiple of 4)
+    	262: Wrong amount of left-padding spaces(want multiple of 4)
+    	264-266: Wrong amount of left-padding spaces(want multiple of 4)
+    	275-276: Wrong amount of left-padding spaces(want multiple of 4)
+    	289: Wrong amount of left-padding spaces(want multiple of 4)
+    	291-292: Wrong amount of left-padding spaces(want multiple of 4)
+    	311: Wrong amount of left-padding spaces(want multiple of 4)
+    	313-314: Wrong amount of left-padding spaces(want multiple of 4)
+    	334-335: Wrong amount of left-padding spaces(want multiple of 4)
+    	344-345: Wrong amount of left-padding spaces(want multiple of 4)
+    	354-355: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    58 errors found
+
+❌ [ERROR] docs/LOCATION_CARD_CHANGES.md
+    docs/LOCATION_CARD_CHANGES.md:
+    	33-36: Wrong amount of left-padding spaces(want multiple of 4)
+    	49-51: Wrong amount of left-padding spaces(want multiple of 4)
+    	65: Wrong amount of left-padding spaces(want multiple of 4)
+    	78-79: Wrong amount of left-padding spaces(want multiple of 4)
+    	91-92: Wrong amount of left-padding spaces(want multiple of 4)
+    	100-101: Wrong amount of left-padding spaces(want multiple of 4)
+    	104-106: Wrong amount of left-padding spaces(want multiple of 4)
+    	109-111: Wrong amount of left-padding spaces(want multiple of 4)
+    	169-171: Wrong amount of left-padding spaces(want multiple of 4)
+    	177: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    10 errors found
+
+❌ [ERROR] docs/MONITORING.md
+    docs/MONITORING.md:
+    	40: Wrong amount of left-padding spaces(want multiple of 4)
+    	59-68: Wrong amount of left-padding spaces(want multiple of 4)
+    	71-72: Wrong amount of left-padding spaces(want multiple of 4)
+    	135-136: Wrong amount of left-padding spaces(want multiple of 4)
+    	140-142: Wrong amount of left-padding spaces(want multiple of 4)
+    	167-168: Wrong amount of left-padding spaces(want multiple of 4)
+    	172-175: Wrong amount of left-padding spaces(want multiple of 4)
+    	180-183: Wrong amount of left-padding spaces(want multiple of 4)
+    	187-188: Wrong amount of left-padding spaces(want multiple of 4)
+    	192-193: Wrong amount of left-padding spaces(want multiple of 4)
+    	195-197: Wrong amount of left-padding spaces(want multiple of 4)
+    	248-251: Wrong amount of left-padding spaces(want multiple of 4)
+    	261-262: Wrong amount of left-padding spaces(want multiple of 4)
+    	265-266: Wrong amount of left-padding spaces(want multiple of 4)
+    	275: Wrong amount of left-padding spaces(want multiple of 4)
+    	277-278: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    16 errors found
+
+❌ [ERROR] docs/OPTIMIZATION_GUIDE.md
+    docs/OPTIMIZATION_GUIDE.md:
+    	23-26: Wrong amount of left-padding spaces(want multiple of 4)
+    	76-79: Wrong amount of left-padding spaces(want multiple of 4)
+    	83-87: Wrong amount of left-padding spaces(want multiple of 4)
+    	101-104: Wrong amount of left-padding spaces(want multiple of 4)
+    	116-117: Wrong amount of left-padding spaces(want multiple of 4)
+    	146-147: Wrong amount of left-padding spaces(want multiple of 4)
+    	149-150: Wrong amount of left-padding spaces(want multiple of 4)
+    	152-154: Wrong amount of left-padding spaces(want multiple of 4)
+    	158: Wrong amount of left-padding spaces(want multiple of 4)
+    	160: Wrong amount of left-padding spaces(want multiple of 4)
+    	164-165: Wrong amount of left-padding spaces(want multiple of 4)
+    	167: Wrong amount of left-padding spaces(want multiple of 4)
+    	218: Wrong amount of left-padding spaces(want multiple of 4)
+    	273-275: Wrong amount of left-padding spaces(want multiple of 4)
+    	278-280: Wrong amount of left-padding spaces(want multiple of 4)
+    	314: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    16 errors found
+
+✅ [SUCCESS] docs/README_LAYOUT_BEFORE_AFTER.md
+❌ [ERROR] docs/README_LAYOUT_CHANGELOG.md
+    docs/README_LAYOUT_CHANGELOG.md:
+    	67: Wrong amount of left-padding spaces(want multiple of 4)
+    	71-72: Wrong amount of left-padding spaces(want multiple of 4)
+    	80-82: Wrong amount of left-padding spaces(want multiple of 4)
+    	370-373: Wrong amount of left-padding spaces(want multiple of 4)
+    	413-417: Wrong amount of left-padding spaces(want multiple of 4)
+    	420-421: Wrong amount of left-padding spaces(want multiple of 4)
+    	424-425: Wrong amount of left-padding spaces(want multiple of 4)
+    	428: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    8 errors found
+
+❌ [ERROR] docs/README_SECTION_CHANGES.md
+    docs/README_SECTION_CHANGES.md:
+    	34-36: Wrong amount of left-padding spaces(want multiple of 4)
+    	56: Wrong amount of left-padding spaces(want multiple of 4)
+    	60: Wrong amount of left-padding spaces(want multiple of 4)
+    	76: Wrong amount of left-padding spaces(want multiple of 4)
+    	78-79: Wrong amount of left-padding spaces(want multiple of 4)
+    	81: Wrong amount of left-padding spaces(want multiple of 4)
+    	88-90: Wrong amount of left-padding spaces(want multiple of 4)
+    	96-97: Wrong amount of left-padding spaces(want multiple of 4)
+    	126: Wrong amount of left-padding spaces(want multiple of 4)
+    	171: Wrong amount of left-padding spaces(want multiple of 4)
+    	201: Wrong amount of left-padding spaces(want multiple of 4)
+    	228: Wrong amount of left-padding spaces(want multiple of 4)
+    	264: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    13 errors found
+
+❌ [ERROR] docs/ROBUSTNESS_IMPROVEMENTS.md
+    docs/ROBUSTNESS_IMPROVEMENTS.md:
+    	111-113: Wrong amount of left-padding spaces(want multiple of 4)
+    	197-199: Wrong amount of left-padding spaces(want multiple of 4)
+    	203-206: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    3 errors found
+
+❌ [ERROR] docs/WORKFLOWS.md
+    docs/WORKFLOWS.md:
+    	222-223: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    1 errors found
+
+❌ [ERROR] docs/architecture.md
+    docs/architecture.md:
+    	87-92: Wrong amount of left-padding spaces(want multiple of 4)
+    	95-99: Wrong amount of left-padding spaces(want multiple of 4)
+    	104-106: Wrong amount of left-padding spaces(want multiple of 4)
+    	114: Wrong amount of left-padding spaces(want multiple of 4)
+    	118-119: Wrong amount of left-padding spaces(want multiple of 4)
+    	122-123: Wrong amount of left-padding spaces(want multiple of 4)
+    	126: Wrong amount of left-padding spaces(want multiple of 4)
+    	159-160: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    8 errors found
+
+❌ [ERROR] docs/cards.md
+    docs/cards.md:
+    	97-99: Wrong amount of left-padding spaces(want multiple of 4)
+    	134-137: Wrong amount of left-padding spaces(want multiple of 4)
+    	210: Wrong amount of left-padding spaces(want multiple of 4)
+    	212-216: Wrong amount of left-padding spaces(want multiple of 4)
+    	219-223: Wrong amount of left-padding spaces(want multiple of 4)
+    	225: Wrong amount of left-padding spaces(want multiple of 4)
+    	291: Wrong amount of left-padding spaces(want multiple of 4)
+    	295: Wrong amount of left-padding spaces(want multiple of 4)
+    	333: Wrong amount of left-padding spaces(want multiple of 4)
+    	335: Wrong amount of left-padding spaces(want multiple of 4)
+    	337: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    11 errors found
+
+❌ [ERROR] docs/markdown_valid_elements.md
+    docs/markdown_valid_elements.md:
+    	22-23: Wrong amount of left-padding spaces(want multiple of 4)
+    	26-27: Wrong amount of left-padding spaces(want multiple of 4)
+    	33-34: Wrong amount of left-padding spaces(want multiple of 4)
+    	36-37: Wrong amount of left-padding spaces(want multiple of 4)
+    	41-43: Wrong amount of left-padding spaces(want multiple of 4)
+    	46-47: Wrong amount of left-padding spaces(want multiple of 4)
+    	49-50: Wrong amount of left-padding spaces(want multiple of 4)
+    	52-53: Wrong amount of left-padding spaces(want multiple of 4)
+    	59-60: Wrong amount of left-padding spaces(want multiple of 4)
+    	63-64: Wrong amount of left-padding spaces(want multiple of 4)
+    	72-74: Wrong amount of left-padding spaces(want multiple of 4)
+    	76-79: Wrong amount of left-padding spaces(want multiple of 4)
+    	85-87: Wrong amount of left-padding spaces(want multiple of 4)
+    	93-97: Wrong amount of left-padding spaces(want multiple of 4)
+    	103-105: Wrong amount of left-padding spaces(want multiple of 4)
+    	111-114: Wrong amount of left-padding spaces(want multiple of 4)
+    	122-124: Wrong amount of left-padding spaces(want multiple of 4)
+    	130-135: Wrong amount of left-padding spaces(want multiple of 4)
+    	146-149: Wrong amount of left-padding spaces(want multiple of 4)
+    	152-154: Wrong amount of left-padding spaces(want multiple of 4)
+    	157-159: Wrong amount of left-padding spaces(want multiple of 4)
+    	199-201: Wrong amount of left-padding spaces(want multiple of 4)
+    	211: Wrong amount of left-padding spaces(want multiple of 4)
+    	221-223: Wrong amount of left-padding spaces(want multiple of 4)
+    	233: Wrong amount of left-padding spaces(want multiple of 4)
+    	239: Wrong amount of left-padding spaces(want multiple of 4)
+    	249-253: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    27 errors found
+
+❌ [ERROR] docs/style-guide.md
+    docs/style-guide.md:
+    	114: Wrong amount of left-padding spaces(want multiple of 4)
+    	116-117: Wrong amount of left-padding spaces(want multiple of 4)
+    	122: Wrong amount of left-padding spaces(want multiple of 4)
+    	186: Wrong amount of left-padding spaces(want multiple of 4)
+    	191-204: Wrong amount of left-padding spaces(want multiple of 4)
+    	222: Wrong amount of left-padding spaces(want multiple of 4)
+    	253-254: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    7 errors found
+
+❌ [ERROR] docs/workflows.md
+    docs/workflows.md:
+    	26: Wrong amount of left-padding spaces(want multiple of 4)
+    	28-29: Wrong amount of left-padding spaces(want multiple of 4)
+    	31: Wrong amount of left-padding spaces(want multiple of 4)
+    	33-35: Wrong amount of left-padding spaces(want multiple of 4)
+    	42-43: Wrong amount of left-padding spaces(want multiple of 4)
+    	52: Wrong amount of left-padding spaces(want multiple of 4)
+    	128-129: Wrong amount of left-padding spaces(want multiple of 4)
+    	132-133: Wrong amount of left-padding spaces(want multiple of 4)
+    	136-137: Wrong amount of left-padding spaces(want multiple of 4)
+    	180-181: Wrong amount of left-padding spaces(want multiple of 4)
+    	184-185: Wrong amount of left-padding spaces(want multiple of 4)
+    	188-189: Wrong amount of left-padding spaces(want multiple of 4)
+    	229-230: Wrong amount of left-padding spaces(want multiple of 4)
+    	233-234: Wrong amount of left-padding spaces(want multiple of 4)
+    	237-238: Wrong amount of left-padding spaces(want multiple of 4)
+    	304-305: Wrong amount of left-padding spaces(want multiple of 4)
+    	308-309: Wrong amount of left-padding spaces(want multiple of 4)
+    	312-313: Wrong amount of left-padding spaces(want multiple of 4)
+    	316-317: Wrong amount of left-padding spaces(want multiple of 4)
+    	367-368: Wrong amount of left-padding spaces(want multiple of 4)
+    	372-373: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    21 errors found
+
+❌ [ERROR] footer/README.md
+    footer/README.md:
+    	46-50: Wrong amount of left-padding spaces(want multiple of 4)
+    	53-55: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    2 errors found
+
+✅ [SUCCESS] footer/footer.html
+✅ [SUCCESS] location/.gitkeep
+✅ [SUCCESS] models/.gitkeep
+✅ [SUCCESS] notebooks/.gitkeep
+✅ [SUCCESS] oura/.gitkeep
+✅ [SUCCESS] oura/health_dashboard.svg
+❌ [ERROR] oura/health_snapshot.json
+    oura/health_snapshot.json:
+    	Wrong line endings or no final newline
+    	2: Wrong amount of left-padding spaces(want multiple of 4)
+    	9-10: Wrong amount of left-padding spaces(want multiple of 4)
+    	20-21: Wrong amount of left-padding spaces(want multiple of 4)
+    	35-36: Wrong amount of left-padding spaces(want multiple of 4)
+    	56-57: Wrong amount of left-padding spaces(want multiple of 4)
+    	62-63: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    7 errors found
+
+❌ [ERROR] oura/metrics.json
+    oura/metrics.json:
+    	2-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	15-16: Wrong amount of left-padding spaces(want multiple of 4)
+    	19-25: Wrong amount of left-padding spaces(want multiple of 4)
+    	30-31: Wrong amount of left-padding spaces(want multiple of 4)
+    	34-42: Wrong amount of left-padding spaces(want multiple of 4)
+    	49-50: Wrong amount of left-padding spaces(want multiple of 4)
+    	56-61: Wrong amount of left-padding spaces(want multiple of 4)
+    	73-74: Wrong amount of left-padding spaces(want multiple of 4)
+    	1515-1516: Wrong amount of left-padding spaces(want multiple of 4)
+    	1529-1531: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    10 errors found
+
+❌ [ERROR] oura/mood.json
+    oura/mood.json:
+    	Wrong line endings or no final newline
+    	2-5: Wrong amount of left-padding spaces(want multiple of 4)
+    	8-11: Wrong amount of left-padding spaces(want multiple of 4)
+    	16-17: Wrong amount of left-padding spaces(want multiple of 4)
+    	24-25: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    5 errors found
+
+✅ [SUCCESS] oura/mood_dashboard.svg
+✅ [SUCCESS] poetry.toml
+❌ [ERROR] profile.code-workspace
+    profile.code-workspace:
+    	2: Wrong amount of left-padding spaces(want multiple of 4)
+    	6-7: Wrong amount of left-padding spaces(want multiple of 4)
+    	15: Wrong amount of left-padding spaces(want multiple of 4)
+    	34-56: Wrong amount of left-padding spaces(want multiple of 4)
+    	59: Wrong amount of left-padding spaces(want multiple of 4)
+    	62-63: Wrong amount of left-padding spaces(want multiple of 4)
+    	66-67: Wrong amount of left-padding spaces(want multiple of 4)
+    	70-71: Wrong amount of left-padding spaces(want multiple of 4)
+    	74-75: Wrong amount of left-padding spaces(want multiple of 4)
+    	78-79: Wrong amount of left-padding spaces(want multiple of 4)
+    	82: Wrong amount of left-padding spaces(want multiple of 4)
+    	89-90: Wrong amount of left-padding spaces(want multiple of 4)
+    	93-94: Wrong amount of left-padding spaces(want multiple of 4)
+    	97-98: Wrong amount of left-padding spaces(want multiple of 4)
+    	101-102: Wrong amount of left-padding spaces(want multiple of 4)
+    	114-120: Wrong amount of left-padding spaces(want multiple of 4)
+    	123-127: Wrong amount of left-padding spaces(want multiple of 4)
+    	133: Wrong amount of left-padding spaces(want multiple of 4)
+    	150-159: Wrong amount of left-padding spaces(want multiple of 4)
+    	186-211: Wrong amount of left-padding spaces(want multiple of 4)
+    	215: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    21 errors found
+
+✅ [SUCCESS] pyproject.toml
+✅ [SUCCESS] requirements-dev.txt
+✅ [SUCCESS] requirements.txt
+✅ [SUCCESS] schemas/README.md
+❌ [ERROR] schemas/developer-stats.schema.json
+    schemas/developer-stats.schema.json:
+    	2-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	10-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	15-16: Wrong amount of left-padding spaces(want multiple of 4)
+    	19-20: Wrong amount of left-padding spaces(want multiple of 4)
+    	23-25: Wrong amount of left-padding spaces(want multiple of 4)
+    	28-30: Wrong amount of left-padding spaces(want multiple of 4)
+    	33-35: Wrong amount of left-padding spaces(want multiple of 4)
+    	38-40: Wrong amount of left-padding spaces(want multiple of 4)
+    	43-45: Wrong amount of left-padding spaces(want multiple of 4)
+    	48-50: Wrong amount of left-padding spaces(want multiple of 4)
+    	52-53: Wrong amount of left-padding spaces(want multiple of 4)
+    	56-57: Wrong amount of left-padding spaces(want multiple of 4)
+    	60-62: Wrong amount of left-padding spaces(want multiple of 4)
+    	65-66: Wrong amount of left-padding spaces(want multiple of 4)
+    	69-70: Wrong amount of left-padding spaces(want multiple of 4)
+    	74-77: Wrong amount of left-padding spaces(want multiple of 4)
+    	80-81: Wrong amount of left-padding spaces(want multiple of 4)
+    	83-84: Wrong amount of left-padding spaces(want multiple of 4)
+    	86: Wrong amount of left-padding spaces(want multiple of 4)
+    	89-91: Wrong amount of left-padding spaces(want multiple of 4)
+    	93-95: Wrong amount of left-padding spaces(want multiple of 4)
+    	98-100: Wrong amount of left-padding spaces(want multiple of 4)
+    	102: Wrong amount of left-padding spaces(want multiple of 4)
+    	105-107: Wrong amount of left-padding spaces(want multiple of 4)
+    	109-111: Wrong amount of left-padding spaces(want multiple of 4)
+    	113: Wrong amount of left-padding spaces(want multiple of 4)
+    	116-117: Wrong amount of left-padding spaces(want multiple of 4)
+    	121-122: Wrong amount of left-padding spaces(want multiple of 4)
+    	125-126: Wrong amount of left-padding spaces(want multiple of 4)
+    	130: Wrong amount of left-padding spaces(want multiple of 4)
+    	133-134: Wrong amount of left-padding spaces(want multiple of 4)
+    	138: Wrong amount of left-padding spaces(want multiple of 4)
+    	140-141: Wrong amount of left-padding spaces(want multiple of 4)
+    	144-145: Wrong amount of left-padding spaces(want multiple of 4)
+    	147-148: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    35 errors found
+
+❌ [ERROR] schemas/health-snapshot.schema.json
+    schemas/health-snapshot.schema.json:
+    	2-7: Wrong amount of left-padding spaces(want multiple of 4)
+    	9-10: Wrong amount of left-padding spaces(want multiple of 4)
+    	12-14: Wrong amount of left-padding spaces(want multiple of 4)
+    	17-19: Wrong amount of left-padding spaces(want multiple of 4)
+    	22-24: Wrong amount of left-padding spaces(want multiple of 4)
+    	27-29: Wrong amount of left-padding spaces(want multiple of 4)
+    	32-34: Wrong amount of left-padding spaces(want multiple of 4)
+    	37-39: Wrong amount of left-padding spaces(want multiple of 4)
+    	42-43: Wrong amount of left-padding spaces(want multiple of 4)
+    	45-46: Wrong amount of left-padding spaces(want multiple of 4)
+    	49-50: Wrong amount of left-padding spaces(want multiple of 4)
+    	52-54: Wrong amount of left-padding spaces(want multiple of 4)
+    	57-58: Wrong amount of left-padding spaces(want multiple of 4)
+    	61-63: Wrong amount of left-padding spaces(want multiple of 4)
+    	66-68: Wrong amount of left-padding spaces(want multiple of 4)
+    	71-73: Wrong amount of left-padding spaces(want multiple of 4)
+    	76-78: Wrong amount of left-padding spaces(want multiple of 4)
+    	81-83: Wrong amount of left-padding spaces(want multiple of 4)
+    	86-88: Wrong amount of left-padding spaces(want multiple of 4)
+    	91-93: Wrong amount of left-padding spaces(want multiple of 4)
+    	95-96: Wrong amount of left-padding spaces(want multiple of 4)
+    	99-100: Wrong amount of left-padding spaces(want multiple of 4)
+    	102-104: Wrong amount of left-padding spaces(want multiple of 4)
+    	107-108: Wrong amount of left-padding spaces(want multiple of 4)
+    	111-113: Wrong amount of left-padding spaces(want multiple of 4)
+    	116-118: Wrong amount of left-padding spaces(want multiple of 4)
+    	121-122: Wrong amount of left-padding spaces(want multiple of 4)
+    	125-127: Wrong amount of left-padding spaces(want multiple of 4)
+    	130: Wrong amount of left-padding spaces(want multiple of 4)
+    	133: Wrong amount of left-padding spaces(want multiple of 4)
+    	136-138: Wrong amount of left-padding spaces(want multiple of 4)
+    	141-143: Wrong amount of left-padding spaces(want multiple of 4)
+    	146-148: Wrong amount of left-padding spaces(want multiple of 4)
+    	151-153: Wrong amount of left-padding spaces(want multiple of 4)
+    	156-158: Wrong amount of left-padding spaces(want multiple of 4)
+    	160-161: Wrong amount of left-padding spaces(want multiple of 4)
+    	164-165: Wrong amount of left-padding spaces(want multiple of 4)
+    	167-169: Wrong amount of left-padding spaces(want multiple of 4)
+    	172-173: Wrong amount of left-padding spaces(want multiple of 4)
+    	176-177: Wrong amount of left-padding spaces(want multiple of 4)
+    	180-181: Wrong amount of left-padding spaces(want multiple of 4)
+    	184-185: Wrong amount of left-padding spaces(want multiple of 4)
+    	188-189: Wrong amount of left-padding spaces(want multiple of 4)
+    	192-193: Wrong amount of left-padding spaces(want multiple of 4)
+    	196-197: Wrong amount of left-padding spaces(want multiple of 4)
+    	200-201: Wrong amount of left-padding spaces(want multiple of 4)
+    	204-205: Wrong amount of left-padding spaces(want multiple of 4)
+    	208-209: Wrong amount of left-padding spaces(want multiple of 4)
+    	212-213: Wrong amount of left-padding spaces(want multiple of 4)
+    	216-217: Wrong amount of left-padding spaces(want multiple of 4)
+    	220-222: Wrong amount of left-padding spaces(want multiple of 4)
+    	225-227: Wrong amount of left-padding spaces(want multiple of 4)
+    	230-232: Wrong amount of left-padding spaces(want multiple of 4)
+    	235-237: Wrong amount of left-padding spaces(want multiple of 4)
+    	240-242: Wrong amount of left-padding spaces(want multiple of 4)
+    	245-247: Wrong amount of left-padding spaces(want multiple of 4)
+    	249-250: Wrong amount of left-padding spaces(want multiple of 4)
+    	253-254: Wrong amount of left-padding spaces(want multiple of 4)
+    	256-257: Wrong amount of left-padding spaces(want multiple of 4)
+    	260-261: Wrong amount of left-padding spaces(want multiple of 4)
+    	264-265: Wrong amount of left-padding spaces(want multiple of 4)
+    	268-269: Wrong amount of left-padding spaces(want multiple of 4)
+    	271: Wrong amount of left-padding spaces(want multiple of 4)
+    	273-274: Wrong amount of left-padding spaces(want multiple of 4)
+    	277-278: Wrong amount of left-padding spaces(want multiple of 4)
+    	280-281: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    66 errors found
+
+❌ [ERROR] schemas/oura-metrics.schema.json
+    schemas/oura-metrics.schema.json:
+    	2-7: Wrong amount of left-padding spaces(want multiple of 4)
+    	9-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	15-18: Wrong amount of left-padding spaces(want multiple of 4)
+    	21-24: Wrong amount of left-padding spaces(want multiple of 4)
+    	27-28: Wrong amount of left-padding spaces(want multiple of 4)
+    	31-33: Wrong amount of left-padding spaces(want multiple of 4)
+    	36-37: Wrong amount of left-padding spaces(want multiple of 4)
+    	40-41: Wrong amount of left-padding spaces(want multiple of 4)
+    	43-44: Wrong amount of left-padding spaces(want multiple of 4)
+    	47-49: Wrong amount of left-padding spaces(want multiple of 4)
+    	52-54: Wrong amount of left-padding spaces(want multiple of 4)
+    	57-59: Wrong amount of left-padding spaces(want multiple of 4)
+    	62-63: Wrong amount of left-padding spaces(want multiple of 4)
+    	66-67: Wrong amount of left-padding spaces(want multiple of 4)
+    	69-70: Wrong amount of left-padding spaces(want multiple of 4)
+    	73-74: Wrong amount of left-padding spaces(want multiple of 4)
+    	76-77: Wrong amount of left-padding spaces(want multiple of 4)
+    	80-81: Wrong amount of left-padding spaces(want multiple of 4)
+    	83-85: Wrong amount of left-padding spaces(want multiple of 4)
+    	88-90: Wrong amount of left-padding spaces(want multiple of 4)
+    	93-95: Wrong amount of left-padding spaces(want multiple of 4)
+    	98-100: Wrong amount of left-padding spaces(want multiple of 4)
+    	103-105: Wrong amount of left-padding spaces(want multiple of 4)
+    	108-110: Wrong amount of left-padding spaces(want multiple of 4)
+    	113-115: Wrong amount of left-padding spaces(want multiple of 4)
+    	117-118: Wrong amount of left-padding spaces(want multiple of 4)
+    	121-123: Wrong amount of left-padding spaces(want multiple of 4)
+    	126-128: Wrong amount of left-padding spaces(want multiple of 4)
+    	131-132: Wrong amount of left-padding spaces(want multiple of 4)
+    	134-135: Wrong amount of left-padding spaces(want multiple of 4)
+    	138-139: Wrong amount of left-padding spaces(want multiple of 4)
+    	141-142: Wrong amount of left-padding spaces(want multiple of 4)
+    	145-146: Wrong amount of left-padding spaces(want multiple of 4)
+    	148-150: Wrong amount of left-padding spaces(want multiple of 4)
+    	153-155: Wrong amount of left-padding spaces(want multiple of 4)
+    	158-160: Wrong amount of left-padding spaces(want multiple of 4)
+    	163-165: Wrong amount of left-padding spaces(want multiple of 4)
+    	168-170: Wrong amount of left-padding spaces(want multiple of 4)
+    	173-175: Wrong amount of left-padding spaces(want multiple of 4)
+    	178-180: Wrong amount of left-padding spaces(want multiple of 4)
+    	183-185: Wrong amount of left-padding spaces(want multiple of 4)
+    	188-190: Wrong amount of left-padding spaces(want multiple of 4)
+    	192-193: Wrong amount of left-padding spaces(want multiple of 4)
+    	196-198: Wrong amount of left-padding spaces(want multiple of 4)
+    	201-203: Wrong amount of left-padding spaces(want multiple of 4)
+    	206-207: Wrong amount of left-padding spaces(want multiple of 4)
+    	210-211: Wrong amount of left-padding spaces(want multiple of 4)
+    	214-215: Wrong amount of left-padding spaces(want multiple of 4)
+    	217-218: Wrong amount of left-padding spaces(want multiple of 4)
+    	221-222: Wrong amount of left-padding spaces(want multiple of 4)
+    	224-225: Wrong amount of left-padding spaces(want multiple of 4)
+    	228-229: Wrong amount of left-padding spaces(want multiple of 4)
+    	232-233: Wrong amount of left-padding spaces(want multiple of 4)
+    	236-237: Wrong amount of left-padding spaces(want multiple of 4)
+    	240-241: Wrong amount of left-padding spaces(want multiple of 4)
+    	243-245: Wrong amount of left-padding spaces(want multiple of 4)
+    	248-250: Wrong amount of left-padding spaces(want multiple of 4)
+    	253-255: Wrong amount of left-padding spaces(want multiple of 4)
+    	258-260: Wrong amount of left-padding spaces(want multiple of 4)
+    	263-265: Wrong amount of left-padding spaces(want multiple of 4)
+    	268-270: Wrong amount of left-padding spaces(want multiple of 4)
+    	272-273: Wrong amount of left-padding spaces(want multiple of 4)
+    	276-278: Wrong amount of left-padding spaces(want multiple of 4)
+    	281-282: Wrong amount of left-padding spaces(want multiple of 4)
+    	285-286: Wrong amount of left-padding spaces(want multiple of 4)
+    	289-290: Wrong amount of left-padding spaces(want multiple of 4)
+    	293-294: Wrong amount of left-padding spaces(want multiple of 4)
+    	297-298: Wrong amount of left-padding spaces(want multiple of 4)
+    	301-302: Wrong amount of left-padding spaces(want multiple of 4)
+    	305-306: Wrong amount of left-padding spaces(want multiple of 4)
+    	309-310: Wrong amount of left-padding spaces(want multiple of 4)
+    	313-314: Wrong amount of left-padding spaces(want multiple of 4)
+    	316: Wrong amount of left-padding spaces(want multiple of 4)
+    	319-320: Wrong amount of left-padding spaces(want multiple of 4)
+    	322: Wrong amount of left-padding spaces(want multiple of 4)
+    	325: Wrong amount of left-padding spaces(want multiple of 4)
+    	327-328: Wrong amount of left-padding spaces(want multiple of 4)
+    	331: Wrong amount of left-padding spaces(want multiple of 4)
+    	334-335: Wrong amount of left-padding spaces(want multiple of 4)
+    	338-339: Wrong amount of left-padding spaces(want multiple of 4)
+    	342-344: Wrong amount of left-padding spaces(want multiple of 4)
+    	347-348: Wrong amount of left-padding spaces(want multiple of 4)
+    	351-352: Wrong amount of left-padding spaces(want multiple of 4)
+    	355-356: Wrong amount of left-padding spaces(want multiple of 4)
+    	359-360: Wrong amount of left-padding spaces(want multiple of 4)
+    	363-364: Wrong amount of left-padding spaces(want multiple of 4)
+    	367-368: Wrong amount of left-padding spaces(want multiple of 4)
+    	371-372: Wrong amount of left-padding spaces(want multiple of 4)
+    	374-375: Wrong amount of left-padding spaces(want multiple of 4)
+    	378-379: Wrong amount of left-padding spaces(want multiple of 4)
+    	381-382: Wrong amount of left-padding spaces(want multiple of 4)
+    	385-386: Wrong amount of left-padding spaces(want multiple of 4)
+    	389-390: Wrong amount of left-padding spaces(want multiple of 4)
+    	393-394: Wrong amount of left-padding spaces(want multiple of 4)
+    	396: Wrong amount of left-padding spaces(want multiple of 4)
+    	398-399: Wrong amount of left-padding spaces(want multiple of 4)
+    	402-403: Wrong amount of left-padding spaces(want multiple of 4)
+    	405-406: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    98 errors found
+
+❌ [ERROR] schemas/soundcloud-track.schema.json
+    schemas/soundcloud-track.schema.json:
+    	2-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	10-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	15-17: Wrong amount of left-padding spaces(want multiple of 4)
+    	20-21: Wrong amount of left-padding spaces(want multiple of 4)
+    	24-25: Wrong amount of left-padding spaces(want multiple of 4)
+    	28-29: Wrong amount of left-padding spaces(want multiple of 4)
+    	32-34: Wrong amount of left-padding spaces(want multiple of 4)
+    	37-39: Wrong amount of left-padding spaces(want multiple of 4)
+    	42-43: Wrong amount of left-padding spaces(want multiple of 4)
+    	46-47: Wrong amount of left-padding spaces(want multiple of 4)
+    	49-50: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    11 errors found
+
+❌ [ERROR] schemas/theme.schema.json
+    schemas/theme.schema.json:
+    	2-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	10-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	15-17: Wrong amount of left-padding spaces(want multiple of 4)
+    	19: Wrong amount of left-padding spaces(want multiple of 4)
+    	22: Wrong amount of left-padding spaces(want multiple of 4)
+    	24-25: Wrong amount of left-padding spaces(want multiple of 4)
+    	28: Wrong amount of left-padding spaces(want multiple of 4)
+    	31: Wrong amount of left-padding spaces(want multiple of 4)
+    	34-36: Wrong amount of left-padding spaces(want multiple of 4)
+    	38-40: Wrong amount of left-padding spaces(want multiple of 4)
+    	43-44: Wrong amount of left-padding spaces(want multiple of 4)
+    	47-49: Wrong amount of left-padding spaces(want multiple of 4)
+    	63-64: Wrong amount of left-padding spaces(want multiple of 4)
+    	66-67: Wrong amount of left-padding spaces(want multiple of 4)
+    	70-72: Wrong amount of left-padding spaces(want multiple of 4)
+    	81-82: Wrong amount of left-padding spaces(want multiple of 4)
+    	85-87: Wrong amount of left-padding spaces(want multiple of 4)
+    	89-91: Wrong amount of left-padding spaces(want multiple of 4)
+    	96-97: Wrong amount of left-padding spaces(want multiple of 4)
+    	100-101: Wrong amount of left-padding spaces(want multiple of 4)
+    	108-109: Wrong amount of left-padding spaces(want multiple of 4)
+    	112-113: Wrong amount of left-padding spaces(want multiple of 4)
+    	120-121: Wrong amount of left-padding spaces(want multiple of 4)
+    	124-125: Wrong amount of left-padding spaces(want multiple of 4)
+    	128-129: Wrong amount of left-padding spaces(want multiple of 4)
+    	132-133: Wrong amount of left-padding spaces(want multiple of 4)
+    	136-138: Wrong amount of left-padding spaces(want multiple of 4)
+    	141-142: Wrong amount of left-padding spaces(want multiple of 4)
+    	146-147: Wrong amount of left-padding spaces(want multiple of 4)
+    	150-151: Wrong amount of left-padding spaces(want multiple of 4)
+    	155-156: Wrong amount of left-padding spaces(want multiple of 4)
+    	159-160: Wrong amount of left-padding spaces(want multiple of 4)
+    	164-165: Wrong amount of left-padding spaces(want multiple of 4)
+    	168-169: Wrong amount of left-padding spaces(want multiple of 4)
+    	172-173: Wrong amount of left-padding spaces(want multiple of 4)
+    	176-177: Wrong amount of left-padding spaces(want multiple of 4)
+    	182-183: Wrong amount of left-padding spaces(want multiple of 4)
+    	187-188: Wrong amount of left-padding spaces(want multiple of 4)
+    	190-191: Wrong amount of left-padding spaces(want multiple of 4)
+    	193-194: Wrong amount of left-padding spaces(want multiple of 4)
+    	197-198: Wrong amount of left-padding spaces(want multiple of 4)
+    	200-201: Wrong amount of left-padding spaces(want multiple of 4)
+    	203-204: Wrong amount of left-padding spaces(want multiple of 4)
+    	207-208: Wrong amount of left-padding spaces(want multiple of 4)
+    	213-214: Wrong amount of left-padding spaces(want multiple of 4)
+    	216-217: Wrong amount of left-padding spaces(want multiple of 4)
+    	220-221: Wrong amount of left-padding spaces(want multiple of 4)
+    	224-226: Wrong amount of left-padding spaces(want multiple of 4)
+    	229-231: Wrong amount of left-padding spaces(want multiple of 4)
+    	235-236: Wrong amount of left-padding spaces(want multiple of 4)
+    	238-240: Wrong amount of left-padding spaces(want multiple of 4)
+    	242-244: Wrong amount of left-padding spaces(want multiple of 4)
+    	247-251: Wrong amount of left-padding spaces(want multiple of 4)
+    	254-256: Wrong amount of left-padding spaces(want multiple of 4)
+    	258-260: Wrong amount of left-padding spaces(want multiple of 4)
+    	268-269: Wrong amount of left-padding spaces(want multiple of 4)
+    	272-274: Wrong amount of left-padding spaces(want multiple of 4)
+    	279-280: Wrong amount of left-padding spaces(want multiple of 4)
+    	283-285: Wrong amount of left-padding spaces(want multiple of 4)
+    	299-300: Wrong amount of left-padding spaces(want multiple of 4)
+    	303-305: Wrong amount of left-padding spaces(want multiple of 4)
+    	309-310: Wrong amount of left-padding spaces(want multiple of 4)
+    	313-314: Wrong amount of left-padding spaces(want multiple of 4)
+    	319-320: Wrong amount of left-padding spaces(want multiple of 4)
+    	323-324: Wrong amount of left-padding spaces(want multiple of 4)
+    	326-327: Wrong amount of left-padding spaces(want multiple of 4)
+    	330-331: Wrong amount of left-padding spaces(want multiple of 4)
+    	334-335: Wrong amount of left-padding spaces(want multiple of 4)
+    	337-338: Wrong amount of left-padding spaces(want multiple of 4)
+    	341-343: Wrong amount of left-padding spaces(want multiple of 4)
+    	345-347: Wrong amount of left-padding spaces(want multiple of 4)
+    	350-351: Wrong amount of left-padding spaces(want multiple of 4)
+    	359-360: Wrong amount of left-padding spaces(want multiple of 4)
+    	368-369: Wrong amount of left-padding spaces(want multiple of 4)
+    	371-372: Wrong amount of left-padding spaces(want multiple of 4)
+    	375-377: Wrong amount of left-padding spaces(want multiple of 4)
+    	380-381: Wrong amount of left-padding spaces(want multiple of 4)
+    	383: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    78 errors found
+
+❌ [ERROR] schemas/weather.schema.json
+    schemas/weather.schema.json:
+    	2-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	10-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	15-16: Wrong amount of left-padding spaces(want multiple of 4)
+    	19-20: Wrong amount of left-padding spaces(want multiple of 4)
+    	22-25: Wrong amount of left-padding spaces(want multiple of 4)
+    	28-31: Wrong amount of left-padding spaces(want multiple of 4)
+    	33-35: Wrong amount of left-padding spaces(want multiple of 4)
+    	38-40: Wrong amount of left-padding spaces(want multiple of 4)
+    	42-43: Wrong amount of left-padding spaces(want multiple of 4)
+    	46-48: Wrong amount of left-padding spaces(want multiple of 4)
+    	51-53: Wrong amount of left-padding spaces(want multiple of 4)
+    	56-58: Wrong amount of left-padding spaces(want multiple of 4)
+    	61-62: Wrong amount of left-padding spaces(want multiple of 4)
+    	65-66: Wrong amount of left-padding spaces(want multiple of 4)
+    	68-69: Wrong amount of left-padding spaces(want multiple of 4)
+    	72-74: Wrong amount of left-padding spaces(want multiple of 4)
+    	76-77: Wrong amount of left-padding spaces(want multiple of 4)
+    	80-81: Wrong amount of left-padding spaces(want multiple of 4)
+    	84-85: Wrong amount of left-padding spaces(want multiple of 4)
+    	88-89: Wrong amount of left-padding spaces(want multiple of 4)
+    	92-94: Wrong amount of left-padding spaces(want multiple of 4)
+    	96-97: Wrong amount of left-padding spaces(want multiple of 4)
+    	100-101: Wrong amount of left-padding spaces(want multiple of 4)
+    	104-105: Wrong amount of left-padding spaces(want multiple of 4)
+    	107-108: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    25 errors found
+
+✅ [SUCCESS] scripts/audit_megalinter_config.py
+❌ [ERROR] scripts/dev-mode.sh
+    scripts/dev-mode.sh:
+    	37: Trailing whitespace
+    	43: Trailing whitespace
+    	51: Trailing whitespace
+    	57: Trailing whitespace
+    	64: Trailing whitespace
+    	70: Trailing whitespace
+    	77: Trailing whitespace
+    	83: Trailing whitespace
+    	91: Trailing whitespace
+    	99: Trailing whitespace
+    	107: Trailing whitespace
+    	116: Trailing whitespace
+    
+    12 errors found
+
+❌ [ERROR] scripts/fetch-developer-stats.py
+    scripts/fetch-developer-stats.py:
+    	153: Trailing whitespace
+    	159: Trailing whitespace
+    	166: Trailing whitespace
+    	190: Trailing whitespace
+    	200: Trailing whitespace
+    	211: Trailing whitespace
+    	220: Trailing whitespace
+    	229: Trailing whitespace
+    	234: Trailing whitespace
+    	245: Trailing whitespace
+    	255: Trailing whitespace
+    	260: Trailing whitespace
+    	268: Trailing whitespace
+    	282: Trailing whitespace
+    	284: Trailing whitespace
+    	290: Trailing whitespace
+    	294: Trailing whitespace
+    	298: Trailing whitespace
+    	303: Trailing whitespace
+    	308: Trailing whitespace
+    	311: Trailing whitespace
+    	315: Trailing whitespace
+    	318: Trailing whitespace
+    	341: Trailing whitespace
+    	349: Trailing whitespace
+    	366: Trailing whitespace
+    	381: Trailing whitespace
+    	383: Trailing whitespace
+    	386: Trailing whitespace
+    	389: Trailing whitespace
+    	393: Trailing whitespace
+    	396: Trailing whitespace
+    	402: Trailing whitespace
+    	406: Trailing whitespace
+    
+    34 errors found
+
+❌ [ERROR] scripts/fetch-location.sh
+    scripts/fetch-location.sh:
+    	26: Trailing whitespace
+    	37: Trailing whitespace
+    	39: Trailing whitespace
+    	43: Trailing whitespace
+    	50: Trailing whitespace
+    	56: Trailing whitespace
+    	63: Trailing whitespace
+    	68: Trailing whitespace
+    	74: Trailing whitespace
+    	80: Trailing whitespace
+    	86: Trailing whitespace
+    	92: Trailing whitespace
+    	96: Trailing whitespace
+    	112: Trailing whitespace
+    	114: Trailing whitespace
+    	130: Trailing whitespace
+    	132: Trailing whitespace
+    	138: Trailing whitespace
+    	143: Trailing whitespace
+    	148: Trailing whitespace
+    	152: Trailing whitespace
+    	160: Trailing whitespace
+    	162: Trailing whitespace
+    	169: Trailing whitespace
+    	172: Trailing whitespace
+    	177: Trailing whitespace
+    	180: Trailing whitespace
+    	193: Trailing whitespace
+    	195: Trailing whitespace
+    	202: Trailing whitespace
+    	207: Trailing whitespace
+    	239: Trailing whitespace
+    	248: Trailing whitespace
+    	250: Trailing whitespace
+    	255: Trailing whitespace
+    	262: Trailing whitespace
+    	267: Trailing whitespace
+    	274: Trailing whitespace
+    	279: Trailing whitespace
+    	283: Trailing whitespace
+    	294: Trailing whitespace
+    	304: Trailing whitespace
+    	313: Trailing whitespace
+    	319: Trailing whitespace
+    	323: Trailing whitespace
+    	328: Trailing whitespace
+    	335: Trailing whitespace
+    	342: Trailing whitespace
+    	346: Trailing whitespace
+    	348: Trailing whitespace
+    	365: Trailing whitespace
+    	368: Trailing whitespace
+    
+    52 errors found
+
+❌ [ERROR] scripts/fetch-oura.sh
+    scripts/fetch-oura.sh:
+    	53: Trailing whitespace
+    	58: Trailing whitespace
+    	60: Trailing whitespace
+    	70: Trailing whitespace
+    	77: Trailing whitespace
+    	90: Trailing whitespace
+    	94: Trailing whitespace
+    	103: Trailing whitespace
+    	107: Trailing whitespace
+    	116: Trailing whitespace
+    	126: Trailing whitespace
+    	130: Trailing whitespace
+    	139: Trailing whitespace
+    	149: Trailing whitespace
+    	153: Trailing whitespace
+    	162: Trailing whitespace
+    	177: Trailing whitespace
+    	181: Trailing whitespace
+    	190: Trailing whitespace
+    	199: Trailing whitespace
+    	202: Trailing whitespace
+    	205: Trailing whitespace
+    	213: Trailing whitespace
+    	216: Trailing whitespace
+    	232: Trailing whitespace
+    	239: Trailing whitespace
+    	242: Trailing whitespace
+    	248: Trailing whitespace
+    	270: Trailing whitespace
+    	277: Trailing whitespace
+    	283: Trailing whitespace
+    	286: Trailing whitespace
+    	290: Trailing whitespace
+    	293: Trailing whitespace
+    	296: Trailing whitespace
+    	299: Trailing whitespace
+    	303: Trailing whitespace
+    	332: Trailing whitespace
+    
+    38 errors found
+
+❌ [ERROR] scripts/fetch-soundcloud.sh
+    scripts/fetch-soundcloud.sh:
+    	32: Trailing whitespace
+    	40: Trailing whitespace
+    	74: Trailing whitespace
+    	82: Trailing whitespace
+    	87: Trailing whitespace
+    	91: Trailing whitespace
+    	96: Trailing whitespace
+    	101: Trailing whitespace
+    	109: Trailing whitespace
+    	111: Trailing whitespace
+    	114: Trailing whitespace
+    	119: Trailing whitespace
+    	124: Trailing whitespace
+    	129: Trailing whitespace
+    	135: Trailing whitespace
+    	143: Trailing whitespace
+    	146: Trailing whitespace
+    	149: Trailing whitespace
+    	161: Trailing whitespace
+    	177: Trailing whitespace
+    	187: Trailing whitespace
+    	194: Trailing whitespace
+    	200: Trailing whitespace
+    	203: Trailing whitespace
+    	208: Trailing whitespace
+    	217: Trailing whitespace
+    	224: Trailing whitespace
+    	230: Trailing whitespace
+    	233: Trailing whitespace
+    	238: Trailing whitespace
+    	246: Trailing whitespace
+    	248: Trailing whitespace
+    	253: Trailing whitespace
+    	263: Trailing whitespace
+    	275: Trailing whitespace
+    	281: Trailing whitespace
+    	292: Trailing whitespace
+    	294: Trailing whitespace
+    	299: Trailing whitespace
+    	312: Trailing whitespace
+    	314: Trailing whitespace
+    	317: Trailing whitespace
+    	330: Trailing whitespace
+    	336: Trailing whitespace
+    	341: Trailing whitespace
+    	352: Trailing whitespace
+    	355: Trailing whitespace
+    	365: Trailing whitespace
+    	369: Trailing whitespace
+    
+    49 errors found
+
+❌ [ERROR] scripts/fetch-timezone.sh
+    scripts/fetch-timezone.sh:
+    	23: Trailing whitespace
+    	29: Trailing whitespace
+    	33: Trailing whitespace
+    	37: Trailing whitespace
+    	41: Trailing whitespace
+    	43: Trailing whitespace
+    	65: Trailing whitespace
+    	72: Trailing whitespace
+    	76: Trailing whitespace
+    	83: Trailing whitespace
+    	86: Trailing whitespace
+    	90: Trailing whitespace
+    
+    12 errors found
+
+❌ [ERROR] scripts/fetch-weather.sh
+    scripts/fetch-weather.sh:
+    	24: Trailing whitespace
+    	28: Trailing whitespace
+    	36: Trailing whitespace
+    	41: Trailing whitespace
+    	48: Trailing whitespace
+    	54: Trailing whitespace
+    	57: Trailing whitespace
+    	65: Trailing whitespace
+    	67: Trailing whitespace
+    	142: Trailing whitespace
+    	154: Trailing whitespace
+    	164: Trailing whitespace
+    	173: Trailing whitespace
+    	179: Trailing whitespace
+    	189: Trailing whitespace
+    	196: Trailing whitespace
+    	205: Trailing whitespace
+    	212: Trailing whitespace
+    	216: Trailing whitespace
+    	220: Trailing whitespace
+    	223: Trailing whitespace
+    	266: Trailing whitespace
+    	269: Trailing whitespace
+    
+    23 errors found
+
+❌ [ERROR] scripts/generate-card.py
+    scripts/generate-card.py:
+    	46: Trailing whitespace
+    	83: Trailing whitespace
+    	94: Trailing whitespace
+    	103: Trailing whitespace
+    	112: Trailing whitespace
+    	118: Trailing whitespace
+    	125: Trailing whitespace
+    	129: Trailing whitespace
+    	141: Trailing whitespace
+    	158: Wrong amount of left-padding spaces(want multiple of 4)
+    	160: Wrong amount of left-padding spaces(want multiple of 4)
+    	163-164: Wrong amount of left-padding spaces(want multiple of 4)
+    	167: Wrong amount of left-padding spaces(want multiple of 4)
+    	169: Wrong amount of left-padding spaces(want multiple of 4)
+    	171-173: Wrong amount of left-padding spaces(want multiple of 4)
+    	175-176: Wrong amount of left-padding spaces(want multiple of 4)
+    	178-179: Wrong amount of left-padding spaces(want multiple of 4)
+    	181-182: Wrong amount of left-padding spaces(want multiple of 4)
+    	185: Wrong amount of left-padding spaces(want multiple of 4)
+    	187-188: Wrong amount of left-padding spaces(want multiple of 4)
+    	190: Wrong amount of left-padding spaces(want multiple of 4)
+    	192-193: Wrong amount of left-padding spaces(want multiple of 4)
+    	196: Wrong amount of left-padding spaces(want multiple of 4)
+    	201: Wrong amount of left-padding spaces(want multiple of 4)
+    	206-208: Wrong amount of left-padding spaces(want multiple of 4)
+    	213-215: Wrong amount of left-padding spaces(want multiple of 4)
+    	217-218: Wrong amount of left-padding spaces(want multiple of 4)
+    	220: Wrong amount of left-padding spaces(want multiple of 4)
+    	222-223: Wrong amount of left-padding spaces(want multiple of 4)
+    	225: Wrong amount of left-padding spaces(want multiple of 4)
+    	234: Trailing whitespace
+    
+    31 errors found
+
+❌ [ERROR] scripts/generate-consolidated-dashboard.py
+    scripts/generate-consolidated-dashboard.py:
+    	78: Trailing whitespace
+    	85: Trailing whitespace
+    	89: Trailing whitespace
+    	92-93: Wrong amount of left-padding spaces(want multiple of 4)
+    	95-96: Wrong amount of left-padding spaces(want multiple of 4)
+    	98-99: Wrong amount of left-padding spaces(want multiple of 4)
+    	101-102: Wrong amount of left-padding spaces(want multiple of 4)
+    	104: Wrong amount of left-padding spaces(want multiple of 4)
+    	112: Trailing whitespace
+    	119: Trailing whitespace
+    	123: Trailing whitespace
+    	126: Trailing whitespace
+    	129-130: Wrong amount of left-padding spaces(want multiple of 4)
+    	132-133: Wrong amount of left-padding spaces(want multiple of 4)
+    	135-136: Wrong amount of left-padding spaces(want multiple of 4)
+    	138-139: Wrong amount of left-padding spaces(want multiple of 4)
+    	141: Wrong amount of left-padding spaces(want multiple of 4)
+    	149: Trailing whitespace
+    	156: Trailing whitespace
+    	164: Trailing whitespace
+    	167-168: Wrong amount of left-padding spaces(want multiple of 4)
+    	170-171: Wrong amount of left-padding spaces(want multiple of 4)
+    	173-174: Wrong amount of left-padding spaces(want multiple of 4)
+    	176-177: Wrong amount of left-padding spaces(want multiple of 4)
+    	179: Wrong amount of left-padding spaces(want multiple of 4)
+    	187: Trailing whitespace
+    	194: Trailing whitespace
+    	199: Trailing whitespace
+    	202-203: Wrong amount of left-padding spaces(want multiple of 4)
+    	205-206: Wrong amount of left-padding spaces(want multiple of 4)
+    	208-209: Wrong amount of left-padding spaces(want multiple of 4)
+    	211-212: Wrong amount of left-padding spaces(want multiple of 4)
+    	214: Wrong amount of left-padding spaces(want multiple of 4)
+    	222: Trailing whitespace
+    	229: Trailing whitespace
+    	233: Trailing whitespace
+    	237: Trailing whitespace
+    	240-241: Wrong amount of left-padding spaces(want multiple of 4)
+    	243-244: Wrong amount of left-padding spaces(want multiple of 4)
+    	246-247: Wrong amount of left-padding spaces(want multiple of 4)
+    	249-250: Wrong amount of left-padding spaces(want multiple of 4)
+    	252: Wrong amount of left-padding spaces(want multiple of 4)
+    	258: Trailing whitespace
+    	265: Trailing whitespace
+    	274: Trailing whitespace
+    	278: Trailing whitespace
+    	282: Trailing whitespace
+    	289: Trailing whitespace
+    	293-294: Wrong amount of left-padding spaces(want multiple of 4)
+    	296: Wrong amount of left-padding spaces(want multiple of 4)
+    	298: Trailing whitespace
+    	300: Wrong amount of left-padding spaces(want multiple of 4)
+    	302-303: Wrong amount of left-padding spaces(want multiple of 4)
+    	305: Wrong amount of left-padding spaces(want multiple of 4)
+    	307-309: Wrong amount of left-padding spaces(want multiple of 4)
+    	311-312: Wrong amount of left-padding spaces(want multiple of 4)
+    	314: Wrong amount of left-padding spaces(want multiple of 4)
+    	316: Wrong amount of left-padding spaces(want multiple of 4)
+    	318-324: Wrong amount of left-padding spaces(want multiple of 4)
+    	326-327: Wrong amount of left-padding spaces(want multiple of 4)
+    	329: Wrong amount of left-padding spaces(want multiple of 4)
+    	331: Wrong amount of left-padding spaces(want multiple of 4)
+    	333-334: Wrong amount of left-padding spaces(want multiple of 4)
+    	336: Trailing whitespace
+    	344: Trailing whitespace
+    	348: Trailing whitespace
+    	353: Trailing whitespace
+    
+    67 errors found
+
+❌ [ERROR] scripts/generate-developer-dashboard.py
+    scripts/generate-developer-dashboard.py:
+    	55: Wrong amount of left-padding spaces(want multiple of 4)
+    	57-58: Wrong amount of left-padding spaces(want multiple of 4)
+    	60: Wrong amount of left-padding spaces(want multiple of 4)
+    	75: Trailing whitespace
+    	78: Trailing whitespace
+    	83: Trailing whitespace
+    	93: Trailing whitespace
+    	96: Trailing whitespace
+    	102: Trailing whitespace
+    	117: Trailing whitespace
+    	120-121: Wrong amount of left-padding spaces(want multiple of 4)
+    	123: Wrong amount of left-padding spaces(want multiple of 4)
+    	143: Trailing whitespace
+    	148: Trailing whitespace
+    	152: Trailing whitespace
+    	157: Trailing whitespace
+    	159: Trailing whitespace
+    	162: Trailing whitespace
+    	165: Trailing whitespace
+    	165: Wrong amount of left-padding spaces(want multiple of 4)
+    	167: Trailing whitespace
+    	167: Wrong amount of left-padding spaces(want multiple of 4)
+    	169: Trailing whitespace
+    	169: Wrong amount of left-padding spaces(want multiple of 4)
+    	172: Wrong amount of left-padding spaces(want multiple of 4)
+    	174: Trailing whitespace
+    	190: Trailing whitespace
+    	193: Trailing whitespace
+    	198: Trailing whitespace
+    	202: Trailing whitespace
+    	209: Trailing whitespace
+    	215: Wrong amount of left-padding spaces(want multiple of 4)
+    	216: Trailing whitespace
+    	216: Wrong amount of left-padding spaces(want multiple of 4)
+    	219: Wrong amount of left-padding spaces(want multiple of 4)
+    	221: Trailing whitespace
+    	225: Wrong amount of left-padding spaces(want multiple of 4)
+    	228: Wrong amount of left-padding spaces(want multiple of 4)
+    	230: Wrong amount of left-padding spaces(want multiple of 4)
+    	234: Trailing whitespace
+    	240: Trailing whitespace
+    	244: Trailing whitespace
+    	257: Trailing whitespace
+    	263: Trailing whitespace
+    	267: Trailing whitespace
+    	271: Trailing whitespace
+    	287: Trailing whitespace
+    	291: Trailing whitespace
+    	296-301: Wrong amount of left-padding spaces(want multiple of 4)
+    	303: Trailing whitespace
+    	308: Trailing whitespace
+    	313: Trailing whitespace
+    	325: Trailing whitespace
+    	334: Trailing whitespace
+    	340: Trailing whitespace
+    	348: Trailing whitespace
+    	351-352: Wrong amount of left-padding spaces(want multiple of 4)
+    	354: Wrong amount of left-padding spaces(want multiple of 4)
+    	356: Wrong amount of left-padding spaces(want multiple of 4)
+    	357: Trailing whitespace
+    	359: Wrong amount of left-padding spaces(want multiple of 4)
+    	361-362: Wrong amount of left-padding spaces(want multiple of 4)
+    	365-366: Wrong amount of left-padding spaces(want multiple of 4)
+    	369-370: Wrong amount of left-padding spaces(want multiple of 4)
+    	373: Wrong amount of left-padding spaces(want multiple of 4)
+    	375: Wrong amount of left-padding spaces(want multiple of 4)
+    	377-379: Wrong amount of left-padding spaces(want multiple of 4)
+    	381-382: Wrong amount of left-padding spaces(want multiple of 4)
+    	384: Wrong amount of left-padding spaces(want multiple of 4)
+    	386: Wrong amount of left-padding spaces(want multiple of 4)
+    	388-389: Wrong amount of left-padding spaces(want multiple of 4)
+    	391-392: Wrong amount of left-padding spaces(want multiple of 4)
+    	394: Wrong amount of left-padding spaces(want multiple of 4)
+    	396-397: Wrong amount of left-padding spaces(want multiple of 4)
+    	399: Wrong amount of left-padding spaces(want multiple of 4)
+    	401: Wrong amount of left-padding spaces(want multiple of 4)
+    	403-404: Wrong amount of left-padding spaces(want multiple of 4)
+    	406: Wrong amount of left-padding spaces(want multiple of 4)
+    	408-409: Wrong amount of left-padding spaces(want multiple of 4)
+    	411-412: Wrong amount of left-padding spaces(want multiple of 4)
+    	414: Wrong amount of left-padding spaces(want multiple of 4)
+    	416-417: Wrong amount of left-padding spaces(want multiple of 4)
+    	419: Wrong amount of left-padding spaces(want multiple of 4)
+    	421: Wrong amount of left-padding spaces(want multiple of 4)
+    	423-424: Wrong amount of left-padding spaces(want multiple of 4)
+    	426-427: Wrong amount of left-padding spaces(want multiple of 4)
+    	429: Wrong amount of left-padding spaces(want multiple of 4)
+    	431-432: Wrong amount of left-padding spaces(want multiple of 4)
+    	441: Trailing whitespace
+    
+    89 errors found
+
+❌ [ERROR] scripts/generate-fallback-map.py
+    scripts/generate-fallback-map.py:
+    	16: Trailing whitespace
+    	26: Trailing whitespace
+    	36: Trailing whitespace
+    	43: Trailing whitespace
+    	56: Trailing whitespace
+    	61: Trailing whitespace
+    	65: Trailing whitespace
+    	69: Trailing whitespace
+    	75: Trailing whitespace
+    	80: Trailing whitespace
+    	84: Trailing whitespace
+    	88: Trailing whitespace
+    	92: Trailing whitespace
+    	96: Trailing whitespace
+    	101: Trailing whitespace
+    	109: Trailing whitespace
+    	111: Trailing whitespace
+    	121: Trailing whitespace
+    	127: Trailing whitespace
+    	132: Trailing whitespace
+    
+    20 errors found
+
+❌ [ERROR] scripts/generate-health-dashboard.py
+    scripts/generate-health-dashboard.py:
+    	53: Trailing whitespace
+    	58: Trailing whitespace
+    	61-64: Wrong amount of left-padding spaces(want multiple of 4)
+    	65: Trailing whitespace
+    	65: Wrong amount of left-padding spaces(want multiple of 4)
+    	67: Trailing whitespace
+    	67: Wrong amount of left-padding spaces(want multiple of 4)
+    	80: Trailing whitespace
+    	83: Wrong amount of left-padding spaces(want multiple of 4)
+    	85: Wrong amount of left-padding spaces(want multiple of 4)
+    	86: Trailing whitespace
+    	86: Wrong amount of left-padding spaces(want multiple of 4)
+    	93: Trailing whitespace
+    	102: Trailing whitespace
+    	118: Trailing whitespace
+    	125: Trailing whitespace
+    	131: Trailing whitespace
+    	135: Trailing whitespace
+    	139: Trailing whitespace
+    	147: Trailing whitespace
+    	155: Trailing whitespace
+    	160: Trailing whitespace
+    	166: Trailing whitespace
+    	171: Trailing whitespace
+    	178: Trailing whitespace
+    	183: Trailing whitespace
+    	186: Trailing whitespace
+    	191: Trailing whitespace
+    	198: Trailing whitespace
+    	201: Trailing whitespace
+    	207: Trailing whitespace
+    	215: Trailing whitespace
+    	218-219: Wrong amount of left-padding spaces(want multiple of 4)
+    	221: Wrong amount of left-padding spaces(want multiple of 4)
+    	223: Wrong amount of left-padding spaces(want multiple of 4)
+    	224: Trailing whitespace
+    	226: Wrong amount of left-padding spaces(want multiple of 4)
+    	228-229: Wrong amount of left-padding spaces(want multiple of 4)
+    	232-233: Wrong amount of left-padding spaces(want multiple of 4)
+    	236-237: Wrong amount of left-padding spaces(want multiple of 4)
+    	240-241: Wrong amount of left-padding spaces(want multiple of 4)
+    	244-245: Wrong amount of left-padding spaces(want multiple of 4)
+    	248-249: Wrong amount of left-padding spaces(want multiple of 4)
+    	252: Wrong amount of left-padding spaces(want multiple of 4)
+    	254: Wrong amount of left-padding spaces(want multiple of 4)
+    	256-258: Wrong amount of left-padding spaces(want multiple of 4)
+    	260-261: Wrong amount of left-padding spaces(want multiple of 4)
+    	263: Wrong amount of left-padding spaces(want multiple of 4)
+    	265: Wrong amount of left-padding spaces(want multiple of 4)
+    	267-268: Wrong amount of left-padding spaces(want multiple of 4)
+    	272: Wrong amount of left-padding spaces(want multiple of 4)
+    	274-275: Wrong amount of left-padding spaces(want multiple of 4)
+    	278: Wrong amount of left-padding spaces(want multiple of 4)
+    	284: Wrong amount of left-padding spaces(want multiple of 4)
+    	286: Wrong amount of left-padding spaces(want multiple of 4)
+    	288-289: Wrong amount of left-padding spaces(want multiple of 4)
+    	292: Wrong amount of left-padding spaces(want multiple of 4)
+    	299: Wrong amount of left-padding spaces(want multiple of 4)
+    	301-302: Wrong amount of left-padding spaces(want multiple of 4)
+    	305: Wrong amount of left-padding spaces(want multiple of 4)
+    	312: Wrong amount of left-padding spaces(want multiple of 4)
+    	314-315: Wrong amount of left-padding spaces(want multiple of 4)
+    	318: Wrong amount of left-padding spaces(want multiple of 4)
+    	325: Wrong amount of left-padding spaces(want multiple of 4)
+    	327-328: Wrong amount of left-padding spaces(want multiple of 4)
+    	331: Wrong amount of left-padding spaces(want multiple of 4)
+    	334: Wrong amount of left-padding spaces(want multiple of 4)
+    	337-338: Wrong amount of left-padding spaces(want multiple of 4)
+    	340: Wrong amount of left-padding spaces(want multiple of 4)
+    	343: Wrong amount of left-padding spaces(want multiple of 4)
+    	345-346: Wrong amount of left-padding spaces(want multiple of 4)
+    	348-349: Wrong amount of left-padding spaces(want multiple of 4)
+    	351: Wrong amount of left-padding spaces(want multiple of 4)
+    	353: Wrong amount of left-padding spaces(want multiple of 4)
+    	355-356: Wrong amount of left-padding spaces(want multiple of 4)
+    	359: Wrong amount of left-padding spaces(want multiple of 4)
+    	362: Wrong amount of left-padding spaces(want multiple of 4)
+    	364-365: Wrong amount of left-padding spaces(want multiple of 4)
+    	367-368: Wrong amount of left-padding spaces(want multiple of 4)
+    	370: Wrong amount of left-padding spaces(want multiple of 4)
+    	373: Wrong amount of left-padding spaces(want multiple of 4)
+    	375-376: Wrong amount of left-padding spaces(want multiple of 4)
+    	378-379: Wrong amount of left-padding spaces(want multiple of 4)
+    	381: Wrong amount of left-padding spaces(want multiple of 4)
+    	383: Wrong amount of left-padding spaces(want multiple of 4)
+    	385: Wrong amount of left-padding spaces(want multiple of 4)
+    	387-388: Wrong amount of left-padding spaces(want multiple of 4)
+    	390: Wrong amount of left-padding spaces(want multiple of 4)
+    	392: Wrong amount of left-padding spaces(want multiple of 4)
+    	394-395: Wrong amount of left-padding spaces(want multiple of 4)
+    	404: Trailing whitespace
+    
+    91 errors found
+
+❌ [ERROR] scripts/generate-health-snapshot.py
+    scripts/generate-health-snapshot.py:
+    	43: Trailing whitespace
+    	47: Trailing whitespace
+    	52: Trailing whitespace
+    	56-57: Trailing whitespace
+    	60: Trailing whitespace
+    	64: Trailing whitespace
+    	68: Trailing whitespace
+    	134: Trailing whitespace
+    
+    8 errors found
+
+❌ [ERROR] scripts/generate-interactive-dashboard.py
+    scripts/generate-interactive-dashboard.py:
+    	79: Trailing whitespace
+    	86: Trailing whitespace
+    	91: Trailing whitespace
+    	94: Trailing whitespace
+    	97-98: Wrong amount of left-padding spaces(want multiple of 4)
+    	100-101: Wrong amount of left-padding spaces(want multiple of 4)
+    	103-104: Wrong amount of left-padding spaces(want multiple of 4)
+    	106-107: Wrong amount of left-padding spaces(want multiple of 4)
+    	109-110: Wrong amount of left-padding spaces(want multiple of 4)
+    	118: Trailing whitespace
+    	125: Trailing whitespace
+    	131: Trailing whitespace
+    	133: Trailing whitespace
+    	137: Trailing whitespace
+    	140: Trailing whitespace
+    	143-144: Wrong amount of left-padding spaces(want multiple of 4)
+    	146-147: Wrong amount of left-padding spaces(want multiple of 4)
+    	149-150: Wrong amount of left-padding spaces(want multiple of 4)
+    	152-153: Wrong amount of left-padding spaces(want multiple of 4)
+    	155-156: Wrong amount of left-padding spaces(want multiple of 4)
+    	164: Trailing whitespace
+    	171: Trailing whitespace
+    	180: Trailing whitespace
+    	183: Trailing whitespace
+    	186-187: Wrong amount of left-padding spaces(want multiple of 4)
+    	189-190: Wrong amount of left-padding spaces(want multiple of 4)
+    	192-193: Wrong amount of left-padding spaces(want multiple of 4)
+    	195-196: Wrong amount of left-padding spaces(want multiple of 4)
+    	198-199: Wrong amount of left-padding spaces(want multiple of 4)
+    	207: Trailing whitespace
+    	214: Trailing whitespace
+    	220: Trailing whitespace
+    	223: Trailing whitespace
+    	226-227: Wrong amount of left-padding spaces(want multiple of 4)
+    	229-230: Wrong amount of left-padding spaces(want multiple of 4)
+    	232-233: Wrong amount of left-padding spaces(want multiple of 4)
+    	235-236: Wrong amount of left-padding spaces(want multiple of 4)
+    	238-239: Wrong amount of left-padding spaces(want multiple of 4)
+    	247: Trailing whitespace
+    	254: Trailing whitespace
+    	259: Trailing whitespace
+    	263: Trailing whitespace
+    	266: Trailing whitespace
+    	269-270: Wrong amount of left-padding spaces(want multiple of 4)
+    	272-273: Wrong amount of left-padding spaces(want multiple of 4)
+    	275-276: Wrong amount of left-padding spaces(want multiple of 4)
+    	278-279: Wrong amount of left-padding spaces(want multiple of 4)
+    	281-282: Wrong amount of left-padding spaces(want multiple of 4)
+    	290: Trailing whitespace
+    	292: Wrong amount of left-padding spaces(want multiple of 4)
+    	294-295: Wrong amount of left-padding spaces(want multiple of 4)
+    	297: Trailing whitespace
+    	299-300: Wrong amount of left-padding spaces(want multiple of 4)
+    	302: Trailing whitespace
+    	304-305: Wrong amount of left-padding spaces(want multiple of 4)
+    	307: Trailing whitespace
+    	309-311: Wrong amount of left-padding spaces(want multiple of 4)
+    	313: Trailing whitespace
+    	319: Trailing whitespace
+    	321: Wrong amount of left-padding spaces(want multiple of 4)
+    	323: Trailing whitespace
+    	325: Wrong amount of left-padding spaces(want multiple of 4)
+    	327: Wrong amount of left-padding spaces(want multiple of 4)
+    	332: Trailing whitespace
+    	335: Trailing whitespace
+    	342: Trailing whitespace
+    	350: Trailing whitespace
+    	354: Trailing whitespace
+    	358: Trailing whitespace
+    	361: Trailing whitespace
+    	368: Trailing whitespace
+    	372-373: Wrong amount of left-padding spaces(want multiple of 4)
+    	375-376: Wrong amount of left-padding spaces(want multiple of 4)
+    	378-379: Wrong amount of left-padding spaces(want multiple of 4)
+    	381-382: Wrong amount of left-padding spaces(want multiple of 4)
+    	384: Trailing whitespace
+    	386: Wrong amount of left-padding spaces(want multiple of 4)
+    	388-389: Wrong amount of left-padding spaces(want multiple of 4)
+    	391: Wrong amount of left-padding spaces(want multiple of 4)
+    	392: Trailing whitespace
+    	392-393: Wrong amount of left-padding spaces(want multiple of 4)
+    	395-397: Wrong amount of left-padding spaces(want multiple of 4)
+    	399-400: Wrong amount of left-padding spaces(want multiple of 4)
+    	402: Wrong amount of left-padding spaces(want multiple of 4)
+    	404: Wrong amount of left-padding spaces(want multiple of 4)
+    	406-412: Wrong amount of left-padding spaces(want multiple of 4)
+    	414-415: Wrong amount of left-padding spaces(want multiple of 4)
+    	417: Wrong amount of left-padding spaces(want multiple of 4)
+    	419: Wrong amount of left-padding spaces(want multiple of 4)
+    	421-422: Wrong amount of left-padding spaces(want multiple of 4)
+    	424: Trailing whitespace
+    	432: Trailing whitespace
+    	436: Trailing whitespace
+    	438: Trailing whitespace
+    	442: Trailing whitespace
+    	447: Trailing whitespace
+    
+    96 errors found
+
+❌ [ERROR] scripts/generate-location-card.py
+    scripts/generate-location-card.py:
+    	36: Trailing whitespace
+    	48: Trailing whitespace
+    	68: Trailing whitespace
+    	76: Trailing whitespace
+    	80: Trailing whitespace
+    	85: Trailing whitespace
+    	93: Trailing whitespace
+    	99: Trailing whitespace
+    	105: Trailing whitespace
+    	109: Trailing whitespace
+    	126: Trailing whitespace
+    	132: Trailing whitespace
+    	140: Trailing whitespace
+    	148: Trailing whitespace
+    	151-152: Wrong amount of left-padding spaces(want multiple of 4)
+    	154: Wrong amount of left-padding spaces(want multiple of 4)
+    	156: Wrong amount of left-padding spaces(want multiple of 4)
+    	159: Wrong amount of left-padding spaces(want multiple of 4)
+    	161-162: Wrong amount of left-padding spaces(want multiple of 4)
+    	165: Wrong amount of left-padding spaces(want multiple of 4)
+    	168-169: Wrong amount of left-padding spaces(want multiple of 4)
+    	172: Wrong amount of left-padding spaces(want multiple of 4)
+    	174: Wrong amount of left-padding spaces(want multiple of 4)
+    	176-178: Wrong amount of left-padding spaces(want multiple of 4)
+    	180-181: Wrong amount of left-padding spaces(want multiple of 4)
+    	183: Wrong amount of left-padding spaces(want multiple of 4)
+    	185: Wrong amount of left-padding spaces(want multiple of 4)
+    	187-188: Wrong amount of left-padding spaces(want multiple of 4)
+    	190: Wrong amount of left-padding spaces(want multiple of 4)
+    	192: Wrong amount of left-padding spaces(want multiple of 4)
+    	194-195: Wrong amount of left-padding spaces(want multiple of 4)
+    	197-198: Wrong amount of left-padding spaces(want multiple of 4)
+    	200-201: Wrong amount of left-padding spaces(want multiple of 4)
+    	203-204: Wrong amount of left-padding spaces(want multiple of 4)
+    	206: Wrong amount of left-padding spaces(want multiple of 4)
+    	208: Wrong amount of left-padding spaces(want multiple of 4)
+    	210: Wrong amount of left-padding spaces(want multiple of 4)
+    	212-213: Wrong amount of left-padding spaces(want multiple of 4)
+    	222: Trailing whitespace
+    
+    39 errors found
+
+❌ [ERROR] scripts/generate-oura-mood-card.py
+    scripts/generate-oura-mood-card.py:
+    	49: Trailing whitespace
+    	54: Trailing whitespace
+    	95: Trailing whitespace
+    	101: Trailing whitespace
+    	116-119: Wrong amount of left-padding spaces(want multiple of 4)
+    	125: Trailing whitespace
+    	131: Trailing whitespace
+    	138: Trailing whitespace
+    	143: Trailing whitespace
+    	152: Trailing whitespace
+    	156: Trailing whitespace
+    	199: Trailing whitespace
+    	205: Trailing whitespace
+    	213: Trailing whitespace
+    	216-217: Wrong amount of left-padding spaces(want multiple of 4)
+    	219: Wrong amount of left-padding spaces(want multiple of 4)
+    	221: Wrong amount of left-padding spaces(want multiple of 4)
+    	224: Wrong amount of left-padding spaces(want multiple of 4)
+    	226-227: Wrong amount of left-padding spaces(want multiple of 4)
+    	230-231: Wrong amount of left-padding spaces(want multiple of 4)
+    	234-235: Wrong amount of left-padding spaces(want multiple of 4)
+    	238: Wrong amount of left-padding spaces(want multiple of 4)
+    	241: Wrong amount of left-padding spaces(want multiple of 4)
+    	243: Wrong amount of left-padding spaces(want multiple of 4)
+    	245-247: Wrong amount of left-padding spaces(want multiple of 4)
+    	249-250: Wrong amount of left-padding spaces(want multiple of 4)
+    	252: Wrong amount of left-padding spaces(want multiple of 4)
+    	254: Wrong amount of left-padding spaces(want multiple of 4)
+    	256-257: Wrong amount of left-padding spaces(want multiple of 4)
+    	259: Wrong amount of left-padding spaces(want multiple of 4)
+    	262: Wrong amount of left-padding spaces(want multiple of 4)
+    	265: Wrong amount of left-padding spaces(want multiple of 4)
+    	267: Wrong amount of left-padding spaces(want multiple of 4)
+    	269-272: Wrong amount of left-padding spaces(want multiple of 4)
+    	274-275: Wrong amount of left-padding spaces(want multiple of 4)
+    	277: Wrong amount of left-padding spaces(want multiple of 4)
+    	280: Wrong amount of left-padding spaces(want multiple of 4)
+    	282: Wrong amount of left-padding spaces(want multiple of 4)
+    	284: Wrong amount of left-padding spaces(want multiple of 4)
+    	286: Wrong amount of left-padding spaces(want multiple of 4)
+    	289: Wrong amount of left-padding spaces(want multiple of 4)
+    	291: Wrong amount of left-padding spaces(want multiple of 4)
+    	293-294: Wrong amount of left-padding spaces(want multiple of 4)
+    	296: Wrong amount of left-padding spaces(want multiple of 4)
+    	299: Wrong amount of left-padding spaces(want multiple of 4)
+    	302: Wrong amount of left-padding spaces(want multiple of 4)
+    	304: Wrong amount of left-padding spaces(want multiple of 4)
+    	306-307: Wrong amount of left-padding spaces(want multiple of 4)
+    	309: Wrong amount of left-padding spaces(want multiple of 4)
+    	313: Wrong amount of left-padding spaces(want multiple of 4)
+    	315: Wrong amount of left-padding spaces(want multiple of 4)
+    	317: Wrong amount of left-padding spaces(want multiple of 4)
+    	319: Wrong amount of left-padding spaces(want multiple of 4)
+    	320: Trailing whitespace
+    	325: Trailing whitespace
+    	327: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    56 errors found
+
+❌ [ERROR] scripts/generate-status-page.py
+    scripts/generate-status-page.py:
+    	35: Trailing whitespace
+    	38-39: Trailing whitespace
+    	39: Wrong amount of left-padding spaces(want multiple of 4)
+    	40: Trailing whitespace
+    	40-41: Wrong amount of left-padding spaces(want multiple of 4)
+    	50: Trailing whitespace
+    	62: Trailing whitespace
+    	65: Trailing whitespace
+    	68: Trailing whitespace
+    	76: Trailing whitespace
+    	81: Trailing whitespace
+    	87: Trailing whitespace
+    	99: Trailing whitespace
+    	100: Wrong amount of left-padding spaces(want multiple of 4)
+    	104: Trailing whitespace
+    	109: Trailing whitespace
+    	112: Trailing whitespace
+    	122: Trailing whitespace
+    	125: Trailing whitespace
+    	127: Trailing whitespace
+    	128: Wrong amount of left-padding spaces(want multiple of 4)
+    	131: Trailing whitespace
+    	132: Wrong amount of left-padding spaces(want multiple of 4)
+    	135: Trailing whitespace
+    	137: Trailing whitespace
+    	138: Wrong amount of left-padding spaces(want multiple of 4)
+    	141: Trailing whitespace
+    	142: Wrong amount of left-padding spaces(want multiple of 4)
+    	145: Trailing whitespace
+    	146: Wrong amount of left-padding spaces(want multiple of 4)
+    	149: Trailing whitespace
+    	150: Wrong amount of left-padding spaces(want multiple of 4)
+    	154: Trailing whitespace
+    	158: Trailing whitespace
+    	161: Trailing whitespace
+    	164: Trailing whitespace
+    	168: Trailing whitespace
+    	169: Wrong amount of left-padding spaces(want multiple of 4)
+    	173: Trailing whitespace
+    	177: Trailing whitespace
+    	183: Trailing whitespace
+    	184: Wrong amount of left-padding spaces(want multiple of 4)
+    	190: Trailing whitespace
+    	191: Wrong amount of left-padding spaces(want multiple of 4)
+    	195: Trailing whitespace
+    	199: Trailing whitespace
+    	204: Trailing whitespace
+    	205: Wrong amount of left-padding spaces(want multiple of 4)
+    	209: Trailing whitespace
+    	212: Trailing whitespace
+    	213: Wrong amount of left-padding spaces(want multiple of 4)
+    	219: Trailing whitespace
+    	220: Wrong amount of left-padding spaces(want multiple of 4)
+    	224: Trailing whitespace
+    	230: Trailing whitespace
+    	231: Wrong amount of left-padding spaces(want multiple of 4)
+    	234: Trailing whitespace
+    	235: Wrong amount of left-padding spaces(want multiple of 4)
+    	241: Trailing whitespace
+    	242: Wrong amount of left-padding spaces(want multiple of 4)
+    	246: Trailing whitespace
+    	250-251: Trailing whitespace
+    	251-252: Wrong amount of left-padding spaces(want multiple of 4)
+    	254: Trailing whitespace
+    	256: Trailing whitespace
+    	262: Trailing whitespace
+    
+    66 errors found
+
+❌ [ERROR] scripts/generate-summary-card.py
+    scripts/generate-summary-card.py:
+    	37: Trailing whitespace
+    	45: Trailing whitespace
+    	49: Trailing whitespace
+    	56: Trailing whitespace
+    	62: Trailing whitespace
+    	65: Wrong amount of left-padding spaces(want multiple of 4)
+    	67-68: Wrong amount of left-padding spaces(want multiple of 4)
+    	70: Wrong amount of left-padding spaces(want multiple of 4)
+    	76: Trailing whitespace
+    	92: Trailing whitespace
+    	96: Trailing whitespace
+    	100: Trailing whitespace
+    	107: Trailing whitespace
+    	111: Trailing whitespace
+    	118: Trailing whitespace
+    	121: Trailing whitespace
+    	133: Trailing whitespace
+    	139-140: Wrong amount of left-padding spaces(want multiple of 4)
+    	142-143: Wrong amount of left-padding spaces(want multiple of 4)
+    	145: Wrong amount of left-padding spaces(want multiple of 4)
+    	147: Trailing whitespace
+    	156-157: Wrong amount of left-padding spaces(want multiple of 4)
+    	159-160: Wrong amount of left-padding spaces(want multiple of 4)
+    	162: Wrong amount of left-padding spaces(want multiple of 4)
+    	164: Trailing whitespace
+    	166: Wrong amount of left-padding spaces(want multiple of 4)
+    	168-169: Wrong amount of left-padding spaces(want multiple of 4)
+    	171: Wrong amount of left-padding spaces(want multiple of 4)
+    	173-175: Wrong amount of left-padding spaces(want multiple of 4)
+    	177-178: Wrong amount of left-padding spaces(want multiple of 4)
+    	180: Wrong amount of left-padding spaces(want multiple of 4)
+    	182: Wrong amount of left-padding spaces(want multiple of 4)
+    	183: Trailing whitespace
+    	183-185: Wrong amount of left-padding spaces(want multiple of 4)
+    	187: Wrong amount of left-padding spaces(want multiple of 4)
+    	189: Wrong amount of left-padding spaces(want multiple of 4)
+    	190: Trailing whitespace
+    	190-192: Wrong amount of left-padding spaces(want multiple of 4)
+    	194-195: Wrong amount of left-padding spaces(want multiple of 4)
+    	196: Trailing whitespace
+    	196-198: Wrong amount of left-padding spaces(want multiple of 4)
+    	200-201: Wrong amount of left-padding spaces(want multiple of 4)
+    	203: Wrong amount of left-padding spaces(want multiple of 4)
+    	205: Wrong amount of left-padding spaces(want multiple of 4)
+    	207-208: Wrong amount of left-padding spaces(want multiple of 4)
+    	210: Trailing whitespace
+    	218: Trailing whitespace
+    	223: Trailing whitespace
+    	225: Trailing whitespace
+    	229: Trailing whitespace
+    	233: Trailing whitespace
+    	237: Trailing whitespace
+    	240: Trailing whitespace
+    	245: Trailing whitespace
+    
+    54 errors found
+
+❌ [ERROR] scripts/generate-themed-dashboard.py
+    scripts/generate-themed-dashboard.py:
+    	77: Trailing whitespace
+    	84: Trailing whitespace
+    	88: Trailing whitespace
+    	91-92: Wrong amount of left-padding spaces(want multiple of 4)
+    	94-95: Wrong amount of left-padding spaces(want multiple of 4)
+    	97-98: Wrong amount of left-padding spaces(want multiple of 4)
+    	100-101: Wrong amount of left-padding spaces(want multiple of 4)
+    	103: Wrong amount of left-padding spaces(want multiple of 4)
+    	111: Trailing whitespace
+    	118: Trailing whitespace
+    	122: Trailing whitespace
+    	124: Trailing whitespace
+    	127-128: Wrong amount of left-padding spaces(want multiple of 4)
+    	130-131: Wrong amount of left-padding spaces(want multiple of 4)
+    	133-134: Wrong amount of left-padding spaces(want multiple of 4)
+    	136-137: Wrong amount of left-padding spaces(want multiple of 4)
+    	139: Wrong amount of left-padding spaces(want multiple of 4)
+    	147: Trailing whitespace
+    	154: Trailing whitespace
+    	162: Trailing whitespace
+    	165-166: Wrong amount of left-padding spaces(want multiple of 4)
+    	168-169: Wrong amount of left-padding spaces(want multiple of 4)
+    	171-172: Wrong amount of left-padding spaces(want multiple of 4)
+    	174-175: Wrong amount of left-padding spaces(want multiple of 4)
+    	177: Wrong amount of left-padding spaces(want multiple of 4)
+    	185: Trailing whitespace
+    	192: Trailing whitespace
+    	197: Trailing whitespace
+    	200-201: Wrong amount of left-padding spaces(want multiple of 4)
+    	203-204: Wrong amount of left-padding spaces(want multiple of 4)
+    	206-207: Wrong amount of left-padding spaces(want multiple of 4)
+    	209-210: Wrong amount of left-padding spaces(want multiple of 4)
+    	212: Wrong amount of left-padding spaces(want multiple of 4)
+    	220: Trailing whitespace
+    	227: Trailing whitespace
+    	231: Trailing whitespace
+    	235: Trailing whitespace
+    	238-239: Wrong amount of left-padding spaces(want multiple of 4)
+    	241-242: Wrong amount of left-padding spaces(want multiple of 4)
+    	244-245: Wrong amount of left-padding spaces(want multiple of 4)
+    	247-248: Wrong amount of left-padding spaces(want multiple of 4)
+    	250: Wrong amount of left-padding spaces(want multiple of 4)
+    	256: Trailing whitespace
+    	259: Trailing whitespace
+    	266: Trailing whitespace
+    	274: Trailing whitespace
+    	278: Trailing whitespace
+    	282: Trailing whitespace
+    	289: Trailing whitespace
+    	293-294: Wrong amount of left-padding spaces(want multiple of 4)
+    	296-297: Wrong amount of left-padding spaces(want multiple of 4)
+    	299: Wrong amount of left-padding spaces(want multiple of 4)
+    	301: Trailing whitespace
+    	303: Wrong amount of left-padding spaces(want multiple of 4)
+    	305-306: Wrong amount of left-padding spaces(want multiple of 4)
+    	308: Wrong amount of left-padding spaces(want multiple of 4)
+    	310-312: Wrong amount of left-padding spaces(want multiple of 4)
+    	314-315: Wrong amount of left-padding spaces(want multiple of 4)
+    	317: Wrong amount of left-padding spaces(want multiple of 4)
+    	319: Wrong amount of left-padding spaces(want multiple of 4)
+    	321-327: Wrong amount of left-padding spaces(want multiple of 4)
+    	329-330: Wrong amount of left-padding spaces(want multiple of 4)
+    	332: Wrong amount of left-padding spaces(want multiple of 4)
+    	334: Wrong amount of left-padding spaces(want multiple of 4)
+    	336-337: Wrong amount of left-padding spaces(want multiple of 4)
+    	339: Trailing whitespace
+    	347: Trailing whitespace
+    	351: Trailing whitespace
+    	353: Trailing whitespace
+    	357: Trailing whitespace
+    	362: Trailing whitespace
+    
+    71 errors found
+
+❌ [ERROR] scripts/generate-weather-card.py
+    scripts/generate-weather-card.py:
+    	57: Trailing whitespace
+    	61: Trailing whitespace
+    	68: Trailing whitespace
+    	87: Trailing whitespace
+    	106: Trailing whitespace
+    	110: Trailing whitespace
+    	118: Trailing whitespace
+    	123: Trailing whitespace
+    	131: Trailing whitespace
+    	135: Trailing whitespace
+    	162: Trailing whitespace
+    	169: Trailing whitespace
+    	177: Trailing whitespace
+    	180-181: Wrong amount of left-padding spaces(want multiple of 4)
+    	183: Wrong amount of left-padding spaces(want multiple of 4)
+    	185: Wrong amount of left-padding spaces(want multiple of 4)
+    	186: Trailing whitespace
+    	199: Wrong amount of left-padding spaces(want multiple of 4)
+    	201-202: Wrong amount of left-padding spaces(want multiple of 4)
+    	205-206: Wrong amount of left-padding spaces(want multiple of 4)
+    	209: Wrong amount of left-padding spaces(want multiple of 4)
+    	211: Wrong amount of left-padding spaces(want multiple of 4)
+    	213-215: Wrong amount of left-padding spaces(want multiple of 4)
+    	217-218: Wrong amount of left-padding spaces(want multiple of 4)
+    	220: Wrong amount of left-padding spaces(want multiple of 4)
+    	222: Wrong amount of left-padding spaces(want multiple of 4)
+    	224-225: Wrong amount of left-padding spaces(want multiple of 4)
+    	227: Wrong amount of left-padding spaces(want multiple of 4)
+    	230: Wrong amount of left-padding spaces(want multiple of 4)
+    	232: Wrong amount of left-padding spaces(want multiple of 4)
+    	234-235: Wrong amount of left-padding spaces(want multiple of 4)
+    	237-239: Wrong amount of left-padding spaces(want multiple of 4)
+    	241: Wrong amount of left-padding spaces(want multiple of 4)
+    	243-244: Wrong amount of left-padding spaces(want multiple of 4)
+    	246: Wrong amount of left-padding spaces(want multiple of 4)
+    	248: Wrong amount of left-padding spaces(want multiple of 4)
+    	250-251: Wrong amount of left-padding spaces(want multiple of 4)
+    	253-255: Wrong amount of left-padding spaces(want multiple of 4)
+    	257: Wrong amount of left-padding spaces(want multiple of 4)
+    	259-260: Wrong amount of left-padding spaces(want multiple of 4)
+    	262: Wrong amount of left-padding spaces(want multiple of 4)
+    	264-265: Wrong amount of left-padding spaces(want multiple of 4)
+    	295: Trailing whitespace
+    
+    43 errors found
+
+✅ [SUCCESS] scripts/generate_megalinter_summary.py
+❌ [ERROR] scripts/health_check.sh
+    scripts/health_check.sh:
+    	16: Trailing whitespace
+    	24: Trailing whitespace
+    	37: Trailing whitespace
+    	44: Trailing whitespace
+    	57: Trailing whitespace
+    	65: Trailing whitespace
+    	68: Trailing whitespace
+    	81: Trailing whitespace
+    	87: Trailing whitespace
+    	95: Trailing whitespace
+    	110: Trailing whitespace
+    	117: Trailing whitespace
+    	146: Trailing whitespace
+    	149: Trailing whitespace
+    	157: Trailing whitespace
+    	164: Trailing whitespace
+    	171: Trailing whitespace
+    	178: Trailing whitespace
+    	180: Trailing whitespace
+    	189: Trailing whitespace
+    	200: Trailing whitespace
+    	205: Trailing whitespace
+    
+    22 errors found
+
+❌ [ERROR] scripts/incremental-generate.py
+    scripts/incremental-generate.py:
+    	31: Trailing whitespace
+    	39: Trailing whitespace
+    	46: Trailing whitespace
+    	55: Trailing whitespace
+    	60: Trailing whitespace
+    	62: Trailing whitespace
+    	67: Trailing whitespace
+    	73: Trailing whitespace
+    	78: Trailing whitespace
+    	91: Trailing whitespace
+    	97: Trailing whitespace
+    	102: Trailing whitespace
+    	106: Trailing whitespace
+    
+    13 errors found
+
+❌ [ERROR] scripts/inject-footer.py
+    scripts/inject-footer.py:
+    	27: Trailing whitespace
+    	30: Trailing whitespace
+    	34: Trailing whitespace
+    	38: Trailing whitespace
+    
+    4 errors found
+
+✅ [SUCCESS] scripts/lib/__init__.py
+❌ [ERROR] scripts/lib/card_base.py
+    scripts/lib/card_base.py:
+    	43: Wrong amount of left-padding spaces(want multiple of 4)
+    	55: Wrong amount of left-padding spaces(want multiple of 4)
+    	267-268: Wrong amount of left-padding spaces(want multiple of 4)
+    	274-275: Wrong amount of left-padding spaces(want multiple of 4)
+    	278: Wrong amount of left-padding spaces(want multiple of 4)
+    	284: Wrong amount of left-padding spaces(want multiple of 4)
+    	315-317: Wrong amount of left-padding spaces(want multiple of 4)
+    	350-351: Wrong amount of left-padding spaces(want multiple of 4)
+    	379-380: Wrong amount of left-padding spaces(want multiple of 4)
+    	382: Wrong amount of left-padding spaces(want multiple of 4)
+    	384: Wrong amount of left-padding spaces(want multiple of 4)
+    	395: Trailing whitespace
+    	397: Trailing whitespace
+    	403: Trailing whitespace
+    	409: Trailing whitespace
+    	411: Trailing whitespace
+    	414: Trailing whitespace
+    	417: Trailing whitespace
+    	420: Trailing whitespace
+    	428: Trailing whitespace
+    	430: Trailing whitespace
+    	432-433: Wrong amount of left-padding spaces(want multiple of 4)
+    	435: Wrong amount of left-padding spaces(want multiple of 4)
+    	437: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    24 errors found
+
+❌ [ERROR] scripts/lib/change_detection.py
+    scripts/lib/change_detection.py:
+    	18: Trailing whitespace
+    	21: Trailing whitespace
+    	27: Trailing whitespace
+    	39: Trailing whitespace
+    	42: Trailing whitespace
+    	48: Trailing whitespace
+    	52: Trailing whitespace
+    	63: Trailing whitespace
+    	66: Trailing whitespace
+    	72: Trailing whitespace
+    	83: Trailing whitespace
+    	90: Trailing whitespace
+    	95: Trailing whitespace
+    	99: Trailing whitespace
+    	102: Trailing whitespace
+    	117: Trailing whitespace
+    	122: Trailing whitespace
+    	131: Trailing whitespace
+    	134: Trailing whitespace
+    	137: Trailing whitespace
+    	150: Trailing whitespace
+    	161: Trailing whitespace
+    	164: Trailing whitespace
+    	167: Trailing whitespace
+    	170: Trailing whitespace
+    	184: Trailing whitespace
+    	191: Trailing whitespace
+    	198: Trailing whitespace
+    	202: Trailing whitespace
+    	206: Trailing whitespace
+    
+    30 errors found
+
+❌ [ERROR] scripts/lib/common.sh
+    scripts/lib/common.sh:
+    	40: Trailing whitespace
+    	47: Trailing whitespace
+    	57: Trailing whitespace
+    	60: Trailing whitespace
+    	82: Trailing whitespace
+    	84: Trailing whitespace
+    	94: Trailing whitespace
+    	97: Trailing whitespace
+    	140: Trailing whitespace
+    	144: Trailing whitespace
+    	149: Trailing whitespace
+    	153: Trailing whitespace
+    	160: Trailing whitespace
+    	177: Trailing whitespace
+    	180: Trailing whitespace
+    	186: Trailing whitespace
+    	188: Trailing whitespace
+    	194: Trailing whitespace
+    	196: Trailing whitespace
+    	215: Trailing whitespace
+    	242: Trailing whitespace
+    	247: Trailing whitespace
+    	255: Trailing whitespace
+    	262: Trailing whitespace
+    	271: Trailing whitespace
+    	273: Trailing whitespace
+    	276: Trailing whitespace
+    	279: Trailing whitespace
+    	283: Trailing whitespace
+    	295: Trailing whitespace
+    	300: Trailing whitespace
+    	306: Trailing whitespace
+    	316: Trailing whitespace
+    	319: Trailing whitespace
+    	372: Trailing whitespace
+    	377: Trailing whitespace
+    	391: Trailing whitespace
+    	394: Trailing whitespace
+    	399: Trailing whitespace
+    	406: Trailing whitespace
+    	430: Trailing whitespace
+    	451: Trailing whitespace
+    	457: Trailing whitespace
+    	463: Trailing whitespace
+    	471: Trailing whitespace
+    	513: Trailing whitespace
+    	515: Trailing whitespace
+    	517: Trailing whitespace
+    	523: Trailing whitespace
+    	525: Trailing whitespace
+    	536: Trailing whitespace
+    	550: Trailing whitespace
+    	577: Trailing whitespace
+    	579: Trailing whitespace
+    	583: Trailing whitespace
+    	591: Trailing whitespace
+    	595: Trailing whitespace
+    	600: Trailing whitespace
+    	603: Trailing whitespace
+    	608: Trailing whitespace
+    	616: Trailing whitespace
+    	618: Trailing whitespace
+    	632: Trailing whitespace
+    	635: Trailing whitespace
+    	637: Trailing whitespace
+    	644: Trailing whitespace
+    	670: Trailing whitespace
+    	677: Trailing whitespace
+    	685: Trailing whitespace
+    	689: Trailing whitespace
+    	696: Trailing whitespace
+    	702: Trailing whitespace
+    	709: Trailing whitespace
+    	712: Trailing whitespace
+    	715: Trailing whitespace
+    	723: Trailing whitespace
+    	726: Trailing whitespace
+    
+    77 errors found
+
+❌ [ERROR] scripts/lib/data_quality.py
+    scripts/lib/data_quality.py:
+    	44: Trailing whitespace
+    	47: Trailing whitespace
+    	53: Trailing whitespace
+    	57: Trailing whitespace
+    	61: Trailing whitespace
+    	72: Trailing whitespace
+    	77: Trailing whitespace
+    	83: Trailing whitespace
+    	91: Trailing whitespace
+    	102: Trailing whitespace
+    	107: Trailing whitespace
+    	113: Trailing whitespace
+    	115: Trailing whitespace
+    	125: Trailing whitespace
+    	138: Trailing whitespace
+    	145: Trailing whitespace
+    	150: Trailing whitespace
+    	158: Trailing whitespace
+    	166: Trailing whitespace
+    	174: Trailing whitespace
+    	186: Trailing whitespace
+    	191: Wrong amount of left-padding spaces(want multiple of 4)
+    	193: Trailing whitespace
+    	207: Trailing whitespace
+    	214: Trailing whitespace
+    	220: Trailing whitespace
+    	236: Trailing whitespace
+    	243: Trailing whitespace
+    	249: Trailing whitespace
+    	253: Trailing whitespace
+    	255: Trailing whitespace
+    	261: Trailing whitespace
+    	267: Trailing whitespace
+    
+    33 errors found
+
+❌ [ERROR] scripts/lib/logging.sh
+    scripts/lib/logging.sh:
+    	25: Trailing whitespace
+    	28: Trailing whitespace
+    	31: Trailing whitespace
+    	42: Trailing whitespace
+    	47: Trailing whitespace
+    	59: Trailing whitespace
+    	64: Trailing whitespace
+    	66: Trailing whitespace
+    	71: Trailing whitespace
+    	84: Trailing whitespace
+    	88: Trailing whitespace
+    	101: Trailing whitespace
+    	104: Trailing whitespace
+    	107: Trailing whitespace
+    	133: Trailing whitespace
+    	135: Trailing whitespace
+    	139: Trailing whitespace
+    	142: Trailing whitespace
+    	159: Trailing whitespace
+    	172: Trailing whitespace
+    	181: Trailing whitespace
+    
+    21 errors found
+
+❌ [ERROR] scripts/lib/logging_utils.py
+    scripts/lib/logging_utils.py:
+    	24: Trailing whitespace
+    	28: Trailing whitespace
+    	36: Trailing whitespace
+    	39: Trailing whitespace
+    	43: Trailing whitespace
+    	46: Trailing whitespace
+    	55: Trailing whitespace
+    	59: Trailing whitespace
+    	66: Trailing whitespace
+    	69: Trailing whitespace
+    	73: Trailing whitespace
+    	75: Trailing whitespace
+    	79: Trailing whitespace
+    	83: Trailing whitespace
+    	87: Trailing whitespace
+    	91: Trailing whitespace
+    	95: Trailing whitespace
+    	106: Trailing whitespace
+    	110: Trailing whitespace
+    	122: Trailing whitespace
+    	126: Trailing whitespace
+    	137: Trailing whitespace
+    	149: Trailing whitespace
+    	153: Trailing whitespace
+    	164: Trailing whitespace
+    	167: Trailing whitespace
+    
+    26 errors found
+
+❌ [ERROR] scripts/lib/metrics.py
+    scripts/lib/metrics.py:
+    	38: Trailing whitespace
+    	41: Trailing whitespace
+    	46: Trailing whitespace
+    	61: Trailing whitespace
+    	85: Trailing whitespace
+    	92: Trailing whitespace
+    	97: Trailing whitespace
+    	101: Trailing whitespace
+    	104: Trailing whitespace
+    	121: Trailing whitespace
+    	128: Trailing whitespace
+    	134: Trailing whitespace
+    	137: Trailing whitespace
+    	146: Trailing whitespace
+    	150: Trailing whitespace
+    	158: Trailing whitespace
+    	161: Trailing whitespace
+    	168: Trailing whitespace
+    	176: Trailing whitespace
+    	180: Trailing whitespace
+    	183: Trailing whitespace
+    	190: Trailing whitespace
+    	196: Trailing whitespace
+    	204: Trailing whitespace
+    	211: Trailing whitespace
+    	215: Trailing whitespace
+    	226: Trailing whitespace
+    
+    27 errors found
+
+❌ [ERROR] scripts/lib/utils.py
+    scripts/lib/utils.py:
+    	145-147: Wrong amount of left-padding spaces(want multiple of 4)
+    	558: Wrong amount of left-padding spaces(want multiple of 4)
+    	560: Wrong amount of left-padding spaces(want multiple of 4)
+    	570: Trailing whitespace
+    	589: Trailing whitespace
+    	595: Trailing whitespace
+    	610: Trailing whitespace
+    	787: Trailing whitespace
+    	879: Wrong amount of left-padding spaces(want multiple of 4)
+    	923: Wrong amount of left-padding spaces(want multiple of 4)
+    	999: Trailing whitespace
+    	1004: Trailing whitespace
+    	1007: Trailing whitespace
+    	1010: Trailing whitespace
+    	1018: Trailing whitespace
+    	1025: Trailing whitespace
+    	1027: Trailing whitespace
+    	1031: Trailing whitespace
+    	1033: Trailing whitespace
+    	1041: Trailing whitespace
+    	1044: Trailing whitespace
+    	1047: Trailing whitespace
+    	1055: Trailing whitespace
+    	1059: Trailing whitespace
+    	1062: Trailing whitespace
+    	1079: Trailing whitespace
+    	1083: Trailing whitespace
+    	1086: Trailing whitespace
+    	1095: Trailing whitespace
+    	1099: Trailing whitespace
+    	1115: Trailing whitespace
+    	1118: Trailing whitespace
+    	1127: Trailing whitespace
+    	1130: Trailing whitespace
+    	1138: Trailing whitespace
+    	1141: Trailing whitespace
+    	1149: Trailing whitespace
+    	1152: Trailing whitespace
+    	1154-1155: Wrong amount of left-padding spaces(want multiple of 4)
+    	1157: Wrong amount of left-padding spaces(want multiple of 4)
+    	1159: Wrong amount of left-padding spaces(want multiple of 4)
+    	1165: Trailing whitespace
+    	1168: Trailing whitespace
+    	1171: Trailing whitespace
+    	1190: Trailing whitespace
+    	1193: Trailing whitespace
+    	1196: Trailing whitespace
+    	1291: Trailing whitespace
+    	1297: Trailing whitespace
+    	1301: Trailing whitespace
+    	1333: Trailing whitespace
+    	1344: Trailing whitespace
+    	1347: Trailing whitespace
+    	1352: Trailing whitespace
+    	1357: Trailing whitespace
+    	1361: Trailing whitespace
+    	1366: Trailing whitespace
+    	1454: Trailing whitespace
+    	1460: Trailing whitespace
+    	1465: Trailing whitespace
+    	1472: Trailing whitespace
+    	1476: Trailing whitespace
+    	1480: Trailing whitespace
+    	1484: Trailing whitespace
+    	1487: Trailing whitespace
+    
+    65 errors found
+
+❌ [ERROR] scripts/lib/weather_alerts.py
+    scripts/lib/weather_alerts.py:
+    	20: Trailing whitespace
+    	26: Trailing whitespace
+    	29: Trailing whitespace
+    	44: Trailing whitespace
+    	53: Trailing whitespace
+    	60: Trailing whitespace
+    	64: Trailing whitespace
+    	73: Trailing whitespace
+    	82: Trailing whitespace
+    	86: Trailing whitespace
+    	101: Trailing whitespace
+    	110: Trailing whitespace
+    	116: Trailing whitespace
+    	119-121: Wrong amount of left-padding spaces(want multiple of 4)
+    	123: Wrong amount of left-padding spaces(want multiple of 4)
+    	130: Trailing whitespace
+    	133: Trailing whitespace
+    	138: Trailing whitespace
+    	141: Trailing whitespace
+    	149: Trailing whitespace
+    	152: Trailing whitespace
+    	157: Trailing whitespace
+    	161: Trailing whitespace
+    	164: Trailing whitespace
+    	171: Trailing whitespace
+    
+    25 errors found
+
+❌ [ERROR] scripts/log_summary.py
+    scripts/log_summary.py:
+    	82-83: Wrong amount of left-padding spaces(want multiple of 4)
+    	85: Wrong amount of left-padding spaces(want multiple of 4)
+    	87: Wrong amount of left-padding spaces(want multiple of 4)
+    	94-95: Wrong amount of left-padding spaces(want multiple of 4)
+    	97: Wrong amount of left-padding spaces(want multiple of 4)
+    	99: Wrong amount of left-padding spaces(want multiple of 4)
+    	118: Wrong amount of left-padding spaces(want multiple of 4)
+    	120: Wrong amount of left-padding spaces(want multiple of 4)
+    	123: Wrong amount of left-padding spaces(want multiple of 4)
+    	125: Wrong amount of left-padding spaces(want multiple of 4)
+    	132-133: Wrong amount of left-padding spaces(want multiple of 4)
+    	135: Wrong amount of left-padding spaces(want multiple of 4)
+    	137: Wrong amount of left-padding spaces(want multiple of 4)
+    	144: Wrong amount of left-padding spaces(want multiple of 4)
+    	146: Wrong amount of left-padding spaces(want multiple of 4)
+    	148-149: Wrong amount of left-padding spaces(want multiple of 4)
+    	151: Wrong amount of left-padding spaces(want multiple of 4)
+    	153-154: Wrong amount of left-padding spaces(want multiple of 4)
+    	156: Wrong amount of left-padding spaces(want multiple of 4)
+    	158-159: Wrong amount of left-padding spaces(want multiple of 4)
+    	161: Wrong amount of left-padding spaces(want multiple of 4)
+    	163-164: Wrong amount of left-padding spaces(want multiple of 4)
+    	166: Wrong amount of left-padding spaces(want multiple of 4)
+    	168: Wrong amount of left-padding spaces(want multiple of 4)
+    	197: Wrong amount of left-padding spaces(want multiple of 4)
+    	199: Wrong amount of left-padding spaces(want multiple of 4)
+    	201-202: Wrong amount of left-padding spaces(want multiple of 4)
+    	204: Wrong amount of left-padding spaces(want multiple of 4)
+    	206-207: Wrong amount of left-padding spaces(want multiple of 4)
+    	210: Wrong amount of left-padding spaces(want multiple of 4)
+    	212-213: Wrong amount of left-padding spaces(want multiple of 4)
+    	215: Wrong amount of left-padding spaces(want multiple of 4)
+    	217-218: Wrong amount of left-padding spaces(want multiple of 4)
+    	220: Wrong amount of left-padding spaces(want multiple of 4)
+    	222: Wrong amount of left-padding spaces(want multiple of 4)
+    	237-238: Wrong amount of left-padding spaces(want multiple of 4)
+    	240: Wrong amount of left-padding spaces(want multiple of 4)
+    	242: Wrong amount of left-padding spaces(want multiple of 4)
+    	244-245: Wrong amount of left-padding spaces(want multiple of 4)
+    	247: Wrong amount of left-padding spaces(want multiple of 4)
+    	250: Wrong amount of left-padding spaces(want multiple of 4)
+    	252: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    42 errors found
+
+❌ [ERROR] scripts/new-card.sh
+    scripts/new-card.sh:
+    	30-33: Wrong amount of left-padding spaces(want multiple of 4)
+    	36-37: Wrong amount of left-padding spaces(want multiple of 4)
+    	40: Wrong amount of left-padding spaces(want multiple of 4)
+    	43-45: Wrong amount of left-padding spaces(want multiple of 4)
+    	52: Trailing whitespace
+    	58: Trailing whitespace
+    	64: Trailing whitespace
+    	89: Trailing whitespace
+    	94: Trailing whitespace
+    	117: Trailing whitespace
+    	128: Trailing whitespace
+    	140: Trailing whitespace
+    	147: Trailing whitespace
+    	150: Trailing whitespace
+    	154: Trailing whitespace
+    	171: Trailing whitespace
+    	182: Trailing whitespace
+    	187: Trailing whitespace
+    	217: Trailing whitespace
+    	222: Trailing whitespace
+    	230: Trailing whitespace
+    	236: Trailing whitespace
+    	242: Trailing whitespace
+    	246: Trailing whitespace
+    	252: Wrong amount of left-padding spaces(want multiple of 4)
+    	254-255: Wrong amount of left-padding spaces(want multiple of 4)
+    	258-259: Wrong amount of left-padding spaces(want multiple of 4)
+    	262: Wrong amount of left-padding spaces(want multiple of 4)
+    	264: Wrong amount of left-padding spaces(want multiple of 4)
+    	266-268: Wrong amount of left-padding spaces(want multiple of 4)
+    	270-271: Wrong amount of left-padding spaces(want multiple of 4)
+    	273: Wrong amount of left-padding spaces(want multiple of 4)
+    	275: Wrong amount of left-padding spaces(want multiple of 4)
+    	277-278: Wrong amount of left-padding spaces(want multiple of 4)
+    	280: Wrong amount of left-padding spaces(want multiple of 4)
+    	282: Wrong amount of left-padding spaces(want multiple of 4)
+    	284-285: Wrong amount of left-padding spaces(want multiple of 4)
+    	287: Wrong amount of left-padding spaces(want multiple of 4)
+    	289: Wrong amount of left-padding spaces(want multiple of 4)
+    	291-292: Wrong amount of left-padding spaces(want multiple of 4)
+    	313: Trailing whitespace
+    	344: Trailing whitespace
+    	357: Trailing whitespace
+    	362: Trailing whitespace
+    	367: Wrong amount of left-padding spaces(want multiple of 4)
+    	370-371: Wrong amount of left-padding spaces(want multiple of 4)
+    	373: Wrong amount of left-padding spaces(want multiple of 4)
+    	375-380: Wrong amount of left-padding spaces(want multiple of 4)
+    	383-384: Wrong amount of left-padding spaces(want multiple of 4)
+    	387: Wrong amount of left-padding spaces(want multiple of 4)
+    	390: Wrong amount of left-padding spaces(want multiple of 4)
+    	392: Trailing whitespace
+    	394: Wrong amount of left-padding spaces(want multiple of 4)
+    	397: Wrong amount of left-padding spaces(want multiple of 4)
+    	399: Wrong amount of left-padding spaces(want multiple of 4)
+    	402: Wrong amount of left-padding spaces(want multiple of 4)
+    	404: Wrong amount of left-padding spaces(want multiple of 4)
+    	406-407: Wrong amount of left-padding spaces(want multiple of 4)
+    	409: Wrong amount of left-padding spaces(want multiple of 4)
+    	412-414: Wrong amount of left-padding spaces(want multiple of 4)
+    	416-417: Wrong amount of left-padding spaces(want multiple of 4)
+    	418: Trailing whitespace
+    	418-419: Wrong amount of left-padding spaces(want multiple of 4)
+    	422: Wrong amount of left-padding spaces(want multiple of 4)
+    	423: Trailing whitespace
+    	423-425: Wrong amount of left-padding spaces(want multiple of 4)
+    	428: Wrong amount of left-padding spaces(want multiple of 4)
+    	429: Trailing whitespace
+    	429-431: Wrong amount of left-padding spaces(want multiple of 4)
+    	433: Wrong amount of left-padding spaces(want multiple of 4)
+    	435: Wrong amount of left-padding spaces(want multiple of 4)
+    	437: Wrong amount of left-padding spaces(want multiple of 4)
+    	439-441: Wrong amount of left-padding spaces(want multiple of 4)
+    	445: Wrong amount of left-padding spaces(want multiple of 4)
+    	447: Wrong amount of left-padding spaces(want multiple of 4)
+    	449: Wrong amount of left-padding spaces(want multiple of 4)
+    	451: Wrong amount of left-padding spaces(want multiple of 4)
+    	455: Wrong amount of left-padding spaces(want multiple of 4)
+    	457-458: Wrong amount of left-padding spaces(want multiple of 4)
+    	459: Trailing whitespace
+    	459-461: Wrong amount of left-padding spaces(want multiple of 4)
+    	462: Trailing whitespace
+    	462-464: Wrong amount of left-padding spaces(want multiple of 4)
+    	466: Wrong amount of left-padding spaces(want multiple of 4)
+    	469: Wrong amount of left-padding spaces(want multiple of 4)
+    	476: Trailing whitespace
+    	488: Trailing whitespace
+    	494: Trailing whitespace
+    	504: Trailing whitespace
+    	512: Trailing whitespace
+    	517: Trailing whitespace
+    	530: Trailing whitespace
+    	537: Trailing whitespace
+    	539: Trailing whitespace
+    	542: Trailing whitespace
+    	545: Trailing whitespace
+    	548: Trailing whitespace
+    	551: Trailing whitespace
+    	554: Trailing whitespace
+    	557: Trailing whitespace
+    	560: Trailing whitespace
+    	563: Trailing whitespace
+    
+    102 errors found
+
+✅ [SUCCESS] scripts/oura-mood-engine.py
+❌ [ERROR] scripts/record-workflow-metrics.py
+    scripts/record-workflow-metrics.py:
+    	51: Trailing whitespace
+    	53: Trailing whitespace
+    	58: Trailing whitespace
+    	62: Trailing whitespace
+    	64: Trailing whitespace
+    	74: Trailing whitespace
+    	83: Trailing whitespace
+    	90: Trailing whitespace
+    	95: Trailing whitespace
+    
+    9 errors found
+
+❌ [ERROR] scripts/store-historical-snapshot.py
+    scripts/store-historical-snapshot.py:
+    	57: Trailing whitespace
+    	63: Trailing whitespace
+    	72: Trailing whitespace
+    	78: Trailing whitespace
+    	94: Trailing whitespace
+    	102: Trailing whitespace
+    	107: Trailing whitespace
+    	116: Trailing whitespace
+    	127: Trailing whitespace
+    	135: Trailing whitespace
+    	140: Trailing whitespace
+    	143: Trailing whitespace
+    	151: Trailing whitespace
+    	155: Trailing whitespace
+    	161: Trailing whitespace
+    	163: Trailing whitespace
+    	171: Trailing whitespace
+    	178: Trailing whitespace
+    	181: Trailing whitespace
+    	204: Trailing whitespace
+    	211: Trailing whitespace
+    	214: Trailing whitespace
+    	238: Trailing whitespace
+    	242: Trailing whitespace
+    	245: Trailing whitespace
+    	248: Trailing whitespace
+    	252: Trailing whitespace
+    	255: Trailing whitespace
+    	257: Trailing whitespace
+    	261: Trailing whitespace
+    	264: Trailing whitespace
+    	267: Trailing whitespace
+    	269: Trailing whitespace
+    	272: Trailing whitespace
+    	279: Trailing whitespace
+    	283: Trailing whitespace
+    	285: Trailing whitespace
+    	287: Trailing whitespace
+    	292: Trailing whitespace
+    	296: Trailing whitespace
+    
+    40 errors found
+
+✅ [SUCCESS] scripts/update-readme.py
+❌ [ERROR] scripts/validate-data-quality.py
+    scripts/validate-data-quality.py:
+    	49: Trailing whitespace
+    	51: Trailing whitespace
+    	62: Trailing whitespace
+    	71: Trailing whitespace
+    	79: Trailing whitespace
+    	82: Trailing whitespace
+    	88: Trailing whitespace
+    	91: Trailing whitespace
+    	94: Trailing whitespace
+    	98: Trailing whitespace
+    
+    10 errors found
+
+✅ [SUCCESS] summary-monthly.svg
+✅ [SUCCESS] summary-weekly.svg
+✅ [SUCCESS] tests/__init__.py
+❌ [ERROR] tests/test_cache.sh
+    tests/test_cache.sh:
+    	50: Trailing whitespace
+    	54: Trailing whitespace
+    	65: Trailing whitespace
+    	69: Trailing whitespace
+    	80: Trailing whitespace
+    	83: Trailing whitespace
+    	96: Trailing whitespace
+    	98: Trailing whitespace
+    	100: Trailing whitespace
+    	111: Trailing whitespace
+    	113: Trailing whitespace
+    	116: Trailing whitespace
+    	119: Trailing whitespace
+    	130: Trailing whitespace
+    	132: Trailing whitespace
+    	135: Trailing whitespace
+    	138: Trailing whitespace
+    	149: Trailing whitespace
+    	151: Trailing whitespace
+    	162: Trailing whitespace
+    	165: Trailing whitespace
+    	168: Trailing whitespace
+    	173: Trailing whitespace
+    	185: Trailing whitespace
+    	187: Trailing whitespace
+    	189: Trailing whitespace
+    	200: Trailing whitespace
+    	202: Trailing whitespace
+    	206: Trailing whitespace
+    	210: Trailing whitespace
+    	215: Trailing whitespace
+    	218: Trailing whitespace
+    
+    32 errors found
+
+❌ [ERROR] tests/test_card_generators.py
+    tests/test_card_generators.py:
+    	119: Trailing whitespace
+    
+    1 errors found
+
+❌ [ERROR] tests/test_change_detection.py
+    tests/test_change_detection.py:
+    	30: Trailing whitespace
+    	36: Trailing whitespace
+    	41: Trailing whitespace
+    	47: Trailing whitespace
+    	52: Trailing whitespace
+    	58: Trailing whitespace
+    	62: Trailing whitespace
+    	74: Trailing whitespace
+    	78: Trailing whitespace
+    	82: Trailing whitespace
+    	89: Trailing whitespace
+    	93: Trailing whitespace
+    	97: Trailing whitespace
+    	101: Trailing whitespace
+    	109: Trailing whitespace
+    	115: Trailing whitespace
+    	119: Trailing whitespace
+    	127: Trailing whitespace
+    	133: Trailing whitespace
+    	143: Trailing whitespace
+    	148: Trailing whitespace
+    	154: Trailing whitespace
+    	157: Trailing whitespace
+    	159: Trailing whitespace
+    	165: Trailing whitespace
+    	168: Trailing whitespace
+    	175: Trailing whitespace
+    	181: Trailing whitespace
+    	185: Trailing whitespace
+    	189: Trailing whitespace
+    	195: Trailing whitespace
+    	199: Trailing whitespace
+    	202: Trailing whitespace
+    	206: Trailing whitespace
+    	212: Trailing whitespace
+    	217: Trailing whitespace
+    	221: Trailing whitespace
+    	229: Trailing whitespace
+    	236: Trailing whitespace
+    	242: Trailing whitespace
+    	245: Trailing whitespace
+    	249: Trailing whitespace
+    	256: Trailing whitespace
+    	260: Trailing whitespace
+    	263: Trailing whitespace
+    	270: Trailing whitespace
+    	276: Trailing whitespace
+    	279: Trailing whitespace
+    	287: Trailing whitespace
+    	292: Trailing whitespace
+    	296: Trailing whitespace
+    	300: Trailing whitespace
+    	303: Trailing whitespace
+    	310: Trailing whitespace
+    
+    54 errors found
+
+❌ [ERROR] tests/test_data_quality.py
+    tests/test_data_quality.py:
+    	25: Trailing whitespace
+    	29: Trailing whitespace
+    	34: Trailing whitespace
+    	43: Trailing whitespace
+    	55: Trailing whitespace
+    	60: Trailing whitespace
+    	63: Trailing whitespace
+    	68: Trailing whitespace
+    	71: Trailing whitespace
+    	76: Trailing whitespace
+    	79: Trailing whitespace
+    	84: Trailing whitespace
+    	91: Trailing whitespace
+    	95: Trailing whitespace
+    	98: Trailing whitespace
+    	102: Trailing whitespace
+    	106: Trailing whitespace
+    	110: Trailing whitespace
+    	114: Trailing whitespace
+    	118: Trailing whitespace
+    	126: Trailing whitespace
+    	132: Trailing whitespace
+    	136: Trailing whitespace
+    	140: Trailing whitespace
+    	145: Trailing whitespace
+    	150: Trailing whitespace
+    	158: Trailing whitespace
+    	167: Trailing whitespace
+    	173: Trailing whitespace
+    	178: Trailing whitespace
+    	183: Trailing whitespace
+    	185: Trailing whitespace
+    	188: Trailing whitespace
+    	192: Trailing whitespace
+    	194: Trailing whitespace
+    	198: Trailing whitespace
+    	206: Trailing whitespace
+    	211: Trailing whitespace
+    	217: Trailing whitespace
+    	223: Trailing whitespace
+    	229: Trailing whitespace
+    	233: Trailing whitespace
+    	237: Trailing whitespace
+    	239: Trailing whitespace
+    
+    44 errors found
+
+❌ [ERROR] tests/test_developer_dashboard.py
+    tests/test_developer_dashboard.py:
+    	172: Trailing whitespace
+    	180: Trailing whitespace
+    
+    2 errors found
+
+✅ [SUCCESS] tests/test_fallback.py
+❌ [ERROR] tests/test_health_checks.sh
+    tests/test_health_checks.sh:
+    	35: Trailing whitespace
+    	38: Trailing whitespace
+    	79: Trailing whitespace
+    	84: Trailing whitespace
+    	92: Trailing whitespace
+    	97: Trailing whitespace
+    	100: Trailing whitespace
+    	111: Trailing whitespace
+    	114: Trailing whitespace
+    	117: Trailing whitespace
+    	129: Trailing whitespace
+    	138: Trailing whitespace
+    	141: Trailing whitespace
+    
+    13 errors found
+
+❌ [ERROR] tests/test_location_diagnostics.py
+    tests/test_location_diagnostics.py:
+    	32: Trailing whitespace
+    	48: Trailing whitespace
+    	51: Trailing whitespace
+    	65: Trailing whitespace
+    	67: Trailing whitespace
+    	70: Wrong amount of left-padding spaces(want multiple of 4)
+    	74: Trailing whitespace
+    	85: Trailing whitespace
+    	88: Trailing whitespace
+    	90: Trailing whitespace
+    	93: Wrong amount of left-padding spaces(want multiple of 4)
+    	97: Trailing whitespace
+    	107: Trailing whitespace
+    	111: Trailing whitespace
+    	113: Trailing whitespace
+    	116: Wrong amount of left-padding spaces(want multiple of 4)
+    	120: Trailing whitespace
+    	129: Trailing whitespace
+    	133: Trailing whitespace
+    	135: Trailing whitespace
+    	138: Wrong amount of left-padding spaces(want multiple of 4)
+    	142: Trailing whitespace
+    	151: Trailing whitespace
+    	153: Trailing whitespace
+    	156: Wrong amount of left-padding spaces(want multiple of 4)
+    	160: Trailing whitespace
+    	171: Trailing whitespace
+    	174: Trailing whitespace
+    	177: Wrong amount of left-padding spaces(want multiple of 4)
+    	181: Trailing whitespace
+    	187: Trailing whitespace
+    	199: Trailing whitespace
+    	201: Trailing whitespace
+    	204: Trailing whitespace
+    	207: Wrong amount of left-padding spaces(want multiple of 4)
+    	211: Trailing whitespace
+    	224: Trailing whitespace
+    	244: Trailing whitespace
+    
+    38 errors found
+
+❌ [ERROR] tests/test_location_shell_diagnostics.sh
+    tests/test_location_shell_diagnostics.sh:
+    	33: Trailing whitespace
+    	35: Trailing whitespace
+    	51: Trailing whitespace
+    	53: Trailing whitespace
+    	59: Trailing whitespace
+    
+    5 errors found
+
+✅ [SUCCESS] tests/test_log_summary.py
+❌ [ERROR] tests/test_mapbox_integration.py
+    tests/test_mapbox_integration.py:
+    	30: Trailing whitespace
+    	49: Trailing whitespace
+    	52: Trailing whitespace
+    	55: Trailing whitespace
+    	58: Trailing whitespace
+    	68: Trailing whitespace
+    	70: Trailing whitespace
+    	78: Trailing whitespace
+    	82: Trailing whitespace
+    	91: Trailing whitespace
+    	94: Trailing whitespace
+    	96: Trailing whitespace
+    	105: Trailing whitespace
+    	108: Trailing whitespace
+    	110: Trailing whitespace
+    	119: Trailing whitespace
+    	122: Trailing whitespace
+    	125: Trailing whitespace
+    	146: Trailing whitespace
+    	149: Trailing whitespace
+    	156: Trailing whitespace
+    	159: Trailing whitespace
+    	168: Trailing whitespace
+    	170: Trailing whitespace
+    	177: Trailing whitespace
+    	184: Trailing whitespace
+    	187: Trailing whitespace
+    	194: Trailing whitespace
+    
+    28 errors found
+
+❌ [ERROR] tests/test_metrics.py
+    tests/test_metrics.py:
+    	33: Trailing whitespace
+    	37: Trailing whitespace
+    	39: Trailing whitespace
+    	41: Trailing whitespace
+    	48: Trailing whitespace
+    	52: Trailing whitespace
+    	61: Trailing whitespace
+    	75: Trailing whitespace
+    	79: Trailing whitespace
+    	81: Trailing whitespace
+    	90: Trailing whitespace
+    	98: Trailing whitespace
+    	107: Trailing whitespace
+    	115: Trailing whitespace
+    	124: Trailing whitespace
+    	130: Trailing whitespace
+    	134: Trailing whitespace
+    	138: Trailing whitespace
+    	144: Trailing whitespace
+    	147: Trailing whitespace
+    	151: Trailing whitespace
+    	157: Trailing whitespace
+    	163: Trailing whitespace
+    	174: Trailing whitespace
+    	184: Trailing whitespace
+    	190: Trailing whitespace
+    	197: Trailing whitespace
+    	202: Trailing whitespace
+    	204: Trailing whitespace
+    	209: Trailing whitespace
+    	211: Trailing whitespace
+    	215: Trailing whitespace
+    	222: Trailing whitespace
+    	228: Trailing whitespace
+    	231: Trailing whitespace
+    	238: Trailing whitespace
+    	243: Trailing whitespace
+    	250: Trailing whitespace
+    	252: Trailing whitespace
+    
+    39 errors found
+
+❌ [ERROR] tests/test_new_card.sh
+    tests/test_new_card.sh:
+    	35: Trailing whitespace
+    	42: Trailing whitespace
+    	48: Trailing whitespace
+    	74: Trailing whitespace
+    	77: Trailing whitespace
+    	88: Trailing whitespace
+    	91: Trailing whitespace
+    	102: Trailing whitespace
+    	105: Trailing whitespace
+    	116: Trailing whitespace
+    	119: Trailing whitespace
+    	130: Trailing whitespace
+    	133: Trailing whitespace
+    	144: Trailing whitespace
+    	147: Trailing whitespace
+    	158: Trailing whitespace
+    	161: Trailing whitespace
+    	172: Trailing whitespace
+    	175: Trailing whitespace
+    	186: Trailing whitespace
+    	189: Trailing whitespace
+    	191: Trailing whitespace
+    	202: Trailing whitespace
+    	205: Trailing whitespace
+    	207: Trailing whitespace
+    	218: Trailing whitespace
+    	221: Trailing whitespace
+    	223: Trailing whitespace
+    	226: Trailing whitespace
+    	237: Trailing whitespace
+    	240: Trailing whitespace
+    	242: Trailing whitespace
+    	253: Trailing whitespace
+    	256: Trailing whitespace
+    	258: Trailing whitespace
+    	269: Trailing whitespace
+    	272: Trailing whitespace
+    	274: Trailing whitespace
+    	277: Trailing whitespace
+    	288: Trailing whitespace
+    	291: Trailing whitespace
+    	293: Trailing whitespace
+    	304: Trailing whitespace
+    	307: Trailing whitespace
+    	309: Trailing whitespace
+    	320: Trailing whitespace
+    	323: Trailing whitespace
+    	325: Trailing whitespace
+    	336: Trailing whitespace
+    	339: Trailing whitespace
+    	341: Trailing whitespace
+    	352: Trailing whitespace
+    	355: Trailing whitespace
+    	357: Trailing whitespace
+    	368: Trailing whitespace
+    	371: Trailing whitespace
+    	374: Trailing whitespace
+    	378: Trailing whitespace
+    	389: Trailing whitespace
+    	392: Trailing whitespace
+    	394: Trailing whitespace
+    	405: Trailing whitespace
+    	408: Trailing whitespace
+    	410: Trailing whitespace
+    	421: Trailing whitespace
+    	424: Trailing whitespace
+    	426: Trailing whitespace
+    	437: Trailing whitespace
+    	440: Trailing whitespace
+    	442: Trailing whitespace
+    	453: Trailing whitespace
+    	456: Trailing whitespace
+    	458: Trailing whitespace
+    	460: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    74 errors found
+
+❌ [ERROR] tests/test_retry_logic.sh
+    tests/test_retry_logic.sh:
+    	22: Trailing whitespace
+    	25: Trailing whitespace
+    
+    2 errors found
+
+❌ [ERROR] tests/test_theme_validation.py
+    tests/test_theme_validation.py:
+    	352: Trailing whitespace
+    	366: Trailing whitespace
+    	370: Trailing whitespace
+    	382: Trailing whitespace
+    	385: Trailing whitespace
+    
+    5 errors found
+
+✅ [SUCCESS] tests/test_time_utils.py
+❌ [ERROR] tests/test_timeout_coverage.sh
+    tests/test_timeout_coverage.sh:
+    	39: Trailing whitespace
+    	42: Trailing whitespace
+    	44: Trailing whitespace
+    	48: Trailing whitespace
+    	54: Trailing whitespace
+    	59: Trailing whitespace
+    	63: Trailing whitespace
+    	75: Trailing whitespace
+    
+    8 errors found
+
+❌ [ERROR] tests/test_utils.py
+    tests/test_utils.py:
+    	242: Trailing whitespace
+    	253: Trailing whitespace
+    	264: Trailing whitespace
+    	275: Trailing whitespace
+    	292: Trailing whitespace
+    	296: Trailing whitespace
+    	312: Trailing whitespace
+    	316: Trailing whitespace
+    	328: Trailing whitespace
+    	339: Trailing whitespace
+    	351: Trailing whitespace
+    
+    11 errors found
+
+✅ [SUCCESS] weather/weather-today.svg
+❌ [ERROR] weather/weather.json
+    weather/weather.json:
+    	2-4: Wrong amount of left-padding spaces(want multiple of 4)
+    	7-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	15-16: Wrong amount of left-padding spaces(want multiple of 4)
+    	22-24: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
+

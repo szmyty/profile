@@ -5,7 +5,7 @@ Unit tests for time-related utility functions.
 
 import pytest
 from datetime import datetime, timezone, timedelta
-from scripts.lib.utils import format_time_since
+from scripts.lib.utils import format_time_since, is_data_stale
 
 
 class TestFormatTimeSince:
@@ -123,3 +123,104 @@ class TestFormatTimeSince:
         timestamp = past.strftime("%Y-%m-%dT%H:%M:%S")
         result = format_time_since(timestamp)
         assert result == "3h ago"
+
+
+class TestIsDataStale:
+    """Test suite for is_data_stale function."""
+
+    def test_fresh_data_just_now(self):
+        """Test that very recent data is not stale."""
+        now = datetime.now(timezone.utc)
+        timestamp = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+        result = is_data_stale(timestamp, stale_threshold_hours=24)
+        assert result is False
+
+    def test_fresh_data_1_hour_ago(self):
+        """Test that 1 hour old data is not stale."""
+        now = datetime.now(timezone.utc)
+        past = now - timedelta(hours=1)
+        timestamp = past.strftime("%Y-%m-%dT%H:%M:%SZ")
+        result = is_data_stale(timestamp, stale_threshold_hours=24)
+        assert result is False
+
+    def test_fresh_data_12_hours_ago(self):
+        """Test that 12 hour old data is not stale."""
+        now = datetime.now(timezone.utc)
+        past = now - timedelta(hours=12)
+        timestamp = past.strftime("%Y-%m-%dT%H:%M:%SZ")
+        result = is_data_stale(timestamp, stale_threshold_hours=24)
+        assert result is False
+
+    def test_fresh_data_23_hours_ago(self):
+        """Test that 23 hour old data is not stale."""
+        now = datetime.now(timezone.utc)
+        past = now - timedelta(hours=23)
+        timestamp = past.strftime("%Y-%m-%dT%H:%M:%SZ")
+        result = is_data_stale(timestamp, stale_threshold_hours=24)
+        assert result is False
+
+    def test_stale_data_25_hours_ago(self):
+        """Test that 25 hour old data is stale."""
+        now = datetime.now(timezone.utc)
+        past = now - timedelta(hours=25)
+        timestamp = past.strftime("%Y-%m-%dT%H:%M:%SZ")
+        result = is_data_stale(timestamp, stale_threshold_hours=24)
+        assert result is True
+
+    def test_stale_data_48_hours_ago(self):
+        """Test that 48 hour old data is stale."""
+        now = datetime.now(timezone.utc)
+        past = now - timedelta(hours=48)
+        timestamp = past.strftime("%Y-%m-%dT%H:%M:%SZ")
+        result = is_data_stale(timestamp, stale_threshold_hours=24)
+        assert result is True
+
+    def test_stale_data_7_days_ago(self):
+        """Test that 7 day old data is stale."""
+        now = datetime.now(timezone.utc)
+        past = now - timedelta(days=7)
+        timestamp = past.strftime("%Y-%m-%dT%H:%M:%SZ")
+        result = is_data_stale(timestamp, stale_threshold_hours=24)
+        assert result is True
+
+    def test_custom_threshold_2_hours(self):
+        """Test with custom threshold of 2 hours."""
+        now = datetime.now(timezone.utc)
+        past = now - timedelta(hours=3)
+        timestamp = past.strftime("%Y-%m-%dT%H:%M:%SZ")
+        result = is_data_stale(timestamp, stale_threshold_hours=2)
+        assert result is True
+
+    def test_custom_threshold_fresh(self):
+        """Test with custom threshold - data is fresh."""
+        now = datetime.now(timezone.utc)
+        past = now - timedelta(hours=1)
+        timestamp = past.strftime("%Y-%m-%dT%H:%M:%SZ")
+        result = is_data_stale(timestamp, stale_threshold_hours=2)
+        assert result is False
+
+    def test_invalid_timestamp_returns_true(self):
+        """Test that invalid timestamps are considered stale (safe default)."""
+        result = is_data_stale("invalid-timestamp")
+        assert result is True
+
+    def test_empty_timestamp_returns_true(self):
+        """Test that empty timestamps are considered stale (safe default)."""
+        result = is_data_stale("")
+        assert result is True
+
+    def test_iso_format_with_plus_zero(self):
+        """Test timestamp with +00:00 timezone format."""
+        now = datetime.now(timezone.utc)
+        past = now - timedelta(hours=30)
+        timestamp = past.strftime("%Y-%m-%dT%H:%M:%S+00:00")
+        result = is_data_stale(timestamp, stale_threshold_hours=24)
+        assert result is True
+
+    def test_iso_format_without_timezone(self):
+        """Test timestamp without timezone (assumes UTC)."""
+        now = datetime.now(timezone.utc)
+        past = now - timedelta(hours=20)
+        timestamp = past.strftime("%Y-%m-%dT%H:%M:%S")
+        result = is_data_stale(timestamp, stale_threshold_hours=24)
+        assert result is False

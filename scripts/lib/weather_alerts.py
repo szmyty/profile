@@ -40,7 +40,7 @@ def get_weather_alert(
         85-86: Snow showers
         95-99: Thunderstorm
     """
-    alerts = []
+    alerts: List[Tuple[str, str, str]] = []
     
     # Thunderstorm alerts (95-99)
     if 95 <= weathercode <= 99:

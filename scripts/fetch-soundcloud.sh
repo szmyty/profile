@@ -186,7 +186,8 @@ get_user_id() {
     echo "Fetching user ID for ${SOUNDCLOUD_USER}..." >&2
     
     local user_data
-    if ! user_data=$(retry_with_backoff curl -sf --max-time 10 "https://api-v2.soundcloud.com/resolve?url=https://soundcloud.com/${SOUNDCLOUD_USER}&client_id=${client_id}"); then
+    # Use retry_api_call with circuit breaker and rate limit detection
+    if ! user_data=$(retry_api_call "SoundCloud API" curl -sf --max-time 10 "https://api-v2.soundcloud.com/resolve?url=https://soundcloud.com/${SOUNDCLOUD_USER}&client_id=${client_id}"); then
         echo "Error: Failed to resolve SoundCloud user after retries" >&2
         return 1
     fi
@@ -215,7 +216,8 @@ fetch_latest_track() {
     echo "Fetching latest track..." >&2
     
     local tracks
-    if ! tracks=$(retry_with_backoff curl -sf --max-time 10 "https://api-v2.soundcloud.com/users/${user_id}/tracks?representation=&client_id=${client_id}&limit=1&offset=0"); then
+    # Use retry_api_call with circuit breaker and rate limit detection
+    if ! tracks=$(retry_api_call "SoundCloud API" curl -sf --max-time 10 "https://api-v2.soundcloud.com/users/${user_id}/tracks?representation=&client_id=${client_id}&limit=1&offset=0"); then
         echo "Error: Failed to fetch tracks from SoundCloud API after retries" >&2
         return 1
     fi

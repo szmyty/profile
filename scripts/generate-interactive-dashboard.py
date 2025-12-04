@@ -21,7 +21,7 @@ from typing import Dict, Optional
 # Add lib to path for imports
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'lib'))
 
-from utils import (
+from utils import (  # type: ignore[import-not-found]
     escape_xml,
     safe_value,
     load_theme,

@@ -65,7 +65,7 @@ jobs:
         with:
           name: oura-data
           path: oura/metrics.json
-          retention-days: 1
+          retention-days: 3
 
   # Parallel job 2: Fetch Weather data
   fetch-weather:
@@ -127,7 +127,7 @@ jobs:
         with:
           name: weather-data
           path: weather/weather.json
-          retention-days: 1
+          retention-days: 3
 
   # Parallel job 3: Fetch SoundCloud data
   fetch-soundcloud:
@@ -137,8 +137,9 @@ jobs:
         uses: ./.github/actions/setup-environment
 
       - name: Install additional dependencies
-        run: |
-          pip install Pillow
+        uses: ./.github/actions/pip-install
+        with:
+          packages: 'Pillow'
 
       - name: Fetch SoundCloud data
         env:
@@ -171,7 +172,7 @@ jobs:
           path: |
             assets/metadata.json
             assets/soundcloud-artwork.jpg
-          retention-days: 1
+          retention-days: 3
 
   # Sequential job: Generate all cards after fetches complete
   generate-cards:
@@ -182,9 +183,13 @@ jobs:
       - name: Setup environment
         uses: ./.github/actions/setup-environment
 
-      - name: Install additional dependencies
+      - name: Install Python dependencies
+        uses: ./.github/actions/pip-install
+        with:
+          packages: 'Pillow'
+
+      - name: Install npm dependencies
         run: |
-          pip install Pillow
           npm install -g svgo
 
       # Download all artifacts

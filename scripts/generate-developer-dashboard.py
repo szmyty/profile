@@ -31,6 +31,8 @@ from lib.utils import (
     get_theme_chart_value,
     get_theme_language_color,
     format_timestamp_local,
+    format_time_since,
+    is_data_stale,
     format_large_number,
     generate_card_with_fallback,
     generate_sparkline_path,
@@ -111,7 +113,7 @@ def generate_sparkline_chart(
     bg_color: str,
 ) -> str:
     """Generate a sparkline chart for activity."""
-    path = generate_sparkline_path(values, width, height)
+    path = generate_sparkline_path(values, width, height)  # type: ignore[arg-type]
     
     return f"""
     <g transform="translate({x}, {y})">
@@ -190,7 +192,7 @@ def generate_language_bars(
     sorted_langs = sorted(languages.items(), key=lambda x: -x[1])[:6]
     
     bar_height = get_theme_chart_value("bar_height", 16)
-    current_x = x
+    current_x: float = float(x)
     bars = []
     legends = []
     
@@ -282,7 +284,6 @@ def generate_svg(stats: Dict) -> str:
     activity_grid = commit_activity.get("activity_grid", [])
     total_commits = commit_activity.get("total_30_days", sum(daily_commits))
     updated_at_raw = stats.get("updated_at", "")
-    updated_at = format_timestamp_local(updated_at_raw) if updated_at_raw else ""
     
     prs_opened = prs.get("opened", 0)
     prs_merged = prs.get("merged", 0)
@@ -330,6 +331,29 @@ def generate_svg(stats: Dict) -> str:
         text_primary,
         text_secondary,
     )
+    
+    # Calculate staleness badge
+    staleness_badge = ""
+    if updated_at_raw:
+        time_since = format_time_since(updated_at_raw)
+        is_stale = is_data_stale(updated_at_raw, stale_threshold_hours=24)
+        
+        # Use warning color if data is stale
+        if is_stale:
+            badge_color = accent_issues  # Warning color
+            badge_icon = "⚠️ "
+        else:
+            badge_color = text_muted
+            badge_icon = ""
+        
+        time_since_escaped = escape_xml(time_since)
+        staleness_badge = f'''
+  <!-- Staleness Badge -->
+  <g transform="translate({card_width - 10}, 10)">
+    <text x="0" y="12" font-family="{font_family}" font-size="{font_size_xs}" fill="{badge_color}" text-anchor="end">
+      {badge_icon}Updated: {time_since_escaped}
+    </text>
+  </g>'''
     
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{card_width}" height="{card_height}" viewBox="0 0 {card_width} {card_height}">
   <defs>
@@ -402,12 +426,7 @@ def generate_svg(stats: Dict) -> str:
   <!-- Languages Distribution -->
   {language_chart}
 
-  <!-- Footer: Updated timestamp -->
-  <g transform="translate(25, {card_height - 15})">
-    <text font-family="{font_family}" font-size="10" fill="{text_muted}">
-      Updated: {escape_xml(str(updated_at))}
-    </text>
-  </g>
+  {staleness_badge}
 
   <!-- Decorative accent -->
   <rect x="{card_width - 16}" y="15" width="4" height="{card_height - 30}" rx="2" fill="{accent_teal}" fill-opacity="{stroke_opacity}"/>

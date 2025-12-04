@@ -30,6 +30,8 @@ from lib.utils import (
     get_theme_decorative_accent_value,
     get_theme_chart_color,
     format_timestamp_local,
+    format_time_since,
+    is_data_stale,
     fallback_exists,
     log_fallback_used,
     handle_error_with_fallback,
@@ -180,9 +182,8 @@ def generate_svg(mood: dict, metrics: dict) -> str:
     # Get interpretations
     interpreted = mood.get("interpreted_metrics", {})
 
-    # Get timestamp and format to local time
+    # Get timestamp
     updated_at_raw = mood.get("computed_at", datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
-    updated_at = format_timestamp_local(updated_at_raw) if updated_at_raw else ""
 
     # Generate sparkline from available scores
     sparkline_values = [sleep_score, readiness_score, activity_score, hrv or 50]
@@ -195,6 +196,29 @@ def generate_svg(mood: dict, metrics: dict) -> str:
     sleep_bar = generate_score_bar(sleep_score, 200, 75, 100, "😴 Sleep")
     readiness_bar = generate_score_bar(readiness_score, 200, 105, 100, "💪 Readiness")
     activity_bar = generate_score_bar(activity_score, 200, 135, 100, "🏃 Activity")
+    
+    # Calculate staleness badge
+    staleness_badge = ""
+    if updated_at_raw:
+        time_since = format_time_since(updated_at_raw)
+        is_stale = is_data_stale(updated_at_raw, stale_threshold_hours=24)
+        
+        # Use warning color if data is stale
+        if is_stale:
+            badge_color = accent_hr  # Warning/error color
+            badge_icon = "⚠️ "
+        else:
+            badge_color = text_muted
+            badge_icon = ""
+        
+        time_since_escaped = escape_xml(time_since)
+        staleness_badge = f'''
+  <!-- Staleness Badge -->
+  <g transform="translate({card_width - 10}, 10)">
+    <text x="0" y="12" font-family="{font_family}" font-size="{font_size_xs}" fill="{badge_color}" text-anchor="end">
+      {badge_icon}Updated: {time_since_escaped}
+    </text>
+  </g>'''
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{card_width}" height="{card_height}" viewBox="0 0 {card_width} {card_height}">
   <defs>
@@ -290,12 +314,7 @@ def generate_svg(mood: dict, metrics: dict) -> str:
     </g>
   </g>
 
-  <!-- Footer: Updated timestamp -->
-  <g transform="translate(20, 205)">
-    <text font-family="{font_family}" font-size="{font_size_base}" fill="{text_muted}">
-      Updated: {updated_at}
-    </text>
-  </g>
+  {staleness_badge}
 
   <!-- Decorative accent -->"""
     
@@ -329,10 +348,12 @@ def main() -> None:
 
     # Try to read mood data
     mood, error = try_load_json(mood_path, "Mood file")
-    if error:
-        if handle_error_with_fallback("mood", error, output_path, has_fallback):
+    if error or mood is None:
+        if handle_error_with_fallback("mood", error or "No data loaded", output_path, has_fallback):
             print(f"Using fallback mood dashboard SVG: {output_path}", file=sys.stderr)
             return
+        # If we get here without a fallback, mood must be None and we should exit
+        sys.exit(1)
 
     # Read metrics data (optional, for additional visualizations)
     metrics = {}

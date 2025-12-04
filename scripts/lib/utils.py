@@ -309,7 +309,7 @@ def try_load_and_validate_json(
         error contains the error message.
     """
     data, error = try_load_json(path, description)
-    if error:
+    if error or data is None:
         return None, error
 
     validation_error = try_validate_json(data, schema_name, description)
@@ -448,9 +448,9 @@ def generate_card_with_fallback(
     else:
         data, error = try_load_json(json_path, description)
 
-    if error:
+    if error or data is None:
         if has_fallback:
-            log_fallback_used(card_type, error, output_path)
+            log_fallback_used(card_type, error or "No data loaded", output_path)
             return False
         else:
             print(f"Error: {error}", file=sys.stderr)
@@ -993,6 +993,48 @@ def format_timestamp_iso(dt: Optional[datetime] = None) -> str:
     return dt.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def parse_timestamp(timestamp_str: str) -> Optional[datetime]:
+    """
+    Parse an ISO 8601 timestamp string to a UTC datetime object.
+    
+    Handles various timestamp formats:
+    - With 'Z' suffix (e.g., "2025-12-01T06:22:41Z")
+    - With timezone offset (e.g., "2025-12-01T06:22:41+00:00")
+    - Without timezone (assumes UTC)
+    
+    Args:
+        timestamp_str: ISO 8601 timestamp string
+    
+    Returns:
+        datetime object in UTC, or None if parsing fails
+    
+    Example:
+        >>> dt = parse_timestamp("2025-12-01T06:22:41Z")
+        >>> dt.tzinfo == timezone.utc
+        True
+    """
+    try:
+        timestamp_str = timestamp_str.strip()
+        
+        # Normalize timestamp format
+        if timestamp_str.endswith('Z'):
+            timestamp_str = timestamp_str[:-1] + '+00:00'
+        elif not (timestamp_str.endswith('+00:00') or '+' in timestamp_str[-6:]):
+            # No timezone info, assume UTC
+            timestamp_str = timestamp_str + '+00:00'
+        
+        dt = datetime.fromisoformat(timestamp_str)
+        
+        # Ensure it's UTC
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        
+        return dt
+        
+    except (ValueError, AttributeError, TypeError):
+        return None
+
+
 def format_time_since(timestamp_str: str) -> str:
     """
     Calculate and format the time elapsed since a given timestamp.
@@ -1007,42 +1049,114 @@ def format_time_since(timestamp_str: str) -> str:
         >>> format_time_since("2025-12-01T06:22:41Z")
         "2h ago"
     """
-    try:
-        # Parse the timestamp
-        timestamp_str = timestamp_str.strip()
-        if timestamp_str.endswith('Z'):
-            timestamp_str = timestamp_str[:-1] + '+00:00'
-        elif not (timestamp_str.endswith('+00:00') or '+' in timestamp_str[-6:] or timestamp_str.endswith('Z')):
-            # No timezone info, assume UTC
-            timestamp_str = timestamp_str + '+00:00'
-        
-        dt = datetime.fromisoformat(timestamp_str)
-        
-        # Ensure it's UTC
-        if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=timezone.utc)
-        
-        # Calculate time difference
-        now = datetime.now(timezone.utc)
-        delta = now - dt
-        
-        # Format based on duration
-        total_seconds = int(delta.total_seconds())
-        
-        if total_seconds < 60:
-            return "just now"
-        elif total_seconds < 3600:  # Less than 1 hour
-            minutes = total_seconds // 60
-            return f"{minutes}m ago"
-        elif total_seconds < 86400:  # Less than 1 day
-            hours = total_seconds // 3600
-            return f"{hours}h ago"
-        else:  # 1 day or more
-            days = total_seconds // 86400
-            return f"{days}d ago"
-            
-    except (ValueError, AttributeError, TypeError):
+    dt = parse_timestamp(timestamp_str)
+    if dt is None:
         return "unknown"
+    
+    # Calculate time difference
+    now = datetime.now(timezone.utc)
+    delta = now - dt
+    
+    # Format based on duration
+    total_seconds = int(delta.total_seconds())
+    
+    if total_seconds < 60:
+        return "just now"
+    elif total_seconds < 3600:  # Less than 1 hour
+        minutes = total_seconds // 60
+        return f"{minutes}m ago"
+    elif total_seconds < 86400:  # Less than 1 day
+        hours = total_seconds // 3600
+        return f"{hours}h ago"
+    else:  # 1 day or more
+        days = total_seconds // 86400
+        return f"{days}d ago"
+
+
+def is_data_stale(timestamp_str: str, stale_threshold_hours: int = 24) -> bool:
+    """
+    Check if data is stale based on the timestamp.
+    
+    Args:
+        timestamp_str: ISO 8601 timestamp string (e.g., "2025-12-01T06:22:41Z")
+        stale_threshold_hours: Number of hours after which data is considered stale (default: 24)
+    
+    Returns:
+        True if the data is older than the threshold, False otherwise
+    
+    Example:
+        >>> is_data_stale("2025-12-01T06:22:41Z", 24)
+        True  # if more than 24 hours old
+    """
+    dt = parse_timestamp(timestamp_str)
+    if dt is None:
+        # If we can't parse the timestamp, consider it stale to be safe
+        return True
+    
+    # Calculate time difference
+    now = datetime.now(timezone.utc)
+    delta = now - dt
+    
+    # Check if data is stale
+    return delta.total_seconds() > (stale_threshold_hours * 3600)
+
+
+def generate_staleness_badge_svg(
+    updated_at: str,
+    card_width: int,
+    font_family: str = "'Segoe UI', Arial, sans-serif",
+    font_size: int = 8,
+    x_offset: int = 10,
+    y_offset: int = 10,
+    stale_threshold_hours: int = 24,
+) -> str:
+    """
+    Generate SVG markup for a staleness badge showing data freshness.
+    
+    Fresh data (<24h): Shows time in muted color without icon
+    Stale data (≥24h): Shows "⚠️" icon in warning color
+    
+    Args:
+        updated_at: ISO 8601 timestamp string
+        card_width: Width of the card in pixels (badge positioned relative to right edge)
+        font_family: Font family for badge text
+        font_size: Font size for badge text
+        x_offset: Offset from right edge of card
+        y_offset: Offset from top of card
+        stale_threshold_hours: Hours after which data is considered stale
+    
+    Returns:
+        SVG markup string for the staleness badge, or empty string if no timestamp
+    
+    Example:
+        >>> badge = generate_staleness_badge_svg("2025-12-03T19:45:45Z", 480)
+        >>> "Updated:" in badge
+        True
+    """
+    if not updated_at:
+        return ""
+    
+    time_since = format_time_since(updated_at)
+    is_stale = is_data_stale(updated_at, stale_threshold_hours=stale_threshold_hours)
+    
+    # Use warning color if data is stale
+    if is_stale:
+        badge_color = "#ff6b6b"  # Warning/error color
+        badge_icon = "⚠️ "
+    else:
+        badge_color = "#4a5568"  # Muted text color
+        badge_icon = ""
+    
+    time_since_escaped = escape_xml(time_since)
+    x_position = card_width - x_offset
+    
+    return f'''
+  <!-- Staleness Badge -->
+  <g transform="translate({x_position}, {y_offset})">
+    <text x="0" y="12" font-family="{font_family}" font-size="{font_size}" fill="{badge_color}" text-anchor="end">
+      {badge_icon}Updated: {time_since_escaped}
+    </text>
+  </g>'''
 
 
 def format_large_number(count: int) -> str:
@@ -1243,7 +1357,7 @@ def optimize_image(
             
             # Convert to RGB if necessary (JPEG doesn't support alpha)
             if img.mode in ("RGBA", "P"):
-                img = img.convert("RGB")
+                img = img.convert("RGB")  # type: ignore[assignment]
             
             output = io.BytesIO()
             img.save(output, format="JPEG", quality=jpeg_quality, optimize=True)

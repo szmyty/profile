@@ -227,7 +227,7 @@ def validate_data_quality(
                     min_val = range_spec.get('min')
                     max_val = range_spec.get('max')
                     if not check_value_range(value, min_val, max_val, field, context):
-                        results["out_of_range"][field] = {
+                        results["out_of_range"][field] = {  # type: ignore[index]
                             "value": value,
                             "min": min_val,
                             "max": max_val

@@ -1,0 +1,20 @@
+Results of djlint linter (version 1.36.4)
+See documentation on https://megalinter.io/8.8.0/descriptors/html_djlint/
+-----------------------------------------------
+
+❌ [ERROR] footer/footer.html
+    
+    
+    Linting 0/1 files ┈┈┈┈┈┈┈┈┈┈ 00:00    
+                                          
+    
+    Linting 1/1 files ━━━━━━━━━━ 00:00    
+    Linting 1/1 files ━━━━━━━━━━ 00:00    
+    
+    
+    footer/footer.html
+    ───────────────────────────────────────────────────────────────────────────────
+    H006 7:0 Img tag should have height and width attributes. <img src="branding/f
+    
+    Linted 1 file, found 1 error.
+

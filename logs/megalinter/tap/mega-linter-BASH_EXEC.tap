@@ -1,0 +1,19 @@
+TAP version 13
+1..17
+ok 1 - .devcontainer/postCreate.sh
+ok 2 - scripts/dev-mode.sh
+ok 3 - scripts/fetch-location.sh
+ok 4 - scripts/fetch-oura.sh
+ok 5 - scripts/fetch-soundcloud.sh
+ok 6 - scripts/fetch-timezone.sh
+ok 7 - scripts/fetch-weather.sh
+ok 8 - scripts/health_check.sh
+not ok 9 - scripts/lib/common.sh
+not ok 10 - scripts/lib/logging.sh
+ok 11 - scripts/new-card.sh
+ok 12 - tests/test_cache.sh
+ok 13 - tests/test_health_checks.sh
+ok 14 - tests/test_location_shell_diagnostics.sh
+ok 15 - tests/test_new_card.sh
+ok 16 - tests/test_retry_logic.sh
+ok 17 - tests/test_timeout_coverage.sh

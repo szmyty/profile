@@ -1,0 +1,3740 @@
+Results of shfmt linter (version 3.11.0)
+See documentation on https://megalinter.io/8.8.0/descriptors/bash_shfmt/
+-----------------------------------------------
+
+✅ [SUCCESS] .devcontainer/postCreate.sh
+❌ [ERROR] scripts/dev-mode.sh
+    diff scripts/dev-mode.sh.orig scripts/dev-mode.sh
+    --- scripts/dev-mode.sh.orig
+    +++ scripts/dev-mode.sh
+    @@ -34,13 +34,13 @@
+     
+     generate_soundcloud() {
+         echo -e "${GREEN}🎵 Generating SoundCloud card...${NC}"
+    -    
+    +
+         # Create placeholder artwork if it doesn't exist
+         if [ ! -f "$MOCK_DATA_DIR/soundcloud-artwork.jpg" ]; then
+             echo "   Creating placeholder artwork..."
+             create_placeholder_artwork "$MOCK_DATA_DIR/soundcloud-artwork.jpg"
+         fi
+    -    
+    +
+         if ! python "$SCRIPT_DIR/generate-card.py" \
+             "$MOCK_DATA_DIR/soundcloud-metadata.json" \
+             "$MOCK_DATA_DIR/soundcloud-artwork.jpg" \
+    @@ -48,13 +48,13 @@
+             echo "   Error: Failed to generate SoundCloud card"
+             return 1
+         fi
+    -    
+    +
+         echo -e "   → Saved to: ${YELLOW}$OUTPUT_DIR/soundcloud-card.svg${NC}"
+     }
+     
+     generate_weather() {
+         echo -e "${GREEN}🌦️  Generating Weather card...${NC}"
+    -    
+    +
+         if ! python "$SCRIPT_DIR/generate-weather-card.py" \
+             "$MOCK_DATA_DIR/weather.json" \
+             "$OUTPUT_DIR/weather-today.svg"; then
+    @@ -61,13 +61,13 @@
+             echo "   Error: Failed to generate weather card"
+             return 1
+         fi
+    -    
+    +
+         echo -e "   → Saved to: ${YELLOW}$OUTPUT_DIR/weather-today.svg${NC}"
+     }
+     
+     generate_developer() {
+         echo -e "${GREEN}💻 Generating Developer dashboard...${NC}"
+    -    
+    +
+         if ! python "$SCRIPT_DIR/generate-developer-dashboard.py" \
+             "$MOCK_DATA_DIR/developer-stats.json" \
+             "$OUTPUT_DIR/developer-dashboard.svg"; then
+    @@ -74,13 +74,13 @@
+             echo "   Error: Failed to generate developer dashboard"
+             return 1
+         fi
+    -    
+    +
+         echo -e "   → Saved to: ${YELLOW}$OUTPUT_DIR/developer-dashboard.svg${NC}"
+     }
+     
+     generate_oura() {
+         echo -e "${GREEN}🧬 Generating Oura health dashboard...${NC}"
+    -    
+    +
+         # Generate health snapshot
+         if ! python "$SCRIPT_DIR/generate-health-snapshot.py" \
+             "$MOCK_DATA_DIR/oura-metrics.json" \
+    @@ -88,7 +88,7 @@
+             echo "   Error: Failed to generate health snapshot"
+             return 1
+         fi
+    -    
+    +
+         # Generate health dashboard
+         if ! python "$SCRIPT_DIR/generate-health-dashboard.py" \
+             "$OUTPUT_DIR/health-snapshot.json" \
+    @@ -96,7 +96,7 @@
+             echo "   Error: Failed to generate health dashboard"
+             return 1
+         fi
+    -    
+    +
+         # Generate mood data
+         if ! python "$SCRIPT_DIR/oura-mood-engine.py" \
+             "$MOCK_DATA_DIR/oura-metrics.json" \
+    @@ -104,7 +104,7 @@
+             echo "   Error: Failed to generate mood data"
+             return 1
+         fi
+    -    
+    +
+         # Generate mood dashboard
+         if ! python "$SCRIPT_DIR/generate-oura-mood-card.py" \
+             "$OUTPUT_DIR/mood.json" \
+    @@ -113,7 +113,7 @@
+             echo "   Error: Failed to generate mood dashboard"
+             return 1
+         fi
+    -    
+    +
+         echo -e "   → Saved to: ${YELLOW}$OUTPUT_DIR/health-dashboard.svg${NC}"
+         echo -e "   → Saved to: ${YELLOW}$OUTPUT_DIR/mood-dashboard.svg${NC}"
+     }
+    @@ -122,32 +122,32 @@
+     CARD_TYPE="${1:-all}"
+     
+     case "$CARD_TYPE" in
+    -    soundcloud)
+    -        generate_soundcloud
+    -        ;;
+    -    weather)
+    -        generate_weather
+    -        ;;
+    -    developer)
+    -        generate_developer
+    -        ;;
+    -    oura)
+    -        generate_oura
+    -        ;;
+    -    all)
+    -        generate_soundcloud
+    -        echo ""
+    -        generate_weather
+    -        echo ""
+    -        generate_developer
+    -        echo ""
+    -        generate_oura
+    -        ;;
+    -    *)
+    -        echo "Unknown card type: $CARD_TYPE"
+    -        echo "Usage: $0 [soundcloud|weather|developer|oura|all]"
+    -        exit 1
+    -        ;;
+    +soundcloud)
+    +    generate_soundcloud
+    +    ;;
+    +weather)
+    +    generate_weather
+    +    ;;
+    +developer)
+    +    generate_developer
+    +    ;;
+    +oura)
+    +    generate_oura
+    +    ;;
+    +all)
+    +    generate_soundcloud
+    +    echo ""
+    +    generate_weather
+    +    echo ""
+    +    generate_developer
+    +    echo ""
+    +    generate_oura
+    +    ;;
+    +*)
+    +    echo "Unknown card type: $CARD_TYPE"
+    +    echo "Usage: $0 [soundcloud|weather|developer|oura|all]"
+    +    exit 1
+    +    ;;
+     esac
+     
+     echo ""
+
+❌ [ERROR] scripts/fetch-location.sh
+    diff scripts/fetch-location.sh.orig scripts/fetch-location.sh
+    --- scripts/fetch-location.sh.orig
+    +++ scripts/fetch-location.sh
+    @@ -23,9 +23,9 @@
+     save_diagnostic() {
+         local filename=$1
+         local content=$2
+    -    
+    +
+         mkdir -p "$DEBUG_DIR"
+    -    echo "$content" > "${DEBUG_DIR}/${filename}"
+    +    echo "$content" >"${DEBUG_DIR}/${filename}"
+         echo "Diagnostic info saved to ${DEBUG_DIR}/${filename}" >&2
+     }
+     
+    @@ -34,13 +34,13 @@
+     determine_time_of_day() {
+         local lat=$1
+         local lon=$2
+    -    
+    +
+         echo "Determining time of day for coordinates ${lat}, ${lon}..." >&2
+    -    
+    +
+         # Fetch sunrise/sunset data from Open-Meteo
+         local meteo_url="https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=sunrise,sunset&timezone=auto&forecast_days=1"
+         local meteo_data
+    -    
+    +
+         # Use retry_with_backoff with better error handling
+         if ! meteo_data=$(retry_with_backoff curl -sf --max-time 10 "$meteo_url"); then
+             echo "Warning: Failed to fetch sunrise/sunset data after retries, defaulting to light mode" >&2
+    @@ -47,13 +47,13 @@
+             echo "light"
+             return 0
+         fi
+    -    
+    +
+         # Save diagnostic info (note: retry_with_backoff abstracts HTTP details)
+         save_diagnostic "debug_meteo_response.txt" "URL: $meteo_url
+     Status: Success (via retry_with_backoff)
+     Response:
+     $meteo_data"
+    -    
+    +
+         # Validate JSON
+         if ! echo "$meteo_data" | jq empty 2>/dev/null; then
+             echo "Warning: Invalid JSON from Open-Meteo, defaulting to light mode" >&2
+    @@ -60,40 +60,40 @@
+             echo "light"
+             return 0
+         fi
+    -    
+    +
+         # Extract sunrise and sunset times
+         local sunrise sunset
+         sunrise=$(echo "$meteo_data" | jq -r '.daily.sunrise[0] // empty')
+         sunset=$(echo "$meteo_data" | jq -r '.daily.sunset[0] // empty')
+    -    
+    +
+         if [ -z "$sunrise" ] || [ -z "$sunset" ] || [ "$sunrise" = "null" ] || [ "$sunset" = "null" ]; then
+             echo "Warning: Could not parse sunrise/sunset times, defaulting to light mode" >&2
+             echo "light"
+             return 0
+         fi
+    -    
+    +
+         # Get current time in the same timezone (ISO 8601 format)
+         # Open-Meteo returns times like "2025-12-03T06:30"
+         # We need to compare current time in local timezone
+         local current_time
+         current_time=$(date -u +"%Y-%m-%dT%H:%M")
+    -    
+    +
+         # Convert times to seconds since epoch for comparison
+         local sunrise_epoch sunset_epoch current_epoch
+         sunrise_epoch=$(date -d "$sunrise" +%s 2>/dev/null || echo "0")
+         sunset_epoch=$(date -d "$sunset" +%s 2>/dev/null || echo "0")
+         current_epoch=$(date -u +%s)
+    -    
+    +
+         if [ "$sunrise_epoch" -eq 0 ] || [ "$sunset_epoch" -eq 0 ]; then
+             echo "Warning: Failed to parse times, defaulting to light mode" >&2
+             echo "light"
+             return 0
+         fi
+    -    
+    +
+         echo "Sunrise: $sunrise (epoch: $sunrise_epoch)" >&2
+         echo "Sunset: $sunset (epoch: $sunset_epoch)" >&2
+         echo "Current: $current_time (epoch: $current_epoch)" >&2
+    -    
+    +
+         # Determine if it's day or night
+         if [ "$current_epoch" -lt "$sunrise_epoch" ] || [ "$current_epoch" -gt "$sunset_epoch" ]; then
+             echo "🌙 Night detected - using dark theme" >&2
+    @@ -109,9 +109,9 @@
+         local output_path=$1
+         local lat=$2
+         local lon=$3
+    -    
+    +
+         echo "Generating fallback map image..." >&2
+    -    
+    +
+         # Use Python script to generate fallback PNG
+         if python3 "${SCRIPT_DIR}/generate-fallback-map.py" "$output_path" "$lat" "$lon"; then
+             echo "✅ Fallback map generated: ${output_path}" >&2
+    @@ -127,29 +127,29 @@
+         local lat=$1
+         local lon=$2
+         local output_path=$3
+    -    
+    +
+         echo "Downloading static map from Mapbox centered on ${lat}, ${lon}..." >&2
+    -    
+    +
+         # Check if MAPBOX_TOKEN is set
+         if [ -z "$MAPBOX_TOKEN" ]; then
+             echo "❌ FAILURE: MAPBOX_TOKEN is not set" >&2
+             echo "   → Set the MAPBOX_TOKEN environment variable or secret" >&2
+             echo "   → Get your token from https://account.mapbox.com/access-tokens/" >&2
+    -        
+    -        # Generate fallback map image
+    -        generate_fallback_map "$output_path" "$lat" "$lon"
+    -        return 1
+    -    fi
+    -    
+    +
+    +        # Generate fallback map image
+    +        generate_fallback_map "$output_path" "$lat" "$lon"
+    +        return 1
+    +    fi
+    +
+         # Perform health check for Mapbox API
+         if ! health_check_api "https://api.mapbox.com/v1" "Mapbox API"; then
+             log_warn "Mapbox API health check failed, but continuing anyway..."
+         fi
+    -    
+    +
+         # Determine if it's day or night
+         local theme
+         theme=$(determine_time_of_day "$lat" "$lon")
+    -    
+    +
+         # Choose Mapbox style based on time of day
+         local mapbox_style
+         if [ "$theme" = "dark" ]; then
+    @@ -157,9 +157,9 @@
+         else
+             mapbox_style="mapbox/light-v11"
+         fi
+    -    
+    +
+         echo "Using Mapbox style: ${mapbox_style}" >&2
+    -    
+    +
+         # Mapbox expects lon,lat order (opposite of Nominatim's lat,lon)
+         local mapbox_coords="${lon},${lat}"
+         local zoom=11
+    @@ -166,18 +166,18 @@
+         local bearing=0
+         local width=600
+         local height=400
+    -    
+    +
+         # Mapbox Static Images API
+         local map_url="https://api.mapbox.com/styles/v1/${mapbox_style}/static/${mapbox_coords},${zoom},${bearing}/${width}x${height}?access_token=${MAPBOX_TOKEN}"
+    -    
+    +
+         # Capture HTTP response with headers
+         local http_code response_headers temp_file
+         temp_file=$(mktemp)
+         response_headers=$(mktemp)
+    -    
+    +
+         http_code=$(curl -w "%{http_code}" --max-time 10 -o "$temp_file" -D "$response_headers" -s "$map_url")
+         local curl_exit=$?
+    -    
+    +
+         # Save diagnostic information (without exposing full token)
+         local masked_token="${MAPBOX_TOKEN:0:8}...${MAPBOX_TOKEN: -4}"
+         save_diagnostic "debug_map_response.txt" "URL: https://api.mapbox.com/styles/v1/${mapbox_style}/static/${mapbox_coords},${zoom},${bearing}/${width}x${height}?access_token=${masked_token}
+    @@ -190,9 +190,9 @@
+     Response Headers:
+     $(cat "$response_headers")
+     File Size: $(stat -f%z "$temp_file" 2>/dev/null || stat -c%s "$temp_file" 2>/dev/null || echo "unknown")"
+    -    
+    +
+         save_diagnostic "debug_map_headers.txt" "$(cat "$response_headers")"
+    -    
+    +
+         # Check curl exit code
+         if [ $curl_exit -ne 0 ]; then
+             echo "❌ FAILURE: Map retrieval failed (Curl exit code: ${curl_exit})" >&2
+    @@ -199,60 +199,60 @@
+             echo "   → This usually indicates a network error or DNS resolution failure" >&2
+             echo "   → Check your network connection and try again" >&2
+             rm -f "$temp_file" "$response_headers"
+    -        
+    -        # Generate fallback map image
+    -        generate_fallback_map "$output_path" "$lat" "$lon"
+    -        return 1
+    -    fi
+    -    
+    +
+    +        # Generate fallback map image
+    +        generate_fallback_map "$output_path" "$lat" "$lon"
+    +        return 1
+    +    fi
+    +
+         # Check HTTP status code
+         if [ "$http_code" -ge 400 ]; then
+             echo "❌ FAILURE: Mapbox API request failed (HTTP Code: ${http_code})" >&2
+             case "$http_code" in
+    -            401)
+    -                echo "   → Invalid or expired Mapbox token" >&2
+    -                echo "   → Check your MAPBOX_TOKEN secret" >&2
+    -                echo "   → Get a new token from https://account.mapbox.com/access-tokens/" >&2
+    -                ;;
+    -            403)
+    -                echo "   → Access forbidden - token may lack required permissions" >&2
+    -                echo "   → Ensure your token has 'styles:tiles' scope" >&2
+    -                ;;
+    -            404)
+    -                echo "   → Mapbox style or endpoint not found" >&2
+    -                echo "   → The style '${mapbox_style}' may not be available" >&2
+    -                ;;
+    -            429)
+    -                echo "   → Rate limit exceeded" >&2
+    -                echo "   → Mapbox has usage limits based on your plan" >&2
+    -                echo "   → Consider upgrading or reducing request frequency" >&2
+    -                ;;
+    -            500|502|503|504)
+    -                echo "   → Mapbox service is experiencing issues" >&2
+    -                echo "   → Try again later" >&2
+    -                ;;
+    -            *)
+    -                echo "   → Unexpected HTTP error" >&2
+    -                echo "   → Check debug_map_response.txt for details" >&2
+    -                ;;
+    +        401)
+    +            echo "   → Invalid or expired Mapbox token" >&2
+    +            echo "   → Check your MAPBOX_TOKEN secret" >&2
+    +            echo "   → Get a new token from https://account.mapbox.com/access-tokens/" >&2
+    +            ;;
+    +        403)
+    +            echo "   → Access forbidden - token may lack required permissions" >&2
+    +            echo "   → Ensure your token has 'styles:tiles' scope" >&2
+    +            ;;
+    +        404)
+    +            echo "   → Mapbox style or endpoint not found" >&2
+    +            echo "   → The style '${mapbox_style}' may not be available" >&2
+    +            ;;
+    +        429)
+    +            echo "   → Rate limit exceeded" >&2
+    +            echo "   → Mapbox has usage limits based on your plan" >&2
+    +            echo "   → Consider upgrading or reducing request frequency" >&2
+    +            ;;
+    +        500 | 502 | 503 | 504)
+    +            echo "   → Mapbox service is experiencing issues" >&2
+    +            echo "   → Try again later" >&2
+    +            ;;
+    +        *)
+    +            echo "   → Unexpected HTTP error" >&2
+    +            echo "   → Check debug_map_response.txt for details" >&2
+    +            ;;
+             esac
+    -        
+    +
+             # Try to parse error message from response
+             if command -v jq >/dev/null 2>&1; then
+                 local error_msg
+    -            error_msg=$(jq -r '.message // empty' < "$temp_file" 2>/dev/null)
+    +            error_msg=$(jq -r '.message // empty' <"$temp_file" 2>/dev/null)
+                 if [ -n "$error_msg" ]; then
+                     echo "   → Mapbox error: $error_msg" >&2
+                 fi
+             fi
+    -        
+    -        rm -f "$temp_file" "$response_headers"
+    -        
+    -        # Generate fallback map image
+    -        generate_fallback_map "$output_path" "$lat" "$lon"
+    -        return 1
+    -    fi
+    -    
+    +
+    +        rm -f "$temp_file" "$response_headers"
+    +
+    +        # Generate fallback map image
+    +        generate_fallback_map "$output_path" "$lat" "$lon"
+    +        return 1
+    +    fi
+    +
+         # Verify the downloaded file is not empty
+         if [ ! -s "$temp_file" ]; then
+             echo "❌ FAILURE: Downloaded map file is empty" >&2
+    @@ -259,12 +259,12 @@
+             echo "   → Mapbox returned an empty response" >&2
+             echo "   → This may indicate rate limiting, service issues, or invalid parameters" >&2
+             rm -f "$temp_file" "$response_headers"
+    -        
+    -        # Generate fallback map image
+    -        generate_fallback_map "$output_path" "$lat" "$lon"
+    -        return 1
+    -    fi
+    -    
+    +
+    +        # Generate fallback map image
+    +        generate_fallback_map "$output_path" "$lat" "$lon"
+    +        return 1
+    +    fi
+    +
+         # Verify the file is a valid image (PNG)
+         if ! file "$temp_file" | grep -q "PNG image\|JPEG image"; then
+             echo "❌ FAILURE: Downloaded file is not a valid image" >&2
+    @@ -271,16 +271,16 @@
+             echo "   → Mapbox may have returned an error page or invalid data" >&2
+             echo "   → File type: $(file "$temp_file")" >&2
+             rm -f "$temp_file" "$response_headers"
+    -        
+    -        # Generate fallback map image
+    -        generate_fallback_map "$output_path" "$lat" "$lon"
+    -        return 1
+    -    fi
+    -    
+    +
+    +        # Generate fallback map image
+    +        generate_fallback_map "$output_path" "$lat" "$lon"
+    +        return 1
+    +    fi
+    +
+         # Move temp file to final location
+         mv "$temp_file" "$output_path"
+         rm -f "$response_headers"
+    -    
+    +
+         echo "✅ Static map saved to ${output_path}" >&2
+         echo "   → Style: ${mapbox_style}" >&2
+         echo "   → Theme: ${theme}" >&2
+    @@ -291,7 +291,7 @@
+         # Initialize logging
+         init_logging "location"
+         log_workflow_start "Location Card - Fetch Data"
+    -    
+    +
+         # Get GitHub location
+         local location
+         log_info "Fetching GitHub location..."
+    @@ -301,7 +301,7 @@
+             exit 1
+         }
+         log_info "GitHub location: ${location}"
+    -    
+    +
+         # Get coordinates
+         local coord_data
+         log_info "Converting location to coordinates..."
+    @@ -310,22 +310,22 @@
+             log_workflow_end "Location Card - Fetch Data" 1
+             exit 1
+         }
+    -    
+    +
+         local lat lon display_name
+         lat=$(echo "$coord_data" | jq -r '.lat')
+         lon=$(echo "$coord_data" | jq -r '.lon')
+         display_name=$(echo "$coord_data" | jq -r '.display_name')
+         log_info "Coordinates: lat=${lat}, lon=${lon}"
+    -    
+    +
+         # Create output directory
+         mkdir -p "$OUTPUT_DIR"
+         log_info "Output directory: ${OUTPUT_DIR}"
+    -    
+    +
+         # Download static map (with fallback handling)
+         local map_status=0
+         log_info "Downloading static map..."
+         download_static_map "$lat" "$lon" "${OUTPUT_DIR}/location-map.png" || map_status=$?
+    -    
+    +
+         # Check if we have a map file (either from Mapbox or fallback)
+         if [ ! -f "${OUTPUT_DIR}/location-map.png" ]; then
+             log_error "Could not download map and fallback generation failed"
+    @@ -332,7 +332,7 @@
+             log_workflow_end "Location Card - Fetch Data" 1
+             exit 1
+         fi
+    -    
+    +
+         # Log if we're using fallback
+         if [ $map_status -ne 0 ]; then
+             log_warn "Using fallback map image (Mapbox unavailable)"
+    @@ -339,13 +339,13 @@
+         else
+             log_info "Static map downloaded successfully"
+         fi
+    -    
+    +
+         # Get current UTC time for update timestamp in ISO 8601 format
+         local updated_at
+         updated_at=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+    -    
+    +
+         log_info "Generating location JSON output..."
+    -    
+    +
+         # Output combined JSON
+         local json_output
+         json_output=$(jq -n \
+    @@ -362,10 +362,10 @@
+                 map_path: $map_path,
+                 updated_at: $updated_at
+             }')
+    -    
+    +
+         log_info "Location data generated successfully"
+         log_workflow_end "Location Card - Fetch Data" 0
+    -    
+    +
+         echo "$json_output"
+     }
+
+❌ [ERROR] scripts/fetch-oura.sh
+    diff scripts/fetch-oura.sh.orig scripts/fetch-oura.sh
+    --- scripts/fetch-oura.sh.orig
+    +++ scripts/fetch-oura.sh
+    @@ -50,14 +50,14 @@
+     oura_api_request() {
+         local endpoint=$1
+         local params="${2:-}"
+    -    
+    +
+         local url="https://api.ouraring.com/v2/usercollection/${endpoint}"
+         if [ -n "$params" ]; then
+             url="${url}?${params}"
+         fi
+    -    
+    +
+         echo "Fetching from: ${url}" >&2
+    -    
+    +
+         local response
+         # Use retry_api_call with circuit breaker and rate limit detection
+         if ! response=$(retry_api_call "Oura API" curl -sf --max-time 10 "$url" \
+    @@ -67,14 +67,14 @@
+             echo "Error: Failed to fetch from Oura API endpoint after retries: ${endpoint}" >&2
+             return 1
+         fi
+    -    
+    +
+         # Validate JSON response
+         if ! validate_api_response "$response"; then
+             echo "Error: Invalid JSON from Oura API endpoint: ${endpoint}" >&2
+    -        echo "$response" > "${OUTPUT_DIR}/debug_invalid_response_${endpoint}.txt"
+    -        return 1
+    -    fi
+    -    
+    +        echo "$response" >"${OUTPUT_DIR}/debug_invalid_response_${endpoint}.txt"
+    +        return 1
+    +    fi
+    +
+         echo "$response"
+     }
+     
+    @@ -87,11 +87,11 @@
+             echo "{}"
+             return 0
+         }
+    -    
+    -    # Save raw response for debugging
+    -    echo "$response" > "${OUTPUT_DIR}/raw_personal_info.json"
+    +
+    +    # Save raw response for debugging
+    +    echo "$response" >"${OUTPUT_DIR}/raw_personal_info.json"
+         echo "Personal info JSON saved to raw_personal_info.json" >&2
+    -    
+    +
+         echo "$response"
+     }
+     
+    @@ -100,11 +100,11 @@
+         echo "Fetching daily sleep data..." >&2
+         local response
+         response=$(oura_api_request "daily_sleep" "start_date=${START_DATE}&end_date=${END_DATE}") || return 1
+    -    
+    -    # Save raw response for debugging
+    -    echo "$response" > "${OUTPUT_DIR}/raw_sleep.json"
+    +
+    +    # Save raw response for debugging
+    +    echo "$response" >"${OUTPUT_DIR}/raw_sleep.json"
+         echo "Sleep JSON saved to raw_sleep.json" >&2
+    -    
+    +
+         # Check if data array is empty (use .data NOT .items)
+         local item_count
+         item_count=$(echo "$response" | jq '.data | length')
+    @@ -113,7 +113,7 @@
+             echo "{}"
+             return 0
+         fi
+    -    
+    +
+         # Get the most recent entry with ALL available fields
+         echo "$response" | jq '.data | sort_by(.day) | last // empty'
+     }
+    @@ -123,11 +123,11 @@
+         echo "Fetching daily readiness data..." >&2
+         local response
+         response=$(oura_api_request "daily_readiness" "start_date=${START_DATE}&end_date=${END_DATE}") || return 1
+    -    
+    -    # Save raw response for debugging
+    -    echo "$response" > "${OUTPUT_DIR}/raw_readiness.json"
+    +
+    +    # Save raw response for debugging
+    +    echo "$response" >"${OUTPUT_DIR}/raw_readiness.json"
+         echo "Readiness JSON saved to raw_readiness.json" >&2
+    -    
+    +
+         # Check if data array is empty (use .data NOT .items)
+         local item_count
+         item_count=$(echo "$response" | jq '.data | length')
+    @@ -136,7 +136,7 @@
+             echo "{}"
+             return 0
+         fi
+    -    
+    +
+         # Get the most recent entry with ALL available fields
+         echo "$response" | jq '.data | sort_by(.day) | last // empty'
+     }
+    @@ -146,11 +146,11 @@
+         echo "Fetching daily activity data..." >&2
+         local response
+         response=$(oura_api_request "daily_activity" "start_date=${START_DATE}&end_date=${END_DATE}") || return 1
+    -    
+    -    # Save raw response for debugging
+    -    echo "$response" > "${OUTPUT_DIR}/raw_activity.json"
+    +
+    +    # Save raw response for debugging
+    +    echo "$response" >"${OUTPUT_DIR}/raw_activity.json"
+         echo "Activity JSON saved to raw_activity.json" >&2
+    -    
+    +
+         # Check if data array is empty (use .data NOT .items)
+         local item_count
+         item_count=$(echo "$response" | jq '.data | length')
+    @@ -159,7 +159,7 @@
+             echo "{}"
+             return 0
+         fi
+    -    
+    +
+         # Get the most recent entry with ALL available fields
+         echo "$response" | jq '.data | sort_by(.day) | last // empty'
+     }
+    @@ -174,11 +174,11 @@
+             echo "{}"
+             return 0
+         }
+    -    
+    -    # Save raw response for debugging
+    -    echo "$response" > "${OUTPUT_DIR}/raw_heart_rate.json"
+    +
+    +    # Save raw response for debugging
+    +    echo "$response" >"${OUTPUT_DIR}/raw_heart_rate.json"
+         echo "Heart rate JSON saved to raw_heart_rate.json" >&2
+    -    
+    +
+         # Check if data array is empty (use .data NOT .items)
+         local item_count
+         item_count=$(echo "$response" | jq '.data | length' 2>/dev/null || echo "0")
+    @@ -187,7 +187,7 @@
+             echo '{"data":[],"latest_bpm":null,"avg_bpm":null,"resting_bpm":null}'
+             return 0
+         fi
+    -    
+    +
+         # Process heart rate data with separate calculations for clarity:
+         # - latest_bpm: BPM from the most recent heart rate reading
+         # - avg_bpm: Average BPM across all readings
+    @@ -229,7 +229,7 @@
+     main() {
+         echo "Starting Oura data fetch..." >&2
+         echo "Date range: ${START_DATE} to ${END_DATE}" >&2
+    -    
+    +
+         # Perform health check before making API calls
+         log_info "Performing Oura API health check..."
+         if ! health_check_api "https://api.ouraring.com/v2/usercollection/personal_info" "Oura API" "Bearer ${OURA_PAT}"; then
+    @@ -236,16 +236,16 @@
+             log_warn "Oura API health check failed, but continuing anyway..."
+             # Don't exit - the retry logic will handle failures
+         fi
+    -    
+    +
+         # Fetch all data types including personal info
+         local personal_info_data sleep_data readiness_data activity_data hr_data
+    -    
+    +
+         personal_info_data=$(fetch_personal_info) || personal_info_data="{}"
+         sleep_data=$(fetch_daily_sleep) || sleep_data="{}"
+         readiness_data=$(fetch_daily_readiness) || readiness_data="{}"
+         activity_data=$(fetch_daily_activity) || activity_data="{}"
+         hr_data=$(fetch_heart_rate) || hr_data="{}"
+    -    
+    +
+         # Ensure all data variables contain valid JSON (default to empty object)
+         if [ -z "$personal_info_data" ] || ! echo "$personal_info_data" | jq empty 2>/dev/null; then
+             echo "Warning: personal_info_data is invalid, defaulting to empty object" >&2
+    @@ -267,7 +267,7 @@
+             echo "Warning: hr_data is invalid, defaulting to empty object" >&2
+             hr_data="{}"
+         fi
+    -    
+    +
+         # Log what data was received
+         echo "Personal info received: $(echo "$personal_info_data" | jq -c '.')" >&2
+         echo "Sleep data received: $(echo "$sleep_data" | jq -c '.')" >&2
+    @@ -274,33 +274,33 @@
+         echo "Readiness data received: $(echo "$readiness_data" | jq -c '.')" >&2
+         echo "Activity data received: $(echo "$activity_data" | jq -c '.')" >&2
+         echo "Heart rate data received: $(echo "$hr_data" | jq -c '.')" >&2
+    -    
+    +
+         # Check if we got any meaningful data (don't fail if some categories are empty)
+         if [ "$sleep_data" = "{}" ] && [ "$readiness_data" = "{}" ] && [ "$activity_data" = "{}" ]; then
+             echo "Warning: No data returned from any Oura API endpoint. Check if your token is valid and you have data available." >&2
+             # Don't exit, continue with empty data to allow workflow to complete
+         fi
+    -    
+    +
+         # Extract key metrics with null-safe defaults
+         local sleep_score readiness_score activity_score hrv resting_hr temp_deviation
+    -    
+    +
+         sleep_score=$(echo "$sleep_data" | jq '.score // null')
+         readiness_score=$(echo "$readiness_data" | jq '.score // null')
+         activity_score=$(echo "$activity_data" | jq '.score // null')
+    -    
+    +
+         # HRV from readiness contributors
+         hrv=$(echo "$readiness_data" | jq '.contributors.hrv_balance // null')
+    -    
+    +
+         # Resting HR from readiness
+         resting_hr=$(echo "$readiness_data" | jq '.contributors.resting_heart_rate // null')
+    -    
+    +
+         # Temperature deviation from readiness
+         temp_deviation=$(echo "$readiness_data" | jq '.contributors.body_temperature // null')
+    -    
+    +
+         # Get current UTC time for update timestamp in ISO 8601 format
+         local updated_at
+         updated_at=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+    -    
+    +
+         # Output combined JSON - always include all categories
+         jq -n \
+             --argjson sleep_score "$sleep_score" \
+    @@ -329,7 +329,7 @@
+                 heart_rate: $heart_rate,
+                 updated_at: $updated_at
+             }'
+    -    
+    +
+         # Log completion
+         log_info "Oura metrics fetched successfully"
+         log_info "Scores - Sleep: ${sleep_score}, Readiness: ${readiness_score}, Activity: ${activity_score}"
+
+❌ [ERROR] scripts/fetch-soundcloud.sh
+    diff scripts/fetch-soundcloud.sh.orig scripts/fetch-soundcloud.sh
+    --- scripts/fetch-soundcloud.sh.orig
+    +++ scripts/fetch-soundcloud.sh
+    @@ -29,7 +29,7 @@
+     validate_client_id() {
+         local client_id=$1
+         echo "Validating client_id..." >&2
+    -    
+    +
+         # Use a lightweight /resolve request to validate the client_id
+         local http_code
+         http_code=$(curl -sf -o /dev/null -w "%{http_code}" \
+    @@ -37,7 +37,7 @@
+             "https://api-v2.soundcloud.com/resolve?url=https://soundcloud.com/${SOUNDCLOUD_USER}&client_id=${client_id}" \
+             -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
+             2>/dev/null) || http_code="000"
+    -    
+    +
+         if [ "$http_code" = "200" ]; then
+             echo "Client_id validated successfully" >&2
+             return 0
+    @@ -51,7 +51,7 @@
+     save_client_id_to_cache() {
+         local client_id=$1
+         mkdir -p "$CACHE_DIR"
+    -    echo "$client_id" > "$CLIENT_ID_CACHE_FILE"
+    +    echo "$client_id" >"$CLIENT_ID_CACHE_FILE"
+         echo "Saved client_id to cache" >&2
+     }
+     
+    @@ -59,7 +59,7 @@
+     load_client_id_from_cache() {
+         if [ -f "$CLIENT_ID_CACHE_FILE" ]; then
+             local cached_id
+    -        cached_id=$(tr -d '[:space:]' < "$CLIENT_ID_CACHE_FILE" 2>/dev/null)
+    +        cached_id=$(tr -d '[:space:]' <"$CLIENT_ID_CACHE_FILE" 2>/dev/null)
+             if [ -n "$cached_id" ]; then
+                 echo "$cached_id"
+                 return 0
+    @@ -71,7 +71,7 @@
+     # Function to extract client_id from SoundCloud JavaScript assets
+     extract_client_id() {
+         echo "Extracting SoundCloud client_id from assets..." >&2
+    -    
+    +
+         # Fetch the main page HTML
+         local html
+         html=$(curl -sf --max-time 10 "https://soundcloud.com/${SOUNDCLOUD_USER}" \
+    @@ -79,26 +79,26 @@
+             echo "Warning: Failed to fetch SoundCloud profile page" >&2
+             return 1
+         }
+    -    
+    +
+         if [ -z "$html" ]; then
+             echo "Warning: Empty response from SoundCloud" >&2
+             return 1
+         fi
+    -    
+    +
+         # Extract JS asset URLs - support multiple CDN patterns
+         local js_urls
+         js_urls=$(echo "$html" | grep -oE 'https://a-v2\.sndcdn\.com/assets/[^"'\'']+\.js' | head -15)
+    -    
+    +
+         # Fallback to alternative CDN pattern
+         if [ -z "$js_urls" ]; then
+             js_urls=$(echo "$html" | grep -oE 'https://[a-z0-9-]+\.sndcdn\.com/assets/[^"'\'']+\.js' | head -15)
+         fi
+    -    
+    +
+         if [ -z "$js_urls" ]; then
+             echo "Warning: No JavaScript assets found in SoundCloud page" >&2
+             return 1
+         fi
+    -    
+    +
+         # Search each JS file for client_id using multiple regex patterns
+         # Note: The pattern ["'"'"'] uses bash quote escaping to match both " and ' characters:
+         # ' ends the single quote, "'" adds a literal single quote, ' resumes single quoting
+    @@ -106,33 +106,33 @@
+             local js_content
+             js_content=$(curl -sf --max-time 10 "$url" \
+                 -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36") || continue
+    -        
+    +
+             local client_id=""
+    -        
+    +
+             # Pattern 1: client_id="xxx" or client_id:'xxx'
+             client_id=$(echo "$js_content" | grep -oE 'client_id[=:]["'"'"'][a-zA-Z0-9]{20,40}["'"'"']' | grep -oE '[a-zA-Z0-9]{20,40}' | head -1 || true)
+    -        
+    +
+             # Pattern 2: clientId:"xxx" or clientId='xxx' (camelCase variant)
+             if [ -z "$client_id" ]; then
+                 client_id=$(echo "$js_content" | grep -oE 'clientId[=:]["'"'"'][a-zA-Z0-9]{20,40}["'"'"']' | grep -oE '[a-zA-Z0-9]{20,40}' | head -1 || true)
+             fi
+    -        
+    +
+             # Pattern 3: "client_id":"xxx" (JSON-style)
+             if [ -z "$client_id" ]; then
+                 client_id=$(echo "$js_content" | grep -oE '"client_id"\s*:\s*"[a-zA-Z0-9]{20,40}"' | grep -oE '[a-zA-Z0-9]{20,40}' | head -1 || true)
+             fi
+    -        
+    +
+             # Pattern 4: {client_id:"xxx"} (object literal)
+             if [ -z "$client_id" ]; then
+                 client_id=$(echo "$js_content" | grep -oE '\{client_id:"[a-zA-Z0-9]{20,40}"' | grep -oE '[a-zA-Z0-9]{20,40}' | head -1 || true)
+             fi
+    -        
+    +
+             if [ -n "$client_id" ]; then
+                 echo "$client_id"
+                 return 0
+             fi
+         done
+    -    
+    +
+         echo "Warning: Failed to extract client_id from any JavaScript asset" >&2
+         return 1
+     }
+    @@ -140,13 +140,13 @@
+     # Function to get a valid client_id (with extraction, validation, and fallback)
+     get_client_id() {
+         echo "Fetching SoundCloud client_id..." >&2
+    -    
+    +
+         local client_id=""
+         local extraction_failed=false
+    -    
+    +
+         # Step 1: Try to extract a fresh client_id
+         client_id=$(extract_client_id) || extraction_failed=true
+    -    
+    +
+         # Step 2: If extraction succeeded, validate the client_id
+         if [ "$extraction_failed" = "false" ] && [ -n "$client_id" ]; then
+             if validate_client_id "$client_id"; then
+    @@ -158,7 +158,7 @@
+                 echo "Warning: Extracted client_id failed validation" >&2
+             fi
+         fi
+    -    
+    +
+         # Step 3: Fallback to cached client_id
+         echo "Attempting to use cached client_id..." >&2
+         local cached_id
+    @@ -174,7 +174,7 @@
+         else
+             echo "No cached client_id available" >&2
+         fi
+    -    
+    +
+         # Step 4: All methods failed
+         echo "Error: Failed to obtain a valid client_id" >&2
+         return 1
+    @@ -184,7 +184,7 @@
+     get_user_id() {
+         local client_id=$1
+         echo "Fetching user ID for ${SOUNDCLOUD_USER}..." >&2
+    -    
+    +
+         local user_data
+         # Use retry_api_call with circuit breaker and rate limit detection
+         if ! user_data=$(retry_api_call "SoundCloud API" curl -sf --max-time 10 "https://api-v2.soundcloud.com/resolve?url=https://soundcloud.com/${SOUNDCLOUD_USER}&client_id=${client_id}"); then
+    @@ -191,21 +191,21 @@
+             echo "Error: Failed to resolve SoundCloud user after retries" >&2
+             return 1
+         fi
+    -    
+    +
+         # Validate JSON response
+         if ! validate_api_response "$user_data" "id"; then
+             echo "Error: Invalid user data from SoundCloud API" >&2
+             return 1
+         fi
+    -    
+    +
+         local user_id
+         user_id=$(echo "$user_data" | jq -r '.id')
+    -    
+    +
+         if [ -z "$user_id" ] || [ "$user_id" = "null" ]; then
+             echo "Error: Invalid user data received from SoundCloud API" >&2
+             return 1
+         fi
+    -    
+    +
+         echo "$user_id"
+     }
+     
+    @@ -214,7 +214,7 @@
+         local client_id=$1
+         local user_id=$2
+         echo "Fetching latest track..." >&2
+    -    
+    +
+         local tracks
+         # Use retry_api_call with circuit breaker and rate limit detection
+         if ! tracks=$(retry_api_call "SoundCloud API" curl -sf --max-time 10 "https://api-v2.soundcloud.com/users/${user_id}/tracks?representation=&client_id=${client_id}&limit=1&offset=0"); then
+    @@ -221,21 +221,21 @@
+             echo "Error: Failed to fetch tracks from SoundCloud API after retries" >&2
+             return 1
+         fi
+    -    
+    +
+         # Validate JSON response
+         if ! validate_api_response "$tracks" "collection"; then
+             echo "Error: Invalid tracks data from SoundCloud API" >&2
+             return 1
+         fi
+    -    
+    +
+         local track
+         track=$(echo "$tracks" | jq '.collection[0]')
+    -    
+    +
+         if [ -z "$track" ] || [ "$track" = "null" ]; then
+             echo "Error: No tracks found for user" >&2
+             return 1
+         fi
+    -    
+    +
+         echo "$track"
+     }
+     
+    @@ -243,14 +243,14 @@
+     download_artwork() {
+         local artwork_url=$1
+         local output_path=$2
+    -    
+    +
+         echo "Downloading artwork..." >&2
+    -    
+    +
+         # Replace size placeholder with larger size
+         # Bash parameter expansion safely returns original string if pattern not found
+         local large_url
+         large_url="${artwork_url/-large./-t500x500.}"
+    -    
+    +
+         curl -s --max-time 10 -o "$output_path" "$large_url" || curl -s --max-time 10 -o "$output_path" "$artwork_url"
+         echo "Artwork saved to $output_path" >&2
+     }
+    @@ -260,9 +260,9 @@
+         local metadata=$1
+         local fallback_dir
+         fallback_dir=$(dirname "$FALLBACK_CACHE_FILE")
+    -    
+    +
+         mkdir -p "$fallback_dir"
+    -    echo "$metadata" > "$FALLBACK_CACHE_FILE"
+    +    echo "$metadata" >"$FALLBACK_CACHE_FILE"
+         echo "Saved fallback cache to ${FALLBACK_CACHE_FILE}" >&2
+     }
+     
+    @@ -272,13 +272,13 @@
+             echo "No fallback cache available" >&2
+             return 1
+         fi
+    -    
+    +
+         # Validate the cached JSON
+         if ! jq empty "$FALLBACK_CACHE_FILE" 2>/dev/null; then
+             echo "Warning: Invalid JSON in fallback cache" >&2
+             return 1
+         fi
+    -    
+    +
+         echo "Using fallback cache from ${FALLBACK_CACHE_FILE}" >&2
+         cat "$FALLBACK_CACHE_FILE"
+         return 0
+    @@ -289,14 +289,14 @@
+         # Initialize logging
+         init_logging "soundcloud"
+         log_workflow_start "SoundCloud Card - Fetch Data"
+    -    
+    +
+         local metadata
+    -    
+    +
+         # Try to fetch fresh data
+         log_info "Fetching fresh SoundCloud data..."
+         if ! metadata=$(fetch_fresh_data); then
+             log_warn "Failed to fetch fresh SoundCloud data, attempting fallback..."
+    -        
+    +
+             # Try to load from fallback cache
+             if metadata=$(load_fallback_cache); then
+                 log_info "Using fallback cache successfully"
+    @@ -309,12 +309,12 @@
+                 return 1
+             fi
+         fi
+    -    
+    +
+         log_info "Successfully fetched fresh SoundCloud data"
+    -    
+    +
+         # Save successful fetch to fallback cache
+         save_fallback_cache "$metadata"
+    -    
+    +
+         # Output metadata
+         log_workflow_end "SoundCloud Card - Fetch Data" 0
+         echo "$metadata"
+    @@ -327,18 +327,18 @@
+         log_info "Obtaining SoundCloud client_id..."
+         client_id=$(get_client_id) || return 1
+         log_info "Got client_id: ${client_id:0:10}..."
+    -    
+    +
+         # Get user ID
+         local user_id
+         log_info "Resolving user ID for ${SOUNDCLOUD_USER}..."
+         user_id=$(get_user_id "$client_id") || return 1
+         log_info "Got user_id: $user_id"
+    -    
+    +
+         # Fetch latest track
+         local track_data
+         log_info "Fetching latest track for user..."
+         track_data=$(fetch_latest_track "$client_id" "$user_id") || return 1
+    -    
+    +
+         # Extract track info
+         local title artwork_url permalink_url genre duration playback_count created_at user_username
+         title=$(echo "$track_data" | jq -r '.title')
+    @@ -349,10 +349,10 @@
+         playback_count=$(echo "$track_data" | jq -r '.playback_count // 0')
+         created_at=$(echo "$track_data" | jq -r '.created_at')
+         user_username=$(echo "$track_data" | jq -r '.user.username')
+    -    
+    +
+         log_info "Track: ${title} by ${user_username}"
+         log_info "Genre: ${genre}, Plays: ${playback_count}"
+    -    
+    +
+         # Download artwork (with retry)
+         mkdir -p "$OUTPUT_DIR"
+         log_info "Downloading track artwork..."
+    @@ -362,11 +362,11 @@
+         else
+             log_info "Artwork downloaded successfully"
+         fi
+    -    
+    +
+         # Get current UTC time for update timestamp
+         local updated_at
+         updated_at=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+    -    
+    +
+         # Output track metadata as JSON using jq for proper escaping
+         jq -n \
+             --arg title "$title" \
+
+❌ [ERROR] scripts/fetch-timezone.sh
+    diff scripts/fetch-timezone.sh.orig scripts/fetch-timezone.sh
+    --- scripts/fetch-timezone.sh.orig
+    +++ scripts/fetch-timezone.sh
+    @@ -20,27 +20,27 @@
+         local lat=$1
+         local lon=$2
+         echo "Fetching timezone from Open-Meteo..." >&2
+    -    
+    +
+         local timezone_data
+         timezone_data=$(retry_with_backoff curl -sf --max-time 10 "https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&timezone=auto&forecast_days=1") || {
+             echo "Error: Failed to fetch timezone from Open-Meteo API after retries" >&2
+             return 1
+         }
+    -    
+    +
+         local timezone utc_offset_seconds
+         timezone=$(echo "$timezone_data" | jq -r '.timezone // "UTC"')
+         utc_offset_seconds=$(echo "$timezone_data" | jq -r '.utc_offset_seconds // 0')
+    -    
+    +
+         # Convert seconds to hours
+         local utc_offset_hours
+         utc_offset_hours=$(echo "scale=1; $utc_offset_seconds / 3600" | bc)
+    -    
+    +
+         # Get abbreviation using date command with TZ
+         local abbreviation
+         abbreviation=$(TZ="$timezone" date +"%Z" 2>/dev/null || echo "UTC")
+    -    
+    +
+         echo "Timezone: ${timezone}, UTC offset: ${utc_offset_hours}h, Abbreviation: ${abbreviation}" >&2
+    -    
+    +
+         # Output JSON with timezone info
+         jq -n \
+             --arg timezone "$timezone" \
+    @@ -62,7 +62,7 @@
+             exit 1
+         }
+         echo "GitHub location: ${location}" >&2
+    -    
+    +
+         # Get coordinates
+         local coord_data
+         coord_data=$(get_coordinates "$location") || {
+    @@ -69,11 +69,11 @@
+             echo "Skipping timezone detection: Could not get coordinates" >&2
+             exit 1
+         }
+    -    
+    +
+         local lat lon
+         lat=$(echo "$coord_data" | jq -r '.lat')
+         lon=$(echo "$coord_data" | jq -r '.lon')
+    -    
+    +
+         # Fetch timezone data
+         local timezone_json
+         timezone_json=$(fetch_timezone "$lat" "$lon") || {
+    @@ -80,14 +80,14 @@
+             echo "Skipping timezone detection: Could not fetch timezone" >&2
+             exit 1
+         }
+    -    
+    +
+         # Create output directory
+         mkdir -p "$OUTPUT_DIR"
+    -    
+    +
+         # Write timezone.json
+    -    echo "$timezone_json" > "${OUTPUT_DIR}/timezone.json"
+    +    echo "$timezone_json" >"${OUTPUT_DIR}/timezone.json"
+         echo "Timezone data written to ${OUTPUT_DIR}/timezone.json" >&2
+    -    
+    +
+         # Also output to stdout
+         echo "$timezone_json"
+     }
+
+❌ [ERROR] scripts/fetch-weather.sh
+    diff scripts/fetch-weather.sh.orig scripts/fetch-weather.sh
+    --- scripts/fetch-weather.sh.orig
+    +++ scripts/fetch-weather.sh
+    @@ -21,11 +21,11 @@
+         local lat=$1
+         local lon=$2
+         echo "Fetching weather data from Open-Meteo..." >&2
+    -    
+    +
+         # Generate cache key from coordinates
+         local cache_key
+         cache_key=$(generate_cache_key "${lat},${lon}")
+    -    
+    +
+         # Try to get cached weather (cache for 1 hour by setting CACHE_TTL_DAYS=0.042)
+         local cached_weather
+         if CACHE_TTL_DAYS=0.042 cached_weather=$(get_cached_response "weather" "$cache_key"); then
+    @@ -33,12 +33,12 @@
+             echo "$cached_weather"
+             return 0
+         fi
+    -    
+    +
+         # Perform health check before making API calls
+         if ! health_check_api "https://api.open-meteo.com/v1/forecast?latitude=0&longitude=0" "Open-Meteo API"; then
+             log_warn "Open-Meteo API health check failed, but continuing anyway..."
+         fi
+    -    
+    +
+         local weather_data
+         # Use retry_api_call with circuit breaker and rate limit detection
+         if ! weather_data=$(retry_api_call "Open-Meteo API" curl -sf --max-time 10 "https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=auto"); then
+    @@ -45,16 +45,16 @@
+             echo "Error: Failed to fetch weather from Open-Meteo API after retries" >&2
+             return 1
+         fi
+    -    
+    +
+         # Validate JSON response
+         if ! validate_api_response "$weather_data" "current_weather"; then
+             echo "Error: Invalid weather data from Open-Meteo API" >&2
+             return 1
+         fi
+    -    
+    +
+         # Cache the weather data
+         echo "$weather_data" | save_cached_response "weather" "$cache_key"
+    -    
+    +
+         echo "$weather_data"
+     }
+     
+    @@ -62,84 +62,84 @@
+     get_weather_condition() {
+         local code=$1
+         local is_day=$2
+    -    
+    -    local condition emoji
+    -    
+    +
+    +    local condition emoji
+    +
+         case $code in
+    -        0)
+    -            condition="Clear sky"
+    -            if [ "$is_day" -eq 1 ]; then
+    -                emoji="☀️"
+    -            else
+    -                emoji="🌙"
+    -            fi
+    -            ;;
+    -        1)
+    -            condition="Mainly clear"
+    -            if [ "$is_day" -eq 1 ]; then
+    -                emoji="🌤️"
+    -            else
+    -                emoji="🌙"
+    -            fi
+    -            ;;
+    -        2)
+    -            condition="Partly cloudy"
+    -            emoji="⛅"
+    -            ;;
+    -        3)
+    -            condition="Overcast"
+    -            emoji="☁️"
+    -            ;;
+    -        45|48)
+    -            condition="Fog"
+    -            emoji="🌫️"
+    -            ;;
+    -        51|53|55)
+    -            condition="Drizzle"
+    -            emoji="🌦️"
+    -            ;;
+    -        56|57)
+    -            condition="Freezing drizzle"
+    -            emoji="🌧️"
+    -            ;;
+    -        61|63|65)
+    -            condition="Rain"
+    -            emoji="🌧️"
+    -            ;;
+    -        66|67)
+    -            condition="Freezing rain"
+    -            emoji="🌧️"
+    -            ;;
+    -        71|73|75)
+    -            condition="Snow"
+    -            emoji="❄️"
+    -            ;;
+    -        77)
+    -            condition="Snow grains"
+    -            emoji="🌨️"
+    -            ;;
+    -        80|81|82)
+    -            condition="Rain showers"
+    -            emoji="🌧️"
+    -            ;;
+    -        85|86)
+    -            condition="Snow showers"
+    -            emoji="🌨️"
+    -            ;;
+    -        95)
+    -            condition="Thunderstorm"
+    -            emoji="⛈️"
+    -            ;;
+    -        96|99)
+    -            condition="Thunderstorm with hail"
+    -            emoji="⛈️"
+    -            ;;
+    -        *)
+    -            condition="Unknown"
+    -            emoji="🌡️"
+    -            ;;
+    +    0)
+    +        condition="Clear sky"
+    +        if [ "$is_day" -eq 1 ]; then
+    +            emoji="☀️"
+    +        else
+    +            emoji="🌙"
+    +        fi
+    +        ;;
+    +    1)
+    +        condition="Mainly clear"
+    +        if [ "$is_day" -eq 1 ]; then
+    +            emoji="🌤️"
+    +        else
+    +            emoji="🌙"
+    +        fi
+    +        ;;
+    +    2)
+    +        condition="Partly cloudy"
+    +        emoji="⛅"
+    +        ;;
+    +    3)
+    +        condition="Overcast"
+    +        emoji="☁️"
+    +        ;;
+    +    45 | 48)
+    +        condition="Fog"
+    +        emoji="🌫️"
+    +        ;;
+    +    51 | 53 | 55)
+    +        condition="Drizzle"
+    +        emoji="🌦️"
+    +        ;;
+    +    56 | 57)
+    +        condition="Freezing drizzle"
+    +        emoji="🌧️"
+    +        ;;
+    +    61 | 63 | 65)
+    +        condition="Rain"
+    +        emoji="🌧️"
+    +        ;;
+    +    66 | 67)
+    +        condition="Freezing rain"
+    +        emoji="🌧️"
+    +        ;;
+    +    71 | 73 | 75)
+    +        condition="Snow"
+    +        emoji="❄️"
+    +        ;;
+    +    77)
+    +        condition="Snow grains"
+    +        emoji="🌨️"
+    +        ;;
+    +    80 | 81 | 82)
+    +        condition="Rain showers"
+    +        emoji="🌧️"
+    +        ;;
+    +    85 | 86)
+    +        condition="Snow showers"
+    +        emoji="🌨️"
+    +        ;;
+    +    95)
+    +        condition="Thunderstorm"
+    +        emoji="⛈️"
+    +        ;;
+    +    96 | 99)
+    +        condition="Thunderstorm with hail"
+    +        emoji="⛈️"
+    +        ;;
+    +    *)
+    +        condition="Unknown"
+    +        emoji="🌡️"
+    +        ;;
+         esac
+    -    
+    +
+         jq -n \
+             --arg condition "$condition" \
+             --arg emoji "$emoji" \
+    @@ -151,7 +151,7 @@
+         # Initialize logging
+         init_logging "weather"
+         log_workflow_start "Weather Card - Fetch Data"
+    -    
+    +
+         # Get GitHub location
+         local location
+         log_info "Fetching GitHub location..."
+    @@ -161,7 +161,7 @@
+             exit 1
+         }
+         log_info "GitHub location: ${location}"
+    -    
+    +
+         # Get coordinates
+         local coord_data
+         log_info "Converting location to coordinates..."
+    @@ -170,13 +170,13 @@
+             log_workflow_end "Weather Card - Fetch Data" 1
+             exit 1
+         }
+    -    
+    +
+         local lat lon display_name
+         lat=$(echo "$coord_data" | jq -r '.lat')
+         lon=$(echo "$coord_data" | jq -r '.lon')
+         display_name=$(echo "$coord_data" | jq -r '.display_name')
+         log_info "Coordinates: lat=${lat}, lon=${lon}"
+    -    
+    +
+         # Fetch weather data
+         local weather_data
+         log_info "Fetching weather data from Open-Meteo..."
+    @@ -186,7 +186,7 @@
+             exit 1
+         }
+         log_info "Weather data fetched successfully"
+    -    
+    +
+         # Extract current weather
+         local current_temp wind_speed weathercode is_day
+         current_temp=$(echo "$weather_data" | jq -r '.current_weather.temperature')
+    @@ -193,7 +193,7 @@
+         wind_speed=$(echo "$weather_data" | jq -r '.current_weather.windspeed')
+         weathercode=$(echo "$weather_data" | jq -r '.current_weather.weathercode')
+         is_day=$(echo "$weather_data" | jq -r '.current_weather.is_day')
+    -    
+    +
+         # Extract daily forecast
+         local temp_max temp_min sunrise sunset daily_weathercode timezone
+         temp_max=$(echo "$weather_data" | jq -r '.daily.temperature_2m_max[0]')
+    @@ -202,7 +202,7 @@
+         sunset=$(echo "$weather_data" | jq -r '.daily.sunset[0]')
+         daily_weathercode=$(echo "$weather_data" | jq -r '.daily.weathercode[0]')
+         timezone=$(echo "$weather_data" | jq -r '.timezone')
+    -    
+    +
+         # Get weather condition
+         local condition_data
+         condition_data=$(get_weather_condition "$weathercode" "$is_day")
+    @@ -209,18 +209,18 @@
+         local condition emoji
+         condition=$(echo "$condition_data" | jq -r '.condition')
+         emoji=$(echo "$condition_data" | jq -r '.emoji')
+    -    
+    +
+         # Create output directory
+         mkdir -p "$OUTPUT_DIR"
+         log_info "Output directory: ${OUTPUT_DIR}"
+    -    
+    +
+         # Get current UTC time for update timestamp in ISO 8601 format
+         local updated_at
+         updated_at=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+    -    
+    +
+         log_info "Generating weather JSON output..."
+         log_info "Current conditions: ${condition} (${emoji}), ${current_temp}°C"
+    -    
+    +
+         # Output combined JSON
+         local json_output
+         json_output=$(jq -n \
+    @@ -263,10 +263,10 @@
+                 timezone: $timezone,
+                 updated_at: $updated_at
+             }')
+    -    
+    +
+         log_info "Weather data generated successfully"
+         log_workflow_end "Weather Card - Fetch Data" 0
+    -    
+    +
+         echo "$json_output"
+     }
+
+❌ [ERROR] scripts/health_check.sh
+    diff scripts/health_check.sh.orig scripts/health_check.sh
+    --- scripts/health_check.sh.orig
+    +++ scripts/health_check.sh
+    @@ -13,7 +13,7 @@
+     # Function to check SoundCloud API
+     check_soundcloud() {
+         echo "Checking SoundCloud API..." >&2
+    -    
+    +
+         # Try to access SoundCloud homepage
+         local http_code
+         http_code=$(curl -sf -o /dev/null -w "%{http_code}" \
+    @@ -21,7 +21,7 @@
+             -H "User-Agent: Mozilla/5.0" \
+             --max-time 10 \
+             2>/dev/null) || http_code="000"
+    -    
+    +
+         if [ "$http_code" = "200" ]; then
+             echo -e "${GREEN}✓ SoundCloud: Available${NC}" >&2
+             return 0
+    @@ -34,7 +34,7 @@
+     # Function to check Open-Meteo API
+     check_open_meteo() {
+         echo "Checking Open-Meteo API..." >&2
+    -    
+    +
+         # Test with a simple forecast request
+         local http_code
+         http_code=$(curl -sf -o /dev/null -w "%{http_code}" \
+    @@ -41,7 +41,7 @@
+             "https://api.open-meteo.com/v1/forecast?latitude=0&longitude=0&current_weather=true" \
+             --max-time 10 \
+             2>/dev/null) || http_code="000"
+    -    
+    +
+         if [ "$http_code" = "200" ]; then
+             echo -e "${GREEN}✓ Open-Meteo: Available${NC}" >&2
+             return 0
+    @@ -54,7 +54,7 @@
+     # Function to check Nominatim API
+     check_nominatim() {
+         echo "Checking Nominatim API..." >&2
+    -    
+    +
+         # Test with a simple search request
+         local http_code
+         http_code=$(curl -sf -o /dev/null -w "%{http_code}" \
+    @@ -62,10 +62,10 @@
+             -H "User-Agent: GitHub-Profile-Health-Check/1.0" \
+             --max-time 10 \
+             2>/dev/null) || http_code="000"
+    -    
+    +
+         # Add delay to respect rate limits
+         sleep 1
+    -    
+    +
+         if [ "$http_code" = "200" ]; then
+             echo -e "${GREEN}✓ Nominatim: Available${NC}" >&2
+             return 0
+    @@ -78,13 +78,13 @@
+     # Function to check Oura API
+     check_oura() {
+         echo "Checking Oura API..." >&2
+    -    
+    +
+         # Check if OURA_PAT is set
+         if [ -z "${OURA_PAT:-}" ]; then
+             echo -e "${YELLOW}⊘ Oura: Skipped (no OURA_PAT)${NC}" >&2
+    -        return 0  # Not a failure, just skipped
+    -    fi
+    -    
+    +        return 0 # Not a failure, just skipped
+    +    fi
+    +
+         # Test the API with a simple request
+         local http_code
+         http_code=$(curl -sf -o /dev/null -w "%{http_code}" \
+    @@ -92,7 +92,7 @@
+             -H "Authorization: Bearer ${OURA_PAT}" \
+             --max-time 10 \
+             2>/dev/null) || http_code="000"
+    -    
+    +
+         if [ "$http_code" = "200" ]; then
+             echo -e "${GREEN}✓ Oura: Available${NC}" >&2
+             return 0
+    @@ -107,7 +107,7 @@
+         local all_healthy=0
+         local checks_run=0
+         local checks_passed=0
+    -    
+    +
+         # Parse command line arguments
+         local check_all=true
+         local check_soundcloud=false
+    @@ -114,39 +114,39 @@
+         local check_weather=false
+         local check_location=false
+         local check_oura_api=false
+    -    
+    +
+         # If specific APIs are requested, only check those
+         if [ $# -gt 0 ]; then
+             check_all=false
+             for arg in "$@"; do
+                 case "$arg" in
+    -                soundcloud)
+    -                    check_soundcloud=true
+    -                    ;;
+    -                weather|open-meteo)
+    -                    check_weather=true
+    -                    ;;
+    -                location|nominatim)
+    -                    check_location=true
+    -                    ;;
+    -                oura)
+    -                    check_oura_api=true
+    -                    ;;
+    -                all)
+    -                    check_all=true
+    -                    ;;
+    -                *)
+    -                    echo "Unknown API: $arg" >&2
+    -                    echo "Usage: $0 [soundcloud|weather|location|oura|all]" >&2
+    -                    exit 1
+    -                    ;;
+    +            soundcloud)
+    +                check_soundcloud=true
+    +                ;;
+    +            weather | open-meteo)
+    +                check_weather=true
+    +                ;;
+    +            location | nominatim)
+    +                check_location=true
+    +                ;;
+    +            oura)
+    +                check_oura_api=true
+    +                ;;
+    +            all)
+    +                check_all=true
+    +                ;;
+    +            *)
+    +                echo "Unknown API: $arg" >&2
+    +                echo "Usage: $0 [soundcloud|weather|location|oura|all]" >&2
+    +                exit 1
+    +                ;;
+                 esac
+             done
+         fi
+    -    
+    +
+         echo "Running API health checks..." >&2
+         echo "" >&2
+    -    
+    +
+         # Run health checks
+         if [ "$check_all" = true ] || [ "$check_soundcloud" = true ]; then
+             checks_run=$((checks_run + 1))
+    @@ -154,7 +154,7 @@
+                 checks_passed=$((checks_passed + 1))
+             fi
+         fi
+    -    
+    +
+         if [ "$check_all" = true ] || [ "$check_weather" = true ]; then
+             checks_run=$((checks_run + 1))
+             if check_open_meteo; then
+    @@ -161,7 +161,7 @@
+                 checks_passed=$((checks_passed + 1))
+             fi
+         fi
+    -    
+    +
+         if [ "$check_all" = true ] || [ "$check_location" = true ]; then
+             checks_run=$((checks_run + 1))
+             if check_nominatim; then
+    @@ -168,7 +168,7 @@
+                 checks_passed=$((checks_passed + 1))
+             fi
+         fi
+    -    
+    +
+         if [ "$check_all" = true ] || [ "$check_oura_api" = true ]; then
+             checks_run=$((checks_run + 1))
+             if check_oura; then
+    @@ -175,9 +175,9 @@
+                 checks_passed=$((checks_passed + 1))
+             fi
+         fi
+    -    
+    -    echo "" >&2
+    -    
+    +
+    +    echo "" >&2
+    +
+         # Output summary as JSON
+         local all_passed="false"
+         if [ "$checks_passed" -eq "$checks_run" ]; then
+    @@ -186,7 +186,7 @@
+         else
+             echo -e "${YELLOW}Some health checks failed ($checks_passed/$checks_run)${NC}" >&2
+         fi
+    -    
+    +
+         # Output JSON result
+         jq -n \
+             --argjson checks_run "$checks_run" \
+    @@ -197,12 +197,12 @@
+                 checks_passed: $checks_passed,
+                 all_passed: $all_passed
+             }'
+    -    
+    +
+         # Exit with non-zero if any checks failed
+         if [ "$checks_passed" -ne "$checks_run" ]; then
+             return 1
+         fi
+    -    
+    +
+         return 0
+     }
+
+❌ [ERROR] scripts/lib/common.sh
+    diff scripts/lib/common.sh.orig scripts/lib/common.sh
+    --- scripts/lib/common.sh.orig
+    +++ scripts/lib/common.sh
+    @@ -13,7 +13,7 @@
+     # Circuit breaker configuration
+     CIRCUIT_BREAKER_DIR="${CIRCUIT_BREAKER_DIR:-cache/circuit_breaker}"
+     CIRCUIT_BREAKER_THRESHOLD="${CIRCUIT_BREAKER_THRESHOLD:-3}"
+    -CIRCUIT_BREAKER_TIMEOUT="${CIRCUIT_BREAKER_TIMEOUT:-300}"  # 5 minutes in seconds
+    +CIRCUIT_BREAKER_TIMEOUT="${CIRCUIT_BREAKER_TIMEOUT:-300}" # 5 minutes in seconds
+     
+     # Retry a command with exponential backoff.
+     # Executes the given command, retrying on failure with increasing delays.
+    @@ -33,11 +33,11 @@
+     # Returns:
+     #   Exit code of the command if successful, 1 if all retries exhausted
+     retry_with_backoff() {
+    -    local max_attempts=$((MAX_RETRIES + 1))  # +1 for initial attempt
+    -    local attempt=1
+    -    local delay=$INITIAL_RETRY_DELAY
+    -    local exit_code=0
+    -    
+    +    local max_attempts=$((MAX_RETRIES + 1)) # +1 for initial attempt
+    +    local attempt=1
+    +    local delay=$INITIAL_RETRY_DELAY
+    +    local exit_code=0
+    +
+         while [ $attempt -le $max_attempts ]; do
+             # Execute the command
+             if "$@"; then
+    @@ -44,7 +44,7 @@
+                 return 0
+             fi
+             exit_code=$?
+    -        
+    +
+             # Don't sleep after the last attempt
+             if [ $attempt -lt $max_attempts ]; then
+                 echo "Attempt $attempt/$max_attempts failed, retrying in ${delay}s..." >&2
+    @@ -54,10 +54,10 @@
+             else
+                 echo "All $max_attempts attempts failed" >&2
+             fi
+    -        
+    -        attempt=$((attempt + 1))
+    -    done
+    -    
+    +
+    +        attempt=$((attempt + 1))
+    +    done
+    +
+         return $exit_code
+     }
+     
+    @@ -79,9 +79,9 @@
+         local api_url=$1
+         local api_name="${2:-API}"
+         local auth_header="${3:-}"
+    -    
+    +
+         echo "🔍 Health check: ${api_name}..." >&2
+    -    
+    +
+         local http_code
+         if [ -n "$auth_header" ]; then
+             http_code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 \
+    @@ -91,10 +91,10 @@
+             http_code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 \
+                 "$api_url" 2>/dev/null)
+         fi
+    -    
+    +
+         # Default to 000 if curl failed or returned empty
+         http_code="${http_code:-000}"
+    -    
+    +
+         if [ "$http_code" -ge 200 ] && [ "$http_code" -lt 300 ]; then
+             echo "✅ ${api_name} is healthy (HTTP ${http_code})" >&2
+             return 0
+    @@ -137,31 +137,31 @@
+         local api_name=$1
+         local circuit_file
+         circuit_file=$(get_circuit_breaker_file "$api_name")
+    -    
+    +
+         if [ ! -f "$circuit_file" ]; then
+    -        return 1  # Circuit closed (no failures recorded)
+    -    fi
+    -    
+    +        return 1 # Circuit closed (no failures recorded)
+    +    fi
+    +
+         # Read circuit state
+         local opened_at failure_count
+         opened_at=$(head -1 "$circuit_file" 2>/dev/null || echo "0")
+         failure_count=$(tail -1 "$circuit_file" 2>/dev/null || echo "0")
+    -    
+    +
+         local current_time
+         current_time=$(date +%s)
+         local time_elapsed=$((current_time - opened_at))
+    -    
+    +
+         # Check if circuit should be reset (timeout expired)
+         if [ "$time_elapsed" -ge "$CIRCUIT_BREAKER_TIMEOUT" ]; then
+             echo "🔄 Circuit breaker timeout expired for ${api_name}, allowing retry" >&2
+             rm -f "$circuit_file"
+    -        return 1  # Circuit closed
+    -    fi
+    -    
+    +        return 1 # Circuit closed
+    +    fi
+    +
+         # Circuit is still open
+         local remaining=$((CIRCUIT_BREAKER_TIMEOUT - time_elapsed))
+         echo "⛔ Circuit breaker is OPEN for ${api_name} (${failure_count} failures, retry in ${remaining}s)" >&2
+    -    return 0  # Circuit open
+    +    return 0 # Circuit open
+     }
+     
+     # Record API failure in circuit breaker.
+    @@ -174,26 +174,26 @@
+     record_api_failure() {
+         local api_name=$1
+         init_circuit_breaker
+    -    
+    -    local circuit_file
+    -    circuit_file=$(get_circuit_breaker_file "$api_name")
+    -    
+    +
+    +    local circuit_file
+    +    circuit_file=$(get_circuit_breaker_file "$api_name")
+    +
+         # Get current failure count
+         local failure_count=0
+         if [ -f "$circuit_file" ]; then
+             failure_count=$(tail -1 "$circuit_file" 2>/dev/null || echo "0")
+         fi
+    -    
+    +
+         failure_count=$((failure_count + 1))
+    -    
+    +
+         # Record failure
+         local current_time
+         current_time=$(date +%s)
+    -    echo "$current_time" > "$circuit_file"
+    -    echo "$failure_count" >> "$circuit_file"
+    -    
+    +    echo "$current_time" >"$circuit_file"
+    +    echo "$failure_count" >>"$circuit_file"
+    +
+         echo "⚠️  Recorded failure #${failure_count} for ${api_name}" >&2
+    -    
+    +
+         # Check if we should open the circuit
+         if [ "$failure_count" -ge "$CIRCUIT_BREAKER_THRESHOLD" ]; then
+             echo "🚨 Circuit breaker OPENED for ${api_name} after ${failure_count} failures" >&2
+    @@ -212,7 +212,7 @@
+         local api_name=$1
+         local circuit_file
+         circuit_file=$(get_circuit_breaker_file "$api_name")
+    -    
+    +
+         if [ -f "$circuit_file" ]; then
+             echo "✅ API recovered: ${api_name} - resetting circuit breaker" >&2
+             rm -f "$circuit_file"
+    @@ -238,13 +238,13 @@
+     #   Exit code of the command if successful, 1 if all retries exhausted or circuit open
+     retry_api_call() {
+         local api_name=$1
+    -    shift  # Remove api_name from arguments
+    -    
+    +    shift # Remove api_name from arguments
+    +
+         # Check circuit breaker
+         if is_circuit_open "$api_name"; then
+             return 1
+         fi
+    -    
+    +
+         local max_attempts=$((MAX_RETRIES + 1))
+         local attempt=1
+         local delay=$INITIAL_RETRY_DELAY
+    @@ -252,7 +252,7 @@
+         local temp_output temp_headers
+         temp_output=$(mktemp)
+         temp_headers=$(mktemp)
+    -    
+    +
+         while [ $attempt -le $max_attempts ]; do
+             # Execute curl with header capture and HTTP code tracking
+             # Note: We use -w to get the HTTP code reliably
+    @@ -259,7 +259,7 @@
+             local curl_exit=0
+             local http_code
+             http_code=$("$@" -D "$temp_headers" -w "%{http_code}" -o "$temp_output" 2>/dev/null) || curl_exit=$?
+    -        
+    +
+             # Check if curl succeeded and HTTP status is 2xx
+             if [ $curl_exit -eq 0 ] && [ "$http_code" -ge 200 ] && [ "$http_code" -lt 300 ]; then
+                 # Success - output the response and reset circuit breaker
+    @@ -268,19 +268,19 @@
+                 record_api_success "$api_name"
+                 return 0
+             fi
+    -        
+    +
+             exit_code=$curl_exit
+    -        
+    +
+             # Default to 000 if http_code is empty or curl failed completely
+             http_code="${http_code:-000}"
+    -        
+    +
+             if [ "$http_code" = "429" ]; then
+                 echo "🚫 Rate limit detected (HTTP 429) from ${api_name}" >&2
+    -            
+    +
+                 # Check for Retry-After header (only accept numeric values in seconds)
+                 local retry_after
+                 retry_after=$(grep -i "^retry-after:" "$temp_headers" 2>/dev/null | cut -d: -f2 | tr -d ' \r\n' || echo "")
+    -            
+    +
+                 # Validate retry_after is numeric before using it
+                 if [ -n "$retry_after" ] && echo "$retry_after" | grep -qE '^[0-9]+$'; then
+                     echo "   → Server requested ${retry_after}s wait time" >&2
+    @@ -292,18 +292,18 @@
+                         echo "   → Retry-After header present but not numeric (HTTP-date format not supported)" >&2
+                     fi
+                 fi
+    -            
+    -            record_api_failure "$api_name"
+    -        else
+    -            record_api_failure "$api_name"
+    -        fi
+    -        
+    +
+    +            record_api_failure "$api_name"
+    +        else
+    +            record_api_failure "$api_name"
+    +        fi
+    +
+             # Don't retry if circuit is now open
+             if is_circuit_open "$api_name"; then
+                 rm -f "$temp_output" "$temp_headers"
+                 return 1
+             fi
+    -        
+    +
+             # Don't sleep after the last attempt
+             if [ $attempt -lt $max_attempts ]; then
+                 echo "Attempt $attempt/$max_attempts failed for ${api_name}, retrying in ${delay}s..." >&2
+    @@ -313,10 +313,10 @@
+             else
+                 echo "All $max_attempts attempts failed for ${api_name}" >&2
+             fi
+    -        
+    -        attempt=$((attempt + 1))
+    -    done
+    -    
+    +
+    +        attempt=$((attempt + 1))
+    +    done
+    +
+         rm -f "$temp_output" "$temp_headers"
+         return $exit_code
+     }
+    @@ -369,19 +369,19 @@
+         local cache_type=$1
+         local cache_key=$2
+         local cache_file="${CACHE_DIR}/${cache_type}_${cache_key}.json"
+    -    
+    +
+         # Check if cache file exists
+         if [ ! -f "$cache_file" ]; then
+             return 1
+         fi
+    -    
+    +
+         # Check if cache is expired
+         # Use portable stat command (works on both Linux and macOS)
+         local file_mtime
+    -    if stat -c %Y "$cache_file" > /dev/null 2>&1; then
+    +    if stat -c %Y "$cache_file" >/dev/null 2>&1; then
+             # Linux
+             file_mtime=$(stat -c %Y "$cache_file")
+    -    elif stat -f %m "$cache_file" > /dev/null 2>&1; then
+    +    elif stat -f %m "$cache_file" >/dev/null 2>&1; then
+             # macOS/BSD
+             file_mtime=$(stat -f %m "$cache_file")
+         else
+    @@ -388,22 +388,22 @@
+             # Fallback: treat as expired if stat fails
+             file_mtime=0
+         fi
+    -    
+    +
+         local file_age_days
+    -    file_age_days=$(( ( $(date +%s) - file_mtime ) / 86400 ))
+    -    
+    +    file_age_days=$((($(date +%s) - file_mtime) / 86400))
+    +
+         if [ "$file_age_days" -ge "$CACHE_TTL_DAYS" ]; then
+             echo "Cache expired for ${cache_type}:${cache_key}" >&2
+             return 1
+         fi
+    -    
+    +
+         # Validate JSON
+    -    if ! jq -e . "$cache_file" > /dev/null 2>&1; then
+    +    if ! jq -e . "$cache_file" >/dev/null 2>&1; then
+             echo "Invalid cache entry for ${cache_type}:${cache_key}" >&2
+             rm -f "$cache_file"
+             return 1
+         fi
+    -    
+    +
+         echo "Cache hit for ${cache_type}:${cache_key}" >&2
+         cat "$cache_file"
+         return 0
+    @@ -427,9 +427,9 @@
+         local cache_type=$1
+         local cache_key=$2
+         local cache_file="${CACHE_DIR}/${cache_type}_${cache_key}.json"
+    -    
+    +
+         init_cache
+    -    cat > "$cache_file"
+    +    cat >"$cache_file"
+         echo "Cached response for ${cache_type}:${cache_key}" >&2
+     }
+     
+    @@ -448,19 +448,19 @@
+     validate_api_response() {
+         local response=$1
+         local required_field="${2:-}"
+    -    
+    +
+         # Check if response is non-empty
+         if [ -z "$response" ]; then
+             echo "Error: Empty API response" >&2
+             return 1
+         fi
+    -    
+    +
+         # Validate JSON structure
+         if ! echo "$response" | jq empty 2>/dev/null; then
+             echo "Error: Invalid JSON in API response" >&2
+             return 1
+         fi
+    -    
+    +
+         # Check for required field if specified
+         if [ -n "$required_field" ]; then
+             if ! echo "$response" | jq -e ".$required_field" >/dev/null 2>&1; then
+    @@ -468,7 +468,7 @@
+                 return 1
+             fi
+         fi
+    -    
+    +
+         return 0
+     }
+     
+    @@ -510,30 +510,30 @@
+     get_github_location() {
+         local github_owner="${GITHUB_OWNER:-szmyty}"
+         local location_cache="${LOCATION_CACHE_FILE:-cached/location.json}"
+    -    
+    +
+         echo "Fetching GitHub profile location for ${github_owner}..." >&2
+    -    
+    +
+         local user_data location
+    -    
+    +
+         # Try to fetch from GitHub API
+         if user_data=$(curl -sf --max-time 10 "https://api.github.com/users/${github_owner}" \
+             -H "Accept: application/vnd.github.v3+json" \
+             ${GITHUB_TOKEN:+-H "Authorization: Bearer ${GITHUB_TOKEN}"} \
+             -H "User-Agent: GitHub-Profile-Scripts/1.0" 2>/dev/null); then
+    -        
+    +
+             location=$(echo "$user_data" | jq -r '.location // empty')
+    -        
+    +
+             if [ -n "$location" ] && [ "$location" != "null" ]; then
+                 # Save successful location to cache
+                 mkdir -p "$(dirname "$location_cache")"
+                 jq -n --arg location "$location" --arg updated_at "$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
+    -                '{location: $location, updated_at: $updated_at}' > "$location_cache"
+    +                '{location: $location, updated_at: $updated_at}' >"$location_cache"
+                 echo "Location saved to cache: ${location}" >&2
+                 echo "$location"
+                 return 0
+             fi
+         fi
+    -    
+    +
+         # Try fallback to cached location
+         echo "GitHub location not available, trying cached location..." >&2
+         if [ -f "$location_cache" ]; then
+    @@ -547,7 +547,7 @@
+                 fi
+             fi
+         fi
+    -    
+    +
+         echo "Warning: No location found in GitHub profile or cache" >&2
+         return 1
+     }
+    @@ -574,13 +574,13 @@
+     get_coordinates() {
+         local location=$1
+         local debug_dir="${OUTPUT_DIR:-location}"
+    -    
+    +
+         echo "Converting location to coordinates: ${location}" >&2
+    -    
+    +
+         # Generate cache key from location
+         local cache_key
+         cache_key=$(generate_cache_key "$location")
+    -    
+    +
+         # Try to get cached response
+         local cached_data
+         if cached_data=$(get_cached_response "nominatim" "$cache_key"); then
+    @@ -588,24 +588,24 @@
+             echo "$cached_data"
+             return 0
+         fi
+    -    
+    +
+         # URL encode the location using the shared encode_uri function
+         local encoded_location
+         encoded_location=$(encode_uri "$location")
+    -    
+    +
+         # Perform health check for Nominatim API
+         if ! health_check_api "https://nominatim.openstreetmap.org/" "Nominatim API"; then
+             echo "Warning: Nominatim API health check failed, but continuing anyway..." >&2
+         fi
+    -    
+    +
+         # Add delay to respect Nominatim rate limits
+         sleep 1
+    -    
+    +
+         # Fetch from Nominatim with detailed error capture
+         local nominatim_data http_code temp_response temp_headers
+         temp_response=$(mktemp)
+         temp_headers=$(mktemp)
+    -    
+    +
+         http_code=$(curl -w "%{http_code}" \
+             --max-time 10 \
+             -o "$temp_response" \
+    @@ -613,14 +613,14 @@
+             -s "https://nominatim.openstreetmap.org/search?q=${encoded_location}&format=json&limit=1" \
+             -H "User-Agent: GitHub-Profile-Scripts/1.0")
+         local curl_exit=$?
+    -    
+    +
+         nominatim_data=$(cat "$temp_response")
+    -    
+    +
+         # Save diagnostic information
+         # Note: These files contain the location query and may be sensitive.
+         # They are excluded from git commits via .gitignore
+         mkdir -p "$debug_dir"
+    -    echo "$nominatim_data" > "${debug_dir}/debug_nominatim.json"
+    +    echo "$nominatim_data" >"${debug_dir}/debug_nominatim.json"
+         echo "URL: https://nominatim.openstreetmap.org/search?q=${encoded_location}&format=json&limit=1
+     Location Query: $location
+     HTTP Code: $http_code
+    @@ -628,13 +628,13 @@
+     Response Headers:
+     $(cat "$temp_headers")
+     Response Body:
+    -$nominatim_data" > "${debug_dir}/debug_nominatim_response.txt"
+    -    
+    +$nominatim_data" >"${debug_dir}/debug_nominatim_response.txt"
+    +
+         echo "Diagnostic info saved to ${debug_dir}/debug_nominatim.json" >&2
+         echo "Note: Debug files contain location data and are excluded from git commits" >&2
+    -    
+    +
+         rm -f "$temp_response" "$temp_headers"
+    -    
+    +
+         # Check curl exit code
+         if [ $curl_exit -ne 0 ]; then
+             echo "❌ FAILURE: Nominatim API request failed (Curl exit code: ${curl_exit})" >&2
+    @@ -641,33 +641,33 @@
+             echo "   → Network error or DNS resolution failure" >&2
+             return 1
+         fi
+    -    
+    +
+         # Check HTTP status code
+         if [ "$http_code" -ge 400 ]; then
+             echo "❌ FAILURE: Nominatim API returned error (HTTP Code: ${http_code})" >&2
+             case "$http_code" in
+    -            429)
+    -                echo "   → Rate limiting detected" >&2
+    -                echo "   → Nominatim has strict rate limits (1 request per second)" >&2
+    -                echo "   → Wait at least 1 hour before retrying or use caching" >&2
+    -                echo "   → Consider using a commercial geocoding service for production" >&2
+    -                record_api_failure "Nominatim API"
+    -                ;;
+    -            403)
+    -                echo "   → Access forbidden" >&2
+    -                echo "   → Your IP may be blocked due to excessive requests" >&2
+    -                echo "   → Check Nominatim usage policy: https://operations.osmfoundation.org/policies/nominatim/" >&2
+    -                record_api_failure "Nominatim API"
+    -                ;;
+    -            500|502|503|504)
+    -                echo "   → Nominatim service error" >&2
+    -                echo "   → Try again later" >&2
+    -                record_api_failure "Nominatim API"
+    -                ;;
+    +        429)
+    +            echo "   → Rate limiting detected" >&2
+    +            echo "   → Nominatim has strict rate limits (1 request per second)" >&2
+    +            echo "   → Wait at least 1 hour before retrying or use caching" >&2
+    +            echo "   → Consider using a commercial geocoding service for production" >&2
+    +            record_api_failure "Nominatim API"
+    +            ;;
+    +        403)
+    +            echo "   → Access forbidden" >&2
+    +            echo "   → Your IP may be blocked due to excessive requests" >&2
+    +            echo "   → Check Nominatim usage policy: https://operations.osmfoundation.org/policies/nominatim/" >&2
+    +            record_api_failure "Nominatim API"
+    +            ;;
+    +        500 | 502 | 503 | 504)
+    +            echo "   → Nominatim service error" >&2
+    +            echo "   → Try again later" >&2
+    +            record_api_failure "Nominatim API"
+    +            ;;
+             esac
+             return 1
+         fi
+    -    
+    +
+         # Check if response is empty
+         if [ -z "$nominatim_data" ]; then
+             echo "❌ FAILURE: Nominatim returned empty response" >&2
+    @@ -674,7 +674,7 @@
+             echo "   → This may indicate rate limiting or service issues" >&2
+             return 1
+         fi
+    -    
+    +
+         # Validate the JSON response
+         if ! echo "$nominatim_data" | jq empty 2>/dev/null; then
+             echo "❌ FAILURE: Nominatim returned invalid JSON" >&2
+    @@ -682,11 +682,11 @@
+             echo "   → See ${debug_dir}/debug_nominatim.json for raw response" >&2
+             return 1
+         fi
+    -    
+    +
+         # Check if we got results
+         local result_count
+         result_count=$(echo "$nominatim_data" | jq 'length' 2>/dev/null || echo "0")
+    -    
+    +
+         if [ "$result_count" -eq 0 ]; then
+             echo "❌ FAILURE: Nominatim returned no results for location: ${location}" >&2
+             echo "   → The location string may be too vague or invalid" >&2
+    @@ -693,13 +693,13 @@
+             echo "   → Try a more specific location (e.g., 'New York, NY, USA' instead of 'NYC')" >&2
+             return 1
+         fi
+    -    
+    +
+         # Extract lat/lon
+         local lat lon display_name
+         lat=$(echo "$nominatim_data" | jq -r '.[0].lat')
+         lon=$(echo "$nominatim_data" | jq -r '.[0].lon')
+         display_name=$(echo "$nominatim_data" | jq -r '.[0].display_name')
+    -    
+    +
+         if [ -z "$lat" ] || [ -z "$lon" ] || [ "$lat" = "null" ] || [ "$lon" = "null" ]; then
+             echo "❌ FAILURE: Could not extract coordinates from Nominatim response" >&2
+             echo "   → Response structure is unexpected" >&2
+    @@ -706,13 +706,13 @@
+             echo "   → See ${debug_dir}/debug_nominatim.json for details" >&2
+             return 1
+         fi
+    -    
+    +
+         echo "✅ Found coordinates: ${lat}, ${lon}" >&2
+         echo "   Display name: ${display_name}" >&2
+    -    
+    +
+         # Record API success
+         record_api_success "Nominatim API"
+    -    
+    +
+         # Build result JSON
+         local result
+         result=$(jq -n \
+    @@ -720,10 +720,10 @@
+             --arg lon "$lon" \
+             --arg display_name "$display_name" \
+             '{lat: $lat, lon: $lon, display_name: $display_name}')
+    -    
+    +
+         # Cache the result
+         echo "$result" | save_cached_response "nominatim" "$cache_key"
+    -    
+    +
+         # Output JSON with coordinates
+         echo "$result"
+     }
+
+❌ [ERROR] scripts/lib/logging.sh
+    diff scripts/lib/logging.sh.orig scripts/lib/logging.sh
+    --- scripts/lib/logging.sh.orig
+    +++ scripts/lib/logging.sh
+    @@ -4,7 +4,7 @@
+     
+     # Default log configuration
+     LOG_DIR="${LOG_DIR:-logs}"
+    -LOG_MAX_SIZE="${LOG_MAX_SIZE:-5242880}"  # 5MB in bytes
+    +LOG_MAX_SIZE="${LOG_MAX_SIZE:-5242880}" # 5MB in bytes
+     LOG_MAX_ROTATIONS="${LOG_MAX_ROTATIONS:-3}"
+     
+     # Get the current workflow name from the environment or fallback
+    @@ -22,13 +22,13 @@
+     # Usage: init_logging "location"
+     init_logging() {
+         local workflow_name="${1:-$(get_workflow_name)}"
+    -    
+    +
+         # Create log directory if it doesn't exist
+         mkdir -p "${LOG_DIR}/${workflow_name}"
+    -    
+    +
+         # Set the log file path as a global variable
+         export LOG_FILE="${LOG_DIR}/${workflow_name}/${workflow_name}.log"
+    -    
+    +
+         echo "Logging initialized: ${LOG_FILE}" >&2
+     }
+     
+    @@ -39,17 +39,17 @@
+             echo "Warning: LOG_FILE not set, skipping rotation" >&2
+             return 0
+         fi
+    -    
+    +
+         # Check if log file exists and its size
+         if [ ! -f "$LOG_FILE" ]; then
+             return 0
+         fi
+    -    
+    +
+         local file_size
+    -    if stat -c %s "$LOG_FILE" > /dev/null 2>&1; then
+    +    if stat -c %s "$LOG_FILE" >/dev/null 2>&1; then
+             # Linux
+             file_size=$(stat -c %s "$LOG_FILE")
+    -    elif stat -f %z "$LOG_FILE" > /dev/null 2>&1; then
+    +    elif stat -f %z "$LOG_FILE" >/dev/null 2>&1; then
+             # macOS/BSD
+             file_size=$(stat -f %z "$LOG_FILE")
+         else
+    @@ -56,19 +56,19 @@
+             echo "Warning: Cannot determine log file size" >&2
+             return 0
+         fi
+    -    
+    +
+         # Check if rotation is needed
+         if [ "$file_size" -lt "$LOG_MAX_SIZE" ]; then
+             return 0
+         fi
+    -    
+    +
+         echo "Log rotation triggered (size: ${file_size} bytes, max: ${LOG_MAX_SIZE} bytes)" >&2
+    -    
+    +
+         # Rotate existing log files
+         for i in $(seq $((LOG_MAX_ROTATIONS)) -1 1); do
+             local current="${LOG_FILE}.${i}"
+             local next="${LOG_FILE}.$((i + 1))"
+    -        
+    +
+             if [ -f "$current" ]; then
+                 if [ "$i" -eq $((LOG_MAX_ROTATIONS)) ]; then
+                     # Delete the oldest log
+    @@ -81,11 +81,11 @@
+                 fi
+             fi
+         done
+    -    
+    +
+         # Rotate current log to .1
+         mv "$LOG_FILE" "${LOG_FILE}.1"
+         echo "Rotated: $LOG_FILE -> ${LOG_FILE}.1" >&2
+    -    
+    +
+         # Create new empty log file
+         touch "$LOG_FILE"
+     }
+    @@ -98,16 +98,16 @@
+         local message="${2:-}"
+         local timestamp
+         timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+    -    
+    +
+         # Format: [TIMESTAMP] [SEVERITY] Message
+         local log_entry="[${timestamp}] [${severity}] ${message}"
+    -    
+    +
+         # Output to stderr for console visibility
+         echo "$log_entry" >&2
+    -    
+    +
+         # Append to log file if initialized
+         if [ -n "${LOG_FILE:-}" ]; then
+    -        echo "$log_entry" >> "$LOG_FILE"
+    +        echo "$log_entry" >>"$LOG_FILE"
+         fi
+     }
+     
+    @@ -130,16 +130,16 @@
+         local cmd="$1"
+         local timestamp
+         timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+    -    
+    +
+         log_info "Executing: ${cmd}"
+    -    
+    +
+         # Execute command and capture output and exit code
+         local output
+         local exit_code
+    -    
+    +
+         output=$($cmd 2>&1)
+         exit_code=$?
+    -    
+    +
+         if [ $exit_code -eq 0 ]; then
+             log_info "Command succeeded (exit code: ${exit_code})"
+             echo "$output"
+    @@ -156,7 +156,7 @@
+     log_workflow_start() {
+         local workflow_name="${1:-Unknown Workflow}"
+         local separator="============================================================"
+    -    
+    +
+         log_info "$separator"
+         log_info "Workflow: ${workflow_name}"
+         log_info "Started at: $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+    @@ -169,7 +169,7 @@
+         local workflow_name="${1:-Unknown Workflow}"
+         local exit_code="${2:-0}"
+         local separator="============================================================"
+    -    
+    +
+         log_info "$separator"
+         if [ "$exit_code" -eq 0 ]; then
+             log_info "Workflow: ${workflow_name} - COMPLETED SUCCESSFULLY"
+    @@ -178,7 +178,7 @@
+         fi
+         log_info "Ended at: $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+         log_info "$separator"
+    -    
+    +
+         # Check if log rotation is needed at end of workflow
+         rotate_log_if_needed
+     }
+
+❌ [ERROR] scripts/new-card.sh
+    diff scripts/new-card.sh.orig scripts/new-card.sh
+    --- scripts/new-card.sh.orig
+    +++ scripts/new-card.sh
+    @@ -23,7 +23,7 @@
+     
+     # Print usage information
+     usage() {
+    -    cat << EOF
+    +    cat <<EOF
+     Usage: $(basename "$0") <card-name>
+     
+     Creates scaffolding for a new card type including:
+    @@ -49,19 +49,19 @@
+     # Validate card name
+     validate_card_name() {
+         local name="$1"
+    -    
+    +
+         if [ -z "$name" ]; then
+             echo -e "${RED}Error: Card name is required${NC}" >&2
+             usage >&2
+             exit 1
+         fi
+    -    
+    +
+         # Check for valid characters (lowercase letters, numbers, hyphens)
+         if ! [[ "$name" =~ ^[a-z][a-z0-9-]*$ ]]; then
+             echo -e "${RED}Error: Card name must start with a lowercase letter and contain only lowercase letters, numbers, and hyphens${NC}" >&2
+             exit 1
+         fi
+    -    
+    +
+         # Check for double hyphens or trailing hyphens
+         if [[ "$name" =~ -- ]] || [[ "$name" =~ -$ ]]; then
+             echo -e "${RED}Error: Card name cannot contain double hyphens or end with a hyphen${NC}" >&2
+    @@ -86,13 +86,13 @@
+         local title_name
+         title_name=$(to_title_case "$name")
+         local output_file="${SCRIPT_DIR}/fetch-${name}.sh"
+    -    
+    +
+         if [ -f "$output_file" ]; then
+             echo -e "${YELLOW}Warning: Fetch script already exists: ${output_file}${NC}" >&2
+             return 1
+         fi
+    -    
+    -    cat > "$output_file" << 'FETCH_TEMPLATE'
+    +
+    +    cat >"$output_file" <<'FETCH_TEMPLATE'
+     #!/bin/bash
+     # Script to fetch __TITLE_NAME__ data
+     # This script:
+    @@ -168,7 +168,7 @@
+         sed -i "s/__NAME__/${name}/g" "$output_file"
+         sed -i "s/__UPPER_NAME__/${upper_name}/g" "$output_file"
+         sed -i "s/__TITLE_NAME__/${title_name}/g" "$output_file"
+    -    
+    +
+         chmod +x "$output_file"
+         echo -e "${GREEN}Created fetch script: ${output_file}${NC}"
+     }
+    @@ -179,13 +179,13 @@
+         local title_name
+         title_name=$(to_title_case "$name")
+         local output_file="${SCRIPT_DIR}/generate-${name}-card.py"
+    -    
+    +
+         if [ -f "$output_file" ]; then
+             echo -e "${YELLOW}Warning: Generator script already exists: ${output_file}${NC}" >&2
+             return 1
+         fi
+    -    
+    -    cat > "$output_file" << 'GENERATOR_TEMPLATE'
+    +
+    +    cat >"$output_file" <<'GENERATOR_TEMPLATE'
+     #!/usr/bin/env python3
+     """
+     Generate a styled SVG card for __TITLE_NAME__ data.
+    @@ -341,7 +341,7 @@
+         # Replace placeholders
+         sed -i "s/__NAME__/${name}/g" "$output_file"
+         sed -i "s/__TITLE_NAME__/${title_name}/g" "$output_file"
+    -    
+    +
+         chmod +x "$output_file"
+         echo -e "${GREEN}Created generator script: ${output_file}${NC}"
+     }
+    @@ -354,13 +354,13 @@
+         local title_name
+         title_name=$(to_title_case "$name")
+         local output_file="${REPO_ROOT}/.github/workflows/${name}-card.yml"
+    -    
+    +
+         if [ -f "$output_file" ]; then
+             echo -e "${YELLOW}Warning: Workflow already exists: ${output_file}${NC}" >&2
+             return 1
+         fi
+    -    
+    -    cat > "$output_file" << 'WORKFLOW_TEMPLATE'
+    +
+    +    cat >"$output_file" <<'WORKFLOW_TEMPLATE'
+     name: __TITLE_NAME__ Card
+     
+     on:
+    @@ -473,7 +473,7 @@
+         sed -i "s/__NAME__/${name}/g" "$output_file"
+         sed -i "s/__UPPER_NAME__/${upper_name}/g" "$output_file"
+         sed -i "s/__TITLE_NAME__/${title_name}/g" "$output_file"
+    -    
+    +
+         echo -e "${GREEN}Created workflow: ${output_file}${NC}"
+     }
+     
+    @@ -485,15 +485,15 @@
+         local title_name
+         title_name=$(to_title_case "$name")
+         local readme_file="${REPO_ROOT}/README.md"
+    -    
+    +
+         # Check if markers already exist
+         if grep -q "<!-- ${upper_name}-CARD:START -->" "$readme_file" 2>/dev/null; then
+             echo -e "${YELLOW}Warning: README markers already exist for ${name}${NC}" >&2
+             return 1
+         fi
+    -    
+    +
+         # Add markers at the end of the README
+    -    cat >> "$readme_file" << EOF
+    +    cat >>"$readme_file" <<EOF
+     
+     ## 🎵 ${title_name}
+     
+    @@ -501,7 +501,7 @@
+     ![${title_name}](./${name}/${name}-card.svg)
+     <!-- ${upper_name}-CARD:END -->
+     EOF
+    -    
+    +
+         echo -e "${GREEN}Added README markers for: ${name}${NC}"
+     }
+     
+    @@ -509,12 +509,12 @@
+     create_output_directory() {
+         local name="$1"
+         local output_dir="${REPO_ROOT}/${name}"
+    -    
+    +
+         if [ -d "$output_dir" ]; then
+             echo -e "${YELLOW}Warning: Output directory already exists: ${output_dir}${NC}" >&2
+             return 0
+         fi
+    -    
+    +
+         mkdir -p "$output_dir"
+         touch "${output_dir}/.gitkeep"
+         echo -e "${GREEN}Created output directory: ${output_dir}${NC}"
+    @@ -527,7 +527,7 @@
+             usage
+             exit 0
+         fi
+    -    
+    +
+         # Check for required argument
+         if [ $# -lt 1 ]; then
+             echo -e "${RED}Error: Card name is required${NC}" >&2
+    @@ -534,33 +534,33 @@
+             usage >&2
+             exit 1
+         fi
+    -    
+    +
+         local card_name="$1"
+    -    
+    +
+         # Validate card name
+         validate_card_name "$card_name"
+    -    
+    +
+         echo -e "${BLUE}Creating scaffolding for card: ${card_name}${NC}"
+         echo ""
+    -    
+    +
+         local success_count=0
+         local total_count=5
+    -    
+    +
+         # Create output directory
+         create_output_directory "$card_name" && ((success_count++)) || true
+    -    
+    +
+         # Generate fetch script
+         generate_fetch_script "$card_name" && ((success_count++)) || true
+    -    
+    +
+         # Generate generator script
+         generate_generator_script "$card_name" && ((success_count++)) || true
+    -    
+    +
+         # Generate workflow
+         generate_workflow "$card_name" && ((success_count++)) || true
+    -    
+    +
+         # Add README markers
+         add_readme_markers "$card_name" && ((success_count++)) || true
+    -    
+    +
+         echo ""
+         echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+         echo -e "${GREEN}Scaffolding complete!${NC} (${success_count}/${total_count} items created)"
+
+❌ [ERROR] tests/test_cache.sh
+    diff tests/test_cache.sh.orig tests/test_cache.sh
+    --- tests/test_cache.sh.orig
+    +++ tests/test_cache.sh
+    @@ -47,11 +47,11 @@
+     # Test: generate_cache_key produces consistent output
+     test_generate_cache_key_consistent() {
+         run_test "generate_cache_key produces consistent output"
+    -    
+    +
+         local key1 key2
+         key1=$(generate_cache_key "New York, NY")
+         key2=$(generate_cache_key "New York, NY")
+    -    
+    +
+         if [ "$key1" = "$key2" ]; then
+             test_pass "Same input produces same key"
+         else
+    @@ -62,11 +62,11 @@
+     # Test: generate_cache_key produces different output for different inputs
+     test_generate_cache_key_unique() {
+         run_test "generate_cache_key produces unique keys for different inputs"
+    -    
+    +
+         local key1 key2
+         key1=$(generate_cache_key "New York, NY")
+         key2=$(generate_cache_key "Los Angeles, CA")
+    -    
+    +
+         if [ "$key1" != "$key2" ]; then
+             test_pass "Different inputs produce different keys"
+         else
+    @@ -77,10 +77,10 @@
+     # Test: generate_cache_key handles empty input
+     test_generate_cache_key_empty() {
+         run_test "generate_cache_key handles empty input"
+    -    
+    +
+         local key
+         key=$(generate_cache_key "")
+    -    
+    +
+         # Empty input should produce empty base64
+         if [ -z "$key" ] || [ "$key" = "" ]; then
+             test_pass "Empty input produces empty or valid key"
+    @@ -93,11 +93,11 @@
+     # Test: save_cached_response creates cache file
+     test_save_cached_response_creates_file() {
+         run_test "save_cached_response creates cache file"
+    -    
+    -    cleanup
+    -    
+    +
+    +    cleanup
+    +
+         echo '{"test": "data"}' | save_cached_response "test" "mykey"
+    -    
+    +
+         if [ -f "${CACHE_DIR}/test_mykey.json" ]; then
+             test_pass "Cache file was created"
+         else
+    @@ -108,15 +108,15 @@
+     # Test: save_cached_response stores correct content
+     test_save_cached_response_content() {
+         run_test "save_cached_response stores correct content"
+    -    
+    -    cleanup
+    -    
+    +
+    +    cleanup
+    +
+         local expected='{"lat": "40.7", "lon": "-74.0"}'
+         echo "$expected" | save_cached_response "test" "content"
+    -    
+    +
+         local actual
+         actual=$(cat "${CACHE_DIR}/test_content.json")
+    -    
+    +
+         if [ "$actual" = "$expected" ]; then
+             test_pass "Correct content was stored"
+         else
+    @@ -127,15 +127,15 @@
+     # Test: get_cached_response returns cached content
+     test_get_cached_response_hit() {
+         run_test "get_cached_response returns cached content (cache hit)"
+    -    
+    -    cleanup
+    -    
+    +
+    +    cleanup
+    +
+         local expected='{"lat": "40.7", "lon": "-74.0"}'
+         echo "$expected" | save_cached_response "test" "hitkey"
+    -    
+    +
+         local actual
+         actual=$(get_cached_response "test" "hitkey" 2>/dev/null)
+    -    
+    +
+         if [ "$actual" = "$expected" ]; then
+             test_pass "Cache hit returns correct content"
+         else
+    @@ -146,9 +146,9 @@
+     # Test: get_cached_response fails for missing cache
+     test_get_cached_response_miss() {
+         run_test "get_cached_response fails for missing cache (cache miss)"
+    -    
+    -    cleanup
+    -    
+    +
+    +    cleanup
+    +
+         if get_cached_response "test" "nonexistent" 2>/dev/null; then
+             test_fail "Should return non-zero for cache miss" "exit code 1" "exit code 0"
+         else
+    @@ -159,18 +159,18 @@
+     # Test: get_cached_response removes invalid JSON
+     test_get_cached_response_invalid_json() {
+         run_test "get_cached_response removes invalid JSON cache"
+    -    
+    +
+         cleanup
+         mkdir -p "$CACHE_DIR"
+    -    
+    +
+         # Create an invalid JSON file
+    -    echo "not valid json" > "${CACHE_DIR}/test_invalid.json"
+    -    
+    +    echo "not valid json" >"${CACHE_DIR}/test_invalid.json"
+    +
+         if get_cached_response "test" "invalid" 2>/dev/null; then
+             test_fail "Should return non-zero for invalid JSON" "exit code 1" "exit code 0"
+             return
+         fi
+    -    
+    +
+         # Verify file was removed
+         if [ ! -f "${CACHE_DIR}/test_invalid.json" ]; then
+             test_pass "Invalid JSON cache returns non-zero and file was removed"
+    @@ -182,11 +182,11 @@
+     # Test: init_cache creates directory
+     test_init_cache_creates_dir() {
+         run_test "init_cache creates cache directory"
+    -    
+    -    cleanup
+    -    
+    +
+    +    cleanup
+    +
+         init_cache
+    -    
+    +
+         if [ -d "$CACHE_DIR" ]; then
+             test_pass "Cache directory was created"
+         else
+    @@ -197,25 +197,25 @@
+     # Test: cache respects TTL (simulated with touch)
+     test_cache_ttl_expired() {
+         run_test "get_cached_response handles expired cache"
+    -    
+    -    cleanup
+    -    
+    +
+    +    cleanup
+    +
+         # Create a cache file
+         local expected='{"lat": "40.7"}'
+         echo "$expected" | save_cached_response "test" "expiredkey"
+    -    
+    +
+         # Set cache TTL to 0 days to simulate expired cache
+         local original_ttl=$CACHE_TTL_DAYS
+         CACHE_TTL_DAYS=0
+    -    
+    +
+         local result=0
+         if get_cached_response "test" "expiredkey" 2>/dev/null; then
+             result=1
+         fi
+    -    
+    +
+         # Restore original TTL
+         CACHE_TTL_DAYS=$original_ttl
+    -    
+    +
+         if [ "$result" -eq 0 ]; then
+             test_pass "Expired cache returns non-zero exit code"
+         else
+
+❌ [ERROR] tests/test_health_checks.sh
+    diff tests/test_health_checks.sh.orig tests/test_health_checks.sh
+    --- tests/test_health_checks.sh.orig
+    +++ tests/test_health_checks.sh
+    @@ -32,10 +32,10 @@
+     run_test() {
+         local test_name=$1
+         local test_func=$2
+    -    
+    +
+         TESTS_RUN=$((TESTS_RUN + 1))
+         echo -n "Testing: ${test_name}... "
+    -    
+    +
+         if $test_func; then
+             echo -e "${GREEN}PASSED${NC}"
+             TESTS_PASSED=$((TESTS_PASSED + 1))
+    @@ -76,12 +76,12 @@
+     # Test 4: Circuit opens after threshold failures
+     test_circuit_opens() {
+         local test_api="TestOpenAPI_$$"
+    -    
+    +
+         # Record failures up to threshold
+         for i in $(seq 1 $CIRCUIT_BREAKER_THRESHOLD); do
+             record_api_failure "$test_api" >/dev/null 2>&1
+         done
+    -    
+    +
+         # Circuit should now be open
+         is_circuit_open "$test_api" >/dev/null 2>&1
+     }
+    @@ -89,15 +89,15 @@
+     # Test 5: Circuit closes after timeout
+     test_circuit_closes_after_timeout() {
+         local test_api="TestTimeoutAPI_$$"
+    -    
+    +
+         # Open the circuit
+         for i in $(seq 1 $CIRCUIT_BREAKER_THRESHOLD); do
+             record_api_failure "$test_api" >/dev/null 2>&1
+         done
+    -    
+    +
+         # Wait for timeout + 1 second
+         sleep $((CIRCUIT_BREAKER_TIMEOUT + 1))
+    -    
+    +
+         # Circuit should be closed now
+         if is_circuit_open "$test_api" 2>/dev/null; then
+             return 1
+    @@ -108,13 +108,13 @@
+     # Test 6: API success resets circuit breaker
+     test_success_resets_circuit() {
+         local test_api="TestResetAPI_$$"
+    -    
+    +
+         # Record a failure
+         record_api_failure "$test_api" >/dev/null 2>&1
+    -    
+    +
+         # Record success
+         record_api_success "$test_api" >/dev/null 2>&1
+    -    
+    +
+         # Circuit file should be removed
+         local circuit_file
+         circuit_file=$(get_circuit_breaker_file "$test_api")
+    @@ -126,7 +126,7 @@
+         local unsafe_name="Test API/With:Unsafe*Chars"
+         local safe_file
+         safe_file=$(get_circuit_breaker_file "$unsafe_name")
+    -    
+    +
+         # Check that the filename contains only safe characters
+         basename "$safe_file" | grep -qE '^[a-z0-9_-]+_circuit\.state$'
+     }
+    @@ -135,10 +135,10 @@
+     test_init_circuit_breaker() {
+         local test_dir=$(mktemp -d)
+         rm -rf "$test_dir"
+    -    
+    +
+         CIRCUIT_BREAKER_DIR="$test_dir" init_circuit_breaker
+         [ -d "$test_dir" ]
+    -    
+    +
+         rm -rf "$test_dir"
+     }
+
+❌ [ERROR] tests/test_location_shell_diagnostics.sh
+    diff tests/test_location_shell_diagnostics.sh.orig tests/test_location_shell_diagnostics.sh
+    --- tests/test_location_shell_diagnostics.sh.orig
+    +++ tests/test_location_shell_diagnostics.sh
+    @@ -30,9 +30,9 @@
+     assert_file_exists() {
+         local file=$1
+         local description=$2
+    -    
+    -    TESTS_RUN=$((TESTS_RUN + 1))
+    -    
+    +
+    +    TESTS_RUN=$((TESTS_RUN + 1))
+    +
+         if [ -f "$file" ]; then
+             echo -e "${GREEN}✓${NC} PASS: $description"
+             TESTS_PASSED=$((TESTS_PASSED + 1))
+    @@ -48,15 +48,15 @@
+         local file=$1
+         local pattern=$2
+         local description=$3
+    -    
+    -    TESTS_RUN=$((TESTS_RUN + 1))
+    -    
+    +
+    +    TESTS_RUN=$((TESTS_RUN + 1))
+    +
+         if [ ! -f "$file" ]; then
+             echo -e "${RED}✗${NC} FAIL: $description - File not found: $file"
+             TESTS_FAILED=$((TESTS_FAILED + 1))
+             return 1
+         fi
+    -    
+    +
+         if grep -q "$pattern" "$file"; then
+             echo -e "${GREEN}✓${NC} PASS: $description"
+             TESTS_PASSED=$((TESTS_PASSED + 1))
+    @@ -79,7 +79,7 @@
+     
+     # Create a cached location to bypass GitHub API
+     mkdir -p "$TEST_OUTPUT_DIR/cached"
+    -echo '{"location":"New York, NY","updated_at":"2024-01-01T00:00:00Z"}' > "$TEST_OUTPUT_DIR/cached/location.json"
+    +echo '{"location":"New York, NY","updated_at":"2024-01-01T00:00:00Z"}' >"$TEST_OUTPUT_DIR/cached/location.json"
+     
+     # Run the script (it will fail due to network restrictions)
+     cd "$PROJECT_ROOT"
+    @@ -88,7 +88,7 @@
+     mkdir -p "$OUTPUT_DIR"
+     
+     # Run script and capture output (will fail)
+    -"${PROJECT_ROOT}/scripts/fetch-location.sh" > "$TEST_OUTPUT_DIR/output.json" 2> "$TEST_OUTPUT_DIR/stderr.log" || true
+    +"${PROJECT_ROOT}/scripts/fetch-location.sh" >"$TEST_OUTPUT_DIR/output.json" 2>"$TEST_OUTPUT_DIR/stderr.log" || true
+     
+     # Verify diagnostic files were created
+     assert_file_exists "$OUTPUT_DIR/debug_nominatim.json" "Nominatim debug JSON file created"
+
+❌ [ERROR] tests/test_new_card.sh
+    diff tests/test_new_card.sh.orig tests/test_new_card.sh
+    --- tests/test_new_card.sh.orig
+    +++ tests/test_new_card.sh
+    @@ -32,20 +32,20 @@
+         rm -rf "$TEST_REPO"
+         mkdir -p "$TEST_REPO/scripts/lib"
+         mkdir -p "$TEST_REPO/.github/workflows"
+    -    
+    +
+         # Create minimal README.md
+    -    cat > "$TEST_REPO/README.md" << 'EOF'
+    +    cat >"$TEST_REPO/README.md" <<'EOF'
+     # Test Profile
+     
+     ## Content
+     EOF
+    -    
+    +
+         # Create minimal common.sh (required by generated scripts)
+    -    cat > "$TEST_REPO/scripts/lib/common.sh" << 'EOF'
+    +    cat >"$TEST_REPO/scripts/lib/common.sh" <<'EOF'
+     #!/bin/bash
+     # Minimal common.sh for testing
+     EOF
+    -    
+    +
+         # Copy the new-card.sh script to test repo
+         cp "$NEW_CARD_SCRIPT" "$TEST_REPO/scripts/new-card.sh"
+         chmod +x "$TEST_REPO/scripts/new-card.sh"
+    @@ -71,10 +71,10 @@
+     # Test: Script shows help with --help flag
+     test_help_flag() {
+         run_test "Script shows help with --help flag"
+    -    
+    +
+         local output
+         output=$("$NEW_CARD_SCRIPT" --help 2>&1)
+    -    
+    +
+         if echo "$output" | grep -q "Usage:" && echo "$output" | grep -q "card-name"; then
+             test_pass "Help message is displayed"
+         else
+    @@ -85,10 +85,10 @@
+     # Test: Script shows help with -h flag
+     test_short_help_flag() {
+         run_test "Script shows help with -h flag"
+    -    
+    +
+         local output
+         output=$("$NEW_CARD_SCRIPT" -h 2>&1)
+    -    
+    +
+         if echo "$output" | grep -q "Usage:"; then
+             test_pass "Short help flag works"
+         else
+    @@ -99,10 +99,10 @@
+     # Test: Script fails without card name
+     test_missing_card_name() {
+         run_test "Script fails without card name"
+    -    
+    +
+         local output
+         output=$("$NEW_CARD_SCRIPT" 2>&1 || true)
+    -    
+    +
+         if echo "$output" | grep -q "Error: Card name is required"; then
+             test_pass "Missing card name shows error"
+         else
+    @@ -113,10 +113,10 @@
+     # Test: Script rejects uppercase card names
+     test_rejects_uppercase() {
+         run_test "Script rejects uppercase card names"
+    -    
+    +
+         local output
+         output=$("$NEW_CARD_SCRIPT" "MyCard" 2>&1 || true)
+    -    
+    +
+         if echo "$output" | grep -q "Error:"; then
+             test_pass "Uppercase card names are rejected"
+         else
+    @@ -127,10 +127,10 @@
+     # Test: Script rejects names starting with numbers
+     test_rejects_number_start() {
+         run_test "Script rejects names starting with numbers"
+    -    
+    +
+         local output
+         output=$("$NEW_CARD_SCRIPT" "123card" 2>&1 || true)
+    -    
+    +
+         if echo "$output" | grep -q "Error:"; then
+             test_pass "Names starting with numbers are rejected"
+         else
+    @@ -141,10 +141,10 @@
+     # Test: Script rejects names with special characters
+     test_rejects_special_chars() {
+         run_test "Script rejects names with special characters"
+    -    
+    +
+         local output
+         output=$("$NEW_CARD_SCRIPT" "my_card" 2>&1 || true)
+    -    
+    +
+         if echo "$output" | grep -q "Error:"; then
+             test_pass "Names with underscores are rejected"
+         else
+    @@ -155,10 +155,10 @@
+     # Test: Script rejects names with double hyphens
+     test_rejects_double_hyphen() {
+         run_test "Script rejects names with double hyphens"
+    -    
+    +
+         local output
+         output=$("$NEW_CARD_SCRIPT" "my--card" 2>&1 || true)
+    -    
+    +
+         if echo "$output" | grep -q "Error:"; then
+             test_pass "Names with double hyphens are rejected"
+         else
+    @@ -169,10 +169,10 @@
+     # Test: Script rejects names ending with hyphen
+     test_rejects_trailing_hyphen() {
+         run_test "Script rejects names ending with hyphen"
+    -    
+    +
+         local output
+         output=$("$NEW_CARD_SCRIPT" "mycard-" 2>&1 || true)
+    -    
+    +
+         if echo "$output" | grep -q "Error:"; then
+             test_pass "Names ending with hyphen are rejected"
+         else
+    @@ -183,12 +183,12 @@
+     # Test: Script creates fetch script
+     test_creates_fetch_script() {
+         run_test "Script creates fetch script"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    -    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    -    
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+    +    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    +
+         if [ -f "scripts/fetch-testcard.sh" ]; then
+             test_pass "Fetch script was created"
+         else
+    @@ -199,12 +199,12 @@
+     # Test: Fetch script is executable
+     test_fetch_script_executable() {
+         run_test "Fetch script is executable"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    -    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    -    
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+    +    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    +
+         if [ -x "scripts/fetch-testcard.sh" ]; then
+             test_pass "Fetch script is executable"
+         else
+    @@ -215,15 +215,15 @@
+     # Test: Fetch script has correct shebang
+     test_fetch_script_shebang() {
+         run_test "Fetch script has correct shebang"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    -    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    -    
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+    +    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    +
+         local first_line
+         first_line=$(head -1 scripts/fetch-testcard.sh)
+    -    
+    +
+         if [ "$first_line" = "#!/bin/bash" ]; then
+             test_pass "Fetch script has bash shebang"
+         else
+    @@ -234,12 +234,12 @@
+     # Test: Script creates generator script
+     test_creates_generator_script() {
+         run_test "Script creates generator script"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    -    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    -    
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+    +    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    +
+         if [ -f "scripts/generate-testcard-card.py" ]; then
+             test_pass "Generator script was created"
+         else
+    @@ -250,12 +250,12 @@
+     # Test: Generator script is executable
+     test_generator_script_executable() {
+         run_test "Generator script is executable"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    -    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    -    
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+    +    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    +
+         if [ -x "scripts/generate-testcard-card.py" ]; then
+             test_pass "Generator script is executable"
+         else
+    @@ -266,15 +266,15 @@
+     # Test: Generator script has Python shebang
+     test_generator_script_shebang() {
+         run_test "Generator script has Python shebang"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    -    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    -    
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+    +    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    +
+         local first_line
+         first_line=$(head -1 scripts/generate-testcard-card.py)
+    -    
+    +
+         if [ "$first_line" = "#!/usr/bin/env python3" ]; then
+             test_pass "Generator script has Python shebang"
+         else
+    @@ -285,12 +285,12 @@
+     # Test: Script creates workflow file
+     test_creates_workflow() {
+         run_test "Script creates workflow file"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    -    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    -    
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+    +    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    +
+         if [ -f ".github/workflows/testcard-card.yml" ]; then
+             test_pass "Workflow file was created"
+         else
+    @@ -301,12 +301,12 @@
+     # Test: Workflow file has correct name
+     test_workflow_has_name() {
+         run_test "Workflow file has correct name field"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    -    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    -    
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+    +    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    +
+         if grep -q "name: Testcard Card" .github/workflows/testcard-card.yml; then
+             test_pass "Workflow has correct name"
+         else
+    @@ -317,12 +317,12 @@
+     # Test: Script adds README markers
+     test_adds_readme_markers() {
+         run_test "Script adds README markers"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    -    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    -    
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+    +    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    +
+         if grep -q "<!-- TESTCARD-CARD:START -->" README.md && grep -q "<!-- TESTCARD-CARD:END -->" README.md; then
+             test_pass "README markers were added"
+         else
+    @@ -333,12 +333,12 @@
+     # Test: Script creates output directory
+     test_creates_output_directory() {
+         run_test "Script creates output directory"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    -    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    -    
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+    +    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    +
+         if [ -d "testcard" ]; then
+             test_pass "Output directory was created"
+         else
+    @@ -349,12 +349,12 @@
+     # Test: Script creates .gitkeep in output directory
+     test_creates_gitkeep() {
+         run_test "Script creates .gitkeep in output directory"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    -    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    -    
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+    +    ./scripts/new-card.sh testcard >/dev/null 2>&1
+    +
+         if [ -f "testcard/.gitkeep" ]; then
+             test_pass ".gitkeep file was created"
+         else
+    @@ -365,17 +365,17 @@
+     # Test: Script warns on existing files
+     test_warns_on_existing() {
+         run_test "Script warns on existing files"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+         # Create files first
+         ./scripts/new-card.sh testcard >/dev/null 2>&1
+    -    
+    +
+         # Run again
+         local output
+         output=$(./scripts/new-card.sh testcard 2>&1)
+    -    
+    +
+         if echo "$output" | grep -q "Warning:"; then
+             test_pass "Shows warning for existing files"
+         else
+    @@ -386,12 +386,12 @@
+     # Test: Hyphenated card names work
+     test_hyphenated_names() {
+         run_test "Hyphenated card names work"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+         ./scripts/new-card.sh github-stats >/dev/null 2>&1
+    -    
+    +
+         if [ -f "scripts/fetch-github-stats.sh" ] && [ -f "scripts/generate-github-stats-card.py" ]; then
+             test_pass "Hyphenated names create correct files"
+         else
+    @@ -402,12 +402,12 @@
+     # Test: Card name with numbers works
+     test_name_with_numbers() {
+         run_test "Card name with numbers works"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+         ./scripts/new-card.sh test123 >/dev/null 2>&1
+    -    
+    +
+         if [ -f "scripts/fetch-test123.sh" ]; then
+             test_pass "Names with numbers work"
+         else
+    @@ -418,12 +418,12 @@
+     # Test: Fetch script has placeholder for card name
+     test_fetch_script_placeholders() {
+         run_test "Fetch script has correct card name placeholder"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    -    ./scripts/new-card.sh mytest >/dev/null 2>&1
+    -    
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+    +    ./scripts/new-card.sh mytest >/dev/null 2>&1
+    +
+         if grep -q 'OUTPUT_DIR="${OUTPUT_DIR:-mytest}"' scripts/fetch-mytest.sh; then
+             test_pass "Fetch script has correct OUTPUT_DIR"
+         else
+    @@ -434,12 +434,12 @@
+     # Test: Generator script references correct card type
+     test_generator_script_card_type() {
+         run_test "Generator script references correct card type"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    -    ./scripts/new-card.sh mytest >/dev/null 2>&1
+    -    
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+    +    ./scripts/new-card.sh mytest >/dev/null 2>&1
+    +
+         if grep -q 'get_theme_card_dimension("widths", "mytest")' scripts/generate-mytest-card.py; then
+             test_pass "Generator references correct card type"
+         else
+    @@ -450,14 +450,14 @@
+     # Test: Workflow has correct trigger paths
+     test_workflow_trigger_paths() {
+         run_test "Workflow has correct trigger paths"
+    -    
+    -    setup_test_repo
+    -    cd "$TEST_REPO"
+    -    
+    -    ./scripts/new-card.sh mytest >/dev/null 2>&1
+    -    
+    -    if grep -q "scripts/fetch-mytest.sh" .github/workflows/mytest-card.yml && \
+    -       grep -q "scripts/generate-mytest-card.py" .github/workflows/mytest-card.yml; then
+    +
+    +    setup_test_repo
+    +    cd "$TEST_REPO"
+    +
+    +    ./scripts/new-card.sh mytest >/dev/null 2>&1
+    +
+    +    if grep -q "scripts/fetch-mytest.sh" .github/workflows/mytest-card.yml &&
+    +        grep -q "scripts/generate-mytest-card.py" .github/workflows/mytest-card.yml; then
+             test_pass "Workflow has correct trigger paths"
+         else
+             test_fail "Should have correct paths" "fetch-mytest.sh and generate-mytest-card.py" ""
+
+❌ [ERROR] tests/test_retry_logic.sh
+    diff tests/test_retry_logic.sh.orig tests/test_retry_logic.sh
+    --- tests/test_retry_logic.sh.orig
+    +++ tests/test_retry_logic.sh
+    @@ -19,10 +19,10 @@
+     run_test() {
+         local test_name=$1
+         local test_func=$2
+    -    
+    +
+         TESTS_RUN=$((TESTS_RUN + 1))
+         echo -n "Testing: ${test_name}... "
+    -    
+    +
+         if $test_func; then
+             echo -e "${GREEN}PASSED${NC}"
+             TESTS_PASSED=$((TESTS_PASSED + 1))
+    @@ -51,9 +51,9 @@
+     test_failure_after_max_retries() {
+         # This should fail quickly with minimal retries
+         if MAX_RETRIES=1 INITIAL_RETRY_DELAY=1 retry_with_backoff false 2>/dev/null; then
+    -        return 1  # Test fails if command succeeds
+    -    else
+    -        return 0  # Test passes if command fails
+    +        return 1 # Test fails if command succeeds
+    +    else
+    +        return 0 # Test passes if command fails
+         fi
+     }
+     
+    @@ -67,9 +67,9 @@
+     test_validate_invalid_json() {
+         local invalid='{invalid json}'
+         if validate_api_response "$invalid" 2>/dev/null; then
+    -        return 1  # Test fails if validation succeeds
+    -    else
+    -        return 0  # Test passes if validation fails
+    +        return 1 # Test fails if validation succeeds
+    +    else
+    +        return 0 # Test passes if validation fails
+         fi
+     }
+     
+    @@ -76,9 +76,9 @@
+     # Test 6: validate_api_response fails with empty response
+     test_validate_empty_response() {
+         if validate_api_response "" 2>/dev/null; then
+    -        return 1  # Test fails if validation succeeds
+    -    else
+    -        return 0  # Test passes if validation fails
+    +        return 1 # Test fails if validation succeeds
+    +    else
+    +        return 0 # Test passes if validation fails
+         fi
+     }
+     
+    @@ -86,9 +86,9 @@
+     test_validate_required_field() {
+         local json='{"status": "ok"}'
+         if validate_api_response "$json" "missing_field" 2>/dev/null; then
+    -        return 1  # Test fails if validation succeeds
+    -    else
+    -        return 0  # Test passes if validation fails
+    +        return 1 # Test fails if validation succeeds
+    +    else
+    +        return 0 # Test passes if validation fails
+         fi
+     }
+
+❌ [ERROR] tests/test_timeout_coverage.sh
+    diff tests/test_timeout_coverage.sh.orig tests/test_timeout_coverage.sh
+    --- tests/test_timeout_coverage.sh.orig
+    +++ tests/test_timeout_coverage.sh
+    @@ -36,31 +36,31 @@
+             echo -e "${YELLOW}Warning: Script not found: $script${NC}"
+             continue
+         fi
+    -    
+    +
+         script_name=$(basename "$script")
+         TESTS_RUN=$((TESTS_RUN + 1))
+    -    
+    +
+         echo -n "Checking $script_name... "
+    -    
+    +
+         # Extract curl commands (exclude comments and handle multi-line commands)
+         # Look for actual curl command invocations that are not commented out
+         curl_lines=$(grep -nE 'curl\s+-' "$script" | grep -vE '^\s*#' | grep -vE '(Curl |curl_exit)' || true)
+    -    
+    +
+         if [ -z "$curl_lines" ]; then
+             echo -e "${GREEN}PASSED (no curl commands)${NC}"
+             TESTS_PASSED=$((TESTS_PASSED + 1))
+             continue
+         fi
+    -    
+    +
+         # Check if curl commands have --max-time
+         missing_timeout=false
+         while IFS= read -r line; do
+             line_num=$(echo "$line" | cut -d: -f1)
+    -        
+    +
+             # Get the full curl command (may span multiple lines)
+             # Check the next 10 lines after the curl command for --max-time
+             context=$(sed -n "${line_num},$((line_num + 10))p" "$script")
+    -        
+    +
+             if ! echo "$context" | grep -q "\-\-max-time"; then
+                 # Check if it's part of a retry_with_backoff wrapper
+                 if ! echo "$context" | grep -q "retry_with_backoff"; then
+    @@ -71,8 +71,8 @@
+                     break
+                 fi
+             fi
+    -    done <<< "$curl_lines"
+    -    
+    +    done <<<"$curl_lines"
+    +
+         if [ "$missing_timeout" = false ]; then
+             echo -e "${GREEN}PASSED${NC}"
+             TESTS_PASSED=$((TESTS_PASSED + 1))
+
