@@ -309,7 +309,7 @@ def try_load_and_validate_json(
         error contains the error message.
     """
     data, error = try_load_json(path, description)
-    if error:
+    if error or data is None:
         return None, error
 
     validation_error = try_validate_json(data, schema_name, description)
@@ -448,9 +448,9 @@ def generate_card_with_fallback(
     else:
         data, error = try_load_json(json_path, description)
 
-    if error:
+    if error or data is None:
         if has_fallback:
-            log_fallback_used(card_type, error, output_path)
+            log_fallback_used(card_type, error or "No data loaded", output_path)
             return False
         else:
             print(f"Error: {error}", file=sys.stderr)
@@ -1357,7 +1357,7 @@ def optimize_image(
             
             # Convert to RGB if necessary (JPEG doesn't support alpha)
             if img.mode in ("RGBA", "P"):
-                img = img.convert("RGB")
+                img = img.convert("RGB")  # type: ignore[assignment]
             
             output = io.BytesIO()
             img.save(output, format="JPEG", quality=jpeg_quality, optimize=True)

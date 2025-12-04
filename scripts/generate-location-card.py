@@ -244,11 +244,11 @@ def main() -> None:
 
     # Try to read metadata
     metadata, error = try_load_json(metadata_path, "Metadata file")
-    if error:
+    if error or metadata is None:
         print(f"❌ FAILURE: Cannot read location metadata", file=sys.stderr)
         print(f"   → {error}", file=sys.stderr)
         print(f"   → Check if {metadata_path} exists and is valid JSON", file=sys.stderr)
-        if handle_error_with_fallback("location", error, output_path, has_fallback):
+        if handle_error_with_fallback("location", error or "No data loaded", output_path, has_fallback):
             print(f"   → Using fallback location SVG card: {output_path}", file=sys.stderr)
             return
         sys.exit(1)

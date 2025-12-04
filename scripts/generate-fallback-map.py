@@ -49,10 +49,10 @@ def generate_fallback_map(output_path: str, lat: float, lon: float) -> None:
         coord_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 14)
     except IOError:
         # Use default font if custom fonts not available
-        title_font = ImageFont.load_default()
-        text_font = ImageFont.load_default()
-        small_font = ImageFont.load_default()
-        coord_font = ImageFont.load_default()
+        title_font = ImageFont.load_default()  # type: ignore[assignment]
+        text_font = ImageFont.load_default()  # type: ignore[assignment]
+        small_font = ImageFont.load_default()  # type: ignore[assignment]
+        coord_font = ImageFont.load_default()  # type: ignore[assignment]
     
     # Draw emoji/icon (simplified as text)
     icon_text = "📍"
