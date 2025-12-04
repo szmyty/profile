@@ -93,10 +93,16 @@ export interface OuraMetrics {
 }
 
 export interface MoodData {
-  emoji: string;
-  description: string;
-  score: number;
-  timestamp: string;
+  emoji?: string;
+  description?: string;
+  score?: number;
+  timestamp?: string;
+  // Alternative structure from oura/mood.json
+  mood_name?: string;
+  mood_score?: number;
+  mood_icon?: string;
+  mood_description?: string;
+  computed_at?: string;
 }
 
 export interface DeveloperStats {
