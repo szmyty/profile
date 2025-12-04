@@ -1,0 +1,1103 @@
+Results of isort linter (version 6.0.1)
+See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
+-----------------------------------------------
+
+❌ [ERROR] scripts/audit_megalinter_config.py
+    ERROR: scripts/audit_megalinter_config.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/audit_megalinter_config.py:before	2025-12-04 04:20:54.512687
+    +++ scripts/audit_megalinter_config.py:after	2025-12-04 04:25:56.950543
+    @@ -6,13 +6,13 @@
+     suggestions for improvements without failing the workflow.
+     """
+     
+    +import argparse
+     import sys
+    -import argparse
+    +from datetime import datetime, timezone
+    +from pathlib import Path
+    +from typing import Any, Dict, List, Set
+    +
+     import yaml
+    -from pathlib import Path
+    -from typing import Dict, List, Any, Set
+    -from datetime import datetime, timezone
+    -
+     
+     # Known valid MegaLinter configuration keys (v8)
+     # Reference: https://megalinter.io/latest/config-variables/
+
+❌ [ERROR] scripts/fetch-developer-stats.py
+    ERROR: scripts/fetch-developer-stats.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/fetch-developer-stats.py:before	2025-12-04 04:20:54.513687
+    +++ scripts/fetch-developer-stats.py:after	2025-12-04 04:25:57.186993
+    @@ -22,12 +22,11 @@
+     import json
+     import os
+     import sys
+    -from datetime import datetime, timezone, timedelta
+    +from datetime import datetime, timedelta, timezone
+     from pathlib import Path
+     from typing import Any, Dict, List, Optional, Union
+    +from urllib.error import HTTPError, URLError
+     from urllib.request import Request, urlopen
+    -from urllib.error import HTTPError, URLError
+    -
+     
+     # Maximum number of repositories to analyze for detailed stats (language, commits)
+     # This limit helps avoid GitHub API rate limits
+
+❌ [ERROR] scripts/generate-card.py
+    ERROR: scripts/generate-card.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/generate-card.py:before	2025-12-04 04:20:54.513687
+    +++ scripts/generate-card.py:after	2025-12-04 04:25:57.421752
+    @@ -4,31 +4,31 @@
+     This script reads track metadata from JSON and creates an SVG card.
+     """
+     
+    +import base64
+     import sys
+    -import base64
+    +from datetime import datetime
+     from pathlib import Path
+    -from datetime import datetime
+     from typing import Optional
+     
+     from lib.utils import (
+         escape_xml,
+    -    load_and_validate_json,
+    -    try_load_and_validate_json,
+    -    load_theme,
+    +    fallback_exists,
+    +    format_duration_ms,
+    +    format_large_number,
+    +    format_time_since,
+    +    format_timestamp_local,
+    +    get_theme_border_radius,
+    +    get_theme_card_dimension,
+         get_theme_color,
+    +    get_theme_font_size,
+         get_theme_gradient,
+         get_theme_typography,
+    -    get_theme_font_size,
+    -    get_theme_card_dimension,
+    -    get_theme_border_radius,
+    -    format_timestamp_local,
+    -    format_time_since,
+    -    format_large_number,
+    -    format_duration_ms,
+    +    handle_error_with_fallback,
+    +    load_and_validate_json,
+    +    load_theme,
+    +    log_fallback_used,
+         optimize_image_file,
+    -    fallback_exists,
+    -    log_fallback_used,
+    -    handle_error_with_fallback,
+    +    try_load_and_validate_json,
+     )
+
+❌ [ERROR] scripts/generate-consolidated-dashboard.py
+    ERROR: scripts/generate-consolidated-dashboard.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/generate-consolidated-dashboard.py:before	2025-12-04 04:20:54.513687
+    +++ scripts/generate-consolidated-dashboard.py:after	2025-12-04 04:25:57.631820
+    @@ -13,23 +13,23 @@
+         python generate-consolidated-dashboard.py [output_path]
+     """
+     
+    +import json
+     import sys
+    -import json
+    +from datetime import datetime, timezone
+     from pathlib import Path
+    -from datetime import datetime, timezone
+     from typing import Dict, Optional
+     
+     from lib.utils import (
+         escape_xml,
+    -    safe_value,
+    -    load_theme,
+    +    format_large_number,
+    +    format_timestamp_local,
+    +    get_theme_border_radius,
+         get_theme_color,
+    +    get_theme_font_size,
+         get_theme_gradient,
+         get_theme_typography,
+    -    get_theme_font_size,
+    -    get_theme_border_radius,
+    -    format_timestamp_local,
+    -    format_large_number,
+    +    load_theme,
+    +    safe_value,
+         try_load_json,
+     )
+
+❌ [ERROR] scripts/generate-developer-dashboard.py
+    ERROR: scripts/generate-developer-dashboard.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/generate-developer-dashboard.py:before	2025-12-04 04:20:54.513687
+    +++ scripts/generate-developer-dashboard.py:after	2025-12-04 04:25:57.844152
+    @@ -14,28 +14,28 @@
+     """
+     
+     import sys
+    +from datetime import datetime, timezone
+     from pathlib import Path
+    -from datetime import datetime, timezone
+     from typing import Dict, List, Optional
+     
+     from lib.utils import (
+         escape_xml,
+    -    safe_value,
+    -    load_theme,
+    -    get_theme_color,
+    -    get_theme_gradient,
+    -    get_theme_typography,
+    -    get_theme_font_size,
+    -    get_theme_card_dimension,
+    -    get_theme_border_radius,
+    -    get_theme_chart_value,
+    -    get_theme_language_color,
+    +    format_large_number,
+    +    format_time_since,
+         format_timestamp_local,
+    -    format_time_since,
+    -    is_data_stale,
+    -    format_large_number,
+         generate_card_with_fallback,
+         generate_sparkline_path,
+    +    get_theme_border_radius,
+    +    get_theme_card_dimension,
+    +    get_theme_chart_value,
+    +    get_theme_color,
+    +    get_theme_font_size,
+    +    get_theme_gradient,
+    +    get_theme_language_color,
+    +    get_theme_typography,
+    +    is_data_stale,
+    +    load_theme,
+    +    safe_value,
+     )
+
+❌ [ERROR] scripts/generate-fallback-map.py
+    ERROR: scripts/generate-fallback-map.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/generate-fallback-map.py:before	2025-12-04 04:20:54.513687
+    +++ scripts/generate-fallback-map.py:after	2025-12-04 04:25:58.078549
+    @@ -7,6 +7,7 @@
+     import sys
+     from pathlib import Path
+     from typing import Tuple
+    +
+     from PIL import Image, ImageDraw, ImageFont
+
+❌ [ERROR] scripts/generate-health-dashboard.py
+    ERROR: scripts/generate-health-dashboard.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/generate-health-dashboard.py:before	2025-12-04 04:20:54.513687
+    +++ scripts/generate-health-dashboard.py:after	2025-12-04 04:25:58.315058
+    @@ -6,28 +6,28 @@
+     """
+     
+     import sys
+    +from datetime import datetime, timezone
+     from pathlib import Path
+    -from datetime import datetime, timezone
+    -from typing import Optional, List
+    +from typing import List, Optional
+     
+     from lib.utils import (
+         escape_xml,
+    +    format_time_since,
+    +    format_timestamp_local,
+    +    generate_card_with_fallback,
+    +    generate_sparkline_path,
+    +    get_theme_border_radius,
+    +    get_theme_card_dimension,
+    +    get_theme_chart_color,
+    +    get_theme_color,
+    +    get_theme_font_size,
+    +    get_theme_gradient,
+    +    get_theme_score_ring_value,
+    +    get_theme_typography,
+    +    is_data_stale,
+    +    load_and_validate_json,
+    +    load_theme,
+         safe_value,
+    -    load_and_validate_json,
+    -    generate_sparkline_path,
+    -    load_theme,
+    -    get_theme_color,
+    -    get_theme_gradient,
+    -    get_theme_typography,
+    -    get_theme_font_size,
+    -    get_theme_card_dimension,
+    -    get_theme_border_radius,
+    -    get_theme_score_ring_value,
+    -    get_theme_chart_color,
+    -    format_timestamp_local,
+    -    format_time_since,
+    -    is_data_stale,
+    -    generate_card_with_fallback,
+     )
+
+❌ [ERROR] scripts/generate-health-snapshot.py
+    ERROR: scripts/generate-health-snapshot.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/generate-health-snapshot.py:before	2025-12-04 04:20:54.513687
+    +++ scripts/generate-health-snapshot.py:after	2025-12-04 04:25:58.537259
+    @@ -6,11 +6,11 @@
+     
+     import json
+     import sys
+    +from datetime import datetime, timezone
+     from pathlib import Path
+    -from datetime import datetime, timezone
+    -from typing import Optional, Dict, Any
+    +from typing import Any, Dict, Optional
+     
+    -from lib.utils import safe_get, load_and_validate_json
+    +from lib.utils import load_and_validate_json, safe_get
+     
+     
+     def calculate_bmi(weight_kg: Optional[float], height_m: Optional[float]) -> Optional[float]:
+
+❌ [ERROR] scripts/generate-interactive-dashboard.py
+    ERROR: scripts/generate-interactive-dashboard.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/generate-interactive-dashboard.py:before	2025-12-04 04:20:54.513687
+    +++ scripts/generate-interactive-dashboard.py:after	2025-12-04 04:25:58.759269
+    @@ -11,11 +11,11 @@
+         python generate-interactive-dashboard.py [output_path] [--theme dark|light]
+     """
+     
+    +import json
+    +import os
+     import sys
+    -import os
+    -import json
+    +from datetime import datetime, timezone
+     from pathlib import Path
+    -from datetime import datetime, timezone
+     from typing import Dict, Optional
+     
+     # Add lib to path for imports
+    @@ -23,15 +23,15 @@
+     
+     from utils import (  # type: ignore[import-not-found]
+         escape_xml,
+    -    safe_value,
+    -    load_theme,
+    +    format_large_number,
+    +    format_timestamp_local,
+    +    get_theme_border_radius,
+         get_theme_color,
+    +    get_theme_font_size,
+         get_theme_gradient,
+         get_theme_typography,
+    -    get_theme_font_size,
+    -    get_theme_border_radius,
+    -    format_timestamp_local,
+    -    format_large_number,
+    +    load_theme,
+    +    safe_value,
+         try_load_json,
+     )
+     
+    @@ -427,8 +427,8 @@
+     
+     def main() -> None:
+         """Main entry point for interactive dashboard generation."""
+    +    import argparse
+         import traceback
+    -    import argparse
+         
+         parser = argparse.ArgumentParser(description="Generate interactive dashboard with hover tooltips and animations")
+         parser.add_argument("output", nargs="?", default="dashboard-interactive.svg", help="Output file path")
+
+❌ [ERROR] scripts/generate-location-card.py
+    ERROR: scripts/generate-location-card.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/generate-location-card.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/generate-location-card.py:after	2025-12-04 04:25:58.993037
+    @@ -8,26 +8,26 @@
+     import base64
+     import sys
+     from pathlib import Path
+    -from typing import Dict, Any
+    +from typing import Any, Dict
+     
+     from lib.utils import (
+         escape_xml,
+    -    load_json,
+    -    try_load_json,
+    -    load_theme,
+    +    fallback_exists,
+    +    format_time_since,
+    +    format_timestamp_local,
+    +    get_theme_border_radius,
+    +    get_theme_card_dimension,
+         get_theme_color,
+    +    get_theme_font_size,
+         get_theme_gradient,
+         get_theme_typography,
+    -    get_theme_font_size,
+    -    get_theme_card_dimension,
+    -    get_theme_border_radius,
+    -    format_timestamp_local,
+    -    format_time_since,
+    +    handle_error_with_fallback,
+         is_data_stale,
+    +    load_json,
+    +    load_theme,
+    +    log_fallback_used,
+         optimize_image_file,
+    -    fallback_exists,
+    -    log_fallback_used,
+    -    handle_error_with_fallback,
+    +    try_load_json,
+     )
+
+❌ [ERROR] scripts/generate-oura-mood-card.py
+    ERROR: scripts/generate-oura-mood-card.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/generate-oura-mood-card.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/generate-oura-mood-card.py:after	2025-12-04 04:25:59.214753
+    @@ -7,34 +7,34 @@
+     
+     import json
+     import sys
+    +from datetime import datetime, timezone
+     from pathlib import Path
+    -from datetime import datetime, timezone
+     from typing import Any, Dict, Optional
+     
+     from lib.utils import (
+         escape_xml,
+    +    fallback_exists,
+    +    format_time_since,
+    +    format_timestamp_local,
+    +    generate_sparkline_path,
+    +    get_theme_border_radius,
+    +    get_theme_card_dimension,
+    +    get_theme_chart_color,
+    +    get_theme_color,
+    +    get_theme_decorative_accent_value,
+    +    get_theme_font_size,
+    +    get_theme_gradient,
+    +    get_theme_radial_bar_value,
+    +    get_theme_score_bar_value,
+    +    get_theme_sparkline_value,
+    +    get_theme_typography,
+    +    handle_error_with_fallback,
+    +    is_data_stale,
+    +    load_json,
+    +    load_theme,
+    +    log_fallback_used,
+         safe_value,
+    -    load_json,
+         try_load_json,
+    -    generate_sparkline_path,
+    -    load_theme,
+    -    get_theme_color,
+    -    get_theme_gradient,
+    -    get_theme_typography,
+    -    get_theme_font_size,
+    -    get_theme_card_dimension,
+    -    get_theme_border_radius,
+    -    get_theme_sparkline_value,
+    -    get_theme_score_bar_value,
+    -    get_theme_radial_bar_value,
+    -    get_theme_decorative_accent_value,
+    -    get_theme_chart_color,
+    -    format_timestamp_local,
+    -    format_time_since,
+    -    is_data_stale,
+    -    fallback_exists,
+    -    log_fallback_used,
+    -    handle_error_with_fallback,
+     )
+
+❌ [ERROR] scripts/generate-status-page.py
+    ERROR: scripts/generate-status-page.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/generate-status-page.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/generate-status-page.py:after	2025-12-04 04:25:59.465253
+    @@ -12,7 +12,7 @@
+     import sys
+     from datetime import datetime, timezone
+     from pathlib import Path
+    -from typing import Dict, Any
+    +from typing import Any, Dict
+     
+     # Add parent directory to path for imports
+     sys.path.insert(0, str(Path(__file__).parent))
+    @@ -25,7 +25,7 @@
+         get_theme_font_size,
+         get_theme_spacing,
+         get_theme_status_color,
+    -    load_theme
+    +    load_theme,
+     )
+
+❌ [ERROR] scripts/generate-summary-card.py
+    ERROR: scripts/generate-summary-card.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/generate-summary-card.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/generate-summary-card.py:after	2025-12-04 04:25:59.719094
+    @@ -9,23 +9,23 @@
+         python generate-summary-card.py --period monthly [output_path]
+     """
+     
+    +import json
+     import sys
+    -import json
+    +from datetime import datetime, timezone
+     from pathlib import Path
+    -from datetime import datetime, timezone
+     from typing import Dict, Optional
+     
+     from lib.utils import (
+         escape_xml,
+    -    safe_value,
+    -    load_theme,
+    +    format_large_number,
+    +    format_timestamp_local,
+    +    get_theme_border_radius,
+         get_theme_color,
+    +    get_theme_font_size,
+         get_theme_gradient,
+         get_theme_typography,
+    -    get_theme_font_size,
+    -    get_theme_border_radius,
+    -    format_timestamp_local,
+    -    format_large_number,
+    +    load_theme,
+    +    safe_value,
+         try_load_json,
+     )
+
+❌ [ERROR] scripts/generate-themed-dashboard.py
+    ERROR: scripts/generate-themed-dashboard.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/generate-themed-dashboard.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/generate-themed-dashboard.py:after	2025-12-04 04:26:00.028971
+    @@ -9,11 +9,11 @@
+         python generate-themed-dashboard.py [output_path] [--theme dark|light]
+     """
+     
+    +import json
+    +import os
+     import sys
+    -import os
+    -import json
+    +from datetime import datetime, timezone
+     from pathlib import Path
+    -from datetime import datetime, timezone
+     from typing import Dict, Optional
+     
+     # Add lib to path for imports
+    @@ -21,15 +21,15 @@
+     
+     from utils import (  # type: ignore[import-not-found]
+         escape_xml,
+    -    safe_value,
+    -    load_theme,
+    +    format_large_number,
+    +    format_timestamp_local,
+    +    get_theme_border_radius,
+         get_theme_color,
+    +    get_theme_font_size,
+         get_theme_gradient,
+         get_theme_typography,
+    -    get_theme_font_size,
+    -    get_theme_border_radius,
+    -    format_timestamp_local,
+    -    format_large_number,
+    +    load_theme,
+    +    safe_value,
+         try_load_json,
+     )
+     
+    @@ -342,8 +342,8 @@
+     
+     def main() -> None:
+         """Main entry point for themed dashboard generation."""
+    +    import argparse
+         import traceback
+    -    import argparse
+         
+         parser = argparse.ArgumentParser(description="Generate consolidated dashboard with theme support")
+         parser.add_argument("output", nargs="?", default="dashboard.svg", help="Output file path")
+
+❌ [ERROR] scripts/generate-weather-card.py
+    ERROR: scripts/generate-weather-card.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/generate-weather-card.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/generate-weather-card.py:after	2025-12-04 04:26:00.261853
+    @@ -5,26 +5,26 @@
+     """
+     
+     import sys
+    +from datetime import datetime
+     from pathlib import Path
+    -from datetime import datetime
+    -from typing import Dict, Any
+    +from typing import Any, Dict
+     
+     from lib.utils import (
+         escape_xml,
+    +    format_time_since,
+    +    format_timestamp_local,
+    +    generate_card_with_fallback,
+    +    get_theme_border_radius,
+    +    get_theme_card_dimension,
+    +    get_theme_color,
+    +    get_theme_font_size,
+    +    get_theme_gradient,
+    +    get_theme_typography,
+    +    is_data_stale,
+         load_and_validate_json,
+         load_theme,
+    -    get_theme_color,
+    -    get_theme_gradient,
+    -    get_theme_typography,
+    -    get_theme_font_size,
+    -    get_theme_card_dimension,
+    -    get_theme_border_radius,
+    -    format_timestamp_local,
+    -    format_time_since,
+    -    is_data_stale,
+    -    generate_card_with_fallback,
+     )
+    -from lib.weather_alerts import get_weather_alert, format_alert_badge
+    +from lib.weather_alerts import format_alert_badge, get_weather_alert
+     
+     
+     def format_time(time_str: str) -> str:
+
+❌ [ERROR] scripts/generate_megalinter_summary.py
+    ERROR: scripts/generate_megalinter_summary.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/generate_megalinter_summary.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/generate_megalinter_summary.py:after	2025-12-04 04:26:00.482660
+    @@ -6,13 +6,13 @@
+     with error counts, warnings, and recommendations.
+     """
+     
+    +import argparse
+    +import json
+     import sys
+    -import json
+    -import argparse
+    -from pathlib import Path
+    -from typing import Dict, List, Any, Tuple
+     from collections import Counter
+     from datetime import datetime, timezone
+    +from pathlib import Path
+    +from typing import Any, Dict, List, Tuple
+     
+     
+     class MegaLinterSummaryGenerator:
+
+❌ [ERROR] scripts/incremental-generate.py
+    ERROR: scripts/incremental-generate.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/incremental-generate.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/incremental-generate.py:after	2025-12-04 04:26:00.712974
+    @@ -5,13 +5,12 @@
+     significantly reducing unnecessary processing.
+     """
+     
+    +import subprocess
+     import sys
+    -import subprocess
+     from pathlib import Path
+     from typing import List, Optional
+     
+     from lib.change_detection import should_regenerate_svg, update_hash_cache
+    -
+     
+     # Define cache location
+     CACHE_DIR = Path(".cache")
+
+✅ [SUCCESS] scripts/inject-footer.py
+❌ [ERROR] scripts/lib/__init__.py
+    ERROR: scripts/lib/__init__.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/lib/__init__.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/lib/__init__.py:after	2025-12-04 04:26:01.083135
+    @@ -2,14 +2,14 @@
+     Shared utility library for profile card generators.
+     """
+     
+    +from .card_base import CardBase
+     from .utils import (
+         escape_xml,
+    +    generate_sparkline_path,
+    +    load_json,
+         safe_get,
+         safe_value,
+    -    load_json,
+    -    generate_sparkline_path,
+     )
+    -from .card_base import CardBase
+     
+     __all__ = [
+         "escape_xml",
+
+❌ [ERROR] scripts/lib/card_base.py
+    ERROR: scripts/lib/card_base.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/lib/card_base.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/lib/card_base.py:after	2025-12-04 04:26:01.284962
+    @@ -13,13 +13,13 @@
+     
+     from .utils import (
+         escape_xml,
+    -    load_theme,
+    +    get_theme_border_radius,
+    +    get_theme_card_dimension,
+         get_theme_color,
+    +    get_theme_font_size,
+         get_theme_gradient,
+         get_theme_typography,
+    -    get_theme_font_size,
+    -    get_theme_card_dimension,
+    -    get_theme_border_radius,
+    +    load_theme,
+     )
+
+✅ [SUCCESS] scripts/lib/change_detection.py
+❌ [ERROR] scripts/lib/data_quality.py
+    ERROR: scripts/lib/data_quality.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/lib/data_quality.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/lib/data_quality.py:after	2025-12-04 04:26:01.731829
+    @@ -14,7 +14,6 @@
+     import math
+     import sys
+     from typing import Any, Dict, List, Optional, Union
+    -
+     
+     # Configure module logger
+     _quality_logger: Optional[logging.Logger] = None
+
+❌ [ERROR] scripts/lib/logging_utils.py
+    ERROR: scripts/lib/logging_utils.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/lib/logging_utils.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/lib/logging_utils.py:after	2025-12-04 04:26:01.969295
+    @@ -7,8 +7,8 @@
+     import os
+     import sys
+     from datetime import datetime, timezone
+    +from logging.handlers import RotatingFileHandler
+     from pathlib import Path
+    -from logging.handlers import RotatingFileHandler
+     from typing import Optional
+     
+     # Default configuration
+
+❌ [ERROR] scripts/lib/metrics.py
+    ERROR: scripts/lib/metrics.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/lib/metrics.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/lib/metrics.py:after	2025-12-04 04:26:02.238956
+    @@ -14,7 +14,7 @@
+     import sys
+     from datetime import datetime, timezone
+     from pathlib import Path
+    -from typing import Dict, Optional, List
+    +from typing import Dict, List, Optional
+     
+     
+     def get_metrics_dir() -> Path:
+
+❌ [ERROR] scripts/lib/utils.py
+    ERROR: scripts/lib/utils.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/lib/utils.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/lib/utils.py:after	2025-12-04 04:26:02.468980
+    @@ -14,7 +14,6 @@
+     from datetime import datetime, timedelta, timezone
+     from pathlib import Path
+     from typing import Any, Callable, Dict, List, Optional, Tuple, Union
+    -
+     
+     # Configure module logger for fallback operations
+     _fallback_logger: Optional[logging.Logger] = None
+    @@ -39,7 +38,7 @@
+     
+     try:
+         import jsonschema
+    -    from jsonschema import validate, ValidationError
+    +    from jsonschema import ValidationError, validate
+         JSONSCHEMA_AVAILABLE = True
+     except ImportError:
+         JSONSCHEMA_AVAILABLE = False
+    @@ -1210,8 +1209,9 @@
+     
+     # Try to import Pillow for image optimization
+     try:
+    +    import io
+    +
+         from PIL import Image
+    -    import io
+         PILLOW_AVAILABLE = True
+     except ImportError:
+         PILLOW_AVAILABLE = False
+
+❌ [ERROR] scripts/lib/weather_alerts.py
+    ERROR: scripts/lib/weather_alerts.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/lib/weather_alerts.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/lib/weather_alerts.py:after	2025-12-04 04:26:02.698006
+    @@ -6,7 +6,7 @@
+     based on WMO weather codes and meteorological data.
+     """
+     
+    -from typing import Optional, List, Tuple
+    +from typing import List, Optional, Tuple
+     
+     
+     def get_weather_alert(
+
+❌ [ERROR] scripts/log_summary.py
+    ERROR: scripts/log_summary.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/log_summary.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/log_summary.py:after	2025-12-04 04:26:02.927672
+    @@ -10,16 +10,16 @@
+     """
+     
+     import sys
+    +from datetime import datetime, timezone
+     from pathlib import Path
+    -from datetime import datetime, timezone
+     from typing import Dict, List
+     
+     # Add parent directory to path for imports
+     sys.path.insert(0, str(Path(__file__).parent))
+     
+     from lib.card_base import CardBase  # noqa: E402
+    +from lib.metrics import get_all_workflow_metrics  # noqa: E402
+     from lib.utils import escape_xml  # noqa: E402
+    -from lib.metrics import get_all_workflow_metrics  # noqa: E402
+     
+     
+     class WorkflowPerformanceCard(CardBase):
+
+❌ [ERROR] scripts/oura-mood-engine.py
+    ERROR: scripts/oura-mood-engine.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/oura-mood-engine.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/oura-mood-engine.py:after	2025-12-04 04:26:03.195976
+    @@ -7,12 +7,11 @@
+     
+     import json
+     import sys
+    +from datetime import datetime, timezone
+     from pathlib import Path
+    -from datetime import datetime, timezone
+     from typing import Any, Dict
+     
+    -from lib.utils import safe_get, load_json
+    -
+    +from lib.utils import load_json, safe_get
+     
+     # Mood definitions with thresholds and visual attributes
+     MOOD_CATEGORIES = {
+
+❌ [ERROR] scripts/record-workflow-metrics.py
+    ERROR: scripts/record-workflow-metrics.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/record-workflow-metrics.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/record-workflow-metrics.py:after	2025-12-04 04:26:03.430635
+    @@ -6,8 +6,8 @@
+     success/failure status, run time, and any error messages.
+     """
+     
+    +import argparse
+     import sys
+    -import argparse
+     from pathlib import Path
+     
+     # Add parent directory to path for imports
+
+❌ [ERROR] scripts/store-historical-snapshot.py
+    ERROR: scripts/store-historical-snapshot.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/store-historical-snapshot.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/store-historical-snapshot.py:after	2025-12-04 04:26:03.655394
+    @@ -14,16 +14,16 @@
+         python store-historical-snapshot.py [--output-dir data/snapshots]
+     """
+     
+    +import json
+    +import statistics
+     import sys
+    -import json
+    +from datetime import datetime, timedelta, timezone
+     from pathlib import Path
+    -from datetime import datetime, timedelta, timezone
+     from typing import Dict, List, Optional
+    -import statistics
+     
+     from lib.utils import (
+    +    safe_get,
+         try_load_json,
+    -    safe_get,
+     )
+
+✅ [SUCCESS] scripts/update-readme.py
+❌ [ERROR] scripts/validate-data-quality.py
+    ERROR: scripts/validate-data-quality.py Imports are incorrectly sorted and/or formatted.
+    --- scripts/validate-data-quality.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/validate-data-quality.py:after	2025-12-04 04:26:04.101004
+    @@ -6,16 +6,16 @@
+     It logs warnings for data quality issues without causing workflow failures.
+     """
+     
+    -import sys
+     import argparse
+     import json
+    +import sys
+     from pathlib import Path
+    -from typing import Optional, Dict, Any
+    +from typing import Any, Dict, Optional
+     
+     # Add parent directory to path for imports
+     sys.path.insert(0, str(Path(__file__).parent))
+     
+    -from lib.data_quality import validate_data_quality, log_data_quality_summary
+    +from lib.data_quality import log_data_quality_summary, validate_data_quality
+     
+     
+     def main() -> None:
+
+✅ [SUCCESS] tests/__init__.py
+❌ [ERROR] tests/test_card_generators.py
+    ERROR: tests/test_card_generators.py Imports are incorrectly sorted and/or formatted.
+    --- tests/test_card_generators.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_card_generators.py:after	2025-12-04 04:26:04.472623
+    @@ -8,9 +8,10 @@
+     change, these should be updated accordingly.
+     """
+     
+    +import os
+    +import sys
+    +
+     import pytest
+    -import sys
+    -import os
+     
+     # Add scripts directory to path for imports
+     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
+
+❌ [ERROR] tests/test_change_detection.py
+    ERROR: tests/test_change_detection.py Imports are incorrectly sorted and/or formatted.
+    --- tests/test_change_detection.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_change_detection.py:after	2025-12-04 04:26:04.689284
+    @@ -5,23 +5,24 @@
+     
+     import json
+     import subprocess
+    +
+    +# Import the module to test
+    +import sys
+     import tempfile
+     from pathlib import Path
+     
+     import pytest
+     
+    -# Import the module to test
+    -import sys
+     sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
+     
+     from lib.change_detection import (
+         compute_file_hash,
+         compute_json_hash,
+    +    has_data_changed,
+         load_hash_cache,
+         save_hash_cache,
+    -    has_data_changed,
+    +    should_regenerate_svg,
+         update_hash_cache,
+    -    should_regenerate_svg,
+     )
+
+❌ [ERROR] tests/test_data_quality.py
+    ERROR: tests/test_data_quality.py Imports are incorrectly sorted and/or formatted.
+    --- tests/test_data_quality.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_data_quality.py:after	2025-12-04 04:26:04.938174
+    @@ -3,19 +3,20 @@
+     Unit tests for scripts/lib/data_quality.py
+     """
+     
+    +import math
+    +import os
+    +import sys
+    +
+     import pytest
+    -import sys
+    -import os
+    -import math
+     
+     # Add scripts directory to path for imports
+     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
+     
+     from lib.data_quality import (
+    -    is_nan_value,
+         check_missing_fields,
+         check_nan_values,
+         check_value_range,
+    +    is_nan_value,
+         validate_data_quality,
+     )
+
+✅ [SUCCESS] tests/test_developer_dashboard.py
+❌ [ERROR] tests/test_fallback.py
+    ERROR: tests/test_fallback.py Imports are incorrectly sorted and/or formatted.
+    --- tests/test_fallback.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_fallback.py:after	2025-12-04 04:26:05.421195
+    @@ -16,13 +16,13 @@
+     sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
+     
+     from lib.utils import (
+    +    fallback_exists,
+    +    generate_card_with_fallback,
+    +    handle_error_with_fallback,
+    +    log_fallback_used,
+    +    try_load_and_validate_json,
+         try_load_json,
+         try_validate_json,
+    -    try_load_and_validate_json,
+    -    fallback_exists,
+    -    log_fallback_used,
+    -    generate_card_with_fallback,
+    -    handle_error_with_fallback,
+     )
+
+❌ [ERROR] tests/test_location_diagnostics.py
+    ERROR: tests/test_location_diagnostics.py Imports are incorrectly sorted and/or formatted.
+    --- tests/test_location_diagnostics.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_location_diagnostics.py:after	2025-12-04 04:26:05.636755
+    @@ -12,9 +12,9 @@
+     import sys
+     import tempfile
+     from pathlib import Path
+    +
+    +import pytest
+     from PIL import Image
+    -
+    -import pytest
+     
+     # Add scripts directory to path for imports
+     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
+
+❌ [ERROR] tests/test_log_summary.py
+    ERROR: tests/test_log_summary.py Imports are incorrectly sorted and/or formatted.
+    --- tests/test_log_summary.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_log_summary.py:after	2025-12-04 04:26:05.836377
+    @@ -3,10 +3,10 @@
+     Unit tests for scripts/log_summary.py
+     """
+     
+    +import os
+     import sys
+    -import os
+    +import tempfile
+     from pathlib import Path
+    -import tempfile
+     
+     # Add scripts directory to path for imports
+     sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
+
+✅ [SUCCESS] tests/test_mapbox_integration.py
+❌ [ERROR] tests/test_metrics.py
+    ERROR: tests/test_metrics.py Imports are incorrectly sorted and/or formatted.
+    --- tests/test_metrics.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_metrics.py:after	2025-12-04 04:26:06.344363
+    @@ -4,23 +4,24 @@
+     """
+     
+     import json
+    +import os
+    +import shutil
+    +import sys
+    +import tempfile
+    +from pathlib import Path
+    +
+     import pytest
+    -import sys
+    -import os
+    -from pathlib import Path
+    -import tempfile
+    -import shutil
+     
+     # Add scripts directory to path for imports
+     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
+     
+     from lib.metrics import (
+    +    check_failure_threshold,
+    +    get_all_workflow_metrics,
+    +    load_workflow_metrics,
+         record_workflow_run,
+    -    load_workflow_metrics,
+    +    reset_failure_count,
+         save_workflow_metrics,
+    -    check_failure_threshold,
+    -    reset_failure_count,
+    -    get_all_workflow_metrics,
+     )
+
+❌ [ERROR] tests/test_theme_validation.py
+    ERROR: tests/test_theme_validation.py Imports are incorrectly sorted and/or formatted.
+    --- tests/test_theme_validation.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_theme_validation.py:after	2025-12-04 04:26:06.552647
+    @@ -3,17 +3,18 @@
+     Unit tests for theme.json schema validation.
+     """
+     
+    -import pytest
+    +import json
+    +import os
+     import sys
+    -import os
+    -import json
+     import tempfile
+     from pathlib import Path
+     
+    +import pytest
+    +
+     # Add scripts directory to path for imports
+     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
+     
+    -from lib.utils import load_theme, load_schema, try_validate_json
+    +from lib.utils import load_schema, load_theme, try_validate_json
+     
+     
+     class TestThemeSchema:
+
+❌ [ERROR] tests/test_time_utils.py
+    ERROR: tests/test_time_utils.py Imports are incorrectly sorted and/or formatted.
+    --- tests/test_time_utils.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_time_utils.py:after	2025-12-04 04:26:06.796560
+    @@ -3,8 +3,10 @@
+     Unit tests for time-related utility functions.
+     """
+     
+    +from datetime import datetime, timedelta, timezone
+    +
+     import pytest
+    -from datetime import datetime, timezone, timedelta
+    +
+     from scripts.lib.utils import format_time_since, is_data_stale
+
+❌ [ERROR] tests/test_utils.py
+    ERROR: tests/test_utils.py Imports are incorrectly sorted and/or formatted.
+    --- tests/test_utils.py:before	2025-12-04 04:20:54.517687
+    +++ tests/test_utils.py:after	2025-12-04 04:26:07.023811
+    @@ -3,21 +3,22 @@
+     Unit tests for scripts/lib/utils.py utility functions.
+     """
+     
+    -import pytest
+    +import os
+     import sys
+    -import os
+     import tempfile
+     from pathlib import Path
+     
+    +import pytest
+    +
+     # Add scripts directory to path for imports
+     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
+     
+     from lib.utils import (
+         escape_xml,
+    +    fallback_exists,
+    +    generate_sparkline_path,
+         safe_get,
+         safe_value,
+    -    generate_sparkline_path,
+    -    fallback_exists,
+     )
+

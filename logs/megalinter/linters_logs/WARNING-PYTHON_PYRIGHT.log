@@ -80,11 +80,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
       scripts/fetch-developer-stats.py:142:26 - warning: Unnecessary isinstance call; "Dict[Unknown, Unknown]" is always an instance of "dict[Unknown, Unknown]" (reportUnnecessaryIsInstance)
       scripts/fetch-developer-stats.py:143:17 - error: Type of "lang" is unknown (reportUnknownVariableType)
       scripts/fetch-developer-stats.py:143:23 - error: Type of "bytes_count" is unknown (reportUnknownVariableType)
-      scripts/fetch-developer-stats.py:144:41 - error: Type of "get" is partially unknown
-        Type of "get" is "Overload[(key: Unknown, default: None = None, /) -> (Unknown | None), (key: Unknown, default: Unknown, /) -> Unknown, (key: Unknown, default: _T@get, /) -> (Unknown | _T@get)]" (reportUnknownMemberType)
       scripts/fetch-developer-stats.py:144:61 - error: Argument type is unknown
         Argument corresponds to parameter "key" in function "get" (reportUnknownArgumentType)
-      scripts/fetch-developer-stats.py:145:12 - error: Return type, "dict[Unknown, Unknown]", is partially unknown (reportUnknownVariableType)
       scripts/fetch-developer-stats.py:161:22 - error: Argument type is partially unknown
         Argument corresponds to parameter "iterable" in function "sum"
         Argument type is "dict_values[Unknown, Unknown]" (reportUnknownArgumentType)
@@ -112,15 +109,6 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
       scripts/fetch-developer-stats.py:182:35 - error: Argument type is unknown
         Argument corresponds to parameter "object" in function "append" (reportUnknownArgumentType)
       scripts/fetch-developer-stats.py:183:12 - error: Return type, "list[Unknown]", is partially unknown (reportUnknownVariableType)
-      scripts/fetch-developer-stats.py:201:12 - error: Type "dict[str, list[list[int]] | list[str]]" is not assignable to return type "Dict[str, List[int]]"
-        "list[list[int]]" is not assignable to "List[int]"
-          Type parameter "_T@list" is invariant, but "list[int]" is not the same as "int"
-          Consider switching from "list" to "Sequence" which is covariant
-        "Literal['Mon']" is not assignable to "int"
-        "Literal['Tue']" is not assignable to "int"
-        "Literal['Wed']" is not assignable to "int"
-        "Literal['Thu']" is not assignable to "int"
-        "Literal['Fri']" is not assignable to "int" (reportReturnType)
       scripts/fetch-developer-stats.py:224:26 - error: Type of parameter "events" is partially unknown
         Parameter type is "List[Dict[Unknown, Unknown]]" (reportUnknownParameterType)
       scripts/fetch-developer-stats.py:224:39 - error: Expected type arguments for generic class "Dict" (reportMissingTypeArgument)
@@ -182,7 +170,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
       scripts/fetch-developer-stats.py:314:5 - error: Type of "top_repos" is partially unknown
         Type of "top_repos" is "List[Dict[Unknown, Unknown]]" (reportUnknownVariableType)
       scripts/fetch-developer-stats.py:320:5 - error: Type of "stats" is partially unknown
-        Type of "stats" is "dict[str, str | Unknown | int | dict[str, List[int] | int] | Dict[str, int] | Dict[str, float] | List[Dict[Unknown, Unknown]]]" (reportUnknownVariableType)
+        Type of "stats" is "dict[str, str | Unknown | int | dict[str, List[int] | int | List[List[int]] | List[str]] | Dict[str, int] | Dict[str, float] | List[Dict[Unknown, Unknown]]]" (reportUnknownVariableType)
       scripts/fetch-developer-stats.py:322:17 - error: Type of "get" is partially unknown
         Type of "get" is "Overload[(key: Unknown, default: None = None, /) -> (Unknown | None), (key: Unknown, default: Unknown, /) -> Unknown, (key: Unknown, default: _T@get, /) -> (Unknown | _T@get)]" (reportUnknownMemberType)
       scripts/fetch-developer-stats.py:323:23 - error: Type of "get" is partially unknown
@@ -195,9 +183,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
         Type of "get" is "Overload[(key: Unknown, default: None = None, /) -> (Unknown | None), (key: Unknown, default: Unknown, /) -> Unknown, (key: Unknown, default: _T@get, /) -> (Unknown | _T@get)]" (reportUnknownMemberType)
       scripts/fetch-developer-stats.py:328:22 - error: Type of "get" is partially unknown
         Type of "get" is "Overload[(key: Unknown, default: None = None, /) -> (Unknown | None), (key: Unknown, default: Unknown, /) -> Unknown, (key: Unknown, default: _T@get, /) -> (Unknown | _T@get)]" (reportUnknownMemberType)
-      scripts/fetch-developer-stats.py:342:12 - error: Return type, "dict[str, str | Unknown | int | dict[str, List[int] | int] | Dict[str, int] | Dict[str, float] | List[Dict[Unknown, Unknown]]]", is partially unknown (reportUnknownVariableType)
-      scripts/fetch-developer-stats.py:361:14 - error: Import "logging_utils" could not be resolved (reportMissingImports)
-      scripts/fetch-developer-stats.py:361:35 - error: Type of "setup_logging" is unknown (reportUnknownVariableType)
+      scripts/fetch-developer-stats.py:342:12 - error: Return type, "dict[str, str | Unknown | int | dict[str, List[int] | int | List[List[int]] | List[str]] | Dict[str, int] | Dict[str, float] | List[Dict[Unknown, Unknown]]]", is partially unknown (reportUnknownVariableType)
       scripts/fetch-developer-stats.py:362:9 - error: Type of "logger" is unknown (reportUnknownVariableType)
       scripts/fetch-developer-stats.py:363:9 - error: Type of "log_workflow_start" is unknown (reportUnknownMemberType)
       scripts/fetch-developer-stats.py:372:17 - error: Type of "error" is unknown (reportUnknownMemberType)
@@ -207,7 +193,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
       scripts/fetch-developer-stats.py:399:9 - error: Type of "info" is unknown (reportUnknownMemberType)
       scripts/fetch-developer-stats.py:400:9 - error: Type of "info" is unknown (reportUnknownMemberType)
       scripts/fetch-developer-stats.py:408:9 - error: Type of "log_workflow_end" is unknown (reportUnknownMemberType)
-    119 errors, 3 warnings, 0 informations
+    114 errors, 3 warnings, 0 informations
 
 ❌ [ERROR] scripts/generate-card.py
     venv .venv subdirectory not found in venv path config.
@@ -288,32 +274,32 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
       scripts/generate-card.py:247:5 - error: Type of "has_fallback" is unknown (reportUnknownVariableType)
       scripts/generate-card.py:250:5 - error: Type of "metadata" is unknown (reportUnknownVariableType)
       scripts/generate-card.py:250:15 - error: Type of "error" is unknown (reportUnknownVariableType)
-      scripts/generate-card.py:264:19 - error: Type of "get" is unknown (reportUnknownMemberType)
-      scripts/generate-card.py:264:19 - error: Argument type is unknown
-        Argument corresponds to parameter "title" in function "generate_svg" (reportUnknownArgumentType)
-      scripts/generate-card.py:265:20 - error: Type of "get" is unknown (reportUnknownMemberType)
-      scripts/generate-card.py:265:20 - error: Argument type is unknown
-        Argument corresponds to parameter "artist" in function "generate_svg" (reportUnknownArgumentType)
       scripts/generate-card.py:266:19 - error: Type of "get" is unknown (reportUnknownMemberType)
       scripts/generate-card.py:266:19 - error: Argument type is unknown
+        Argument corresponds to parameter "title" in function "generate_svg" (reportUnknownArgumentType)
+      scripts/generate-card.py:267:20 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate-card.py:267:20 - error: Argument type is unknown
+        Argument corresponds to parameter "artist" in function "generate_svg" (reportUnknownArgumentType)
+      scripts/generate-card.py:268:19 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate-card.py:268:19 - error: Argument type is unknown
         Argument corresponds to parameter "genre" in function "generate_svg" (reportUnknownArgumentType)
-      scripts/generate-card.py:267:25 - error: Type of "get" is unknown (reportUnknownMemberType)
-      scripts/generate-card.py:267:25 - error: Argument type is unknown
+      scripts/generate-card.py:269:25 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate-card.py:269:25 - error: Argument type is unknown
         Argument corresponds to parameter "duration_ms" in function "generate_svg" (reportUnknownArgumentType)
-      scripts/generate-card.py:268:28 - error: Type of "get" is unknown (reportUnknownMemberType)
-      scripts/generate-card.py:268:28 - error: Argument type is unknown
+      scripts/generate-card.py:270:28 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate-card.py:270:28 - error: Argument type is unknown
         Argument corresponds to parameter "playback_count" in function "generate_svg" (reportUnknownArgumentType)
-      scripts/generate-card.py:269:24 - error: Type of "get" is unknown (reportUnknownMemberType)
-      scripts/generate-card.py:269:24 - error: Argument type is unknown
+      scripts/generate-card.py:271:24 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate-card.py:271:24 - error: Argument type is unknown
         Argument corresponds to parameter "created_at" in function "generate_svg" (reportUnknownArgumentType)
-      scripts/generate-card.py:270:27 - error: Type of "get" is unknown (reportUnknownMemberType)
-      scripts/generate-card.py:270:27 - error: Argument type is unknown
+      scripts/generate-card.py:272:27 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate-card.py:272:27 - error: Argument type is unknown
         Argument corresponds to parameter "permalink_url" in function "generate_svg" (reportUnknownArgumentType)
-      scripts/generate-card.py:272:24 - error: Type of "get" is unknown (reportUnknownMemberType)
-      scripts/generate-card.py:272:24 - error: Argument type is unknown
+      scripts/generate-card.py:274:24 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate-card.py:274:24 - error: Argument type is unknown
         Argument corresponds to parameter "updated_at" in function "generate_svg" (reportUnknownArgumentType)
-      scripts/generate-card.py:280:12 - error: "svg" is possibly unbound (reportPossiblyUnboundVariable)
-      scripts/generate-card.py:291:21 - error: "svg" is possibly unbound (reportPossiblyUnboundVariable)
+      scripts/generate-card.py:282:12 - error: "svg" is possibly unbound (reportPossiblyUnboundVariable)
+      scripts/generate-card.py:293:21 - error: "svg" is possibly unbound (reportPossiblyUnboundVariable)
     89 errors, 3 warnings, 0 informations
 
 ❌ [ERROR] scripts/generate-consolidated-dashboard.py
@@ -534,7 +520,6 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
       scripts/generate-developer-dashboard.py:103:22 - error: Argument type is partially unknown
         Argument corresponds to parameter "iterable" in function "join"
         Argument type is "list[Unknown]" (reportUnknownArgumentType)
-      scripts/generate-developer-dashboard.py:116:5 - error: Type of "path" is unknown (reportUnknownVariableType)
       scripts/generate-developer-dashboard.py:128:5 - error: Type of parameter "items" is partially unknown
         Parameter type is "List[Dict[Unknown, Unknown]]" (reportUnknownParameterType)
       scripts/generate-developer-dashboard.py:128:17 - error: Expected type arguments for generic class "Dict" (reportMissingTypeArgument)
@@ -768,7 +753,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
       scripts/generate-developer-dashboard.py:349:9 - error: Type of "time_since_escaped" is unknown (reportUnknownVariableType)
       scripts/generate-developer-dashboard.py:353:64 - error: "font_size_xs" is not defined (reportUndefinedVariable)
       scripts/generate-developer-dashboard.py:456:5 - error: Type of "success" is unknown (reportUnknownVariableType)
-    169 errors, 8 warnings, 0 informations
+    168 errors, 8 warnings, 0 informations
 
 ❌ [ERROR] scripts/generate-fallback-map.py
     venv .venv subdirectory not found in venv path config.
@@ -793,14 +778,6 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
       scripts/generate-fallback-map.py:48:22 - error: Type of "truetype" is unknown (reportUnknownMemberType)
       scripts/generate-fallback-map.py:49:9 - error: Type of "coord_font" is unknown (reportUnknownVariableType)
       scripts/generate-fallback-map.py:49:22 - error: Type of "truetype" is unknown (reportUnknownMemberType)
-      scripts/generate-fallback-map.py:52:9 - error: Type of "title_font" is unknown (reportUnknownVariableType)
-      scripts/generate-fallback-map.py:52:22 - error: Type of "load_default" is unknown (reportUnknownMemberType)
-      scripts/generate-fallback-map.py:53:9 - error: Type of "text_font" is unknown (reportUnknownVariableType)
-      scripts/generate-fallback-map.py:53:21 - error: Type of "load_default" is unknown (reportUnknownMemberType)
-      scripts/generate-fallback-map.py:54:9 - error: Type of "small_font" is unknown (reportUnknownVariableType)
-      scripts/generate-fallback-map.py:54:22 - error: Type of "load_default" is unknown (reportUnknownMemberType)
-      scripts/generate-fallback-map.py:55:9 - error: Type of "coord_font" is unknown (reportUnknownVariableType)
-      scripts/generate-fallback-map.py:55:22 - error: Type of "load_default" is unknown (reportUnknownMemberType)
       scripts/generate-fallback-map.py:60:5 - error: Type of "text" is unknown (reportUnknownMemberType)
       scripts/generate-fallback-map.py:64:5 - error: Type of "text" is unknown (reportUnknownMemberType)
       scripts/generate-fallback-map.py:68:5 - error: Type of "text" is unknown (reportUnknownMemberType)
@@ -814,7 +791,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
       scripts/generate-fallback-map.py:94:5 - error: Type of "rectangle" is unknown (reportUnknownMemberType)
       scripts/generate-fallback-map.py:95:5 - error: Type of "rectangle" is unknown (reportUnknownMemberType)
       scripts/generate-fallback-map.py:100:5 - error: Type of "save" is unknown (reportUnknownMemberType)
-    40 errors, 1 warning, 0 informations
+    32 errors, 1 warning, 0 informations
 
 ❌ [ERROR] scripts/generate-health-dashboard.py
     venv .venv subdirectory not found in venv path config.
@@ -1066,7 +1043,6 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
     venv .venv subdirectory not found in venv path config.
     scripts/generate-interactive-dashboard.py
       scripts/generate-interactive-dashboard.py:16:8 - warning: Import "json" is not accessed (reportUnusedImport)
-      scripts/generate-interactive-dashboard.py:24:6 - error: Import "utils" could not be resolved (reportMissingImports)
       scripts/generate-interactive-dashboard.py:25:5 - error: Type of "escape_xml" is unknown (reportUnknownVariableType)
       scripts/generate-interactive-dashboard.py:26:5 - error: Type of "safe_value" is unknown (reportUnknownVariableType)
       scripts/generate-interactive-dashboard.py:27:5 - error: Type of "load_theme" is unknown (reportUnknownVariableType)
@@ -1277,7 +1253,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
       scripts/generate-interactive-dashboard.py:357:5 - error: Type of "stroke_opacity" is unknown (reportUnknownVariableType)
       scripts/generate-interactive-dashboard.py:357:22 - error: Type of "get" is unknown (reportUnknownMemberType)
       scripts/generate-interactive-dashboard.py:357:22 - error: Type of "get" is unknown (reportUnknownMemberType)
-    171 errors, 9 warnings, 0 informations
+    170 errors, 9 warnings, 0 informations
 
 ❌ [ERROR] scripts/generate-location-card.py
     venv .venv subdirectory not found in venv path config.
@@ -1566,10 +1542,10 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
       scripts/generate-oura-mood-card.py:347:5 - error: Type of "has_fallback" is unknown (reportUnknownVariableType)
       scripts/generate-oura-mood-card.py:350:5 - error: Type of "mood" is unknown (reportUnknownVariableType)
       scripts/generate-oura-mood-card.py:350:11 - error: Type of "error" is unknown (reportUnknownVariableType)
-      scripts/generate-oura-mood-card.py:367:28 - error: Argument type is unknown
+      scripts/generate-oura-mood-card.py:369:28 - error: Argument type is unknown
         Argument corresponds to parameter "mood" in function "generate_svg" (reportUnknownArgumentType)
-      scripts/generate-oura-mood-card.py:374:12 - error: "svg" is possibly unbound (reportPossiblyUnboundVariable)
-      scripts/generate-oura-mood-card.py:385:21 - error: "svg" is possibly unbound (reportPossiblyUnboundVariable)
+      scripts/generate-oura-mood-card.py:376:12 - error: "svg" is possibly unbound (reportPossiblyUnboundVariable)
+      scripts/generate-oura-mood-card.py:387:21 - error: "svg" is possibly unbound (reportPossiblyUnboundVariable)
     147 errors, 6 warnings, 0 informations
 
 ❌ [ERROR] scripts/generate-status-page.py
@@ -1734,7 +1710,6 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
     venv .venv subdirectory not found in venv path config.
     scripts/generate-themed-dashboard.py
       scripts/generate-themed-dashboard.py:14:8 - warning: Import "json" is not accessed (reportUnusedImport)
-      scripts/generate-themed-dashboard.py:22:6 - error: Import "utils" could not be resolved (reportMissingImports)
       scripts/generate-themed-dashboard.py:23:5 - error: Type of "escape_xml" is unknown (reportUnknownVariableType)
       scripts/generate-themed-dashboard.py:24:5 - error: Type of "safe_value" is unknown (reportUnknownVariableType)
       scripts/generate-themed-dashboard.py:25:5 - error: Type of "load_theme" is unknown (reportUnknownVariableType)
@@ -1913,7 +1888,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
       scripts/generate-themed-dashboard.py:281:5 - error: Type of "stroke_opacity" is unknown (reportUnknownVariableType)
       scripts/generate-themed-dashboard.py:281:22 - error: Type of "get" is unknown (reportUnknownMemberType)
       scripts/generate-themed-dashboard.py:281:22 - error: Type of "get" is unknown (reportUnknownMemberType)
-    147 errors, 8 warnings, 0 informations
+    146 errors, 8 warnings, 0 informations
 
 ❌ [ERROR] scripts/generate-weather-card.py
     venv .venv subdirectory not found in venv path config.
@@ -2235,12 +2210,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
       scripts/lib/data_quality.py:201:5 - error: Type of "results" is partially unknown
         Type of "results" is "dict[str, bool | list[Unknown] | dict[Unknown, Unknown]]" (reportUnknownVariableType)
       scripts/lib/data_quality.py:225:17 - error: Type of "value" is unknown (reportUnknownVariableType)
-      scripts/lib/data_quality.py:230:25 - error: "__setitem__" method not defined on type "bool" (reportIndexIssue)
-      scripts/lib/data_quality.py:230:25 - error: No overloads for "__setitem__" match the provided arguments (reportCallIssue)
-      scripts/lib/data_quality.py:230:25 - error: Argument of type "str" cannot be assigned to parameter "key" of type "slice[Any, Any, Any]" in function "__setitem__"
-        "str" is not assignable to "slice[Any, Any, Any]" (reportArgumentType)
       scripts/lib/data_quality.py:237:12 - error: Return type, "dict[str, bool | list[Unknown] | dict[Unknown, Unknown]]", is partially unknown (reportUnknownVariableType)
-    21 errors, 1 warning, 0 informations
+    18 errors, 1 warning, 0 informations
 
 ❌ [ERROR] scripts/lib/logging_utils.py
     venv .venv subdirectory not found in venv path config.
@@ -2376,10 +2347,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
       scripts/lib/utils.py:294:21 - error: Expected type arguments for generic class "Dict" (reportMissingTypeArgument)
       scripts/lib/utils.py:311:5 - error: Type of "data" is partially unknown
         Type of "data" is "Dict[Unknown, Unknown] | None" (reportUnknownVariableType)
-      scripts/lib/utils.py:315:42 - error: Argument of type "Dict[Unknown, Unknown] | None" cannot be assigned to parameter "data" of type "Dict[Unknown, Unknown]" in function "try_validate_json"
-        Type "Dict[Unknown, Unknown] | None" is not assignable to type "Dict[Unknown, Unknown]"
-          "None" is not assignable to "Dict[Unknown, Unknown]" (reportArgumentType)
-      scripts/lib/utils.py:319:12 - error: Return type, "tuple[Dict[Unknown, Unknown] | None, None]", is partially unknown (reportUnknownVariableType)
+      scripts/lib/utils.py:319:12 - error: Return type, "tuple[Dict[Unknown, Unknown], None]", is partially unknown (reportUnknownVariableType)
       scripts/lib/utils.py:414:5 - error: Type of parameter "generator_func" is partially unknown
         Parameter type is "(Dict[Unknown, Unknown]) -> str" (reportUnknownParameterType)
       scripts/lib/utils.py:414:31 - error: Expected type arguments for generic class "Dict" (reportMissingTypeArgument)
@@ -2387,9 +2355,6 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
         Type of "data" is "Dict[Unknown, Unknown] | None" (reportUnknownVariableType)
       scripts/lib/utils.py:449:9 - error: Type of "data" is partially unknown
         Type of "data" is "Dict[Unknown, Unknown] | None" (reportUnknownVariableType)
-      scripts/lib/utils.py:465:30 - error: Argument of type "Dict[Unknown, Unknown] | None" cannot be assigned to parameter of type "Dict[Unknown, Unknown]"
-        Type "Dict[Unknown, Unknown] | None" is not assignable to type "Dict[Unknown, Unknown]"
-          "None" is not assignable to "Dict[Unknown, Unknown]" (reportArgumentType)
       scripts/lib/utils.py:547:9 - error: Type of "append" is partially unknown
         Type of "append" is "(object: Unknown, /) -> None" (reportUnknownMemberType)
       scripts/lib/utils.py:549:26 - error: Argument type is partially unknown
@@ -2566,15 +2531,13 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
       scripts/lib/utils.py:1356:56 - error: Type of "LANCZOS" is unknown (reportUnknownMemberType)
       scripts/lib/utils.py:1356:56 - error: "Image" is possibly unbound (reportPossiblyUnboundVariable)
       scripts/lib/utils.py:1359:16 - error: Type of "mode" is unknown (reportUnknownMemberType)
-      scripts/lib/utils.py:1360:17 - error: Type of "img" is unknown (reportUnknownVariableType)
-      scripts/lib/utils.py:1360:23 - error: Type of "convert" is unknown (reportUnknownMemberType)
       scripts/lib/utils.py:1362:22 - error: "io" is possibly unbound (reportPossiblyUnboundVariable)
       scripts/lib/utils.py:1363:13 - error: Type of "save" is unknown (reportUnknownMemberType)
       scripts/lib/utils.py:1390:16 - error: Return type, "Unknown | bytes", is partially unknown (reportUnknownVariableType)
       scripts/lib/utils.py:1451:21 - error: Type of parameter "data" is partially unknown
         Parameter type is "Dict[Unknown, Unknown]" (reportUnknownParameterType)
       scripts/lib/utils.py:1451:27 - error: Expected type arguments for generic class "Dict" (reportMissingTypeArgument)
-    199 errors, 2 warnings, 0 informations
+    195 errors, 2 warnings, 0 informations
 
 ❌ [ERROR] scripts/lib/weather_alerts.py
     venv .venv subdirectory not found in venv path config.

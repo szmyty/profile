@@ -4,9 +4,19 @@ See documentation on https://megalinter.io/8.8.0/descriptors/yaml_prettier/
 
 ✅ [SUCCESS] .github/FUNDING.yml
 ✅ [SUCCESS] .github/actionlint.yaml
+❌ [ERROR] .github/actions/pip-install/action.yml
+    Checking formatting...
+    [warn] .github/actions/pip-install/action.yml
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
 ❌ [ERROR] .github/actions/setup-environment/action.yml
     Checking formatting...
     [warn] .github/actions/setup-environment/action.yml
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] .github/workflows/deploy-dashboard.yml
+    Checking formatting...
+    [warn] .github/workflows/deploy-dashboard.yml
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
 ❌ [ERROR] .github/workflows/developer.yml

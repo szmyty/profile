@@ -37,6 +37,32 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
 ✅ [SUCCESS] .github/FUNDING.yml
 ✅ [SUCCESS] .github/GOVERNANCE.md
 ✅ [SUCCESS] .github/actionlint.yaml
+❌ [ERROR] .github/actions/pip-install/README.md
+    .github/actions/pip-install/README.md:
+    	20: Wrong amount of left-padding spaces(want multiple of 4)
+    	23: Wrong amount of left-padding spaces(want multiple of 4)
+    	32: Wrong amount of left-padding spaces(want multiple of 4)
+    	35: Wrong amount of left-padding spaces(want multiple of 4)
+    	44: Wrong amount of left-padding spaces(want multiple of 4)
+    	47-48: Wrong amount of left-padding spaces(want multiple of 4)
+    	99: Wrong amount of left-padding spaces(want multiple of 4)
+    	106-107: Wrong amount of left-padding spaces(want multiple of 4)
+    	118-119: Wrong amount of left-padding spaces(want multiple of 4)
+    	126-127: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    10 errors found
+
+❌ [ERROR] .github/actions/pip-install/action.yml
+    .github/actions/pip-install/action.yml:
+    	33: Trailing whitespace
+    	36: Trailing whitespace
+    	42: Trailing whitespace
+    	62: Trailing whitespace
+    	70: Trailing whitespace
+    	73: Trailing whitespace
+    
+    6 errors found
+
 ❌ [ERROR] .github/actions/setup-environment/README.md
     .github/actions/setup-environment/README.md:
     	19: Wrong amount of left-padding spaces(want multiple of 4)
@@ -50,15 +76,15 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     	72: Wrong amount of left-padding spaces(want multiple of 4)
     	79: Wrong amount of left-padding spaces(want multiple of 4)
     	82-86: Wrong amount of left-padding spaces(want multiple of 4)
-    	117: Wrong amount of left-padding spaces(want multiple of 4)
     	120: Wrong amount of left-padding spaces(want multiple of 4)
-    	123-124: Wrong amount of left-padding spaces(want multiple of 4)
-    	126: Wrong amount of left-padding spaces(want multiple of 4)
-    	128-129: Wrong amount of left-padding spaces(want multiple of 4)
-    	131: Wrong amount of left-padding spaces(want multiple of 4)
-    	133: Wrong amount of left-padding spaces(want multiple of 4)
-    	135: Wrong amount of left-padding spaces(want multiple of 4)
-    	143: Wrong amount of left-padding spaces(want multiple of 4)
+    	123: Wrong amount of left-padding spaces(want multiple of 4)
+    	126-127: Wrong amount of left-padding spaces(want multiple of 4)
+    	129: Wrong amount of left-padding spaces(want multiple of 4)
+    	131-132: Wrong amount of left-padding spaces(want multiple of 4)
+    	134: Wrong amount of left-padding spaces(want multiple of 4)
+    	136: Wrong amount of left-padding spaces(want multiple of 4)
+    	138: Wrong amount of left-padding spaces(want multiple of 4)
+    	146: Wrong amount of left-padding spaces(want multiple of 4)
     
     20 errors found
 
@@ -70,32 +96,48 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     2 errors found
 
 ✅ [SUCCESS] .github/linters/.gitkeep
+❌ [ERROR] .github/workflows/deploy-dashboard.yml
+    .github/workflows/deploy-dashboard.yml:
+    	37: Trailing whitespace
+    	41: Trailing whitespace
+    	48: Trailing whitespace
+    	53: Trailing whitespace
+    	64: Trailing whitespace
+    	72: Trailing whitespace
+    	76: Trailing whitespace
+    	83: Trailing whitespace
+    	88: Trailing whitespace
+    	91: Trailing whitespace
+    	103: Trailing whitespace
+    
+    11 errors found
+
 ❌ [ERROR] .github/workflows/developer.yml
     .github/workflows/developer.yml:
     	23: Trailing whitespace
-    	41: Trailing whitespace
-    	48: Trailing whitespace
-    	55: Trailing whitespace
-    	58: Trailing whitespace
-    	92: Trailing whitespace
-    	95: Trailing whitespace
-    	100: Trailing whitespace
-    	103: Trailing whitespace
+    	42: Trailing whitespace
+    	49: Trailing whitespace
+    	56: Trailing whitespace
+    	59: Trailing whitespace
+    	93: Trailing whitespace
+    	96: Trailing whitespace
+    	101: Trailing whitespace
+    	104: Trailing whitespace
     
     9 errors found
 
 ❌ [ERROR] .github/workflows/location-card.yml
     .github/workflows/location-card.yml:
     	23: Trailing whitespace
-    	39: Trailing whitespace
-    	59: Trailing whitespace
-    	66: Trailing whitespace
-    	73: Trailing whitespace
-    	76: Trailing whitespace
-    	123: Trailing whitespace
-    	126: Trailing whitespace
-    	129: Trailing whitespace
-    	132: Trailing whitespace
+    	40: Trailing whitespace
+    	60: Trailing whitespace
+    	67: Trailing whitespace
+    	74: Trailing whitespace
+    	77: Trailing whitespace
+    	124: Trailing whitespace
+    	127: Trailing whitespace
+    	130: Trailing whitespace
+    	133: Trailing whitespace
     
     10 errors found
 
@@ -126,28 +168,28 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     	111: Trailing whitespace
     	118: Trailing whitespace
     	121: Trailing whitespace
-    	149: Trailing whitespace
-    	156: Trailing whitespace
-    	163: Trailing whitespace
-    	279: Trailing whitespace
-    	305: Trailing whitespace
-    	311: Trailing whitespace
-    	317: Trailing whitespace
-    	331: Trailing whitespace
-    	334: Trailing whitespace
+    	150: Trailing whitespace
+    	157: Trailing whitespace
+    	164: Trailing whitespace
+    	284: Trailing whitespace
+    	310: Trailing whitespace
+    	316: Trailing whitespace
+    	322: Trailing whitespace
+    	336: Trailing whitespace
+    	339: Trailing whitespace
     
     18 errors found
 
 ❌ [ERROR] .github/workflows/soundcloud-card.yml
     .github/workflows/soundcloud-card.yml:
     	23: Trailing whitespace
-    	39: Trailing whitespace
-    	46: Trailing whitespace
-    	53: Trailing whitespace
-    	90: Trailing whitespace
-    	99: Trailing whitespace
-    	102: Trailing whitespace
-    	105: Trailing whitespace
+    	40: Trailing whitespace
+    	47: Trailing whitespace
+    	54: Trailing whitespace
+    	91: Trailing whitespace
+    	100: Trailing whitespace
+    	103: Trailing whitespace
+    	106: Trailing whitespace
     
     8 errors found
 
@@ -253,7 +295,12 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     
     7 errors found
 
-✅ [SUCCESS] README.md
+❌ [ERROR] README.md
+    README.md:
+    	119: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    1 errors found
+
 ❌ [ERROR] REPORT.md
     REPORT.md:
     	69-70: Wrong amount of left-padding spaces(want multiple of 4)
@@ -592,6 +639,582 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
 
 ✅ [SUCCESS] config/trivy-sbom.yaml
 ✅ [SUCCESS] config/trivy.yaml
+✅ [SUCCESS] dashboard-app/.gitignore
+❌ [ERROR] dashboard-app/README.md
+    dashboard-app/README.md:
+    	20-21: Wrong amount of left-padding spaces(want multiple of 4)
+    	24: Wrong amount of left-padding spaces(want multiple of 4)
+    	26-31: Wrong amount of left-padding spaces(want multiple of 4)
+    	33: Wrong amount of left-padding spaces(want multiple of 4)
+    	36: Wrong amount of left-padding spaces(want multiple of 4)
+    	39-40: Wrong amount of left-padding spaces(want multiple of 4)
+    	42: Wrong amount of left-padding spaces(want multiple of 4)
+    	54-55: Wrong amount of left-padding spaces(want multiple of 4)
+    	58-62: Wrong amount of left-padding spaces(want multiple of 4)
+    	65: Wrong amount of left-padding spaces(want multiple of 4)
+    	68-69: Wrong amount of left-padding spaces(want multiple of 4)
+    	71: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    12 errors found
+
+❌ [ERROR] dashboard-app/eslint.config.js
+    dashboard-app/eslint.config.js:
+    	9-10: Wrong amount of left-padding spaces(want multiple of 4)
+    	13-16: Wrong amount of left-padding spaces(want multiple of 4)
+    	19-20: Wrong amount of left-padding spaces(want multiple of 4)
+    	22: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
+
+❌ [ERROR] dashboard-app/index.html
+    dashboard-app/index.html:
+    	3: Wrong amount of left-padding spaces(want multiple of 4)
+    	8-9: Wrong amount of left-padding spaces(want multiple of 4)
+    	12: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    3 errors found
+
+✅ [SUCCESS] dashboard-app/package-lock.json
+❌ [ERROR] dashboard-app/package.json
+    dashboard-app/package.json:
+    	2-6: Wrong amount of left-padding spaces(want multiple of 4)
+    	11-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	15-16: Wrong amount of left-padding spaces(want multiple of 4)
+    	29: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
+
+✅ [SUCCESS] dashboard-app/public/achievements/achievements.json
+✅ [SUCCESS] dashboard-app/public/ai/identity.json
+❌ [ERROR] dashboard-app/public/config/theme.json
+    dashboard-app/public/config/theme.json:
+    	2-3: Wrong amount of left-padding spaces(want multiple of 4)
+    	5: Wrong amount of left-padding spaces(want multiple of 4)
+    	7-13: Wrong amount of left-padding spaces(want multiple of 4)
+    	16-19: Wrong amount of left-padding spaces(want multiple of 4)
+    	22-34: Wrong amount of left-padding spaces(want multiple of 4)
+    	37-39: Wrong amount of left-padding spaces(want multiple of 4)
+    	42-45: Wrong amount of left-padding spaces(want multiple of 4)
+    	48-63: Wrong amount of left-padding spaces(want multiple of 4)
+    	66: Wrong amount of left-padding spaces(want multiple of 4)
+    	68-69: Wrong amount of left-padding spaces(want multiple of 4)
+    	71-72: Wrong amount of left-padding spaces(want multiple of 4)
+    	80-86: Wrong amount of left-padding spaces(want multiple of 4)
+    	88: Wrong amount of left-padding spaces(want multiple of 4)
+    	91: Wrong amount of left-padding spaces(want multiple of 4)
+    	93-99: Wrong amount of left-padding spaces(want multiple of 4)
+    	102-105: Wrong amount of left-padding spaces(want multiple of 4)
+    	108-120: Wrong amount of left-padding spaces(want multiple of 4)
+    	123-125: Wrong amount of left-padding spaces(want multiple of 4)
+    	128-131: Wrong amount of left-padding spaces(want multiple of 4)
+    	134-149: Wrong amount of left-padding spaces(want multiple of 4)
+    	152: Wrong amount of left-padding spaces(want multiple of 4)
+    	154-155: Wrong amount of left-padding spaces(want multiple of 4)
+    	157-158: Wrong amount of left-padding spaces(want multiple of 4)
+    	166-172: Wrong amount of left-padding spaces(want multiple of 4)
+    	174: Wrong amount of left-padding spaces(want multiple of 4)
+    	176-177: Wrong amount of left-padding spaces(want multiple of 4)
+    	179-185: Wrong amount of left-padding spaces(want multiple of 4)
+    	188-191: Wrong amount of left-padding spaces(want multiple of 4)
+    	194-206: Wrong amount of left-padding spaces(want multiple of 4)
+    	209-211: Wrong amount of left-padding spaces(want multiple of 4)
+    	214-217: Wrong amount of left-padding spaces(want multiple of 4)
+    	220-235: Wrong amount of left-padding spaces(want multiple of 4)
+    	238: Wrong amount of left-padding spaces(want multiple of 4)
+    	240-241: Wrong amount of left-padding spaces(want multiple of 4)
+    	243-244: Wrong amount of left-padding spaces(want multiple of 4)
+    	252-258: Wrong amount of left-padding spaces(want multiple of 4)
+    	260-261: Wrong amount of left-padding spaces(want multiple of 4)
+    	265-277: Wrong amount of left-padding spaces(want multiple of 4)
+    	279-280: Wrong amount of left-padding spaces(want multiple of 4)
+    	289-290: Wrong amount of left-padding spaces(want multiple of 4)
+    	292-295: Wrong amount of left-padding spaces(want multiple of 4)
+    	298-303: Wrong amount of left-padding spaces(want multiple of 4)
+    	306-311: Wrong amount of left-padding spaces(want multiple of 4)
+    	314-315: Wrong amount of left-padding spaces(want multiple of 4)
+    	320-322: Wrong amount of left-padding spaces(want multiple of 4)
+    	325-327: Wrong amount of left-padding spaces(want multiple of 4)
+    	330-332: Wrong amount of left-padding spaces(want multiple of 4)
+    	335-336: Wrong amount of left-padding spaces(want multiple of 4)
+    	339-342: Wrong amount of left-padding spaces(want multiple of 4)
+    	346: Wrong amount of left-padding spaces(want multiple of 4)
+    	348-349: Wrong amount of left-padding spaces(want multiple of 4)
+    	351: Wrong amount of left-padding spaces(want multiple of 4)
+    	354-357: Wrong amount of left-padding spaces(want multiple of 4)
+    	359-360: Wrong amount of left-padding spaces(want multiple of 4)
+    	366: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    55 errors found
+
+❌ [ERROR] dashboard-app/public/developer/stats.json
+    dashboard-app/public/developer/stats.json:
+    	2-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	11-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14-15: Wrong amount of left-padding spaces(want multiple of 4)
+    	18-19: Wrong amount of left-padding spaces(want multiple of 4)
+    	22-23: Wrong amount of left-padding spaces(want multiple of 4)
+    	26-27: Wrong amount of left-padding spaces(want multiple of 4)
+    	30-31: Wrong amount of left-padding spaces(want multiple of 4)
+    	33-35: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    8 errors found
+
+❌ [ERROR] dashboard-app/public/location/location.json
+    dashboard-app/public/location/location.json:
+    	2-5: Wrong amount of left-padding spaces(want multiple of 4)
+    	9: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    2 errors found
+
+❌ [ERROR] dashboard-app/public/oura/metrics.json
+    dashboard-app/public/oura/metrics.json:
+    	2-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	15-16: Wrong amount of left-padding spaces(want multiple of 4)
+    	19-25: Wrong amount of left-padding spaces(want multiple of 4)
+    	30-31: Wrong amount of left-padding spaces(want multiple of 4)
+    	34-42: Wrong amount of left-padding spaces(want multiple of 4)
+    	49-50: Wrong amount of left-padding spaces(want multiple of 4)
+    	56-61: Wrong amount of left-padding spaces(want multiple of 4)
+    	73-74: Wrong amount of left-padding spaces(want multiple of 4)
+    	1515-1516: Wrong amount of left-padding spaces(want multiple of 4)
+    	1529-1531: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    10 errors found
+
+❌ [ERROR] dashboard-app/public/oura/mood.json
+    dashboard-app/public/oura/mood.json:
+    	Wrong line endings or no final newline
+    	2-5: Wrong amount of left-padding spaces(want multiple of 4)
+    	8-11: Wrong amount of left-padding spaces(want multiple of 4)
+    	16-17: Wrong amount of left-padding spaces(want multiple of 4)
+    	24-25: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    5 errors found
+
+❌ [ERROR] dashboard-app/public/soundcloud/latest.json
+    dashboard-app/public/soundcloud/latest.json:
+    	2-9: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    1 errors found
+
+✅ [SUCCESS] dashboard-app/public/vite.svg
+❌ [ERROR] dashboard-app/public/weather/weather.json
+    dashboard-app/public/weather/weather.json:
+    	2-4: Wrong amount of left-padding spaces(want multiple of 4)
+    	7-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	15-16: Wrong amount of left-padding spaces(want multiple of 4)
+    	22-24: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
+
+✅ [SUCCESS] dashboard-app/src/App.css
+❌ [ERROR] dashboard-app/src/App.tsx
+    dashboard-app/src/App.tsx:
+    	13-21: Wrong amount of left-padding spaces(want multiple of 4)
+    	25-27: Wrong amount of left-padding spaces(want multiple of 4)
+    	37: Wrong amount of left-padding spaces(want multiple of 4)
+    	47: Wrong amount of left-padding spaces(want multiple of 4)
+    	49: Wrong amount of left-padding spaces(want multiple of 4)
+    	51-53: Wrong amount of left-padding spaces(want multiple of 4)
+    	57: Wrong amount of left-padding spaces(want multiple of 4)
+    	59: Wrong amount of left-padding spaces(want multiple of 4)
+    	61: Wrong amount of left-padding spaces(want multiple of 4)
+    	63: Wrong amount of left-padding spaces(want multiple of 4)
+    	65: Wrong amount of left-padding spaces(want multiple of 4)
+    	67: Wrong amount of left-padding spaces(want multiple of 4)
+    	69: Wrong amount of left-padding spaces(want multiple of 4)
+    	70: Trailing whitespace
+    	70: Wrong amount of left-padding spaces(want multiple of 4)
+    	74: Wrong amount of left-padding spaces(want multiple of 4)
+    	76: Wrong amount of left-padding spaces(want multiple of 4)
+    	78: Wrong amount of left-padding spaces(want multiple of 4)
+    	80: Wrong amount of left-padding spaces(want multiple of 4)
+    	82: Wrong amount of left-padding spaces(want multiple of 4)
+    	85: Wrong amount of left-padding spaces(want multiple of 4)
+    	87: Wrong amount of left-padding spaces(want multiple of 4)
+    	88-89: Trailing whitespace
+    	89-90: Wrong amount of left-padding spaces(want multiple of 4)
+    	92-93: Trailing whitespace
+    	93-94: Wrong amount of left-padding spaces(want multiple of 4)
+    	96-97: Trailing whitespace
+    	97-98: Wrong amount of left-padding spaces(want multiple of 4)
+    	100-101: Trailing whitespace
+    	101-102: Wrong amount of left-padding spaces(want multiple of 4)
+    	104-105: Trailing whitespace
+    	105-106: Wrong amount of left-padding spaces(want multiple of 4)
+    	108-109: Trailing whitespace
+    	109-110: Wrong amount of left-padding spaces(want multiple of 4)
+    	112-113: Trailing whitespace
+    	113-114: Wrong amount of left-padding spaces(want multiple of 4)
+    	116-117: Trailing whitespace
+    	117-118: Wrong amount of left-padding spaces(want multiple of 4)
+    	120: Wrong amount of left-padding spaces(want multiple of 4)
+    	122: Wrong amount of left-padding spaces(want multiple of 4)
+    	124: Wrong amount of left-padding spaces(want multiple of 4)
+    	126: Trailing whitespace
+    	126: Wrong amount of left-padding spaces(want multiple of 4)
+    	127: Trailing whitespace
+    	127: Wrong amount of left-padding spaces(want multiple of 4)
+    	128-129: Trailing whitespace
+    	131: Wrong amount of left-padding spaces(want multiple of 4)
+    	133: Wrong amount of left-padding spaces(want multiple of 4)
+    	135: Wrong amount of left-padding spaces(want multiple of 4)
+    	137: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    50 errors found
+
+✅ [SUCCESS] dashboard-app/src/assets/react.svg
+❌ [ERROR] dashboard-app/src/components/AIIdentityCard.tsx
+    dashboard-app/src/components/AIIdentityCard.tsx:
+    	7-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14: Wrong amount of left-padding spaces(want multiple of 4)
+    	16: Wrong amount of left-padding spaces(want multiple of 4)
+    	18: Wrong amount of left-padding spaces(want multiple of 4)
+    	20: Wrong amount of left-padding spaces(want multiple of 4)
+    	22-23: Wrong amount of left-padding spaces(want multiple of 4)
+    	27: Wrong amount of left-padding spaces(want multiple of 4)
+    	30: Wrong amount of left-padding spaces(want multiple of 4)
+    	32: Wrong amount of left-padding spaces(want multiple of 4)
+    	34: Wrong amount of left-padding spaces(want multiple of 4)
+    	38: Wrong amount of left-padding spaces(want multiple of 4)
+    	41: Wrong amount of left-padding spaces(want multiple of 4)
+    	43: Wrong amount of left-padding spaces(want multiple of 4)
+    	45: Wrong amount of left-padding spaces(want multiple of 4)
+    	49: Wrong amount of left-padding spaces(want multiple of 4)
+    	53: Wrong amount of left-padding spaces(want multiple of 4)
+    	55: Wrong amount of left-padding spaces(want multiple of 4)
+    	57: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    19 errors found
+
+❌ [ERROR] dashboard-app/src/components/AchievementsCard.tsx
+    dashboard-app/src/components/AchievementsCard.tsx:
+    	7-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14: Wrong amount of left-padding spaces(want multiple of 4)
+    	16: Wrong amount of left-padding spaces(want multiple of 4)
+    	18: Wrong amount of left-padding spaces(want multiple of 4)
+    	20: Wrong amount of left-padding spaces(want multiple of 4)
+    	22: Wrong amount of left-padding spaces(want multiple of 4)
+    	24-25: Wrong amount of left-padding spaces(want multiple of 4)
+    	29: Wrong amount of left-padding spaces(want multiple of 4)
+    	30-31: Trailing whitespace
+    	31-32: Wrong amount of left-padding spaces(want multiple of 4)
+    	34-35: Wrong amount of left-padding spaces(want multiple of 4)
+    	39: Wrong amount of left-padding spaces(want multiple of 4)
+    	41: Wrong amount of left-padding spaces(want multiple of 4)
+    	43: Wrong amount of left-padding spaces(want multiple of 4)
+    	45: Wrong amount of left-padding spaces(want multiple of 4)
+    	47: Wrong amount of left-padding spaces(want multiple of 4)
+    	49: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    18 errors found
+
+❌ [ERROR] dashboard-app/src/components/Card.tsx
+    dashboard-app/src/components/Card.tsx:
+    	5-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	12: Wrong amount of left-padding spaces(want multiple of 4)
+    	16: Wrong amount of left-padding spaces(want multiple of 4)
+    	18-19: Wrong amount of left-padding spaces(want multiple of 4)
+    	21: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    5 errors found
+
+❌ [ERROR] dashboard-app/src/components/DeveloperDashboardCard.tsx
+    dashboard-app/src/components/DeveloperDashboardCard.tsx:
+    	7-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14: Wrong amount of left-padding spaces(want multiple of 4)
+    	16: Wrong amount of left-padding spaces(want multiple of 4)
+    	18: Wrong amount of left-padding spaces(want multiple of 4)
+    	22: Wrong amount of left-padding spaces(want multiple of 4)
+    	24: Wrong amount of left-padding spaces(want multiple of 4)
+    	26: Wrong amount of left-padding spaces(want multiple of 4)
+    	29-30: Wrong amount of left-padding spaces(want multiple of 4)
+    	32: Wrong amount of left-padding spaces(want multiple of 4)
+    	33: Trailing whitespace
+    	33-34: Wrong amount of left-padding spaces(want multiple of 4)
+    	37-38: Wrong amount of left-padding spaces(want multiple of 4)
+    	40: Wrong amount of left-padding spaces(want multiple of 4)
+    	41: Trailing whitespace
+    	41-42: Wrong amount of left-padding spaces(want multiple of 4)
+    	45-46: Wrong amount of left-padding spaces(want multiple of 4)
+    	48: Wrong amount of left-padding spaces(want multiple of 4)
+    	49: Trailing whitespace
+    	49-50: Wrong amount of left-padding spaces(want multiple of 4)
+    	53-54: Wrong amount of left-padding spaces(want multiple of 4)
+    	56: Wrong amount of left-padding spaces(want multiple of 4)
+    	60-61: Wrong amount of left-padding spaces(want multiple of 4)
+    	64-65: Wrong amount of left-padding spaces(want multiple of 4)
+    	68: Wrong amount of left-padding spaces(want multiple of 4)
+    	72-73: Wrong amount of left-padding spaces(want multiple of 4)
+    	75: Wrong amount of left-padding spaces(want multiple of 4)
+    	78: Wrong amount of left-padding spaces(want multiple of 4)
+    	80: Wrong amount of left-padding spaces(want multiple of 4)
+    	82: Wrong amount of left-padding spaces(want multiple of 4)
+    	84: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    31 errors found
+
+❌ [ERROR] dashboard-app/src/components/LocationCard.tsx
+    dashboard-app/src/components/LocationCard.tsx:
+    	7-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14: Wrong amount of left-padding spaces(want multiple of 4)
+    	16: Wrong amount of left-padding spaces(want multiple of 4)
+    	18: Wrong amount of left-padding spaces(want multiple of 4)
+    	20: Wrong amount of left-padding spaces(want multiple of 4)
+    	22: Wrong amount of left-padding spaces(want multiple of 4)
+    	24: Trailing whitespace
+    	26: Wrong amount of left-padding spaces(want multiple of 4)
+    	29-30: Wrong amount of left-padding spaces(want multiple of 4)
+    	33: Wrong amount of left-padding spaces(want multiple of 4)
+    	37: Wrong amount of left-padding spaces(want multiple of 4)
+    	41: Wrong amount of left-padding spaces(want multiple of 4)
+    	43: Wrong amount of left-padding spaces(want multiple of 4)
+    	45: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    15 errors found
+
+❌ [ERROR] dashboard-app/src/components/MoodAvatarCard.tsx
+    dashboard-app/src/components/MoodAvatarCard.tsx:
+    	7-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14: Wrong amount of left-padding spaces(want multiple of 4)
+    	16: Wrong amount of left-padding spaces(want multiple of 4)
+    	18-22: Wrong amount of left-padding spaces(want multiple of 4)
+    	24: Wrong amount of left-padding spaces(want multiple of 4)
+    	28: Wrong amount of left-padding spaces(want multiple of 4)
+    	30: Wrong amount of left-padding spaces(want multiple of 4)
+    	32: Wrong amount of left-padding spaces(want multiple of 4)
+    	34: Trailing whitespace
+    	36: Trailing whitespace
+    	38: Wrong amount of left-padding spaces(want multiple of 4)
+    	39-40: Trailing whitespace
+    	40: Wrong amount of left-padding spaces(want multiple of 4)
+    	41: Trailing whitespace
+    	41: Wrong amount of left-padding spaces(want multiple of 4)
+    	44: Wrong amount of left-padding spaces(want multiple of 4)
+    	46-47: Wrong amount of left-padding spaces(want multiple of 4)
+    	49: Wrong amount of left-padding spaces(want multiple of 4)
+    	53: Wrong amount of left-padding spaces(want multiple of 4)
+    	58: Wrong amount of left-padding spaces(want multiple of 4)
+    	60: Wrong amount of left-padding spaces(want multiple of 4)
+    	62: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    23 errors found
+
+❌ [ERROR] dashboard-app/src/components/OuraHealthCard.tsx
+    dashboard-app/src/components/OuraHealthCard.tsx:
+    	7-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14: Wrong amount of left-padding spaces(want multiple of 4)
+    	16: Wrong amount of left-padding spaces(want multiple of 4)
+    	18: Wrong amount of left-padding spaces(want multiple of 4)
+    	23: Wrong amount of left-padding spaces(want multiple of 4)
+    	25: Wrong amount of left-padding spaces(want multiple of 4)
+    	27: Wrong amount of left-padding spaces(want multiple of 4)
+    	29: Wrong amount of left-padding spaces(want multiple of 4)
+    	31-32: Trailing whitespace
+    	32-33: Wrong amount of left-padding spaces(want multiple of 4)
+    	35: Wrong amount of left-padding spaces(want multiple of 4)
+    	37: Wrong amount of left-padding spaces(want multiple of 4)
+    	38: Trailing whitespace
+    	38-39: Wrong amount of left-padding spaces(want multiple of 4)
+    	41: Trailing whitespace
+    	42-43: Wrong amount of left-padding spaces(want multiple of 4)
+    	45: Wrong amount of left-padding spaces(want multiple of 4)
+    	47: Wrong amount of left-padding spaces(want multiple of 4)
+    	48: Trailing whitespace
+    	48-49: Wrong amount of left-padding spaces(want multiple of 4)
+    	51: Trailing whitespace
+    	52-53: Wrong amount of left-padding spaces(want multiple of 4)
+    	55: Wrong amount of left-padding spaces(want multiple of 4)
+    	57: Wrong amount of left-padding spaces(want multiple of 4)
+    	61: Wrong amount of left-padding spaces(want multiple of 4)
+    	64: Wrong amount of left-padding spaces(want multiple of 4)
+    	65: Trailing whitespace
+    	65-66: Wrong amount of left-padding spaces(want multiple of 4)
+    	68-69: Wrong amount of left-padding spaces(want multiple of 4)
+    	71: Wrong amount of left-padding spaces(want multiple of 4)
+    	72: Trailing whitespace
+    	72-73: Wrong amount of left-padding spaces(want multiple of 4)
+    	75-76: Wrong amount of left-padding spaces(want multiple of 4)
+    	78: Wrong amount of left-padding spaces(want multiple of 4)
+    	80: Wrong amount of left-padding spaces(want multiple of 4)
+    	82: Wrong amount of left-padding spaces(want multiple of 4)
+    	84: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    38 errors found
+
+❌ [ERROR] dashboard-app/src/components/SoundCloudCard.tsx
+    dashboard-app/src/components/SoundCloudCard.tsx:
+    	7-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14: Wrong amount of left-padding spaces(want multiple of 4)
+    	16: Wrong amount of left-padding spaces(want multiple of 4)
+    	18: Wrong amount of left-padding spaces(want multiple of 4)
+    	23: Wrong amount of left-padding spaces(want multiple of 4)
+    	25: Wrong amount of left-padding spaces(want multiple of 4)
+    	27-29: Wrong amount of left-padding spaces(want multiple of 4)
+    	31: Wrong amount of left-padding spaces(want multiple of 4)
+    	33: Wrong amount of left-padding spaces(want multiple of 4)
+    	35: Wrong amount of left-padding spaces(want multiple of 4)
+    	37: Wrong amount of left-padding spaces(want multiple of 4)
+    	39: Wrong amount of left-padding spaces(want multiple of 4)
+    	41: Trailing whitespace
+    	43-44: Wrong amount of left-padding spaces(want multiple of 4)
+    	47: Wrong amount of left-padding spaces(want multiple of 4)
+    	51: Wrong amount of left-padding spaces(want multiple of 4)
+    	55-56: Wrong amount of left-padding spaces(want multiple of 4)
+    	60-61: Wrong amount of left-padding spaces(want multiple of 4)
+    	65: Wrong amount of left-padding spaces(want multiple of 4)
+    	68-69: Trailing whitespace
+    	69: Wrong amount of left-padding spaces(want multiple of 4)
+    	70: Trailing whitespace
+    	70-72: Wrong amount of left-padding spaces(want multiple of 4)
+    	74: Wrong amount of left-padding spaces(want multiple of 4)
+    	76: Wrong amount of left-padding spaces(want multiple of 4)
+    	78: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    27 errors found
+
+❌ [ERROR] dashboard-app/src/components/WeatherCard.tsx
+    dashboard-app/src/components/WeatherCard.tsx:
+    	7-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14: Wrong amount of left-padding spaces(want multiple of 4)
+    	16: Wrong amount of left-padding spaces(want multiple of 4)
+    	18: Wrong amount of left-padding spaces(want multiple of 4)
+    	20: Wrong amount of left-padding spaces(want multiple of 4)
+    	22: Wrong amount of left-padding spaces(want multiple of 4)
+    	24: Trailing whitespace
+    	26-28: Wrong amount of left-padding spaces(want multiple of 4)
+    	32: Wrong amount of left-padding spaces(want multiple of 4)
+    	35-36: Wrong amount of left-padding spaces(want multiple of 4)
+    	39: Wrong amount of left-padding spaces(want multiple of 4)
+    	41: Wrong amount of left-padding spaces(want multiple of 4)
+    	45: Wrong amount of left-padding spaces(want multiple of 4)
+    	47-48: Wrong amount of left-padding spaces(want multiple of 4)
+    	50: Wrong amount of left-padding spaces(want multiple of 4)
+    	52: Wrong amount of left-padding spaces(want multiple of 4)
+    	54: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    18 errors found
+
+❌ [ERROR] dashboard-app/src/index.css
+    dashboard-app/src/index.css:
+    	7: Trailing whitespace
+    	12: Trailing whitespace
+    	25: Trailing whitespace
+    	30: Trailing whitespace
+    
+    4 errors found
+
+❌ [ERROR] dashboard-app/src/main.tsx
+    dashboard-app/src/main.tsx:
+    	7: Wrong amount of left-padding spaces(want multiple of 4)
+    	9: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    2 errors found
+
+✅ [SUCCESS] dashboard-app/src/styles/AIIdentityCard.css
+✅ [SUCCESS] dashboard-app/src/styles/AchievementsCard.css
+✅ [SUCCESS] dashboard-app/src/styles/Card.css
+✅ [SUCCESS] dashboard-app/src/styles/DeveloperDashboardCard.css
+✅ [SUCCESS] dashboard-app/src/styles/LocationCard.css
+✅ [SUCCESS] dashboard-app/src/styles/MoodAvatarCard.css
+✅ [SUCCESS] dashboard-app/src/styles/OuraHealthCard.css
+✅ [SUCCESS] dashboard-app/src/styles/SoundCloudCard.css
+✅ [SUCCESS] dashboard-app/src/styles/WeatherCard.css
+❌ [ERROR] dashboard-app/src/types.ts
+    dashboard-app/src/types.ts:
+    	4-6: Wrong amount of left-padding spaces(want multiple of 4)
+    	9-10: Wrong amount of left-padding spaces(want multiple of 4)
+    	17-18: Wrong amount of left-padding spaces(want multiple of 4)
+    	24-26: Wrong amount of left-padding spaces(want multiple of 4)
+    	30-36: Wrong amount of left-padding spaces(want multiple of 4)
+    	43-44: Wrong amount of left-padding spaces(want multiple of 4)
+    	47-53: Wrong amount of left-padding spaces(want multiple of 4)
+    	58-59: Wrong amount of left-padding spaces(want multiple of 4)
+    	62-70: Wrong amount of left-padding spaces(want multiple of 4)
+    	77-78: Wrong amount of left-padding spaces(want multiple of 4)
+    	81-87: Wrong amount of left-padding spaces(want multiple of 4)
+    	92: Wrong amount of left-padding spaces(want multiple of 4)
+    	96-105: Wrong amount of left-padding spaces(want multiple of 4)
+    	109-115: Wrong amount of left-padding spaces(want multiple of 4)
+    	118-119: Wrong amount of left-padding spaces(want multiple of 4)
+    	121-122: Wrong amount of left-padding spaces(want multiple of 4)
+    	124-127: Wrong amount of left-padding spaces(want multiple of 4)
+    	131-134: Wrong amount of left-padding spaces(want multiple of 4)
+    	138: Wrong amount of left-padding spaces(want multiple of 4)
+    	142-149: Wrong amount of left-padding spaces(want multiple of 4)
+    	153-154: Wrong amount of left-padding spaces(want multiple of 4)
+    	157: Wrong amount of left-padding spaces(want multiple of 4)
+    	161: Wrong amount of left-padding spaces(want multiple of 4)
+    	163-169: Wrong amount of left-padding spaces(want multiple of 4)
+    	172-175: Wrong amount of left-padding spaces(want multiple of 4)
+    	178: Wrong amount of left-padding spaces(want multiple of 4)
+    	181-183: Wrong amount of left-padding spaces(want multiple of 4)
+    	186-189: Wrong amount of left-padding spaces(want multiple of 4)
+    	192: Wrong amount of left-padding spaces(want multiple of 4)
+    	195: Wrong amount of left-padding spaces(want multiple of 4)
+    	197-198: Wrong amount of left-padding spaces(want multiple of 4)
+    	200-201: Wrong amount of left-padding spaces(want multiple of 4)
+    	209: Wrong amount of left-padding spaces(want multiple of 4)
+    	211-212: Wrong amount of left-padding spaces(want multiple of 4)
+    	214-215: Wrong amount of left-padding spaces(want multiple of 4)
+    	217: Wrong amount of left-padding spaces(want multiple of 4)
+    	221-226: Wrong amount of left-padding spaces(want multiple of 4)
+    	230-233: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    38 errors found
+
+❌ [ERROR] dashboard-app/src/utils/dataFetcher.ts
+    dashboard-app/src/utils/dataFetcher.ts:
+    	3-11: Wrong amount of left-padding spaces(want multiple of 4)
+    	17: Wrong amount of left-padding spaces(want multiple of 4)
+    	23: Trailing whitespace
+    	26-27: Wrong amount of left-padding spaces(want multiple of 4)
+    	30: Wrong amount of left-padding spaces(want multiple of 4)
+    	33: Wrong amount of left-padding spaces(want multiple of 4)
+    	37: Wrong amount of left-padding spaces(want multiple of 4)
+    	47: Wrong amount of left-padding spaces(want multiple of 4)
+    	57: Wrong amount of left-padding spaces(want multiple of 4)
+    	59: Wrong amount of left-padding spaces(want multiple of 4)
+    	69: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    11 errors found
+
+❌ [ERROR] dashboard-app/tsconfig.app.json
+    dashboard-app/tsconfig.app.json:
+    	2: Wrong amount of left-padding spaces(want multiple of 4)
+    	26-27: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    2 errors found
+
+❌ [ERROR] dashboard-app/tsconfig.json
+    dashboard-app/tsconfig.json:
+    	2-3: Wrong amount of left-padding spaces(want multiple of 4)
+    	6: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    2 errors found
+
+❌ [ERROR] dashboard-app/tsconfig.node.json
+    dashboard-app/tsconfig.node.json:
+    	2: Wrong amount of left-padding spaces(want multiple of 4)
+    	24-25: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    2 errors found
+
+❌ [ERROR] dashboard-app/vite.config.ts
+    dashboard-app/vite.config.ts:
+    	6-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	11: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    2 errors found
+
 ✅ [SUCCESS] dashboard-dark.svg
 ✅ [SUCCESS] dashboard-interactive.svg
 ✅ [SUCCESS] dashboard-light.svg
@@ -746,6 +1369,19 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
 
 ✅ [SUCCESS] developer/.gitkeep
 ✅ [SUCCESS] developer/developer_dashboard.svg
+❌ [ERROR] developer/stats.json
+    developer/stats.json:
+    	2-8: Wrong amount of left-padding spaces(want multiple of 4)
+    	11-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	14-15: Wrong amount of left-padding spaces(want multiple of 4)
+    	18-19: Wrong amount of left-padding spaces(want multiple of 4)
+    	22-23: Wrong amount of left-padding spaces(want multiple of 4)
+    	26-27: Wrong amount of left-padding spaces(want multiple of 4)
+    	30-31: Wrong amount of left-padding spaces(want multiple of 4)
+    	33-35: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    8 errors found
+
 ❌ [ERROR] docs/API_RESILIENCE.md
     docs/API_RESILIENCE.md:
     	50: Wrong amount of left-padding spaces(want multiple of 4)
@@ -766,6 +1402,31 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     	200-203: Wrong amount of left-padding spaces(want multiple of 4)
     
     5 errors found
+
+❌ [ERROR] docs/CACHING_BENCHMARKS.md
+    docs/CACHING_BENCHMARKS.md:
+    	87-90: Wrong amount of left-padding spaces(want multiple of 4)
+    	93-97: Wrong amount of left-padding spaces(want multiple of 4)
+    	100-102: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    3 errors found
+
+❌ [ERROR] docs/CACHING_QUICK_REFERENCE.md
+    docs/CACHING_QUICK_REFERENCE.md:
+    	11-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	24: Wrong amount of left-padding spaces(want multiple of 4)
+    	27: Wrong amount of left-padding spaces(want multiple of 4)
+    	30: Wrong amount of left-padding spaces(want multiple of 4)
+    	37-38: Wrong amount of left-padding spaces(want multiple of 4)
+    	48-49: Wrong amount of left-padding spaces(want multiple of 4)
+    	68: Wrong amount of left-padding spaces(want multiple of 4)
+    	71: Wrong amount of left-padding spaces(want multiple of 4)
+    	109-110: Wrong amount of left-padding spaces(want multiple of 4)
+    	115-116: Wrong amount of left-padding spaces(want multiple of 4)
+    	138: Wrong amount of left-padding spaces(want multiple of 4)
+    	144-145: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    12 errors found
 
 ❌ [ERROR] docs/INTEGRATION_EXAMPLE.md
     docs/INTEGRATION_EXAMPLE.md:
@@ -927,11 +1588,102 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     
     3 errors found
 
+❌ [ERROR] docs/TROUBLESHOOTING.md
+    docs/TROUBLESHOOTING.md:
+    	35-42: Wrong amount of left-padding spaces(want multiple of 4)
+    	45-48: Wrong amount of left-padding spaces(want multiple of 4)
+    	51-63: Wrong amount of left-padding spaces(want multiple of 4)
+    	78-81: Wrong amount of left-padding spaces(want multiple of 4)
+    	84-93: Wrong amount of left-padding spaces(want multiple of 4)
+    	96-106: Wrong amount of left-padding spaces(want multiple of 4)
+    	118-121: Wrong amount of left-padding spaces(want multiple of 4)
+    	124-129: Wrong amount of left-padding spaces(want multiple of 4)
+    	132-138: Wrong amount of left-padding spaces(want multiple of 4)
+    	160-167: Wrong amount of left-padding spaces(want multiple of 4)
+    	170-183: Wrong amount of left-padding spaces(want multiple of 4)
+    	186-201: Wrong amount of left-padding spaces(want multiple of 4)
+    	204-212: Wrong amount of left-padding spaces(want multiple of 4)
+    	224-229: Wrong amount of left-padding spaces(want multiple of 4)
+    	232-246: Wrong amount of left-padding spaces(want multiple of 4)
+    	285: Wrong amount of left-padding spaces(want multiple of 4)
+    	289: Wrong amount of left-padding spaces(want multiple of 4)
+    	303-307: Wrong amount of left-padding spaces(want multiple of 4)
+    	310-316: Wrong amount of left-padding spaces(want multiple of 4)
+    	319-322: Wrong amount of left-padding spaces(want multiple of 4)
+    	334-342: Wrong amount of left-padding spaces(want multiple of 4)
+    	345-349: Wrong amount of left-padding spaces(want multiple of 4)
+    	352-354: Wrong amount of left-padding spaces(want multiple of 4)
+    	357-360: Wrong amount of left-padding spaces(want multiple of 4)
+    	372-378: Wrong amount of left-padding spaces(want multiple of 4)
+    	381-386: Wrong amount of left-padding spaces(want multiple of 4)
+    	407-424: Wrong amount of left-padding spaces(want multiple of 4)
+    	427-437: Wrong amount of left-padding spaces(want multiple of 4)
+    	440-454: Wrong amount of left-padding spaces(want multiple of 4)
+    	457-467: Wrong amount of left-padding spaces(want multiple of 4)
+    	486-491: Wrong amount of left-padding spaces(want multiple of 4)
+    	494-509: Wrong amount of left-padding spaces(want multiple of 4)
+    	512-524: Wrong amount of left-padding spaces(want multiple of 4)
+    	527-540: Wrong amount of left-padding spaces(want multiple of 4)
+    	575-596: Wrong amount of left-padding spaces(want multiple of 4)
+    	599-609: Wrong amount of left-padding spaces(want multiple of 4)
+    	620-626: Wrong amount of left-padding spaces(want multiple of 4)
+    	629-632: Wrong amount of left-padding spaces(want multiple of 4)
+    	635-653: Wrong amount of left-padding spaces(want multiple of 4)
+    	669-676: Wrong amount of left-padding spaces(want multiple of 4)
+    	679-684: Wrong amount of left-padding spaces(want multiple of 4)
+    	696-699: Wrong amount of left-padding spaces(want multiple of 4)
+    	702-705: Wrong amount of left-padding spaces(want multiple of 4)
+    	708-713: Wrong amount of left-padding spaces(want multiple of 4)
+    	716-721: Wrong amount of left-padding spaces(want multiple of 4)
+    	733-736: Wrong amount of left-padding spaces(want multiple of 4)
+    	739-760: Wrong amount of left-padding spaces(want multiple of 4)
+    	777-779: Wrong amount of left-padding spaces(want multiple of 4)
+    	783-808: Wrong amount of left-padding spaces(want multiple of 4)
+    	810-822: Wrong amount of left-padding spaces(want multiple of 4)
+    	826-836: Wrong amount of left-padding spaces(want multiple of 4)
+    	838-863: Wrong amount of left-padding spaces(want multiple of 4)
+    	866-871: Wrong amount of left-padding spaces(want multiple of 4)
+    	878-882: Wrong amount of left-padding spaces(want multiple of 4)
+    	885-887: Wrong amount of left-padding spaces(want multiple of 4)
+    	890-898: Wrong amount of left-padding spaces(want multiple of 4)
+    	963: Wrong amount of left-padding spaces(want multiple of 4)
+    	965-966: Wrong amount of left-padding spaces(want multiple of 4)
+    	975-979: Wrong amount of left-padding spaces(want multiple of 4)
+    	990: Wrong amount of left-padding spaces(want multiple of 4)
+    	994: Wrong amount of left-padding spaces(want multiple of 4)
+    	997-999: Wrong amount of left-padding spaces(want multiple of 4)
+    	1001-1003: Wrong amount of left-padding spaces(want multiple of 4)
+    	1007: Wrong amount of left-padding spaces(want multiple of 4)
+    	1009-1012: Wrong amount of left-padding spaces(want multiple of 4)
+    	1042-1045: Wrong amount of left-padding spaces(want multiple of 4)
+    	1048-1050: Wrong amount of left-padding spaces(want multiple of 4)
+    	1053-1055: Wrong amount of left-padding spaces(want multiple of 4)
+    	1062-1065: Wrong amount of left-padding spaces(want multiple of 4)
+    	1068-1070: Wrong amount of left-padding spaces(want multiple of 4)
+    	1073-1076: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    71 errors found
+
 ❌ [ERROR] docs/WORKFLOWS.md
     docs/WORKFLOWS.md:
     	222-223: Wrong amount of left-padding spaces(want multiple of 4)
     
     1 errors found
+
+❌ [ERROR] docs/WORKFLOW_CACHING.md
+    docs/WORKFLOW_CACHING.md:
+    	38-39: Wrong amount of left-padding spaces(want multiple of 4)
+    	71-72: Wrong amount of left-padding spaces(want multiple of 4)
+    	173-175: Wrong amount of left-padding spaces(want multiple of 4)
+    	178-180: Wrong amount of left-padding spaces(want multiple of 4)
+    	183-184: Wrong amount of left-padding spaces(want multiple of 4)
+    	202-207: Wrong amount of left-padding spaces(want multiple of 4)
+    	210-223: Wrong amount of left-padding spaces(want multiple of 4)
+    	226-230: Wrong amount of left-padding spaces(want multiple of 4)
+    	233-238: Wrong amount of left-padding spaces(want multiple of 4)
+    	243-251: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    10 errors found
 
 ❌ [ERROR] docs/architecture.md
     docs/architecture.md:
@@ -1041,7 +1793,15 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
 
 ✅ [SUCCESS] footer/footer.html
 ✅ [SUCCESS] location/.gitkeep
+❌ [ERROR] location/location.json
+    location/location.json:
+    	2-5: Wrong amount of left-padding spaces(want multiple of 4)
+    	9: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    2 errors found
+
 ✅ [SUCCESS] models/.gitkeep
+✅ [SUCCESS] mypy.ini
 ✅ [SUCCESS] notebooks/.gitkeep
 ✅ [SUCCESS] oura/.gitkeep
 ✅ [SUCCESS] oura/health_dashboard.svg
@@ -3167,6 +3927,12 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     	98: Trailing whitespace
     
     10 errors found
+
+❌ [ERROR] soundcloud/latest.json
+    soundcloud/latest.json:
+    	2-9: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    1 errors found
 
 ✅ [SUCCESS] summary-monthly.svg
 ✅ [SUCCESS] summary-weekly.svg

@@ -1,0 +1,29 @@
+Results of gitleaks linter (version 8.27.2)
+See documentation on https://megalinter.io/8.8.0/descriptors/repository_gitleaks/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /github/workspace
+Linter raw log:
+
+    ○
+    │╲
+    │ ○
+    ○ ░
+    ░    gitleaks
+
+Finding:     - Image Revision: REDACTED
+Secret:      REDACTED
+RuleID:      sourcegraph-access-token
+Entropy:     3.846439
+File:        logs/megalinter/mega-linter.log
+Line:        5
+Commit:      HIDDEN_BY_MEGALINTERAuthor:      github-actions[bot]
+Email:       github-actions[bot]@users.noreply.github.com
+Date:        2025-12-04T04:09:39Z
+Fingerprint: fc8cf33eccd406bf8e459a9ffe903af8ea6e3405:logs/megalinter/mega-linter.log:sourcegraph-access-token:5
+Link:        https://github.com/szmyty/profile/blob/fc8cf33eccd406bf8e459a9ffe903af8ea6e3405/logs/megalinter/mega-linter.log#L5
+
+4:26AM INF 174 commits scanned.
+4:26AM INF scanned ~12469942 bytes (12.47 MB) in 40s
+4:26AM WRN leaks found: 1
+

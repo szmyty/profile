@@ -1,33 +1,39 @@
 TAP version 13
-1..31
+1..37
 not ok 1 - .github/GOVERNANCE.md
-ok 2 - .github/actions/setup-environment/README.md
-ok 3 - GITHUB_MARKDOWN_AUDIT_COMPLETE.md
-ok 4 - IMPLEMENTATION_SUMMARY.md
-ok 5 - PERFORMANCE_IMPROVEMENTS_SUMMARY.md
-not ok 6 - README.md
-ok 7 - REPORT.md
-ok 8 - SECURITY_SUMMARY.md
-ok 9 - SECURITY_SUMMARY_API_RESILIENCE.md
-ok 10 - config/styles/proselint/README.md
-ok 11 - config/styles/write-good/README.md
-ok 12 - data/mock/README.md
-ok 13 - data/snapshots/README.md
-ok 14 - docs/API_RESILIENCE.md
-ok 15 - docs/API_TIMEOUT_RETRY_GUIDE.md
-ok 16 - docs/INTEGRATION_EXAMPLE.md
-ok 17 - docs/LOCATION_CARD_CHANGES.md
-ok 18 - docs/MONITORING.md
-ok 19 - docs/OPTIMIZATION_GUIDE.md
-ok 20 - docs/README_LAYOUT_BEFORE_AFTER.md
-ok 21 - docs/README_LAYOUT_CHANGELOG.md
-not ok 22 - docs/README_SECTION_CHANGES.md
-ok 23 - docs/ROBUSTNESS_IMPROVEMENTS.md
-ok 24 - docs/WORKFLOWS.md
-ok 25 - docs/architecture.md
-ok 26 - docs/cards.md
-ok 27 - docs/markdown_valid_elements.md
-ok 28 - docs/style-guide.md
-ok 29 - docs/workflows.md
-ok 30 - footer/README.md
-ok 31 - schemas/README.md
+ok 2 - .github/actions/pip-install/README.md
+ok 3 - .github/actions/setup-environment/README.md
+ok 4 - GITHUB_MARKDOWN_AUDIT_COMPLETE.md
+ok 5 - IMPLEMENTATION_SUMMARY.md
+ok 6 - PERFORMANCE_IMPROVEMENTS_SUMMARY.md
+not ok 7 - README.md
+ok 8 - REPORT.md
+ok 9 - SECURITY_SUMMARY.md
+ok 10 - SECURITY_SUMMARY_API_RESILIENCE.md
+ok 11 - config/styles/proselint/README.md
+ok 12 - config/styles/write-good/README.md
+ok 13 - dashboard-app/README.md
+ok 14 - data/mock/README.md
+ok 15 - data/snapshots/README.md
+ok 16 - docs/API_RESILIENCE.md
+ok 17 - docs/API_TIMEOUT_RETRY_GUIDE.md
+ok 18 - docs/CACHING_BENCHMARKS.md
+ok 19 - docs/CACHING_QUICK_REFERENCE.md
+ok 20 - docs/INTEGRATION_EXAMPLE.md
+ok 21 - docs/LOCATION_CARD_CHANGES.md
+ok 22 - docs/MONITORING.md
+ok 23 - docs/OPTIMIZATION_GUIDE.md
+ok 24 - docs/README_LAYOUT_BEFORE_AFTER.md
+ok 25 - docs/README_LAYOUT_CHANGELOG.md
+not ok 26 - docs/README_SECTION_CHANGES.md
+ok 27 - docs/ROBUSTNESS_IMPROVEMENTS.md
+ok 28 - docs/TROUBLESHOOTING.md
+ok 29 - docs/WORKFLOWS.md
+not ok 30 - docs/WORKFLOW_CACHING.md
+ok 31 - docs/architecture.md
+ok 32 - docs/cards.md
+ok 33 - docs/markdown_valid_elements.md
+ok 34 - docs/style-guide.md
+ok 35 - docs/workflows.md
+ok 36 - footer/README.md
+ok 37 - schemas/README.md

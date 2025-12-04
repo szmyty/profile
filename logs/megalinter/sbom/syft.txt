@@ -1,13 +1,18 @@
 [0000]  WARN no explicit name and version provided for directory source, deriving artifact ID from the given path (which is not ideal)
 NAME                                 VERSION                                   TYPE                           
+./.github/actions/pip-install        UNKNOWN                                   github-action  (+3 duplicates)  
 ./.github/actions/setup-environment  UNKNOWN                                   github-action  (+7 duplicates)  
-actions/cache                        v4                                        github-action  (+3 duplicates)  
+actions/cache                        v4                                        github-action  (+4 duplicates)  
 actions/checkout                     HIDDEN_BY_MEGALINTER github-action                   
-actions/checkout                     v4                                        github-action                   
+actions/checkout                     v4                                        github-action  (+1 duplicate)   
+actions/configure-pages              v4                                        github-action                   
+actions/deploy-pages                 v4                                        github-action                   
 actions/download-artifact            v4                                        github-action                   
 actions/github-script                v7                                        github-action                   
+actions/setup-node                   v4                                        github-action                   
 actions/setup-python                 HIDDEN_BY_MEGALINTER github-action                   
 actions/upload-artifact              v4                                        github-action  (+1 duplicate)   
+actions/upload-pages-artifact        v3                                        github-action                   
 attrs                                25.4.0                                    python                          
 black                                24.10.0                                   python         (+1 duplicate)   
 certifi                              2025.11.12                                python                          
@@ -16,6 +21,7 @@ charset-normalizer                   3.4.4                                     p
 check-jsonschema                     0.30.0                                    python         (+1 duplicate)   
 click                                8.3.1                                     python                          
 colorama                             0.4.6                                     python                          
+dashboard-app                        0.0.0                                     npm                             
 distlib                              0.4.0                                     python                          
 filelock                             3.20.0                                    python                          
 flake8                               7.1.1                                     python         (+1 duplicate)   
@@ -26,6 +32,7 @@ isort                                5.13.2                                    p
 jsonschema                           4.23.0                                    python         (+1 duplicate)   
 jsonschema-specifications            2025.9.1                                  python                          
 mccabe                               0.7.0                                     python                          
+mypy                                 1.13.0                                    python                          
 mypy-extensions                      1.1.0                                     python                          
 nodeenv                              1.9.1                                     python                          
 oxsecurity/megalinter                v8                                        github-action                   
@@ -39,12 +46,15 @@ pycodestyle                          2.12.1                                    p
 pyflakes                             3.2.0                                     python                          
 pytest                               8.3.3                                     python         (+1 duplicate)   
 pyyaml                               6.0.3                                     python                          
+react                                19.2.1                                    npm                             
+react-dom                            19.2.1                                    npm                             
 referencing                          0.37.0                                    python                          
 regress                              2025.10.1                                 python                          
 requests                             2.32.5                                    python                          
 rpds-py                              0.30.0                                    python                          
 ruamel-yaml                          0.18.6                                    python                          
 ruamel-yaml-clib                     0.2.15                                    python                          
+scheduler                            0.27.0                                    npm                             
 typing-extensions                    4.15.0                                    python                          
 urllib3                              2.5.0                                     python                          
 virtualenv                           20.35.4                                   python

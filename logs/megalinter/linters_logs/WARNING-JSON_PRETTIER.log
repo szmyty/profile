@@ -45,6 +45,72 @@ See documentation on https://megalinter.io/8.8.0/descriptors/json_prettier/
     [warn] config/theme.json
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
+❌ [ERROR] dashboard-app/package-lock.json
+    Checking formatting...
+    [warn] dashboard-app/package-lock.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] dashboard-app/package.json
+    Checking formatting...
+    [warn] dashboard-app/package.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+✅ [SUCCESS] dashboard-app/public/achievements/achievements.json
+❌ [ERROR] dashboard-app/public/ai/identity.json
+    Checking formatting...
+    [warn] dashboard-app/public/ai/identity.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] dashboard-app/public/config/theme.json
+    Checking formatting...
+    [warn] dashboard-app/public/config/theme.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] dashboard-app/public/developer/stats.json
+    Checking formatting...
+    [warn] dashboard-app/public/developer/stats.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] dashboard-app/public/location/location.json
+    Checking formatting...
+    [warn] dashboard-app/public/location/location.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] dashboard-app/public/oura/metrics.json
+    Checking formatting...
+    [warn] dashboard-app/public/oura/metrics.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] dashboard-app/public/oura/mood.json
+    Checking formatting...
+    [warn] dashboard-app/public/oura/mood.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] dashboard-app/public/soundcloud/latest.json
+    Checking formatting...
+    [warn] dashboard-app/public/soundcloud/latest.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] dashboard-app/public/weather/weather.json
+    Checking formatting...
+    [warn] dashboard-app/public/weather/weather.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] dashboard-app/tsconfig.app.json
+    Checking formatting...
+    [warn] dashboard-app/tsconfig.app.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] dashboard-app/tsconfig.json
+    Checking formatting...
+    [warn] dashboard-app/tsconfig.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] dashboard-app/tsconfig.node.json
+    Checking formatting...
+    [warn] dashboard-app/tsconfig.node.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
 ❌ [ERROR] data/metrics/developer.json
     Checking formatting...
     [warn] data/metrics/developer.json
@@ -120,6 +186,16 @@ See documentation on https://megalinter.io/8.8.0/descriptors/json_prettier/
     [warn] data/timezone.json
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
+❌ [ERROR] developer/stats.json
+    Checking formatting...
+    [warn] developer/stats.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] location/location.json
+    Checking formatting...
+    [warn] location/location.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
 ❌ [ERROR] oura/health_snapshot.json
     Checking formatting...
     [warn] oura/health_snapshot.json
@@ -163,6 +239,11 @@ See documentation on https://megalinter.io/8.8.0/descriptors/json_prettier/
 ❌ [ERROR] schemas/weather.schema.json
     Checking formatting...
     [warn] schemas/weather.schema.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] soundcloud/latest.json
+    Checking formatting...
+    [warn] soundcloud/latest.json
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
 ❌ [ERROR] weather/weather.json

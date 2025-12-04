@@ -1,0 +1,103 @@
+Results of stylelint linter (version 16.20.0)
+See documentation on https://megalinter.io/8.8.0/descriptors/css_stylelint/
+-----------------------------------------------
+
+❌ [ERROR] dashboard-app/src/App.css
+    ConfigurationError: No configuration provided for dashboard-app/src/App.css
+        at getConfigForFile (file:///node-deps/node_modules/stylelint/lib/getConfigForFile.mjs:66:9)
+        at async isPathIgnored (file:///node-deps/node_modules/stylelint/lib/isPathIgnored.mjs:23:17)
+        at async lintSource (file:///node-deps/node_modules/stylelint/lib/lintSource.mjs:43:20)
+        at async file:///node-deps/node_modules/stylelint/lib/standalone.mjs:240:27
+        at async Promise.all (index 0)
+        at async standalone (file:///node-deps/node_modules/stylelint/lib/standalone.mjs:285:22)
+
+❌ [ERROR] dashboard-app/src/index.css
+    ConfigurationError: No configuration provided for dashboard-app/src/index.css
+        at getConfigForFile (file:///node-deps/node_modules/stylelint/lib/getConfigForFile.mjs:66:9)
+        at async isPathIgnored (file:///node-deps/node_modules/stylelint/lib/isPathIgnored.mjs:23:17)
+        at async lintSource (file:///node-deps/node_modules/stylelint/lib/lintSource.mjs:43:20)
+        at async file:///node-deps/node_modules/stylelint/lib/standalone.mjs:240:27
+        at async Promise.all (index 0)
+        at async standalone (file:///node-deps/node_modules/stylelint/lib/standalone.mjs:285:22)
+
+❌ [ERROR] dashboard-app/src/styles/AIIdentityCard.css
+    ConfigurationError: No configuration provided for dashboard-app/src/styles/AIIdentityCard.css
+        at getConfigForFile (file:///node-deps/node_modules/stylelint/lib/getConfigForFile.mjs:66:9)
+        at async isPathIgnored (file:///node-deps/node_modules/stylelint/lib/isPathIgnored.mjs:23:17)
+        at async lintSource (file:///node-deps/node_modules/stylelint/lib/lintSource.mjs:43:20)
+        at async file:///node-deps/node_modules/stylelint/lib/standalone.mjs:240:27
+        at async Promise.all (index 0)
+        at async standalone (file:///node-deps/node_modules/stylelint/lib/standalone.mjs:285:22)
+
+❌ [ERROR] dashboard-app/src/styles/AchievementsCard.css
+    ConfigurationError: No configuration provided for dashboard-app/src/styles/AchievementsCard.css
+        at getConfigForFile (file:///node-deps/node_modules/stylelint/lib/getConfigForFile.mjs:66:9)
+        at async isPathIgnored (file:///node-deps/node_modules/stylelint/lib/isPathIgnored.mjs:23:17)
+        at async lintSource (file:///node-deps/node_modules/stylelint/lib/lintSource.mjs:43:20)
+        at async file:///node-deps/node_modules/stylelint/lib/standalone.mjs:240:27
+        at async Promise.all (index 0)
+        at async standalone (file:///node-deps/node_modules/stylelint/lib/standalone.mjs:285:22)
+
+❌ [ERROR] dashboard-app/src/styles/Card.css
+    ConfigurationError: No configuration provided for dashboard-app/src/styles/Card.css
+        at getConfigForFile (file:///node-deps/node_modules/stylelint/lib/getConfigForFile.mjs:66:9)
+        at async isPathIgnored (file:///node-deps/node_modules/stylelint/lib/isPathIgnored.mjs:23:17)
+        at async lintSource (file:///node-deps/node_modules/stylelint/lib/lintSource.mjs:43:20)
+        at async file:///node-deps/node_modules/stylelint/lib/standalone.mjs:240:27
+        at async Promise.all (index 0)
+        at async standalone (file:///node-deps/node_modules/stylelint/lib/standalone.mjs:285:22)
+
+❌ [ERROR] dashboard-app/src/styles/DeveloperDashboardCard.css
+    ConfigurationError: No configuration provided for dashboard-app/src/styles/DeveloperDashboardCard.css
+        at getConfigForFile (file:///node-deps/node_modules/stylelint/lib/getConfigForFile.mjs:66:9)
+        at async isPathIgnored (file:///node-deps/node_modules/stylelint/lib/isPathIgnored.mjs:23:17)
+        at async lintSource (file:///node-deps/node_modules/stylelint/lib/lintSource.mjs:43:20)
+        at async file:///node-deps/node_modules/stylelint/lib/standalone.mjs:240:27
+        at async Promise.all (index 0)
+        at async standalone (file:///node-deps/node_modules/stylelint/lib/standalone.mjs:285:22)
+
+❌ [ERROR] dashboard-app/src/styles/LocationCard.css
+    ConfigurationError: No configuration provided for dashboard-app/src/styles/LocationCard.css
+        at getConfigForFile (file:///node-deps/node_modules/stylelint/lib/getConfigForFile.mjs:66:9)
+        at async isPathIgnored (file:///node-deps/node_modules/stylelint/lib/isPathIgnored.mjs:23:17)
+        at async lintSource (file:///node-deps/node_modules/stylelint/lib/lintSource.mjs:43:20)
+        at async file:///node-deps/node_modules/stylelint/lib/standalone.mjs:240:27
+        at async Promise.all (index 0)
+        at async standalone (file:///node-deps/node_modules/stylelint/lib/standalone.mjs:285:22)
+
+❌ [ERROR] dashboard-app/src/styles/MoodAvatarCard.css
+    ConfigurationError: No configuration provided for dashboard-app/src/styles/MoodAvatarCard.css
+        at getConfigForFile (file:///node-deps/node_modules/stylelint/lib/getConfigForFile.mjs:66:9)
+        at async isPathIgnored (file:///node-deps/node_modules/stylelint/lib/isPathIgnored.mjs:23:17)
+        at async lintSource (file:///node-deps/node_modules/stylelint/lib/lintSource.mjs:43:20)
+        at async file:///node-deps/node_modules/stylelint/lib/standalone.mjs:240:27
+        at async Promise.all (index 0)
+        at async standalone (file:///node-deps/node_modules/stylelint/lib/standalone.mjs:285:22)
+
+❌ [ERROR] dashboard-app/src/styles/OuraHealthCard.css
+    ConfigurationError: No configuration provided for dashboard-app/src/styles/OuraHealthCard.css
+        at getConfigForFile (file:///node-deps/node_modules/stylelint/lib/getConfigForFile.mjs:66:9)
+        at async isPathIgnored (file:///node-deps/node_modules/stylelint/lib/isPathIgnored.mjs:23:17)
+        at async lintSource (file:///node-deps/node_modules/stylelint/lib/lintSource.mjs:43:20)
+        at async file:///node-deps/node_modules/stylelint/lib/standalone.mjs:240:27
+        at async Promise.all (index 0)
+        at async standalone (file:///node-deps/node_modules/stylelint/lib/standalone.mjs:285:22)
+
+❌ [ERROR] dashboard-app/src/styles/SoundCloudCard.css
+    ConfigurationError: No configuration provided for dashboard-app/src/styles/SoundCloudCard.css
+        at getConfigForFile (file:///node-deps/node_modules/stylelint/lib/getConfigForFile.mjs:66:9)
+        at async isPathIgnored (file:///node-deps/node_modules/stylelint/lib/isPathIgnored.mjs:23:17)
+        at async lintSource (file:///node-deps/node_modules/stylelint/lib/lintSource.mjs:43:20)
+        at async file:///node-deps/node_modules/stylelint/lib/standalone.mjs:240:27
+        at async Promise.all (index 0)
+        at async standalone (file:///node-deps/node_modules/stylelint/lib/standalone.mjs:285:22)
+
+❌ [ERROR] dashboard-app/src/styles/WeatherCard.css
+    ConfigurationError: No configuration provided for dashboard-app/src/styles/WeatherCard.css
+        at getConfigForFile (file:///node-deps/node_modules/stylelint/lib/getConfigForFile.mjs:66:9)
+        at async isPathIgnored (file:///node-deps/node_modules/stylelint/lib/isPathIgnored.mjs:23:17)
+        at async lintSource (file:///node-deps/node_modules/stylelint/lib/lintSource.mjs:43:20)
+        at async file:///node-deps/node_modules/stylelint/lib/standalone.mjs:240:27
+        at async Promise.all (index 0)
+        at async standalone (file:///node-deps/node_modules/stylelint/lib/standalone.mjs:285:22)
+

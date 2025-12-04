@@ -35,7 +35,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_ruff/
     25 | from datetime import datetime, timezone, timedelta
        |                                          ^^^^^^^^^ F401
     26 | from pathlib import Path
-    27 | from typing import Any, Dict, List, Optional
+    27 | from typing import Any, Dict, List, Optional, Union
        |
        = help: Remove unused import: `datetime.timedelta`
     
@@ -478,7 +478,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_ruff/
     scripts/generate-location-card.py:248:15: F541 [*] f-string without any placeholders
         |
     246 |     metadata, error = try_load_json(metadata_path, "Metadata file")
-    247 |     if error:
+    247 |     if error or metadata is None:
     248 |         print(f"❌ FAILURE: Cannot read location metadata", file=sys.stderr)
         |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ F541
     249 |         print(f"   → {error}", file=sys.stderr)
@@ -920,7 +920,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_ruff/
        |
     41 |         95-99: Thunderstorm
     42 |     """
-    43 |     alerts = []
+    43 |     alerts: List[Tuple[str, str, str]] = []
        |     ^^^^^^ F841
     44 |     
     45 |     # Thunderstorm alerts (95-99)

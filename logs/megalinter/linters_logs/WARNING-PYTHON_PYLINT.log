@@ -21,6 +21,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pylint/
     scripts/fetch-developer-stats.py:153:0: C0303: Trailing whitespace (trailing-whitespace)
     scripts/fetch-developer-stats.py:159:0: C0303: Trailing whitespace (trailing-whitespace)
     scripts/fetch-developer-stats.py:166:0: C0303: Trailing whitespace (trailing-whitespace)
+    scripts/fetch-developer-stats.py:186:0: C0301: Line too long (114/100) (line-too-long)
     scripts/fetch-developer-stats.py:190:0: C0303: Trailing whitespace (trailing-whitespace)
     scripts/fetch-developer-stats.py:200:0: C0303: Trailing whitespace (trailing-whitespace)
     scripts/fetch-developer-stats.py:211:0: C0303: Trailing whitespace (trailing-whitespace)
@@ -63,7 +64,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pylint/
     scripts/fetch-developer-stats.py:25:0: W0611: Unused timedelta imported from datetime (unused-import)
     
     -----------------------------------
-    Your code has been rated at 8.13/10
+    Your code has been rated at 8.09/10
 
 ❌ [ERROR] scripts/generate-card.py
     ************* Module generate-card
@@ -84,20 +85,21 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pylint/
     scripts/generate-card.py:215:0: C0301: Line too long (126/100) (line-too-long)
     scripts/generate-card.py:218:0: C0301: Line too long (128/100) (line-too-long)
     scripts/generate-card.py:239:0: C0301: Line too long (102/100) (line-too-long)
-    scripts/generate-card.py:275:0: C0301: Line too long (110/100) (line-too-long)
-    scripts/generate-card.py:294:0: C0301: Line too long (108/100) (line-too-long)
+    scripts/generate-card.py:254:0: C0301: Line too long (106/100) (line-too-long)
+    scripts/generate-card.py:277:0: C0301: Line too long (110/100) (line-too-long)
+    scripts/generate-card.py:296:0: C0301: Line too long (108/100) (line-too-long)
     scripts/generate-card.py:1:0: C0103: Module name "generate-card" doesn't conform to snake_case naming style (invalid-name)
     scripts/generate-card.py:70:0: R0913: Too many arguments (9/5) (too-many-arguments)
     scripts/generate-card.py:70:0: R0917: Too many positional arguments (9/5) (too-many-positional-arguments)
     scripts/generate-card.py:70:0: R0914: Too many local variables (46/15) (too-many-locals)
-    scripts/generate-card.py:274:11: W0718: Catching too general exception Exception (broad-exception-caught)
-    scripts/generate-card.py:290:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+    scripts/generate-card.py:276:11: W0718: Catching too general exception Exception (broad-exception-caught)
+    scripts/generate-card.py:292:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
     scripts/generate-card.py:10:0: W0611: Unused datetime imported from datetime (unused-import)
     scripts/generate-card.py:13:0: W0611: Unused load_and_validate_json imported from lib.utils (unused-import)
     scripts/generate-card.py:13:0: W0611: Unused log_fallback_used imported from lib.utils (unused-import)
     
     -----------------------------------
-    Your code has been rated at 7.20/10
+    Your code has been rated at 7.13/10
 
 ❌ [ERROR] scripts/generate-consolidated-dashboard.py
     ************* Module generate-consolidated-dashboard
@@ -506,6 +508,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pylint/
     scripts/generate-location-card.py:196:0: C0301: Line too long (113/100) (line-too-long)
     scripts/generate-location-card.py:201:0: C0301: Line too long (185/100) (line-too-long)
     scripts/generate-location-card.py:213:0: C0301: Line too long (121/100) (line-too-long)
+    scripts/generate-location-card.py:251:0: C0301: Line too long (104/100) (line-too-long)
     scripts/generate-location-card.py:312:0: C0301: Line too long (137/100) (line-too-long)
     scripts/generate-location-card.py:1:0: C0103: Module name "generate-location-card" doesn't conform to snake_case naming style (invalid-name)
     scripts/generate-location-card.py:58:0: R0913: Too many arguments (6/5) (too-many-arguments)
@@ -540,7 +543,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pylint/
     scripts/generate-location-card.py:13:0: W0611: Unused log_fallback_used imported from lib.utils (unused-import)
     
     -----------------------------------
-    Your code has been rated at 7.15/10
+    Your code has been rated at 7.09/10
 
 ❌ [ERROR] scripts/generate-oura-mood-card.py
     ************* Module generate-oura-mood-card
@@ -579,8 +582,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pylint/
     scripts/generate-oura-mood-card.py:320:0: C0303: Trailing whitespace (trailing-whitespace)
     scripts/generate-oura-mood-card.py:325:0: C0303: Trailing whitespace (trailing-whitespace)
     scripts/generate-oura-mood-card.py:327:0: C0301: Line too long (162/100) (line-too-long)
-    scripts/generate-oura-mood-card.py:369:0: C0301: Line too long (104/100) (line-too-long)
-    scripts/generate-oura-mood-card.py:388:0: C0301: Line too long (102/100) (line-too-long)
+    scripts/generate-oura-mood-card.py:371:0: C0301: Line too long (104/100) (line-too-long)
+    scripts/generate-oura-mood-card.py:390:0: C0301: Line too long (102/100) (line-too-long)
     scripts/generate-oura-mood-card.py:1:0: C0103: Module name "generate-oura-mood-card" doesn't conform to snake_case naming style (invalid-name)
     scripts/generate-oura-mood-card.py:41:0: R0914: Too many local variables (19/15) (too-many-locals)
     scripts/generate-oura-mood-card.py:83:0: R0914: Too many local variables (19/15) (too-many-locals)
@@ -592,15 +595,15 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pylint/
     scripts/generate-oura-mood-card.py:123:29: W0613: Unused argument 'metrics' (unused-argument)
     scripts/generate-oura-mood-card.py:180:4: W0612: Unused variable 'temp_deviation' (unused-variable)
     scripts/generate-oura-mood-card.py:183:4: W0612: Unused variable 'interpreted' (unused-variable)
-    scripts/generate-oura-mood-card.py:360:17: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-    scripts/generate-oura-mood-card.py:368:11: W0718: Catching too general exception Exception (broad-exception-caught)
-    scripts/generate-oura-mood-card.py:384:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+    scripts/generate-oura-mood-card.py:362:17: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+    scripts/generate-oura-mood-card.py:370:11: W0718: Catching too general exception Exception (broad-exception-caught)
+    scripts/generate-oura-mood-card.py:386:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
     scripts/generate-oura-mood-card.py:14:0: W0611: Unused load_json imported from lib.utils (unused-import)
     scripts/generate-oura-mood-card.py:14:0: W0611: Unused format_timestamp_local imported from lib.utils (unused-import)
     scripts/generate-oura-mood-card.py:14:0: W0611: Unused log_fallback_used imported from lib.utils (unused-import)
     
     -----------------------------------
-    Your code has been rated at 6.03/10
+    Your code has been rated at 6.05/10
 
 ❌ [ERROR] scripts/generate-status-page.py
     ************* Module generate-status-page

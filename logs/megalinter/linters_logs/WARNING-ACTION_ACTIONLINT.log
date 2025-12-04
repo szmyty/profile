@@ -2,19 +2,20 @@ Results of actionlint linter (version 1.7.7)
 See documentation on https://megalinter.io/8.8.0/descriptors/action_actionlint/
 -----------------------------------------------
 
+✅ [SUCCESS] .github/workflows/deploy-dashboard.yml
 ✅ [SUCCESS] .github/workflows/developer.yml
 ❌ [ERROR] .github/workflows/location-card.yml
-    .github/workflows/location-card.yml:34:9: shellcheck reported issue in this script: SC2086:info:8:23: Double quote to prevent globbing and word splitting [shellcheck]
+    .github/workflows/location-card.yml:35:9: shellcheck reported issue in this script: SC2086:info:8:23: Double quote to prevent globbing and word splitting [shellcheck]
        |
-    34 |         run: |
+    35 |         run: |
        |         ^~~~
-    .github/workflows/location-card.yml:34:9: shellcheck reported issue in this script: SC2086:info:10:29: Double quote to prevent globbing and word splitting [shellcheck]
+    .github/workflows/location-card.yml:35:9: shellcheck reported issue in this script: SC2086:info:10:29: Double quote to prevent globbing and word splitting [shellcheck]
        |
-    34 |         run: |
+    35 |         run: |
        |         ^~~~
-    .github/workflows/location-card.yml:34:9: shellcheck reported issue in this script: SC2086:info:11:24: Double quote to prevent globbing and word splitting [shellcheck]
+    .github/workflows/location-card.yml:35:9: shellcheck reported issue in this script: SC2086:info:11:24: Double quote to prevent globbing and word splitting [shellcheck]
        |
-    34 |         run: |
+    35 |         run: |
        |         ^~~~
 
 ✅ [SUCCESS] .github/workflows/megalinter.yml

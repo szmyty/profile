@@ -1,0 +1,15 @@
+Results of htmlhint linter (version 1.5.1)
+See documentation on https://megalinter.io/8.8.0/descriptors/html_htmlhint/
+-----------------------------------------------
+
+✅ [SUCCESS] dashboard-app/index.html
+❌ [ERROR] footer/footer.html
+    
+    (node:5637) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+    (Use `node --trace-deprecation ...` to show where the warning was created)
+       footer/footer.html
+          L5 |<div align="center">
+              ^ Doctype must be declared before any non-comment content. (doctype-first)
+    
+    Scanned 1 files, found 1 errors in 1 files (13 ms)
+

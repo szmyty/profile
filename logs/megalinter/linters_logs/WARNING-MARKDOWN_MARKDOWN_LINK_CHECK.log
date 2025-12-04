@@ -8,13 +8,15 @@ See documentation on https://megalinter.io/8.8.0/descriptors/markdown_markdown_l
       [✖] ./CONTRIBUTING.md → Status: 400
       [✖] ./CODE_OF_CONDUCT.md → Status: 400
 
+✅ [SUCCESS] .github/actions/pip-install/README.md
 ✅ [SUCCESS] .github/actions/setup-environment/README.md
 ✅ [SUCCESS] GITHUB_MARKDOWN_AUDIT_COMPLETE.md
 ✅ [SUCCESS] IMPLEMENTATION_SUMMARY.md
 ✅ [SUCCESS] PERFORMANCE_IMPROVEMENTS_SUMMARY.md
 ❌ [ERROR] README.md
     
-      ERROR: 2 dead links found in README.md !
+      ERROR: 3 dead links found in README.md !
+      [✖] https://szmyty.github.io/profile/ → Status: 404
       [✖] https://www.linkedin.com/in/szmyty → Status: 999
       [✖] branding/footer.svg → Status: 400
 
@@ -23,10 +25,13 @@ See documentation on https://megalinter.io/8.8.0/descriptors/markdown_markdown_l
 ✅ [SUCCESS] SECURITY_SUMMARY_API_RESILIENCE.md
 ✅ [SUCCESS] config/styles/proselint/README.md
 ✅ [SUCCESS] config/styles/write-good/README.md
+✅ [SUCCESS] dashboard-app/README.md
 ✅ [SUCCESS] data/mock/README.md
 ✅ [SUCCESS] data/snapshots/README.md
 ✅ [SUCCESS] docs/API_RESILIENCE.md
 ✅ [SUCCESS] docs/API_TIMEOUT_RETRY_GUIDE.md
+✅ [SUCCESS] docs/CACHING_BENCHMARKS.md
+✅ [SUCCESS] docs/CACHING_QUICK_REFERENCE.md
 ✅ [SUCCESS] docs/INTEGRATION_EXAMPLE.md
 ✅ [SUCCESS] docs/LOCATION_CARD_CHANGES.md
 ✅ [SUCCESS] docs/MONITORING.md
@@ -39,7 +44,14 @@ See documentation on https://megalinter.io/8.8.0/descriptors/markdown_markdown_l
       [✖] #performance--monitoring → Status: 404
 
 ✅ [SUCCESS] docs/ROBUSTNESS_IMPROVEMENTS.md
+✅ [SUCCESS] docs/TROUBLESHOOTING.md
 ✅ [SUCCESS] docs/WORKFLOWS.md
+❌ [ERROR] docs/WORKFLOW_CACHING.md
+    
+      ERROR: 2 dead links found in docs/WORKFLOW_CACHING.md !
+      [✖] .github/actions/setup-environment/README.md → Status: 400
+      [✖] .github/actions/pip-install/README.md → Status: 400
+
 ✅ [SUCCESS] docs/architecture.md
 ✅ [SUCCESS] docs/cards.md
 ✅ [SUCCESS] docs/markdown_valid_elements.md

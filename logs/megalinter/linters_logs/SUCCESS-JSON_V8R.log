@@ -13,6 +13,20 @@ See documentation on https://megalinter.io/8.8.0/descriptors/json_v8r/
 ✅ [SUCCESS] config/styles/proselint/meta.json
 ✅ [SUCCESS] config/styles/write-good/meta.json
 ✅ [SUCCESS] config/theme.json
+✅ [SUCCESS] dashboard-app/package-lock.json
+✅ [SUCCESS] dashboard-app/package.json
+✅ [SUCCESS] dashboard-app/public/achievements/achievements.json
+✅ [SUCCESS] dashboard-app/public/ai/identity.json
+✅ [SUCCESS] dashboard-app/public/config/theme.json
+✅ [SUCCESS] dashboard-app/public/developer/stats.json
+✅ [SUCCESS] dashboard-app/public/location/location.json
+✅ [SUCCESS] dashboard-app/public/oura/metrics.json
+✅ [SUCCESS] dashboard-app/public/oura/mood.json
+✅ [SUCCESS] dashboard-app/public/soundcloud/latest.json
+✅ [SUCCESS] dashboard-app/public/weather/weather.json
+✅ [SUCCESS] dashboard-app/tsconfig.app.json
+✅ [SUCCESS] dashboard-app/tsconfig.json
+✅ [SUCCESS] dashboard-app/tsconfig.node.json
 ✅ [SUCCESS] data/metrics/developer.json
 ✅ [SUCCESS] data/metrics/location.json
 ✅ [SUCCESS] data/metrics/oura.json
@@ -28,6 +42,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/json_v8r/
 ✅ [SUCCESS] data/snapshots/monthly/2025-12.json
 ✅ [SUCCESS] data/snapshots/weekly/2025-W49.json
 ✅ [SUCCESS] data/timezone.json
+✅ [SUCCESS] developer/stats.json
+✅ [SUCCESS] location/location.json
 ✅ [SUCCESS] oura/health_snapshot.json
 ✅ [SUCCESS] oura/metrics.json
 ✅ [SUCCESS] oura/mood.json
@@ -37,4 +53,5 @@ See documentation on https://megalinter.io/8.8.0/descriptors/json_v8r/
 ✅ [SUCCESS] schemas/soundcloud-track.schema.json
 ✅ [SUCCESS] schemas/theme.schema.json
 ✅ [SUCCESS] schemas/weather.schema.json
+✅ [SUCCESS] soundcloud/latest.json
 ✅ [SUCCESS] weather/weather.json

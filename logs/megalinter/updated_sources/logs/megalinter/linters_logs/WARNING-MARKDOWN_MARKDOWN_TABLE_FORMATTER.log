@@ -1,0 +1,89 @@
+Results of markdown-table-formatter linter (version 1.6.1)
+See documentation on https://megalinter.io/8.8.0/descriptors/markdown_markdown_table_formatter/
+-----------------------------------------------
+
+❌ [ERROR] .github/GOVERNANCE.md
+    1 files contain markdown tables to format:
+    - .github/GOVERNANCE.md
+
+❌ [ERROR] .github/actions/pip-install/README.md
+    1 files contain markdown tables to format:
+    - .github/actions/pip-install/README.md
+
+❌ [ERROR] .github/actions/setup-environment/README.md
+    1 files contain markdown tables to format:
+    - .github/actions/setup-environment/README.md
+
+❌ [ERROR] GITHUB_MARKDOWN_AUDIT_COMPLETE.md
+    1 files contain markdown tables to format:
+    - GITHUB_MARKDOWN_AUDIT_COMPLETE.md
+
+✅ [SUCCESS] IMPLEMENTATION_SUMMARY.md
+❌ [ERROR] PERFORMANCE_IMPROVEMENTS_SUMMARY.md
+    1 files contain markdown tables to format:
+    - PERFORMANCE_IMPROVEMENTS_SUMMARY.md
+
+✅ [SUCCESS] README.md
+✅ [SUCCESS] REPORT.md
+✅ [SUCCESS] SECURITY_SUMMARY.md
+✅ [SUCCESS] SECURITY_SUMMARY_API_RESILIENCE.md
+✅ [SUCCESS] config/styles/proselint/README.md
+✅ [SUCCESS] config/styles/write-good/README.md
+✅ [SUCCESS] dashboard-app/README.md
+✅ [SUCCESS] data/mock/README.md
+✅ [SUCCESS] data/snapshots/README.md
+✅ [SUCCESS] docs/API_RESILIENCE.md
+✅ [SUCCESS] docs/API_TIMEOUT_RETRY_GUIDE.md
+❌ [ERROR] docs/CACHING_BENCHMARKS.md
+    1 files contain markdown tables to format:
+    - docs/CACHING_BENCHMARKS.md
+
+❌ [ERROR] docs/CACHING_QUICK_REFERENCE.md
+    1 files contain markdown tables to format:
+    - docs/CACHING_QUICK_REFERENCE.md
+
+✅ [SUCCESS] docs/INTEGRATION_EXAMPLE.md
+✅ [SUCCESS] docs/LOCATION_CARD_CHANGES.md
+✅ [SUCCESS] docs/MONITORING.md
+❌ [ERROR] docs/OPTIMIZATION_GUIDE.md
+    1 files contain markdown tables to format:
+    - docs/OPTIMIZATION_GUIDE.md
+
+❌ [ERROR] docs/README_LAYOUT_BEFORE_AFTER.md
+    1 files contain markdown tables to format:
+    - docs/README_LAYOUT_BEFORE_AFTER.md
+
+✅ [SUCCESS] docs/README_LAYOUT_CHANGELOG.md
+❌ [ERROR] docs/README_SECTION_CHANGES.md
+    1 files contain markdown tables to format:
+    - docs/README_SECTION_CHANGES.md
+
+❌ [ERROR] docs/ROBUSTNESS_IMPROVEMENTS.md
+    1 files contain markdown tables to format:
+    - docs/ROBUSTNESS_IMPROVEMENTS.md
+
+❌ [ERROR] docs/TROUBLESHOOTING.md
+    1 files contain markdown tables to format:
+    - docs/TROUBLESHOOTING.md
+
+✅ [SUCCESS] docs/WORKFLOWS.md
+✅ [SUCCESS] docs/WORKFLOW_CACHING.md
+✅ [SUCCESS] docs/architecture.md
+❌ [ERROR] docs/cards.md
+    1 files contain markdown tables to format:
+    - docs/cards.md
+
+❌ [ERROR] docs/markdown_valid_elements.md
+    1 files contain markdown tables to format:
+    - docs/markdown_valid_elements.md
+
+❌ [ERROR] docs/style-guide.md
+    1 files contain markdown tables to format:
+    - docs/style-guide.md
+
+❌ [ERROR] docs/workflows.md
+    1 files contain markdown tables to format:
+    - docs/workflows.md
+
+✅ [SUCCESS] footer/README.md
+✅ [SUCCESS] schemas/README.md

@@ -1,0 +1,1812 @@
+Results of flake8 linter (version 7.2.0)
+See documentation on https://megalinter.io/8.8.0/descriptors/python_flake8/
+-----------------------------------------------
+
+❌ [ERROR] scripts/audit_megalinter_config.py
+    scripts/audit_megalinter_config.py:13:1: F401 'typing.Set' imported but unused
+    scripts/audit_megalinter_config.py:168:80: E501 line too long (95 > 79 characters)
+    scripts/audit_megalinter_config.py:176:80: E501 line too long (100 > 79 characters)
+    scripts/audit_megalinter_config.py:179:80: E501 line too long (83 > 79 characters)
+    scripts/audit_megalinter_config.py:185:80: E501 line too long (90 > 79 characters)
+    scripts/audit_megalinter_config.py:187:80: E501 line too long (82 > 79 characters)
+    scripts/audit_megalinter_config.py:195:80: E501 line too long (96 > 79 characters)
+    scripts/audit_megalinter_config.py:201:80: E501 line too long (81 > 79 characters)
+    scripts/audit_megalinter_config.py:207:80: E501 line too long (97 > 79 characters)
+    scripts/audit_megalinter_config.py:218:80: E501 line too long (85 > 79 characters)
+    scripts/audit_megalinter_config.py:237:80: E501 line too long (87 > 79 characters)
+    scripts/audit_megalinter_config.py:246:80: E501 line too long (88 > 79 characters)
+    scripts/audit_megalinter_config.py:248:80: E501 line too long (83 > 79 characters)
+    scripts/audit_megalinter_config.py:260:80: E501 line too long (90 > 79 characters)
+    scripts/audit_megalinter_config.py:263:80: E501 line too long (88 > 79 characters)
+    scripts/audit_megalinter_config.py:289:80: E501 line too long (90 > 79 characters)
+    scripts/audit_megalinter_config.py:345:80: E501 line too long (88 > 79 characters)
+    scripts/audit_megalinter_config.py:347:80: E501 line too long (89 > 79 characters)
+    scripts/audit_megalinter_config.py:360:5: F841 local variable 'success' is assigned to but never used
+
+❌ [ERROR] scripts/fetch-developer-stats.py
+    scripts/fetch-developer-stats.py:18:80: E501 line too long (81 > 79 characters)
+    scripts/fetch-developer-stats.py:19:80: E501 line too long (97 > 79 characters)
+    scripts/fetch-developer-stats.py:25:1: F401 'datetime.timedelta' imported but unused
+    scripts/fetch-developer-stats.py:32:80: E501 line too long (82 > 79 characters)
+    scripts/fetch-developer-stats.py:76:80: E501 line too long (95 > 79 characters)
+    scripts/fetch-developer-stats.py:109:80: E501 line too long (91 > 79 characters)
+    scripts/fetch-developer-stats.py:111:80: E501 line too long (81 > 79 characters)
+    scripts/fetch-developer-stats.py:120:80: E501 line too long (97 > 79 characters)
+    scripts/fetch-developer-stats.py:128:80: E501 line too long (86 > 79 characters)
+    scripts/fetch-developer-stats.py:133:80: E501 line too long (106 > 79 characters)
+    scripts/fetch-developer-stats.py:144:80: E501 line too long (82 > 79 characters)
+    scripts/fetch-developer-stats.py:148:80: E501 line too long (87 > 79 characters)
+    scripts/fetch-developer-stats.py:153:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:155:80: E501 line too long (81 > 79 characters)
+    scripts/fetch-developer-stats.py:159:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:166:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:186:80: E501 line too long (114 > 79 characters)
+    scripts/fetch-developer-stats.py:190:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:200:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:207:80: E501 line too long (80 > 79 characters)
+    scripts/fetch-developer-stats.py:211:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:220:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:229:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:234:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:245:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:252:80: E501 line too long (118 > 79 characters)
+    scripts/fetch-developer-stats.py:255:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:260:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:268:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:282:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:284:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:290:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:294:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:298:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:303:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:306:80: E501 line too long (85 > 79 characters)
+    scripts/fetch-developer-stats.py:308:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:311:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:315:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:318:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:339:80: E501 line too long (80 > 79 characters)
+    scripts/fetch-developer-stats.py:341:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:345:80: E501 line too long (81 > 79 characters)
+    scripts/fetch-developer-stats.py:349:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:361:80: E501 line too long (81 > 79 characters)
+    scripts/fetch-developer-stats.py:366:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:372:80: E501 line too long (93 > 79 characters)
+    scripts/fetch-developer-stats.py:381:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:383:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:386:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:389:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:393:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:396:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:400:80: E501 line too long (111 > 79 characters)
+    scripts/fetch-developer-stats.py:402:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:406:1: W293 blank line contains whitespace
+
+❌ [ERROR] scripts/generate-card.py
+    scripts/generate-card.py:10:1: F401 'datetime.datetime' imported but unused
+    scripts/generate-card.py:13:1: F401 'lib.utils.load_and_validate_json' imported but unused
+    scripts/generate-card.py:13:1: F401 'lib.utils.log_fallback_used' imported but unused
+    scripts/generate-card.py:46:1: W293 blank line contains whitespace
+    scripts/generate-card.py:54:80: E501 line too long (82 > 79 characters)
+    scripts/generate-card.py:83:1: W293 blank line contains whitespace
+    scripts/generate-card.py:94:1: W293 blank line contains whitespace
+    scripts/generate-card.py:103:1: W293 blank line contains whitespace
+    scripts/generate-card.py:112:1: W293 blank line contains whitespace
+    scripts/generate-card.py:118:1: W293 blank line contains whitespace
+    scripts/generate-card.py:125:1: W293 blank line contains whitespace
+    scripts/generate-card.py:129:1: W293 blank line contains whitespace
+    scripts/generate-card.py:141:1: W293 blank line contains whitespace
+    scripts/generate-card.py:155:80: E501 line too long (92 > 79 characters)
+    scripts/generate-card.py:189:80: E501 line too long (151 > 79 characters)
+    scripts/generate-card.py:189:80: E501 line too long (151 > 79 characters)
+    scripts/generate-card.py:195:80: E501 line too long (107 > 79 characters)
+    scripts/generate-card.py:200:80: E501 line too long (95 > 79 characters)
+    scripts/generate-card.py:205:80: E501 line too long (96 > 79 characters)
+    scripts/generate-card.py:215:80: E501 line too long (126 > 79 characters)
+    scripts/generate-card.py:218:80: E501 line too long (128 > 79 characters)
+    scripts/generate-card.py:224:80: E501 line too long (99 > 79 characters)
+    scripts/generate-card.py:234:1: W293 blank line contains whitespace
+    scripts/generate-card.py:239:80: E501 line too long (102 > 79 characters)
+    scripts/generate-card.py:243:80: E501 line too long (88 > 79 characters)
+    scripts/generate-card.py:244:80: E501 line too long (84 > 79 characters)
+    scripts/generate-card.py:254:80: E501 line too long (106 > 79 characters)
+    scripts/generate-card.py:255:80: E501 line too long (88 > 79 characters)
+    scripts/generate-card.py:257:80: E501 line too long (85 > 79 characters)
+    scripts/generate-card.py:272:80: E501 line too long (82 > 79 characters)
+    scripts/generate-card.py:277:80: E501 line too long (110 > 79 characters)
+    scripts/generate-card.py:278:80: E501 line too long (88 > 79 characters)
+    scripts/generate-card.py:284:80: E501 line too long (90 > 79 characters)
+    scripts/generate-card.py:285:80: E501 line too long (88 > 79 characters)
+    scripts/generate-card.py:296:80: E501 line too long (108 > 79 characters)
+    scripts/generate-card.py:297:80: E501 line too long (88 > 79 characters)
+
+❌ [ERROR] scripts/generate-consolidated-dashboard.py
+    scripts/generate-consolidated-dashboard.py:17:1: F401 'json' imported but unused
+    scripts/generate-consolidated-dashboard.py:22:1: F401 'lib.utils.get_theme_font_size' imported but unused
+    scripts/generate-consolidated-dashboard.py:78:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:85:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:89:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:92:80: E501 line too long (142 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:93:80: E501 line too long (113 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:96:80: E501 line too long (93 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:99:80: E501 line too long (93 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:100:80: E501 line too long (98 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:102:80: E501 line too long (93 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:103:80: E501 line too long (108 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:112:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:119:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:123:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:126:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:129:80: E501 line too long (139 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:130:80: E501 line too long (110 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:133:80: E501 line too long (109 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:136:80: E501 line too long (93 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:139:80: E501 line too long (93 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:140:80: E501 line too long (80 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:149:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:156:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:164:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:167:80: E501 line too long (137 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:168:80: E501 line too long (108 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:171:80: E501 line too long (109 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:174:80: E501 line too long (93 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:177:80: E501 line too long (93 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:178:80: E501 line too long (87 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:187:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:194:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:199:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:202:80: E501 line too long (137 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:203:80: E501 line too long (108 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:206:80: E501 line too long (109 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:209:80: E501 line too long (93 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:212:80: E501 line too long (93 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:222:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:229:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:233:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:237:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:240:80: E501 line too long (138 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:241:80: E501 line too long (109 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:244:80: E501 line too long (109 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:247:80: E501 line too long (93 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:248:80: E501 line too long (157 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:250:80: E501 line too long (93 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:258:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:265:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:270:5: F841 local variable 'text_primary' is assigned to but never used
+    scripts/generate-consolidated-dashboard.py:274:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:278:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:282:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:289:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:293:80: E501 line too long (176 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:294:80: E501 line too long (111 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:298:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:299:80: E501 line too long (139 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:308:80: E501 line too long (99 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:309:80: E501 line too long (173 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:313:80: E501 line too long (92 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:329:80: E501 line too long (110 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:334:80: E501 line too long (136 > 79 characters)
+    scripts/generate-consolidated-dashboard.py:336:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:344:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:348:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:353:1: W293 blank line contains whitespace
+    scripts/generate-consolidated-dashboard.py:354:80: E501 line too long (82 > 79 characters)
+
+❌ [ERROR] scripts/generate-developer-dashboard.py
+    scripts/generate-developer-dashboard.py:17:1: F401 'pathlib.Path' imported but unused
+    scripts/generate-developer-dashboard.py:18:1: F401 'datetime.datetime' imported but unused
+    scripts/generate-developer-dashboard.py:18:1: F401 'datetime.timezone' imported but unused
+    scripts/generate-developer-dashboard.py:19:1: F401 'typing.Optional' imported but unused
+    scripts/generate-developer-dashboard.py:21:1: F401 'lib.utils.safe_value' imported but unused
+    scripts/generate-developer-dashboard.py:21:1: F401 'lib.utils.get_theme_font_size' imported but unused
+    scripts/generate-developer-dashboard.py:21:1: F401 'lib.utils.format_timestamp_local' imported but unused
+    scripts/generate-developer-dashboard.py:55:80: E501 line too long (96 > 79 characters)
+    scripts/generate-developer-dashboard.py:58:80: E501 line too long (86 > 79 characters)
+    scripts/generate-developer-dashboard.py:75:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:78:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:80:80: E501 line too long (80 > 79 characters)
+    scripts/generate-developer-dashboard.py:83:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:93:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:96:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:98:80: E501 line too long (80 > 79 characters)
+    scripts/generate-developer-dashboard.py:102:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:116:80: E501 line too long (83 > 79 characters)
+    scripts/generate-developer-dashboard.py:117:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:122:80: E501 line too long (95 > 79 characters)
+    scripts/generate-developer-dashboard.py:143:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:145:80: E501 line too long (80 > 79 characters)
+    scripts/generate-developer-dashboard.py:148:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:152:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:157:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:159:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:162:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:165:80: E501 line too long (82 > 79 characters)
+    scripts/generate-developer-dashboard.py:165:83: W291 trailing whitespace
+    scripts/generate-developer-dashboard.py:166:80: E501 line too long (98 > 79 characters)
+    scripts/generate-developer-dashboard.py:167:80: E501 line too long (83 > 79 characters)
+    scripts/generate-developer-dashboard.py:167:84: W291 trailing whitespace
+    scripts/generate-developer-dashboard.py:169:80: E501 line too long (97 > 79 characters)
+    scripts/generate-developer-dashboard.py:169:98: W291 trailing whitespace
+    scripts/generate-developer-dashboard.py:170:80: E501 line too long (81 > 79 characters)
+    scripts/generate-developer-dashboard.py:174:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:190:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:193:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:198:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:202:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:205:80: E501 line too long (99 > 79 characters)
+    scripts/generate-developer-dashboard.py:209:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:216:80: E501 line too long (88 > 79 characters)
+    scripts/generate-developer-dashboard.py:216:89: W291 trailing whitespace
+    scripts/generate-developer-dashboard.py:221:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:234:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:240:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:244:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:257:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:262:5: F841 local variable 'border_radius_md' is assigned to but never used
+    scripts/generate-developer-dashboard.py:263:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:267:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:271:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:287:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:291:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:298:80: E501 line too long (131 > 79 characters)
+    scripts/generate-developer-dashboard.py:299:80: E501 line too long (127 > 79 characters)
+    scripts/generate-developer-dashboard.py:300:80: E501 line too long (140 > 79 characters)
+    scripts/generate-developer-dashboard.py:301:80: E501 line too long (145 > 79 characters)
+    scripts/generate-developer-dashboard.py:303:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:308:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:313:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:325:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:334:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:340:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:348:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:353:64: F821 undefined name 'font_size_xs'
+    scripts/generate-developer-dashboard.py:353:80: E501 line too long (117 > 79 characters)
+    scripts/generate-developer-dashboard.py:357:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:358:80: E501 line too long (139 > 79 characters)
+    scripts/generate-developer-dashboard.py:378:80: E501 line too long (99 > 79 characters)
+    scripts/generate-developer-dashboard.py:379:80: E501 line too long (173 > 79 characters)
+    scripts/generate-developer-dashboard.py:383:80: E501 line too long (92 > 79 characters)
+    scripts/generate-developer-dashboard.py:393:80: E501 line too long (95 > 79 characters)
+    scripts/generate-developer-dashboard.py:398:80: E501 line too long (95 > 79 characters)
+    scripts/generate-developer-dashboard.py:413:80: E501 line too long (95 > 79 characters)
+    scripts/generate-developer-dashboard.py:418:80: E501 line too long (95 > 79 characters)
+    scripts/generate-developer-dashboard.py:432:80: E501 line too long (136 > 79 characters)
+    scripts/generate-developer-dashboard.py:441:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:447:80: E501 line too long (80 > 79 characters)
+    scripts/generate-developer-dashboard.py:453:80: E501 line too long (91 > 79 characters)
+    scripts/generate-developer-dashboard.py:466:80: E501 line too long (83 > 79 characters)
+    scripts/generate-developer-dashboard.py:468:80: E501 line too long (88 > 79 characters)
+
+❌ [ERROR] scripts/generate-fallback-map.py
+    scripts/generate-fallback-map.py:9:1: F401 'typing.Tuple' imported but unused
+    scripts/generate-fallback-map.py:16:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:26:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:36:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:43:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:46:80: E501 line too long (99 > 79 characters)
+    scripts/generate-fallback-map.py:47:80: E501 line too long (93 > 79 characters)
+    scripts/generate-fallback-map.py:48:80: E501 line too long (94 > 79 characters)
+    scripts/generate-fallback-map.py:49:80: E501 line too long (94 > 79 characters)
+    scripts/generate-fallback-map.py:56:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:60:80: E501 line too long (89 > 79 characters)
+    scripts/generate-fallback-map.py:61:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:64:80: E501 line too long (88 > 79 characters)
+    scripts/generate-fallback-map.py:65:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:68:80: E501 line too long (88 > 79 characters)
+    scripts/generate-fallback-map.py:69:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:74:80: E501 line too long (91 > 79 characters)
+    scripts/generate-fallback-map.py:75:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:80:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:82:80: E501 line too long (90 > 79 characters)
+    scripts/generate-fallback-map.py:83:80: E501 line too long (90 > 79 characters)
+    scripts/generate-fallback-map.py:84:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:86:80: E501 line too long (106 > 79 characters)
+    scripts/generate-fallback-map.py:87:80: E501 line too long (106 > 79 characters)
+    scripts/generate-fallback-map.py:88:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:90:80: E501 line too long (108 > 79 characters)
+    scripts/generate-fallback-map.py:91:80: E501 line too long (108 > 79 characters)
+    scripts/generate-fallback-map.py:92:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:94:80: E501 line too long (124 > 79 characters)
+    scripts/generate-fallback-map.py:95:80: E501 line too long (124 > 79 characters)
+    scripts/generate-fallback-map.py:96:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:101:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:107:80: E501 line too long (91 > 79 characters)
+    scripts/generate-fallback-map.py:109:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:111:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:118:15: F541 f-string is missing placeholders
+    scripts/generate-fallback-map.py:118:80: E501 line too long (83 > 79 characters)
+    scripts/generate-fallback-map.py:119:15: F541 f-string is missing placeholders
+    scripts/generate-fallback-map.py:121:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:125:15: F541 f-string is missing placeholders
+    scripts/generate-fallback-map.py:125:80: E501 line too long (81 > 79 characters)
+    scripts/generate-fallback-map.py:127:1: W293 blank line contains whitespace
+    scripts/generate-fallback-map.py:130:15: F541 f-string is missing placeholders
+    scripts/generate-fallback-map.py:130:80: E501 line too long (84 > 79 characters)
+    scripts/generate-fallback-map.py:132:1: W293 blank line contains whitespace
+
+❌ [ERROR] scripts/generate-health-dashboard.py
+    scripts/generate-health-dashboard.py:4:80: E501 line too long (84 > 79 characters)
+    scripts/generate-health-dashboard.py:5:80: E501 line too long (84 > 79 characters)
+    scripts/generate-health-dashboard.py:9:1: F401 'pathlib.Path' imported but unused
+    scripts/generate-health-dashboard.py:11:1: F401 'typing.List' imported but unused
+    scripts/generate-health-dashboard.py:13:1: F401 'lib.utils.load_and_validate_json' imported but unused
+    scripts/generate-health-dashboard.py:13:1: F401 'lib.utils.format_timestamp_local' imported but unused
+    scripts/generate-health-dashboard.py:42:80: E501 line too long (108 > 79 characters)
+    scripts/generate-health-dashboard.py:53:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:58:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:61:80: E501 line too long (97 > 79 characters)
+    scripts/generate-health-dashboard.py:62:80: E501 line too long (85 > 79 characters)
+    scripts/generate-health-dashboard.py:63:80: E501 line too long (82 > 79 characters)
+    scripts/generate-health-dashboard.py:65:80: E501 line too long (94 > 79 characters)
+    scripts/generate-health-dashboard.py:65:95: W291 trailing whitespace
+    scripts/generate-health-dashboard.py:67:80: E501 line too long (94 > 79 characters)
+    scripts/generate-health-dashboard.py:67:95: W291 trailing whitespace
+    scripts/generate-health-dashboard.py:68:80: E501 line too long (83 > 79 characters)
+    scripts/generate-health-dashboard.py:72:80: E501 line too long (87 > 79 characters)
+    scripts/generate-health-dashboard.py:80:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:83:80: E501 line too long (91 > 79 characters)
+    scripts/generate-health-dashboard.py:86:80: E501 line too long (98 > 79 characters)
+    scripts/generate-health-dashboard.py:86:99: W291 trailing whitespace
+    scripts/generate-health-dashboard.py:93:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:102:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:118:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:125:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:131:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:135:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:139:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:146:80: E501 line too long (106 > 79 characters)
+    scripts/generate-health-dashboard.py:147:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:155:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:160:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:166:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:171:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:178:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:182:80: E501 line too long (85 > 79 characters)
+    scripts/generate-health-dashboard.py:183:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:186:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:188:80: E501 line too long (84 > 79 characters)
+    scripts/generate-health-dashboard.py:189:80: E501 line too long (97 > 79 characters)
+    scripts/generate-health-dashboard.py:190:80: E501 line too long (95 > 79 characters)
+    scripts/generate-health-dashboard.py:191:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:198:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:201:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:207:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:215:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:220:80: E501 line too long (117 > 79 characters)
+    scripts/generate-health-dashboard.py:224:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:324:80: E501 line too long (94 > 79 characters)
+    scripts/generate-health-dashboard.py:329:80: E501 line too long (162 > 79 characters)
+    scripts/generate-health-dashboard.py:330:80: E501 line too long (118 > 79 characters)
+    scripts/generate-health-dashboard.py:333:80: E501 line too long (139 > 79 characters)
+    scripts/generate-health-dashboard.py:339:80: E501 line too long (117 > 79 characters)
+    scripts/generate-health-dashboard.py:343:80: E501 line too long (91 > 79 characters)
+    scripts/generate-health-dashboard.py:346:80: E501 line too long (98 > 79 characters)
+    scripts/generate-health-dashboard.py:349:80: E501 line too long (98 > 79 characters)
+    scripts/generate-health-dashboard.py:357:80: E501 line too long (164 > 79 characters)
+    scripts/generate-health-dashboard.py:358:80: E501 line too long (120 > 79 characters)
+    scripts/generate-health-dashboard.py:362:80: E501 line too long (91 > 79 characters)
+    scripts/generate-health-dashboard.py:365:80: E501 line too long (98 > 79 characters)
+    scripts/generate-health-dashboard.py:368:80: E501 line too long (98 > 79 characters)
+    scripts/generate-health-dashboard.py:373:80: E501 line too long (91 > 79 characters)
+    scripts/generate-health-dashboard.py:376:80: E501 line too long (98 > 79 characters)
+    scripts/generate-health-dashboard.py:379:80: E501 line too long (98 > 79 characters)
+    scripts/generate-health-dashboard.py:389:80: E501 line too long (103 > 79 characters)
+    scripts/generate-health-dashboard.py:395:80: E501 line too long (121 > 79 characters)
+    scripts/generate-health-dashboard.py:404:1: W293 blank line contains whitespace
+    scripts/generate-health-dashboard.py:411:80: E501 line too long (87 > 79 characters)
+    scripts/generate-health-dashboard.py:417:80: E501 line too long (83 > 79 characters)
+    scripts/generate-health-dashboard.py:430:80: E501 line too long (85 > 79 characters)
+    scripts/generate-health-dashboard.py:432:80: E501 line too long (85 > 79 characters)
+
+❌ [ERROR] scripts/generate-health-snapshot.py
+    scripts/generate-health-snapshot.py:4:80: E501 line too long (91 > 79 characters)
+    scripts/generate-health-snapshot.py:16:80: E501 line too long (92 > 79 characters)
+    scripts/generate-health-snapshot.py:41:80: E501 line too long (86 > 79 characters)
+    scripts/generate-health-snapshot.py:43:1: W293 blank line contains whitespace
+    scripts/generate-health-snapshot.py:47:1: W293 blank line contains whitespace
+    scripts/generate-health-snapshot.py:52:1: W293 blank line contains whitespace
+    scripts/generate-health-snapshot.py:56:1: W293 blank line contains whitespace
+    scripts/generate-health-snapshot.py:57:29: W291 trailing whitespace
+    scripts/generate-health-snapshot.py:59:80: E501 line too long (81 > 79 characters)
+    scripts/generate-health-snapshot.py:60:1: W293 blank line contains whitespace
+    scripts/generate-health-snapshot.py:64:1: W293 blank line contains whitespace
+    scripts/generate-health-snapshot.py:68:1: W293 blank line contains whitespace
+    scripts/generate-health-snapshot.py:93:80: E501 line too long (81 > 79 characters)
+    scripts/generate-health-snapshot.py:95:80: E501 line too long (89 > 79 characters)
+    scripts/generate-health-snapshot.py:96:80: E501 line too long (85 > 79 characters)
+    scripts/generate-health-snapshot.py:97:80: E501 line too long (87 > 79 characters)
+    scripts/generate-health-snapshot.py:98:80: E501 line too long (99 > 79 characters)
+    scripts/generate-health-snapshot.py:99:80: E501 line too long (85 > 79 characters)
+    scripts/generate-health-snapshot.py:101:80: E501 line too long (95 > 79 characters)
+    scripts/generate-health-snapshot.py:102:80: E501 line too long (81 > 79 characters)
+    scripts/generate-health-snapshot.py:103:80: E501 line too long (85 > 79 characters)
+    scripts/generate-health-snapshot.py:112:80: E501 line too long (98 > 79 characters)
+    scripts/generate-health-snapshot.py:116:80: E501 line too long (84 > 79 characters)
+    scripts/generate-health-snapshot.py:117:80: E501 line too long (80 > 79 characters)
+    scripts/generate-health-snapshot.py:118:80: E501 line too long (82 > 79 characters)
+    scripts/generate-health-snapshot.py:119:80: E501 line too long (88 > 79 characters)
+    scripts/generate-health-snapshot.py:120:80: E501 line too long (82 > 79 characters)
+    scripts/generate-health-snapshot.py:123:80: E501 line too long (88 > 79 characters)
+    scripts/generate-health-snapshot.py:124:80: E501 line too long (82 > 79 characters)
+    scripts/generate-health-snapshot.py:132:80: E501 line too long (107 > 79 characters)
+    scripts/generate-health-snapshot.py:134:1: W293 blank line contains whitespace
+    scripts/generate-health-snapshot.py:148:80: E501 line too long (83 > 79 characters)
+
+❌ [ERROR] scripts/generate-interactive-dashboard.py
+    scripts/generate-interactive-dashboard.py:3:80: E501 line too long (82 > 79 characters)
+    scripts/generate-interactive-dashboard.py:16:1: F401 'json' imported but unused
+    scripts/generate-interactive-dashboard.py:24:1: F401 'utils.get_theme_font_size' imported but unused
+    scripts/generate-interactive-dashboard.py:24:1: E402 module level import not at top of file
+    scripts/generate-interactive-dashboard.py:75:80: E501 line too long (89 > 79 characters)
+    scripts/generate-interactive-dashboard.py:79:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:86:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:91:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:93:80: E501 line too long (113 > 79 characters)
+    scripts/generate-interactive-dashboard.py:94:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:97:80: E501 line too long (159 > 79 characters)
+    scripts/generate-interactive-dashboard.py:98:80: E501 line too long (113 > 79 characters)
+    scripts/generate-interactive-dashboard.py:101:80: E501 line too long (93 > 79 characters)
+    scripts/generate-interactive-dashboard.py:104:80: E501 line too long (93 > 79 characters)
+    scripts/generate-interactive-dashboard.py:105:80: E501 line too long (98 > 79 characters)
+    scripts/generate-interactive-dashboard.py:107:80: E501 line too long (93 > 79 characters)
+    scripts/generate-interactive-dashboard.py:108:80: E501 line too long (108 > 79 characters)
+    scripts/generate-interactive-dashboard.py:114:80: E501 line too long (89 > 79 characters)
+    scripts/generate-interactive-dashboard.py:118:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:125:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:131:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:133:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:137:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:139:80: E501 line too long (92 > 79 characters)
+    scripts/generate-interactive-dashboard.py:140:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:143:80: E501 line too long (156 > 79 characters)
+    scripts/generate-interactive-dashboard.py:144:80: E501 line too long (110 > 79 characters)
+    scripts/generate-interactive-dashboard.py:147:80: E501 line too long (109 > 79 characters)
+    scripts/generate-interactive-dashboard.py:150:80: E501 line too long (93 > 79 characters)
+    scripts/generate-interactive-dashboard.py:153:80: E501 line too long (93 > 79 characters)
+    scripts/generate-interactive-dashboard.py:154:80: E501 line too long (80 > 79 characters)
+    scripts/generate-interactive-dashboard.py:160:80: E501 line too long (86 > 79 characters)
+    scripts/generate-interactive-dashboard.py:164:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:171:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:180:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:182:80: E501 line too long (129 > 79 characters)
+    scripts/generate-interactive-dashboard.py:183:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:186:80: E501 line too long (154 > 79 characters)
+    scripts/generate-interactive-dashboard.py:187:80: E501 line too long (108 > 79 characters)
+    scripts/generate-interactive-dashboard.py:190:80: E501 line too long (109 > 79 characters)
+    scripts/generate-interactive-dashboard.py:193:80: E501 line too long (93 > 79 characters)
+    scripts/generate-interactive-dashboard.py:196:80: E501 line too long (93 > 79 characters)
+    scripts/generate-interactive-dashboard.py:197:80: E501 line too long (87 > 79 characters)
+    scripts/generate-interactive-dashboard.py:203:80: E501 line too long (87 > 79 characters)
+    scripts/generate-interactive-dashboard.py:207:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:214:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:220:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:223:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:226:80: E501 line too long (154 > 79 characters)
+    scripts/generate-interactive-dashboard.py:227:80: E501 line too long (108 > 79 characters)
+    scripts/generate-interactive-dashboard.py:230:80: E501 line too long (109 > 79 characters)
+    scripts/generate-interactive-dashboard.py:233:80: E501 line too long (93 > 79 characters)
+    scripts/generate-interactive-dashboard.py:236:80: E501 line too long (93 > 79 characters)
+    scripts/generate-interactive-dashboard.py:243:80: E501 line too long (88 > 79 characters)
+    scripts/generate-interactive-dashboard.py:247:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:254:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:259:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:263:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:266:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:269:80: E501 line too long (155 > 79 characters)
+    scripts/generate-interactive-dashboard.py:270:80: E501 line too long (109 > 79 characters)
+    scripts/generate-interactive-dashboard.py:273:80: E501 line too long (109 > 79 characters)
+    scripts/generate-interactive-dashboard.py:276:80: E501 line too long (93 > 79 characters)
+    scripts/generate-interactive-dashboard.py:277:80: E501 line too long (157 > 79 characters)
+    scripts/generate-interactive-dashboard.py:279:80: E501 line too long (93 > 79 characters)
+    scripts/generate-interactive-dashboard.py:288:5: F841 local variable 'accent_teal' is assigned to but never used
+    scripts/generate-interactive-dashboard.py:289:5: F841 local variable 'panel_bg' is assigned to but never used
+    scripts/generate-interactive-dashboard.py:290:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:291:12: F541 f-string is missing placeholders
+    scripts/generate-interactive-dashboard.py:297:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:302:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:307:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:313:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:319:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:323:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:332:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:335:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:342:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:350:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:354:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:358:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:361:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:363:80: E501 line too long (87 > 79 characters)
+    scripts/generate-interactive-dashboard.py:364:80: E501 line too long (90 > 79 characters)
+    scripts/generate-interactive-dashboard.py:365:80: E501 line too long (81 > 79 characters)
+    scripts/generate-interactive-dashboard.py:366:80: E501 line too long (85 > 79 characters)
+    scripts/generate-interactive-dashboard.py:367:80: E501 line too long (87 > 79 characters)
+    scripts/generate-interactive-dashboard.py:368:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:372:80: E501 line too long (170 > 79 characters)
+    scripts/generate-interactive-dashboard.py:373:80: E501 line too long (131 > 79 characters)
+    scripts/generate-interactive-dashboard.py:376:80: E501 line too long (110 > 79 characters)
+    scripts/generate-interactive-dashboard.py:379:80: E501 line too long (110 > 79 characters)
+    scripts/generate-interactive-dashboard.py:382:80: E501 line too long (81 > 79 characters)
+    scripts/generate-interactive-dashboard.py:384:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:385:80: E501 line too long (139 > 79 characters)
+    scripts/generate-interactive-dashboard.py:392:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:396:80: E501 line too long (99 > 79 characters)
+    scripts/generate-interactive-dashboard.py:397:80: E501 line too long (173 > 79 characters)
+    scripts/generate-interactive-dashboard.py:401:80: E501 line too long (92 > 79 characters)
+    scripts/generate-interactive-dashboard.py:417:80: E501 line too long (110 > 79 characters)
+    scripts/generate-interactive-dashboard.py:422:80: E501 line too long (162 > 79 characters)
+    scripts/generate-interactive-dashboard.py:424:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:432:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:433:80: E501 line too long (117 > 79 characters)
+    scripts/generate-interactive-dashboard.py:434:80: E501 line too long (106 > 79 characters)
+    scripts/generate-interactive-dashboard.py:435:80: E501 line too long (98 > 79 characters)
+    scripts/generate-interactive-dashboard.py:436:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:438:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:442:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:447:1: W293 blank line contains whitespace
+    scripts/generate-interactive-dashboard.py:448:80: E501 line too long (101 > 79 characters)
+
+❌ [ERROR] scripts/generate-location-card.py
+    scripts/generate-location-card.py:11:1: F401 'typing.Dict' imported but unused
+    scripts/generate-location-card.py:11:1: F401 'typing.Any' imported but unused
+    scripts/generate-location-card.py:13:1: F401 'lib.utils.load_json' imported but unused
+    scripts/generate-location-card.py:13:1: F401 'lib.utils.format_timestamp_local' imported but unused
+    scripts/generate-location-card.py:13:1: F401 'lib.utils.log_fallback_used' imported but unused
+    scripts/generate-location-card.py:36:1: W293 blank line contains whitespace
+    scripts/generate-location-card.py:48:1: W293 blank line contains whitespace
+    scripts/generate-location-card.py:68:1: W293 blank line contains whitespace
+    scripts/generate-location-card.py:76:1: W293 blank line contains whitespace
+    scripts/generate-location-card.py:80:1: W293 blank line contains whitespace
+    scripts/generate-location-card.py:85:1: W293 blank line contains whitespace
+    scripts/generate-location-card.py:93:1: W293 blank line contains whitespace
+    scripts/generate-location-card.py:99:1: W293 blank line contains whitespace
+    scripts/generate-location-card.py:101:5: F841 local variable 'font_size_base' is assigned to but never used
+    scripts/generate-location-card.py:105:1: W293 blank line contains whitespace
+    scripts/generate-location-card.py:109:1: W293 blank line contains whitespace
+    scripts/generate-location-card.py:119:80: E501 line too long (89 > 79 characters)
+    scripts/generate-location-card.py:126:1: W293 blank line contains whitespace
+    scripts/generate-location-card.py:132:1: W293 blank line contains whitespace
+    scripts/generate-location-card.py:140:1: W293 blank line contains whitespace
+    scripts/generate-location-card.py:148:1: W293 blank line contains whitespace
+    scripts/generate-location-card.py:153:80: E501 line too long (117 > 79 characters)
+    scripts/generate-location-card.py:158:80: E501 line too long (182 > 79 characters)
+    scripts/generate-location-card.py:165:80: E501 line too long (103 > 79 characters)
+    scripts/generate-location-card.py:177:80: E501 line too long (99 > 79 characters)
+    scripts/generate-location-card.py:178:80: E501 line too long (173 > 79 characters)
+    scripts/generate-location-card.py:182:80: E501 line too long (125 > 79 characters)
+    scripts/generate-location-card.py:189:80: E501 line too long (87 > 79 characters)
+    scripts/generate-location-card.py:196:80: E501 line too long (113 > 79 characters)
+    scripts/generate-location-card.py:201:80: E501 line too long (185 > 79 characters)
+    scripts/generate-location-card.py:205:80: E501 line too long (89 > 79 characters)
+    scripts/generate-location-card.py:213:80: E501 line too long (121 > 79 characters)
+    scripts/generate-location-card.py:222:1: W293 blank line contains whitespace
+    scripts/generate-location-card.py:228:80: E501 line too long (87 > 79 characters)
+    scripts/generate-location-card.py:235:80: E501 line too long (84 > 79 characters)
+    scripts/generate-location-card.py:248:15: F541 f-string is missing placeholders
+    scripts/generate-location-card.py:250:80: E501 line too long (89 > 79 characters)
+    scripts/generate-location-card.py:251:80: E501 line too long (104 > 79 characters)
+    scripts/generate-location-card.py:252:80: E501 line too long (91 > 79 characters)
+    scripts/generate-location-card.py:260:15: F541 f-string is missing placeholders
+    scripts/generate-location-card.py:260:80: E501 line too long (84 > 79 characters)
+    scripts/generate-location-card.py:261:80: E501 line too long (88 > 79 characters)
+    scripts/generate-location-card.py:262:80: E501 line too long (91 > 79 characters)
+    scripts/generate-location-card.py:270:15: F541 f-string is missing placeholders
+    scripts/generate-location-card.py:270:80: E501 line too long (87 > 79 characters)
+    scripts/generate-location-card.py:271:80: E501 line too long (88 > 79 characters)
+    scripts/generate-location-card.py:272:80: E501 line too long (91 > 79 characters)
+    scripts/generate-location-card.py:282:15: F541 f-string is missing placeholders
+    scripts/generate-location-card.py:283:15: F541 f-string is missing placeholders
+    scripts/generate-location-card.py:283:80: E501 line too long (94 > 79 characters)
+    scripts/generate-location-card.py:284:80: E501 line too long (88 > 79 characters)
+    scripts/generate-location-card.py:285:80: E501 line too long (91 > 79 characters)
+    scripts/generate-location-card.py:291:15: F541 f-string is missing placeholders
+    scripts/generate-location-card.py:292:80: E501 line too long (88 > 79 characters)
+    scripts/generate-location-card.py:293:80: E501 line too long (91 > 79 characters)
+    scripts/generate-location-card.py:299:15: F541 f-string is missing placeholders
+    scripts/generate-location-card.py:299:80: E501 line too long (97 > 79 characters)
+    scripts/generate-location-card.py:300:80: E501 line too long (88 > 79 characters)
+    scripts/generate-location-card.py:301:80: E501 line too long (91 > 79 characters)
+    scripts/generate-location-card.py:306:80: E501 line too long (99 > 79 characters)
+    scripts/generate-location-card.py:311:15: F541 f-string is missing placeholders
+    scripts/generate-location-card.py:312:80: E501 line too long (137 > 79 characters)
+    scripts/generate-location-card.py:313:80: E501 line too long (88 > 79 characters)
+    scripts/generate-location-card.py:314:80: E501 line too long (91 > 79 characters)
+    scripts/generate-location-card.py:334:15: F541 f-string is missing placeholders
+    scripts/generate-location-card.py:334:80: E501 line too long (88 > 79 characters)
+    scripts/generate-location-card.py:335:80: E501 line too long (88 > 79 characters)
+    scripts/generate-location-card.py:336:80: E501 line too long (91 > 79 characters)
+    scripts/generate-location-card.py:344:15: F541 f-string is missing placeholders
+    scripts/generate-location-card.py:344:80: E501 line too long (89 > 79 characters)
+    scripts/generate-location-card.py:345:80: E501 line too long (88 > 79 characters)
+    scripts/generate-location-card.py:346:80: E501 line too long (91 > 79 characters)
+    scripts/generate-location-card.py:354:15: F541 f-string is missing placeholders
+    scripts/generate-location-card.py:354:80: E501 line too long (80 > 79 characters)
+    scripts/generate-location-card.py:355:80: E501 line too long (88 > 79 characters)
+    scripts/generate-location-card.py:356:80: E501 line too long (91 > 79 characters)
+    scripts/generate-location-card.py:368:80: E501 line too long (93 > 79 characters)
+    scripts/generate-location-card.py:372:15: F541 f-string is missing placeholders
+    scripts/generate-location-card.py:373:80: E501 line too long (88 > 79 characters)
+    scripts/generate-location-card.py:374:80: E501 line too long (91 > 79 characters)
+
+❌ [ERROR] scripts/generate-oura-mood-card.py
+    scripts/generate-oura-mood-card.py:14:1: F401 'lib.utils.load_json' imported but unused
+    scripts/generate-oura-mood-card.py:14:1: F401 'lib.utils.format_timestamp_local' imported but unused
+    scripts/generate-oura-mood-card.py:14:1: F401 'lib.utils.log_fallback_used' imported but unused
+    scripts/generate-oura-mood-card.py:41:80: E501 line too long (102 > 79 characters)
+    scripts/generate-oura-mood-card.py:49:1: W293 blank line contains whitespace
+    scripts/generate-oura-mood-card.py:54:1: W293 blank line contains whitespace
+    scripts/generate-oura-mood-card.py:83:80: E501 line too long (104 > 79 characters)
+    scripts/generate-oura-mood-card.py:86:5: F841 local variable 'theme' is assigned to but never used
+    scripts/generate-oura-mood-card.py:95:1: W293 blank line contains whitespace
+    scripts/generate-oura-mood-card.py:101:1: W293 blank line contains whitespace
+    scripts/generate-oura-mood-card.py:116:80: E501 line too long (126 > 79 characters)
+    scripts/generate-oura-mood-card.py:117:80: E501 line too long (82 > 79 characters)
+    scripts/generate-oura-mood-card.py:119:80: E501 line too long (137 > 79 characters)
+    scripts/generate-oura-mood-card.py:125:1: W293 blank line contains whitespace
+    scripts/generate-oura-mood-card.py:131:1: W293 blank line contains whitespace
+    scripts/generate-oura-mood-card.py:138:1: W293 blank line contains whitespace
+    scripts/generate-oura-mood-card.py:143:1: W293 blank line contains whitespace
+    scripts/generate-oura-mood-card.py:152:1: W293 blank line contains whitespace
+    scripts/generate-oura-mood-card.py:156:1: W293 blank line contains whitespace
+    scripts/generate-oura-mood-card.py:180:5: F841 local variable 'temp_deviation' is assigned to but never used
+    scripts/generate-oura-mood-card.py:183:5: F841 local variable 'interpreted' is assigned to but never used
+    scripts/generate-oura-mood-card.py:186:80: E501 line too long (103 > 79 characters)
+    scripts/generate-oura-mood-card.py:189:80: E501 line too long (80 > 79 characters)
+    scripts/generate-oura-mood-card.py:193:80: E501 line too long (110 > 79 characters)
+    scripts/generate-oura-mood-card.py:197:80: E501 line too long (85 > 79 characters)
+    scripts/generate-oura-mood-card.py:198:80: E501 line too long (82 > 79 characters)
+    scripts/generate-oura-mood-card.py:199:1: W293 blank line contains whitespace
+    scripts/generate-oura-mood-card.py:205:1: W293 blank line contains whitespace
+    scripts/generate-oura-mood-card.py:208:27: F821 undefined name 'accent_hr'
+    scripts/generate-oura-mood-card.py:213:1: W293 blank line contains whitespace
+    scripts/generate-oura-mood-card.py:218:64: F821 undefined name 'font_size_xs'
+    scripts/generate-oura-mood-card.py:218:80: E501 line too long (117 > 79 characters)
+    scripts/generate-oura-mood-card.py:223:80: E501 line too long (139 > 79 characters)
+    scripts/generate-oura-mood-card.py:241:80: E501 line too long (116 > 79 characters)
+    scripts/generate-oura-mood-card.py:246:80: E501 line too long (104 > 79 characters)
+    scripts/generate-oura-mood-card.py:247:80: E501 line too long (173 > 79 characters)
+    scripts/generate-oura-mood-card.py:251:80: E501 line too long (104 > 79 characters)
+    scripts/generate-oura-mood-card.py:258:80: E501 line too long (92 > 79 characters)
+    scripts/generate-oura-mood-card.py:261:80: E501 line too long (140 > 79 characters)
+    scripts/generate-oura-mood-card.py:264:80: E501 line too long (103 > 79 characters)
+    scripts/generate-oura-mood-card.py:276:80: E501 line too long (91 > 79 characters)
+    scripts/generate-oura-mood-card.py:279:80: E501 line too long (113 > 79 characters)
+    scripts/generate-oura-mood-card.py:285:80: E501 line too long (91 > 79 characters)
+    scripts/generate-oura-mood-card.py:288:80: E501 line too long (113 > 79 characters)
+    scripts/generate-oura-mood-card.py:295:80: E501 line too long (91 > 79 characters)
+    scripts/generate-oura-mood-card.py:298:80: E501 line too long (133 > 79 characters)
+    scripts/generate-oura-mood-card.py:301:80: E501 line too long (101 > 79 characters)
+    scripts/generate-oura-mood-card.py:308:80: E501 line too long (92 > 79 characters)
+    scripts/generate-oura-mood-card.py:311:80: E501 line too long (92 > 79 characters)
+    scripts/generate-oura-mood-card.py:313:80: E501 line too long (143 > 79 characters)
+    scripts/generate-oura-mood-card.py:320:1: W293 blank line contains whitespace
+    scripts/generate-oura-mood-card.py:325:1: W293 blank line contains whitespace
+    scripts/generate-oura-mood-card.py:327:80: E501 line too long (162 > 79 characters)
+    scripts/generate-oura-mood-card.py:337:80: E501 line too long (89 > 79 characters)
+    scripts/generate-oura-mood-card.py:344:80: E501 line too long (81 > 79 characters)
+    scripts/generate-oura-mood-card.py:352:80: E501 line too long (100 > 79 characters)
+    scripts/generate-oura-mood-card.py:353:80: E501 line too long (87 > 79 characters)
+    scripts/generate-oura-mood-card.py:355:80: E501 line too long (81 > 79 characters)
+    scripts/generate-oura-mood-card.py:371:80: E501 line too long (104 > 79 characters)
+    scripts/generate-oura-mood-card.py:372:80: E501 line too long (87 > 79 characters)
+    scripts/generate-oura-mood-card.py:378:80: E501 line too long (84 > 79 characters)
+    scripts/generate-oura-mood-card.py:379:80: E501 line too long (87 > 79 characters)
+    scripts/generate-oura-mood-card.py:388:80: E501 line too long (83 > 79 characters)
+    scripts/generate-oura-mood-card.py:390:80: E501 line too long (102 > 79 characters)
+    scripts/generate-oura-mood-card.py:391:80: E501 line too long (87 > 79 characters)
+
+❌ [ERROR] scripts/generate-status-page.py
+    scripts/generate-status-page.py:20:1: E402 module level import not at top of file
+    scripts/generate-status-page.py:21:1: E402 module level import not at top of file
+    scripts/generate-status-page.py:35:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:38:45: W291 trailing whitespace
+    scripts/generate-status-page.py:39:38: W291 trailing whitespace
+    scripts/generate-status-page.py:40:30: W291 trailing whitespace
+    scripts/generate-status-page.py:50:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:60:80: E501 line too long (87 > 79 characters)
+    scripts/generate-status-page.py:62:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:65:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:68:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:70:5: F841 local variable 'theme' is assigned to but never used
+    scripts/generate-status-page.py:72:5: F841 local variable 'card_bg' is assigned to but never used
+    scripts/generate-status-page.py:76:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:80:5: F841 local variable 'spacing_md' is assigned to but never used
+    scripts/generate-status-page.py:81:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:87:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:92:80: E501 line too long (123 > 79 characters)
+    scripts/generate-status-page.py:95:80: E501 line too long (104 > 79 characters)
+    scripts/generate-status-page.py:99:80: E501 line too long (99 > 79 characters)
+    scripts/generate-status-page.py:99:100: W291 trailing whitespace
+    scripts/generate-status-page.py:104:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:109:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:112:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:114:80: E501 line too long (126 > 79 characters)
+    scripts/generate-status-page.py:117:80: E501 line too long (114 > 79 characters)
+    scripts/generate-status-page.py:118:80: E501 line too long (114 > 79 characters)
+    scripts/generate-status-page.py:122:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:125:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:127:53: W291 trailing whitespace
+    scripts/generate-status-page.py:131:53: W291 trailing whitespace
+    scripts/generate-status-page.py:133:80: E501 line too long (81 > 79 characters)
+    scripts/generate-status-page.py:135:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:137:59: W291 trailing whitespace
+    scripts/generate-status-page.py:141:53: W291 trailing whitespace
+    scripts/generate-status-page.py:145:53: W291 trailing whitespace
+    scripts/generate-status-page.py:149:52: W291 trailing whitespace
+    scripts/generate-status-page.py:150:80: E501 line too long (93 > 79 characters)
+    scripts/generate-status-page.py:154:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:158:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:161:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:163:80: E501 line too long (90 > 79 characters)
+    scripts/generate-status-page.py:164:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:168:55: W291 trailing whitespace
+    scripts/generate-status-page.py:173:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:177:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:183:49: W291 trailing whitespace
+    scripts/generate-status-page.py:190:49: W291 trailing whitespace
+    scripts/generate-status-page.py:195:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:199:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:202:80: E501 line too long (104 > 79 characters)
+    scripts/generate-status-page.py:204:49: W291 trailing whitespace
+    scripts/generate-status-page.py:209:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:212:49: W291 trailing whitespace
+    scripts/generate-status-page.py:213:80: E501 line too long (82 > 79 characters)
+    scripts/generate-status-page.py:219:49: W291 trailing whitespace
+    scripts/generate-status-page.py:224:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:228:80: E501 line too long (178 > 79 characters)
+    scripts/generate-status-page.py:230:48: W291 trailing whitespace
+    scripts/generate-status-page.py:231:80: E501 line too long (95 > 79 characters)
+    scripts/generate-status-page.py:234:48: W291 trailing whitespace
+    scripts/generate-status-page.py:235:80: E501 line too long (101 > 79 characters)
+    scripts/generate-status-page.py:241:48: W291 trailing whitespace
+    scripts/generate-status-page.py:242:80: E501 line too long (99 > 79 characters)
+    scripts/generate-status-page.py:246:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:250:52: W291 trailing whitespace
+    scripts/generate-status-page.py:251:60: W291 trailing whitespace
+    scripts/generate-status-page.py:254:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:256:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:262:1: W293 blank line contains whitespace
+    scripts/generate-status-page.py:267:80: E501 line too long (85 > 79 characters)
+
+❌ [ERROR] scripts/generate-summary-card.py
+    scripts/generate-summary-card.py:13:1: F401 'json' imported but unused
+    scripts/generate-summary-card.py:18:1: F401 'lib.utils.get_theme_font_size' imported but unused
+    scripts/generate-summary-card.py:33:80: E501 line too long (95 > 79 characters)
+    scripts/generate-summary-card.py:37:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:42:80: E501 line too long (84 > 79 characters)
+    scripts/generate-summary-card.py:45:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:49:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:56:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:62:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:65:80: E501 line too long (97 > 79 characters)
+    scripts/generate-summary-card.py:68:80: E501 line too long (121 > 79 characters)
+    scripts/generate-summary-card.py:76:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:92:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:96:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:100:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:107:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:111:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:118:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:121:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:129:80: E501 line too long (101 > 79 characters)
+    scripts/generate-summary-card.py:130:80: E501 line too long (99 > 79 characters)
+    scripts/generate-summary-card.py:133:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:140:80: E501 line too long (138 > 79 characters)
+    scripts/generate-summary-card.py:143:80: E501 line too long (155 > 79 characters)
+    scripts/generate-summary-card.py:147:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:156:80: E501 line too long (141 > 79 characters)
+    scripts/generate-summary-card.py:157:80: E501 line too long (109 > 79 characters)
+    scripts/generate-summary-card.py:160:80: E501 line too long (93 > 79 characters)
+    scripts/generate-summary-card.py:161:80: E501 line too long (194 > 79 characters)
+    scripts/generate-summary-card.py:164:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:165:80: E501 line too long (139 > 79 characters)
+    scripts/generate-summary-card.py:174:80: E501 line too long (99 > 79 characters)
+    scripts/generate-summary-card.py:175:80: E501 line too long (173 > 79 characters)
+    scripts/generate-summary-card.py:179:80: E501 line too long (92 > 79 characters)
+    scripts/generate-summary-card.py:183:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:190:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:192:80: E501 line too long (103 > 79 characters)
+    scripts/generate-summary-card.py:196:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:203:80: E501 line too long (112 > 79 characters)
+    scripts/generate-summary-card.py:208:80: E501 line too long (136 > 79 characters)
+    scripts/generate-summary-card.py:210:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:218:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:219:80: E501 line too long (92 > 79 characters)
+    scripts/generate-summary-card.py:221:80: E501 line too long (104 > 79 characters)
+    scripts/generate-summary-card.py:222:80: E501 line too long (96 > 79 characters)
+    scripts/generate-summary-card.py:223:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:225:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:229:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:233:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:235:80: E501 line too long (118 > 79 characters)
+    scripts/generate-summary-card.py:237:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:240:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:245:1: W293 blank line contains whitespace
+    scripts/generate-summary-card.py:246:80: E501 line too long (86 > 79 characters)
+
+❌ [ERROR] scripts/generate-themed-dashboard.py
+    scripts/generate-themed-dashboard.py:14:1: F401 'json' imported but unused
+    scripts/generate-themed-dashboard.py:22:1: F401 'utils.get_theme_font_size' imported but unused
+    scripts/generate-themed-dashboard.py:22:1: E402 module level import not at top of file
+    scripts/generate-themed-dashboard.py:73:80: E501 line too long (94 > 79 characters)
+    scripts/generate-themed-dashboard.py:77:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:84:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:88:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:91:80: E501 line too long (142 > 79 characters)
+    scripts/generate-themed-dashboard.py:92:80: E501 line too long (113 > 79 characters)
+    scripts/generate-themed-dashboard.py:95:80: E501 line too long (93 > 79 characters)
+    scripts/generate-themed-dashboard.py:98:80: E501 line too long (93 > 79 characters)
+    scripts/generate-themed-dashboard.py:99:80: E501 line too long (98 > 79 characters)
+    scripts/generate-themed-dashboard.py:101:80: E501 line too long (93 > 79 characters)
+    scripts/generate-themed-dashboard.py:102:80: E501 line too long (108 > 79 characters)
+    scripts/generate-themed-dashboard.py:107:80: E501 line too long (94 > 79 characters)
+    scripts/generate-themed-dashboard.py:111:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:118:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:122:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:124:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:127:80: E501 line too long (139 > 79 characters)
+    scripts/generate-themed-dashboard.py:128:80: E501 line too long (110 > 79 characters)
+    scripts/generate-themed-dashboard.py:131:80: E501 line too long (109 > 79 characters)
+    scripts/generate-themed-dashboard.py:134:80: E501 line too long (93 > 79 characters)
+    scripts/generate-themed-dashboard.py:137:80: E501 line too long (93 > 79 characters)
+    scripts/generate-themed-dashboard.py:138:80: E501 line too long (80 > 79 characters)
+    scripts/generate-themed-dashboard.py:143:80: E501 line too long (91 > 79 characters)
+    scripts/generate-themed-dashboard.py:147:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:154:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:162:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:165:80: E501 line too long (137 > 79 characters)
+    scripts/generate-themed-dashboard.py:166:80: E501 line too long (108 > 79 characters)
+    scripts/generate-themed-dashboard.py:169:80: E501 line too long (109 > 79 characters)
+    scripts/generate-themed-dashboard.py:172:80: E501 line too long (93 > 79 characters)
+    scripts/generate-themed-dashboard.py:175:80: E501 line too long (93 > 79 characters)
+    scripts/generate-themed-dashboard.py:176:80: E501 line too long (87 > 79 characters)
+    scripts/generate-themed-dashboard.py:181:80: E501 line too long (92 > 79 characters)
+    scripts/generate-themed-dashboard.py:185:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:192:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:197:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:200:80: E501 line too long (137 > 79 characters)
+    scripts/generate-themed-dashboard.py:201:80: E501 line too long (108 > 79 characters)
+    scripts/generate-themed-dashboard.py:204:80: E501 line too long (109 > 79 characters)
+    scripts/generate-themed-dashboard.py:207:80: E501 line too long (93 > 79 characters)
+    scripts/generate-themed-dashboard.py:210:80: E501 line too long (93 > 79 characters)
+    scripts/generate-themed-dashboard.py:216:80: E501 line too long (93 > 79 characters)
+    scripts/generate-themed-dashboard.py:220:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:227:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:231:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:235:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:238:80: E501 line too long (138 > 79 characters)
+    scripts/generate-themed-dashboard.py:239:80: E501 line too long (109 > 79 characters)
+    scripts/generate-themed-dashboard.py:242:80: E501 line too long (109 > 79 characters)
+    scripts/generate-themed-dashboard.py:245:80: E501 line too long (93 > 79 characters)
+    scripts/generate-themed-dashboard.py:246:80: E501 line too long (157 > 79 characters)
+    scripts/generate-themed-dashboard.py:248:80: E501 line too long (93 > 79 characters)
+    scripts/generate-themed-dashboard.py:256:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:259:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:266:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:270:5: F841 local variable 'text_primary' is assigned to but never used
+    scripts/generate-themed-dashboard.py:274:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:278:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:282:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:284:80: E501 line too long (87 > 79 characters)
+    scripts/generate-themed-dashboard.py:285:80: E501 line too long (90 > 79 characters)
+    scripts/generate-themed-dashboard.py:286:80: E501 line too long (81 > 79 characters)
+    scripts/generate-themed-dashboard.py:287:80: E501 line too long (85 > 79 characters)
+    scripts/generate-themed-dashboard.py:288:80: E501 line too long (87 > 79 characters)
+    scripts/generate-themed-dashboard.py:289:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:293:80: E501 line too long (176 > 79 characters)
+    scripts/generate-themed-dashboard.py:294:80: E501 line too long (111 > 79 characters)
+    scripts/generate-themed-dashboard.py:297:80: E501 line too long (110 > 79 characters)
+    scripts/generate-themed-dashboard.py:301:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:302:80: E501 line too long (139 > 79 characters)
+    scripts/generate-themed-dashboard.py:311:80: E501 line too long (99 > 79 characters)
+    scripts/generate-themed-dashboard.py:312:80: E501 line too long (173 > 79 characters)
+    scripts/generate-themed-dashboard.py:316:80: E501 line too long (92 > 79 characters)
+    scripts/generate-themed-dashboard.py:332:80: E501 line too long (110 > 79 characters)
+    scripts/generate-themed-dashboard.py:337:80: E501 line too long (136 > 79 characters)
+    scripts/generate-themed-dashboard.py:339:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:347:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:348:80: E501 line too long (102 > 79 characters)
+    scripts/generate-themed-dashboard.py:349:80: E501 line too long (94 > 79 characters)
+    scripts/generate-themed-dashboard.py:350:80: E501 line too long (98 > 79 characters)
+    scripts/generate-themed-dashboard.py:351:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:353:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:357:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:362:1: W293 blank line contains whitespace
+    scripts/generate-themed-dashboard.py:363:80: E501 line too long (89 > 79 characters)
+
+❌ [ERROR] scripts/generate-weather-card.py
+    scripts/generate-weather-card.py:8:1: F401 'pathlib.Path' imported but unused
+    scripts/generate-weather-card.py:10:1: F401 'typing.Dict' imported but unused
+    scripts/generate-weather-card.py:10:1: F401 'typing.Any' imported but unused
+    scripts/generate-weather-card.py:12:1: F401 'lib.utils.load_and_validate_json' imported but unused
+    scripts/generate-weather-card.py:12:1: F401 'lib.utils.format_timestamp_local' imported but unused
+    scripts/generate-weather-card.py:34:80: E501 line too long (100 > 79 characters)
+    scripts/generate-weather-card.py:57:1: W293 blank line contains whitespace
+    scripts/generate-weather-card.py:61:1: W293 blank line contains whitespace
+    scripts/generate-weather-card.py:68:1: W293 blank line contains whitespace
+    scripts/generate-weather-card.py:71:80: E501 line too long (81 > 79 characters)
+    scripts/generate-weather-card.py:76:80: E501 line too long (82 > 79 characters)
+    scripts/generate-weather-card.py:78:80: E501 line too long (82 > 79 characters)
+    scripts/generate-weather-card.py:87:1: W293 blank line contains whitespace
+    scripts/generate-weather-card.py:106:1: W293 blank line contains whitespace
+    scripts/generate-weather-card.py:110:1: W293 blank line contains whitespace
+    scripts/generate-weather-card.py:118:1: W293 blank line contains whitespace
+    scripts/generate-weather-card.py:123:1: W293 blank line contains whitespace
+    scripts/generate-weather-card.py:125:5: F841 local variable 'font_size_base' is assigned to but never used
+    scripts/generate-weather-card.py:131:1: W293 blank line contains whitespace
+    scripts/generate-weather-card.py:135:1: W293 blank line contains whitespace
+    scripts/generate-weather-card.py:157:80: E501 line too long (89 > 79 characters)
+    scripts/generate-weather-card.py:162:1: W293 blank line contains whitespace
+    scripts/generate-weather-card.py:169:1: W293 blank line contains whitespace
+    scripts/generate-weather-card.py:177:1: W293 blank line contains whitespace
+    scripts/generate-weather-card.py:182:80: E501 line too long (117 > 79 characters)
+    scripts/generate-weather-card.py:186:1: W293 blank line contains whitespace
+    scripts/generate-weather-card.py:188:80: E501 line too long (84 > 79 characters)
+    scripts/generate-weather-card.py:192:80: E501 line too long (109 > 79 characters)
+    scripts/generate-weather-card.py:198:80: E501 line too long (139 > 79 characters)
+    scripts/generate-weather-card.py:214:80: E501 line too long (99 > 79 characters)
+    scripts/generate-weather-card.py:215:80: E501 line too long (173 > 79 characters)
+    scripts/generate-weather-card.py:219:80: E501 line too long (104 > 79 characters)
+    scripts/generate-weather-card.py:226:80: E501 line too long (127 > 79 characters)
+    scripts/generate-weather-card.py:229:80: E501 line too long (104 > 79 characters)
+    scripts/generate-weather-card.py:236:80: E501 line too long (94 > 79 characters)
+    scripts/generate-weather-card.py:245:80: E501 line too long (89 > 79 characters)
+    scripts/generate-weather-card.py:252:80: E501 line too long (89 > 79 characters)
+    scripts/generate-weather-card.py:265:80: E501 line too long (121 > 79 characters)
+    scripts/generate-weather-card.py:295:1: W293 blank line contains whitespace
+    scripts/generate-weather-card.py:307:80: E501 line too long (83 > 79 characters)
+    scripts/generate-weather-card.py:322:80: E501 line too long (81 > 79 characters)
+
+❌ [ERROR] scripts/generate_megalinter_summary.py
+    scripts/generate_megalinter_summary.py:40:80: E501 line too long (86 > 79 characters)
+    scripts/generate_megalinter_summary.py:50:80: E501 line too long (86 > 79 characters)
+    scripts/generate_megalinter_summary.py:103:80: E501 line too long (100 > 79 characters)
+    scripts/generate_megalinter_summary.py:151:13: F841 local variable 'severity' is assigned to but never used
+    scripts/generate_megalinter_summary.py:174:80: E501 line too long (93 > 79 characters)
+    scripts/generate_megalinter_summary.py:175:80: E501 line too long (89 > 79 characters)
+    scripts/generate_megalinter_summary.py:176:80: E501 line too long (89 > 79 characters)
+    scripts/generate_megalinter_summary.py:184:80: E501 line too long (83 > 79 characters)
+    scripts/generate_megalinter_summary.py:194:80: E501 line too long (81 > 79 characters)
+    scripts/generate_megalinter_summary.py:195:80: E501 line too long (80 > 79 characters)
+    scripts/generate_megalinter_summary.py:200:80: E501 line too long (88 > 79 characters)
+
+❌ [ERROR] scripts/incremental-generate.py
+    scripts/incremental-generate.py:31:1: W293 blank line contains whitespace
+    scripts/incremental-generate.py:35:80: E501 line too long (86 > 79 characters)
+    scripts/incremental-generate.py:39:1: W293 blank line contains whitespace
+    scripts/incremental-generate.py:46:1: W293 blank line contains whitespace
+    scripts/incremental-generate.py:53:80: E501 line too long (110 > 79 characters)
+    scripts/incremental-generate.py:55:1: W293 blank line contains whitespace
+    scripts/incremental-generate.py:57:80: E501 line too long (89 > 79 characters)
+    scripts/incremental-generate.py:60:1: W293 blank line contains whitespace
+    scripts/incremental-generate.py:62:1: W293 blank line contains whitespace
+    scripts/incremental-generate.py:67:1: W293 blank line contains whitespace
+    scripts/incremental-generate.py:70:80: E501 line too long (80 > 79 characters)
+    scripts/incremental-generate.py:73:1: W293 blank line contains whitespace
+    scripts/incremental-generate.py:78:1: W293 blank line contains whitespace
+    scripts/incremental-generate.py:89:80: E501 line too long (117 > 79 characters)
+    scripts/incremental-generate.py:91:1: W293 blank line contains whitespace
+    scripts/incremental-generate.py:97:1: W293 blank line contains whitespace
+    scripts/incremental-generate.py:102:1: W293 blank line contains whitespace
+    scripts/incremental-generate.py:106:1: W293 blank line contains whitespace
+
+❌ [ERROR] scripts/inject-footer.py
+    scripts/inject-footer.py:27:1: W293 blank line contains whitespace
+    scripts/inject-footer.py:30:1: W293 blank line contains whitespace
+    scripts/inject-footer.py:32:80: E501 line too long (80 > 79 characters)
+    scripts/inject-footer.py:34:1: W293 blank line contains whitespace
+    scripts/inject-footer.py:38:1: W293 blank line contains whitespace
+    scripts/inject-footer.py:51:80: E501 line too long (87 > 79 characters)
+
+✅ [SUCCESS] scripts/lib/__init__.py
+❌ [ERROR] scripts/lib/card_base.py
+    scripts/lib/card_base.py:5:80: E501 line too long (82 > 79 characters)
+    scripts/lib/card_base.py:30:80: E501 line too long (80 > 79 characters)
+    scripts/lib/card_base.py:66:80: E501 line too long (84 > 79 characters)
+    scripts/lib/card_base.py:80:80: E501 line too long (89 > 79 characters)
+    scripts/lib/card_base.py:158:80: E501 line too long (86 > 79 characters)
+    scripts/lib/card_base.py:171:80: E501 line too long (82 > 79 characters)
+    scripts/lib/card_base.py:179:80: E501 line too long (82 > 79 characters)
+    scripts/lib/card_base.py:190:80: E501 line too long (88 > 79 characters)
+    scripts/lib/card_base.py:197:80: E501 line too long (81 > 79 characters)
+    scripts/lib/card_base.py:203:80: E501 line too long (83 > 79 characters)
+    scripts/lib/card_base.py:216:80: E501 line too long (80 > 79 characters)
+    scripts/lib/card_base.py:247:80: E501 line too long (83 > 79 characters)
+    scripts/lib/card_base.py:266:80: E501 line too long (103 > 79 characters)
+    scripts/lib/card_base.py:273:80: E501 line too long (101 > 79 characters)
+    scripts/lib/card_base.py:274:80: E501 line too long (89 > 79 characters)
+    scripts/lib/card_base.py:283:80: E501 line too long (103 > 79 characters)
+    scripts/lib/card_base.py:284:80: E501 line too long (173 > 79 characters)
+    scripts/lib/card_base.py:302:80: E501 line too long (82 > 79 characters)
+    scripts/lib/card_base.py:316:80: E501 line too long (99 > 79 characters)
+    scripts/lib/card_base.py:317:80: E501 line too long (177 > 79 characters)
+    scripts/lib/card_base.py:334:80: E501 line too long (90 > 79 characters)
+    scripts/lib/card_base.py:351:80: E501 line too long (136 > 79 characters)
+    scripts/lib/card_base.py:365:80: E501 line too long (81 > 79 characters)
+    scripts/lib/card_base.py:381:80: E501 line too long (82 > 79 characters)
+    scripts/lib/card_base.py:395:1: W293 blank line contains whitespace
+    scripts/lib/card_base.py:396:80: E501 line too long (86 > 79 characters)
+    scripts/lib/card_base.py:397:1: W293 blank line contains whitespace
+    scripts/lib/card_base.py:399:80: E501 line too long (80 > 79 characters)
+    scripts/lib/card_base.py:400:80: E501 line too long (92 > 79 characters)
+    scripts/lib/card_base.py:403:1: W293 blank line contains whitespace
+    scripts/lib/card_base.py:405:80: E501 line too long (86 > 79 characters)
+    scripts/lib/card_base.py:409:1: W293 blank line contains whitespace
+    scripts/lib/card_base.py:411:1: W293 blank line contains whitespace
+    scripts/lib/card_base.py:414:1: W293 blank line contains whitespace
+    scripts/lib/card_base.py:417:1: W293 blank line contains whitespace
+    scripts/lib/card_base.py:420:1: W293 blank line contains whitespace
+    scripts/lib/card_base.py:423:80: E501 line too long (87 > 79 characters)
+    scripts/lib/card_base.py:428:1: W293 blank line contains whitespace
+    scripts/lib/card_base.py:430:1: W293 blank line contains whitespace
+    scripts/lib/card_base.py:434:80: E501 line too long (124 > 79 characters)
+    scripts/lib/card_base.py:470:80: E501 line too long (83 > 79 characters)
+    scripts/lib/card_base.py:475:80: E501 line too long (80 > 79 characters)
+
+❌ [ERROR] scripts/lib/change_detection.py
+    scripts/lib/change_detection.py:18:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:21:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:23:80: E501 line too long (84 > 79 characters)
+    scripts/lib/change_detection.py:27:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:39:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:42:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:44:80: E501 line too long (98 > 79 characters)
+    scripts/lib/change_detection.py:48:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:52:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:63:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:66:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:68:80: E501 line too long (85 > 79 characters)
+    scripts/lib/change_detection.py:72:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:83:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:90:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:95:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:99:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:102:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:104:80: E501 line too long (82 > 79 characters)
+    scripts/lib/change_detection.py:107:80: E501 line too long (90 > 79 characters)
+    scripts/lib/change_detection.py:117:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:122:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:131:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:134:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:137:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:150:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:161:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:164:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:167:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:170:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:184:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:191:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:198:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:202:1: W293 blank line contains whitespace
+    scripts/lib/change_detection.py:206:1: W293 blank line contains whitespace
+
+❌ [ERROR] scripts/lib/data_quality.py
+    scripts/lib/data_quality.py:12:1: F401 'json' imported but unused
+    scripts/lib/data_quality.py:44:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:47:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:53:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:57:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:61:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:72:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:77:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:83:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:91:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:102:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:107:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:113:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:115:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:122:80: E501 line too long (87 > 79 characters)
+    scripts/lib/data_quality.py:125:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:138:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:145:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:150:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:158:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:162:80: E501 line too long (80 > 79 characters)
+    scripts/lib/data_quality.py:166:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:170:80: E501 line too long (80 > 79 characters)
+    scripts/lib/data_quality.py:174:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:186:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:193:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:207:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:214:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:220:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:229:80: E501 line too long (86 > 79 characters)
+    scripts/lib/data_quality.py:230:80: E501 line too long (81 > 79 characters)
+    scripts/lib/data_quality.py:236:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:240:80: E501 line too long (96 > 79 characters)
+    scripts/lib/data_quality.py:243:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:249:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:253:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:255:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:261:1: W293 blank line contains whitespace
+    scripts/lib/data_quality.py:267:1: W293 blank line contains whitespace
+
+❌ [ERROR] scripts/lib/logging_utils.py
+    scripts/lib/logging_utils.py:24:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:28:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:36:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:39:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:43:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:46:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:55:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:59:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:65:80: E501 line too long (82 > 79 characters)
+    scripts/lib/logging_utils.py:66:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:69:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:73:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:75:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:79:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:83:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:87:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:91:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:95:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:104:80: E501 line too long (82 > 79 characters)
+    scripts/lib/logging_utils.py:106:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:110:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:117:80: E501 line too long (88 > 79 characters)
+    scripts/lib/logging_utils.py:119:80: E501 line too long (98 > 79 characters)
+    scripts/lib/logging_utils.py:120:80: E501 line too long (80 > 79 characters)
+    scripts/lib/logging_utils.py:122:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:123:80: E501 line too long (90 > 79 characters)
+    scripts/lib/logging_utils.py:126:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:137:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:146:80: E501 line too long (84 > 79 characters)
+    scripts/lib/logging_utils.py:149:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:153:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:164:1: W293 blank line contains whitespace
+    scripts/lib/logging_utils.py:167:1: W293 blank line contains whitespace
+
+❌ [ERROR] scripts/lib/metrics.py
+    scripts/lib/metrics.py:38:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:40:80: E501 line too long (82 > 79 characters)
+    scripts/lib/metrics.py:41:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:46:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:61:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:66:80: E501 line too long (91 > 79 characters)
+    scripts/lib/metrics.py:85:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:92:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:97:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:101:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:104:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:106:80: E501 line too long (82 > 79 characters)
+    scripts/lib/metrics.py:108:80: E501 line too long (89 > 79 characters)
+    scripts/lib/metrics.py:121:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:128:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:134:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:137:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:146:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:150:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:158:43: W291 trailing whitespace
+    scripts/lib/metrics.py:161:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:168:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:176:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:180:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:183:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:190:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:196:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:203:80: E501 line too long (82 > 79 characters)
+    scripts/lib/metrics.py:204:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:211:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:215:1: W293 blank line contains whitespace
+    scripts/lib/metrics.py:226:1: W293 blank line contains whitespace
+
+❌ [ERROR] scripts/lib/utils.py
+    scripts/lib/utils.py:5:80: E501 line too long (80 > 79 characters)
+    scripts/lib/utils.py:40:1: E305 expected 2 blank lines after class or function definition, found 1
+    scripts/lib/utils.py:41:5: F401 'jsonschema' imported but unused
+    scripts/lib/utils.py:155:5: F824 `global _schema_cache` is unused: name is never assigned in scope
+    scripts/lib/utils.py:174:80: E501 line too long (83 > 79 characters)
+    scripts/lib/utils.py:180:80: E501 line too long (88 > 79 characters)
+    scripts/lib/utils.py:231:80: E501 line too long (96 > 79 characters)
+    scripts/lib/utils.py:395:80: E501 line too long (80 > 79 characters)
+    scripts/lib/utils.py:432:80: E501 line too long (84 > 79 characters)
+    scripts/lib/utils.py:433:80: E501 line too long (88 > 79 characters)
+    scripts/lib/utils.py:434:80: E501 line too long (84 > 79 characters)
+    scripts/lib/utils.py:437:80: E501 line too long (82 > 79 characters)
+    scripts/lib/utils.py:447:80: E501 line too long (85 > 79 characters)
+    scripts/lib/utils.py:453:80: E501 line too long (80 > 79 characters)
+    scripts/lib/utils.py:552:80: E501 line too long (91 > 79 characters)
+    scripts/lib/utils.py:558:80: E501 line too long (81 > 79 characters)
+    scripts/lib/utils.py:560:80: E501 line too long (96 > 79 characters)
+    scripts/lib/utils.py:567:80: E501 line too long (85 > 79 characters)
+    scripts/lib/utils.py:570:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:571:80: E501 line too long (83 > 79 characters)
+    scripts/lib/utils.py:582:80: E501 line too long (90 > 79 characters)
+    scripts/lib/utils.py:587:80: E501 line too long (86 > 79 characters)
+    scripts/lib/utils.py:588:80: E501 line too long (90 > 79 characters)
+    scripts/lib/utils.py:589:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:590:80: E501 line too long (83 > 79 characters)
+    scripts/lib/utils.py:595:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:599:80: E501 line too long (82 > 79 characters)
+    scripts/lib/utils.py:606:80: E501 line too long (87 > 79 characters)
+    scripts/lib/utils.py:607:80: E501 line too long (82 > 79 characters)
+    scripts/lib/utils.py:610:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:616:80: E501 line too long (80 > 79 characters)
+    scripts/lib/utils.py:632:80: E501 line too long (85 > 79 characters)
+    scripts/lib/utils.py:702:80: E501 line too long (89 > 79 characters)
+    scripts/lib/utils.py:760:80: E501 line too long (80 > 79 characters)
+    scripts/lib/utils.py:778:80: E501 line too long (97 > 79 characters)
+    scripts/lib/utils.py:784:80: E501 line too long (89 > 79 characters)
+    scripts/lib/utils.py:787:77: W291 trailing whitespace
+    scripts/lib/utils.py:879:80: E501 line too long (85 > 79 characters)
+    scripts/lib/utils.py:916:80: E501 line too long (85 > 79 characters)
+    scripts/lib/utils.py:921:80: E501 line too long (90 > 79 characters)
+    scripts/lib/utils.py:938:80: E501 line too long (103 > 79 characters)
+    scripts/lib/utils.py:948:80: E501 line too long (86 > 79 characters)
+    scripts/lib/utils.py:960:80: E501 line too long (81 > 79 characters)
+    scripts/lib/utils.py:961:80: E501 line too long (85 > 79 characters)
+    scripts/lib/utils.py:999:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1004:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1007:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1010:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1018:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1022:80: E501 line too long (81 > 79 characters)
+    scripts/lib/utils.py:1025:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1027:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1031:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1033:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1041:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1044:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1046:80: E501 line too long (81 > 79 characters)
+    scripts/lib/utils.py:1047:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1055:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1059:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1062:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1079:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1082:80: E501 line too long (97 > 79 characters)
+    scripts/lib/utils.py:1083:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1086:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1095:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1099:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1115:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1118:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1121:80: E501 line too long (89 > 79 characters)
+    scripts/lib/utils.py:1127:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1129:80: E501 line too long (82 > 79 characters)
+    scripts/lib/utils.py:1130:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1138:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1140:80: E501 line too long (85 > 79 characters)
+    scripts/lib/utils.py:1141:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1149:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1152:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1156:80: E501 line too long (114 > 79 characters)
+    scripts/lib/utils.py:1165:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1168:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1171:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1190:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1193:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1196:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1265:80: E501 line too long (86 > 79 characters)
+    scripts/lib/utils.py:1272:80: E501 line too long (92 > 79 characters)
+    scripts/lib/utils.py:1281:80: E501 line too long (81 > 79 characters)
+    scripts/lib/utils.py:1282:80: E501 line too long (89 > 79 characters)
+    scripts/lib/utils.py:1283:80: E501 line too long (81 > 79 characters)
+    scripts/lib/utils.py:1291:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1297:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1298:80: E501 line too long (83 > 79 characters)
+    scripts/lib/utils.py:1301:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1307:80: E501 line too long (89 > 79 characters)
+    scripts/lib/utils.py:1330:80: E501 line too long (80 > 79 characters)
+    scripts/lib/utils.py:1333:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1338:80: E501 line too long (89 > 79 characters)
+    scripts/lib/utils.py:1344:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1347:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1352:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1356:80: E501 line too long (80 > 79 characters)
+    scripts/lib/utils.py:1357:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1361:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1363:80: E501 line too long (80 > 79 characters)
+    scripts/lib/utils.py:1366:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1377:80: E501 line too long (84 > 79 characters)
+    scripts/lib/utils.py:1379:80: E501 line too long (82 > 79 characters)
+    scripts/lib/utils.py:1454:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1460:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1465:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1472:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1476:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1480:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1484:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1487:1: W293 blank line contains whitespace
+    scripts/lib/utils.py:1489:80: E501 line too long (82 > 79 characters)
+
+❌ [ERROR] scripts/lib/weather_alerts.py
+    scripts/lib/weather_alerts.py:20:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:26:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:29:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:43:5: F841 local variable 'alerts' is assigned to but never used
+    scripts/lib/weather_alerts.py:44:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:50:80: E501 line too long (81 > 79 characters)
+    scripts/lib/weather_alerts.py:53:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:60:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:64:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:73:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:82:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:86:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:101:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:110:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:116:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:119:80: E501 line too long (94 > 79 characters)
+    scripts/lib/weather_alerts.py:120:80: E501 line too long (106 > 79 characters)
+    scripts/lib/weather_alerts.py:121:80: E501 line too long (102 > 79 characters)
+    scripts/lib/weather_alerts.py:130:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:133:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:138:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:141:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:149:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:152:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:157:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:159:80: E501 line too long (91 > 79 characters)
+    scripts/lib/weather_alerts.py:161:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:162:80: E501 line too long (92 > 79 characters)
+    scripts/lib/weather_alerts.py:164:1: W293 blank line contains whitespace
+    scripts/lib/weather_alerts.py:170:80: E501 line too long (87 > 79 characters)
+    scripts/lib/weather_alerts.py:171:1: W293 blank line contains whitespace
+
+❌ [ERROR] scripts/log_summary.py
+    scripts/log_summary.py:50:80: E501 line too long (89 > 79 characters)
+    scripts/log_summary.py:52:80: E501 line too long (84 > 79 characters)
+    scripts/log_summary.py:56:80: E501 line too long (89 > 79 characters)
+    scripts/log_summary.py:111:80: E501 line too long (100 > 79 characters)
+    scripts/log_summary.py:219:80: E501 line too long (84 > 79 characters)
+    scripts/log_summary.py:280:80: E501 line too long (86 > 79 characters)
+    scripts/log_summary.py:283:80: E501 line too long (93 > 79 characters)
+    scripts/log_summary.py:288:80: E501 line too long (87 > 79 characters)
+    scripts/log_summary.py:323:80: E501 line too long (82 > 79 characters)
+    scripts/log_summary.py:335:80: E501 line too long (84 > 79 characters)
+    scripts/log_summary.py:336:80: E501 line too long (84 > 79 characters)
+    scripts/log_summary.py:348:80: E501 line too long (88 > 79 characters)
+    scripts/log_summary.py:363:80: E501 line too long (80 > 79 characters)
+
+❌ [ERROR] scripts/oura-mood-engine.py
+    scripts/oura-mood-engine.py:5:80: E501 line too long (80 > 79 characters)
+    scripts/oura-mood-engine.py:14:1: F401 'lib.utils.safe_get' imported but unused
+    scripts/oura-mood-engine.py:64:80: E501 line too long (83 > 79 characters)
+    scripts/oura-mood-engine.py:111:5: F841 local variable 'temp_deviation' is assigned to but never used
+    scripts/oura-mood-engine.py:227:80: E501 line too long (81 > 79 characters)
+    scripts/oura-mood-engine.py:256:80: E501 line too long (108 > 79 characters)
+
+❌ [ERROR] scripts/record-workflow-metrics.py
+    scripts/record-workflow-metrics.py:16:1: E402 module level import not at top of file
+    scripts/record-workflow-metrics.py:45:80: E501 line too long (93 > 79 characters)
+    scripts/record-workflow-metrics.py:51:1: W293 blank line contains whitespace
+    scripts/record-workflow-metrics.py:53:1: W293 blank line contains whitespace
+    scripts/record-workflow-metrics.py:56:80: E501 line too long (84 > 79 characters)
+    scripts/record-workflow-metrics.py:58:1: W293 blank line contains whitespace
+    scripts/record-workflow-metrics.py:60:80: E501 line too long (83 > 79 characters)
+    scripts/record-workflow-metrics.py:62:1: W293 blank line contains whitespace
+    scripts/record-workflow-metrics.py:64:1: W293 blank line contains whitespace
+    scripts/record-workflow-metrics.py:74:1: W293 blank line contains whitespace
+    scripts/record-workflow-metrics.py:83:1: W293 blank line contains whitespace
+    scripts/record-workflow-metrics.py:88:80: E501 line too long (144 > 79 characters)
+    scripts/record-workflow-metrics.py:90:1: W293 blank line contains whitespace
+    scripts/record-workflow-metrics.py:95:1: W293 blank line contains whitespace
+    scripts/record-workflow-metrics.py:98:80: E501 line too long (96 > 79 characters)
+
+❌ [ERROR] scripts/store-historical-snapshot.py
+    scripts/store-historical-snapshot.py:57:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:63:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:72:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:78:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:94:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:102:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:107:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:116:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:127:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:135:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:140:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:143:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:147:80: E501 line too long (99 > 79 characters)
+    scripts/store-historical-snapshot.py:151:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:155:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:161:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:163:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:171:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:173:80: E501 line too long (132 > 79 characters)
+    scripts/store-historical-snapshot.py:174:80: E501 line too long (144 > 79 characters)
+    scripts/store-historical-snapshot.py:175:80: E501 line too long (141 > 79 characters)
+    scripts/store-historical-snapshot.py:176:80: E501 line too long (131 > 79 characters)
+    scripts/store-historical-snapshot.py:177:80: E501 line too long (133 > 79 characters)
+    scripts/store-historical-snapshot.py:178:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:181:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:188:80: E501 line too long (97 > 79 characters)
+    scripts/store-historical-snapshot.py:189:80: E501 line too long (109 > 79 characters)
+    scripts/store-historical-snapshot.py:190:80: E501 line too long (106 > 79 characters)
+    scripts/store-historical-snapshot.py:195:80: E501 line too long (83 > 79 characters)
+    scripts/store-historical-snapshot.py:204:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:206:80: E501 line too long (132 > 79 characters)
+    scripts/store-historical-snapshot.py:207:80: E501 line too long (144 > 79 characters)
+    scripts/store-historical-snapshot.py:208:80: E501 line too long (141 > 79 characters)
+    scripts/store-historical-snapshot.py:209:80: E501 line too long (131 > 79 characters)
+    scripts/store-historical-snapshot.py:210:80: E501 line too long (133 > 79 characters)
+    scripts/store-historical-snapshot.py:211:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:214:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:221:80: E501 line too long (97 > 79 characters)
+    scripts/store-historical-snapshot.py:224:80: E501 line too long (109 > 79 characters)
+    scripts/store-historical-snapshot.py:225:80: E501 line too long (106 > 79 characters)
+    scripts/store-historical-snapshot.py:230:80: E501 line too long (83 > 79 characters)
+    scripts/store-historical-snapshot.py:238:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:242:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:245:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:248:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:252:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:255:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:257:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:261:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:264:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:267:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:269:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:272:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:279:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:280:80: E501 line too long (97 > 79 characters)
+    scripts/store-historical-snapshot.py:281:80: E501 line too long (104 > 79 characters)
+    scripts/store-historical-snapshot.py:282:80: E501 line too long (112 > 79 characters)
+    scripts/store-historical-snapshot.py:283:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:285:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:287:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:292:1: W293 blank line contains whitespace
+    scripts/store-historical-snapshot.py:296:1: W293 blank line contains whitespace
+
+❌ [ERROR] scripts/update-readme.py
+    scripts/update-readme.py:5:80: E501 line too long (82 > 79 characters)
+    scripts/update-readme.py:11:80: E501 line too long (83 > 79 characters)
+    scripts/update-readme.py:14:80: E501 line too long (95 > 79 characters)
+    scripts/update-readme.py:15:80: E501 line too long (92 > 79 characters)
+    scripts/update-readme.py:64:80: E501 line too long (80 > 79 characters)
+    scripts/update-readme.py:74:80: E501 line too long (101 > 79 characters)
+    scripts/update-readme.py:81:80: E501 line too long (85 > 79 characters)
+    scripts/update-readme.py:97:80: E501 line too long (85 > 79 characters)
+    scripts/update-readme.py:98:80: E501 line too long (89 > 79 characters)
+    scripts/update-readme.py:100:80: E501 line too long (87 > 79 characters)
+    scripts/update-readme.py:101:80: E501 line too long (82 > 79 characters)
+    scripts/update-readme.py:148:80: E501 line too long (89 > 79 characters)
+
+❌ [ERROR] scripts/validate-data-quality.py
+    scripts/validate-data-quality.py:13:1: F401 'typing.Optional' imported but unused
+    scripts/validate-data-quality.py:13:1: F401 'typing.Dict' imported but unused
+    scripts/validate-data-quality.py:13:1: F401 'typing.Any' imported but unused
+    scripts/validate-data-quality.py:18:1: E402 module level import not at top of file
+    scripts/validate-data-quality.py:37:80: E501 line too long (105 > 79 characters)
+    scripts/validate-data-quality.py:49:1: W293 blank line contains whitespace
+    scripts/validate-data-quality.py:51:1: W293 blank line contains whitespace
+    scripts/validate-data-quality.py:60:80: E501 line too long (80 > 79 characters)
+    scripts/validate-data-quality.py:62:1: W293 blank line contains whitespace
+    scripts/validate-data-quality.py:71:1: W293 blank line contains whitespace
+    scripts/validate-data-quality.py:79:1: W293 blank line contains whitespace
+    scripts/validate-data-quality.py:82:1: W293 blank line contains whitespace
+    scripts/validate-data-quality.py:88:1: W293 blank line contains whitespace
+    scripts/validate-data-quality.py:91:1: W293 blank line contains whitespace
+    scripts/validate-data-quality.py:93:80: E501 line too long (83 > 79 characters)
+    scripts/validate-data-quality.py:94:1: W293 blank line contains whitespace
+    scripts/validate-data-quality.py:97:80: E501 line too long (98 > 79 characters)
+    scripts/validate-data-quality.py:98:1: W293 blank line contains whitespace
+
+✅ [SUCCESS] tests/__init__.py
+❌ [ERROR] tests/test_card_generators.py
+    tests/test_card_generators.py:11:1: F401 'pytest' imported but unused
+    tests/test_card_generators.py:119:1: W293 blank line contains whitespace
+
+❌ [ERROR] tests/test_change_detection.py
+    tests/test_change_detection.py:7:1: F401 'subprocess' imported but unused
+    tests/test_change_detection.py:11:1: F401 'pytest' imported but unused
+    tests/test_change_detection.py:17:1: E402 module level import not at top of file
+    tests/test_change_detection.py:30:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:33:80: E501 line too long (85 > 79 characters)
+    tests/test_change_detection.py:36:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:41:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:47:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:52:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:55:80: E501 line too long (86 > 79 characters)
+    tests/test_change_detection.py:58:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:59:80: E501 line too long (86 > 79 characters)
+    tests/test_change_detection.py:62:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:74:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:78:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:79:80: E501 line too long (86 > 79 characters)
+    tests/test_change_detection.py:82:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:89:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:93:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:94:80: E501 line too long (87 > 79 characters)
+    tests/test_change_detection.py:97:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:98:80: E501 line too long (87 > 79 characters)
+    tests/test_change_detection.py:101:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:109:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:112:80: E501 line too long (87 > 79 characters)
+    tests/test_change_detection.py:115:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:116:80: E501 line too long (87 > 79 characters)
+    tests/test_change_detection.py:119:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:127:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:130:80: E501 line too long (86 > 79 characters)
+    tests/test_change_detection.py:133:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:143:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:148:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:154:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:157:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:159:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:165:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:168:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:175:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:181:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:185:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:189:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:195:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:199:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:202:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:206:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:212:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:217:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:221:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:229:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:236:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:242:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:245:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:247:80: E501 line too long (95 > 79 characters)
+    tests/test_change_detection.py:249:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:256:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:260:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:261:80: E501 line too long (83 > 79 characters)
+    tests/test_change_detection.py:263:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:270:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:276:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:279:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:281:80: E501 line too long (83 > 79 characters)
+    tests/test_change_detection.py:287:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:291:9: F811 redefinition of unused 'subprocess' from line 7
+    tests/test_change_detection.py:292:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:296:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:300:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:302:80: E501 line too long (94 > 79 characters)
+    tests/test_change_detection.py:303:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:306:80: E501 line too long (99 > 79 characters)
+    tests/test_change_detection.py:310:1: W293 blank line contains whitespace
+    tests/test_change_detection.py:313:80: E501 line too long (153 > 79 characters)
+
+❌ [ERROR] tests/test_data_quality.py
+    tests/test_data_quality.py:6:1: F401 'pytest' imported but unused
+    tests/test_data_quality.py:14:1: E402 module level import not at top of file
+    tests/test_data_quality.py:25:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:29:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:34:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:43:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:55:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:60:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:63:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:68:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:71:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:76:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:79:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:84:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:91:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:95:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:98:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:102:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:106:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:110:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:114:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:118:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:126:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:132:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:136:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:140:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:145:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:150:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:153:80: E501 line too long (83 > 79 characters)
+    tests/test_data_quality.py:158:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:167:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:173:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:178:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:183:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:185:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:188:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:192:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:194:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:198:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:206:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:211:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:217:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:223:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:229:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:233:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:237:1: W293 blank line contains whitespace
+    tests/test_data_quality.py:239:1: W293 blank line contains whitespace
+
+❌ [ERROR] tests/test_developer_dashboard.py
+    tests/test_developer_dashboard.py:11:1: F401 'pytest' imported but unused
+    tests/test_developer_dashboard.py:16:1: E402 module level import not at top of file
+    tests/test_developer_dashboard.py:96:80: E501 line too long (86 > 79 characters)
+    tests/test_developer_dashboard.py:119:80: E501 line too long (82 > 79 characters)
+    tests/test_developer_dashboard.py:121:80: E501 line too long (82 > 79 characters)
+    tests/test_developer_dashboard.py:170:80: E501 line too long (84 > 79 characters)
+    tests/test_developer_dashboard.py:172:1: W293 blank line contains whitespace
+    tests/test_developer_dashboard.py:180:1: W293 blank line contains whitespace
+
+❌ [ERROR] tests/test_fallback.py
+    tests/test_fallback.py:9:1: F401 'tempfile' imported but unused
+    tests/test_fallback.py:10:1: F401 'pathlib.Path' imported but unused
+    tests/test_fallback.py:11:1: F401 'unittest.mock.patch' imported but unused
+    tests/test_fallback.py:18:1: E402 module level import not at top of file
+    tests/test_fallback.py:171:80: E501 line too long (84 > 79 characters)
+    tests/test_fallback.py:205:80: E501 line too long (92 > 79 characters)
+    tests/test_fallback.py:240:80: E501 line too long (80 > 79 characters)
+
+❌ [ERROR] tests/test_location_diagnostics.py
+    tests/test_location_diagnostics.py:17:1: F401 'pytest' imported but unused
+    tests/test_location_diagnostics.py:22:1: E402 module level import not at top of file
+    tests/test_location_diagnostics.py:32:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:43:80: E501 line too long (99 > 79 characters)
+    tests/test_location_diagnostics.py:44:80: E501 line too long (89 > 79 characters)
+    tests/test_location_diagnostics.py:48:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:51:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:65:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:67:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:74:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:81:80: E501 line too long (80 > 79 characters)
+    tests/test_location_diagnostics.py:85:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:88:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:90:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:97:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:107:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:111:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:113:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:120:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:129:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:133:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:135:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:142:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:151:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:153:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:160:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:171:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:174:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:181:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:187:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:199:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:201:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:204:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:211:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:221:80: E501 line too long (86 > 79 characters)
+    tests/test_location_diagnostics.py:224:1: W293 blank line contains whitespace
+    tests/test_location_diagnostics.py:241:80: E501 line too long (86 > 79 characters)
+    tests/test_location_diagnostics.py:244:1: W293 blank line contains whitespace
+
+❌ [ERROR] tests/test_log_summary.py
+    tests/test_log_summary.py:213:80: E501 line too long (82 > 79 characters)
+
+❌ [ERROR] tests/test_mapbox_integration.py
+    tests/test_mapbox_integration.py:30:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:49:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:52:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:55:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:58:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:61:80: E501 line too long (80 > 79 characters)
+    tests/test_mapbox_integration.py:62:80: E501 line too long (83 > 79 characters)
+    tests/test_mapbox_integration.py:68:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:70:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:78:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:81:80: E501 line too long (90 > 79 characters)
+    tests/test_mapbox_integration.py:82:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:91:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:94:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:96:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:105:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:108:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:110:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:117:80: E501 line too long (83 > 79 characters)
+    tests/test_mapbox_integration.py:119:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:120:80: E501 line too long (87 > 79 characters)
+    tests/test_mapbox_integration.py:122:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:125:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:126:80: E501 line too long (90 > 79 characters)
+    tests/test_mapbox_integration.py:146:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:149:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:152:80: E501 line too long (83 > 79 characters)
+    tests/test_mapbox_integration.py:156:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:159:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:168:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:170:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:177:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:178:80: E501 line too long (82 > 79 characters)
+    tests/test_mapbox_integration.py:184:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:187:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:190:80: E501 line too long (83 > 79 characters)
+    tests/test_mapbox_integration.py:194:1: W293 blank line contains whitespace
+    tests/test_mapbox_integration.py:195:80: E501 line too long (84 > 79 characters)
+
+❌ [ERROR] tests/test_metrics.py
+    tests/test_metrics.py:17:1: F401 'lib.metrics.save_workflow_metrics' imported but unused
+    tests/test_metrics.py:17:1: E402 module level import not at top of file
+    tests/test_metrics.py:33:1: W293 blank line contains whitespace
+    tests/test_metrics.py:37:1: W293 blank line contains whitespace
+    tests/test_metrics.py:39:1: W293 blank line contains whitespace
+    tests/test_metrics.py:41:1: W293 blank line contains whitespace
+    tests/test_metrics.py:48:1: W293 blank line contains whitespace
+    tests/test_metrics.py:50:80: E501 line too long (88 > 79 characters)
+    tests/test_metrics.py:52:1: W293 blank line contains whitespace
+    tests/test_metrics.py:61:1: W293 blank line contains whitespace
+    tests/test_metrics.py:75:1: W293 blank line contains whitespace
+    tests/test_metrics.py:79:1: W293 blank line contains whitespace
+    tests/test_metrics.py:81:1: W293 blank line contains whitespace
+    tests/test_metrics.py:90:1: W293 blank line contains whitespace
+    tests/test_metrics.py:98:1: W293 blank line contains whitespace
+    tests/test_metrics.py:107:1: W293 blank line contains whitespace
+    tests/test_metrics.py:115:1: W293 blank line contains whitespace
+    tests/test_metrics.py:124:1: W293 blank line contains whitespace
+    tests/test_metrics.py:130:1: W293 blank line contains whitespace
+    tests/test_metrics.py:134:1: W293 blank line contains whitespace
+    tests/test_metrics.py:138:1: W293 blank line contains whitespace
+    tests/test_metrics.py:144:1: W293 blank line contains whitespace
+    tests/test_metrics.py:147:1: W293 blank line contains whitespace
+    tests/test_metrics.py:151:1: W293 blank line contains whitespace
+    tests/test_metrics.py:155:80: E501 line too long (90 > 79 characters)
+    tests/test_metrics.py:157:1: W293 blank line contains whitespace
+    tests/test_metrics.py:159:80: E501 line too long (90 > 79 characters)
+    tests/test_metrics.py:163:1: W293 blank line contains whitespace
+    tests/test_metrics.py:174:1: W293 blank line contains whitespace
+    tests/test_metrics.py:184:1: W293 blank line contains whitespace
+    tests/test_metrics.py:190:1: W293 blank line contains whitespace
+    tests/test_metrics.py:197:1: W293 blank line contains whitespace
+    tests/test_metrics.py:202:1: W293 blank line contains whitespace
+    tests/test_metrics.py:204:1: W293 blank line contains whitespace
+    tests/test_metrics.py:209:1: W293 blank line contains whitespace
+    tests/test_metrics.py:211:1: W293 blank line contains whitespace
+    tests/test_metrics.py:215:1: W293 blank line contains whitespace
+    tests/test_metrics.py:222:1: W293 blank line contains whitespace
+    tests/test_metrics.py:228:1: W293 blank line contains whitespace
+    tests/test_metrics.py:231:1: W293 blank line contains whitespace
+    tests/test_metrics.py:238:1: W293 blank line contains whitespace
+    tests/test_metrics.py:243:1: W293 blank line contains whitespace
+    tests/test_metrics.py:250:1: W293 blank line contains whitespace
+    tests/test_metrics.py:252:1: W293 blank line contains whitespace
+
+❌ [ERROR] tests/test_theme_validation.py
+    tests/test_theme_validation.py:16:1: E402 module level import not at top of file
+    tests/test_theme_validation.py:45:80: E501 line too long (88 > 79 characters)
+    tests/test_theme_validation.py:50:80: E501 line too long (81 > 79 characters)
+    tests/test_theme_validation.py:131:80: E501 line too long (85 > 79 characters)
+    tests/test_theme_validation.py:141:80: E501 line too long (90 > 79 characters)
+    tests/test_theme_validation.py:179:80: E501 line too long (85 > 79 characters)
+    tests/test_theme_validation.py:189:80: E501 line too long (87 > 79 characters)
+    tests/test_theme_validation.py:226:80: E501 line too long (85 > 79 characters)
+    tests/test_theme_validation.py:236:80: E501 line too long (86 > 79 characters)
+    tests/test_theme_validation.py:290:80: E501 line too long (88 > 79 characters)
+    tests/test_theme_validation.py:334:80: E501 line too long (83 > 79 characters)
+    tests/test_theme_validation.py:352:1: W293 blank line contains whitespace
+    tests/test_theme_validation.py:355:80: E501 line too long (84 > 79 characters)
+    tests/test_theme_validation.py:360:80: E501 line too long (86 > 79 characters)
+    tests/test_theme_validation.py:366:1: W293 blank line contains whitespace
+    tests/test_theme_validation.py:370:1: W293 blank line contains whitespace
+    tests/test_theme_validation.py:382:1: W293 blank line contains whitespace
+    tests/test_theme_validation.py:385:1: W293 blank line contains whitespace
+
+❌ [ERROR] tests/test_time_utils.py
+    tests/test_time_utils.py:6:1: F401 'pytest' imported but unused
+
+❌ [ERROR] tests/test_utils.py
+    tests/test_utils.py:6:1: F401 'pytest' imported but unused
+    tests/test_utils.py:15:1: E402 module level import not at top of file
+    tests/test_utils.py:50:80: E501 line too long (92 > 79 characters)
+    tests/test_utils.py:101:80: E501 line too long (84 > 79 characters)
+    tests/test_utils.py:209:9: F841 local variable 'values' is assigned to but never used
+    tests/test_utils.py:210:80: E501 line too long (80 > 79 characters)
+    tests/test_utils.py:239:80: E501 line too long (85 > 79 characters)
+    tests/test_utils.py:242:1: W293 blank line contains whitespace
+    tests/test_utils.py:250:80: E501 line too long (85 > 79 characters)
+    tests/test_utils.py:253:1: W293 blank line contains whitespace
+    tests/test_utils.py:261:80: E501 line too long (85 > 79 characters)
+    tests/test_utils.py:264:1: W293 blank line contains whitespace
+    tests/test_utils.py:272:80: E501 line too long (85 > 79 characters)
+    tests/test_utils.py:275:1: W293 blank line contains whitespace
+    tests/test_utils.py:292:1: W293 blank line contains whitespace
+    tests/test_utils.py:293:80: E501 line too long (86 > 79 characters)
+    tests/test_utils.py:296:1: W293 blank line contains whitespace
+    tests/test_utils.py:312:1: W293 blank line contains whitespace
+    tests/test_utils.py:313:80: E501 line too long (86 > 79 characters)
+    tests/test_utils.py:316:1: W293 blank line contains whitespace
+    tests/test_utils.py:318:80: E501 line too long (94 > 79 characters)
+    tests/test_utils.py:324:80: E501 line too long (82 > 79 characters)
+    tests/test_utils.py:325:80: E501 line too long (85 > 79 characters)
+    tests/test_utils.py:326:80: E501 line too long (84 > 79 characters)
+    tests/test_utils.py:328:1: W293 blank line contains whitespace
+    tests/test_utils.py:335:80: E501 line too long (83 > 79 characters)
+    tests/test_utils.py:336:80: E501 line too long (85 > 79 characters)
+    tests/test_utils.py:339:1: W293 blank line contains whitespace
+    tests/test_utils.py:348:80: E501 line too long (85 > 79 characters)
+    tests/test_utils.py:351:1: W293 blank line contains whitespace
+

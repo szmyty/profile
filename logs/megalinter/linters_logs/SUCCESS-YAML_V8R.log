@@ -4,7 +4,9 @@ See documentation on https://megalinter.io/8.8.0/descriptors/yaml_v8r/
 
 ✅ [SUCCESS] .github/FUNDING.yml
 ✅ [SUCCESS] .github/actionlint.yaml
+✅ [SUCCESS] .github/actions/pip-install/action.yml
 ✅ [SUCCESS] .github/actions/setup-environment/action.yml
+✅ [SUCCESS] .github/workflows/deploy-dashboard.yml
 ✅ [SUCCESS] .github/workflows/developer.yml
 ✅ [SUCCESS] .github/workflows/location-card.yml
 ✅ [SUCCESS] .github/workflows/megalinter.yml

@@ -1,0 +1,19 @@
+Results of prettier linter (version 3.5.3)
+See documentation on https://megalinter.io/8.8.0/descriptors/typescript_prettier/
+-----------------------------------------------
+
+❌ [ERROR] dashboard-app/src/types.ts
+    Checking formatting...
+    [warn] dashboard-app/src/types.ts
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] dashboard-app/src/utils/dataFetcher.ts
+    Checking formatting...
+    [warn] dashboard-app/src/utils/dataFetcher.ts
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] dashboard-app/vite.config.ts
+    Checking formatting...
+    [warn] dashboard-app/vite.config.ts
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+

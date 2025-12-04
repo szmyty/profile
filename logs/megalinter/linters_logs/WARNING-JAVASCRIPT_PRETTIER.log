@@ -1,0 +1,9 @@
+Results of prettier linter (version 3.5.3)
+See documentation on https://megalinter.io/8.8.0/descriptors/javascript_prettier/
+-----------------------------------------------
+
+❌ [ERROR] dashboard-app/eslint.config.js
+    Checking formatting...
+    [warn] dashboard-app/eslint.config.js
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+

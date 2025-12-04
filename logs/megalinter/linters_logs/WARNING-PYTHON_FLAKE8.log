@@ -40,7 +40,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_flake8/
     scripts/fetch-developer-stats.py:155:80: E501 line too long (81 > 79 characters)
     scripts/fetch-developer-stats.py:159:1: W293 blank line contains whitespace
     scripts/fetch-developer-stats.py:166:1: W293 blank line contains whitespace
-    scripts/fetch-developer-stats.py:186:80: E501 line too long (90 > 79 characters)
+    scripts/fetch-developer-stats.py:186:80: E501 line too long (114 > 79 characters)
     scripts/fetch-developer-stats.py:190:1: W293 blank line contains whitespace
     scripts/fetch-developer-stats.py:200:1: W293 blank line contains whitespace
     scripts/fetch-developer-stats.py:207:80: E501 line too long (80 > 79 characters)
@@ -68,6 +68,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_flake8/
     scripts/fetch-developer-stats.py:341:1: W293 blank line contains whitespace
     scripts/fetch-developer-stats.py:345:80: E501 line too long (81 > 79 characters)
     scripts/fetch-developer-stats.py:349:1: W293 blank line contains whitespace
+    scripts/fetch-developer-stats.py:361:80: E501 line too long (81 > 79 characters)
     scripts/fetch-developer-stats.py:366:1: W293 blank line contains whitespace
     scripts/fetch-developer-stats.py:372:80: E501 line too long (93 > 79 characters)
     scripts/fetch-developer-stats.py:381:1: W293 blank line contains whitespace
@@ -107,15 +108,16 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_flake8/
     scripts/generate-card.py:239:80: E501 line too long (102 > 79 characters)
     scripts/generate-card.py:243:80: E501 line too long (88 > 79 characters)
     scripts/generate-card.py:244:80: E501 line too long (84 > 79 characters)
-    scripts/generate-card.py:254:80: E501 line too long (86 > 79 characters)
+    scripts/generate-card.py:254:80: E501 line too long (106 > 79 characters)
     scripts/generate-card.py:255:80: E501 line too long (88 > 79 characters)
-    scripts/generate-card.py:270:80: E501 line too long (82 > 79 characters)
-    scripts/generate-card.py:275:80: E501 line too long (110 > 79 characters)
-    scripts/generate-card.py:276:80: E501 line too long (88 > 79 characters)
-    scripts/generate-card.py:282:80: E501 line too long (90 > 79 characters)
-    scripts/generate-card.py:283:80: E501 line too long (88 > 79 characters)
-    scripts/generate-card.py:294:80: E501 line too long (108 > 79 characters)
-    scripts/generate-card.py:295:80: E501 line too long (88 > 79 characters)
+    scripts/generate-card.py:257:80: E501 line too long (85 > 79 characters)
+    scripts/generate-card.py:272:80: E501 line too long (82 > 79 characters)
+    scripts/generate-card.py:277:80: E501 line too long (110 > 79 characters)
+    scripts/generate-card.py:278:80: E501 line too long (88 > 79 characters)
+    scripts/generate-card.py:284:80: E501 line too long (90 > 79 characters)
+    scripts/generate-card.py:285:80: E501 line too long (88 > 79 characters)
+    scripts/generate-card.py:296:80: E501 line too long (108 > 79 characters)
+    scripts/generate-card.py:297:80: E501 line too long (88 > 79 characters)
 
 ❌ [ERROR] scripts/generate-consolidated-dashboard.py
     scripts/generate-consolidated-dashboard.py:17:1: F401 'json' imported but unused
@@ -207,6 +209,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_flake8/
     scripts/generate-developer-dashboard.py:96:1: W293 blank line contains whitespace
     scripts/generate-developer-dashboard.py:98:80: E501 line too long (80 > 79 characters)
     scripts/generate-developer-dashboard.py:102:1: W293 blank line contains whitespace
+    scripts/generate-developer-dashboard.py:116:80: E501 line too long (83 > 79 characters)
     scripts/generate-developer-dashboard.py:117:1: W293 blank line contains whitespace
     scripts/generate-developer-dashboard.py:122:80: E501 line too long (95 > 79 characters)
     scripts/generate-developer-dashboard.py:143:1: W293 blank line contains whitespace
@@ -579,7 +582,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_flake8/
     scripts/generate-location-card.py:235:80: E501 line too long (84 > 79 characters)
     scripts/generate-location-card.py:248:15: F541 f-string is missing placeholders
     scripts/generate-location-card.py:250:80: E501 line too long (89 > 79 characters)
-    scripts/generate-location-card.py:251:80: E501 line too long (84 > 79 characters)
+    scripts/generate-location-card.py:251:80: E501 line too long (104 > 79 characters)
     scripts/generate-location-card.py:252:80: E501 line too long (91 > 79 characters)
     scripts/generate-location-card.py:260:15: F541 f-string is missing placeholders
     scripts/generate-location-card.py:260:80: E501 line too long (84 > 79 characters)
@@ -679,15 +682,16 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_flake8/
     scripts/generate-oura-mood-card.py:327:80: E501 line too long (162 > 79 characters)
     scripts/generate-oura-mood-card.py:337:80: E501 line too long (89 > 79 characters)
     scripts/generate-oura-mood-card.py:344:80: E501 line too long (81 > 79 characters)
-    scripts/generate-oura-mood-card.py:352:80: E501 line too long (80 > 79 characters)
+    scripts/generate-oura-mood-card.py:352:80: E501 line too long (100 > 79 characters)
     scripts/generate-oura-mood-card.py:353:80: E501 line too long (87 > 79 characters)
-    scripts/generate-oura-mood-card.py:369:80: E501 line too long (104 > 79 characters)
-    scripts/generate-oura-mood-card.py:370:80: E501 line too long (87 > 79 characters)
-    scripts/generate-oura-mood-card.py:376:80: E501 line too long (84 > 79 characters)
-    scripts/generate-oura-mood-card.py:377:80: E501 line too long (87 > 79 characters)
-    scripts/generate-oura-mood-card.py:386:80: E501 line too long (83 > 79 characters)
-    scripts/generate-oura-mood-card.py:388:80: E501 line too long (102 > 79 characters)
-    scripts/generate-oura-mood-card.py:389:80: E501 line too long (87 > 79 characters)
+    scripts/generate-oura-mood-card.py:355:80: E501 line too long (81 > 79 characters)
+    scripts/generate-oura-mood-card.py:371:80: E501 line too long (104 > 79 characters)
+    scripts/generate-oura-mood-card.py:372:80: E501 line too long (87 > 79 characters)
+    scripts/generate-oura-mood-card.py:378:80: E501 line too long (84 > 79 characters)
+    scripts/generate-oura-mood-card.py:379:80: E501 line too long (87 > 79 characters)
+    scripts/generate-oura-mood-card.py:388:80: E501 line too long (83 > 79 characters)
+    scripts/generate-oura-mood-card.py:390:80: E501 line too long (102 > 79 characters)
+    scripts/generate-oura-mood-card.py:391:80: E501 line too long (87 > 79 characters)
 
 ❌ [ERROR] scripts/generate-status-page.py
     scripts/generate-status-page.py:20:1: E402 module level import not at top of file
@@ -1105,6 +1109,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_flake8/
     scripts/lib/data_quality.py:214:1: W293 blank line contains whitespace
     scripts/lib/data_quality.py:220:1: W293 blank line contains whitespace
     scripts/lib/data_quality.py:229:80: E501 line too long (86 > 79 characters)
+    scripts/lib/data_quality.py:230:80: E501 line too long (81 > 79 characters)
     scripts/lib/data_quality.py:236:1: W293 blank line contains whitespace
     scripts/lib/data_quality.py:240:80: E501 line too long (96 > 79 characters)
     scripts/lib/data_quality.py:243:1: W293 blank line contains whitespace
@@ -1197,6 +1202,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_flake8/
     scripts/lib/utils.py:434:80: E501 line too long (84 > 79 characters)
     scripts/lib/utils.py:437:80: E501 line too long (82 > 79 characters)
     scripts/lib/utils.py:447:80: E501 line too long (85 > 79 characters)
+    scripts/lib/utils.py:453:80: E501 line too long (80 > 79 characters)
     scripts/lib/utils.py:552:80: E501 line too long (91 > 79 characters)
     scripts/lib/utils.py:558:80: E501 line too long (81 > 79 characters)
     scripts/lib/utils.py:560:80: E501 line too long (96 > 79 characters)

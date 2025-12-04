@@ -4,8 +4,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/audit_megalinter_config.py
     ERROR: scripts/audit_megalinter_config.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/audit_megalinter_config.py:before	2025-12-04 03:59:33.209902
-    +++ scripts/audit_megalinter_config.py:after	2025-12-04 04:03:41.559508
+    --- scripts/audit_megalinter_config.py:before	2025-12-04 04:20:54.512687
+    +++ scripts/audit_megalinter_config.py:after	2025-12-04 04:25:56.950543
     @@ -6,13 +6,13 @@
      suggestions for improvements without failing the workflow.
      """
@@ -28,8 +28,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/fetch-developer-stats.py
     ERROR: scripts/fetch-developer-stats.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/fetch-developer-stats.py:before	2025-12-04 03:59:33.209902
-    +++ scripts/fetch-developer-stats.py:after	2025-12-04 04:03:41.797376
+    --- scripts/fetch-developer-stats.py:before	2025-12-04 04:20:54.513687
+    +++ scripts/fetch-developer-stats.py:after	2025-12-04 04:25:57.186993
     @@ -22,12 +22,11 @@
      import json
      import os
@@ -37,7 +37,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
     -from datetime import datetime, timezone, timedelta
     +from datetime import datetime, timedelta, timezone
      from pathlib import Path
-     from typing import Any, Dict, List, Optional
+     from typing import Any, Dict, List, Optional, Union
     +from urllib.error import HTTPError, URLError
      from urllib.request import Request, urlopen
     -from urllib.error import HTTPError, URLError
@@ -48,8 +48,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/generate-card.py
     ERROR: scripts/generate-card.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/generate-card.py:before	2025-12-04 03:59:33.209902
-    +++ scripts/generate-card.py:after	2025-12-04 04:03:42.039619
+    --- scripts/generate-card.py:before	2025-12-04 04:20:54.513687
+    +++ scripts/generate-card.py:after	2025-12-04 04:25:57.421752
     @@ -4,31 +4,31 @@
      This script reads track metadata from JSON and creates an SVG card.
      """
@@ -98,8 +98,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/generate-consolidated-dashboard.py
     ERROR: scripts/generate-consolidated-dashboard.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/generate-consolidated-dashboard.py:before	2025-12-04 03:59:33.210901
-    +++ scripts/generate-consolidated-dashboard.py:after	2025-12-04 04:03:42.269849
+    --- scripts/generate-consolidated-dashboard.py:before	2025-12-04 04:20:54.513687
+    +++ scripts/generate-consolidated-dashboard.py:after	2025-12-04 04:25:57.631820
     @@ -13,23 +13,23 @@
          python generate-consolidated-dashboard.py [output_path]
      """
@@ -134,8 +134,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/generate-developer-dashboard.py
     ERROR: scripts/generate-developer-dashboard.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/generate-developer-dashboard.py:before	2025-12-04 03:59:33.210901
-    +++ scripts/generate-developer-dashboard.py:after	2025-12-04 04:03:42.502109
+    --- scripts/generate-developer-dashboard.py:before	2025-12-04 04:20:54.513687
+    +++ scripts/generate-developer-dashboard.py:after	2025-12-04 04:25:57.844152
     @@ -14,28 +14,28 @@
      """
      
@@ -180,8 +180,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/generate-fallback-map.py
     ERROR: scripts/generate-fallback-map.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/generate-fallback-map.py:before	2025-12-04 03:59:33.210901
-    +++ scripts/generate-fallback-map.py:after	2025-12-04 04:03:42.725294
+    --- scripts/generate-fallback-map.py:before	2025-12-04 04:20:54.513687
+    +++ scripts/generate-fallback-map.py:after	2025-12-04 04:25:58.078549
     @@ -7,6 +7,7 @@
      import sys
      from pathlib import Path
@@ -191,8 +191,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/generate-health-dashboard.py
     ERROR: scripts/generate-health-dashboard.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/generate-health-dashboard.py:before	2025-12-04 03:59:33.210901
-    +++ scripts/generate-health-dashboard.py:after	2025-12-04 04:03:42.953997
+    --- scripts/generate-health-dashboard.py:before	2025-12-04 04:20:54.513687
+    +++ scripts/generate-health-dashboard.py:after	2025-12-04 04:25:58.315058
     @@ -6,28 +6,28 @@
      """
      
@@ -240,8 +240,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/generate-health-snapshot.py
     ERROR: scripts/generate-health-snapshot.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/generate-health-snapshot.py:before	2025-12-04 03:59:33.210901
-    +++ scripts/generate-health-snapshot.py:after	2025-12-04 04:03:43.205738
+    --- scripts/generate-health-snapshot.py:before	2025-12-04 04:20:54.513687
+    +++ scripts/generate-health-snapshot.py:after	2025-12-04 04:25:58.537259
     @@ -6,11 +6,11 @@
      
      import json
@@ -260,8 +260,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/generate-interactive-dashboard.py
     ERROR: scripts/generate-interactive-dashboard.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/generate-interactive-dashboard.py:before	2025-12-04 03:59:33.210901
-    +++ scripts/generate-interactive-dashboard.py:after	2025-12-04 04:03:43.439096
+    --- scripts/generate-interactive-dashboard.py:before	2025-12-04 04:20:54.513687
+    +++ scripts/generate-interactive-dashboard.py:after	2025-12-04 04:25:58.759269
     @@ -11,11 +11,11 @@
          python generate-interactive-dashboard.py [output_path] [--theme dark|light]
      """
@@ -279,7 +279,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
      # Add lib to path for imports
     @@ -23,15 +23,15 @@
      
-     from utils import (
+     from utils import (  # type: ignore[import-not-found]
          escape_xml,
     -    safe_value,
     -    load_theme,
@@ -312,8 +312,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/generate-location-card.py
     ERROR: scripts/generate-location-card.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/generate-location-card.py:before	2025-12-04 03:59:33.210901
-    +++ scripts/generate-location-card.py:after	2025-12-04 04:03:43.672691
+    --- scripts/generate-location-card.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/generate-location-card.py:after	2025-12-04 04:25:58.993037
     @@ -8,26 +8,26 @@
      import base64
      import sys
@@ -354,8 +354,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/generate-oura-mood-card.py
     ERROR: scripts/generate-oura-mood-card.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/generate-oura-mood-card.py:before	2025-12-04 03:59:33.210901
-    +++ scripts/generate-oura-mood-card.py:after	2025-12-04 04:03:43.997241
+    --- scripts/generate-oura-mood-card.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/generate-oura-mood-card.py:after	2025-12-04 04:25:59.214753
     @@ -7,34 +7,34 @@
      
      import json
@@ -413,8 +413,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/generate-status-page.py
     ERROR: scripts/generate-status-page.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/generate-status-page.py:before	2025-12-04 03:59:33.210901
-    +++ scripts/generate-status-page.py:after	2025-12-04 04:03:44.226957
+    --- scripts/generate-status-page.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/generate-status-page.py:after	2025-12-04 04:25:59.465253
     @@ -12,7 +12,7 @@
      import sys
      from datetime import datetime, timezone
@@ -434,8 +434,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/generate-summary-card.py
     ERROR: scripts/generate-summary-card.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/generate-summary-card.py:before	2025-12-04 03:59:33.210901
-    +++ scripts/generate-summary-card.py:after	2025-12-04 04:03:44.463929
+    --- scripts/generate-summary-card.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/generate-summary-card.py:after	2025-12-04 04:25:59.719094
     @@ -9,23 +9,23 @@
          python generate-summary-card.py --period monthly [output_path]
      """
@@ -470,8 +470,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/generate-themed-dashboard.py
     ERROR: scripts/generate-themed-dashboard.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/generate-themed-dashboard.py:before	2025-12-04 03:59:33.210901
-    +++ scripts/generate-themed-dashboard.py:after	2025-12-04 04:03:44.695940
+    --- scripts/generate-themed-dashboard.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/generate-themed-dashboard.py:after	2025-12-04 04:26:00.028971
     @@ -9,11 +9,11 @@
          python generate-themed-dashboard.py [output_path] [--theme dark|light]
      """
@@ -489,7 +489,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
      # Add lib to path for imports
     @@ -21,15 +21,15 @@
      
-     from utils import (
+     from utils import (  # type: ignore[import-not-found]
          escape_xml,
     -    safe_value,
     -    load_theme,
@@ -522,8 +522,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/generate-weather-card.py
     ERROR: scripts/generate-weather-card.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/generate-weather-card.py:before	2025-12-04 03:59:33.210901
-    +++ scripts/generate-weather-card.py:after	2025-12-04 04:03:44.922383
+    --- scripts/generate-weather-card.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/generate-weather-card.py:after	2025-12-04 04:26:00.261853
     @@ -5,26 +5,26 @@
      """
      
@@ -567,8 +567,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/generate_megalinter_summary.py
     ERROR: scripts/generate_megalinter_summary.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/generate_megalinter_summary.py:before	2025-12-04 03:59:33.210901
-    +++ scripts/generate_megalinter_summary.py:after	2025-12-04 04:03:45.146036
+    --- scripts/generate_megalinter_summary.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/generate_megalinter_summary.py:after	2025-12-04 04:26:00.482660
     @@ -6,13 +6,13 @@
      with error counts, warnings, and recommendations.
      """
@@ -590,8 +590,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/incremental-generate.py
     ERROR: scripts/incremental-generate.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/incremental-generate.py:before	2025-12-04 03:59:33.211901
-    +++ scripts/incremental-generate.py:after	2025-12-04 04:03:45.380438
+    --- scripts/incremental-generate.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/incremental-generate.py:after	2025-12-04 04:26:00.712974
     @@ -5,13 +5,12 @@
      significantly reducing unnecessary processing.
      """
@@ -611,8 +611,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 ✅ [SUCCESS] scripts/inject-footer.py
 ❌ [ERROR] scripts/lib/__init__.py
     ERROR: scripts/lib/__init__.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/lib/__init__.py:before	2025-12-04 03:59:33.211901
-    +++ scripts/lib/__init__.py:after	2025-12-04 04:03:45.804780
+    --- scripts/lib/__init__.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/lib/__init__.py:after	2025-12-04 04:26:01.083135
     @@ -2,14 +2,14 @@
      Shared utility library for profile card generators.
      """
@@ -634,8 +634,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/lib/card_base.py
     ERROR: scripts/lib/card_base.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/lib/card_base.py:before	2025-12-04 03:59:33.211901
-    +++ scripts/lib/card_base.py:after	2025-12-04 04:03:46.014284
+    --- scripts/lib/card_base.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/lib/card_base.py:after	2025-12-04 04:26:01.284962
     @@ -13,13 +13,13 @@
      
      from .utils import (
@@ -656,8 +656,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 ✅ [SUCCESS] scripts/lib/change_detection.py
 ❌ [ERROR] scripts/lib/data_quality.py
     ERROR: scripts/lib/data_quality.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/lib/data_quality.py:before	2025-12-04 03:59:33.211901
-    +++ scripts/lib/data_quality.py:after	2025-12-04 04:03:46.540661
+    --- scripts/lib/data_quality.py:before	2025-12-04 04:20:54.514687
+    +++ scripts/lib/data_quality.py:after	2025-12-04 04:26:01.731829
     @@ -14,7 +14,6 @@
      import math
      import sys
@@ -669,8 +669,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/lib/logging_utils.py
     ERROR: scripts/lib/logging_utils.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/lib/logging_utils.py:before	2025-12-04 03:59:33.211901
-    +++ scripts/lib/logging_utils.py:after	2025-12-04 04:03:46.801921
+    --- scripts/lib/logging_utils.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/lib/logging_utils.py:after	2025-12-04 04:26:01.969295
     @@ -7,8 +7,8 @@
      import os
      import sys
@@ -684,8 +684,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/lib/metrics.py
     ERROR: scripts/lib/metrics.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/lib/metrics.py:before	2025-12-04 03:59:33.211901
-    +++ scripts/lib/metrics.py:after	2025-12-04 04:03:47.088076
+    --- scripts/lib/metrics.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/lib/metrics.py:after	2025-12-04 04:26:02.238956
     @@ -14,7 +14,7 @@
      import sys
      from datetime import datetime, timezone
@@ -698,8 +698,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/lib/utils.py
     ERROR: scripts/lib/utils.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/lib/utils.py:before	2025-12-04 03:59:33.211901
-    +++ scripts/lib/utils.py:after	2025-12-04 04:03:47.334829
+    --- scripts/lib/utils.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/lib/utils.py:after	2025-12-04 04:26:02.468980
     @@ -14,7 +14,6 @@
      from datetime import datetime, timedelta, timezone
      from pathlib import Path
@@ -731,8 +731,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/lib/weather_alerts.py
     ERROR: scripts/lib/weather_alerts.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/lib/weather_alerts.py:before	2025-12-04 03:59:33.212901
-    +++ scripts/lib/weather_alerts.py:after	2025-12-04 04:03:47.561999
+    --- scripts/lib/weather_alerts.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/lib/weather_alerts.py:after	2025-12-04 04:26:02.698006
     @@ -6,7 +6,7 @@
      based on WMO weather codes and meteorological data.
      """
@@ -745,8 +745,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/log_summary.py
     ERROR: scripts/log_summary.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/log_summary.py:before	2025-12-04 03:59:33.212901
-    +++ scripts/log_summary.py:after	2025-12-04 04:03:47.803875
+    --- scripts/log_summary.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/log_summary.py:after	2025-12-04 04:26:02.927672
     @@ -10,16 +10,16 @@
      """
      
@@ -769,8 +769,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/oura-mood-engine.py
     ERROR: scripts/oura-mood-engine.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/oura-mood-engine.py:before	2025-12-04 03:59:33.212901
-    +++ scripts/oura-mood-engine.py:after	2025-12-04 04:03:48.047294
+    --- scripts/oura-mood-engine.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/oura-mood-engine.py:after	2025-12-04 04:26:03.195976
     @@ -7,12 +7,11 @@
      
      import json
@@ -789,8 +789,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/record-workflow-metrics.py
     ERROR: scripts/record-workflow-metrics.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/record-workflow-metrics.py:before	2025-12-04 03:59:33.212901
-    +++ scripts/record-workflow-metrics.py:after	2025-12-04 04:03:48.294601
+    --- scripts/record-workflow-metrics.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/record-workflow-metrics.py:after	2025-12-04 04:26:03.430635
     @@ -6,8 +6,8 @@
      success/failure status, run time, and any error messages.
      """
@@ -804,8 +804,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] scripts/store-historical-snapshot.py
     ERROR: scripts/store-historical-snapshot.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/store-historical-snapshot.py:before	2025-12-04 03:59:33.212901
-    +++ scripts/store-historical-snapshot.py:after	2025-12-04 04:03:48.527335
+    --- scripts/store-historical-snapshot.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/store-historical-snapshot.py:after	2025-12-04 04:26:03.655394
     @@ -14,16 +14,16 @@
          python store-historical-snapshot.py [--output-dir data/snapshots]
      """
@@ -829,8 +829,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 ✅ [SUCCESS] scripts/update-readme.py
 ❌ [ERROR] scripts/validate-data-quality.py
     ERROR: scripts/validate-data-quality.py Imports are incorrectly sorted and/or formatted.
-    --- scripts/validate-data-quality.py:before	2025-12-04 03:59:33.212901
-    +++ scripts/validate-data-quality.py:after	2025-12-04 04:03:48.988431
+    --- scripts/validate-data-quality.py:before	2025-12-04 04:20:54.515687
+    +++ scripts/validate-data-quality.py:after	2025-12-04 04:26:04.101004
     @@ -6,16 +6,16 @@
      It logs warnings for data quality issues without causing workflow failures.
      """
@@ -855,8 +855,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 ✅ [SUCCESS] tests/__init__.py
 ❌ [ERROR] tests/test_card_generators.py
     ERROR: tests/test_card_generators.py Imports are incorrectly sorted and/or formatted.
-    --- tests/test_card_generators.py:before	2025-12-04 03:59:33.212901
-    +++ tests/test_card_generators.py:after	2025-12-04 04:03:49.435131
+    --- tests/test_card_generators.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_card_generators.py:after	2025-12-04 04:26:04.472623
     @@ -8,9 +8,10 @@
      change, these should be updated accordingly.
      """
@@ -873,8 +873,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] tests/test_change_detection.py
     ERROR: tests/test_change_detection.py Imports are incorrectly sorted and/or formatted.
-    --- tests/test_change_detection.py:before	2025-12-04 03:59:33.212901
-    +++ tests/test_change_detection.py:after	2025-12-04 04:03:49.662058
+    --- tests/test_change_detection.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_change_detection.py:after	2025-12-04 04:26:04.689284
     @@ -5,23 +5,24 @@
      
      import json
@@ -905,8 +905,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] tests/test_data_quality.py
     ERROR: tests/test_data_quality.py Imports are incorrectly sorted and/or formatted.
-    --- tests/test_data_quality.py:before	2025-12-04 03:59:33.212901
-    +++ tests/test_data_quality.py:after	2025-12-04 04:03:49.912148
+    --- tests/test_data_quality.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_data_quality.py:after	2025-12-04 04:26:04.938174
     @@ -3,19 +3,20 @@
      Unit tests for scripts/lib/data_quality.py
      """
@@ -935,8 +935,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 ✅ [SUCCESS] tests/test_developer_dashboard.py
 ❌ [ERROR] tests/test_fallback.py
     ERROR: tests/test_fallback.py Imports are incorrectly sorted and/or formatted.
-    --- tests/test_fallback.py:before	2025-12-04 03:59:33.213902
-    +++ tests/test_fallback.py:after	2025-12-04 04:03:50.375541
+    --- tests/test_fallback.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_fallback.py:after	2025-12-04 04:26:05.421195
     @@ -16,13 +16,13 @@
      sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
      
@@ -957,8 +957,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] tests/test_location_diagnostics.py
     ERROR: tests/test_location_diagnostics.py Imports are incorrectly sorted and/or formatted.
-    --- tests/test_location_diagnostics.py:before	2025-12-04 03:59:33.213902
-    +++ tests/test_location_diagnostics.py:after	2025-12-04 04:03:50.603697
+    --- tests/test_location_diagnostics.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_location_diagnostics.py:after	2025-12-04 04:26:05.636755
     @@ -12,9 +12,9 @@
      import sys
      import tempfile
@@ -974,8 +974,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] tests/test_log_summary.py
     ERROR: tests/test_log_summary.py Imports are incorrectly sorted and/or formatted.
-    --- tests/test_log_summary.py:before	2025-12-04 03:59:33.213902
-    +++ tests/test_log_summary.py:after	2025-12-04 04:03:50.832980
+    --- tests/test_log_summary.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_log_summary.py:after	2025-12-04 04:26:05.836377
     @@ -3,10 +3,10 @@
      Unit tests for scripts/log_summary.py
      """
@@ -993,8 +993,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 ✅ [SUCCESS] tests/test_mapbox_integration.py
 ❌ [ERROR] tests/test_metrics.py
     ERROR: tests/test_metrics.py Imports are incorrectly sorted and/or formatted.
-    --- tests/test_metrics.py:before	2025-12-04 03:59:33.213902
-    +++ tests/test_metrics.py:after	2025-12-04 04:03:51.353825
+    --- tests/test_metrics.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_metrics.py:after	2025-12-04 04:26:06.344363
     @@ -4,23 +4,24 @@
      """
      
@@ -1030,8 +1030,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] tests/test_theme_validation.py
     ERROR: tests/test_theme_validation.py Imports are incorrectly sorted and/or formatted.
-    --- tests/test_theme_validation.py:before	2025-12-04 03:59:33.213902
-    +++ tests/test_theme_validation.py:after	2025-12-04 04:03:51.589725
+    --- tests/test_theme_validation.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_theme_validation.py:after	2025-12-04 04:26:06.552647
     @@ -3,17 +3,18 @@
      Unit tests for theme.json schema validation.
      """
@@ -1058,8 +1058,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] tests/test_time_utils.py
     ERROR: tests/test_time_utils.py Imports are incorrectly sorted and/or formatted.
-    --- tests/test_time_utils.py:before	2025-12-04 03:59:33.213902
-    +++ tests/test_time_utils.py:after	2025-12-04 04:03:51.835687
+    --- tests/test_time_utils.py:before	2025-12-04 04:20:54.516687
+    +++ tests/test_time_utils.py:after	2025-12-04 04:26:06.796560
     @@ -3,8 +3,10 @@
      Unit tests for time-related utility functions.
      """
@@ -1073,8 +1073,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_isort/
 
 ❌ [ERROR] tests/test_utils.py
     ERROR: tests/test_utils.py Imports are incorrectly sorted and/or formatted.
-    --- tests/test_utils.py:before	2025-12-04 03:59:33.213902
-    +++ tests/test_utils.py:after	2025-12-04 04:03:52.069513
+    --- tests/test_utils.py:before	2025-12-04 04:20:54.517687
+    +++ tests/test_utils.py:after	2025-12-04 04:26:07.023811
     @@ -3,21 +3,22 @@
      Unit tests for scripts/lib/utils.py utility functions.
      """

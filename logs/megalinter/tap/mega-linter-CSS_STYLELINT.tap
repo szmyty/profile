@@ -1,0 +1,13 @@
+TAP version 13
+1..11
+not ok 1 - dashboard-app/src/App.css
+not ok 2 - dashboard-app/src/index.css
+not ok 3 - dashboard-app/src/styles/AIIdentityCard.css
+not ok 4 - dashboard-app/src/styles/AchievementsCard.css
+not ok 5 - dashboard-app/src/styles/Card.css
+not ok 6 - dashboard-app/src/styles/DeveloperDashboardCard.css
+not ok 7 - dashboard-app/src/styles/LocationCard.css
+not ok 8 - dashboard-app/src/styles/MoodAvatarCard.css
+not ok 9 - dashboard-app/src/styles/OuraHealthCard.css
+not ok 10 - dashboard-app/src/styles/SoundCloudCard.css
+not ok 11 - dashboard-app/src/styles/WeatherCard.css

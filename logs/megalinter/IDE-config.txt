@@ -39,6 +39,19 @@ shfmt (BASH)
   - vscode:
     - shell-format: https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format
 
+stylelint (CSS)
+  - atom:
+    - linter-stylelint: https://github.com/AtomLinter/linter-stylelint
+  - emacs:
+    - flycheck: https://github.com/flycheck/flycheck
+  - sublime:
+    - SublimeLinter-stylelint: https://github.com/SublimeLinter/SublimeLinter-stylelint
+    - SublimeLinter-contrib-stylelint_d: https://github.com/jo-sm/SublimeLinter-contrib-stylelint_d
+  - vim:
+    - ale: https://github.com/dense-analysis/ale
+  - vscode:
+    - vscode-stylelint: https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
+
 djlint (HTML)
   - sublime:
     - SublimeLinter-contrib-djlint: https://packagecontrol.io/packages/SublimeLinter-contrib-djlint
@@ -54,6 +67,26 @@ htmlhint (HTML)
     - SublimeLinter-contrib-htmlhint: https://github.com/htmlhint/SublimeLinter-contrib-htmlhint
   - vscode:
     - vscode-htmlhint: https://marketplace.visualstudio.com/items?itemName=HTMLHint.vscode-htmlhint
+
+prettier (JAVASCRIPT)
+  - atom:
+    - prettier-atom: https://github.com/prettier/prettier-atom
+    - atom-mprettier: https://github.com/t9md/atom-mprettier
+    - atom-miniprettier: https://github.com/duailibe/atom-miniprettier
+  - emacs:
+    - prettier-emacs: https://github.com/prettier/prettier-emacs
+    - prettier.el: https://github.com/jscheid/prettier.el
+    - apheleia: https://github.com/raxod502/apheleia
+  - idea:
+    - Prettier: https://plugins.jetbrains.com/plugin/10456-prettier
+  - sublime:
+    - JsPrettier: https://packagecontrol.io/packages/JsPrettier
+  - vim:
+    - vim-prettier: https://github.com/prettier/vim-prettier
+  - visual_studio:
+    - JavaScriptPrettier: https://github.com/madskristensen/JavaScriptPrettier
+  - vscode:
+    - prettier-vscode: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 
 prettier (JSON)
   - atom:
@@ -190,6 +223,31 @@ trivy-sbom (REPOSITORY)
 cspell (SPELL)
   - vscode:
     - Code Spell Checker: https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
+
+prettier (TYPESCRIPT)
+  - emacs:
+    - prettier-emacs: https://github.com/prettier/prettier-emacs
+    - prettier.el: https://github.com/jscheid/prettier.el
+    - apheleia: https://github.com/raxod502/apheleia
+  - idea:
+    - Prettier: https://plugins.jetbrains.com/plugin/10456-prettier
+  - sublime:
+    - JsPrettier: https://packagecontrol.io/packages/JsPrettier
+  - vim:
+    - vim-prettier: https://github.com/prettier/vim-prettier
+  - visual_studio:
+    - JavaScriptPrettier: https://github.com/madskristensen/JavaScriptPrettier
+  - vscode:
+    - prettier-vscode: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+
+ts-standard (TYPESCRIPT)
+  - idea:
+    - native support: https://blog.jetbrains.com/webstorm/2017/01/webstorm-2017-1-eap-171-2272/
+  - sublime:
+    - SublimeLinter-contrib-standard: https://packagecontrol.io/packages/SublimeLinter-contrib-standard
+    - StandardFormat: https://packagecontrol.io/packages/StandardFormat
+  - vscode:
+    - https://marketplace.visualstudio.com/items?itemName=standard.vscode-standard: vscode-standard
 
 prettier (YAML)
   - atom:

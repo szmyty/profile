@@ -1,0 +1,393 @@
+Results of mypy linter (version 1.16.0)
+See documentation on https://megalinter.io/8.8.0/descriptors/python_mypy/
+-----------------------------------------------
+
+✅ [SUCCESS] scripts/audit_megalinter_config.py
+✅ [SUCCESS] scripts/fetch-developer-stats.py
+❌ [ERROR] scripts/generate-card.py
+    scripts/generate-card.py:13:1: error: Cannot find implementation or library
+    stub for module named "lib.utils"  [import-not-found]
+        from lib.utils import (
+        ^
+    scripts/generate-card.py:13:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 1 error in 1 file (checked 1 source file)
+
+❌ [ERROR] scripts/generate-consolidated-dashboard.py
+    scripts/generate-consolidated-dashboard.py:22:1: error: Cannot find
+    implementation or library stub for module named "lib.utils"  [import-not-found]
+        from lib.utils import (
+        ^
+    scripts/generate-consolidated-dashboard.py:22:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 1 error in 1 file (checked 1 source file)
+
+❌ [ERROR] scripts/generate-developer-dashboard.py
+    scripts/generate-developer-dashboard.py:21:1: error: Cannot find implementation
+    or library stub for module named "lib.utils"  [import-not-found]
+        from lib.utils import (
+        ^
+    scripts/generate-developer-dashboard.py:21:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    scripts/generate-developer-dashboard.py:353:63: error: Name "font_size_xs" is
+    not defined  [name-defined]
+        ...0" y="12" font-family="{font_family}" font-size="{font_size_xs}" fill=...
+                                                            ^~~~~~~~~~~~~
+    Found 2 errors in 1 file (checked 1 source file)
+
+✅ [SUCCESS] scripts/generate-fallback-map.py
+❌ [ERROR] scripts/generate-health-dashboard.py
+    scripts/generate-health-dashboard.py:13:1: error: Cannot find implementation or
+    library stub for module named "lib.utils"  [import-not-found]
+        from lib.utils import (
+        ^
+    scripts/generate-health-dashboard.py:13:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 1 error in 1 file (checked 1 source file)
+
+❌ [ERROR] scripts/generate-health-snapshot.py
+    scripts/generate-health-snapshot.py:13:1: error: Cannot find implementation or
+    library stub for module named "lib.utils"  [import-not-found]
+        from lib.utils import safe_get, load_and_validate_json
+        ^
+    scripts/generate-health-snapshot.py:13:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 1 error in 1 file (checked 1 source file)
+
+✅ [SUCCESS] scripts/generate-interactive-dashboard.py
+❌ [ERROR] scripts/generate-location-card.py
+    scripts/generate-location-card.py:13:1: error: Cannot find implementation or
+    library stub for module named "lib.utils"  [import-not-found]
+        from lib.utils import (
+        ^
+    scripts/generate-location-card.py:13:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 1 error in 1 file (checked 1 source file)
+
+❌ [ERROR] scripts/generate-oura-mood-card.py
+    scripts/generate-oura-mood-card.py:14:1: error: Cannot find implementation or
+    library stub for module named "lib.utils"  [import-not-found]
+        from lib.utils import (
+        ^
+    scripts/generate-oura-mood-card.py:14:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    scripts/generate-oura-mood-card.py:208:27: error: Name "accent_hr" is not
+    defined  [name-defined]
+                    badge_color = accent_hr  # Warning/error color
+                                  ^~~~~~~~~
+    scripts/generate-oura-mood-card.py:218:63: error: Name "font_size_xs" is not
+    defined  [name-defined]
+        ...0" y="12" font-family="{font_family}" font-size="{font_size_xs}" fill=...
+                                                            ^~~~~~~~~~~~~
+    Found 3 errors in 1 file (checked 1 source file)
+
+❌ [ERROR] scripts/generate-status-page.py
+    scripts/generate-status-page.py:20:1: error: Cannot find implementation or
+    library stub for module named "lib.metrics"  [import-not-found]
+        from lib.metrics import get_all_workflow_metrics
+        ^
+    scripts/generate-status-page.py:20:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    scripts/generate-status-page.py:21:1: error: Cannot find implementation or
+    library stub for module named "lib.utils"  [import-not-found]
+        from lib.utils import (
+        ^
+    Found 2 errors in 1 file (checked 1 source file)
+
+❌ [ERROR] scripts/generate-summary-card.py
+    scripts/generate-summary-card.py:18:1: error: Cannot find implementation or
+    library stub for module named "lib.utils"  [import-not-found]
+        from lib.utils import (
+        ^
+    scripts/generate-summary-card.py:18:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 1 error in 1 file (checked 1 source file)
+
+✅ [SUCCESS] scripts/generate-themed-dashboard.py
+❌ [ERROR] scripts/generate-weather-card.py
+    scripts/generate-weather-card.py:12:1: error: Cannot find implementation or
+    library stub for module named "lib.utils"  [import-not-found]
+        from lib.utils import (
+        ^
+    scripts/generate-weather-card.py:12:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    scripts/generate-weather-card.py:27:1: error: Cannot find implementation or
+    library stub for module named "lib.weather_alerts"  [import-not-found]
+        from lib.weather_alerts import get_weather_alert, format_alert_badge
+        ^
+    Found 2 errors in 1 file (checked 1 source file)
+
+✅ [SUCCESS] scripts/generate_megalinter_summary.py
+❌ [ERROR] scripts/incremental-generate.py
+    scripts/incremental-generate.py:13:1: error: Cannot find implementation or
+    library stub for module named "lib.change_detection"  [import-not-found]
+        from lib.change_detection import should_regenerate_svg, update_hash_ca...
+        ^
+    scripts/incremental-generate.py:13:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 1 error in 1 file (checked 1 source file)
+
+✅ [SUCCESS] scripts/inject-footer.py
+✅ [SUCCESS] scripts/lib/__init__.py
+✅ [SUCCESS] scripts/lib/card_base.py
+✅ [SUCCESS] scripts/lib/change_detection.py
+✅ [SUCCESS] scripts/lib/data_quality.py
+❌ [ERROR] scripts/lib/logging_utils.py
+    scripts/lib/logging_utils.py:76:5: error: Function is missing a return type
+    annotation  [no-untyped-def]
+            def info(self, message: str):
+            ^
+    scripts/lib/logging_utils.py:80:5: error: Function is missing a return type
+    annotation  [no-untyped-def]
+            def warning(self, message: str):
+            ^
+    scripts/lib/logging_utils.py:84:5: error: Function is missing a return type
+    annotation  [no-untyped-def]
+            def error(self, message: str):
+            ^
+    scripts/lib/logging_utils.py:88:5: error: Function is missing a return type
+    annotation  [no-untyped-def]
+            def debug(self, message: str):
+            ^
+    scripts/lib/logging_utils.py:92:5: error: Function is missing a return type
+    annotation  [no-untyped-def]
+            def log_workflow_start(self, description: Optional[str] = None):
+            ^
+    scripts/lib/logging_utils.py:107:5: error: Function is missing a return type
+    annotation  [no-untyped-def]
+            def log_workflow_end(self, exit_code: int = 0):
+            ^
+    scripts/lib/logging_utils.py:123:5: error: Function is missing a return type
+    annotation  [no-untyped-def]
+            def log_command(self, command: str, output: Optional[str] = None, ...
+            ^
+    Found 7 errors in 1 file (checked 1 source file)
+
+✅ [SUCCESS] scripts/lib/metrics.py
+❌ [ERROR] scripts/lib/utils.py
+    scripts/lib/utils.py:76:1: error: Function is missing a type annotation for one
+    or more arguments  [no-untyped-def]
+        def safe_get(data: dict, *keys, default: Any = None) -> Any:
+        ^
+    Found 1 error in 1 file (checked 1 source file)
+
+✅ [SUCCESS] scripts/lib/weather_alerts.py
+❌ [ERROR] scripts/log_summary.py
+    scripts/log_summary.py:20:1: error: Cannot find implementation or library stub
+    for module named "lib.card_base"  [import-not-found]
+        from lib.card_base import CardBase  # noqa: E402
+        ^
+    scripts/log_summary.py:20:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    scripts/log_summary.py:21:1: error: Cannot find implementation or library stub
+    for module named "lib.utils"  [import-not-found]
+        from lib.utils import escape_xml  # noqa: E402
+        ^
+    scripts/log_summary.py:22:1: error: Cannot find implementation or library stub
+    for module named "lib.metrics"  [import-not-found]
+        from lib.metrics import get_all_workflow_metrics  # noqa: E402
+        ^
+    scripts/log_summary.py:276:21: error: "object" has no attribute "append" 
+    [attr-defined]
+                            summary["workflows_with_logs"].append(workflow_dir...
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    scripts/log_summary.py:278:25: error: Unsupported operand types for + ("object"
+    and "int")  [operator]
+                                summary["total_log_files"] += 1
+                                ^
+    scripts/log_summary.py:280:29: error: Unsupported operand types for + ("object"
+    and "int")  [operator]
+                                    summary["total_log_size_bytes"] += log_fil...
+                                    ^
+    scripts/log_summary.py:290:41: error: "object" has no attribute "append" 
+    [attr-defined]
+                                                summary["errors_found"].append...
+                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Found 7 errors in 1 file (checked 1 source file)
+
+❌ [ERROR] scripts/oura-mood-engine.py
+    scripts/oura-mood-engine.py:14:1: error: Cannot find implementation or library
+    stub for module named "lib.utils"  [import-not-found]
+        from lib.utils import safe_get, load_json
+        ^
+    scripts/oura-mood-engine.py:14:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 1 error in 1 file (checked 1 source file)
+
+❌ [ERROR] scripts/record-workflow-metrics.py
+    scripts/record-workflow-metrics.py:16:1: error: Cannot find implementation or
+    library stub for module named "lib.metrics"  [import-not-found]
+        from lib.metrics import record_workflow_run
+        ^
+    scripts/record-workflow-metrics.py:16:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 1 error in 1 file (checked 1 source file)
+
+❌ [ERROR] scripts/store-historical-snapshot.py
+    scripts/store-historical-snapshot.py:24:1: error: Cannot find implementation or
+    library stub for module named "lib.utils"  [import-not-found]
+        from lib.utils import (
+        ^
+    scripts/store-historical-snapshot.py:24:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 1 error in 1 file (checked 1 source file)
+
+✅ [SUCCESS] scripts/update-readme.py
+❌ [ERROR] scripts/validate-data-quality.py
+    scripts/validate-data-quality.py:18:1: error: Cannot find implementation or
+    library stub for module named "lib.data_quality"  [import-not-found]
+        from lib.data_quality import validate_data_quality, log_data_quality_s...
+        ^
+    scripts/validate-data-quality.py:18:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 1 error in 1 file (checked 1 source file)
+
+✅ [SUCCESS] tests/__init__.py
+❌ [ERROR] tests/test_card_generators.py
+    tests/test_card_generators.py:11:1: error: Cannot find implementation or
+    library stub for module named "pytest"  [import-not-found]
+        import pytest
+        ^
+    tests/test_card_generators.py:11:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 1 error in 1 file (checked 1 source file)
+
+❌ [ERROR] tests/test_change_detection.py
+    tests/test_change_detection.py:11:1: error: Cannot find implementation or
+    library stub for module named "pytest"  [import-not-found]
+        import pytest
+        ^
+    tests/test_change_detection.py:17:1: error: Cannot find implementation or
+    library stub for module named "lib.change_detection"  [import-not-found]
+        from lib.change_detection import (
+        ^
+    tests/test_change_detection.py:17:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 2 errors in 1 file (checked 1 source file)
+
+❌ [ERROR] tests/test_data_quality.py
+    tests/test_data_quality.py:6:1: error: Cannot find implementation or library
+    stub for module named "pytest"  [import-not-found]
+        import pytest
+        ^
+    tests/test_data_quality.py:14:1: error: Cannot find implementation or library
+    stub for module named "lib.data_quality"  [import-not-found]
+        from lib.data_quality import (
+        ^
+    tests/test_data_quality.py:14:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    tests/test_data_quality.py:74:9: error: Need type annotation for "data" (hint:
+    "data: dict[<type>, <type>] = ...")  [var-annotated]
+                data = {}
+                ^~~~
+    tests/test_data_quality.py:83:9: error: Need type annotation for "required"
+    (hint: "required: list[<type>] = ...")  [var-annotated]
+                required = []
+                ^~~~~~~~
+    Found 4 errors in 1 file (checked 1 source file)
+
+❌ [ERROR] tests/test_developer_dashboard.py
+    tests/test_developer_dashboard.py:11:1: error: Cannot find implementation or
+    library stub for module named "pytest"  [import-not-found]
+        import pytest
+        ^
+    tests/test_developer_dashboard.py:16:1: error: Cannot find implementation or
+    library stub for module named "lib.utils"  [import-not-found]
+        from lib.utils import try_load_and_validate_json, try_validate_json
+        ^
+    tests/test_developer_dashboard.py:16:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    tests/test_developer_dashboard.py:171:25: error: Value of type "object" is not
+    indexable  [index]
+                activity_grid = test_data["commit_activity"]["activity_grid"]
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Found 3 errors in 1 file (checked 1 source file)
+
+❌ [ERROR] tests/test_fallback.py
+    tests/test_fallback.py:13:1: error: Cannot find implementation or library stub
+    for module named "pytest"  [import-not-found]
+        import pytest
+        ^
+    tests/test_fallback.py:18:1: error: Cannot find implementation or library stub
+    for module named "lib.utils"  [import-not-found]
+        from lib.utils import (
+        ^
+    tests/test_fallback.py:18:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 2 errors in 1 file (checked 1 source file)
+
+❌ [ERROR] tests/test_location_diagnostics.py
+    tests/test_location_diagnostics.py:17:1: error: Cannot find implementation or
+    library stub for module named "pytest"  [import-not-found]
+        import pytest
+        ^
+    tests/test_location_diagnostics.py:22:1: error: Cannot find implementation or
+    library stub for module named "lib.utils"  [import-not-found]
+        from lib.utils import try_load_json
+        ^
+    tests/test_location_diagnostics.py:22:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 2 errors in 1 file (checked 1 source file)
+
+❌ [ERROR] tests/test_log_summary.py
+    tests/test_log_summary.py:14:1: error: Cannot find implementation or library
+    stub for module named "log_summary"  [import-not-found]
+        from log_summary import (  # noqa: E402
+        ^
+    tests/test_log_summary.py:14:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    tests/test_log_summary.py:26:9: error: Need type annotation for "metrics"
+    (hint: "metrics: list[<type>] = ...")  [var-annotated]
+                metrics = []
+                ^~~~~~~
+    Found 2 errors in 1 file (checked 1 source file)
+
+❌ [ERROR] tests/test_mapbox_integration.py
+    tests/test_mapbox_integration.py:16:1: error: Cannot find implementation or
+    library stub for module named "pytest"  [import-not-found]
+        import pytest
+        ^
+    tests/test_mapbox_integration.py:16:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    tests/test_mapbox_integration.py:37:55: error: Argument 1 to "module_from_spec"
+    has incompatible type "ModuleSpec | None"; expected "ModuleSpec"  [arg-type]
+                self.module = importlib.util.module_from_spec(spec)
+                                                              ^~~~
+    tests/test_mapbox_integration.py:38:9: error: Item "None" of
+    "ModuleSpec | None" has no attribute "loader"  [union-attr]
+                spec.loader.exec_module(self.module)
+                ^~~~~~~~~~~
+    tests/test_mapbox_integration.py:38:9: error: Item "None" of
+    "Loader | Any | None" has no attribute "exec_module"  [union-attr]
+                spec.loader.exec_module(self.module)
+                ^~~~~~~~~~~~~~~~~~~~~~~
+    Found 4 errors in 1 file (checked 1 source file)
+
+❌ [ERROR] tests/test_metrics.py
+    tests/test_metrics.py:7:1: error: Cannot find implementation or library stub
+    for module named "pytest"  [import-not-found]
+        import pytest
+        ^
+    tests/test_metrics.py:17:1: error: Cannot find implementation or library stub
+    for module named "lib.metrics"  [import-not-found]
+        from lib.metrics import (
+        ^
+    tests/test_metrics.py:17:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 2 errors in 1 file (checked 1 source file)
+
+❌ [ERROR] tests/test_theme_validation.py
+    tests/test_theme_validation.py:6:1: error: Cannot find implementation or
+    library stub for module named "pytest"  [import-not-found]
+        import pytest
+        ^
+    tests/test_theme_validation.py:16:1: error: Cannot find implementation or
+    library stub for module named "lib.utils"  [import-not-found]
+        from lib.utils import load_theme, load_schema, try_validate_json
+        ^
+    tests/test_theme_validation.py:16:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    tests/test_theme_validation.py:351:1: error: Cannot find implementation or
+    library stub for module named "lib"  [import-not-found]
+                import lib.utils
+        ^
+    Found 3 errors in 1 file (checked 1 source file)
+
+❌ [ERROR] tests/test_time_utils.py
+    tests/test_time_utils.py:6:1: error: Cannot find implementation or library stub
+    for module named "pytest"  [import-not-found]
+        import pytest
+        ^
+    tests/test_time_utils.py:6:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 1 error in 1 file (checked 1 source file)
+
+❌ [ERROR] tests/test_utils.py
+    tests/test_utils.py:6:1: error: Cannot find implementation or library stub for
+    module named "pytest"  [import-not-found]
+        import pytest
+        ^
+    tests/test_utils.py:15:1: error: Cannot find implementation or library stub for
+    module named "lib.utils"  [import-not-found]
+        from lib.utils import (
+        ^
+    tests/test_utils.py:15:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    tests/test_utils.py:120:9: error: Need type annotation for "data" (hint:
+    "data: dict[<type>, <type>] = ...")  [var-annotated]
+                data = {}
+                ^~~~
+    Found 3 errors in 1 file (checked 1 source file)
+
