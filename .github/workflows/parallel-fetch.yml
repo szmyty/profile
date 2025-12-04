@@ -29,6 +29,11 @@ jobs:
   fetch-oura:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          
       - name: Setup environment
         uses: ./.github/actions/setup-environment
         with:
@@ -71,6 +76,11 @@ jobs:
   fetch-weather:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          
       - name: Setup environment
         uses: ./.github/actions/setup-environment
         with:
@@ -133,6 +143,11 @@ jobs:
   fetch-soundcloud:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          
       - name: Setup environment
         uses: ./.github/actions/setup-environment
 
@@ -180,6 +195,11 @@ jobs:
     needs: [fetch-oura, fetch-weather, fetch-soundcloud]
     if: always() # Run even if some fetches fail
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          
       - name: Setup environment
         uses: ./.github/actions/setup-environment
 
