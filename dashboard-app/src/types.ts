@@ -210,10 +210,10 @@ export interface Theme {
     };
   };
   typography?: {
-    [key: string]: any;
+    [key: string]: string | number;
   };
   spacing?: {
-    [key: string]: any;
+    [key: string]: string | number;
   };
 }
 
