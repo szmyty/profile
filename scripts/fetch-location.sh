@@ -141,6 +141,11 @@ download_static_map() {
         return 1
     fi
     
+    # Perform health check for Mapbox API
+    if ! health_check_api "https://api.mapbox.com/v1" "Mapbox API"; then
+        log_warn "Mapbox API health check failed, but continuing anyway..."
+    fi
+    
     # Determine if it's day or night
     local theme
     theme=$(determine_time_of_day "$lat" "$lon")

@@ -383,6 +383,59 @@ class CardBase(ABC):
     </text>
   </g>'''
 
+    def build_staleness_badge(
+        self,
+        updated_at: str,
+        x: Optional[int] = None,
+        y: int = 10,
+        text_anchor: str = "end",
+    ) -> str:
+        """
+        Build a staleness badge showing when data was last updated.
+        
+        If data is more than 24 hours old, uses a warning color to indicate staleness.
+        
+        Args:
+            updated_at: ISO 8601 timestamp string of when data was last updated.
+            x: X position of the badge. If None, positioned at right edge with 10px padding.
+            y: Y position of the badge.
+            text_anchor: Text anchor position ('start', 'middle', or 'end').
+        
+        Returns:
+            Staleness badge SVG string, or empty string if updated_at is not provided.
+        """
+        if not updated_at:
+            return ""
+        
+        from .utils import format_time_since, is_data_stale
+        
+        if x is None:
+            x = self.width - 10
+        
+        time_since = format_time_since(updated_at)
+        is_stale = is_data_stale(updated_at, stale_threshold_hours=24)
+        
+        font_family = self.get_typography("font_family")
+        font_size = self.get_font_size("xs")
+        
+        # Use warning color if data is stale, otherwise use muted text color
+        if is_stale:
+            badge_color = self.get_color("accent", "heart_rate")  # Warning/error color
+            badge_icon = "⚠️ "
+        else:
+            badge_color = self.get_color("text", "muted")
+            badge_icon = ""
+        
+        escaped_time = escape_xml(time_since)
+        
+        return f'''
+  <!-- Staleness Badge -->
+  <g transform="translate({x}, {y})">
+    <text x="0" y="12" font-family="{font_family}" font-size="{font_size}" fill="{badge_color}" text-anchor="{text_anchor}">
+      {badge_icon}Updated: {escaped_time}
+    </text>
+  </g>'''
+
     # -------------------------------------------------------------------------
     # Main generation methods
     # -------------------------------------------------------------------------

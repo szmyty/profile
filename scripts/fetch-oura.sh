@@ -46,7 +46,7 @@ echo "End date: $END_DATE" >&2
 # Create output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
 
-# Function to make Oura API request with retry logic using exponential backoff
+# Function to make Oura API request with retry logic, rate limit detection, and circuit breaker
 oura_api_request() {
     local endpoint=$1
     local params="${2:-}"
@@ -59,7 +59,8 @@ oura_api_request() {
     echo "Fetching from: ${url}" >&2
     
     local response
-    if ! response=$(retry_with_backoff curl -sf --max-time 10 "$url" \
+    # Use retry_api_call with circuit breaker and rate limit detection
+    if ! response=$(retry_api_call "Oura API" curl -sf --max-time 10 "$url" \
         -H "Authorization: Bearer ${OURA_PAT}" \
         -H "Content-Type: application/json" \
         -H "User-Agent: GitHub-Profile-Oura-Card/1.0"); then
@@ -228,6 +229,13 @@ fetch_heart_rate() {
 main() {
     echo "Starting Oura data fetch..." >&2
     echo "Date range: ${START_DATE} to ${END_DATE}" >&2
+    
+    # Perform health check before making API calls
+    log_info "Performing Oura API health check..."
+    if ! health_check_api "https://api.ouraring.com/v2/usercollection/personal_info" "Oura API" "Bearer ${OURA_PAT}"; then
+        log_warn "Oura API health check failed, but continuing anyway..."
+        # Don't exit - the retry logic will handle failures
+    fi
     
     # Fetch all data types including personal info
     local personal_info_data sleep_data readiness_data activity_data hr_data
