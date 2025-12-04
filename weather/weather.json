@@ -7,19 +7,19 @@
   },
   "current": {
     "temperature": -0.2,
-    "wind_speed": 6.5,
+    "wind_speed": 6.1,
     "weathercode": 3,
     "is_day": 0,
     "condition": "Overcast",
     "emoji": "☁️"
   },
   "daily": {
-    "temperature_max": 2.7,
-    "temperature_min": -0.6,
-    "sunrise": "2025-12-03T06:56",
-    "sunset": "2025-12-03T16:12",
-    "weathercode": 73
+    "temperature_max": 3.0,
+    "temperature_min": -9.3,
+    "sunrise": "2025-12-04T06:57",
+    "sunset": "2025-12-04T16:11",
+    "weathercode": 3
   },
   "timezone": "America/New_York",
-  "updated_at": "2025-12-04T04:46:28Z"
+  "updated_at": "2025-12-04T06:02:24Z"
 }
