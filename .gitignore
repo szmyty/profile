@@ -40,3 +40,10 @@ dev-output/
 # Note: We explicitly want to track logs/ directory
 # *.log files should be committed
 # Rotated logs (*.log.1, *.log.2, etc.) should be committed
+
+# Node.js / Dashboard App
+node_modules/
+dashboard-app/dist/
+dashboard-app/node_modules/
+*.lock
+package-lock.json
