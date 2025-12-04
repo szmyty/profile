@@ -1,0 +1,122 @@
+name: MegaLinter Diagnostic (Report-Only)
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  megalinter:
+    name: MegaLinter Report-Only Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create output directory
+        run: |
+          mkdir -p logs/megalinter
+
+      - name: Run MegaLinter (Report-Only Mode)
+        id: ml
+        uses: oxsecurity/megalinter@v8
+        env:
+          # Disable auto-fix and prevent workflow failure
+          APPLY_FIXES: none
+          DISABLE_ERRORS: true
+          VALIDATE_ALL_CODEBASE: true
+          
+          # Use existing config
+          MEGALINTER_CONFIG: .megalinter.yml
+          
+          # Report settings
+          REPORT_OUTPUT_FOLDER: logs/megalinter
+          
+          # GitHub integration
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+          # Ensure report-only mode
+          FAIL_IF_UPDATED_SOURCES: false
+          FAIL_IF_MISSING_LINTER_IN_FLAVOR: false
+          
+        continue-on-error: true
+
+      - name: Run Config Audit
+        id: config_audit
+        run: |
+          python scripts/audit_megalinter_config.py .megalinter.yml logs/megalinter/config_audit.txt
+        continue-on-error: true
+
+      - name: Generate Summary Report
+        run: |
+          python scripts/generate_megalinter_summary.py logs/megalinter logs/megalinter/summary.md
+        continue-on-error: true
+
+      - name: Copy MegaLinter Reports
+        run: |
+          # Copy main reports if they exist
+          if [ -f "megalinter-reports/mega-linter.log" ]; then
+            cp megalinter-reports/mega-linter.log logs/megalinter/report.txt || true
+          fi
+          if [ -f "megalinter-reports/megalinter-report.json" ]; then
+            cp megalinter-reports/megalinter-report.json logs/megalinter/report.json || true
+          fi
+          
+          # List what we have
+          echo "=== MegaLinter Output Files ==="
+          ls -la logs/megalinter/ || true
+          ls -la megalinter-reports/ || true
+        continue-on-error: true
+
+      - name: Upload MegaLinter Artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: megalinter-reports
+          path: |
+            logs/megalinter/
+            megalinter-reports/
+          retention-days: 30
+
+      - name: Display Summary
+        if: always()
+        run: |
+          echo "=== MegaLinter Analysis Complete ==="
+          if [ -f "logs/megalinter/summary.md" ]; then
+            cat logs/megalinter/summary.md
+          else
+            echo "Summary not generated"
+          fi
+          
+          if [ -f "logs/megalinter/config_audit.txt" ]; then
+            echo ""
+            echo "=== Config Audit Results ==="
+            cat logs/megalinter/config_audit.txt
+          fi
+
+      - name: Commit Reports (if on main branch)
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          git add logs/megalinter/ 2>/dev/null || true
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "📊 Update MegaLinter diagnostic reports [skip ci]"
+            git push
+          fi
+        continue-on-error: true

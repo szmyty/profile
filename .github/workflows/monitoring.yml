@@ -17,6 +17,7 @@ on:
       - "Location Card"
       - "SoundCloud Card"
       - "Parallel Data Fetch & Card Generation"
+      - "MegaLinter Diagnostic (Report-Only)"
     types:
       - completed
 
@@ -47,6 +48,41 @@ jobs:
           else
             git commit -m "📊 Update status page and metrics"
             git push
+          fi
+
+  log-megalinter-results:
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.name == 'MegaLinter Diagnostic (Report-Only)'
+    steps:
+      - name: Setup environment
+        uses: ./.github/actions/setup-environment
+
+      - name: Log MegaLinter completion
+        run: |
+          echo "✅ MegaLinter run complete"
+          
+          # Check if summary exists
+          if [ -f "logs/megalinter/summary.md" ]; then
+            echo "📊 Summary generated successfully"
+            
+            # Extract issue counts
+            ERRORS=$(grep -oP "Total Errors:\*\* \K\d+" logs/megalinter/summary.md || echo "0")
+            WARNINGS=$(grep -oP "Total Warnings:\*\* \K\d+" logs/megalinter/summary.md || echo "0")
+            
+            echo "  - Errors: $ERRORS"
+            echo "  - Warnings: $WARNINGS"
+          else
+            echo "⚠️ Summary not found"
+          fi
+          
+          # Check if config audit exists
+          if [ -f "logs/megalinter/config_audit.txt" ]; then
+            AUDIT_ISSUES=$(grep -c "ISSUES" logs/megalinter/config_audit.txt || echo "0")
+            if [ "$AUDIT_ISSUES" -gt 0 ]; then
+              echo "⚠️ Config audit found $AUDIT_ISSUES issue(s)"
+            else
+              echo "✅ Config audit passed"
+            fi
           fi
 
   check-failures:
