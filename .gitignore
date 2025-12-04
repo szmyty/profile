@@ -45,5 +45,3 @@ dev-output/
 node_modules/
 dashboard-app/dist/
 dashboard-app/node_modules/
-*.lock
-package-lock.json

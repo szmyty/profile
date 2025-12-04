@@ -70,11 +70,11 @@ export const OuraHealthCard: React.FC<OuraHealthCardProps> = ({ data, gradient }
             </div>
           )}
           
-          {data.temp_deviation !== null && (
+          {data.readiness?.temperature_deviation !== null && data.readiness?.temperature_deviation !== undefined && (
             <div className="vital-item">
               <span className="vital-label">🌡️ Body Temp:</span>
               <span className="vital-value">
-                {data.temp_deviation > 0 ? '+' : ''}{data.readiness?.temperature_deviation?.toFixed(2) ?? '0.00'}°C
+                {data.readiness.temperature_deviation > 0 ? '+' : ''}{data.readiness.temperature_deviation.toFixed(2)}°C
               </span>
             </div>
           )}

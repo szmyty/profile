@@ -17,7 +17,9 @@ export async function fetchData<T>(path: string): Promise<T | null> {
   try {
     // Remove leading slash from path if present
     const cleanPath = path.startsWith('/') ? path.slice(1) : path;
-    const url = `${BASE_PATH}${cleanPath}`;
+    // Ensure BASE_PATH ends with / before concatenating
+    const basePath = BASE_PATH.endsWith('/') ? BASE_PATH : `${BASE_PATH}/`;
+    const url = `${basePath}${cleanPath}`;
     
     const response = await fetch(url);
     if (!response.ok) {
