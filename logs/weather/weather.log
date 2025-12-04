@@ -1,0 +1,52 @@
+Logging initialized: logs/weather/weather.log
+[2025-12-04T04:46:26Z] [INFO] ============================================================
+[2025-12-04T04:46:26Z] [INFO] ============================================================
+[2025-12-04T04:46:26Z] [INFO] Workflow: Weather Card - Fetch Data
+[2025-12-04T04:46:26Z] [INFO] Workflow: Weather Card - Fetch Data
+[2025-12-04T04:46:26Z] [INFO] Started at: 2025-12-04T04:46:26Z
+[2025-12-04T04:46:26Z] [INFO] Started at: 2025-12-04T04:46:26Z
+[2025-12-04T04:46:26Z] [INFO] ============================================================
+[2025-12-04T04:46:26Z] [INFO] ============================================================
+[2025-12-04T04:46:26Z] [INFO] Fetching GitHub location...
+[2025-12-04T04:46:26Z] [INFO] Fetching GitHub location...
+Fetching GitHub profile location for szmyty...
+Location saved to cache: Boston, Massachusetts
+[2025-12-04T04:46:26Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-04T04:46:26Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-04T04:46:26Z] [INFO] Converting location to coordinates...
+[2025-12-04T04:46:26Z] [INFO] Converting location to coordinates...
+Converting location to coordinates: Boston, Massachusetts
+🔍 Health check: Nominatim API...
+❌ Nominatim API unhealthy (HTTP 302)
+Warning: Nominatim API health check failed, but continuing anyway...
+Diagnostic info saved to weather/debug_nominatim.json
+Note: Debug files contain location data and are excluded from git commits
+✅ Found coordinates: 42.3588336, -71.0578303
+   Display name: Boston, Suffolk County, Massachusetts, United States
+Cached response for nominatim:Qm9zdG9uLCBNYXNzYWNodXNldHRz
+[2025-12-04T04:46:27Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-04T04:46:27Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-04T04:46:27Z] [INFO] Fetching weather data from Open-Meteo...
+[2025-12-04T04:46:27Z] [INFO] Fetching weather data from Open-Meteo...
+Fetching weather data from Open-Meteo...
+🔍 Health check: Open-Meteo API...
+✅ Open-Meteo API is healthy (HTTP 200)
+Cached response for weather:NDIuMzU4ODMzNiwtNzEuMDU3ODMwMw==
+[2025-12-04T04:46:28Z] [INFO] Weather data fetched successfully
+[2025-12-04T04:46:28Z] [INFO] Weather data fetched successfully
+[2025-12-04T04:46:28Z] [INFO] Output directory: weather
+[2025-12-04T04:46:28Z] [INFO] Output directory: weather
+[2025-12-04T04:46:28Z] [INFO] Generating weather JSON output...
+[2025-12-04T04:46:28Z] [INFO] Generating weather JSON output...
+[2025-12-04T04:46:28Z] [INFO] Current conditions: Overcast (☁️), -0.2°C
+[2025-12-04T04:46:28Z] [INFO] Current conditions: Overcast (☁️), -0.2°C
+[2025-12-04T04:46:28Z] [INFO] Weather data generated successfully
+[2025-12-04T04:46:28Z] [INFO] Weather data generated successfully
+[2025-12-04T04:46:28Z] [INFO] ============================================================
+[2025-12-04T04:46:28Z] [INFO] ============================================================
+[2025-12-04T04:46:28Z] [INFO] Workflow: Weather Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-04T04:46:28Z] [INFO] Workflow: Weather Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-04T04:46:28Z] [INFO] Ended at: 2025-12-04T04:46:28Z
+[2025-12-04T04:46:28Z] [INFO] Ended at: 2025-12-04T04:46:28Z
+[2025-12-04T04:46:28Z] [INFO] ============================================================
+[2025-12-04T04:46:28Z] [INFO] ============================================================
