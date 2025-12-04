@@ -1,0 +1,46 @@
+Results of jsonlint linter (version 16.0.0)
+See documentation on https://megalinter.io/8.8.0/descriptors/json_jsonlint/
+-----------------------------------------------
+
+✅ [SUCCESS] .devcontainer/devcontainer.json
+✅ [SUCCESS] .vscode/extensions.json
+✅ [SUCCESS] .vscode/launch.json
+❌ [ERROR] .vscode/settings.json
+    File: .vscode/settings.json
+    Parse error on line 80, column 5:
+    ...OnSave": false,    },    "cSpell.words...
+    ----------------------^
+    Trailing comma in object
+
+✅ [SUCCESS] .vscode/tasks.json
+✅ [SUCCESS] assets/metadata.json
+✅ [SUCCESS] config/META6.json
+✅ [SUCCESS] config/pyrightconfig.json
+✅ [SUCCESS] config/styles/proselint/meta.json
+✅ [SUCCESS] config/styles/write-good/meta.json
+✅ [SUCCESS] config/theme.json
+✅ [SUCCESS] data/metrics/developer.json
+✅ [SUCCESS] data/metrics/location.json
+✅ [SUCCESS] data/metrics/oura.json
+✅ [SUCCESS] data/metrics/parallel-fetch.json
+✅ [SUCCESS] data/metrics/soundcloud.json
+✅ [SUCCESS] data/metrics/test-workflow.json
+✅ [SUCCESS] data/metrics/weather.json
+✅ [SUCCESS] data/mock/developer-stats.json
+✅ [SUCCESS] data/mock/oura-metrics.json
+✅ [SUCCESS] data/mock/soundcloud-metadata.json
+✅ [SUCCESS] data/mock/weather.json
+✅ [SUCCESS] data/snapshots/daily/2025/12/2025-12-03.json
+✅ [SUCCESS] data/snapshots/monthly/2025-12.json
+✅ [SUCCESS] data/snapshots/weekly/2025-W49.json
+✅ [SUCCESS] data/timezone.json
+✅ [SUCCESS] oura/health_snapshot.json
+✅ [SUCCESS] oura/metrics.json
+✅ [SUCCESS] oura/mood.json
+✅ [SUCCESS] schemas/developer-stats.schema.json
+✅ [SUCCESS] schemas/health-snapshot.schema.json
+✅ [SUCCESS] schemas/oura-metrics.schema.json
+✅ [SUCCESS] schemas/soundcloud-track.schema.json
+✅ [SUCCESS] schemas/theme.schema.json
+✅ [SUCCESS] schemas/weather.schema.json
+✅ [SUCCESS] weather/weather.json

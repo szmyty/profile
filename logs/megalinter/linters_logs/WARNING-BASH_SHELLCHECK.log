@@ -1,0 +1,534 @@
+Results of shellcheck linter (version 0.10.0)
+See documentation on https://megalinter.io/8.8.0/descriptors/bash_shellcheck/
+-----------------------------------------------
+
+✅ [SUCCESS] .devcontainer/postCreate.sh
+✅ [SUCCESS] scripts/dev-mode.sh
+❌ [ERROR] scripts/fetch-location.sh
+    
+    In scripts/fetch-location.sh line 14:
+    source "${SCRIPT_DIR}/lib/common.sh"
+           ^---------------------------^ SC1091 (info): Not following: ./lib/common.sh: openBinaryFile: does not exist (No such file or directory)
+    
+    
+    In scripts/fetch-location.sh line 15:
+    source "${SCRIPT_DIR}/lib/logging.sh"
+           ^----------------------------^ SC1091 (info): Not following: ./lib/logging.sh: openBinaryFile: does not exist (No such file or directory)
+    
+    For more information:
+      https://www.shellcheck.net/wiki/SC1091 -- Not following: ./lib/common.sh: o...
+
+❌ [ERROR] scripts/fetch-oura.sh
+    
+    In scripts/fetch-oura.sh line 16:
+        source "${SCRIPT_DIR}/lib/common.sh"
+               ^---------------------------^ SC1091 (info): Not following: ./lib/common.sh: openBinaryFile: does not exist (No such file or directory)
+    
+    
+    In scripts/fetch-oura.sh line 19:
+        source "${SCRIPT_DIR}/lib/logging.sh"
+               ^----------------------------^ SC1091 (info): Not following: ./lib/logging.sh: openBinaryFile: does not exist (No such file or directory)
+    
+    For more information:
+      https://www.shellcheck.net/wiki/SC1091 -- Not following: ./lib/common.sh: o...
+
+❌ [ERROR] scripts/fetch-soundcloud.sh
+    
+    In scripts/fetch-soundcloud.sh line 22:
+        source "${SCRIPT_DIR}/lib/common.sh"
+               ^---------------------------^ SC1091 (info): Not following: ./lib/common.sh: openBinaryFile: does not exist (No such file or directory)
+    
+    
+    In scripts/fetch-soundcloud.sh line 25:
+        source "${SCRIPT_DIR}/lib/logging.sh"
+               ^----------------------------^ SC1091 (info): Not following: ./lib/logging.sh: openBinaryFile: does not exist (No such file or directory)
+    
+    For more information:
+      https://www.shellcheck.net/wiki/SC1091 -- Not following: ./lib/common.sh: o...
+
+❌ [ERROR] scripts/fetch-timezone.sh
+    
+    In scripts/fetch-timezone.sh line 13:
+    source "${SCRIPT_DIR}/lib/common.sh"
+           ^---------------------------^ SC1091 (info): Not following: ./lib/common.sh: openBinaryFile: does not exist (No such file or directory)
+    
+    For more information:
+      https://www.shellcheck.net/wiki/SC1091 -- Not following: ./lib/common.sh: o...
+
+❌ [ERROR] scripts/fetch-weather.sh
+    
+    In scripts/fetch-weather.sh line 13:
+    source "${SCRIPT_DIR}/lib/common.sh"
+           ^---------------------------^ SC1091 (info): Not following: ./lib/common.sh: openBinaryFile: does not exist (No such file or directory)
+    
+    
+    In scripts/fetch-weather.sh line 14:
+    source "${SCRIPT_DIR}/lib/logging.sh"
+           ^----------------------------^ SC1091 (info): Not following: ./lib/logging.sh: openBinaryFile: does not exist (No such file or directory)
+    
+    
+    In scripts/fetch-weather.sh line 31:
+        if CACHE_TTL_DAYS=0.042 cached_weather=$(get_cached_response "weather" "$cache_key"); then
+           ^------------^ SC2034 (warning): CACHE_TTL_DAYS appears unused. Verify use (or export if used externally).
+    
+    For more information:
+      https://www.shellcheck.net/wiki/SC2034 -- CACHE_TTL_DAYS appears unused. Ve...
+      https://www.shellcheck.net/wiki/SC1091 -- Not following: ./lib/common.sh: o...
+
+❌ [ERROR] scripts/health_check.sh
+    
+    In scripts/health_check.sh line 107:
+        local all_healthy=0
+              ^---------^ SC2034 (warning): all_healthy appears unused. Verify use (or export if used externally).
+    
+    For more information:
+      https://www.shellcheck.net/wiki/SC2034 -- all_healthy appears unused. Verif...
+
+❌ [ERROR] scripts/lib/common.sh
+    
+    In scripts/lib/common.sh line 51:
+                sleep $delay
+                      ^----^ SC2086 (info): Double quote to prevent globbing and word splitting.
+    
+    Did you mean: 
+                sleep "$delay"
+    
+    
+    In scripts/lib/common.sh line 310:
+                sleep $delay
+                      ^----^ SC2086 (info): Double quote to prevent globbing and word splitting.
+    
+    Did you mean: 
+                sleep "$delay"
+    
+    For more information:
+      https://www.shellcheck.net/wiki/SC2086 -- Double quote to prevent globbing ...
+
+✅ [SUCCESS] scripts/lib/logging.sh
+❌ [ERROR] scripts/new-card.sh
+    
+    In scripts/new-card.sh line 550:
+        create_output_directory "$card_name" && ((success_count++)) || true
+                                             ^-- SC2015 (info): Note that A && B || C is not if-then-else. C may run when A is true.
+    
+    
+    In scripts/new-card.sh line 553:
+        generate_fetch_script "$card_name" && ((success_count++)) || true
+                                           ^-- SC2015 (info): Note that A && B || C is not if-then-else. C may run when A is true.
+    
+    
+    In scripts/new-card.sh line 556:
+        generate_generator_script "$card_name" && ((success_count++)) || true
+                                               ^-- SC2015 (info): Note that A && B || C is not if-then-else. C may run when A is true.
+    
+    
+    In scripts/new-card.sh line 559:
+        generate_workflow "$card_name" && ((success_count++)) || true
+                                       ^-- SC2015 (info): Note that A && B || C is not if-then-else. C may run when A is true.
+    
+    
+    In scripts/new-card.sh line 562:
+        add_readme_markers "$card_name" && ((success_count++)) || true
+                                        ^-- SC2015 (info): Note that A && B || C is not if-then-else. C may run when A is true.
+    
+    For more information:
+      https://www.shellcheck.net/wiki/SC2015 -- Note that A && B || C is not if-t...
+
+❌ [ERROR] tests/test_cache.sh
+    
+    In tests/test_cache.sh line 14:
+    source "${SCRIPT_DIR}/../scripts/lib/common.sh"
+           ^-- SC1091 (info): Not following: ./../scripts/lib/common.sh: openBinaryFile: does not exist (No such file or directory)
+    
+    For more information:
+      https://www.shellcheck.net/wiki/SC1091 -- Not following: ./../scripts/lib/c...
+
+❌ [ERROR] tests/test_health_checks.sh
+    
+    In tests/test_health_checks.sh line 7:
+    source "${SCRIPT_DIR}/../scripts/lib/common.sh"
+           ^-- SC1091 (info): Not following: ./../scripts/lib/common.sh: openBinaryFile: does not exist (No such file or directory)
+    
+    
+    In tests/test_health_checks.sh line 12:
+    YELLOW='\033[0;33m'
+    ^----^ SC2034 (warning): YELLOW appears unused. Verify use (or export if used externally).
+    
+    
+    In tests/test_health_checks.sh line 27:
+        rm -rf "$TEST_CIRCUIT_DIR"
+        ^------------------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 53:
+        local output
+        ^----------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 54:
+        output=$(health_check_api "https://example.com" "Test API" 2>&1 || true)
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+                 ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+                                                                           ^--^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 55:
+        echo "$output" | grep -q "Health check"
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 60:
+        local test_api="TestAPI_$$"
+        ^-------------------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 61:
+        if is_circuit_open "$test_api" 2>/dev/null; then
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+           ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 62:
+            return 1
+            ^------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 64:
+        return 0
+        ^------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 69:
+        local test_api="TestFailAPI_$$"
+        ^-----------------------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 70:
+        record_api_failure "$test_api" >/dev/null 2>&1
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 71:
+        local circuit_file
+        ^----------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 72:
+        circuit_file=$(get_circuit_breaker_file "$test_api")
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+                       ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 73:
+        [ -f "$circuit_file" ]
+        ^--------------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 78:
+        local test_api="TestOpenAPI_$$"
+        ^-----------------------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 81:
+        for i in $(seq 1 $CIRCUIT_BREAKER_THRESHOLD); do
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+                   ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+                         ^------------------------^ SC2086 (info): Double quote to prevent globbing and word splitting.
+    
+    Did you mean: 
+        for i in $(seq 1 "$CIRCUIT_BREAKER_THRESHOLD"); do
+    
+    
+    In tests/test_health_checks.sh line 82:
+            record_api_failure "$test_api" >/dev/null 2>&1
+            ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 86:
+        is_circuit_open "$test_api" >/dev/null 2>&1
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 91:
+        local test_api="TestTimeoutAPI_$$"
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 94:
+        for i in $(seq 1 $CIRCUIT_BREAKER_THRESHOLD); do
+        ^-^ SC2034 (warning): i appears unused. Verify use (or export if used externally).
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+                   ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+                         ^------------------------^ SC2086 (info): Double quote to prevent globbing and word splitting.
+    
+    Did you mean: 
+        for i in $(seq 1 "$CIRCUIT_BREAKER_THRESHOLD"); do
+    
+    
+    In tests/test_health_checks.sh line 95:
+            record_api_failure "$test_api" >/dev/null 2>&1
+            ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 99:
+        sleep $((CIRCUIT_BREAKER_TIMEOUT + 1))
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 102:
+        if is_circuit_open "$test_api" 2>/dev/null; then
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+           ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 103:
+            return 1
+            ^------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 105:
+        return 0
+        ^------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 110:
+        local test_api="TestResetAPI_$$"
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 113:
+        record_api_failure "$test_api" >/dev/null 2>&1
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 116:
+        record_api_success "$test_api" >/dev/null 2>&1
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 119:
+        local circuit_file
+        ^----------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 120:
+        circuit_file=$(get_circuit_breaker_file "$test_api")
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+                       ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 121:
+        [ ! -f "$circuit_file" ]
+        ^----------------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 126:
+        local unsafe_name="Test API/With:Unsafe*Chars"
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 127:
+        local safe_file
+        ^-------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 128:
+        safe_file=$(get_circuit_breaker_file "$unsafe_name")
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+                    ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 131:
+        basename "$safe_file" | grep -qE '^[a-z0-9_-]+_circuit\.state$'
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 136:
+        local test_dir=$(mktemp -d)
+        ^-------------------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+              ^------^ SC2155 (warning): Declare and assign separately to avoid masking return values.
+                         ^-------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 137:
+        rm -rf "$test_dir"
+        ^----------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 139:
+        CIRCUIT_BREAKER_DIR="$test_dir" init_circuit_breaker
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 140:
+        [ -d "$test_dir" ]
+        ^----------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_health_checks.sh line 142:
+        rm -rf "$test_dir"
+        ^----------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    For more information:
+      https://www.shellcheck.net/wiki/SC2034 -- YELLOW appears unused. Verify use...
+      https://www.shellcheck.net/wiki/SC2155 -- Declare and assign separately to ...
+      https://www.shellcheck.net/wiki/SC1091 -- Not following: ./../scripts/lib/c...
+
+❌ [ERROR] tests/test_location_shell_diagnostics.sh
+    
+    In tests/test_location_shell_diagnostics.sh line 15:
+    YELLOW='\033[1;33m'
+    ^----^ SC2034 (warning): YELLOW appears unused. Verify use (or export if used externally).
+    
+    
+    In tests/test_location_shell_diagnostics.sh line 25:
+        rm -rf "$TEST_OUTPUT_DIR"
+        ^-----------------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_location_shell_diagnostics.sh line 116:
+    trap "rm -rf '$TEST_OUTPUT_DIR2'" EXIT
+                  ^---------------^ SC2064 (warning): Use single quotes, otherwise this expands now rather than when signalled.
+    
+    For more information:
+      https://www.shellcheck.net/wiki/SC2034 -- YELLOW appears unused. Verify use...
+      https://www.shellcheck.net/wiki/SC2064 -- Use single quotes, otherwise this...
+      https://www.shellcheck.net/wiki/SC2317 -- Command appears to be unreachable...
+
+❌ [ERROR] tests/test_new_card.sh
+    
+    In tests/test_new_card.sh line 26:
+        rm -rf "$TEST_DIR"
+        ^----------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_new_card.sh line 427:
+        if grep -q 'OUTPUT_DIR="${OUTPUT_DIR:-mytest}"' scripts/fetch-mytest.sh; then
+                   ^-- SC2016 (info): Expressions don't expand in single quotes, use double quotes for that.
+    
+    
+    In tests/test_new_card.sh line 430:
+            test_fail "Should have correct OUTPUT_DIR" 'OUTPUT_DIR="${OUTPUT_DIR:-mytest}"' ""
+                                                       ^-- SC2016 (info): Expressions don't expand in single quotes, use double quotes for that.
+    
+    For more information:
+      https://www.shellcheck.net/wiki/SC2016 -- Expressions don't expand in singl...
+      https://www.shellcheck.net/wiki/SC2317 -- Command appears to be unreachable...
+
+❌ [ERROR] tests/test_retry_logic.sh
+    
+    In tests/test_retry_logic.sh line 7:
+    source "${SCRIPT_DIR}/../scripts/lib/common.sh"
+           ^-- SC1091 (info): Not following: ./../scripts/lib/common.sh: openBinaryFile: does not exist (No such file or directory)
+    
+    
+    In tests/test_retry_logic.sh line 38:
+        local result
+        ^----------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 39:
+        result=$(retry_with_backoff echo "success" 2>&1 | grep "success" || echo "")
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+                 ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+                                                                            ^-----^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 40:
+        [ "$result" = "success" ]
+        ^-----------------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 47:
+        MAX_RETRIES=1 INITIAL_RETRY_DELAY=1 retry_with_backoff echo "test" >/dev/null 2>&1
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 53:
+        if MAX_RETRIES=1 INITIAL_RETRY_DELAY=1 retry_with_backoff false 2>/dev/null; then
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+           ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 54:
+            return 1  # Test fails if command succeeds
+            ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 56:
+            return 0  # Test passes if command fails
+            ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 62:
+        local json='{"status": "ok", "data": "test"}'
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 63:
+        validate_api_response "$json" "status" 2>/dev/null
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 68:
+        local invalid='{invalid json}'
+        ^----------------------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 69:
+        if validate_api_response "$invalid" 2>/dev/null; then
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+           ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 70:
+            return 1  # Test fails if validation succeeds
+            ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 72:
+            return 0  # Test passes if validation fails
+            ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 78:
+        if validate_api_response "" 2>/dev/null; then
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+           ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 79:
+            return 1  # Test fails if validation succeeds
+            ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 81:
+            return 0  # Test passes if validation fails
+            ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 87:
+        local json='{"status": "ok"}'
+        ^---------------------------^ SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 88:
+        if validate_api_response "$json" "missing_field" 2>/dev/null; then
+        ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+           ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 89:
+            return 1  # Test fails if validation succeeds
+            ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    
+    In tests/test_retry_logic.sh line 91:
+            return 0  # Test passes if validation fails
+            ^-- SC2317 (info): Command appears to be unreachable. Check usage (or ignore if invoked indirectly).
+    
+    For more information:
+      https://www.shellcheck.net/wiki/SC1091 -- Not following: ./../scripts/lib/c...
+      https://www.shellcheck.net/wiki/SC2317 -- Command appears to be unreachable...
+
+✅ [SUCCESS] tests/test_timeout_coverage.sh
