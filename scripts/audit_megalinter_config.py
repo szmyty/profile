@@ -11,7 +11,7 @@ import argparse
 import yaml
 from pathlib import Path
 from typing import Dict, List, Any, Set
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 # Known valid MegaLinter configuration keys (v8)
@@ -190,7 +190,7 @@ class MegaLinterConfigAuditor:
     def check_report_settings(self) -> None:
         """Check report-related settings for GitHub Actions compatibility."""
         apply_fixes = self.config.get("APPLY_FIXES")
-        if apply_fixes and apply_fixes != "none":
+        if apply_fixes is not None and apply_fixes != "none":
             self.warnings.append(
                 f"APPLY_FIXES is set to '{apply_fixes}'. For report-only mode, should be 'none'"
             )
@@ -286,7 +286,7 @@ class MegaLinterConfigAuditor:
             "MegaLinter Configuration Audit Report",
             "=" * 80,
             f"Config File: {self.config_path}",
-            f"Audit Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}",
+            f"Audit Date: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}",
             "",
         ]
 

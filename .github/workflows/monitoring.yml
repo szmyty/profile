@@ -66,8 +66,8 @@ jobs:
             echo "📊 Summary generated successfully"
 
             # Extract issue counts
-            ERRORS=$(grep -oP "Total Errors:\*\* \K\d+" logs/megalinter/summary.md || echo "0")
-            WARNINGS=$(grep -oP "Total Warnings:\*\* \K\d+" logs/megalinter/summary.md || echo "0")
+            ERRORS=$(grep -oP "\*\*Total Errors:\*\* \K\d+" logs/megalinter/summary.md || echo "0")
+            WARNINGS=$(grep -oP "\*\*Total Warnings:\*\* \K\d+" logs/megalinter/summary.md || echo "0")
 
             echo "  - Errors: $ERRORS"
             echo "  - Warnings: $WARNINGS"

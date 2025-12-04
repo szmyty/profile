@@ -12,7 +12,7 @@ import argparse
 from pathlib import Path
 from typing import Dict, List, Any, Tuple
 from collections import Counter
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 class MegaLinterSummaryGenerator:
@@ -100,7 +100,7 @@ class MegaLinterSummaryGenerator:
         lines = [
             "# MegaLinter Analysis Summary",
             "",
-            f"**Report Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}",
+            f"**Report Generated:** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}",
             "",
             "---",
             "",

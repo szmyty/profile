@@ -32,12 +32,14 @@ jobs:
         id: ml
         uses: oxsecurity/megalinter@v8
         env:
-          # Disable auto-fix and prevent workflow failure
+          # Override config to ensure report-only mode
+          # Even though .megalinter.yml has DISABLE_ERRORS: false,
+          # we override here to prevent workflow failures
           APPLY_FIXES: none
           DISABLE_ERRORS: true
           VALIDATE_ALL_CODEBASE: true
 
-          # Use existing config
+          # Use existing config (other settings from .megalinter.yml)
           MEGALINTER_CONFIG: .megalinter.yml
 
           # Report settings
