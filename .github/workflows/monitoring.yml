@@ -10,7 +10,7 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch:
   workflow_run:
-    workflows: 
+    workflows:
       - "Oura Health Dashboard — Full Metrics + Unified Snapshot"
       - "Weather Card"
       - "Developer Dashboard"
@@ -40,9 +40,9 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          
+
           git add data/status/status-page.svg data/metrics/*.json 2>/dev/null || true
-          
+
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
@@ -60,21 +60,21 @@ jobs:
       - name: Log MegaLinter completion
         run: |
           echo "✅ MegaLinter run complete"
-          
+
           # Check if summary exists
           if [ -f "logs/megalinter/summary.md" ]; then
             echo "📊 Summary generated successfully"
-            
+
             # Extract issue counts
             ERRORS=$(grep -oP "Total Errors:\*\* \K\d+" logs/megalinter/summary.md || echo "0")
             WARNINGS=$(grep -oP "Total Warnings:\*\* \K\d+" logs/megalinter/summary.md || echo "0")
-            
+
             echo "  - Errors: $ERRORS"
             echo "  - Warnings: $WARNINGS"
           else
             echo "⚠️ Summary not found"
           fi
-          
+
           # Check if config audit exists
           if [ -f "logs/megalinter/config_audit.txt" ]; then
             AUDIT_ISSUES=$(grep -c "ISSUES" logs/megalinter/config_audit.txt || echo "0")
@@ -98,12 +98,12 @@ jobs:
           # Check each workflow for 3+ consecutive failures
           FAILURES_FOUND=false
           FAILED_WORKFLOWS=""
-          
+
           for metrics_file in data/metrics/*.json; do
             if [ -f "$metrics_file" ]; then
               WORKFLOW_NAME=$(basename "$metrics_file" .json)
               CONSECUTIVE=$(jq -r '.consecutive_failures // 0' "$metrics_file")
-              
+
               if [ "$CONSECUTIVE" -ge 3 ]; then
                 FAILURES_FOUND=true
                 FAILED_WORKFLOWS="${FAILED_WORKFLOWS}${WORKFLOW_NAME},"
@@ -111,7 +111,7 @@ jobs:
               fi
             fi
           done
-          
+
           echo "failures_found=$FAILURES_FOUND" >> $GITHUB_OUTPUT
           echo "failed_workflows=$FAILED_WORKFLOWS" >> $GITHUB_OUTPUT
 
@@ -121,7 +121,7 @@ jobs:
         with:
           script: |
             const failedWorkflows = '${{ steps.check.outputs.failed_workflows }}'.split(',').filter(w => w);
-            
+
             for (const workflow of failedWorkflows) {
               // Check if issue already exists
               const existingIssues = await github.rest.issues.listForRepo({
@@ -131,25 +131,25 @@ jobs:
                 labels: 'monitoring,automated',
                 creator: 'github-actions[bot]'
               });
-              
-              const issueExists = existingIssues.data.some(issue => 
+
+              const issueExists = existingIssues.data.some(issue =>
                 issue.title.includes(workflow)
               );
-              
+
               if (!issueExists) {
                 // Read metrics file for details
                 const fs = require('fs');
                 const metricsPath = `data/metrics/${workflow}.json`;
                 let metricsDetails = '';
-                
+
                 try {
                   const metrics = JSON.parse(fs.readFileSync(metricsPath, 'utf8'));
                   const lastFailure = metrics.last_failure || 'Unknown';
                   const consecutiveFailures = metrics.consecutive_failures || 0;
                   const totalRuns = metrics.total_runs || 0;
-                  const successRate = totalRuns > 0 ? 
+                  const successRate = totalRuns > 0 ?
                     ((metrics.successful_runs / totalRuns) * 100).toFixed(1) : 'N/A';
-                  
+
                   const metricsLines = [
                     '## Metrics',
                     '',
@@ -168,7 +168,7 @@ jobs:
                 } catch (e) {
                   metricsDetails = '\n_Unable to load detailed metrics: ' + e.message + '_\n';
                 }
-                
+
                 const issueBody = [
                   `The \`${workflow}\` workflow has failed **3 or more times** consecutively.`,
                   '',
@@ -185,7 +185,7 @@ jobs:
                   '',
                   'This issue was automatically created by the monitoring system. The issue will not be recreated while it remains open.'
                 ].join('\n');
-                
+
                 // Create new issue
                 await github.rest.issues.create({
                   owner: context.repo.owner,
@@ -194,7 +194,7 @@ jobs:
                   body: issueBody,
                   labels: ['monitoring', 'automated', 'bug']
                 });
-                
+
                 console.log(`Created issue for workflow: ${workflow}`);
               } else {
                 console.log(`Issue already exists for workflow: ${workflow}`);

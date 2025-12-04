@@ -17,7 +17,7 @@ jobs:
   megalinter:
     name: MegaLinter Report-Only Analysis
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -36,20 +36,20 @@ jobs:
           APPLY_FIXES: none
           DISABLE_ERRORS: true
           VALIDATE_ALL_CODEBASE: true
-          
+
           # Use existing config
           MEGALINTER_CONFIG: .megalinter.yml
-          
+
           # Report settings
           REPORT_OUTPUT_FOLDER: logs/megalinter
-          
+
           # GitHub integration
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
           # Ensure report-only mode
           FAIL_IF_UPDATED_SOURCES: false
           FAIL_IF_MISSING_LINTER_IN_FLAVOR: false
-          
+
         continue-on-error: true
 
       - name: Run Config Audit
@@ -72,7 +72,7 @@ jobs:
           if [ -f "megalinter-reports/megalinter-report.json" ]; then
             cp megalinter-reports/megalinter-report.json logs/megalinter/report.json || true
           fi
-          
+
           # List what we have
           echo "=== MegaLinter Output Files ==="
           ls -la logs/megalinter/ || true
@@ -98,7 +98,7 @@ jobs:
           else
             echo "Summary not generated"
           fi
-          
+
           if [ -f "logs/megalinter/config_audit.txt" ]; then
             echo ""
             echo "=== Config Audit Results ==="
@@ -110,9 +110,9 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          
+
           git add logs/megalinter/ 2>/dev/null || true
-          
+
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
