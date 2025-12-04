@@ -10,6 +10,11 @@ CACHE_TTL_DAYS="${CACHE_TTL_DAYS:-7}"
 MAX_RETRIES="${MAX_RETRIES:-3}"
 INITIAL_RETRY_DELAY="${INITIAL_RETRY_DELAY:-5}"
 
+# Circuit breaker configuration
+CIRCUIT_BREAKER_DIR="${CIRCUIT_BREAKER_DIR:-cache/circuit_breaker}"
+CIRCUIT_BREAKER_THRESHOLD="${CIRCUIT_BREAKER_THRESHOLD:-3}"
+CIRCUIT_BREAKER_TIMEOUT="${CIRCUIT_BREAKER_TIMEOUT:-300}"  # 5 minutes in seconds
+
 # Retry a command with exponential backoff.
 # Executes the given command, retrying on failure with increasing delays.
 # The delay follows an exponential backoff pattern: 5s → 10s → 20s
@@ -53,6 +58,266 @@ retry_with_backoff() {
         attempt=$((attempt + 1))
     done
     
+    return $exit_code
+}
+
+# Health check for an API endpoint.
+# Performs a lightweight HTTP HEAD or GET request to verify API availability.
+#
+# Usage:
+#   health_check_api "https://api.example.com" "Example API"
+#   health_check_api "https://api.example.com/health" "Example API" "Bearer token123"
+#
+# Arguments:
+#   $1 - API URL to check
+#   $2 - Human-readable API name (for logging)
+#   $3 - Optional: Authorization header value
+#
+# Returns:
+#   0 if API is healthy (HTTP 2xx response), 1 otherwise
+health_check_api() {
+    local api_url=$1
+    local api_name="${2:-API}"
+    local auth_header="${3:-}"
+    
+    echo "🔍 Health check: ${api_name}..." >&2
+    
+    local http_code
+    if [ -n "$auth_header" ]; then
+        http_code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 \
+            -H "Authorization: ${auth_header}" \
+            "$api_url" 2>/dev/null)
+    else
+        http_code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 \
+            "$api_url" 2>/dev/null)
+    fi
+    
+    # Default to 000 if curl failed or returned empty
+    http_code="${http_code:-000}"
+    
+    if [ "$http_code" -ge 200 ] && [ "$http_code" -lt 300 ]; then
+        echo "✅ ${api_name} is healthy (HTTP ${http_code})" >&2
+        return 0
+    elif [ "$http_code" = "429" ]; then
+        echo "⚠️  ${api_name} rate limited (HTTP 429)" >&2
+        return 1
+    elif [ "$http_code" = "000" ]; then
+        echo "❌ ${api_name} unreachable (network error)" >&2
+        return 1
+    else
+        echo "❌ ${api_name} unhealthy (HTTP ${http_code})" >&2
+        return 1
+    fi
+}
+
+# Initialize circuit breaker directory.
+init_circuit_breaker() {
+    mkdir -p "$CIRCUIT_BREAKER_DIR"
+}
+
+# Get circuit breaker state file path for an API.
+get_circuit_breaker_file() {
+    local api_name=$1
+    local safe_name
+    safe_name=$(echo "$api_name" | tr '[:upper:]' '[:lower:]' | tr -cd '[:alnum:]_-')
+    echo "${CIRCUIT_BREAKER_DIR}/${safe_name}_circuit.state"
+}
+
+# Check if circuit breaker is open (API is temporarily disabled).
+#
+# Usage:
+#   is_circuit_open "Oura API"
+#
+# Arguments:
+#   $1 - API name
+#
+# Returns:
+#   0 if circuit is open (API disabled), 1 if circuit is closed (API enabled)
+is_circuit_open() {
+    local api_name=$1
+    local circuit_file
+    circuit_file=$(get_circuit_breaker_file "$api_name")
+    
+    if [ ! -f "$circuit_file" ]; then
+        return 1  # Circuit closed (no failures recorded)
+    fi
+    
+    # Read circuit state
+    local opened_at failure_count
+    opened_at=$(head -1 "$circuit_file" 2>/dev/null || echo "0")
+    failure_count=$(tail -1 "$circuit_file" 2>/dev/null || echo "0")
+    
+    local current_time
+    current_time=$(date +%s)
+    local time_elapsed=$((current_time - opened_at))
+    
+    # Check if circuit should be reset (timeout expired)
+    if [ "$time_elapsed" -ge "$CIRCUIT_BREAKER_TIMEOUT" ]; then
+        echo "🔄 Circuit breaker timeout expired for ${api_name}, allowing retry" >&2
+        rm -f "$circuit_file"
+        return 1  # Circuit closed
+    fi
+    
+    # Circuit is still open
+    local remaining=$((CIRCUIT_BREAKER_TIMEOUT - time_elapsed))
+    echo "⛔ Circuit breaker is OPEN for ${api_name} (${failure_count} failures, retry in ${remaining}s)" >&2
+    return 0  # Circuit open
+}
+
+# Record API failure in circuit breaker.
+#
+# Usage:
+#   record_api_failure "Oura API"
+#
+# Arguments:
+#   $1 - API name
+record_api_failure() {
+    local api_name=$1
+    init_circuit_breaker
+    
+    local circuit_file
+    circuit_file=$(get_circuit_breaker_file "$api_name")
+    
+    # Get current failure count
+    local failure_count=0
+    if [ -f "$circuit_file" ]; then
+        failure_count=$(tail -1 "$circuit_file" 2>/dev/null || echo "0")
+    fi
+    
+    failure_count=$((failure_count + 1))
+    
+    # Record failure
+    local current_time
+    current_time=$(date +%s)
+    echo "$current_time" > "$circuit_file"
+    echo "$failure_count" >> "$circuit_file"
+    
+    echo "⚠️  Recorded failure #${failure_count} for ${api_name}" >&2
+    
+    # Check if we should open the circuit
+    if [ "$failure_count" -ge "$CIRCUIT_BREAKER_THRESHOLD" ]; then
+        echo "🚨 Circuit breaker OPENED for ${api_name} after ${failure_count} failures" >&2
+        echo "   → API calls will be blocked for ${CIRCUIT_BREAKER_TIMEOUT}s" >&2
+    fi
+}
+
+# Record API success and reset circuit breaker.
+#
+# Usage:
+#   record_api_success "Oura API"
+#
+# Arguments:
+#   $1 - API name
+record_api_success() {
+    local api_name=$1
+    local circuit_file
+    circuit_file=$(get_circuit_breaker_file "$api_name")
+    
+    if [ -f "$circuit_file" ]; then
+        echo "✅ API recovered: ${api_name} - resetting circuit breaker" >&2
+        rm -f "$circuit_file"
+    fi
+}
+
+# Enhanced retry with rate limit detection and circuit breaker.
+# Executes the given curl command, retrying on failure with exponential backoff.
+# Detects rate limiting (HTTP 429) and opens circuit breaker after repeated failures.
+#
+# Usage:
+#   retry_api_call "Oura API" curl -sf "https://api.ouraring.com/v2/..." -H "Authorization: Bearer $TOKEN"
+#
+# Arguments:
+#   $1 - API name (for circuit breaker tracking)
+#   $@ - Command and arguments to execute (must be curl)
+#
+# Environment variables:
+#   MAX_RETRIES - Maximum number of retry attempts (default: 3)
+#   INITIAL_RETRY_DELAY - Initial delay in seconds (default: 5)
+#
+# Returns:
+#   Exit code of the command if successful, 1 if all retries exhausted or circuit open
+retry_api_call() {
+    local api_name=$1
+    shift  # Remove api_name from arguments
+    
+    # Check circuit breaker
+    if is_circuit_open "$api_name"; then
+        return 1
+    fi
+    
+    local max_attempts=$((MAX_RETRIES + 1))
+    local attempt=1
+    local delay=$INITIAL_RETRY_DELAY
+    local exit_code=0
+    local temp_output temp_headers
+    temp_output=$(mktemp)
+    temp_headers=$(mktemp)
+    
+    while [ $attempt -le $max_attempts ]; do
+        # Execute curl with header capture and HTTP code tracking
+        # Note: We use -w to get the HTTP code reliably
+        local curl_exit=0
+        local http_code
+        http_code=$("$@" -D "$temp_headers" -w "%{http_code}" -o "$temp_output" 2>/dev/null) || curl_exit=$?
+        
+        # Check if curl succeeded and HTTP status is 2xx
+        if [ $curl_exit -eq 0 ] && [ "$http_code" -ge 200 ] && [ "$http_code" -lt 300 ]; then
+            # Success - output the response and reset circuit breaker
+            cat "$temp_output"
+            rm -f "$temp_output" "$temp_headers"
+            record_api_success "$api_name"
+            return 0
+        fi
+        
+        exit_code=$curl_exit
+        
+        # Default to 000 if http_code is empty or curl failed completely
+        http_code="${http_code:-000}"
+        
+        if [ "$http_code" = "429" ]; then
+            echo "🚫 Rate limit detected (HTTP 429) from ${api_name}" >&2
+            
+            # Check for Retry-After header (only accept numeric values in seconds)
+            local retry_after
+            retry_after=$(grep -i "^retry-after:" "$temp_headers" 2>/dev/null | cut -d: -f2 | tr -d ' \r\n' || echo "")
+            
+            # Validate retry_after is numeric before using it
+            if [ -n "$retry_after" ] && echo "$retry_after" | grep -qE '^[0-9]+$'; then
+                echo "   → Server requested ${retry_after}s wait time" >&2
+                delay=$retry_after
+            else
+                # Use longer delay for rate limits if no valid Retry-After header
+                delay=$((delay * 3))
+                if [ -n "$retry_after" ]; then
+                    echo "   → Retry-After header present but not numeric (HTTP-date format not supported)" >&2
+                fi
+            fi
+            
+            record_api_failure "$api_name"
+        else
+            record_api_failure "$api_name"
+        fi
+        
+        # Don't retry if circuit is now open
+        if is_circuit_open "$api_name"; then
+            rm -f "$temp_output" "$temp_headers"
+            return 1
+        fi
+        
+        # Don't sleep after the last attempt
+        if [ $attempt -lt $max_attempts ]; then
+            echo "Attempt $attempt/$max_attempts failed for ${api_name}, retrying in ${delay}s..." >&2
+            sleep $delay
+            # Exponential backoff
+            delay=$((delay * 2))
+        else
+            echo "All $max_attempts attempts failed for ${api_name}" >&2
+        fi
+        
+        attempt=$((attempt + 1))
+    done
+    
+    rm -f "$temp_output" "$temp_headers"
     return $exit_code
 }
 
@@ -328,6 +593,11 @@ get_coordinates() {
     local encoded_location
     encoded_location=$(encode_uri "$location")
     
+    # Perform health check for Nominatim API
+    if ! health_check_api "https://nominatim.openstreetmap.org/" "Nominatim API"; then
+        echo "Warning: Nominatim API health check failed, but continuing anyway..." >&2
+    fi
+    
     # Add delay to respect Nominatim rate limits
     sleep 1
     
@@ -381,15 +651,18 @@ $nominatim_data" > "${debug_dir}/debug_nominatim_response.txt"
                 echo "   → Nominatim has strict rate limits (1 request per second)" >&2
                 echo "   → Wait at least 1 hour before retrying or use caching" >&2
                 echo "   → Consider using a commercial geocoding service for production" >&2
+                record_api_failure "Nominatim API"
                 ;;
             403)
                 echo "   → Access forbidden" >&2
                 echo "   → Your IP may be blocked due to excessive requests" >&2
                 echo "   → Check Nominatim usage policy: https://operations.osmfoundation.org/policies/nominatim/" >&2
+                record_api_failure "Nominatim API"
                 ;;
             500|502|503|504)
                 echo "   → Nominatim service error" >&2
                 echo "   → Try again later" >&2
+                record_api_failure "Nominatim API"
                 ;;
         esac
         return 1
@@ -436,6 +709,9 @@ $nominatim_data" > "${debug_dir}/debug_nominatim_response.txt"
     
     echo "✅ Found coordinates: ${lat}, ${lon}" >&2
     echo "   Display name: ${display_name}" >&2
+    
+    # Record API success
+    record_api_success "Nominatim API"
     
     # Build result JSON
     local result

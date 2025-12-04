@@ -165,8 +165,24 @@ All cards include:
 1. **Background gradient**: Dark gradient from top-left to bottom-right
 2. **Border**: Subtle accent-colored stroke at 30% opacity
 3. **Decorative accent**: 4px vertical bar on the right side
-4. **Footer**: Muted timestamp showing last update
+4. **Staleness badge**: Top-right corner badge showing "Updated: X ago" (see below)
 5. **Border radius**: 12px rounded corners
+
+### Data Staleness Indicators
+
+All cards include a staleness badge in the top-right corner that shows when the data was last updated:
+
+**Fresh Data (<24 hours old)**:
+- Text: "Updated: X ago" (e.g., "just now", "2h ago", "23h ago")
+- Color: Muted text (`#4a5568`)
+- No icon
+
+**Stale Data (≥24 hours old)**:
+- Text: "⚠️ Updated: X ago" (e.g., "⚠️ Updated: 2d ago")
+- Color: Warning/error red (`#ff6b6b`)
+- Icon: ⚠️ warning triangle
+
+This provides immediate visual feedback about data freshness and helps identify when workflows may have failed or been skipped.
 
 ### Color Usage
 
@@ -210,6 +226,45 @@ Cards are configured in `config/theme.json`:
 }
 ```
 
+## Error Handling and Fallback Mode
+
+All card generators implement robust error handling with automatic fallback:
+
+### Fallback Mechanism
+
+When card generation fails (e.g., API errors, missing data, network issues):
+1. If a valid SVG already exists at the output path, it is **preserved**
+2. The error is logged but does not cause workflow failure
+3. The existing card continues to be displayed (with its staleness badge)
+
+This ensures cards never disappear from the README, maintaining a consistent user experience even when APIs are temporarily unavailable.
+
+### Data Unavailable State
+
+The staleness badge serves as the primary indicator of data issues:
+- Cards that couldn't be updated continue showing with their previous data
+- The staleness badge shows how long ago the data was last successfully updated
+- The ⚠️ warning icon appears when data is >24 hours old
+
+### Implementation
+
+Card generators should use the `generate_card_with_fallback` utility:
+
+```python
+from lib.utils import generate_card_with_fallback
+
+success = generate_card_with_fallback(
+    card_type="weather",
+    output_path="weather/weather-today.svg",
+    json_path="weather/weather.json",
+    schema_name="weather",
+    generator_func=generate_weather_svg,
+    description="Weather metadata file",
+)
+```
+
+Or implement manual fallback handling using `fallback_exists()` and `handle_error_with_fallback()`.
+
 ## Adding New Cards
 
 To add a new card type:
@@ -242,8 +297,44 @@ class NewCard(CardBase):
 
 if __name__ == "__main__":
     card = NewCard()
-    svg = card.generate_svg(footer_text="Updated today")
+    
+    # Generate SVG with staleness badge (automatically handles stale data indicators)
+    # Pass the ISO 8601 timestamp from your data source
+    svg = card.generate_svg()
+    
+    # Add staleness badge to the SVG
+    updated_at = "2025-12-03T19:45:45Z"  # ISO 8601 timestamp from data
+    staleness_badge = card.build_staleness_badge(updated_at)
+    
+    # Insert badge before closing </svg> tag
+    svg = svg.replace('</svg>', f'{staleness_badge}\n</svg>')
+    
     card.write_svg("output.svg", svg)
+```
+
+**Note**: For non-CardBase implementations, use the helper functions directly:
+
+```python
+from lib.utils import format_time_since, is_data_stale, escape_xml
+
+updated_at = "2025-12-03T19:45:45Z"
+time_since = format_time_since(updated_at)
+is_stale = is_data_stale(updated_at, stale_threshold_hours=24)
+
+# Build badge with appropriate styling
+if is_stale:
+    badge_color = "#ff6b6b"  # Warning color
+    badge_icon = "⚠️ "
+else:
+    badge_color = "#4a5568"  # Muted color
+    badge_icon = ""
+
+staleness_badge = f'''
+  <g transform="translate(470, 10)">
+    <text x="0" y="12" fill="{badge_color}" text-anchor="end">
+      {badge_icon}Updated: {escape_xml(time_since)}
+    </text>
+  </g>'''
 ```
 
 ## SVG Optimization
