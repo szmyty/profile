@@ -13,8 +13,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-# Base paths
-REPO_ROOT = Path("/home/runner/work/profile/profile")
+# Base paths - use environment variable or current working directory
+REPO_ROOT = Path(os.environ.get('GITHUB_WORKSPACE', os.getcwd()))
 AUDIT_DIR = REPO_ROOT / "logs" / "audit"
 WORKFLOWS_DIR = REPO_ROOT / ".github" / "workflows"
 SCRIPTS_DIR = REPO_ROOT / "scripts"
