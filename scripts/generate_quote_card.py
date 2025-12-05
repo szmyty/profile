@@ -13,6 +13,7 @@ And generates a visually expressive SVG card with:
 - Full integration with theme.json and CardBase
 """
 
+import json
 import sys
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
@@ -49,8 +50,9 @@ class QuoteCard(CardBase):
         
         # Analysis is optional - if not available, use neutral palette
         try:
-            self.analysis_data = load_json(analysis_path, "quote analysis")
-        except (FileNotFoundError, Exception):
+            with open(analysis_path, 'r') as f:
+                self.analysis_data = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError, Exception):
             print(f"⚠️  Warning: Could not load analysis from {analysis_path}, using neutral palette")
             self.analysis_data = {
                 "color_profile": "neutral",

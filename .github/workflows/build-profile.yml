@@ -395,6 +395,55 @@ jobs:
           fi
         continue-on-error: true
       
+      - name: 💬 Generate Quote of the Day Card
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          mkdir -p quotes
+          
+          # Check if quote.json exists, if not create a sample quote
+          if [ ! -f "quotes/quote.json" ]; then
+            echo "Creating sample quote..."
+            cat > quotes/quote.json << 'QUOTE_EOF'
+          {
+            "quote": "The only way to do great work is to love what you do.",
+            "author": "Steve Jobs",
+            "source": "Stanford Commencement Address",
+            "date": "2005-06-12"
+          }
+          QUOTE_EOF
+          fi
+          
+          echo "Analyzing quote..."
+          if python scripts/analyze_quote.py quotes/quote.json quotes/quote_analysis.json; then
+            echo "✅ Quote analyzed successfully"
+          else
+            echo "⚠️ Warning: Failed to analyze quote, using fallback"
+            # Create fallback analysis
+            cat > quotes/quote_analysis.json << 'ANALYSIS_EOF'
+          {
+            "sentiment": "reflective",
+            "tone": "contemplative",
+            "theme": "wisdom",
+            "color_profile": "neutral",
+            "style_keywords": ["gentle", "soft"],
+            "fallback": true,
+            "llm_version": "fallback",
+            "interpreted_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          }
+          ANALYSIS_EOF
+          fi
+          
+          echo "Generating quote card..."
+          if python scripts/generate_quote_card.py quotes/quote.json quotes/quote_analysis.json quotes/quote_card.svg; then
+            echo "✅ Quote card generated successfully"
+          else
+            echo "⚠️ Warning: Failed to generate quote card"
+            # Create fallback card
+            echo '<svg xmlns="http://www.w3.org/2000/svg" width="480" height="200"><text x="240" y="100" text-anchor="middle" fill="#666">Quote Card Unavailable</text></svg>' > quotes/quote_card.svg
+          fi
+        continue-on-error: true
+      
       # ===================================================================
       # PHASE 5: Optimize SVG Cards
       # ===================================================================
@@ -447,7 +496,7 @@ jobs:
           EOF
           
           # Optimize all SVG files
-          find developer weather location assets oura -name "*.svg" -type f 2>/dev/null | while read svg; do
+          find developer weather location assets oura quotes -name "*.svg" -type f 2>/dev/null | while read svg; do
             if [ -f "$svg" ]; then
               ORIGINAL_SIZE=$(stat -c%s "$svg" 2>/dev/null || echo "0")
               if [ "$ORIGINAL_SIZE" -gt 0 ]; then
@@ -512,6 +561,13 @@ jobs:
             python scripts/update-readme.py \
               --marker OURA-MOOD-CARD \
               --content "![Oura Mood Dashboard](./oura/mood_dashboard.svg)" || true
+          fi
+          
+          # Update Quote card
+          if [ -f "quotes/quote_card.svg" ]; then
+            python scripts/update-readme.py \
+              --marker QUOTE-CARD \
+              --content "![Quote of the Day](./quotes/quote_card.svg)" || true
           fi
           
           echo "✅ README updated with all available cards"
@@ -636,6 +692,7 @@ jobs:
           git add location/location.json location/location-map.png location/location-card.svg 2>/dev/null || true
           git add assets/metadata.json assets/soundcloud-card.svg assets/soundcloud-artwork.jpg 2>/dev/null || true
           git add oura/metrics.json oura/mood.json oura/health_snapshot.json oura/health_dashboard.svg oura/mood_dashboard.svg 2>/dev/null || true
+          git add quotes/quote.json quotes/quote_analysis.json quotes/quote_card.svg 2>/dev/null || true
           git add README.md 2>/dev/null || true
           
           # Add logs (always commit logs)
@@ -703,6 +760,7 @@ jobs:
           test -f assets/soundcloud-card.svg && echo "  ✅ SoundCloud Card" || echo "  ⚠️ SoundCloud Card"
           test -f oura/health_dashboard.svg && echo "  ✅ Oura Health Dashboard" || echo "  ⚠️ Oura Health Dashboard"
           test -f oura/mood_dashboard.svg && echo "  ✅ Oura Mood Dashboard" || echo "  ⚠️ Oura Mood Dashboard"
+          test -f quotes/quote_card.svg && echo "  ✅ Quote of the Day Card" || echo "  ⚠️ Quote of the Day Card"
           echo ""
           echo "Dashboard Status:"
           test -d dashboard-app/dist && echo "  ✅ React Dashboard Built" || echo "  ⚠️ React Dashboard Not Built"
