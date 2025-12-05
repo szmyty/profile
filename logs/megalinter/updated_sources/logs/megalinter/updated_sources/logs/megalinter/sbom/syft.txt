@@ -7,6 +7,7 @@ actions/checkout                     HIDDEN_BY_MEGALINTER github-action
 actions/checkout                     v4                                        github-action  (+1 duplicate)    
 actions/configure-pages              v4                                        github-action                    
 actions/deploy-pages                 v4                                        github-action                    
+actions/first-interaction            v1                                        github-action                    
 actions/github-script                v7                                        github-action  (+1 duplicate)    
 actions/setup-node                   v4                                        github-action                    
 actions/setup-python                 HIDDEN_BY_MEGALINTER github-action                    

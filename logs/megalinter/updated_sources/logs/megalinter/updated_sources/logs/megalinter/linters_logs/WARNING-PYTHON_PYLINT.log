@@ -970,6 +970,45 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pylint/
     -----------------------------------
     Your code has been rated at 9.71/10
 
+❌ [ERROR] scripts/generate_quote_card.py
+    ************* Module generate_quote_card
+    scripts/generate_quote_card.py:47:0: C0303: Trailing whitespace (trailing-whitespace)
+    scripts/generate_quote_card.py:58:0: C0303: Trailing whitespace (trailing-whitespace)
+    scripts/generate_quote_card.py:62:0: C0303: Trailing whitespace (trailing-whitespace)
+    scripts/generate_quote_card.py:91:0: C0303: Trailing whitespace (trailing-whitespace)
+    scripts/generate_quote_card.py:100:0: C0303: Trailing whitespace (trailing-whitespace)
+    scripts/generate_quote_card.py:105:0: C0303: Trailing whitespace (trailing-whitespace)
+    scripts/generate_quote_card.py:113:0: C0303: Trailing whitespace (trailing-whitespace)
+    scripts/generate_quote_card.py:117:0: C0303: Trailing whitespace (trailing-whitespace)
+    scripts/generate_quote_card.py:121:0: C0303: Trailing whitespace (trailing-whitespace)
+    scripts/generate_quote_card.py:140:0: C0303: Trailing whitespace (trailing-whitespace)
+    scripts/generate_quote_card.py:143:0: C0303: Trailing whitespace (trailing-whitespace)
+    scripts/generate_quote_card.py:148:0: C0303: Trailing whitespace (trailing-whitespace)
+    scripts/generate_quote_card.py:159:0: C0303: Trailing whitespace (trailing-whitespace)
+    scripts/generate_quote_card.py:162:0: C0303: Trailing whitespace (trailing-whitespace)
+    scripts/generate_quote_card.py:163:0: C0301: Line too long (139/100) (line-too-long)
+    scripts/generate_quote_card.py:170:0: C0301: Line too long (116/100) (line-too-long)
+    scripts/generate_quote_card.py:176:0: C0301: Line too long (173/100) (line-too-long)
+    scripts/generate_quote_card.py:180:0: C0301: Line too long (109/100) (line-too-long)
+    scripts/generate_quote_card.py:183:0: C0301: Line too long (109/100) (line-too-long)
+    scripts/generate_quote_card.py:188:0: C0301: Line too long (118/100) (line-too-long)
+    scripts/generate_quote_card.py:190:0: C0301: Line too long (121/100) (line-too-long)
+    scripts/generate_quote_card.py:194:0: C0301: Line too long (127/100) (line-too-long)
+    scripts/generate_quote_card.py:206:0: C0301: Line too long (110/100) (line-too-long)
+    scripts/generate_quote_card.py:213:0: C0301: Line too long (106/100) (line-too-long)
+    scripts/generate_quote_card.py:267:0: C0301: Line too long (105/100) (line-too-long)
+    scripts/generate_quote_card.py:288:0: C0301: Line too long (103/100) (line-too-long)
+    scripts/generate_quote_card.py:66:0: R0914: Too many local variables (46/15) (too-many-locals)
+    scripts/generate_quote_card.py:133:11: W0718: Catching too general exception Exception (broad-exception-caught)
+    scripts/generate_quote_card.py:69:4: W0613: Unused argument 'source' (unused-argument)
+    scripts/generate_quote_card.py:108:4: W0612: Unused variable 'font_size_base' (unused-variable)
+    scripts/generate_quote_card.py:241:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+    scripts/generate_quote_card.py:266:11: W0718: Catching too general exception Exception (broad-exception-caught)
+    scripts/generate_quote_card.py:284:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+    
+    -----------------------------------
+    Your code has been rated at 7.18/10
+
 ❌ [ERROR] scripts/incremental-generate.py
     ************* Module incremental-generate
     scripts/incremental-generate.py:46:0: C0303: Trailing whitespace (trailing-whitespace)
@@ -1811,6 +1850,30 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pylint/
     
     -----------------------------------
     Your code has been rated at 3.07/10
+
+❌ [ERROR] tests/test_quote_card.py
+    ************* Module tests.test_quote_card
+    tests/test_quote_card.py:31:0: C0301: Line too long (108/100) (line-too-long)
+    tests/test_quote_card.py:51:0: C0303: Trailing whitespace (trailing-whitespace)
+    tests/test_quote_card.py:66:0: C0303: Trailing whitespace (trailing-whitespace)
+    tests/test_quote_card.py:71:0: C0301: Line too long (148/100) (line-too-long)
+    tests/test_quote_card.py:78:0: C0303: Trailing whitespace (trailing-whitespace)
+    tests/test_quote_card.py:90:0: C0303: Trailing whitespace (trailing-whitespace)
+    tests/test_quote_card.py:105:0: C0303: Trailing whitespace (trailing-whitespace)
+    tests/test_quote_card.py:111:0: C0303: Trailing whitespace (trailing-whitespace)
+    tests/test_quote_card.py:122:0: C0303: Trailing whitespace (trailing-whitespace)
+    tests/test_quote_card.py:125:0: C0303: Trailing whitespace (trailing-whitespace)
+    tests/test_quote_card.py:128:0: C0303: Trailing whitespace (trailing-whitespace)
+    tests/test_quote_card.py:11:0: E0401: Unable to import 'pytest' (import-error)
+    tests/test_quote_card.py:16:0: E0401: Unable to import 'generate_quote_card' (import-error)
+    tests/test_quote_card.py:16:0: C0413: Import "from generate_quote_card import generate_svg, wrap_text" should be placed at the top of the module (wrong-import-position)
+    tests/test_quote_card.py:103:17: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+    tests/test_quote_card.py:123:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+    tests/test_quote_card.py:7:0: W0611: Unused import os (unused-import)
+    tests/test_quote_card.py:9:0: W0611: Unused import tempfile (unused-import)
+    
+    -----------------------------------
+    Your code has been rated at 6.34/10
 
 ❌ [ERROR] tests/test_theme_validation.py
     ************* Module tests.test_theme_validation

@@ -166,6 +166,11 @@ See documentation on https://megalinter.io/8.8.0/descriptors/json_prettier/
     [warn] data/mock/weather.json
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
+❌ [ERROR] data/quotes/quotes.json
+    Checking formatting...
+    [warn] data/quotes/quotes.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
 ❌ [ERROR] data/snapshots/daily/2025/12/2025-12-03.json
     Checking formatting...
     [warn] data/snapshots/daily/2025/12/2025-12-03.json
@@ -209,6 +214,11 @@ See documentation on https://megalinter.io/8.8.0/descriptors/json_prettier/
 ❌ [ERROR] oura/mood.json
     Checking formatting...
     [warn] oura/mood.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] quotes/quote.json
+    Checking formatting...
+    [warn] quotes/quote.json
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
 ❌ [ERROR] schemas/developer-stats.schema.json

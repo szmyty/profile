@@ -27,6 +27,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/markdown_markdown_t
     - PERFORMANCE_IMPROVEMENTS_SUMMARY.md
 
 ✅ [SUCCESS] README.md
+✅ [SUCCESS] REFACTORING_REPORT.md
 ✅ [SUCCESS] REPORT.md
 ✅ [SUCCESS] SECURITY_SUMMARY.md
 ✅ [SUCCESS] SECURITY_SUMMARY_API_RESILIENCE.md

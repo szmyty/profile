@@ -146,11 +146,28 @@ See documentation on https://megalinter.io/8.8.0/descriptors/action_actionlint/
         |
     238 |         run: |
         |         ^~~~
-    .github/workflows/build-profile.yml:402:9: shellcheck reported issue in this script: SC2162:info:48:87: read without -r will mangle backslashes [shellcheck]
+    .github/workflows/build-profile.yml:267:9: shellcheck reported issue in this script: SC2046:warning:8:139: Quote this to prevent word splitting [shellcheck]
         |
-    402 |         run: |
+    267 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:267:9: shellcheck reported issue in this script: SC2086:info:10:23: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    267 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:267:9: shellcheck reported issue in this script: SC2086:info:15:26: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    267 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:267:9: shellcheck reported issue in this script: SC2086:info:19:25: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    267 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:444:9: shellcheck reported issue in this script: SC2162:info:48:94: read without -r will mangle backslashes [shellcheck]
+        |
+    444 |         run: |
         |         ^~~~
 
+✅ [SUCCESS] .github/workflows/greetings.yml
 ❌ [ERROR] .github/workflows/monitoring.yml
     .github/workflows/monitoring.yml:91:9: shellcheck reported issue in this script: SC2086:info:18:42: Double quote to prevent globbing and word splitting [shellcheck]
        |

@@ -2139,6 +2139,86 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
     121 errors, 6 warnings, 0 informations
 
 ✅ [SUCCESS] scripts/generate_megalinter_summary.py
+❌ [ERROR] scripts/generate_quote_card.py
+    venv .venv subdirectory not found in venv path config.
+    scripts/generate_quote_card.py
+      scripts/generate_quote_card.py:12:6 - error: Import "lib.utils" could not be resolved (reportMissingImports)
+      scripts/generate_quote_card.py:13:5 - error: Type of "escape_xml" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:14:5 - error: Type of "load_theme" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:15:5 - error: Type of "get_theme_color" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:16:5 - error: Type of "get_theme_gradient" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:17:5 - error: Type of "get_theme_typography" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:18:5 - error: Type of "get_theme_font_size" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:19:5 - error: Type of "get_theme_card_dimension" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:20:5 - error: Type of "get_theme_border_radius" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:21:5 - error: Type of "format_timestamp_local" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:22:5 - error: Type of "fallback_exists" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:23:5 - error: Type of "handle_error_with_fallback" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:56:17 - error: Type of "append" is partially unknown
+        Type of "append" is "(object: Unknown, /) -> None" (reportUnknownMemberType)
+      scripts/generate_quote_card.py:61:9 - error: Type of "append" is partially unknown
+        Type of "append" is "(object: Unknown, /) -> None" (reportUnknownMemberType)
+      scripts/generate_quote_card.py:63:12 - error: Return type, "list[Unknown]", is partially unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:88:5 - error: Type of "theme" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:89:5 - error: Type of "bg_gradient" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:90:5 - error: Type of "font_family" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:93:5 - error: Type of "bg_primary" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:94:5 - error: Type of "bg_secondary" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:95:5 - error: Type of "text_primary" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:96:5 - error: Type of "text_secondary" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:97:5 - error: Type of "text_muted" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:98:5 - error: Type of "accent_teal" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:99:5 - error: Type of "accent_cyan" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:102:5 - error: Type of "card_width" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:103:5 - error: Type of "card_height" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:104:5 - error: Type of "border_radius" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:107:5 - error: Type of "font_size_xs" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:108:5 - error: Type of "font_size_base" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:108:5 - warning: Variable "font_size_base" is not accessed (reportUnusedVariable)
+      scripts/generate_quote_card.py:109:5 - error: Type of "font_size_md" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:110:5 - error: Type of "font_size_lg" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:111:5 - error: Type of "font_size_2xl" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:112:5 - error: Type of "font_size_3xl" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:115:5 - error: Type of "spacing" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:115:15 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate_quote_card.py:116:5 - error: Type of "padding" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:116:15 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate_quote_card.py:119:5 - error: Type of "stroke_width" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:119:20 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate_quote_card.py:119:20 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate_quote_card.py:120:5 - error: Type of "stroke_opacity" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:120:22 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate_quote_card.py:120:22 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate_quote_card.py:123:5 - error: Type of "shadow" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:123:14 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate_quote_card.py:123:14 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate_quote_card.py:124:5 - error: Type of "shadow_dx" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:124:17 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate_quote_card.py:125:5 - error: Type of "shadow_dy" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:125:17 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate_quote_card.py:126:5 - error: Type of "shadow_std" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:126:18 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate_quote_card.py:127:5 - error: Type of "shadow_opacity" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:127:22 - error: Type of "get" is unknown (reportUnknownMemberType)
+      scripts/generate_quote_card.py:132:9 - error: Type of "date_str" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:137:5 - error: Type of "text_escaped" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:138:5 - error: Type of "author_escaped" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:139:5 - error: Type of "category_escaped" is partially unknown
+        Type of "category_escaped" is "Unknown | Literal['']" (reportUnknownVariableType)
+      scripts/generate_quote_card.py:142:28 - error: Argument type is unknown
+        Argument corresponds to parameter "text" in function "wrap_text" (reportUnknownArgumentType)
+      scripts/generate_quote_card.py:147:5 - error: Type of "start_y" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:151:5 - error: Type of "current_y" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:153:9 - error: Type of "append" is partially unknown
+        Type of "append" is "(object: Unknown, /) -> None" (reportUnknownMemberType)
+      scripts/generate_quote_card.py:158:9 - error: Type of "current_y" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:161:5 - error: Type of "author_y" is unknown (reportUnknownVariableType)
+      scripts/generate_quote_card.py:201:15 - error: Argument type is partially unknown
+        Argument corresponds to parameter "iterable" in function "join"
+        Argument type is "list[Unknown]" (reportUnknownArgumentType)
+      scripts/generate_quote_card.py:237:5 - error: Type of "has_fallback" is unknown (reportUnknownVariableType)
+    67 errors, 1 warning, 0 informations
+
 ❌ [ERROR] scripts/incremental-generate.py
     venv .venv subdirectory not found in venv path config.
     scripts/incremental-generate.py
@@ -3838,6 +3918,44 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
         Type of "workflow_names" is "list[Unknown]" (reportUnknownVariableType)
       tests/test_metrics.py:254:50 - error: Type of "m" is unknown (reportUnknownVariableType)
     69 errors, 2 warnings, 0 informations
+
+❌ [ERROR] tests/test_quote_card.py
+    venv .venv subdirectory not found in venv path config.
+    tests/test_quote_card.py
+      tests/test_quote_card.py:7:8 - warning: Import "os" is not accessed (reportUnusedImport)
+      tests/test_quote_card.py:9:8 - warning: Import "tempfile" is not accessed (reportUnusedImport)
+      tests/test_quote_card.py:11:8 - error: Import "pytest" could not be resolved (reportMissingImports)
+      tests/test_quote_card.py:16:6 - error: Import "generate_quote_card" could not be resolved (reportMissingImports)
+      tests/test_quote_card.py:16:33 - error: Type of "generate_svg" is unknown (reportUnknownVariableType)
+      tests/test_quote_card.py:16:47 - error: Type of "wrap_text" is unknown (reportUnknownVariableType)
+      tests/test_quote_card.py:25:9 - error: Type of "lines" is unknown (reportUnknownVariableType)
+      tests/test_quote_card.py:26:20 - error: Argument type is unknown
+        Argument corresponds to parameter "obj" in function "len" (reportUnknownArgumentType)
+      tests/test_quote_card.py:32:9 - error: Type of "lines" is unknown (reportUnknownVariableType)
+      tests/test_quote_card.py:33:20 - error: Argument type is unknown
+        Argument corresponds to parameter "obj" in function "len" (reportUnknownArgumentType)
+      tests/test_quote_card.py:34:13 - error: Type of "line" is unknown (reportUnknownVariableType)
+      tests/test_quote_card.py:35:24 - error: Argument type is unknown
+        Argument corresponds to parameter "obj" in function "len" (reportUnknownArgumentType)
+      tests/test_quote_card.py:40:9 - error: Type of "lines" is unknown (reportUnknownVariableType)
+      tests/test_quote_card.py:41:20 - error: Argument type is unknown
+        Argument corresponds to parameter "obj" in function "len" (reportUnknownArgumentType)
+      tests/test_quote_card.py:45:9 - error: Type of "svg" is unknown (reportUnknownVariableType)
+      tests/test_quote_card.py:52:16 - error: Type of "startswith" is unknown (reportUnknownMemberType)
+      tests/test_quote_card.py:59:9 - error: Type of "svg" is unknown (reportUnknownVariableType)
+      tests/test_quote_card.py:72:9 - error: Type of "svg" is unknown (reportUnknownVariableType)
+      tests/test_quote_card.py:80:16 - error: Type of "count" is unknown (reportUnknownMemberType)
+      tests/test_quote_card.py:84:9 - error: Type of "svg" is unknown (reportUnknownVariableType)
+      tests/test_quote_card.py:127:20 - error: Argument type is partially unknown
+        Argument corresponds to parameter "obj" in function "len"
+        Argument type is "list[Unknown]" (reportUnknownArgumentType)
+      tests/test_quote_card.py:130:13 - error: Type of "quote" is unknown (reportUnknownVariableType)
+      tests/test_quote_card.py:135:24 - error: Argument type is unknown
+        Argument corresponds to parameter "obj" in function "len" (reportUnknownArgumentType)
+      tests/test_quote_card.py:136:24 - error: Argument type is unknown
+        Argument corresponds to parameter "obj" in function "len" (reportUnknownArgumentType)
+      tests/test_quote_card.py:140:5 - error: Type of "main" is unknown (reportUnknownMemberType)
+    23 errors, 2 warnings, 0 informations
 
 ❌ [ERROR] tests/test_theme_validation.py
     venv .venv subdirectory not found in venv path config.

@@ -38,25 +38,25 @@ Platform: CICD
 CWE: 829
 Learn more about this vulnerability: https://docs.kics.io/latest/queries/cicd-queries/555ab8f9-2001-455e-a077-f2d0f41e2fb9
 
-	[1]: .github/workflows/_archive/megalinter.yml:33
+	[1]: .github/workflows/release.yml:139
+
+		138:       - name: Create GitHub Release
+		139:         uses: softprops/action-gh-release@v1
+		140:         with:
+
+
+	[2]: .github/workflows/_archive/megalinter.yml:33
 
 		032:         id: ml
 		033:         uses: oxsecurity/megalinter@v8
 		034:         env:
 
 
-	[2]: .github/workflows/build-profile.yml:590
+	[3]: .github/workflows/build-profile.yml:639
 
-		589:       - name: 🔍 Run MegaLinter (Report-Only)
-		590:         uses: oxsecurity/megalinter@v8
-		591:         env:
-
-
-	[3]: .github/workflows/release.yml:139
-
-		138:       - name: Create GitHub Release
-		139:         uses: softprops/action-gh-release@v1
-		140:         with:
+		638:       - name: 🔍 Run MegaLinter (Report-Only)
+		639:         uses: oxsecurity/megalinter@v8
+		640:         env:
 
 
 

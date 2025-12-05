@@ -175,6 +175,14 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_mypy/
     Found 2 errors in 1 file (checked 1 source file)
 
 ✅ [SUCCESS] scripts/generate_megalinter_summary.py
+❌ [ERROR] scripts/generate_quote_card.py
+    scripts/generate_quote_card.py:12:1: error: Cannot find implementation or
+    library stub for module named "lib.utils"  [import-not-found]
+        from lib.utils import (
+        ^
+    scripts/generate_quote_card.py:12:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 1 error in 1 file (checked 1 source file)
+
 ❌ [ERROR] scripts/incremental-generate.py
     scripts/incremental-generate.py:13:1: error: Cannot find implementation or
     library stub for module named "lib.change_detection"  [import-not-found]
@@ -416,6 +424,18 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_mypy/
         from lib.metrics import (
         ^
     tests/test_metrics.py:17:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    Found 2 errors in 1 file (checked 1 source file)
+
+❌ [ERROR] tests/test_quote_card.py
+    tests/test_quote_card.py:11:1: error: Cannot find implementation or library
+    stub for module named "pytest"  [import-not-found]
+        import pytest
+        ^
+    tests/test_quote_card.py:11:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+    tests/test_quote_card.py:16:1: error: Cannot find implementation or library
+    stub for module named "generate_quote_card"  [import-not-found]
+        from generate_quote_card import generate_svg, wrap_text
+        ^
     Found 2 errors in 1 file (checked 1 source file)
 
 ❌ [ERROR] tests/test_theme_validation.py

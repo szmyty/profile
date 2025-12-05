@@ -15,6 +15,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/yaml_v8r/
 ✅ [SUCCESS] .github/workflows/_archive/soundcloud-card.yml
 ✅ [SUCCESS] .github/workflows/_archive/weather.yml
 ✅ [SUCCESS] .github/workflows/build-profile.yml
+✅ [SUCCESS] .github/workflows/greetings.yml
 ✅ [SUCCESS] .github/workflows/monitoring.yml
 ✅ [SUCCESS] .github/workflows/release.yml
 ✅ [SUCCESS] .github/workflows/tests.yml

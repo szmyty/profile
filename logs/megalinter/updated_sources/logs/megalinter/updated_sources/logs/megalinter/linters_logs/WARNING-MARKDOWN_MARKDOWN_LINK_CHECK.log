@@ -27,6 +27,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/markdown_markdown_l
       [✖] https://www.linkedin.com/in/szmyty → Status: 999
       [✖] branding/footer.svg → Status: 400
 
+✅ [SUCCESS] REFACTORING_REPORT.md
 ✅ [SUCCESS] REPORT.md
 ✅ [SUCCESS] SECURITY_SUMMARY.md
 ✅ [SUCCESS] SECURITY_SUMMARY_API_RESILIENCE.md

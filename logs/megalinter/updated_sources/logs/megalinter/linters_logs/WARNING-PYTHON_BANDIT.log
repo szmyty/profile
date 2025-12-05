@@ -4,7 +4,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
 
 ✅ [SUCCESS] scripts/audit_megalinter_config.py
 ❌ [ERROR] scripts/comprehensive-audit.py
-    Run started:2025-12-05 05:09:21.424396
+    Run started:2025-12-05 06:34:35.995174
     
     Test results:
     >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -103,7 +103,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] scripts/fetch-developer-stats.py
-    Run started:2025-12-05 05:09:22.201014
+    Run started:2025-12-05 06:34:36.600261
     
     Test results:
     >> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
@@ -149,8 +149,9 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
 ✅ [SUCCESS] scripts/generate-themed-dashboard.py
 ✅ [SUCCESS] scripts/generate-weather-card.py
 ✅ [SUCCESS] scripts/generate_megalinter_summary.py
+✅ [SUCCESS] scripts/generate_quote_card.py
 ❌ [ERROR] scripts/incremental-generate.py
-    Run started:2025-12-05 05:09:30.088920
+    Run started:2025-12-05 06:34:45.401309
     
     Test results:
     >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -209,7 +210,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
 ✅ [SUCCESS] scripts/validate-data-quality.py
 ✅ [SUCCESS] tests/__init__.py
 ❌ [ERROR] tests/test_card_generators.py
-    Run started:2025-12-05 05:09:38.090283
+    Run started:2025-12-05 06:34:54.024223
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -481,7 +482,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_change_detection.py
-    Run started:2025-12-05 05:09:39.303350
+    Run started:2025-12-05 06:34:55.287991
     
     Test results:
     >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -771,7 +772,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_data_quality.py
-    Run started:2025-12-05 05:09:40.486873
+    Run started:2025-12-05 06:34:56.644702
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -1323,7 +1324,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_developer_dashboard.py
-    Run started:2025-12-05 05:09:42.472548
+    Run started:2025-12-05 06:34:58.625892
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -1575,7 +1576,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_fallback.py
-    Run started:2025-12-05 05:09:43.764956
+    Run started:2025-12-05 06:34:59.954647
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -2047,7 +2048,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_location_diagnostics.py
-    Run started:2025-12-05 05:09:45.402211
+    Run started:2025-12-05 06:35:01.771314
     
     Test results:
     >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -2610,7 +2611,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_log_summary.py
-    Run started:2025-12-05 05:09:47.373924
+    Run started:2025-12-05 06:35:03.929579
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -3042,7 +3043,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_mapbox_integration.py
-    Run started:2025-12-05 05:09:48.737007
+    Run started:2025-12-05 06:35:05.541337
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -3327,7 +3328,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_metrics.py
-    Run started:2025-12-05 05:09:49.691935
+    Run started:2025-12-05 06:35:06.909432
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -3868,8 +3869,341 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     		High: 52
     Files skipped (0):
 
+❌ [ERROR] tests/test_quote_card.py
+    Run started:2025-12-05 06:35:08.906353
+    
+    Test results:
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:26:8
+    25	        lines = wrap_text(text, max_chars_per_line=55)
+    26	        assert len(lines) == 1
+    27	        assert lines[0] == "Short quote"
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:27:8
+    26	        assert len(lines) == 1
+    27	        assert lines[0] == "Short quote"
+    28	
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:33:8
+    32	        lines = wrap_text(text, max_chars_per_line=40)
+    33	        assert len(lines) > 1
+    34	        for line in lines:
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:35:12
+    34	        for line in lines:
+    35	            assert len(line) <= 50  # Allow some margin for word boundaries
+    36	
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:41:8
+    40	        lines = wrap_text(text, max_chars_per_line=35)
+    41	        assert len(lines) == 2
+    42	
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:52:8
+    51	        
+    52	        assert svg.startswith("<svg")
+    53	        assert "Test quote" in svg
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:53:8
+    52	        assert svg.startswith("<svg")
+    53	        assert "Test quote" in svg
+    54	        assert "Test Author" in svg
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:54:8
+    53	        assert "Test quote" in svg
+    54	        assert "Test Author" in svg
+    55	        assert "Quote of the Day" in svg
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:55:8
+    54	        assert "Test Author" in svg
+    55	        assert "Quote of the Day" in svg
+    56	
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:67:8
+    66	        
+    67	        assert "wisdom" in svg
+    68	
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:80:8
+    79	        # Should contain multiple text elements for wrapped lines
+    80	        assert svg.count("<text") > 5  # Header, multiple quote lines, author, footer
+    81	
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:93:8
+    92	        # Double quotes should be escaped
+    93	        assert "&quot;" in svg or "&#34;" in svg
+    94	        # Less than should be escaped
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:95:8
+    94	        # Less than should be escaped
+    95	        assert "&lt;" in svg
+    96	        # Ampersand should be escaped
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:97:8
+    96	        # Ampersand should be escaped
+    97	        assert "&amp;" in svg
+    98	
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:107:12
+    106	            # Check required fields
+    107	            assert "text" in quote
+    108	            assert "author" in quote
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:108:12
+    107	            assert "text" in quote
+    108	            assert "author" in quote
+    109	            assert "source" in quote
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:109:12
+    108	            assert "author" in quote
+    109	            assert "source" in quote
+    110	            assert "fetched_at" in quote
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:110:12
+    109	            assert "source" in quote
+    110	            assert "fetched_at" in quote
+    111	            
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:113:12
+    112	            # Check field types
+    113	            assert isinstance(quote["text"], str)
+    114	            assert isinstance(quote["author"], str)
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:114:12
+    113	            assert isinstance(quote["text"], str)
+    114	            assert isinstance(quote["author"], str)
+    115	            assert len(quote["text"]) > 0
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:115:12
+    114	            assert isinstance(quote["author"], str)
+    115	            assert len(quote["text"]) > 0
+    116	            assert len(quote["author"]) > 0
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:116:12
+    115	            assert len(quote["text"]) > 0
+    116	            assert len(quote["author"]) > 0
+    117	
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:121:8
+    120	        quotes_file = Path(__file__).parent.parent / "data" / "quotes" / "quotes.json"
+    121	        assert quotes_file.exists(), "Local quotes database should exist"
+    122	        
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:126:8
+    125	        
+    126	        assert isinstance(quotes, list)
+    127	        assert len(quotes) > 0, "Quotes database should not be empty"
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:127:8
+    126	        assert isinstance(quotes, list)
+    127	        assert len(quotes) > 0, "Quotes database should not be empty"
+    128	        
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:131:12
+    130	        for quote in quotes:
+    131	            assert "text" in quote
+    132	            assert "author" in quote
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:132:12
+    131	            assert "text" in quote
+    132	            assert "author" in quote
+    133	            assert isinstance(quote["text"], str)
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:133:12
+    132	            assert "author" in quote
+    133	            assert isinstance(quote["text"], str)
+    134	            assert isinstance(quote["author"], str)
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:134:12
+    133	            assert isinstance(quote["text"], str)
+    134	            assert isinstance(quote["author"], str)
+    135	            assert len(quote["text"]) > 0
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:135:12
+    134	            assert isinstance(quote["author"], str)
+    135	            assert len(quote["text"]) > 0
+    136	            assert len(quote["author"]) > 0
+    
+    --------------------------------------------------
+    >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+       Severity: Low   Confidence: High
+       CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+       More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+       Location: ./tests/test_quote_card.py:136:12
+    135	            assert len(quote["text"]) > 0
+    136	            assert len(quote["author"]) > 0
+    137	
+    
+    --------------------------------------------------
+    
+    Code scanned:
+    	Total lines of code: 105
+    	Total lines skipped (#nosec): 0
+    	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+    
+    Run metrics:
+    	Total issues (by severity):
+    		Undefined: 0
+    		Low: 31
+    		Medium: 0
+    		High: 0
+    	Total issues (by confidence):
+    		Undefined: 0
+    		Low: 0
+    		Medium: 0
+    		High: 31
+    Files skipped (0):
+
 ❌ [ERROR] tests/test_theme_validation.py
-    Run started:2025-12-05 05:09:51.430119
+    Run started:2025-12-05 06:35:10.233152
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -4081,7 +4415,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_time_utils.py
-    Run started:2025-12-05 05:09:52.302802
+    Run started:2025-12-05 06:35:11.299325
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -4383,7 +4717,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_utils.py
-    Run started:2025-12-05 05:09:53.429547
+    Run started:2025-12-05 06:35:12.856249
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.

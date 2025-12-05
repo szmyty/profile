@@ -1,5 +1,5 @@
 TAP version 13
-1..12
+1..13
 ok 1 - .github/workflows/_archive/deploy-dashboard.yml
 ok 2 - .github/workflows/_archive/developer.yml
 not ok 3 - .github/workflows/_archive/location-card.yml
@@ -9,6 +9,7 @@ not ok 6 - .github/workflows/_archive/parallel-fetch.yml
 ok 7 - .github/workflows/_archive/soundcloud-card.yml
 not ok 8 - .github/workflows/_archive/weather.yml
 not ok 9 - .github/workflows/build-profile.yml
-not ok 10 - .github/workflows/monitoring.yml
-not ok 11 - .github/workflows/release.yml
-ok 12 - .github/workflows/tests.yml
+ok 10 - .github/workflows/greetings.yml
+not ok 11 - .github/workflows/monitoring.yml
+not ok 12 - .github/workflows/release.yml
+ok 13 - .github/workflows/tests.yml

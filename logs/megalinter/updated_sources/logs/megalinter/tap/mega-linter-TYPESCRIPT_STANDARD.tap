@@ -1,6 +1,0 @@
-TAP version 13
-1..4
-not ok 1 - dashboard-app/src/types.ts
-not ok 2 - dashboard-app/src/utils/dataFetcher.ts
-not ok 3 - dashboard-app/src/utils/fetchData.ts
-not ok 4 - dashboard-app/vite.config.ts

@@ -950,6 +950,21 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_ruff/
     Found 1 error.
     No fixes available (1 hidden fix can be enabled with the `--unsafe-fixes` option).
 
+❌ [ERROR] scripts/generate_quote_card.py
+    scripts/generate_quote_card.py:108:5: F841 Local variable `font_size_base` is assigned to but never used
+        |
+    106 |     # Font sizes from theme
+    107 |     font_size_xs = get_theme_font_size("xs")
+    108 |     font_size_base = get_theme_font_size("base")
+        |     ^^^^^^^^^^^^^^ F841
+    109 |     font_size_md = get_theme_font_size("md")
+    110 |     font_size_lg = get_theme_font_size("lg")
+        |
+        = help: Remove assignment to unused variable `font_size_base`
+    
+    Found 1 error.
+    No fixes available (1 hidden fix can be enabled with the `--unsafe-fixes` option).
+
 ✅ [SUCCESS] scripts/incremental-generate.py
 ✅ [SUCCESS] scripts/inject-footer.py
 ✅ [SUCCESS] scripts/lib/__init__.py
@@ -1214,6 +1229,31 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_ruff/
     
     Found 1 error.
     [*] 1 fixable with the `--fix` option.
+
+❌ [ERROR] tests/test_quote_card.py
+    tests/test_quote_card.py:7:8: F401 [*] `os` imported but unused
+      |
+    6 | import json
+    7 | import os
+      |        ^^ F401
+    8 | import sys
+    9 | import tempfile
+      |
+      = help: Remove unused import: `os`
+    
+    tests/test_quote_card.py:9:8: F401 [*] `tempfile` imported but unused
+       |
+     7 | import os
+     8 | import sys
+     9 | import tempfile
+       |        ^^^^^^^^ F401
+    10 | from pathlib import Path
+    11 | import pytest
+       |
+       = help: Remove unused import: `tempfile`
+    
+    Found 2 errors.
+    [*] 2 fixable with the `--fix` option.
 
 ✅ [SUCCESS] tests/test_theme_validation.py
 ❌ [ERROR] tests/test_time_utils.py

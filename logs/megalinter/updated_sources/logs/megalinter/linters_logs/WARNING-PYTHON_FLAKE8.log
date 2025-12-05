@@ -1083,6 +1083,55 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_flake8/
     scripts/generate_megalinter_summary.py:195:80: E501 line too long (80 > 79 characters)
     scripts/generate_megalinter_summary.py:200:80: E501 line too long (88 > 79 characters)
 
+❌ [ERROR] scripts/generate_quote_card.py
+    scripts/generate_quote_card.py:32:80: E501 line too long (84 > 79 characters)
+    scripts/generate_quote_card.py:36:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:40:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:47:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:58:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:62:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:75:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:82:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:91:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:100:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:105:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:108:5: F841 local variable 'font_size_base' is assigned to but never used
+    scripts/generate_quote_card.py:113:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:117:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:121:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:140:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:143:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:148:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:159:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:162:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:163:80: E501 line too long (139 > 79 characters)
+    scripts/generate_quote_card.py:170:80: E501 line too long (116 > 79 characters)
+    scripts/generate_quote_card.py:175:80: E501 line too long (99 > 79 characters)
+    scripts/generate_quote_card.py:176:80: E501 line too long (173 > 79 characters)
+    scripts/generate_quote_card.py:180:80: E501 line too long (109 > 79 characters)
+    scripts/generate_quote_card.py:182:80: E501 line too long (86 > 79 characters)
+    scripts/generate_quote_card.py:183:80: E501 line too long (109 > 79 characters)
+    scripts/generate_quote_card.py:187:80: E501 line too long (91 > 79 characters)
+    scripts/generate_quote_card.py:188:80: E501 line too long (118 > 79 characters)
+    scripts/generate_quote_card.py:189:80: E501 line too long (94 > 79 characters)
+    scripts/generate_quote_card.py:190:80: E501 line too long (121 > 79 characters)
+    scripts/generate_quote_card.py:194:80: E501 line too long (127 > 79 characters)
+    scripts/generate_quote_card.py:206:80: E501 line too long (110 > 79 characters)
+    scripts/generate_quote_card.py:213:80: E501 line too long (106 > 79 characters)
+    scripts/generate_quote_card.py:214:80: E501 line too long (97 > 79 characters)
+    scripts/generate_quote_card.py:225:1: W293 blank line contains whitespace
+    scripts/generate_quote_card.py:230:80: E501 line too long (90 > 79 characters)
+    scripts/generate_quote_card.py:244:80: E501 line too long (86 > 79 characters)
+    scripts/generate_quote_card.py:245:80: E501 line too long (83 > 79 characters)
+    scripts/generate_quote_card.py:252:80: E501 line too long (85 > 79 characters)
+    scripts/generate_quote_card.py:253:80: E501 line too long (83 > 79 characters)
+    scripts/generate_quote_card.py:267:80: E501 line too long (105 > 79 characters)
+    scripts/generate_quote_card.py:268:80: E501 line too long (83 > 79 characters)
+    scripts/generate_quote_card.py:275:80: E501 line too long (85 > 79 characters)
+    scripts/generate_quote_card.py:276:80: E501 line too long (83 > 79 characters)
+    scripts/generate_quote_card.py:288:80: E501 line too long (103 > 79 characters)
+    scripts/generate_quote_card.py:289:80: E501 line too long (83 > 79 characters)
+
 ❌ [ERROR] scripts/incremental-generate.py
     scripts/incremental-generate.py:31:1: W293 blank line contains whitespace
     scripts/incremental-generate.py:35:80: E501 line too long (86 > 79 characters)
@@ -1869,6 +1918,24 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_flake8/
     tests/test_metrics.py:243:1: W293 blank line contains whitespace
     tests/test_metrics.py:250:1: W293 blank line contains whitespace
     tests/test_metrics.py:252:1: W293 blank line contains whitespace
+
+❌ [ERROR] tests/test_quote_card.py
+    tests/test_quote_card.py:7:1: F401 'os' imported but unused
+    tests/test_quote_card.py:9:1: F401 'tempfile' imported but unused
+    tests/test_quote_card.py:16:1: E402 module level import not at top of file
+    tests/test_quote_card.py:31:80: E501 line too long (108 > 79 characters)
+    tests/test_quote_card.py:51:1: W293 blank line contains whitespace
+    tests/test_quote_card.py:66:1: W293 blank line contains whitespace
+    tests/test_quote_card.py:71:80: E501 line too long (148 > 79 characters)
+    tests/test_quote_card.py:78:1: W293 blank line contains whitespace
+    tests/test_quote_card.py:80:80: E501 line too long (85 > 79 characters)
+    tests/test_quote_card.py:90:1: W293 blank line contains whitespace
+    tests/test_quote_card.py:105:1: W293 blank line contains whitespace
+    tests/test_quote_card.py:111:1: W293 blank line contains whitespace
+    tests/test_quote_card.py:120:80: E501 line too long (86 > 79 characters)
+    tests/test_quote_card.py:122:1: W293 blank line contains whitespace
+    tests/test_quote_card.py:125:1: W293 blank line contains whitespace
+    tests/test_quote_card.py:128:1: W293 blank line contains whitespace
 
 ❌ [ERROR] tests/test_theme_validation.py
     tests/test_theme_validation.py:16:1: E402 module level import not at top of file

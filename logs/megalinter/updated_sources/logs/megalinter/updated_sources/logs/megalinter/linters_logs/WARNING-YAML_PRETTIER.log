@@ -55,6 +55,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/yaml_prettier/
     [warn] .github/workflows/build-profile.yml
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
+✅ [SUCCESS] .github/workflows/greetings.yml
 ❌ [ERROR] .github/workflows/monitoring.yml
     Checking formatting...
     [warn] .github/workflows/monitoring.yml

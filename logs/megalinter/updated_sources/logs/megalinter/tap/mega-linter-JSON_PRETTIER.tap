@@ -1,5 +1,5 @@
 TAP version 13
-1..55
+1..57
 not ok 1 - .devcontainer/devcontainer.json
 ok 2 - .vscode/extensions.json
 ok 3 - .vscode/launch.json
@@ -36,22 +36,24 @@ not ok 33 - data/mock/developer-stats.json
 not ok 34 - data/mock/oura-metrics.json
 not ok 35 - data/mock/soundcloud-metadata.json
 not ok 36 - data/mock/weather.json
-not ok 37 - data/snapshots/daily/2025/12/2025-12-03.json
-not ok 38 - data/snapshots/monthly/2025-12.json
-not ok 39 - data/snapshots/weekly/2025-W49.json
-not ok 40 - data/timezone.json
-not ok 41 - developer/stats.json
-not ok 42 - location/location.json
-not ok 43 - oura/health_snapshot.json
-not ok 44 - oura/metrics.json
-not ok 45 - oura/mood.json
-not ok 46 - schemas/developer-stats.schema.json
-not ok 47 - schemas/health-snapshot.schema.json
-not ok 48 - schemas/oura-metrics.schema.json
-not ok 49 - schemas/soundcloud-track.schema.json
-not ok 50 - schemas/theme.schema.json
-not ok 51 - schemas/weather.schema.json
-not ok 52 - soundcloud/last-success.json
-not ok 53 - soundcloud/latest.json
-not ok 54 - weather/debug_nominatim.json
-not ok 55 - weather/weather.json
+not ok 37 - data/quotes/quotes.json
+not ok 38 - data/snapshots/daily/2025/12/2025-12-03.json
+not ok 39 - data/snapshots/monthly/2025-12.json
+not ok 40 - data/snapshots/weekly/2025-W49.json
+not ok 41 - data/timezone.json
+not ok 42 - developer/stats.json
+not ok 43 - location/location.json
+not ok 44 - oura/health_snapshot.json
+not ok 45 - oura/metrics.json
+not ok 46 - oura/mood.json
+not ok 47 - quotes/quote.json
+not ok 48 - schemas/developer-stats.schema.json
+not ok 49 - schemas/health-snapshot.schema.json
+not ok 50 - schemas/oura-metrics.schema.json
+not ok 51 - schemas/soundcloud-track.schema.json
+not ok 52 - schemas/theme.schema.json
+not ok 53 - schemas/weather.schema.json
+not ok 54 - soundcloud/last-success.json
+not ok 55 - soundcloud/latest.json
+not ok 56 - weather/debug_nominatim.json
+not ok 57 - weather/weather.json

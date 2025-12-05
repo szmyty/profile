@@ -5,984 +5,2386 @@ See documentation on https://megalinter.io/8.8.0/descriptors/repository_git_diff
 ❌ [ERROR] for workspace /github/workspace
 Linter raw log:
 warning: in the working copy of 'logs/megalinter/linters_logs/WARNING-REPOSITORY_KICS.log', CRLF will be replaced by LF the next time Git touches it
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:119: space before tab in indent.
-+    	29: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:120: space before tab in indent.
-+    	47: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:121: space before tab in indent.
-+    	54: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:122: space before tab in indent.
-+    	61: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:123: space before tab in indent.
-+    	64: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:124: space before tab in indent.
-+    	98: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:125: space before tab in indent.
-+    	101: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:126: space before tab in indent.
-+    	106: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:127: space before tab in indent.
-+    	109: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:128: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-BASH_SHELLCHECK.log:79: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:133: space before tab in indent.
-+    	23: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:134: space before tab in indent.
-+    	29: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:135: space before tab in indent.
-+    	45: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:136: space before tab in indent.
-+    	65: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:137: space before tab in indent.
-+    	72: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:138: space before tab in indent.
-+    	79: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:139: space before tab in indent.
-+    	82: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:140: space before tab in indent.
-+    	129: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:141: space before tab in indent.
-+    	132: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:142: space before tab in indent.
-+    	135: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:143: space before tab in indent.
-+    	138: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:144: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-BASH_SHELLCHECK.log:83: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:150: space before tab in indent.
-+    	23: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:151: space before tab in indent.
-+    	29: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:156: space before tab in indent.
-+    	110: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:157: space before tab in indent.
-+    	119: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:158: space before tab in indent.
-+    	122: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:159: space before tab in indent.
-+    	125: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:165: space before tab in indent.
-+    	36: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:166: space before tab in indent.
-+    	48: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:167: space before tab in indent.
-+    	55: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:168: space before tab in indent.
-+    	62: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:169: space before tab in indent.
-+    	65: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:170: space before tab in indent.
-+    	83: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:171: space before tab in indent.
-+    	96: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:172: space before tab in indent.
-+    	114: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:173: space before tab in indent.
-+    	121: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:174: space before tab in indent.
-+    	128: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:175: space before tab in indent.
-+    	131: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:176: space before tab in indent.
-+    	150: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:177: space before tab in indent.
-+    	165: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:178: space before tab in indent.
-+    	172: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:179: space before tab in indent.
-+    	179: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:180: space before tab in indent.
-+    	202: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:181: space before tab in indent.
-+    	304: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:182: space before tab in indent.
-+    	330: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:183: space before tab in indent.
-+    	336: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:184: space before tab in indent.
-+    	342: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:185: space before tab in indent.
-+    	356: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:186: space before tab in indent.
-+    	359: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:193: space before tab in indent.
-+    	29: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:194: space before tab in indent.
-+    	45: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:195: space before tab in indent.
-+    	52: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:196: space before tab in indent.
-+    	59: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:197: space before tab in indent.
-+    	96: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:199: space before tab in indent.
-+    	108: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:200: space before tab in indent.
-+    	111: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:206: space before tab in indent.
-+    	23: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:207: space before tab in indent.
-+    	29: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:208: space before tab in indent.
-+    	42: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:209: space before tab in indent.
-+    	58: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:210: space before tab in indent.
-+    	61: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:211: space before tab in indent.
-+    	64: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:212: space before tab in indent.
-+    	66: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:213: space before tab in indent.
-+    	72: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:214: space before tab in indent.
-+    	75: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:215: space before tab in indent.
-+    	90: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:216: space before tab in indent.
-+    	97: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:218: space before tab in indent.
-+    	107: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:219: space before tab in indent.
-+    	154: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:221: space before tab in indent.
-+    	160: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:227: space before tab in indent.
-+    	27: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:228: space before tab in indent.
-+    	36: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:229: space before tab in indent.
-+    	46: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:230: space before tab in indent.
-+    	51: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:231: space before tab in indent.
-+    	61: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:232: space before tab in indent.
-+    	65: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:233: space before tab in indent.
-+    	72: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:234: space before tab in indent.
-+    	78: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:235: space before tab in indent.
-+    	87: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:236: space before tab in indent.
-+    	98: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:237: space before tab in indent.
-+    	119: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:238: space before tab in indent.
-+    	130: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:239: space before tab in indent.
-+    	140: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:240: space before tab in indent.
-+    	150: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:241: space before tab in indent.
-+    	171: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:242: space before tab in indent.
-+    	182: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:243: space before tab in indent.
-+    	203: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:244: space before tab in indent.
-+    	211: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:245: space before tab in indent.
-+    	232: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:246: space before tab in indent.
-+    	240: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:247: space before tab in indent.
-+    	261: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-BASH_SHELLCHECK.log:84: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-BASH_SHELLCHECK.log:88: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1601: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1608: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1611: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1621: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1627: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1633: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1642: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1646: trailing whitespace.
++     
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1651: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1658: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1661: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1671: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1678: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1684: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1693: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1697: trailing whitespace.
++     
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1702: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1705: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1711: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1718: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1723: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1729: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1735: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1738: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1743: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1752: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1756: trailing whitespace.
++     
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1761: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1763: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1774: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1777: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1786: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1789: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1798: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1801: trailing whitespace.
++    -    
+logs/megalinter/linters_logs/WARNING-BASH_SHFMT.log:1810: trailing whitespace.
++    -    
 logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:248: space before tab in indent.
-+    	268: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:249: space before tab in indent.
-+    	270: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:250: space before tab in indent.
-+    	284: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:251: space before tab in indent.
-+    	291: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:252: space before tab in indent.
-+    	304: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:253: space before tab in indent.
-+    	320: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:254: space before tab in indent.
-+    	333: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:255: space before tab in indent.
-+    	346: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:256: space before tab in indent.
-+    	359: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:257: space before tab in indent.
-+    	366: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:258: space before tab in indent.
-+    	378: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:259: space before tab in indent.
-+    	385: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:260: space before tab in indent.
-+    	397: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:261: space before tab in indent.
-+    	404: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:262: space before tab in indent.
-+    	448: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:263: space before tab in indent.
-+    	465: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:264: space before tab in indent.
-+    	472: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:265: space before tab in indent.
-+    	479: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:266: space before tab in indent.
-+    	486: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:267: space before tab in indent.
-+    	493: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:268: space before tab in indent.
-+    	502: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:269: space before tab in indent.
-+    	509: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:270: space before tab in indent.
-+    	516: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:271: space before tab in indent.
-+    	519: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:272: space before tab in indent.
-+    	534: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:273: space before tab in indent.
-+    	542: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:274: space before tab in indent.
-+    	546: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:275: space before tab in indent.
-+    	551: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:276: space before tab in indent.
-+    	554: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:277: space before tab in indent.
-+    	565: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:278: space before tab in indent.
-+    	569: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:279: space before tab in indent.
-+    	575: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:280: space before tab in indent.
-+    	580: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:281: space before tab in indent.
-+    	588: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:282: space before tab in indent.
-+    	601: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:283: space before tab in indent.
-+    	605: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:284: space before tab in indent.
-+    	613: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:285: space before tab in indent.
-+    	624: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:286: space before tab in indent.
-+    	632: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:287: space before tab in indent.
-+    	640: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:288: space before tab in indent.
-+    	643: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:289: space before tab in indent.
-+    	647: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:290: space before tab in indent.
-+    	655: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:291: space before tab in indent.
-+    	663: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:292: space before tab in indent.
-+    	669: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:293: space before tab in indent.
-+    	674: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:294: space before tab in indent.
-+    	681: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:302: space before tab in indent.
-+    	27: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:303: space before tab in indent.
-+    	38: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:304: space before tab in indent.
-+    	43: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:305: space before tab in indent.
-+    	46: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:306: space before tab in indent.
-+    	52: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:308: space before tab in indent.
-+    	66: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:310: space before tab in indent.
-+    	74: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:311: space before tab in indent.
-+    	78: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:312: space before tab in indent.
-+    	87: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:313: space before tab in indent.
-+    	93: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:314: space before tab in indent.
-+    	103: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:315: space before tab in indent.
-+    	108: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:316: space before tab in indent.
-+    	122: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:317: space before tab in indent.
-+    	127: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:318: space before tab in indent.
-+    	135: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:319: space before tab in indent.
-+    	137: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:353: space before tab in indent.
-+    	129: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:354: space before tab in indent.
-+    	131: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:355: space before tab in indent.
-+    	133: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:356: space before tab in indent.
-+    	139-140: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:357: space before tab in indent.
-+    	146-150: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:358: space before tab in indent.
-+    	232-235: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:359: space before tab in indent.
-+    	238-240: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:360: space before tab in indent.
-+    	243-246: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:361: trailing whitespace.
-+    
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:422: space before tab in indent.
-+    	117: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:553: space before tab in indent.
-+    	Wrong line endings or no final newline
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:554: trailing whitespace.
-+    
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:560: space before tab in indent.
-+    	2-10: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:810: space before tab in indent.
-+    	16-17: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:811: space before tab in indent.
-+    	30: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:879: space before tab in indent.
-+    	Wrong line endings or no final newline
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:880: space before tab in indent.
-+    	2-10: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:881: space before tab in indent.
-+    	12-41: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:882: space before tab in indent.
-+    	45: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:883: space before tab in indent.
-+    	70-71: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:884: space before tab in indent.
-+    	96-97: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:885: space before tab in indent.
-+    	122-123: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:886: space before tab in indent.
-+    	148-149: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:887: space before tab in indent.
-+    	174-175: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:888: space before tab in indent.
-+    	200-201: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:889: space before tab in indent.
-+    	226: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:890: space before tab in indent.
-+    	229-235: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:891: space before tab in indent.
-+    	237-238: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:892: space before tab in indent.
-+    	241-242: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:893: space before tab in indent.
-+    	244-245: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:894: space before tab in indent.
-+    	253-254: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:895: space before tab in indent.
-+    	256-257: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:896: space before tab in indent.
-+    	260-261: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:897: space before tab in indent.
-+    	264-265: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:898: space before tab in indent.
-+    	268-269: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:899: space before tab in indent.
-+    	271-272: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:905: space before tab in indent.
-+    	2-4: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:906: space before tab in indent.
-+    	7-9: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1318: space before tab in indent.
-+    	19: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1319: space before tab in indent.
-+    	29: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1320: space before tab in indent.
-+    	39: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1321: space before tab in indent.
-+    	41: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1322: space before tab in indent.
-+    	51: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1323: trailing whitespace.
-+    
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1328: space before tab in indent.
-+    	4-12: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1329: space before tab in indent.
-+    	21-25: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1330: space before tab in indent.
-+    	32: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1331: space before tab in indent.
-+    	34: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1332: space before tab in indent.
-+    	36-37: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1333: space before tab in indent.
-+    	42-43: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1335: space before tab in indent.
-+    	49: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1336: space before tab in indent.
-+    	52: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1337: space before tab in indent.
-+    	54: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1338: space before tab in indent.
-+    	56: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1339: space before tab in indent.
-+    	58: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1340: space before tab in indent.
-+    	61: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1341: space before tab in indent.
-+    	64: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1342: space before tab in indent.
-+    	66-67: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1344: space before tab in indent.
-+    	71: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1345: space before tab in indent.
-+    	73: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1346: space before tab in indent.
-+    	80: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1347: space before tab in indent.
-+    	87: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1348: space before tab in indent.
-+    	94: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1349: space before tab in indent.
-+    	101: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1350: space before tab in indent.
-+    	108: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1351: space before tab in indent.
-+    	115: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1352: space before tab in indent.
-+    	122: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1353: space before tab in indent.
-+    	129: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1354: space before tab in indent.
-+    	136: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1542: space before tab in indent.
-+    	Wrong line endings or no final newline
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1543: space before tab in indent.
-+    	2-10: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1544: space before tab in indent.
-+    	12-41: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1545: space before tab in indent.
-+    	45: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1546: space before tab in indent.
-+    	70-71: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1547: space before tab in indent.
-+    	96-97: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1548: space before tab in indent.
-+    	122-123: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1549: space before tab in indent.
-+    	148-149: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1550: space before tab in indent.
-+    	174-175: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1551: space before tab in indent.
-+    	200-201: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1552: space before tab in indent.
-+    	226: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1553: space before tab in indent.
-+    	229-235: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1554: space before tab in indent.
-+    	237-238: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1555: space before tab in indent.
-+    	241-242: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1556: space before tab in indent.
-+    	244-245: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1557: space before tab in indent.
-+    	253-254: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1558: space before tab in indent.
-+    	256-257: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1559: space before tab in indent.
-+    	260-261: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1560: space before tab in indent.
-+    	264-265: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1561: space before tab in indent.
-+    	268-269: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1562: space before tab in indent.
-+    	271-272: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1766: space before tab in indent.
-+    	60: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1767: trailing whitespace.
-+    
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1856: space before tab in indent.
-+    	200: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1857: space before tab in indent.
-+    	202-204: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1858: space before tab in indent.
-+    	206: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1859: space before tab in indent.
-+    	213-214: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1860: trailing whitespace.
-+    
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1873: space before tab in indent.
-+    	183-185: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1874: space before tab in indent.
-+    	188-190: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1875: space before tab in indent.
-+    	193-194: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1876: space before tab in indent.
-+    	212-217: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1877: space before tab in indent.
-+    	220-233: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1878: space before tab in indent.
-+    	236-240: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1879: space before tab in indent.
-+    	243-248: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1880: space before tab in indent.
-+    	253-261: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1886: space before tab in indent.
-+    	86-91: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1887: space before tab in indent.
-+    	94-98: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1888: space before tab in indent.
-+    	103-105: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1889: space before tab in indent.
-+    	113: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1890: space before tab in indent.
-+    	117-118: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1891: space before tab in indent.
-+    	121-122: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1892: space before tab in indent.
-+    	125: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1893: space before tab in indent.
-+    	178-179: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1959: space before tab in indent.
-+    	109-110: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1960: space before tab in indent.
-+    	121-125: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1977: space before tab in indent.
-+    	2-4: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1978: space before tab in indent.
-+    	7-9: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2402: space before tab in indent.
-+    	28: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2403: space before tab in indent.
-+    	34: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2404: space before tab in indent.
-+    	38: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2405: space before tab in indent.
-+    	42: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2406: space before tab in indent.
-+    	47: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2407: space before tab in indent.
-+    	52: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2408: space before tab in indent.
-+    	56: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2409: space before tab in indent.
-+    	60: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2410: space before tab in indent.
-+    	78: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2411: space before tab in indent.
-+    	81: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2412: space before tab in indent.
-+    	84: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2413: space before tab in indent.
-+    	88: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2414: space before tab in indent.
-+    	92: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2415: space before tab in indent.
-+    	95: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2416: space before tab in indent.
-+    	99: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2417: space before tab in indent.
-+    	105: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2418: space before tab in indent.
-+    	112: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2419: space before tab in indent.
-+    	114: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2420: space before tab in indent.
-+    	117: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2421: space before tab in indent.
-+    	126: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2422: space before tab in indent.
-+    	171: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2423: space before tab in indent.
-+    	175: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2424: space before tab in indent.
-+    	178: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2425: space before tab in indent.
-+    	184: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2426: space before tab in indent.
-+    	199: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2427: space before tab in indent.
-+    	207: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2428: space before tab in indent.
-+    	213: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2429: space before tab in indent.
-+    	226: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2430: space before tab in indent.
-+    	229: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2431: space before tab in indent.
-+    	238: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2432: space before tab in indent.
-+    	240: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2433: space before tab in indent.
-+    	245: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2434: space before tab in indent.
-+    	248: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2435: space before tab in indent.
-+    	259: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2436: space before tab in indent.
-+    	264: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2437: space before tab in indent.
 +    	269: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2438: space before tab in indent.
-+    	280: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2439: space before tab in indent.
-+    	285: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2440: space before tab in indent.
-+    	289: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2441: space before tab in indent.
-+    	293: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2442: space before tab in indent.
-+    	298: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2443: space before tab in indent.
-+    	306: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2444: space before tab in indent.
-+    	310: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2445: space before tab in indent.
-+    	314: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2446: space before tab in indent.
-+    	323: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2447: space before tab in indent.
-+    	333: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2448: space before tab in indent.
-+    	343: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2449: space before tab in indent.
-+    	352: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2450: space before tab in indent.
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:249: space before tab in indent.
++    	290: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:250: space before tab in indent.
++    	297: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:251: space before tab in indent.
++    	299: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:252: space before tab in indent.
++    	313: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:255: space before tab in indent.
++    	349: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:256: space before tab in indent.
 +    	362: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2451: space before tab in indent.
-+    	370: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2452: space before tab in indent.
-+    	374: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2453: space before tab in indent.
-+    	381: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2454: space before tab in indent.
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:257: space before tab in indent.
++    	375: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:258: space before tab in indent.
 +    	388: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2455: space before tab in indent.
-+    	393: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2456: space before tab in indent.
-+    	396: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2457: space before tab in indent.
-+    	399: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2458: space before tab in indent.
-+    	405: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2459: space before tab in indent.
-+    	413: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2460: space before tab in indent.
-+    	422: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2461: space before tab in indent.
-+    	425: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2462: space before tab in indent.
-+    	428: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2463: space before tab in indent.
-+    	431: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2464: space before tab in indent.
-+    	436: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2465: space before tab in indent.
-+    	440: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2466: space before tab in indent.
-+    	444: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2467: space before tab in indent.
-+    	448: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2468: space before tab in indent.
-+    	452: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2469: space before tab in indent.
-+    	454: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2470: space before tab in indent.
-+    	457: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2471: space before tab in indent.
-+    	464: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2472: space before tab in indent.
-+    	473: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2473: space before tab in indent.
-+    	478: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2474: space before tab in indent.
-+    	481: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2475: space before tab in indent.
-+    	484: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2476: space before tab in indent.
-+    	488: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2477: space before tab in indent.
-+    	495: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2478: space before tab in indent.
-+    	502: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2479: space before tab in indent.
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:259: space before tab in indent.
++    	401: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:260: space before tab in indent.
++    	408: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:261: space before tab in indent.
++    	420: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:262: space before tab in indent.
++    	427: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:263: space before tab in indent.
++    	439: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:264: space before tab in indent.
++    	446: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:265: space before tab in indent.
++    	490: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:266: space before tab in indent.
 +    	507: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2480: space before tab in indent.
-+    	518: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2481: space before tab in indent.
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:267: space before tab in indent.
++    	514: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:268: space before tab in indent.
 +    	521: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2482: space before tab in indent.
-+    	532: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2483: space before tab in indent.
-+    	542: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2484: space before tab in indent.
-+    	547: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2485: space before tab in indent.
-+    	550: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2486: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:269: space before tab in indent.
++    	528: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:270: space before tab in indent.
++    	535: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:273: space before tab in indent.
++    	558: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:275: space before tab in indent.
++    	568: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:276: space before tab in indent.
++    	583: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:277: space before tab in indent.
++    	591: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:278: space before tab in indent.
++    	595: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:279: space before tab in indent.
++    	600: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:280: space before tab in indent.
++    	603: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:281: space before tab in indent.
++    	614: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:282: space before tab in indent.
++    	618: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:284: space before tab in indent.
++    	629: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:285: space before tab in indent.
++    	637: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:286: space before tab in indent.
++    	650: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:287: space before tab in indent.
++    	654: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:288: space before tab in indent.
++    	662: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:289: space before tab in indent.
++    	673: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:291: space before tab in indent.
++    	690: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:292: space before tab in indent.
++    	693: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:293: space before tab in indent.
++    	697: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:294: space before tab in indent.
++    	705: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:295: space before tab in indent.
++    	713: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:296: space before tab in indent.
++    	719: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:297: space before tab in indent.
++    	724: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:298: space before tab in indent.
++    	731: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:299: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:4201: space before tab in indent.
-+    	2-10: Wrong amount of left-padding spaces(want multiple of 4)
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:4202: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:304: space before tab in indent.
++    	25-26: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:305: space before tab in indent.
++    	28: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:306: space before tab in indent.
++    	36-40: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:307: space before tab in indent.
++    	42: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:441: space before tab in indent.
++    	70-73: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:442: space before tab in indent.
++    	76-79: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:443: space before tab in indent.
++    	82-85: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:444: space before tab in indent.
++    	88-92: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:445: space before tab in indent.
++    	95-99: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:446: space before tab in indent.
++    	254-258: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:447: space before tab in indent.
++    	266-275: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:448: space before tab in indent.
++    	287-289: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:449: space before tab in indent.
++    	298: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:450: space before tab in indent.
++    	300: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:451: space before tab in indent.
++    	302: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:452: space before tab in indent.
++    	317-318: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:453: space before tab in indent.
++    	326-336: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:454: space before tab in indent.
++    	468: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:455: space before tab in indent.
++    	475: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:456: space before tab in indent.
++    	477-478: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:457: space before tab in indent.
++    	481: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:458: space before tab in indent.
++    	483-485: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:459: space before tab in indent.
++    	487-489: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:460: space before tab in indent.
++    	507: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:461: space before tab in indent.
++    	509: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:462: space before tab in indent.
++    	511: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:463: space before tab in indent.
++    	513: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:464: space before tab in indent.
++    	695-697: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:465: space before tab in indent.
++    	701: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:466: space before tab in indent.
++    	703-705: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:467: space before tab in indent.
++    	710-712: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:468: space before tab in indent.
++    	733: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:469: space before tab in indent.
++    	738: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:470: space before tab in indent.
++    	749-751: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:471: space before tab in indent.
++    	753-755: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:472: space before tab in indent.
++    	757: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:473: space before tab in indent.
++    	759: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:474: space before tab in indent.
++    	773-774: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:475: space before tab in indent.
++    	776: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:476: space before tab in indent.
++    	823: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:477: space before tab in indent.
++    	825-827: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:478: space before tab in indent.
++    	829-832: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:479: space before tab in indent.
++    	835: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:480: space before tab in indent.
++    	874-877: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:481: space before tab in indent.
++    	880-883: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:482: space before tab in indent.
++    	886-889: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:483: space before tab in indent.
++    	894-896: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:484: space before tab in indent.
++    	899-901: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:485: space before tab in indent.
++    	904-907: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:486: space before tab in indent.
++    	912-914: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:487: space before tab in indent.
++    	917-919: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:488: space before tab in indent.
++    	922-924: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:489: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:4651: space before tab in indent.
-+    	Not all lines have the correct end of line character
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:4652: space before tab in indent.
-+    	6: Trailing whitespace
-logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:4653: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1567: space before tab in indent.
++    	2: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1568: space before tab in indent.
++    	6-7: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1569: space before tab in indent.
++    	11-12: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1570: space before tab in indent.
++    	16-17: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1571: space before tab in indent.
++    	21-22: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1572: space before tab in indent.
++    	26-27: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1573: space before tab in indent.
++    	31-32: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1574: space before tab in indent.
++    	36-37: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1575: space before tab in indent.
++    	41-42: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1576: space before tab in indent.
++    	46-47: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1577: space before tab in indent.
++    	51-52: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1578: space before tab in indent.
++    	56-57: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1579: space before tab in indent.
++    	61-62: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1580: space before tab in indent.
++    	66-67: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1581: space before tab in indent.
++    	71-72: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1582: space before tab in indent.
++    	76-77: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1583: space before tab in indent.
++    	81-82: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1584: space before tab in indent.
++    	86-87: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1585: space before tab in indent.
++    	91-92: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1586: space before tab in indent.
++    	96-97: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1587: space before tab in indent.
++    	101: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:1588: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-MARKDOWN_MARKDOWN_LINK_CHECK.log:15: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2147: space before tab in indent.
++    	2-6: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2148: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:8: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2845: space before tab in indent.
++    	26: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2846: space before tab in indent.
++    	32: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2847: space before tab in indent.
++    	35: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2848: space before tab in indent.
++    	41: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2849: space before tab in indent.
++    	46: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2850: space before tab in indent.
++    	51: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2851: space before tab in indent.
++    	64: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2852: space before tab in indent.
++    	71: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2853: space before tab in indent.
++    	77: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2854: space before tab in indent.
++    	80: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2855: space before tab in indent.
++    	86: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2856: space before tab in indent.
++    	92: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2857: space before tab in indent.
++    	97: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2858: space before tab in indent.
++    	112: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2859: space before tab in indent.
++    	119: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2860: space before tab in indent.
++    	121: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2861: space before tab in indent.
++    	126: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2862: space before tab in indent.
++    	132: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2863: space before tab in indent.
++    	136: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2864: space before tab in indent.
++    	141: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2865: space before tab in indent.
++    	146: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2866: space before tab in indent.
++    	148: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2867: space before tab in indent.
++    	152: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2868: space before tab in indent.
++    	161: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2869: space before tab in indent.
++    	168: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2870: space before tab in indent.
++    	170: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2871: space before tab in indent.
++    	177: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2872: space before tab in indent.
++    	179: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2873: space before tab in indent.
++    	186: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2874: space before tab in indent.
++    	188: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2875: space before tab in indent.
++    	195: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2876: space before tab in indent.
++    	197: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2877: space before tab in indent.
++    	211: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:2878: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:18: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3680: space before tab in indent.
++    	36: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3681: space before tab in indent.
++    	40: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3682: space before tab in indent.
++    	47: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3683: space before tab in indent.
++    	58: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3684: space before tab in indent.
++    	62: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3685: space before tab in indent.
++    	75: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3686: space before tab in indent.
++    	82: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3687: space before tab in indent.
++    	91: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3688: space before tab in indent.
++    	100: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3689: space before tab in indent.
++    	105: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3690: space before tab in indent.
++    	113: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3691: space before tab in indent.
++    	117: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3692: space before tab in indent.
++    	121: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3693: space before tab in indent.
++    	140: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3694: space before tab in indent.
++    	143: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3695: space before tab in indent.
++    	148: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3696: space before tab in indent.
++    	159: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3697: space before tab in indent.
++    	162: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3698: space before tab in indent.
++    	164: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3699: space before tab in indent.
++    	166-167: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3700: space before tab in indent.
++    	170: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3701: space before tab in indent.
++    	172: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3702: space before tab in indent.
++    	174-176: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3703: space before tab in indent.
++    	178-179: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3704: space before tab in indent.
++    	181-182: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3705: space before tab in indent.
++    	184: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3706: space before tab in indent.
++    	186-190: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3707: space before tab in indent.
++    	192-193: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3708: space before tab in indent.
++    	195: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3709: space before tab in indent.
++    	197: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3710: space before tab in indent.
++    	199-200: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3711: space before tab in indent.
++    	202: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3712: space before tab in indent.
++    	204-205: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3713: space before tab in indent.
++    	207: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3714: space before tab in indent.
++    	209: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3715: space before tab in indent.
++    	211-212: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3716: space before tab in indent.
++    	214: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3717: space before tab in indent.
++    	216: Wrong amount of left-padding spaces(want multiple of 4)
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3718: space before tab in indent.
++    	225: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:3719: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:28: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:4784: space before tab in indent.
++    	51: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:4785: space before tab in indent.
++    	66: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:4786: space before tab in indent.
++    	78: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:4787: space before tab in indent.
++    	90: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:4788: space before tab in indent.
++    	105: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:4789: space before tab in indent.
++    	111: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:4790: space before tab in indent.
++    	122: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:4791: space before tab in indent.
++    	125: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:4792: space before tab in indent.
++    	128: Trailing whitespace
+logs/megalinter/linters_logs/WARNING-EDITORCONFIG_EDITORCONFIG_CHECKER.log:4793: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:42: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3874: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:56: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3884: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:70: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3893: trailing whitespace.
++    28	
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3894: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:84: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3904: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:86: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3913: trailing whitespace.
++    36	
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3914: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:88: space before tab in indent.
-+    	Total lines of code: 418
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:89: space before tab in indent.
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3923: trailing whitespace.
++    42	
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3924: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3931: trailing whitespace.
++    51	        
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3934: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3944: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3954: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3963: trailing whitespace.
++    56	
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3964: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3971: trailing whitespace.
++    66	        
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3973: trailing whitespace.
++    68	
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3974: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3983: trailing whitespace.
++    81	
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3984: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:3994: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4004: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4013: trailing whitespace.
++    98	
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4014: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4024: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4034: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4044: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4053: trailing whitespace.
++    111	            
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4054: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4064: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4074: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4084: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4093: trailing whitespace.
++    117	
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4094: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4103: trailing whitespace.
++    122	        
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4104: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4111: trailing whitespace.
++    125	        
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4114: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4123: trailing whitespace.
++    128	        
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4124: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4134: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4144: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4154: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4164: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4174: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4183: trailing whitespace.
++    137	
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4184: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4186: trailing whitespace.
++    
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4188: space before tab in indent.
++    	Total lines of code: 105
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4189: space before tab in indent.
 +    	Total lines skipped (#nosec): 0
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:90: space before tab in indent.
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4190: space before tab in indent.
 +    	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:91: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4191: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:93: space before tab in indent.
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4193: space before tab in indent.
 +    	Total issues (by severity):
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:94: space before tab in indent.
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4194: space before tab in indent.
 +    		Undefined: 0
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:95: space before tab in indent.
-+    		Low: 5
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:96: space before tab in indent.
-+    		Medium: 1
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:97: space before tab in indent.
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4195: space before tab in indent.
++    		Low: 31
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4196: space before tab in indent.
++    		Medium: 0
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4197: space before tab in indent.
 +    		High: 0
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:98: space before tab in indent.
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4198: space before tab in indent.
 +    	Total issues (by confidence):
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:99: space before tab in indent.
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4199: space before tab in indent.
 +    		Undefined: 0
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:100: space before tab in indent.
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4200: space before tab in indent.
 +    		Low: 0
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:101: space before tab in indent.
-+    		Medium: 1
-logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:102: space before tab in indent.
-+    		High: 5
-logs/megalinter/linters_logs/WARNING-PYTHON_PYLINT.log:129: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4201: space before tab in indent.
++    		Medium: 0
+logs/megalinter/linters_logs/WARNING-PYTHON_BANDIT.log:4202: space before tab in indent.
++    		High: 31
+logs/megalinter/linters_logs/WARNING-PYTHON_ISORT.log:597: trailing whitespace.
++     
+logs/megalinter/linters_logs/WARNING-PYTHON_ISORT.log:618: trailing whitespace.
++     
+logs/megalinter/linters_logs/WARNING-PYTHON_ISORT.log:1072: trailing whitespace.
++     
+logs/megalinter/linters_logs/WARNING-PYTHON_PYLINT.log:1008: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-SPELL_LYCHEE.log:58: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-PYTHON_PYLINT.log:1874: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-SPELL_LYCHEE.log:89: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-SPELL_LYCHEE.log:124: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-SPELL_LYCHEE.log:132: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-SPELL_LYCHEE.log:483: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-SPELL_LYCHEE.log:370: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-SPELL_LYCHEE.log:1295: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-SPELL_LYCHEE.log:384: trailing whitespace.
+logs/megalinter/linters_logs/WARNING-SPELL_LYCHEE.log:1595: trailing whitespace.
 +    
-logs/megalinter/linters_logs/WARNING-SPELL_LYCHEE.log:1423: trailing whitespace.
-+    
-logs/megalinter/linters_logs/WARNING-SPELL_LYCHEE.log:1474: trailing whitespace.
-+    
-logs/megalinter/linters_logs/WARNING-SPELL_LYCHEE.log:1646: trailing whitespace.
-+    
-logs/megalinter/linters_logs/WARNING-SPELL_LYCHEE.log:1660: trailing whitespace.
-+    
-logs/megalinter/linters_logs/WARNING-SPELL_LYCHEE.log:1668: trailing whitespace.
-+    
-logs/megalinter/mega-linter.log:1104: trailing whitespace.
-+41 errors, 5 warnings, 0 informations 
-logs/megalinter/mega-linter.log:5034: trailing whitespace.
-+By Prisma Cloud | version: 3.2.413 
-logs/megalinter/mega-linter.log:5036: trailing whitespace.
-+Run pip3 install -U checkov to update 
-logs/megalinter/mega-linter.log:7286: trailing whitespace.
-+		13 | 
-logs/megalinter/mega-linter.log:21469: trailing whitespace.
-+Linting 0/1 files ┈┈┈┈┈┈┈┈┈┈ 00:00                                          Linting 1/1 files ━━━━━━━━━━ 00:00    Linting 1/1 files ━━━━━━━━━━ 00:00    
-logs/megalinter/mega-linter.log:21483: trailing whitespace.
-+Linting 0/1 files ┈┈┈┈┈┈┈┈┈┈ 00:00                                          Linting 1/1 files ━━━━━━━━━━ 00:00    Linting 1/1 files ━━━━━━━━━━ 00:00    
-logs/megalinter/sbom/syft.txt:2: trailing whitespace.
-+NAME                                 VERSION                                   TYPE                            
-logs/megalinter/sbom/syft.txt:3: trailing whitespace.
-+./.github/actions/setup-environment  UNKNOWN                                   github-action  (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:4: trailing whitespace.
-+Simple Launcher                      1.1.0.14                                  binary         (+11 duplicates)  
-logs/megalinter/sbom/syft.txt:5: trailing whitespace.
-+actions/cache                        v4                                        github-action  (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:6: trailing whitespace.
-+actions/checkout                     HIDDEN_BY_MEGALINTER github-action                    
-logs/megalinter/sbom/syft.txt:7: trailing whitespace.
-+actions/checkout                     v4                                        github-action  (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:8: trailing whitespace.
-+actions/configure-pages              v4                                        github-action                    
-logs/megalinter/sbom/syft.txt:9: trailing whitespace.
-+actions/deploy-pages                 v4                                        github-action                    
+logs/megalinter/mega-linter.log:711: trailing whitespace.
++                
+logs/megalinter/mega-linter.log:3260: trailing whitespace.
++67 errors, 1 warning, 0 informations 
+logs/megalinter/mega-linter.log:5022: trailing whitespace.
++23 errors, 2 warnings, 0 informations 
+logs/megalinter/mega-linter.log:12473: trailing whitespace.
++Did you mean: 
+logs/megalinter/mega-linter.log:12481: trailing whitespace.
++Did you mean: 
+logs/megalinter/mega-linter.log:12621: trailing whitespace.
++Did you mean: 
+logs/megalinter/mega-linter.log:12647: trailing whitespace.
++Did you mean: 
+logs/megalinter/mega-linter.log:12955: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:12958: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:12965: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:12974: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:12978: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:12981: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:12990: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:12994: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:12997: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13006: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13010: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:13013: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13022: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13031: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13040: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13049: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13056: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:13111: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:13123: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13130: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:13135: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13138: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13143: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13152: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13159: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13168: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13174: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13181: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13188: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13195: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13202: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13207: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13216: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13219: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13228: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13231: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13238: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:13243: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13254: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13259: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13268: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13271: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13280: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13284: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13290: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13294: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13303: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13306: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13315: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:13320: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13384: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:13395: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:13397: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:13402: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13418: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:13423: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13437: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:13442: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13452: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13461: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13470: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13479: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13486: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13491: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13497: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13506: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13515: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13520: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13523: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13532: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13536: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13540: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:13551: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13557: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13560: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13569: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13577: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13584: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:13589: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13596: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13600: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:13605: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13612: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13621: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13630: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13637: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13646: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13655: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13662: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13671: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13680: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13687: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13696: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13705: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13714: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13718: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13725: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13734: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13743: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13750: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13754: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13759: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13763: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13767: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13771: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13776: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13785: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13800: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13809: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13822: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:13836: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13845: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13851: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13856: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13862: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13868: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13877: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:13880: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:13884: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:13890: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:13896: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:13902: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:13909: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13918: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13922: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13926: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13935: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13944: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13953: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13962: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13969: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13973: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13979: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13983: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:13988: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:13997: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14004: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14008: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14014: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14018: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:14023: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14026: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14032: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14041: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14048: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:14053: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14060: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14069: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14072: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14078: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:14087: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14090: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14094: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14103: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14110: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14116: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14125: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14129: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14138: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14143: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14158: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14165: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14170: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14175: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14180: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14183: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14192: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14201: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14206: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14215: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14219: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14225: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14240: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14245: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14254: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14260: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14269: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14276: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14280: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14284: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:14289: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14291: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14441: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14450: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14459: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14468: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14475: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14484: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14493: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14502: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14511: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14516: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14521: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14525: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14534: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14538: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14542: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:14553: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14560: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14563: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14573: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14579: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14585: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14594: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14598: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:14603: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14610: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14613: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14623: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14630: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14636: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14645: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14649: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:14654: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14657: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14663: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14670: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14675: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14681: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14687: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14690: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14695: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14704: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14708: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:14713: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14715: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14726: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14729: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14738: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14741: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14750: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14753: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14762: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14766: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:14777: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14786: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14795: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14804: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14813: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14822: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14826: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14835: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14842: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14853: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14862: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14871: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14921: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14925: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14934: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14943: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14952: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14961: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14963: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14974: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14983: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14989: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:14993: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15006: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15017: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15030: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:15039: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:15042: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15049: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15054: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15057: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15066: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15070: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15079: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15084: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15092: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15097: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15105: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15115: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15121: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15124: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15134: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15137: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15144: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15149: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15158: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15168: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15175: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15184: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15193: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:15202: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:15205: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:15209: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:15213: trailing whitespace.
++-            
+logs/megalinter/mega-linter.log:15218: trailing whitespace.
++-            
+logs/megalinter/mega-linter.log:15227: trailing whitespace.
++-            
+logs/megalinter/mega-linter.log:15232: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:15244: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:15253: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:15256: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15268: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15274: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15292: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15296: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15303: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15312: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15321: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15328: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15333: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15340: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15347: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15356: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15360: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15365: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15368: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15371: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15378: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:15381: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:15394: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15403: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15412: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15415: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15420: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15429: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15434: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15440: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15444: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15450: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15459: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15462: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15478: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15483: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15486: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15495: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15540: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15549: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15558: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15563: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15572: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15579: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15588: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15592: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15596: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15605: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15609: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15621: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15627: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15633: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15637: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15641: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15645: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15650: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15656: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15672: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15678: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15681: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15687: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:15696: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15701: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15710: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15714: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15718: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15726: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15731: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15734: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15739: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15743: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15752: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15761: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15770: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15782: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15788: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15794: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15801: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15808: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15817: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15823: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15834: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15843: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15849: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15860: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15869: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15875: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15880: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15886: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15890: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15895: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15902: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15907: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15909: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15914: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15918: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:15923: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15929: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15938: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15947: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15950: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15954: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15958: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15962: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15966: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15970: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15974: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15978: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15982: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:15997: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16002: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16011: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16016: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16025: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16029: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16038: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16040: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16045: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16054: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16056: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16062: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16066: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16075: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16077: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16083: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16087: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16096: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16098: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16109: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16113: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16117: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16124: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16133: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16135: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16140: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16149: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16151: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16158: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16163: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16169: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16173: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16188: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16192: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16201: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16207: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16216: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16222: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16226: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16235: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16239: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16243: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16252: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16261: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16265: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16269: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:16280: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16282: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16293: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16295: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16304: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16310: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:16315: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:16320: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:16324: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:16337: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16343: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:16346: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16354: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16363: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16367: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16376: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16380: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16389: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16393: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16402: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16406: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16415: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16419: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16428: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16432: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16441: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16445: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16454: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16458: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16467: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16470: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16472: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16486: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16489: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16491: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16505: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16508: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16510: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16519: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16528: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16531: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16533: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16547: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16550: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16552: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16566: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16569: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16571: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16580: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16589: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16592: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16594: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16608: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16611: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16613: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16627: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16630: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16632: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16646: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16649: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16651: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16665: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16668: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16670: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16684: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16687: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16694: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16699: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16708: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16711: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16717: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16726: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16729: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16735: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16744: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16747: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16749: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16763: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16766: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16768: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16782: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16785: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16787: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16811: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16815: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16832: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:16845: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:16858: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:16871: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:16882: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16886: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16889: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16894: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16901: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:16907: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:16912: trailing whitespace.
++-        
+logs/megalinter/mega-linter.log:16922: trailing whitespace.
++-    
+logs/megalinter/mega-linter.log:24887: trailing whitespace.
++44	
+logs/megalinter/mega-linter.log:24897: trailing whitespace.
++48	
+logs/megalinter/mega-linter.log:24907: trailing whitespace.
++52	
+logs/megalinter/mega-linter.log:24917: trailing whitespace.
++56	
+logs/megalinter/mega-linter.log:24927: trailing whitespace.
++60	
+logs/megalinter/mega-linter.log:24937: trailing whitespace.
++64	
+logs/megalinter/mega-linter.log:24947: trailing whitespace.
++68	
+logs/megalinter/mega-linter.log:24957: trailing whitespace.
++72	
+logs/megalinter/mega-linter.log:24967: trailing whitespace.
++76	
+logs/megalinter/mega-linter.log:24977: trailing whitespace.
++84	
+logs/megalinter/mega-linter.log:24997: trailing whitespace.
++89	
+logs/megalinter/mega-linter.log:25007: trailing whitespace.
++93	
+logs/megalinter/mega-linter.log:25047: trailing whitespace.
++101	
+logs/megalinter/mega-linter.log:25057: trailing whitespace.
++105	
+logs/megalinter/mega-linter.log:25087: trailing whitespace.
++111	
+logs/megalinter/mega-linter.log:25107: trailing whitespace.
++116	
+logs/megalinter/mega-linter.log:25180: trailing whitespace.
++41	            
+logs/megalinter/mega-linter.log:25200: trailing whitespace.
++52	    
+logs/megalinter/mega-linter.log:25270: trailing whitespace.
++148	    
+logs/megalinter/mega-linter.log:25278: trailing whitespace.
++157	            
+logs/megalinter/mega-linter.log:25280: trailing whitespace.
++159	    
+logs/megalinter/mega-linter.log:25290: trailing whitespace.
++168	            
+logs/megalinter/mega-linter.log:25300: trailing whitespace.
++171	
+logs/megalinter/mega-linter.log:25310: trailing whitespace.
++189	    
+logs/megalinter/mega-linter.log:25320: trailing whitespace.
++206	    
+logs/megalinter/mega-linter.log:25330: trailing whitespace.
++225	
+logs/megalinter/mega-linter.log:25340: trailing whitespace.
++249	    
+logs/megalinter/mega-linter.log:25350: trailing whitespace.
++263	    
+logs/megalinter/mega-linter.log:25360: trailing whitespace.
++283	
+logs/megalinter/mega-linter.log:25370: trailing whitespace.
++292	        
+logs/megalinter/mega-linter.log:25384: trailing whitespace.
++310	            
+logs/megalinter/mega-linter.log:25398: trailing whitespace.
++310	            
+logs/megalinter/mega-linter.log:25451: trailing whitespace.
++29	    
+logs/megalinter/mega-linter.log:25471: trailing whitespace.
++34	    
+logs/megalinter/mega-linter.log:25531: trailing whitespace.
++43	    
+logs/megalinter/mega-linter.log:25581: trailing whitespace.
++51	
+logs/megalinter/mega-linter.log:25591: trailing whitespace.
++63	    
+logs/megalinter/mega-linter.log:25601: trailing whitespace.
++71	    
+logs/megalinter/mega-linter.log:25611: trailing whitespace.
++79	    
+logs/megalinter/mega-linter.log:25621: trailing whitespace.
++87	
+logs/megalinter/mega-linter.log:25631: trailing whitespace.
++98	    
+logs/megalinter/mega-linter.log:25651: trailing whitespace.
++106	    
+logs/megalinter/mega-linter.log:25671: trailing whitespace.
++114	    
+logs/megalinter/mega-linter.log:25691: trailing whitespace.
++122	
+logs/megalinter/mega-linter.log:25721: trailing whitespace.
++132	    
+logs/megalinter/mega-linter.log:25731: trailing whitespace.
++136	    
+logs/megalinter/mega-linter.log:25741: trailing whitespace.
++140	    
+logs/megalinter/mega-linter.log:25761: trailing whitespace.
++145	    
+logs/megalinter/mega-linter.log:25781: trailing whitespace.
++150	    
+logs/megalinter/mega-linter.log:25791: trailing whitespace.
++154	
+logs/megalinter/mega-linter.log:25799: trailing whitespace.
++173	        
+logs/megalinter/mega-linter.log:25831: trailing whitespace.
++178	    
+logs/megalinter/mega-linter.log:25839: trailing whitespace.
++185	        
+logs/megalinter/mega-linter.log:25851: trailing whitespace.
++188	    
+logs/megalinter/mega-linter.log:25859: trailing whitespace.
++194	        
+logs/megalinter/mega-linter.log:25881: trailing whitespace.
++198	    
+logs/megalinter/mega-linter.log:25889: trailing whitespace.
++211	        
+logs/megalinter/mega-linter.log:25931: trailing whitespace.
++217	    
+logs/megalinter/mega-linter.log:25939: trailing whitespace.
++229	        
+logs/megalinter/mega-linter.log:25961: trailing whitespace.
++233	    
+logs/megalinter/mega-linter.log:26004: trailing whitespace.
++35	
+logs/megalinter/mega-linter.log:26024: trailing whitespace.
++40	
+logs/megalinter/mega-linter.log:26034: trailing whitespace.
++44	
+logs/megalinter/mega-linter.log:26064: trailing whitespace.
++50	
+logs/megalinter/mega-linter.log:26074: trailing whitespace.
++54	
+logs/megalinter/mega-linter.log:26094: trailing whitespace.
++59	
+logs/megalinter/mega-linter.log:26114: trailing whitespace.
++64	
+logs/megalinter/mega-linter.log:26174: trailing whitespace.
++122	
+logs/megalinter/mega-linter.log:26184: trailing whitespace.
++141	
+logs/megalinter/mega-linter.log:26204: trailing whitespace.
++176	
+logs/megalinter/mega-linter.log:26212: trailing whitespace.
++180	        
+logs/megalinter/mega-linter.log:26255: trailing whitespace.
++38	
+logs/megalinter/mega-linter.log:26267: trailing whitespace.
++41	
+logs/megalinter/mega-linter.log:26275: trailing whitespace.
++47	
+logs/megalinter/mega-linter.log:26297: trailing whitespace.
++51	
+logs/megalinter/mega-linter.log:26305: trailing whitespace.
++58	
+logs/megalinter/mega-linter.log:26317: trailing whitespace.
++61	
+logs/megalinter/mega-linter.log:26325: trailing whitespace.
++68	
+logs/megalinter/mega-linter.log:26337: trailing whitespace.
++71	
+logs/megalinter/mega-linter.log:26347: trailing whitespace.
++95	
+logs/megalinter/mega-linter.log:26367: trailing whitespace.
++106	
+logs/megalinter/mega-linter.log:26375: trailing whitespace.
++137	
+logs/megalinter/mega-linter.log:26387: trailing whitespace.
++140	
+logs/megalinter/mega-linter.log:26395: trailing whitespace.
++148	
+logs/megalinter/mega-linter.log:26407: trailing whitespace.
++151	
+logs/megalinter/mega-linter.log:26415: trailing whitespace.
++160	
+logs/megalinter/mega-linter.log:26427: trailing whitespace.
++163	
+logs/megalinter/mega-linter.log:26435: trailing whitespace.
++172	
+logs/megalinter/mega-linter.log:26437: trailing whitespace.
++174	
+logs/megalinter/mega-linter.log:26445: trailing whitespace.
++178	
+logs/megalinter/mega-linter.log:26447: trailing whitespace.
++180	
+logs/megalinter/mega-linter.log:26455: trailing whitespace.
++185	
+logs/megalinter/mega-linter.log:26457: trailing whitespace.
++187	
+logs/megalinter/mega-linter.log:26465: trailing whitespace.
++192	
+logs/megalinter/mega-linter.log:26467: trailing whitespace.
++194	
+logs/megalinter/mega-linter.log:26475: trailing whitespace.
++199	
+logs/megalinter/mega-linter.log:26477: trailing whitespace.
++201	
+logs/megalinter/mega-linter.log:26485: trailing whitespace.
++206	
+logs/megalinter/mega-linter.log:26487: trailing whitespace.
++208	
+logs/megalinter/mega-linter.log:26527: trailing whitespace.
++222	
+logs/megalinter/mega-linter.log:26547: trailing whitespace.
++235	
+logs/megalinter/mega-linter.log:26557: trailing whitespace.
++243	
+logs/megalinter/mega-linter.log:26565: trailing whitespace.
++265	
+logs/megalinter/mega-linter.log:26587: trailing whitespace.
++269	
+logs/megalinter/mega-linter.log:26595: trailing whitespace.
++285	
+logs/megalinter/mega-linter.log:26607: trailing whitespace.
++289	
+logs/megalinter/mega-linter.log:26615: trailing whitespace.
++308	
+logs/megalinter/mega-linter.log:26627: trailing whitespace.
++311	
+logs/megalinter/mega-linter.log:26635: trailing whitespace.
++330	
+logs/megalinter/mega-linter.log:26647: trailing whitespace.
++333	
+logs/megalinter/mega-linter.log:26655: trailing whitespace.
++352	
+logs/megalinter/mega-linter.log:26667: trailing whitespace.
++355	
+logs/megalinter/mega-linter.log:26675: trailing whitespace.
++372	
+logs/megalinter/mega-linter.log:26677: trailing whitespace.
++374	
+logs/megalinter/mega-linter.log:26685: trailing whitespace.
++392	
+logs/megalinter/mega-linter.log:26738: trailing whitespace.
++67	        
+logs/megalinter/mega-linter.log:26745: trailing whitespace.
++74	        
+logs/megalinter/mega-linter.log:26753: trailing whitespace.
++67	        
+logs/megalinter/mega-linter.log:26760: trailing whitespace.
++74	        
+logs/megalinter/mega-linter.log:26768: trailing whitespace.
++74	        
+logs/megalinter/mega-linter.log:26800: trailing whitespace.
++79	
+logs/megalinter/mega-linter.log:26808: trailing whitespace.
++90	        
+logs/megalinter/mega-linter.log:26815: trailing whitespace.
++97	        
+logs/megalinter/mega-linter.log:26823: trailing whitespace.
++90	        
+logs/megalinter/mega-linter.log:26830: trailing whitespace.
++97	        
+logs/megalinter/mega-linter.log:26838: trailing whitespace.
++97	        
+logs/megalinter/mega-linter.log:26860: trailing whitespace.
++101	
+logs/megalinter/mega-linter.log:26868: trailing whitespace.
++113	        
+logs/megalinter/mega-linter.log:26875: trailing whitespace.
++120	        
+logs/megalinter/mega-linter.log:26883: trailing whitespace.
++113	        
+logs/megalinter/mega-linter.log:26890: trailing whitespace.
++120	        
+logs/megalinter/mega-linter.log:26898: trailing whitespace.
++120	        
+logs/megalinter/mega-linter.log:26910: trailing whitespace.
++123	
+logs/megalinter/mega-linter.log:26918: trailing whitespace.
++135	        
+logs/megalinter/mega-linter.log:26925: trailing whitespace.
++142	        
+logs/megalinter/mega-linter.log:26933: trailing whitespace.
++135	        
+logs/megalinter/mega-linter.log:26940: trailing whitespace.
++142	        
+logs/megalinter/mega-linter.log:26948: trailing whitespace.
++142	        
+logs/megalinter/mega-linter.log:26960: trailing whitespace.
++145	
+logs/megalinter/mega-linter.log:26968: trailing whitespace.
++153	        
+logs/megalinter/mega-linter.log:26975: trailing whitespace.
++160	        
+logs/megalinter/mega-linter.log:26983: trailing whitespace.
++153	        
+logs/megalinter/mega-linter.log:26990: trailing whitespace.
++160	        
+logs/megalinter/mega-linter.log:26998: trailing whitespace.
++160	        
+logs/megalinter/mega-linter.log:27030: trailing whitespace.
++165	
+logs/megalinter/mega-linter.log:27038: trailing whitespace.
++174	        
+logs/megalinter/mega-linter.log:27045: trailing whitespace.
++181	        
+logs/megalinter/mega-linter.log:27053: trailing whitespace.
++174	        
+logs/megalinter/mega-linter.log:27060: trailing whitespace.
++181	        
+logs/megalinter/mega-linter.log:27068: trailing whitespace.
++181	        
+logs/megalinter/mega-linter.log:27110: trailing whitespace.
++187	        
+logs/megalinter/mega-linter.log:27130: trailing whitespace.
++193	
+logs/megalinter/mega-linter.log:27138: trailing whitespace.
++204	        
+logs/megalinter/mega-linter.log:27145: trailing whitespace.
++211	        
+logs/megalinter/mega-linter.log:27153: trailing whitespace.
++204	        
+logs/megalinter/mega-linter.log:27160: trailing whitespace.
++211	        
+logs/megalinter/mega-linter.log:27168: trailing whitespace.
++211	        
+logs/megalinter/mega-linter.log:27180: trailing whitespace.
++214	
+logs/megalinter/mega-linter.log:27230: trailing whitespace.
++238	
+logs/megalinter/mega-linter.log:27292: trailing whitespace.
++28	
+logs/megalinter/mega-linter.log:27314: trailing whitespace.
++32	
+logs/megalinter/mega-linter.log:27322: trailing whitespace.
++37	
+logs/megalinter/mega-linter.log:27334: trailing whitespace.
++40	
+logs/megalinter/mega-linter.log:27342: trailing whitespace.
++55	
+logs/megalinter/mega-linter.log:27374: trailing whitespace.
++60	
+logs/megalinter/mega-linter.log:27382: trailing whitespace.
++75	
+logs/megalinter/mega-linter.log:27394: trailing whitespace.
++78	
+logs/megalinter/mega-linter.log:27402: trailing whitespace.
++101	
+logs/megalinter/mega-linter.log:27424: trailing whitespace.
++105	
+logs/megalinter/mega-linter.log:27432: trailing whitespace.
++120	
+logs/megalinter/mega-linter.log:27444: trailing whitespace.
++123	
+logs/megalinter/mega-linter.log:27452: trailing whitespace.
++138	
+logs/megalinter/mega-linter.log:27504: trailing whitespace.
++145	
+logs/megalinter/mega-linter.log:27512: trailing whitespace.
++155	
+logs/megalinter/mega-linter.log:27554: trailing whitespace.
++161	
+logs/megalinter/mega-linter.log:27562: trailing whitespace.
++165	
+logs/megalinter/mega-linter.log:27644: trailing whitespace.
++175	
+logs/megalinter/mega-linter.log:27652: trailing whitespace.
++185	
+logs/megalinter/mega-linter.log:27654: trailing whitespace.
++187	
+logs/megalinter/mega-linter.log:27684: trailing whitespace.
++193	
+logs/megalinter/mega-linter.log:27727: trailing whitespace.
++58	        
+logs/megalinter/mega-linter.log:27757: trailing whitespace.
++64	
+logs/megalinter/mega-linter.log:27767: trailing whitespace.
++82	            
+logs/megalinter/mega-linter.log:27787: trailing whitespace.
++87	
+logs/megalinter/mega-linter.log:27807: trailing whitespace.
++101	
+logs/megalinter/mega-linter.log:27827: trailing whitespace.
++115	
+logs/megalinter/mega-linter.log:27835: trailing whitespace.
++125	        
+logs/megalinter/mega-linter.log:27837: trailing whitespace.
++127	
+logs/megalinter/mega-linter.log:27847: trailing whitespace.
++146	        
+logs/megalinter/mega-linter.log:27861: trailing whitespace.
++156	        
+logs/megalinter/mega-linter.log:27869: trailing whitespace.
++156	        
+logs/megalinter/mega-linter.log:27881: trailing whitespace.
++159	        
+logs/megalinter/mega-linter.log:27901: trailing whitespace.
++164	
+logs/megalinter/mega-linter.log:27911: trailing whitespace.
++168	        
+logs/megalinter/mega-linter.log:27925: trailing whitespace.
++177	        
+logs/megalinter/mega-linter.log:27933: trailing whitespace.
++177	        
+logs/megalinter/mega-linter.log:27945: trailing whitespace.
++180	
+logs/megalinter/mega-linter.log:27955: trailing whitespace.
++184	        
+logs/megalinter/mega-linter.log:27969: trailing whitespace.
++194	        
+logs/megalinter/mega-linter.log:27977: trailing whitespace.
++194	        
+logs/megalinter/mega-linter.log:27979: trailing whitespace.
++196	
+logs/megalinter/mega-linter.log:28011: trailing whitespace.
++52	        
+logs/megalinter/mega-linter.log:28083: trailing whitespace.
++61	    
+logs/megalinter/mega-linter.log:28091: trailing whitespace.
++81	        
+logs/megalinter/mega-linter.log:28123: trailing whitespace.
++86	
+logs/megalinter/mega-linter.log:28131: trailing whitespace.
++98	        
+logs/megalinter/mega-linter.log:28203: trailing whitespace.
++107	    
+logs/megalinter/mega-linter.log:28211: trailing whitespace.
++115	        
+logs/megalinter/mega-linter.log:28283: trailing whitespace.
++124	    
+logs/megalinter/mega-linter.log:28293: trailing whitespace.
++130	        
+logs/megalinter/mega-linter.log:28303: trailing whitespace.
++134	        
+logs/megalinter/mega-linter.log:28313: trailing whitespace.
++138	    
+logs/megalinter/mega-linter.log:28321: trailing whitespace.
++147	        
+logs/megalinter/mega-linter.log:28343: trailing whitespace.
++151	    
+logs/megalinter/mega-linter.log:28353: trailing whitespace.
++157	        
+logs/megalinter/mega-linter.log:28363: trailing whitespace.
++163	    
+logs/megalinter/mega-linter.log:28383: trailing whitespace.
++174	        
+logs/megalinter/mega-linter.log:28413: trailing whitespace.
++184	    
+logs/megalinter/mega-linter.log:28423: trailing whitespace.
++193	
+logs/megalinter/mega-linter.log:28431: trailing whitespace.
++202	        
+logs/megalinter/mega-linter.log:28433: trailing whitespace.
++204	    
+logs/megalinter/mega-linter.log:28441: trailing whitespace.
++209	        
+logs/megalinter/mega-linter.log:28443: trailing whitespace.
++211	    
+logs/megalinter/mega-linter.log:28451: trailing whitespace.
++215	        
+logs/megalinter/mega-linter.log:28463: trailing whitespace.
++218	
+logs/megalinter/mega-linter.log:28473: trailing whitespace.
++234	
+logs/megalinter/mega-linter.log:28483: trailing whitespace.
++243	    
+logs/megalinter/mega-linter.log:28491: trailing whitespace.
++252	        
+logs/megalinter/mega-linter.log:28566: trailing whitespace.
++28	
+logs/megalinter/mega-linter.log:28586: trailing whitespace.
++36	
+logs/megalinter/mega-linter.log:28596: trailing whitespace.
++42	
+logs/megalinter/mega-linter.log:28604: trailing whitespace.
++51	        
+logs/megalinter/mega-linter.log:28636: trailing whitespace.
++56	
+logs/megalinter/mega-linter.log:28644: trailing whitespace.
++66	        
+logs/megalinter/mega-linter.log:28646: trailing whitespace.
++68	
+logs/megalinter/mega-linter.log:28656: trailing whitespace.
++81	
+logs/megalinter/mega-linter.log:28686: trailing whitespace.
++98	
+logs/megalinter/mega-linter.log:28726: trailing whitespace.
++111	            
+logs/megalinter/mega-linter.log:28766: trailing whitespace.
++117	
+logs/megalinter/mega-linter.log:28776: trailing whitespace.
++122	        
+logs/megalinter/mega-linter.log:28784: trailing whitespace.
++125	        
+logs/megalinter/mega-linter.log:28796: trailing whitespace.
++128	        
+logs/megalinter/mega-linter.log:28856: trailing whitespace.
++137	
+logs/megalinter/mega-linter.log:28890: trailing whitespace.
++40	
+logs/megalinter/mega-linter.log:28920: trailing whitespace.
++46	
+logs/megalinter/mega-linter.log:28930: trailing whitespace.
++51	
+logs/megalinter/mega-linter.log:28940: trailing whitespace.
++116	
+logs/megalinter/mega-linter.log:28960: trailing whitespace.
++143	
+logs/megalinter/mega-linter.log:28970: trailing whitespace.
++190	
+logs/megalinter/mega-linter.log:28980: trailing whitespace.
++237	
+logs/megalinter/mega-linter.log:28990: trailing whitespace.
++291	
+logs/megalinter/mega-linter.log:29010: trailing whitespace.
++336	
+logs/megalinter/mega-linter.log:29040: trailing whitespace.
++348	
+logs/megalinter/mega-linter.log:29048: trailing whitespace.
++370	        
+logs/megalinter/mega-linter.log:29050: trailing whitespace.
++372	
+logs/megalinter/mega-linter.log:29103: trailing whitespace.
++20	
+logs/megalinter/mega-linter.log:29113: trailing whitespace.
++28	
+logs/megalinter/mega-linter.log:29123: trailing whitespace.
++36	
+logs/megalinter/mega-linter.log:29133: trailing whitespace.
++44	
+logs/megalinter/mega-linter.log:29143: trailing whitespace.
++52	
+logs/megalinter/mega-linter.log:29153: trailing whitespace.
++60	
+logs/megalinter/mega-linter.log:29163: trailing whitespace.
++68	
+logs/megalinter/mega-linter.log:29173: trailing whitespace.
++76	
+logs/megalinter/mega-linter.log:29183: trailing whitespace.
++84	
+logs/megalinter/mega-linter.log:29193: trailing whitespace.
++92	
+logs/megalinter/mega-linter.log:29203: trailing whitespace.
++100	
+logs/megalinter/mega-linter.log:29213: trailing whitespace.
++105	
+logs/megalinter/mega-linter.log:29223: trailing whitespace.
++110	
+logs/megalinter/mega-linter.log:29233: trailing whitespace.
++118	
+logs/megalinter/mega-linter.log:29243: trailing whitespace.
++126	
+logs/megalinter/mega-linter.log:29253: trailing whitespace.
++137	
+logs/megalinter/mega-linter.log:29263: trailing whitespace.
++145	
+logs/megalinter/mega-linter.log:29273: trailing whitespace.
++153	
+logs/megalinter/mega-linter.log:29283: trailing whitespace.
++161	
+logs/megalinter/mega-linter.log:29293: trailing whitespace.
++169	
+logs/megalinter/mega-linter.log:29303: trailing whitespace.
++177	
+logs/megalinter/mega-linter.log:29313: trailing whitespace.
++185	
+logs/megalinter/mega-linter.log:29323: trailing whitespace.
++193	
+logs/megalinter/mega-linter.log:29333: trailing whitespace.
++201	
+logs/megalinter/mega-linter.log:29343: trailing whitespace.
++206	
+logs/megalinter/mega-linter.log:29353: trailing whitespace.
++211	
+logs/megalinter/mega-linter.log:29363: trailing whitespace.
++219	
+logs/megalinter/mega-linter.log:29406: trailing whitespace.
++30	
+logs/megalinter/mega-linter.log:29416: trailing whitespace.
++34	
+logs/megalinter/mega-linter.log:29426: trailing whitespace.
++38	
+logs/megalinter/mega-linter.log:29436: trailing whitespace.
++42	
+logs/megalinter/mega-linter.log:29446: trailing whitespace.
++46	
+logs/megalinter/mega-linter.log:29456: trailing whitespace.
++52	
+logs/megalinter/mega-linter.log:29466: trailing whitespace.
++56	
+logs/megalinter/mega-linter.log:29476: trailing whitespace.
++60	
+logs/megalinter/mega-linter.log:29486: trailing whitespace.
++64	
+logs/megalinter/mega-linter.log:29496: trailing whitespace.
++68	
+logs/megalinter/mega-linter.log:29506: trailing whitespace.
++77	
+logs/megalinter/mega-linter.log:29516: trailing whitespace.
++82	
+logs/megalinter/mega-linter.log:29526: trailing whitespace.
++87	
+logs/megalinter/mega-linter.log:29536: trailing whitespace.
++92	
+logs/megalinter/mega-linter.log:29546: trailing whitespace.
++97	
+logs/megalinter/mega-linter.log:29556: trailing whitespace.
++102	
+logs/megalinter/mega-linter.log:29566: trailing whitespace.
++107	
+logs/megalinter/mega-linter.log:29576: trailing whitespace.
++112	
+logs/megalinter/mega-linter.log:29586: trailing whitespace.
++117	
+logs/megalinter/mega-linter.log:29596: trailing whitespace.
++122	
+logs/megalinter/mega-linter.log:29606: trailing whitespace.
++127	
+logs/megalinter/mega-linter.log:29616: trailing whitespace.
++135	
+logs/megalinter/mega-linter.log:29626: trailing whitespace.
++139	
+logs/megalinter/mega-linter.log:29636: trailing whitespace.
++143	
+logs/megalinter/mega-linter.log:29646: trailing whitespace.
++147	
+logs/megalinter/mega-linter.log:29656: trailing whitespace.
++151	
+logs/megalinter/mega-linter.log:29666: trailing whitespace.
++155	
+logs/megalinter/mega-linter.log:29676: trailing whitespace.
++159	
+logs/megalinter/mega-linter.log:29696: trailing whitespace.
++171	
+logs/megalinter/mega-linter.log:29706: trailing whitespace.
++177	
+logs/megalinter/mega-linter.log:29716: trailing whitespace.
++182	
+logs/megalinter/mega-linter.log:29746: trailing whitespace.
++191	
+logs/megalinter/mega-linter.log:29756: trailing whitespace.
++198	
+logs/megalinter/mega-linter.log:29776: trailing whitespace.
++206	
+logs/megalinter/mega-linter.log:29786: trailing whitespace.
++212	
+logs/megalinter/mega-linter.log:29796: trailing whitespace.
++219	
+logs/megalinter/mega-linter.log:29816: trailing whitespace.
++228	
+logs/megalinter/mega-linter.log:29826: trailing whitespace.
++236	
+logs/megalinter/mega-linter.log:29836: trailing whitespace.
++236	
+logs/megalinter/mega-linter.log:34208: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:34229: trailing whitespace.
++ 
+logs/megalinter/mega-linter.log:34715: trailing whitespace.
++ 
 logs/megalinter/sbom/syft.txt:10: trailing whitespace.
-+actions/github-script                v7                                        github-action  (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:11: trailing whitespace.
-+actions/setup-node                   v4                                        github-action                    
-logs/megalinter/sbom/syft.txt:12: trailing whitespace.
-+actions/setup-python                 HIDDEN_BY_MEGALINTER github-action                    
-logs/megalinter/sbom/syft.txt:13: trailing whitespace.
-+actions/setup-python                 v5                                        github-action  (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:14: trailing whitespace.
-+actions/upload-artifact              v4                                        github-action                    
-logs/megalinter/sbom/syft.txt:15: trailing whitespace.
-+actions/upload-pages-artifact        v3                                        github-action                    
-logs/megalinter/sbom/syft.txt:16: trailing whitespace.
-+asynckit                             0.4.0                                     npm                              
-logs/megalinter/sbom/syft.txt:17: trailing whitespace.
-+attrs                                25.4.0                                    python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:18: trailing whitespace.
-+axios                                1.13.2                                    npm                              
-logs/megalinter/sbom/syft.txt:19: trailing whitespace.
-+black                                24.10.0                                   python         (+2 duplicates)   
-logs/megalinter/sbom/syft.txt:20: trailing whitespace.
-+call-bind-apply-helpers              1.0.2                                     npm                              
-logs/megalinter/sbom/syft.txt:21: trailing whitespace.
-+certifi                              2025.11.12                                python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:22: trailing whitespace.
-+cfgv                                 3.5.0                                     python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:23: trailing whitespace.
-+charset-normalizer                   3.4.4                                     python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:24: trailing whitespace.
-+check-jsonschema                     0.30.0                                    python         (+2 duplicates)   
-logs/megalinter/sbom/syft.txt:25: trailing whitespace.
-+click                                8.3.1                                     python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:26: trailing whitespace.
-+colorama                             0.4.6                                     python                           
-logs/megalinter/sbom/syft.txt:27: trailing whitespace.
-+combined-stream                      1.0.8                                     npm                              
-logs/megalinter/sbom/syft.txt:28: trailing whitespace.
-+dashboard-app                        0.0.0                                     npm                              
-logs/megalinter/sbom/syft.txt:29: trailing whitespace.
-+delayed-stream                       1.0.0                                     npm                              
-logs/megalinter/sbom/syft.txt:30: trailing whitespace.
-+distlib                              0.4.0                                     python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:31: trailing whitespace.
-+dunder-proto                         1.0.1                                     npm                              
-logs/megalinter/sbom/syft.txt:32: trailing whitespace.
-+es-define-property                   1.0.1                                     npm                              
-logs/megalinter/sbom/syft.txt:33: trailing whitespace.
-+es-errors                            1.3.0                                     npm                              
-logs/megalinter/sbom/syft.txt:34: trailing whitespace.
-+es-object-atoms                      1.1.1                                     npm                              
-logs/megalinter/sbom/syft.txt:35: trailing whitespace.
-+es-set-tostringtag                   2.1.0                                     npm                              
-logs/megalinter/sbom/syft.txt:36: trailing whitespace.
-+filelock                             3.20.0                                    python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:37: trailing whitespace.
-+flake8                               7.1.1                                     python         (+2 duplicates)   
-logs/megalinter/sbom/syft.txt:38: trailing whitespace.
-+follow-redirects                     1.15.11                                   npm                              
-logs/megalinter/sbom/syft.txt:39: trailing whitespace.
-+form-data                            4.0.5                                     npm                              
-logs/megalinter/sbom/syft.txt:40: trailing whitespace.
-+function-bind                        1.1.2                                     npm                              
-logs/megalinter/sbom/syft.txt:41: trailing whitespace.
-+get-intrinsic                        1.3.0                                     npm                              
-logs/megalinter/sbom/syft.txt:42: trailing whitespace.
-+get-proto                            1.0.1                                     npm                              
-logs/megalinter/sbom/syft.txt:43: trailing whitespace.
-+github.com/evanw/esbuild             v0.0.0-20251101233416-208f539945b1        go-module      (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:44: trailing whitespace.
-+golang.org/x/sys                     v0.0.0-20220715151400-c0bba94af5f8        go-module      (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:45: trailing whitespace.
-+gopd                                 1.2.0                                     npm                              
-logs/megalinter/sbom/syft.txt:46: trailing whitespace.
-+has-symbols                          1.1.0                                     npm                              
-logs/megalinter/sbom/syft.txt:47: trailing whitespace.
-+has-tostringtag                      1.0.2                                     npm                              
-logs/megalinter/sbom/syft.txt:48: trailing whitespace.
-+hasown                               2.0.2                                     npm                              
-logs/megalinter/sbom/syft.txt:49: trailing whitespace.
-+identify                             2.6.15                                    python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:50: trailing whitespace.
-+idna                                 3.11                                      python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:51: trailing whitespace.
-+iniconfig                            2.3.0                                     python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:52: trailing whitespace.
-+isort                                5.13.2                                    python         (+2 duplicates)   
-logs/megalinter/sbom/syft.txt:53: trailing whitespace.
-+jsonschema                           4.23.0                                    python         (+2 duplicates)   
-logs/megalinter/sbom/syft.txt:54: trailing whitespace.
-+jsonschema-specifications            2025.9.1                                  python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:55: trailing whitespace.
-+math-intrinsics                      1.1.0                                     npm                              
-logs/megalinter/sbom/syft.txt:56: trailing whitespace.
-+mccabe                               0.7.0                                     python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:57: trailing whitespace.
-+mime-db                              1.52.0                                    npm                              
-logs/megalinter/sbom/syft.txt:58: trailing whitespace.
-+mime-types                           2.1.35                                    npm                              
-logs/megalinter/sbom/syft.txt:59: trailing whitespace.
-+mypy                                 1.13.0                                    python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:60: trailing whitespace.
-+mypy-extensions                      1.1.0                                     python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:61: trailing whitespace.
-+nodeenv                              1.9.1                                     python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:62: trailing whitespace.
-+oxsecurity/megalinter                v8                                        github-action                    
-logs/megalinter/sbom/syft.txt:63: trailing whitespace.
-+packaging                            25.0                                      python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:64: trailing whitespace.
-+pathspec                             0.12.1                                    python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:65: trailing whitespace.
-+pillow                               10.4.0                                    python         (+2 duplicates)   
-logs/megalinter/sbom/syft.txt:66: trailing whitespace.
-+pip                                  25.3                                      python                           
-logs/megalinter/sbom/syft.txt:67: trailing whitespace.
-+platformdirs                         4.5.0                                     python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:68: trailing whitespace.
-+pluggy                               1.6.0                                     python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:69: trailing whitespace.
-+pre-commit                           4.0.1                                     python         (+2 duplicates)   
-logs/megalinter/sbom/syft.txt:70: trailing whitespace.
-+pre-commit-package                   dev-1                                     lua-rocks                        
-logs/megalinter/sbom/syft.txt:71: trailing whitespace.
-+pre_commit_placeholder_package       0.0.0                                     gem                              
-logs/megalinter/sbom/syft.txt:72: trailing whitespace.
-+proxy-from-env                       1.1.0                                     npm                              
-logs/megalinter/sbom/syft.txt:73: trailing whitespace.
-+pycodestyle                          2.12.1                                    python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:74: trailing whitespace.
-+pyflakes                             3.2.0                                     python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:75: trailing whitespace.
-+pytest                               8.3.3                                     python         (+2 duplicates)   
-logs/megalinter/sbom/syft.txt:76: trailing whitespace.
-+pyyaml                               6.0.3                                     python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:77: trailing whitespace.
-+react                                19.2.1                                    npm                              
-logs/megalinter/sbom/syft.txt:78: trailing whitespace.
-+react-dom                            19.2.1                                    npm                              
-logs/megalinter/sbom/syft.txt:79: trailing whitespace.
-+referencing                          0.37.0                                    python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:80: trailing whitespace.
-+regress                              2025.10.1                                 python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:81: trailing whitespace.
-+requests                             2.32.5                                    python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:82: trailing whitespace.
-+rpds-py                              0.30.0                                    python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:83: trailing whitespace.
-+ruamel-yaml                          0.18.6                                    python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:84: trailing whitespace.
-+ruamel-yaml-clib                     0.2.15                                    python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:85: trailing whitespace.
-+scheduler                            0.27.0                                    npm                              
-logs/megalinter/sbom/syft.txt:86: trailing whitespace.
-+softprops/action-gh-release          v1                                        github-action                    
-logs/megalinter/sbom/syft.txt:87: trailing whitespace.
-+stdlib                               go1.23.12                                 go-module      (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:88: trailing whitespace.
-+typing-extensions                    4.15.0                                    python         (+1 duplicate)    
-logs/megalinter/sbom/syft.txt:89: trailing whitespace.
-+urllib3                              2.5.0                                     python         (+1 duplicate)    
++actions/first-interaction            v1                                        github-action                    
 

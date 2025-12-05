@@ -56,6 +56,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/json_jsonlint/
 ✅ [SUCCESS] data/mock/oura-metrics.json
 ✅ [SUCCESS] data/mock/soundcloud-metadata.json
 ✅ [SUCCESS] data/mock/weather.json
+✅ [SUCCESS] data/quotes/quotes.json
 ✅ [SUCCESS] data/snapshots/daily/2025/12/2025-12-03.json
 ✅ [SUCCESS] data/snapshots/monthly/2025-12.json
 ✅ [SUCCESS] data/snapshots/weekly/2025-W49.json
@@ -65,6 +66,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/json_jsonlint/
 ✅ [SUCCESS] oura/health_snapshot.json
 ✅ [SUCCESS] oura/metrics.json
 ✅ [SUCCESS] oura/mood.json
+✅ [SUCCESS] quotes/quote.json
 ✅ [SUCCESS] schemas/developer-stats.schema.json
 ✅ [SUCCESS] schemas/health-snapshot.schema.json
 ✅ [SUCCESS] schemas/oura-metrics.schema.json

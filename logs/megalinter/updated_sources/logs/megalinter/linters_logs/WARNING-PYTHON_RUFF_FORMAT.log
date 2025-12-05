@@ -67,6 +67,10 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_ruff_format/
     1 file would be reformatted
 
 ✅ [SUCCESS] scripts/generate_megalinter_summary.py
+❌ [ERROR] scripts/generate_quote_card.py
+    Would reformat: scripts/generate_quote_card.py
+    1 file would be reformatted
+
 ❌ [ERROR] scripts/incremental-generate.py
     Would reformat: scripts/incremental-generate.py
     1 file would be reformatted
@@ -160,6 +164,10 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_ruff_format/
 
 ❌ [ERROR] tests/test_metrics.py
     Would reformat: tests/test_metrics.py
+    1 file would be reformatted
+
+❌ [ERROR] tests/test_quote_card.py
+    Would reformat: tests/test_quote_card.py
     1 file would be reformatted
 
 ❌ [ERROR] tests/test_theme_validation.py
