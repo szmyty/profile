@@ -89,9 +89,12 @@ class TestQuoteCard:
         )
         
         # Check that special characters are escaped
-        assert "&quot;" in svg or "&#39;" in svg  # Quote marks
-        assert "&lt;" in svg  # Less than
-        assert "&amp;" in svg  # Ampersand
+        # Double quotes should be escaped
+        assert "&quot;" in svg or "&#34;" in svg
+        # Less than should be escaped
+        assert "&lt;" in svg
+        # Ampersand should be escaped
+        assert "&amp;" in svg
 
     def test_quote_json_structure(self):
         """Test that a valid quote JSON has required fields."""

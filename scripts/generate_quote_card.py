@@ -24,7 +24,12 @@ from lib.utils import (
 )
 
 
-def wrap_text(text: str, max_chars_per_line: int = 55) -> list[str]:
+# Constants for text layout
+MAX_CHARS_PER_LINE = 55  # Maximum characters per line for quote text
+AUTHOR_METADATA_SPACE = 60  # Vertical space reserved for author and metadata
+
+
+def wrap_text(text: str, max_chars_per_line: int = MAX_CHARS_PER_LINE) -> list[str]:
     """
     Wrap text into lines based on maximum characters per line.
     Tries to break at word boundaries.
@@ -134,12 +139,12 @@ def generate_svg(
     category_escaped = escape_xml(category) if category else ""
     
     # Wrap quote text to fit card
-    text_lines = wrap_text(text_escaped, max_chars_per_line=55)
+    text_lines = wrap_text(text_escaped, max_chars_per_line=MAX_CHARS_PER_LINE)
     
     # Calculate vertical positioning for centered text
     line_height = 18
     total_text_height = len(text_lines) * line_height
-    start_y = (card_height - total_text_height - 60) // 2  # 60 for author and metadata space
+    start_y = (card_height - total_text_height - AUTHOR_METADATA_SPACE) // 2
     
     # Build text elements
     text_elements = []
