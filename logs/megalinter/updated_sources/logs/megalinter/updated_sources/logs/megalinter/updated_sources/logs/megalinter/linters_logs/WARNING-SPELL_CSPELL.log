@@ -2,8 +2,18 @@ Results of cspell linter (version 9.1.1)
 See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 -----------------------------------------------
 
+❌ [ERROR] .actrc
+    1/1 .actrc 1460.66ms X
+    .actrc:3:18      - Unknown word (catthehacker) -- -P ubuntu-latest=catthehacker/ubuntu:act-latest
+    	 Suggestions: []
+    .actrc:4:17      - Unknown word (catthehacker) -- -P ubuntu-22.04=catthehacker/ubuntu:act-22.04
+    	 Suggestions: []
+    .actrc:5:17      - Unknown word (catthehacker) -- -P ubuntu-20.04=catthehacker/ubuntu:act-20.04
+    	 Suggestions: []
+    CSpell: Files checked: 1, Issues found: 3 in 1 file.
+
 ❌ [ERROR] .czrc
-    1/1 .czrc 1715.48ms X
+    1/1 .czrc 1793.14ms X
     .czrc:263:31    - Unknown word (bento)      -- "code": ":bento:",
     	 Suggestions: [bent, bents, benito, benton, Benito]
     .czrc:450:51    - Unknown word (healthcheck) -- description": "Add or update healthcheck.",
@@ -11,37 +21,43 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] .devcontainer/devcontainer.json
-    1/1 .devcontainer/devcontainer.json 1932.58ms X
+    1/1 .devcontainer/devcontainer.json 2273.34ms X
     .devcontainer/devcontainer.json:3:31      - Unknown word (devcontainers) -- "mcr.microsoft.com/devcontainers/python:3.11",
     	 Suggestions: [devcontainer]
     .devcontainer/devcontainer.json:6:14      - Unknown word (devcontainers) -- "ghcr.io/devcontainers/features/node:1": {
     	 Suggestions: [devcontainer]
     .devcontainer/devcontainer.json:9:14      - Unknown word (devcontainers) -- "ghcr.io/devcontainers/features/github-cli
     	 Suggestions: [devcontainer]
-    .devcontainer/devcontainer.json:18:27     - Unknown word (pylance)       -- "ms-python.vscode-pylance",
+    .devcontainer/devcontainer.json:12:14     - Unknown word (devcontainers) -- "ghcr.io/devcontainers/features/docker-in-docker
+    	 Suggestions: [devcontainer]
+    .devcontainer/devcontainer.json:14:8      - Unknown word (moby)          -- "moby": true,
+    	 Suggestions: [mobs, mobx, moly, mony, mopy]
+    .devcontainer/devcontainer.json:23:27     - Unknown word (pylance)       -- "ms-python.vscode-pylance",
     	 Suggestions: [place, plane, palace, plaice, planck]
-    .devcontainer/devcontainer.json:20:20     - Unknown word (isort)         -- "ms-python.isort",
+    .devcontainer/devcontainer.json:25:20     - Unknown word (isort)         -- "ms-python.isort",
     	 Suggestions: [isqrt, iSqrt, Isqrt, ISqrt, sort]
-    .devcontainer/devcontainer.json:24:10     - Unknown word (timonwong)     -- "timonwong.shellcheck"
+    .devcontainer/devcontainer.json:29:10     - Unknown word (timonwong)     -- "timonwong.shellcheck"
     	 Suggestions: []
-    .devcontainer/devcontainer.json:24:20     - Unknown word (shellcheck)    -- "timonwong.shellcheck"
+    .devcontainer/devcontainer.json:29:20     - Unknown word (shellcheck)    -- "timonwong.shellcheck"
     	 Suggestions: [spellcheck, spellchecks, shellcheckrc, shellack, shellback]
-    CSpell: Files checked: 1, Issues found: 7 in 1 file.
+    CSpell: Files checked: 1, Issues found: 9 in 1 file.
 
 ❌ [ERROR] .devcontainer/postCreate.sh
-    1/1 .devcontainer/postCreate.sh 1570.33ms X
-    .devcontainer/postCreate.sh:34:32     - Unknown word (pytest)     -- Run tests: python -m pytest tests/ -v"
+    1/1 .devcontainer/postCreate.sh 1565.71ms X
+    .devcontainer/postCreate.sh:35:10     - Unknown word (actrc)      -- # Note: .actrc and .secrets.example
+    	 Suggestions: [acer, acre, actg, acth, acts]
+    .devcontainer/postCreate.sh:46:32     - Unknown word (pytest)     -- Run tests: python -m pytest tests/ -v"
     	 Suggestions: [pest, pates, prest, pyres, pyxes]
-    CSpell: Files checked: 1, Issues found: 1 in 1 file.
+    CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] .editorconfig
-    1/1 .editorconfig 1491.16ms X
+    1/1 .editorconfig 1586.55ms X
     .editorconfig:270:2     - Unknown word (Caddyfile)  -- [Caddyfile]
     	 Suggestions: [codefile, Codefile, codeFile, CodeFile, Caddie]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] .gitattributes
-    1/1 .gitattributes 1871.98ms X
+    1/1 .gitattributes 2047.81ms X
     .gitattributes:73:25     - Unknown word (webp)       -- png,jpg,jpeg,gif,ico,webp,svgz} binary
     	 Suggestions: [webb, webm, webs, weep, Webb]
     .gitattributes:73:30     - Unknown word (svgz)       -- jpg,jpeg,gif,ico,webp,svgz} binary
@@ -57,13 +73,13 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 6 in 1 file.
 
 ❌ [ERROR] .github/CODEOWNERS
-    1/1 .github/CODEOWNERS 1616.57ms X
+    1/1 .github/CODEOWNERS 1565.38ms X
     .github/CODEOWNERS:1:4       - Unknown word (szmyty)     -- * @szmyty
     	 Suggestions: [stymy, smit, smtp, smut, stmt]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] .github/FUNDING.yml
-    1/1 .github/FUNDING.yml 1498.92ms X
+    1/1 .github/FUNDING.yml 1799.67ms X
     .github/FUNDING.yml:1:9       - Unknown word (szmyty)     -- github: szmyty
     	 Suggestions: [stymy, smit, smtp, smut, stmt]
     .github/FUNDING.yml:2:8       - Unknown word (szmyty)     -- ko_fi: szmyty
@@ -79,7 +95,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] .github/GOVERNANCE.md
 ✅ [SUCCESS] .github/actionlint.yaml
 ❌ [ERROR] .github/actions/pip-install/README.md
-    1/1 .github/actions/pip-install/README.md 1872.76ms X
+    1/1 .github/actions/pip-install/README.md 1802.03ms X
     .github/actions/pip-install/README.md:35:36     - Unknown word (pytest)     -- 'Pillow jsonschema pytest'
     	 Suggestions: [pest, pates, prest, pyres, pyxes]
     .github/actions/pip-install/README.md:47:18     - Unknown word (pytest)     -- packages: 'pytest pytest-cov'
@@ -91,19 +107,19 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 4 in 1 file.
 
 ❌ [ERROR] .github/actions/pip-install/action.yml
-    1/1 .github/actions/pip-install/action.yml 1560.82ms X
+    1/1 .github/actions/pip-install/action.yml 1582.22ms X
     .github/actions/pip-install/action.yml:5:85      - Unknown word (jsonschema) -- install (e.g., "Pillow jsonschema")'
     	 Suggestions: []
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] .github/actions/setup-environment/README.md
-    1/1 .github/actions/setup-environment/README.md 1829.91ms X
+    1/1 .github/actions/setup-environment/README.md 1551.63ms X
     .github/actions/setup-environment/README.md:72:40     - Unknown word (libpq)      -- packages: 'imagemagick libpq-dev'
     	 Suggestions: [libs, limp, lips, lisp, lib's]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] .github/actions/setup-environment/action.yml
-    1/1 .github/actions/setup-environment/action.yml 1637.92ms X
+    1/1 .github/actions/setup-environment/action.yml 1634.45ms X
     .github/actions/setup-environment/action.yml:17:63     - Unknown word (pyproject)  -- dependencies (uses Poetry if pyproject.toml exists, otherwise
     	 Suggestions: [project, projects]
     .github/actions/setup-environment/action.yml:44:14     - Unknown word (pyproject)  -- **/pyproject.toml
@@ -119,8 +135,98 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 6 in 1 file.
 
 ✅ [SUCCESS] .github/linters/.gitkeep
+❌ [ERROR] .github/workflows/ACT_COMPATIBILITY.md
+    1/1 .github/workflows/ACT_COMPATIBILITY.md 1746.60ms X
+    .github/workflows/ACT_COMPATIBILITY.md:38:11     - Unknown word (pytest)     -- python -m pytest tests/ -v
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/ACT_COMPATIBILITY.md:73:66     - Unknown word (pytest)     -- python` | `python -m pytest tests/ -v` |
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/ACT_COMPATIBILITY.md:161:11    - Unknown word (pytest)     -- python -m pytest tests/ -v
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/ACT_COMPATIBILITY.md:165:11    - Unknown word (mypy)       -- python -m mypy scripts/
+    	 Suggestions: [mopy, myopy, macy, many, maps]
+    .github/workflows/ACT_COMPATIBILITY.md:211:14    - Unknown word (pytest)     -- python -m pytest tests/ -v
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/ACT_COMPATIBILITY.md:225:23    - Unknown word (pytest)     -- Test Python code | `pytest` | Fastest, most reliable
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    CSpell: Files checked: 1, Issues found: 6 in 1 file.
+
+❌ [ERROR] .github/workflows/ACT_LIMITATIONS.md
+    1/1 .github/workflows/ACT_LIMITATIONS.md 1659.92ms X
+    .github/workflows/ACT_LIMITATIONS.md:25:11     - Unknown word (pytest)     -- python -m pytest tests/ -v
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/ACT_LIMITATIONS.md:51:24     - Unknown word (pytest)     -- - run: python -m pytest tests/ -v
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/ACT_LIMITATIONS.md:81:11     - Unknown word (pytest)     -- python -m pytest tests/ -v
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/ACT_LIMITATIONS.md:104:41    - Unknown word (szmyty)     -- fetch-developer-stats.py szmyty test-output.json
+    	 Suggestions: [stymy, smit, smte, smtp, smut]
+    .github/workflows/ACT_LIMITATIONS.md:178:11    - Unknown word (pytest)     -- python -m pytest tests/ -v
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/ACT_LIMITATIONS.md:184:11    - Unknown word (mypy)       -- python -m mypy scripts/
+    	 Suggestions: [mopy, myopy, macy, many, maps]
+    .github/workflows/ACT_LIMITATIONS.md:208:58    - Unknown word (szmyty)     -- fetch-developer-stats.py szmyty output.json
+    	 Suggestions: [stymy, smit, smte, smtp, smut]
+    CSpell: Files checked: 1, Issues found: 7 in 1 file.
+
+❌ [ERROR] .github/workflows/ACT_SETUP.md
+    1/1 .github/workflows/ACT_SETUP.md 2482.84ms X
+    .github/workflows/ACT_SETUP.md:58:1      - Unknown word (MAPBOX)     -- MAPBOX_TOKEN=your_mapbox_token
+    	 Suggestions: [mbox, MBOX, MAMBO, MAALOX, MADDOX]
+    .github/workflows/ACT_SETUP.md:58:19     - Unknown word (mapbox)     -- MAPBOX_TOKEN=your_mapbox_token_here
+    	 Suggestions: [mbox, mambo, maalox, maddox, mambos]
+    .github/workflows/ACT_SETUP.md:59:1      - Unknown word (OURA)       -- OURA_PAT=your_oura_token
+    	 Suggestions: [ODRA, OKRA, OURS, Odra, ORA]
+    .github/workflows/ACT_SETUP.md:59:15     - Unknown word (oura)       -- OURA_PAT=your_oura_token_here
+    	 Suggestions: [odra, okra, ours, Odra, ora]
+    .github/workflows/ACT_SETUP.md:64:7      - Unknown word (actrc)      -- The `.actrc` file in the repository
+    	 Suggestions: [acirc, Acirc, acer, acre, actg]
+    .github/workflows/ACT_SETUP.md:66:9      - Unknown word (catthehacker) -- - Uses `catthehacker/ubuntu:act-latest` as
+    	 Suggestions: []
+    .github/workflows/ACT_SETUP.md:107:58    - Unknown word (eventpath)    -- workflows/release.yml --eventpath .github/workflows/act
+    	 Suggestions: [eventuate, edentate, eventual, eventuated, eventuates]
+    .github/workflows/ACT_SETUP.md:118:12    - Unknown word (eventpath)    -- act push --eventpath .github/workflows/act
+    	 Suggestions: [eventuate, edentate, eventual, eventuated, eventuates]
+    .github/workflows/ACT_SETUP.md:121:20    - Unknown word (eventpath)    -- act pull_request --eventpath .github/workflows/act
+    	 Suggestions: [eventuate, edentate, eventual, eventuated, eventuates]
+    .github/workflows/ACT_SETUP.md:124:25    - Unknown word (eventpath)    -- workflow_dispatch --eventpath .github/workflows/act
+    	 Suggestions: [eventuate, edentate, eventual, eventuated, eventuates]
+    .github/workflows/ACT_SETUP.md:172:11    - Unknown word (pytest)       -- python -m pytest tests/ -v
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/ACT_SETUP.md:224:30    - Unknown word (MAPBOX)       -- Requires multiple secrets (MAPBOX_TOKEN, OURA_PAT, etc
+    	 Suggestions: [mbox, MBOX, MAMBO, MAALOX, MADDOX]
+    .github/workflows/ACT_SETUP.md:224:44    - Unknown word (OURA)         -- secrets (MAPBOX_TOKEN, OURA_PAT, etc.)
+    	 Suggestions: [ODRA, OKRA, OURS, Odra, ORA]
+    .github/workflows/ACT_SETUP.md:258:22    - Unknown word (dryrun)       -- act -j test-python --dryrun
+    	 Suggestions: [dryden, dryrot, Dryden, rerun, durn]
+    .github/workflows/ACT_SETUP.md:271:4     - Unknown word (nektos)       -- - [nektos/act Wiki](https://nektosact
+    	 Suggestions: [nekton, nektons, nets, neato, neats]
+    CSpell: Files checked: 1, Issues found: 15 in 1 file.
+
+❌ [ERROR] .github/workflows/README.md
+    1/1 .github/workflows/README.md 2135.68ms X
+    .github/workflows/README.md:35:11     - Unknown word (pytest)     -- python -m pytest tests/ -v
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/README.md:59:12     - Unknown word (eventpath)  -- act push --eventpath .github/workflows/act
+    	 Suggestions: [eventuate, edentate, eventual, eventuated, eventuates]
+    .github/workflows/README.md:79:39     - Unknown word (MAPBOX)     -- GitHub token, API tokens (MAPBOX, OURA)
+    	 Suggestions: [mbox, MBOX, MAMBO, MAALOX, MADDOX]
+    .github/workflows/README.md:79:47     - Unknown word (OURA)       -- API tokens (MAPBOX, OURA)
+    	 Suggestions: [ODRA, OKRA, OURS, Odra, ORA]
+    .github/workflows/README.md:90:22     - Unknown word (pytest)     -- Test dependencies (pytest, mypy)
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/README.md:90:30     - Unknown word (mypy)       -- dependencies (pytest, mypy)
+    	 Suggestions: [mopy, myopy, macy, many, maps]
+    .github/workflows/README.md:91:26     - Unknown word (shellcheck) -- Shell utilities (bash, shellcheck)
+    	 Suggestions: [spellcheck, spellchecks, shellcheckrc, shellack, shellback]
+    .github/workflows/README.md:115:14    - Unknown word (pytest)     -- python -m pytest tests/ -v
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/README.md:191:32    - Unknown word (pytest)     -- direct script testing (`pytest`, shell scripts)
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    CSpell: Files checked: 1, Issues found: 9 in 1 file.
+
 ❌ [ERROR] .github/workflows/_archive/README.md
-    1/1 .github/workflows/_archive/README.md 2034.70ms X
+    1/1 .github/workflows/_archive/README.md 1947.59ms X
     .github/workflows/_archive/README.md:12:5      - Unknown word (soundcloud) -- - **soundcloud-card.yml** - SoundCloud
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     .github/workflows/_archive/README.md:14:47     - Unknown word (Mapbox)     -- Location Map Card — Mapbox Static Map with Day
@@ -134,7 +240,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 5 in 1 file.
 
 ❌ [ERROR] .github/workflows/_archive/deploy-dashboard.yml
-    1/1 .github/workflows/_archive/deploy-dashboard.yml 1566.02ms X
+    1/1 .github/workflows/_archive/deploy-dashboard.yml 1623.16ms X
     .github/workflows/_archive/deploy-dashboard.yml:12:10     - Unknown word (oura)       -- - 'oura/metrics.json'
     	 Suggestions: [odra, okra, ours, Odra, ora]
     .github/workflows/_archive/deploy-dashboard.yml:13:10     - Unknown word (oura)       -- - 'oura/mood.json'
@@ -158,13 +264,13 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 10 in 1 file.
 
 ❌ [ERROR] .github/workflows/_archive/developer.yml
-    1/1 .github/workflows/_archive/developer.yml 5320.62ms X
+    1/1 .github/workflows/_archive/developer.yml 2140.52ms X
     .github/workflows/_archive/developer.yml:38:22     - Unknown word (jsonschema) -- packages: 'jsonschema'
     	 Suggestions: []
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] .github/workflows/_archive/location-card.yml
-    1/1 .github/workflows/_archive/location-card.yml 1969.00ms X
+    1/1 .github/workflows/_archive/location-card.yml 2497.55ms X
     .github/workflows/_archive/location-card.yml:1:27      - Unknown word (Mapbox)     -- Location Map Card — Mapbox Static Map with Day
     	 Suggestions: [Mbox, Mambo, maalox, Maalox, Maddox]
     .github/workflows/_archive/location-card.yml:62:11     - Unknown word (MAPBOX)     -- MAPBOX_TOKEN: ${{ secrets.MAPBOX
@@ -175,7 +281,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 
 ✅ [SUCCESS] .github/workflows/_archive/megalinter.yml
 ❌ [ERROR] .github/workflows/_archive/oura.yml
-    1/1 .github/workflows/_archive/oura.yml 1734.05ms X
+    1/1 .github/workflows/_archive/oura.yml 1729.65ms X
     .github/workflows/_archive/oura.yml:1:7       - Unknown word (Oura)       -- name: Oura Health Dashboard — Full
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     .github/workflows/_archive/oura.yml:9:26      - Unknown word (Oura)       -- Run every 6 hours (Oura data updates once daily
@@ -207,7 +313,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 14 in 1 file.
 
 ❌ [ERROR] .github/workflows/_archive/parallel-fetch.yml
-    1/1 .github/workflows/_archive/parallel-fetch.yml 1953.40ms X
+    1/1 .github/workflows/_archive/parallel-fetch.yml 1949.55ms X
     .github/workflows/_archive/parallel-fetch.yml:28:27     - Unknown word (Oura)       -- Parallel job 1: Fetch Oura data
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     .github/workflows/_archive/parallel-fetch.yml:29:9      - Unknown word (oura)       -- fetch-oura:
@@ -255,7 +361,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 22 in 1 file.
 
 ❌ [ERROR] .github/workflows/_archive/soundcloud-card.yml
-    1/1 .github/workflows/_archive/soundcloud-card.yml 2329.83ms X
+    1/1 .github/workflows/_archive/soundcloud-card.yml 1851.69ms X
     .github/workflows/_archive/soundcloud-card.yml:21:10     - Unknown word (soundcloud) -- update-soundcloud-card:
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     .github/workflows/_archive/soundcloud-card.yml:41:11     - Unknown word (SOUNDCLOUD) -- SOUNDCLOUD_USER: playfunction
@@ -275,7 +381,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 8 in 1 file.
 
 ❌ [ERROR] .github/workflows/_archive/weather.yml
-    1/1 .github/workflows/_archive/weather.yml 2020.39ms X
+    1/1 .github/workflows/_archive/weather.yml 1769.66ms X
     .github/workflows/_archive/weather.yml:59:34     - Unknown word (Nominatim)  -- Add delay to respect Nominatim rate limits
     	 Suggestions: [Nominate, Nominated, Nominates, Nominator, Nominalism]
     .github/workflows/_archive/weather.yml:62:11     - Unknown word (NOMINATIM)  -- NOMINATIM_RESPONSE=$(curl -sf
@@ -290,8 +396,72 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     	 Suggestions: [NOMINATE, NOMINATED, NOMINATES, NOMINATOR, NOMINALISM]
     CSpell: Files checked: 1, Issues found: 6 in 1 file.
 
+❌ [ERROR] .github/workflows/act-demo.yml
+    1/1 .github/workflows/act-demo.yml 1857.77ms X
+    .github/workflows/act-demo.yml:61:31     - Unknown word (pytest)     -- pip list | grep -E "pytest|jsonschema|pillow"
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/act-demo.yml:61:38     - Unknown word (jsonschema) -- list | grep -E "pytest|jsonschema|pillow" || echo "Packages
+    	 Suggestions: []
+    .github/workflows/act-demo.yml:65:26     - Unknown word (jsonschema) -- pip install -q jsonschema pillow pytest
+    	 Suggestions: []
+    .github/workflows/act-demo.yml:65:44     - Unknown word (pytest)     -- q jsonschema pillow pytest
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/act-demo.yml:70:29     - Unknown word (jsonschema) -- python -c "import jsonschema; print(f'jsonschema
+    	 Suggestions: []
+    .github/workflows/act-demo.yml:70:47     - Unknown word (f'jsonschema) -- import jsonschema; print(f'jsonschema: {jsonschema.__version
+    	 Suggestions: []
+    .github/workflows/act-demo.yml:70:62     - Unknown word (jsonschema)   -- print(f'jsonschema: {jsonschema.__version__}')"
+    	 Suggestions: []
+    .github/workflows/act-demo.yml:72:29     - Unknown word (pytest)       -- python -c "import pytest; print(f'pytest: {pytest
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/act-demo.yml:72:43     - Unknown word (f'pytest)     -- import pytest; print(f'pytest: {pytest.__version_
+    	 Suggestions: [fayest, feyest, fastest, fattest, featest]
+    .github/workflows/act-demo.yml:72:54     - Unknown word (pytest)       -- pytest; print(f'pytest: {pytest.__version__}')"
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/act-demo.yml:89:26     - Unknown word (pytest)       -- pip install -q pytest jsonschema
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    .github/workflows/act-demo.yml:89:33     - Unknown word (jsonschema)   -- pip install -q pytest jsonschema
+    	 Suggestions: []
+    .github/workflows/act-demo.yml:98:20     - Unknown word (pyproject)    -- if [ -f "pyproject.toml" ]; then
+    	 Suggestions: [project, projects]
+    .github/workflows/act-demo.yml:99:21     - Unknown word (pyproject)    -- echo "✅ pyproject.toml exists"
+    	 Suggestions: [project, projects]
+    CSpell: Files checked: 1, Issues found: 14 in 1 file.
+
+❌ [ERROR] .github/workflows/act-events/pull_request.json
+    1/1 .github/workflows/act-events/pull_request.json 1548.42ms X
+    .github/workflows/act-events/pull_request.json:10:17     - Unknown word (szmyty)     -- "login": "szmyty"
+    	 Suggestions: [stymy, smit, smtp, smut, stmt]
+    .github/workflows/act-events/pull_request.json:23:19     - Unknown word (szmyty)     -- "full_name": "szmyty/profile",
+    	 Suggestions: [stymy, smit, smtp, smut, stmt]
+    .github/workflows/act-events/pull_request.json:25:16     - Unknown word (szmyty)     -- "name": "szmyty",
+    	 Suggestions: [stymy, smit, smtp, smut, stmt]
+    .github/workflows/act-events/pull_request.json:26:17     - Unknown word (szmyty)     -- "login": "szmyty"
+    	 Suggestions: [stymy, smit, smtp, smut, stmt]
+    CSpell: Files checked: 1, Issues found: 4 in 1 file.
+
+❌ [ERROR] .github/workflows/act-events/push.json
+    1/1 .github/workflows/act-events/push.json 1852.81ms X
+    .github/workflows/act-events/push.json:8:19      - Unknown word (szmyty)     -- "full_name": "szmyty/profile",
+    	 Suggestions: [stymy, smit, smtp, smut, stmt]
+    .github/workflows/act-events/push.json:10:16     - Unknown word (szmyty)     -- "name": "szmyty",
+    	 Suggestions: [stymy, smit, smtp, smut, stmt]
+    .github/workflows/act-events/push.json:11:17     - Unknown word (szmyty)     -- "login": "szmyty"
+    	 Suggestions: [stymy, smit, smtp, smut, stmt]
+    CSpell: Files checked: 1, Issues found: 3 in 1 file.
+
+❌ [ERROR] .github/workflows/act-events/workflow_dispatch.json
+    1/1 .github/workflows/act-events/workflow_dispatch.json 2862.69ms X
+    .github/workflows/act-events/workflow_dispatch.json:6:19      - Unknown word (szmyty)     -- "full_name": "szmyty/profile",
+    	 Suggestions: [stymy, smit, smtp, smut, stmt]
+    .github/workflows/act-events/workflow_dispatch.json:8:16      - Unknown word (szmyty)     -- "name": "szmyty",
+    	 Suggestions: [stymy, smit, smtp, smut, stmt]
+    .github/workflows/act-events/workflow_dispatch.json:9:17      - Unknown word (szmyty)     -- "login": "szmyty"
+    	 Suggestions: [stymy, smit, smtp, smut, stmt]
+    CSpell: Files checked: 1, Issues found: 3 in 1 file.
+
 ❌ [ERROR] .github/workflows/build-profile.yml
-    1/1 .github/workflows/build-profile.yml 2951.78ms X
+    1/1 .github/workflows/build-profile.yml 3584.45ms X
     .github/workflows/build-profile.yml:44:16     - Unknown word (pyproject)  -- **/pyproject.toml
     	 Suggestions: [project, projects]
     .github/workflows/build-profile.yml:55:19     - Unknown word (pyproject)  -- if [ -f pyproject.toml ]; then
@@ -353,14 +523,14 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 29 in 1 file.
 
 ❌ [ERROR] .github/workflows/greetings.yml
-    1/1 .github/workflows/greetings.yml 1510.04ms X
+    1/1 .github/workflows/greetings.yml 2146.83ms X
     .github/workflows/greetings.yml:37:15     - Unknown word (Oura)       -- • Oura + SoundCloud + Weather
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ✅ [SUCCESS] .github/workflows/monitoring.yml
 ❌ [ERROR] .github/workflows/release.yml
-    1/1 .github/workflows/release.yml 1835.64ms X
+    1/1 .github/workflows/release.yml 3705.08ms X
     .github/workflows/release.yml:77:22     - Unknown word (pytest)     -- poetry run pytest tests/ -v
     	 Suggestions: [pest, pates, prest, pyres, pyxes]
     .github/workflows/release.yml:81:28     - Unknown word (jsonschema) -- poetry run check-jsonschema --schemafile schemas
@@ -372,7 +542,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 4 in 1 file.
 
 ❌ [ERROR] .github/workflows/tests.yml
-    1/1 .github/workflows/tests.yml 1727.00ms X
+    1/1 .github/workflows/tests.yml 1486.43ms X
     .github/workflows/tests.yml:40:38     - Unknown word (mypy)       -- Run type checking with mypy
     	 Suggestions: [mopy, myopy, macy, many, maps]
     .github/workflows/tests.yml:42:21     - Unknown word (mypy)       -- python -m mypy scripts/
@@ -384,7 +554,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 4 in 1 file.
 
 ❌ [ERROR] .gitignore
-    1/1 .gitignore 1843.13ms X
+    1/1 .gitignore 1655.52ms X
     .gitignore:2:3       - Unknown word (pycache)    -- __pycache__/
     	 Suggestions: [mycache, Mycache, myCache, MyCache, panache]
     .gitignore:6:2       - Unknown word (pytest)     -- .pytest_cache/
@@ -399,16 +569,18 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     	 Suggestions: [odra, okra, ours, Odra, ora]
     .gitignore:16:1      - Unknown word (oura)       -- oura/debug_*.txt
     	 Suggestions: [odra, okra, ours, Odra, ora]
-    CSpell: Files checked: 1, Issues found: 7 in 1 file.
+    .gitignore:55:2      - Unknown word (actrc)      -- .actrc.local
+    	 Suggestions: [acer, acre, actg, acth, acts]
+    CSpell: Files checked: 1, Issues found: 8 in 1 file.
 
 ❌ [ERROR] .mailmap
-    1/1 .mailmap 1535.54ms X
+    1/1 .mailmap 1290.69ms X
     .mailmap:18:6      - Unknown word (Szmyt)      -- Alan Szmyt <szmyty@gmail.com>
     	 Suggestions: [Smit, Smut, Stmt, sumy, Sumy]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] .megalinter.yml
-    1/1 .megalinter.yml 10144.47ms X
+    1/1 .megalinter.yml 5505.64ms X
     .megalinter.yml:15:16     - Unknown word (DEVSKIM)    -- - REPOSITORY_DEVSKIM
     	 Suggestions: [DESK, DEVI, DEVS, DKIM, DEISM]
     .megalinter.yml:34:6      - Unknown word (nuxt)       -- - .nuxt
@@ -656,7 +828,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 122 in 1 file.
 
 ❌ [ERROR] .pre-commit-config.yaml
-    1/1 .pre-commit-config.yaml 2631.05ms X
+    1/1 .pre-commit-config.yaml 1652.54ms X
     .pre-commit-config.yaml:27:19     - Unknown word (jsonschema) -- - id: check-jsonschema
     	 Suggestions: []
     .pre-commit-config.yaml:30:18     - Unknown word (schemafile) -- args: [--schemafile, schemas/developer-stats
@@ -693,15 +865,31 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     	 Suggestions: [spellcheck, spellchecks, shellcheckrc, shellack, shellback]
     CSpell: Files checked: 1, Issues found: 17 in 1 file.
 
+❌ [ERROR] .secrets.example
+    1/1 .secrets.example 1704.36ms X
+    .secrets.example:8:1       - Unknown word (MAPBOX)     -- MAPBOX_TOKEN=your_mapbox_token
+    	 Suggestions: [mbox, MBOX, MAMBO, MAALOX, MADDOX]
+    .secrets.example:8:19      - Unknown word (mapbox)     -- MAPBOX_TOKEN=your_mapbox_token_here
+    	 Suggestions: [mbox, mambo, maalox, maddox, mambos]
+    .secrets.example:9:1       - Unknown word (OURA)       -- OURA_PAT=your_oura_token
+    	 Suggestions: [ODRA, OKRA, OURS, Odra, ORA]
+    .secrets.example:9:15      - Unknown word (oura)       -- OURA_PAT=your_oura_token_here
+    	 Suggestions: [odra, okra, ours, Odra, ora]
+    .secrets.example:12:19     - Unknown word (szmyty)     -- GITHUB_REPOSITORY=szmyty/profile
+    	 Suggestions: [stymy, smit, smtp, smut, stmt]
+    .secrets.example:13:25     - Unknown word (szmyty)     -- GITHUB_REPOSITORY_OWNER=szmyty
+    	 Suggestions: [stymy, smit, smtp, smut, stmt]
+    CSpell: Files checked: 1, Issues found: 6 in 1 file.
+
 ❌ [ERROR] .vscode/dictionaries/backend-terms.dictionary
-    1/1 .vscode/dictionaries/backend-terms.dictionary 2293.42ms X
+    1/1 .vscode/dictionaries/backend-terms.dictionary 1255.14ms X
     .vscode/dictionaries/backend-terms.dictionary:33:1      - Unknown word (Sequelize)  -- Sequelize
     	 Suggestions: [Sequelae, Sexualize, Esquiline, Sequel, Sequela]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ✅ [SUCCESS] .vscode/dictionaries/devops-cloud-terms.dictionary
 ❌ [ERROR] .vscode/dictionaries/frontend-terms.dictionary
-    1/1 .vscode/dictionaries/frontend-terms.dictionary 1574.22ms X
+    1/1 .vscode/dictionaries/frontend-terms.dictionary 1214.65ms X
     .vscode/dictionaries/frontend-terms.dictionary:5:1       - Unknown word (axios)      -- axios
     	 Suggestions: [axis, abios, adios, agios, axils]
     .vscode/dictionaries/frontend-terms.dictionary:19:1      - Unknown word (Nuxt)       -- Nuxt
@@ -711,13 +899,13 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 3 in 1 file.
 
 ❌ [ERROR] .vscode/dictionaries/programming-terms.dictionary
-    1/1 .vscode/dictionaries/programming-terms.dictionary 1410.02ms X
+    1/1 .vscode/dictionaries/programming-terms.dictionary 1136.96ms X
     .vscode/dictionaries/programming-terms.dictionary:32:1      - Unknown word (Pipfile)    -- Pipfile
     	 Suggestions: [zipfile, zipFile, Zipfile, ZipFile, Pfile]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] .vscode/dictionaries/project-words.dictionary
-    1/1 .vscode/dictionaries/project-words.dictionary 22229.43ms X
+    1/1 .vscode/dictionaries/project-words.dictionary 21787.10ms X
     .vscode/dictionaries/project-words.dictionary:2:1       - Unknown word (abook)      -- abook
     	 Suggestions: [book, ebook, amok, abo, aback]
     .vscode/dictionaries/project-words.dictionary:3:1       - Unknown word (abookrc)    -- abookrc
@@ -1929,7 +2117,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 604 in 1 file.
 
 ❌ [ERROR] .vscode/dictionaries/software-terms.dictionary
-    1/1 .vscode/dictionaries/software-terms.dictionary 2361.13ms X
+    1/1 .vscode/dictionaries/software-terms.dictionary 3120.96ms X
     .vscode/dictionaries/software-terms.dictionary:14:1      - Unknown word (codegen)    -- codegen
     	 Suggestions: [codeine, codein, codger, coleen, codelens]
     .vscode/dictionaries/software-terms.dictionary:15:1      - Unknown word (commitizen) -- commitizen
@@ -1997,7 +2185,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 32 in 1 file.
 
 ❌ [ERROR] .vscode/extensions.json
-    1/1 .vscode/extensions.json 3032.88ms X
+    1/1 .vscode/extensions.json 3132.18ms X
     .vscode/extensions.json:5:10      - Unknown word (esbenp)     -- "esbenp.prettier-vscode",
     	 Suggestions: [eben, essen, essene, Eben, Essen]
     .vscode/extensions.json:8:10      - Unknown word (sanjulaganepola) -- "sanjulaganepola.github-local-actions
@@ -2052,7 +2240,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 
 ✅ [SUCCESS] .vscode/launch.json
 ❌ [ERROR] .vscode/settings.json
-    1/1 .vscode/settings.json 2149.93ms X
+    1/1 .vscode/settings.json 2257.26ms X
     .vscode/settings.json:50:33     - Unknown word (esbenp)     -- defaultFormatter": "esbenp.prettier-vscode",
     	 Suggestions: [eben, essen, essene, Eben, Essen]
     .vscode/settings.json:57:37     - Unknown word (esbenp)     -- defaultFormatter": "esbenp.prettier-vscode"
@@ -2087,13 +2275,13 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 
 ✅ [SUCCESS] .vscode/tasks.json
 ❌ [ERROR] CHANGELOG.md
-    1/1 CHANGELOG.md 1689.22ms X
+    1/1 CHANGELOG.md 1912.64ms X
     CHANGELOG.md:14:62     - Unknown word (Oura)       -- location, SoundCloud, Oura health
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] CONSOLIDATION_SUMMARY.md
-    1/1 CONSOLIDATION_SUMMARY.md 2086.51ms X
+    1/1 CONSOLIDATION_SUMMARY.md 2268.77ms X
     CONSOLIDATION_SUMMARY.md:20:67     - Unknown word (Oura)       -- Location, SoundCloud, Oura
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     CONSOLIDATION_SUMMARY.md:34:4      - Unknown word (soundcloud) -- - `soundcloud-card.yml`
@@ -2123,15 +2311,33 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 13 in 1 file.
 
 ❌ [ERROR] GITHUB_MARKDOWN_AUDIT_COMPLETE.md
-    1/1 GITHUB_MARKDOWN_AUDIT_COMPLETE.md 1835.09ms X
+    1/1 GITHUB_MARKDOWN_AUDIT_COMPLETE.md 1923.48ms X
     GITHUB_MARKDOWN_AUDIT_COMPLETE.md:289:31    - Unknown word (collapsibles) -- Improved navigation with collapsibles
     	 Suggestions: [collapsible, collapses, collectibles]
     GITHUB_MARKDOWN_AUDIT_COMPLETE.md:343:19    - Unknown word (szmyty)       -- - **Repository**: szmyty/profile
     	 Suggestions: [stymy, smit, smte, smtp, smut]
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
+❌ [ERROR] IMPLEMENTATION_ACT_SUPPORT.md
+    1/1 IMPLEMENTATION_ACT_SUPPORT.md 2133.31ms X
+    IMPLEMENTATION_ACT_SUPPORT.md:20:20     - Unknown word (devcontainers) -- - ✅ Added `ghcr.io/devcontainers/features/docker-in-docker
+    	 Suggestions: [devcontainer]
+    IMPLEMENTATION_ACT_SUPPORT.md:27:5      - Unknown word (actrc)         -- - `.actrc` - Default configuration
+    	 Suggestions: [acirc, Acirc, acer, acre, actg]
+    IMPLEMENTATION_ACT_SUPPORT.md:34:9      - Unknown word (catthehacker)  -- - Uses `catthehacker/ubuntu:act-latest` Docker
+    	 Suggestions: []
+    IMPLEMENTATION_ACT_SUPPORT.md:117:41    - Unknown word (actrc)         -- Added `.secrets` and `.actrc.local`
+    	 Suggestions: [acirc, Acirc, acer, acre, actg]
+    IMPLEMENTATION_ACT_SUPPORT.md:221:6     - Unknown word (actrc)         -- ├── .actrc
+    	 Suggestions: [acirc, Acirc, acer, acre, actg]
+    IMPLEMENTATION_ACT_SUPPORT.md:249:12    - Unknown word (eventpath)     -- act push --eventpath .github/workflows/act
+    	 Suggestions: [eventuate, edentate, eventual, eventuated, eventuates]
+    IMPLEMENTATION_ACT_SUPPORT.md:255:11    - Unknown word (pytest)        -- python -m pytest tests/ -v
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    CSpell: Files checked: 1, Issues found: 7 in 1 file.
+
 ❌ [ERROR] IMPLEMENTATION_SUMMARY.md
-    1/1 IMPLEMENTATION_SUMMARY.md 1554.03ms X
+    1/1 IMPLEMENTATION_SUMMARY.md 1950.83ms X
     IMPLEMENTATION_SUMMARY.md:21:80     - Unknown word (Oura)       -- weather, location, and Oura mood
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     IMPLEMENTATION_SUMMARY.md:80:66     - Unknown word (Oura)       -- weather, location, Oura mood, and a placeholder
@@ -2139,7 +2345,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] PERFORMANCE_IMPROVEMENTS_SUMMARY.md
-    1/1 PERFORMANCE_IMPROVEMENTS_SUMMARY.md 1931.91ms X
+    1/1 PERFORMANCE_IMPROVEMENTS_SUMMARY.md 3228.63ms X
     PERFORMANCE_IMPROVEMENTS_SUMMARY.md:32:45     - Unknown word (Oura)       -- into 3 parallel jobs (Oura, Weather, SoundCloud
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     PERFORMANCE_IMPROVEMENTS_SUMMARY.md:62:22     - Unknown word (oura)       -- `.github/workflows/oura.yml`
@@ -2153,7 +2359,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 5 in 1 file.
 
 ❌ [ERROR] README.md
-    1/1 README.md 2686.47ms X
+    1/1 README.md 4383.33ms X
     README.md:10:42     - Unknown word (Szmyt)      -- header.svg" alt="Alan Szmyt - Software Engineer
     	 Suggestions: [Smit, Smut, Stmt, sumy, Sumy]
     README.md:194:6     - Unknown word (SOUNDCLOUD) -- <!-- SOUNDCLOUD-CARD:START -->
@@ -2188,22 +2394,22 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     	 Suggestions: [odra, okra, ours, Odra, ora]
     README.md:374:11    - Unknown word (soundcloud) -- - **`logs/soundcloud/`** - SoundCloud data
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
-    README.md:459:51    - Unknown word (pyproject)  -- to exact versions in `pyproject.toml` and `poetry.lock
+    README.md:476:51    - Unknown word (pyproject)  -- to exact versions in `pyproject.toml` and `poetry.lock
     	 Suggestions: [project, projects]
-    README.md:467:34    - Unknown word (isort)      -- linting (black, flake8, isort)
+    README.md:484:34    - Unknown word (isort)      -- linting (black, flake8, isort)
     	 Suggestions: [isqrt, iSqrt, Isqrt, ISqrt, sort]
-    README.md:468:28    - Unknown word (shellcheck) -- Shell script validation (shellcheck)
+    README.md:485:28    - Unknown word (shellcheck) -- Shell script validation (shellcheck)
     	 Suggestions: [spellcheck, spellchecks, shellcheckrc, shellack, shellback]
-    README.md:487:23    - Unknown word (soundcloud) -- scripts/dev-mode.sh soundcloud
+    README.md:504:23    - Unknown word (soundcloud) -- scripts/dev-mode.sh soundcloud
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
-    README.md:490:23    - Unknown word (oura)       -- scripts/dev-mode.sh oura
+    README.md:507:23    - Unknown word (oura)       -- scripts/dev-mode.sh oura
     	 Suggestions: [odra, okra, ours, Odra, ora]
-    README.md:519:11    - Unknown word (pytest)     -- python -m pytest tests/ -v
+    README.md:537:11    - Unknown word (pytest)     -- python -m pytest tests/ -v
     	 Suggestions: [pest, pates, prest, pyres, pyxes]
     CSpell: Files checked: 1, Issues found: 23 in 1 file.
 
 ❌ [ERROR] REFACTORING_REPORT.md
-    1/1 REFACTORING_REPORT.md 2807.60ms X
+    1/1 REFACTORING_REPORT.md 3677.72ms X
     REFACTORING_REPORT.md:3:18      - Unknown word (szmyty)     -- **Repository:** `szmyty/profile`
     	 Suggestions: [stymy, smit, smte, smtp, smut]
     REFACTORING_REPORT.md:48:89     - Unknown word (oura)       -- developer/`, `weather/`, `oura/`, etc.)
@@ -2251,7 +2457,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 22 in 1 file.
 
 ❌ [ERROR] REPORT.md
-    1/1 REPORT.md 2853.97ms X
+    1/1 REPORT.md 3925.58ms X
     REPORT.md:12:25     - Unknown word (Meteo)      -- Weather** (via Open-Meteo API)
     	 Suggestions: [Mete, Meted, Meter, Metes, Metro]
     REPORT.md:14:5      - Unknown word (Oura)       -- - **Oura Ring Health Metrics
@@ -2337,7 +2543,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 41 in 1 file.
 
 ❌ [ERROR] SECURITY_SUMMARY.md
-    1/1 SECURITY_SUMMARY.md 2361.57ms X
+    1/1 SECURITY_SUMMARY.md 3089.38ms X
     SECURITY_SUMMARY.md:4:17      - Unknown word (szmyty)     -- **Repository:** szmyty/profile
     	 Suggestions: [stymy, smit, smte, smtp, smut]
     SECURITY_SUMMARY.md:53:19     - Unknown word (pathlib)    -- - ✅ All paths use pathlib
@@ -2353,7 +2559,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 6 in 1 file.
 
 ❌ [ERROR] SECURITY_SUMMARY_API_RESILIENCE.md
-    1/1 SECURITY_SUMMARY_API_RESILIENCE.md 1629.85ms X
+    1/1 SECURITY_SUMMARY_API_RESILIENCE.md 1924.97ms X
     SECURITY_SUMMARY_API_RESILIENCE.md:67:10     - Unknown word (oura)       -- - `fetch-oura.sh` (OURA_PAT)
     	 Suggestions: [odra, okra, ours, Odra, ora]
     SECURITY_SUMMARY_API_RESILIENCE.md:67:20     - Unknown word (OURA)       -- - `fetch-oura.sh` (OURA_PAT)
@@ -2369,7 +2575,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] assets/metadata.json
 ✅ [SUCCESS] assets/soundcloud-artwork.jpg
 ❌ [ERROR] assets/soundcloud-card.svg
-    1/1 assets/soundcloud-card.svg 2389.79ms X
+    1/1 assets/soundcloud-card.svg 1863.81ms X
     assets/soundcloud-card.svg:1:4495    - Unknown word (Segoe)      -- a5568" font-family="'Segoe UI', Arial, sans-serif
     	 Suggestions: [Segos, segre, Segre, Segue, Sage]
     assets/soundcloud-card.svg:1:4643    - Unknown word (Segoe)      -- #fff" font-family="'Segoe UI', Arial, sans-serif
@@ -2393,32 +2599,32 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 10 in 1 file.
 
 ❌ [ERROR] branding/badges/badge-template.svg
-    1/1 branding/badges/badge-template.svg 2288.17ms X
+    1/1 branding/badges/badge-template.svg 1495.82ms X
     branding/badges/badge-template.svg:19:48     - Unknown word (Fira)       -- family="'SF Mono', 'Fira Code', 'Monaco', monospace
     	 Suggestions: [Fica, Fida, Fifa, Fila, Fire]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] branding/badges/social-badge.svg
-    1/1 branding/badges/social-badge.svg 1440.28ms X
+    1/1 branding/badges/social-badge.svg 1368.13ms X
     branding/badges/social-badge.svg:24:48     - Unknown word (Fira)       -- family="'SF Mono', 'Fira Code', 'Monaco', monospace
     	 Suggestions: [Fica, Fida, Fifa, Fila, Fire]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] branding/badges/status-badge.svg
-    1/1 branding/badges/status-badge.svg 1461.36ms X
+    1/1 branding/badges/status-badge.svg 863.09ms X
     branding/badges/status-badge.svg:23:48     - Unknown word (Fira)       -- family="'SF Mono', 'Fira Code', 'Monaco', monospace
     	 Suggestions: [Fica, Fida, Fifa, Fila, Fire]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] branding/badges/tech-badge.svg
-    1/1 branding/badges/tech-badge.svg 1473.64ms X
+    1/1 branding/badges/tech-badge.svg 819.95ms X
     branding/badges/tech-badge.svg:23:48     - Unknown word (Fira)       -- family="'SF Mono', 'Fira Code', 'Monaco', monospace
     	 Suggestions: [Fica, Fida, Fifa, Fila, Fire]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ✅ [SUCCESS] branding/header.png
 ❌ [ERROR] branding/header.svg
-    1/1 branding/header.svg 2102.61ms X
+    1/1 branding/header.svg 1171.63ms X
     branding/header.svg:29:98     - Unknown word (linecap)    -- stroke-width="2" stroke-linecap="round" opacity="0.
     	 Suggestions: [lineal, linear, lineup, linecut, lineman]
     branding/header.svg:30:101    - Unknown word (linecap)    -- stroke-width="2" stroke-linecap="round" opacity="0.
@@ -2442,7 +2648,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 10 in 1 file.
 
 ❌ [ERROR] branding/logo.svg
-    1/1 branding/logo.svg 1896.14ms X
+    1/1 branding/logo.svg 1041.33ms X
     branding/logo.svg:13:105    - Unknown word (linecap)    -- stroke-width="2.5" stroke-linecap="round" stroke-linejoin
     	 Suggestions: [lineal, linear, lineup, linecut, lineman]
     branding/logo.svg:13:128    - Unknown word (linejoin)   -- linecap="round" stroke-linejoin="round"/>
@@ -2462,7 +2668,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 8 in 1 file.
 
 ❌ [ERROR] config/META6.json
-    1/1 config/META6.json 2009.59ms X
+    1/1 config/META6.json 1131.73ms X
     config/META6.json:5:19      - Unknown word (yourusername) -- "auth": "github:yourusername",
     	 Suggestions: []
     config/META6.json:12:46     - Unknown word (rakumod)      -- lib/Your/ModuleName.rakumod"
@@ -2475,7 +2681,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 
 ✅ [SUCCESS] config/analysis_options.yml
 ❌ [ERROR] config/apex-pmd-ruleset.xml
-    1/1 config/apex-pmd-ruleset.xml 1077.72ms X
+    1/1 config/apex-pmd-ruleset.xml 834.90ms X
     config/apex-pmd-ruleset.xml:7:30      - Unknown word (domainbuilder) -- exclude-pattern>.*/apex-domainbuilder/*.*</exclude-pattern
     	 Suggestions: []
     config/apex-pmd-ruleset.xml:9:25      - Unknown word (fflib)         -- <exclude-pattern>.*/fflib_*.*</exclude-pattern
@@ -2485,7 +2691,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 3 in 1 file.
 
 ❌ [ERROR] config/apt.conf
-    1/1 config/apt.conf 1096.60ms X
+    1/1 config/apt.conf 843.20ms X
     config/apt.conf:187:13    - Unknown word (pkgcache)   -- Dir::Cache::pkgcache "";
     	 Suggestions: [precache, pagecache, preCache, Precache, pageCache]
     config/apt.conf:190:13    - Unknown word (srcpkgcache) -- Dir::Cache::srcpkgcache "";
@@ -2495,7 +2701,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 3 in 1 file.
 
 ❌ [ERROR] config/dpkg.cfg
-    1/1 config/dpkg.cfg 1035.13ms X
+    1/1 config/dpkg.cfg 966.74ms X
     config/dpkg.cfg:1:3       - Unknown word (dpkg)       -- # dpkg configuration file
     	 Suggestions: [pkg, daks, dang, darg, dawg]
     config/dpkg.cfg:3:45      - Unknown word (dpkg)       -- default options for dpkg. All command-line
@@ -2531,7 +2737,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 16 in 1 file.
 
 ❌ [ERROR] config/java-pmd-ruleset.xml
-    1/1 config/java-pmd-ruleset.xml 976.78ms X
+    1/1 config/java-pmd-ruleset.xml 823.80ms X
     config/java-pmd-ruleset.xml:15:28     - Unknown word (bestpractices) -- rule ref="category/java/bestpractices.xml"/>
     	 Suggestions: []
     config/java-pmd-ruleset.xml:18:28     - Unknown word (errorprone)    -- rule ref="category/java/errorprone.xml"/>
@@ -2545,7 +2751,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 5 in 1 file.
 
 ❌ [ERROR] config/lychee.toml
-    1/1 config/lychee.toml 952.78ms X
+    1/1 config/lychee.toml 835.78ms X
     config/lychee.toml:51:5      - Unknown word (aeiou)      -- "[aeiouAEIOU]"
     	 Suggestions: [aeiouy, aeon, aero, agio, ainu]
     config/lychee.toml:51:10     - Unknown word (AEIOU)      -- "[aeiouAEIOU]"
@@ -2553,7 +2759,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] config/lynis/custom.prf
-    1/1 config/lynis/custom.prf 985.58ms X
+    1/1 config/lynis/custom.prf 833.71ms X
     config/lynis/custom.prf:1:10      - Unknown word (Lynis)      -- # Custom Lynis profile for repository
     	 Suggestions: [Lenis, Lysis, Lins, Loins, Lying]
     config/lynis/custom.prf:2:58      - Unknown word (lynis)      -- repository under reports/lynis
@@ -2569,7 +2775,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 6 in 1 file.
 
 ❌ [ERROR] config/phpcs.xml
-    1/1 config/phpcs.xml 808.02ms X
+    1/1 config/phpcs.xml 823.48ms X
     config/phpcs.xml:14:21     - Unknown word (Squiz)      -- <!-- <rule ref="Squiz" /> -->
     	 Suggestions: [Squib, Squid, Quiz, suez, Suez]
     config/phpcs.xml:19:20     - Unknown word (Squiz)      -- <exclude name="Squiz.Functions.MultiLineFunctionDe
@@ -2577,7 +2783,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] config/phpstan.neon.dist
-    1/1 config/phpstan.neon.dist 907.18ms X
+    1/1 config/phpstan.neon.dist 925.73ms X
     config/phpstan.neon.dist:1:3       - Unknown word (phpstan)    -- # phpstan.neon.dist
     	 Suggestions: [phps, pasta, pisan, pusan, paisan]
     config/phpstan.neon.dist:29:12     - Unknown word (analyse)    -- excludes_analyse:
@@ -2598,7 +2804,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 
 ✅ [SUCCESS] config/psalm.xml
 ❌ [ERROR] config/pyrightconfig.json
-    1/1 config/pyrightconfig.json 885.73ms X
+    1/1 config/pyrightconfig.json 880.33ms X
     config/pyrightconfig.json:6:21      - Unknown word (pycache)    -- "exclude": ["**/__pycache__", ".venv", "venv"
     	 Suggestions: [mycache, Mycache, myCache, MyCache, panache]
     config/pyrightconfig.json:6:35      - Unknown word (venv)       -- "**/__pycache__", ".venv", "venv", "dist", "build
@@ -2614,7 +2820,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 6 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Airlinese.yml
-    1/1 config/styles/proselint/Airlinese.yml 925.57ms X
+    1/1 config/styles/proselint/Airlinese.yml 890.87ms X
     config/styles/proselint/Airlinese.yml:2:19      - Unknown word (airlinese)  -- message: "'%s' is airlinese."
     	 Suggestions: [airlines, Airlines, airline, airiness, airliner]
     config/styles/proselint/Airlinese.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
@@ -2630,7 +2836,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 6 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/AnimalLabels.yml
-    1/1 config/styles/proselint/AnimalLabels.yml 1171.04ms X
+    1/1 config/styles/proselint/AnimalLabels.yml 1183.87ms X
     config/styles/proselint/AnimalLabels.yml:10:29     - Unknown word (pardine)    -- leopard|panther)-like: pardine
     	 Suggestions: [jardine, Jardine, padrone, praline, paine]
     config/styles/proselint/AnimalLabels.yml:11:15     - Unknown word (avine)      -- bird-like: avine
@@ -2672,19 +2878,19 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 19 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Annotations.yml
-    1/1 config/styles/proselint/Annotations.yml 776.68ms X
+    1/1 config/styles/proselint/Annotations.yml 751.72ms X
     config/styles/proselint/Annotations.yml:3:1       - Unknown word (ignorecase) -- ignorecase: false
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Apologizing.yml
-    1/1 config/styles/proselint/Apologizing.yml 754.71ms X
+    1/1 config/styles/proselint/Apologizing.yml 746.65ms X
     config/styles/proselint/Apologizing.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Archaisms.yml
-    1/1 config/styles/proselint/Archaisms.yml 1016.29ms X
+    1/1 config/styles/proselint/Archaisms.yml 1036.31ms X
     config/styles/proselint/Archaisms.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/proselint/Archaisms.yml:12:5      - Unknown word (brocage)    -- - brocage
@@ -2707,7 +2913,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 
 ✅ [SUCCESS] config/styles/proselint/But.yml
 ❌ [ERROR] config/styles/proselint/Cliches.yml
-    1/1 config/styles/proselint/Cliches.yml 930.81ms X
+    1/1 config/styles/proselint/Cliches.yml 923.85ms X
     config/styles/proselint/Cliches.yml:4:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/proselint/Cliches.yml:317:9     - Unknown word (paydirt)    -- - hit paydirt
@@ -2721,7 +2927,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 5 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/CorporateSpeak.yml
-    1/1 config/styles/proselint/CorporateSpeak.yml 796.98ms X
+    1/1 config/styles/proselint/CorporateSpeak.yml 817.65ms X
     config/styles/proselint/CorporateSpeak.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/proselint/CorporateSpeak.yml:18:8      - Unknown word (brainer)    -- - no brainer
@@ -2729,19 +2935,19 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Currency.yml
-    1/1 config/styles/proselint/Currency.yml 784.96ms X
+    1/1 config/styles/proselint/Currency.yml 771.14ms X
     config/styles/proselint/Currency.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Cursing.yml
-    1/1 config/styles/proselint/Cursing.yml 781.70ms X
+    1/1 config/styles/proselint/Cursing.yml 764.53ms X
     config/styles/proselint/Cursing.yml:4:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/DateCase.yml
-    1/1 config/styles/proselint/DateCase.yml 813.54ms X
+    1/1 config/styles/proselint/DateCase.yml 838.55ms X
     config/styles/proselint/DateCase.yml:3:1       - Unknown word (ignorecase) -- ignorecase: false
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/proselint/DateCase.yml:5:1       - Unknown word (nonword)    -- nonword: true
@@ -2749,7 +2955,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/DateMidnight.yml
-    1/1 config/styles/proselint/DateMidnight.yml 787.59ms X
+    1/1 config/styles/proselint/DateMidnight.yml 850.18ms X
     config/styles/proselint/DateMidnight.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/proselint/DateMidnight.yml:5:1       - Unknown word (nonword)    -- nonword: true
@@ -2757,7 +2963,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/DateRedundancy.yml
-    1/1 config/styles/proselint/DateRedundancy.yml 780.58ms X
+    1/1 config/styles/proselint/DateRedundancy.yml 831.90ms X
     config/styles/proselint/DateRedundancy.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/proselint/DateRedundancy.yml:5:1       - Unknown word (nonword)    -- nonword: true
@@ -2765,7 +2971,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/DateSpacing.yml
-    1/1 config/styles/proselint/DateSpacing.yml 789.14ms X
+    1/1 config/styles/proselint/DateSpacing.yml 799.96ms X
     config/styles/proselint/DateSpacing.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/proselint/DateSpacing.yml:5:1       - Unknown word (nonword)    -- nonword: true
@@ -2773,7 +2979,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/DenizenLabels.yml
-    1/1 config/styles/proselint/DenizenLabels.yml 3135.47ms X
+    1/1 config/styles/proselint/DenizenLabels.yml 3356.73ms X
     config/styles/proselint/DenizenLabels.yml:3:1       - Unknown word (ignorecase) -- ignorecase: false
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/proselint/DenizenLabels.yml:7:6       - Unknown word (Afrikaaner) -- (?:Afrikaaner|Afrikander):
@@ -2907,7 +3113,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 65 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Diacritical.yml
-    1/1 config/styles/proselint/Diacritical.yml 1860.31ms X
+    1/1 config/styles/proselint/Diacritical.yml 1860.43ms X
     config/styles/proselint/Diacritical.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/proselint/Diacritical.yml:8:20      - Unknown word (idéal)      -- beau ideal: beau idéal
@@ -3041,7 +3247,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 65 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/GenderBias.yml
-    1/1 config/styles/proselint/GenderBias.yml 852.91ms X
+    1/1 config/styles/proselint/GenderBias.yml 890.27ms X
     config/styles/proselint/GenderBias.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/proselint/GenderBias.yml:33:3      - Unknown word (ombuds)     -- ombuds(?:man|woman):
@@ -3053,7 +3259,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 4 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/GroupTerms.yml
-    1/1 config/styles/proselint/GroupTerms.yml 841.33ms X
+    1/1 config/styles/proselint/GroupTerms.yml 873.55ms X
     config/styles/proselint/GroupTerms.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/proselint/GroupTerms.yml:18:46     - Unknown word (cete)       -- herd) of badgers:      cete of badgers
@@ -3069,19 +3275,19 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 6 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Hedging.yml
-    1/1 config/styles/proselint/Hedging.yml 749.19ms X
+    1/1 config/styles/proselint/Hedging.yml 767.47ms X
     config/styles/proselint/Hedging.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Hyperbole.yml
-    1/1 config/styles/proselint/Hyperbole.yml 783.93ms X
+    1/1 config/styles/proselint/Hyperbole.yml 801.59ms X
     config/styles/proselint/Hyperbole.yml:4:1       - Unknown word (nonword)    -- nonword: true
     	 Suggestions: [nonfood, notwork, onward, nanoid, nonary]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Jargon.yml
-    1/1 config/styles/proselint/Jargon.yml 830.74ms X
+    1/1 config/styles/proselint/Jargon.yml 808.46ms X
     config/styles/proselint/Jargon.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/proselint/Jargon.yml:8:5       - Unknown word (agendize)   -- - agendize
@@ -3089,25 +3295,25 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/LGBTOffensive.yml
-    1/1 config/styles/proselint/LGBTOffensive.yml 782.54ms X
+    1/1 config/styles/proselint/LGBTOffensive.yml 782.97ms X
     config/styles/proselint/LGBTOffensive.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/LGBTTerms.yml
-    1/1 config/styles/proselint/LGBTTerms.yml 769.27ms X
+    1/1 config/styles/proselint/LGBTTerms.yml 781.59ms X
     config/styles/proselint/LGBTTerms.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Malapropisms.yml
-    1/1 config/styles/proselint/Malapropisms.yml 762.72ms X
+    1/1 config/styles/proselint/Malapropisms.yml 744.53ms X
     config/styles/proselint/Malapropisms.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Needless.yml
-    1/1 config/styles/proselint/Needless.yml 3942.66ms X
+    1/1 config/styles/proselint/Needless.yml 4005.53ms X
     config/styles/proselint/Needless.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/proselint/Needless.yml:9:15      - Unknown word (pygmaen)    -- '(?:pygmean|pygmaen)': pygmy
@@ -3411,7 +3617,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 150 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Nonwords.yml
-    1/1 config/styles/proselint/Nonwords.yml 1325.68ms X
+    1/1 config/styles/proselint/Nonwords.yml 1400.82ms X
     config/styles/proselint/Nonwords.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/proselint/Nonwords.yml:8:3       - Unknown word (affrontery) -- affrontery: effrontery
@@ -3467,32 +3673,32 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 26 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Oxymorons.yml
-    1/1 config/styles/proselint/Oxymorons.yml 758.35ms X
+    1/1 config/styles/proselint/Oxymorons.yml 781.74ms X
     config/styles/proselint/Oxymorons.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/P-Value.yml
-    1/1 config/styles/proselint/P-Value.yml 761.06ms X
+    1/1 config/styles/proselint/P-Value.yml 796.85ms X
     config/styles/proselint/P-Value.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ✅ [SUCCESS] config/styles/proselint/RASSyndrome.yml
 ❌ [ERROR] config/styles/proselint/README.md
-    1/1 config/styles/proselint/README.md 842.14ms X
+    1/1 config/styles/proselint/README.md 885.56ms X
     config/styles/proselint/README.md:1:31      - Unknown word (Suchow)     -- © 2014–2015, Jordan Suchow, Michael Pacer, and
     	 Suggestions: [Schw, Scow, Show, Such, Succor]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Skunked.yml
-    1/1 config/styles/proselint/Skunked.yml 771.95ms X
+    1/1 config/styles/proselint/Skunked.yml 772.37ms X
     config/styles/proselint/Skunked.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Spelling.yml
-    1/1 config/styles/proselint/Spelling.yml 957.57ms X
+    1/1 config/styles/proselint/Spelling.yml 975.13ms X
     config/styles/proselint/Spelling.yml:4:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/proselint/Spelling.yml:8:3       - Unknown word (colour)     -- colour: color
@@ -3512,13 +3718,13 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 8 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Typography.yml
-    1/1 config/styles/proselint/Typography.yml 779.05ms X
+    1/1 config/styles/proselint/Typography.yml 793.31ms X
     config/styles/proselint/Typography.yml:4:1       - Unknown word (nonword)    -- nonword: true
     	 Suggestions: [nonfood, notwork, onward, nanoid, nonary]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Uncomparables.yml
-    1/1 config/styles/proselint/Uncomparables.yml 794.66ms X
+    1/1 config/styles/proselint/Uncomparables.yml 798.99ms X
     config/styles/proselint/Uncomparables.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/proselint/Uncomparables.yml:12:92     - Unknown word (mildy)      -- increasingly|kind of|mildy|hardly|greatly|sort
@@ -3526,19 +3732,19 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/Very.yml
-    1/1 config/styles/proselint/Very.yml 770.68ms X
+    1/1 config/styles/proselint/Very.yml 779.28ms X
     config/styles/proselint/Very.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/proselint/meta.json
-    1/1 config/styles/proselint/meta.json 849.55ms X
+    1/1 config/styles/proselint/meta.json 895.09ms X
     config/styles/proselint/meta.json:2:14      - Unknown word (jdkato)     -- "author": "jdkato",
     	 Suggestions: [jato, dato, jatos, junto, jurat]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/write-good/Cliches.yml
-    1/1 config/styles/write-good/Cliches.yml 885.80ms X
+    1/1 config/styles/write-good/Cliches.yml 887.00ms X
     config/styles/write-good/Cliches.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     config/styles/write-good/Cliches.yml:282:9     - Unknown word (paydirt)    -- - hit paydirt
@@ -3550,14 +3756,14 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 4 in 1 file.
 
 ❌ [ERROR] config/styles/write-good/E-Prime.yml
-    1/1 config/styles/write-good/E-Prime.yml 761.76ms X
+    1/1 config/styles/write-good/E-Prime.yml 768.78ms X
     config/styles/write-good/E-Prime.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ✅ [SUCCESS] config/styles/write-good/Illusions.yml
 ❌ [ERROR] config/styles/write-good/Passive.yml
-    1/1 config/styles/write-good/Passive.yml 764.17ms X
+    1/1 config/styles/write-good/Passive.yml 788.23ms X
     config/styles/write-good/Passive.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
@@ -3565,19 +3771,19 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] config/styles/write-good/README.md
 ✅ [SUCCESS] config/styles/write-good/So.yml
 ❌ [ERROR] config/styles/write-good/ThereIs.yml
-    1/1 config/styles/write-good/ThereIs.yml 763.10ms X
+    1/1 config/styles/write-good/ThereIs.yml 839.45ms X
     config/styles/write-good/ThereIs.yml:3:1       - Unknown word (ignorecase) -- ignorecase: false
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/write-good/TooWordy.yml
-    1/1 config/styles/write-good/TooWordy.yml 764.91ms X
+    1/1 config/styles/write-good/TooWordy.yml 802.95ms X
     config/styles/write-good/TooWordy.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/styles/write-good/Weasel.yml
-    1/1 config/styles/write-good/Weasel.yml 766.10ms X
+    1/1 config/styles/write-good/Weasel.yml 752.77ms X
     config/styles/write-good/Weasel.yml:3:1       - Unknown word (ignorecase) -- ignorecase: true
     	 Suggestions: [ignores, ignorers, increase]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
@@ -3585,7 +3791,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] config/styles/write-good/meta.json
 ✅ [SUCCESS] config/sun_checks.xml
 ❌ [ERROR] config/terragrunt.hcl
-    1/1 config/terragrunt.hcl 824.44ms X
+    1/1 config/terragrunt.hcl 838.05ms X
     config/terragrunt.hcl:1:3       - Unknown word (terragrunt) -- # terragrunt.hcl — Base config for
     	 Suggestions: [termagant]
     config/terragrunt.hcl:15:33     - Unknown word (egohygiene) -- git::git@github.com:egohygiene/terraform-modules.git
@@ -3595,13 +3801,13 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 3 in 1 file.
 
 ❌ [ERROR] config/terrascan-config.toml
-    1/1 config/terrascan-config.toml 762.36ms X
+    1/1 config/terrascan-config.toml 784.21ms X
     config/terrascan-config.toml:17:46     - Unknown word (sarif)      -- yaml, xml, junit-xml, sarif, human
     	 Suggestions: [sari, saris, serif, sharif, sadi]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/theme.json
-    1/1 config/theme.json 942.84ms X
+    1/1 config/theme.json 1016.40ms X
     config/theme.json:262:22    - Unknown word (Segoe)      -- "font_family": "'Segoe UI', Arial, sans-serif
     	 Suggestions: [Segos, segre, Segre, Segue, Sage]
     config/theme.json:298:8     - Unknown word (soundcloud) -- "soundcloud": 480,
@@ -3613,13 +3819,13 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 4 in 1 file.
 
 ❌ [ERROR] config/trivy-sbom.yaml
-    1/1 config/trivy-sbom.yaml 734.39ms X
+    1/1 config/trivy-sbom.yaml 769.95ms X
     config/trivy-sbom.yaml:25:10     - Unknown word (pkgs)       -- list-all-pkgs: false
     	 Suggestions: [pegs, pigs, pugs, Pigs, pkg]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] config/trivy.yaml
-    1/1 config/trivy.yaml 756.22ms X
+    1/1 config/trivy.yaml 788.23ms X
     config/trivy.yaml:39:16     - Unknown word (trivycache) -- dir: .cache/.trivycache
     	 Suggestions: []
     config/trivy.yaml:43:10     - Unknown word (pkgs)       -- list-all-pkgs: false
@@ -3627,7 +3833,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] dashboard-app/.gitignore
-    1/1 dashboard-app/.gitignore 766.35ms X
+    1/1 dashboard-app/.gitignore 803.14ms X
     dashboard-app/.gitignore:21:3      - Unknown word (ntvs)       -- *.ntvs*
     	 Suggestions: [ntrs, NTRS, tvs, TVs, tsv]
     dashboard-app/.gitignore:22:3      - Unknown word (njsproj)    -- *.njsproj
@@ -3635,7 +3841,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] dashboard-app/README.md
-    1/1 dashboard-app/README.md 807.38ms X
+    1/1 dashboard-app/README.md 882.69ms X
     dashboard-app/README.md:7:177     - Unknown word (rolldown)   -- oxc.rs) when used in [rolldown-vite](https://vite.dev
     	 Suggestions: [rollo, rollin, rollmop, rollo's, rollout]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
@@ -3647,7 +3853,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] dashboard-app/public/achievements/achievements.json
 ✅ [SUCCESS] dashboard-app/public/ai/identity.json
 ❌ [ERROR] dashboard-app/public/config/theme.json
-    1/1 dashboard-app/public/config/theme.json 966.97ms X
+    1/1 dashboard-app/public/config/theme.json 982.80ms X
     dashboard-app/public/config/theme.json:262:22    - Unknown word (Segoe)      -- "font_family": "'Segoe UI', Arial, sans-serif
     	 Suggestions: [Segos, segre, Segre, Segue, Sage]
     dashboard-app/public/config/theme.json:298:8     - Unknown word (soundcloud) -- "soundcloud": 480,
@@ -3659,21 +3865,19 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 4 in 1 file.
 
 ❌ [ERROR] dashboard-app/public/developer/stats.json
-    1/1 dashboard-app/public/developer/stats.json 989.61ms X
+    1/1 dashboard-app/public/developer/stats.json 970.64ms X
     dashboard-app/public/developer/stats.json:2:16      - Unknown word (szmyty)     -- "username": "szmyty",
     	 Suggestions: [stymy, smit, smtp, smut, stmt]
     dashboard-app/public/developer/stats.json:3:17      - Unknown word (Szmyt)      -- "name": "Alan Szmyt",
     	 Suggestions: [Smit, Smut, Stmt, sumy, Sumy]
-    dashboard-app/public/developer/stats.json:268:16    - Unknown word (gitreport)  -- "name": "gitreport",
-    	 Suggestions: [getreport, getReport, gitroot, gatepost, get-port]
-    CSpell: Files checked: 1, Issues found: 3 in 1 file.
+    CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ✅ [SUCCESS] dashboard-app/public/location/location.json
 ✅ [SUCCESS] dashboard-app/public/oura/metrics.json
 ✅ [SUCCESS] dashboard-app/public/oura/mood.json
 ✅ [SUCCESS] dashboard-app/public/soundcloud/latest.json
 ❌ [ERROR] dashboard-app/public/vite.svg
-    1/1 dashboard-app/public/vite.svg 851.89ms X
+    1/1 dashboard-app/public/vite.svg 920.62ms X
     dashboard-app/public/vite.svg:1:47      - Unknown word (xlink)      -- org/2000/svg" xmlns:xlink="http://www.w3.org/
     	 Suggestions: [link, blink, clink, plink, slink]
     dashboard-app/public/vite.svg:1:121     - Unknown word (iconify)    -- true" role="img" class="iconify iconify--logos" width
@@ -3691,7 +3895,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 7 in 1 file.
 
 ❌ [ERROR] dashboard-app/public/weather/weather.json
-    1/1 dashboard-app/public/weather/weather.json 801.46ms X
+    1/1 dashboard-app/public/weather/weather.json 861.65ms X
     dashboard-app/public/weather/weather.json:11:6      - Unknown word (weathercode) -- "weathercode": 0,
     	 Suggestions: [weathercock, weathered, weatherized, weatherize, weatherwise]
     dashboard-app/public/weather/weather.json:21:6      - Unknown word (weathercode) -- "weathercode": 3
@@ -3700,7 +3904,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 
 ✅ [SUCCESS] dashboard-app/src/App.css
 ❌ [ERROR] dashboard-app/src/App.tsx
-    1/1 dashboard-app/src/App.tsx 928.24ms X
+    1/1 dashboard-app/src/App.tsx 1014.09ms X
     dashboard-app/src/App.tsx:5:10      - Unknown word (Oura)       -- import { OuraHealthCard } from '.
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     dashboard-app/src/App.tsx:5:46      - Unknown word (Oura)       -- from './components/OuraHealthCard'
@@ -3726,7 +3930,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 11 in 1 file.
 
 ❌ [ERROR] dashboard-app/src/assets/react.svg
-    1/1 dashboard-app/src/assets/react.svg 784.31ms X
+    1/1 dashboard-app/src/assets/react.svg 805.18ms X
     dashboard-app/src/assets/react.svg:1:47      - Unknown word (xlink)      -- org/2000/svg" xmlns:xlink="http://www.w3.org/
     	 Suggestions: [link, blink, clink, plink, slink]
     dashboard-app/src/assets/react.svg:1:121     - Unknown word (iconify)    -- true" role="img" class="iconify iconify--logos" width
@@ -3742,7 +3946,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] dashboard-app/src/components/LocationCard.tsx
 ✅ [SUCCESS] dashboard-app/src/components/MoodAvatarCard.tsx
 ❌ [ERROR] dashboard-app/src/components/OuraHealthCard.tsx
-    1/1 dashboard-app/src/components/OuraHealthCard.tsx 937.48ms X
+    1/1 dashboard-app/src/components/OuraHealthCard.tsx 964.46ms X
     dashboard-app/src/components/OuraHealthCard.tsx:2:15      - Unknown word (Oura)       -- import type { OuraMetrics } from '../types
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     dashboard-app/src/components/OuraHealthCard.tsx:4:19      - Unknown word (Oura)       -- import '../styles/OuraHealthCard.css';
@@ -3762,7 +3966,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 8 in 1 file.
 
 ❌ [ERROR] dashboard-app/src/components/SoundCloudCard.tsx
-    1/1 dashboard-app/src/components/SoundCloudCard.tsx 867.55ms X
+    1/1 dashboard-app/src/components/SoundCloudCard.tsx 957.40ms X
     dashboard-app/src/components/SoundCloudCard.tsx:35:23     - Unknown word (soundcloud) -- <div className="soundcloud-content">
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     dashboard-app/src/components/SoundCloudCard.tsx:37:27     - Unknown word (soundcloud) -- <div className="soundcloud-artwork">
@@ -3785,7 +3989,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] dashboard-app/src/styles/LocationCard.css
 ✅ [SUCCESS] dashboard-app/src/styles/MoodAvatarCard.css
 ❌ [ERROR] dashboard-app/src/styles/OuraHealthCard.css
-    1/1 dashboard-app/src/styles/OuraHealthCard.css 762.94ms X
+    1/1 dashboard-app/src/styles/OuraHealthCard.css 751.01ms X
     dashboard-app/src/styles/OuraHealthCard.css:1:2       - Unknown word (oura)       -- .oura-content {
     	 Suggestions: [odra, okra, ours, Odra, ora]
     dashboard-app/src/styles/OuraHealthCard.css:7:2       - Unknown word (oura)       -- .oura-scores {
@@ -3795,7 +3999,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 3 in 1 file.
 
 ❌ [ERROR] dashboard-app/src/styles/SoundCloudCard.css
-    1/1 dashboard-app/src/styles/SoundCloudCard.css 786.45ms X
+    1/1 dashboard-app/src/styles/SoundCloudCard.css 824.40ms X
     dashboard-app/src/styles/SoundCloudCard.css:1:2       - Unknown word (soundcloud) -- .soundcloud-content {
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     dashboard-app/src/styles/SoundCloudCard.css:7:2       - Unknown word (soundcloud) -- .soundcloud-artwork {
@@ -3810,7 +4014,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 
 ✅ [SUCCESS] dashboard-app/src/styles/WeatherCard.css
 ❌ [ERROR] dashboard-app/src/types.ts
-    1/1 dashboard-app/src/types.ts 917.60ms X
+    1/1 dashboard-app/src/types.ts 925.92ms X
     dashboard-app/src/types.ts:13:5      - Unknown word (weathercode) -- weathercode: number;
     	 Suggestions: [weathercock, weathered, weatherized, weatherize, weatherwise]
     dashboard-app/src/types.ts:23:5      - Unknown word (weathercode) -- weathercode: number;
@@ -3822,7 +4026,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 4 in 1 file.
 
 ❌ [ERROR] dashboard-app/src/utils/dataFetcher.ts
-    1/1 dashboard-app/src/utils/dataFetcher.ts 954.38ms X
+    1/1 dashboard-app/src/utils/dataFetcher.ts 973.23ms X
     dashboard-app/src/utils/dataFetcher.ts:6:8       - Unknown word (Oura)       -- fetchOura,
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     dashboard-app/src/utils/dataFetcher.ts:21:5      - Unknown word (oura)       -- oura,
@@ -3838,7 +4042,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 6 in 1 file.
 
 ❌ [ERROR] dashboard-app/src/utils/fetchData.ts
-    1/1 dashboard-app/src/utils/fetchData.ts 959.25ms X
+    1/1 dashboard-app/src/utils/fetchData.ts 945.55ms X
     dashboard-app/src/utils/fetchData.ts:5:3       - Unknown word (Oura)       -- OuraMetrics,
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     dashboard-app/src/utils/fetchData.ts:98:10     - Unknown word (Oura)       -- * Fetch Oura health metrics
@@ -3862,7 +4066,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] dashboard-app/tsconfig.node.json
 ✅ [SUCCESS] dashboard-app/vite.config.ts
 ❌ [ERROR] dashboard-dark.svg
-    1/1 dashboard-dark.svg 907.59ms X
+    1/1 dashboard-dark.svg 910.29ms X
     dashboard-dark.svg:15:25     - Unknown word (Segoe)      -- <text font-family="'Segoe UI', Arial, sans-serif
     	 Suggestions: [Segos, segre, Segre, Segue, Sage]
     dashboard-dark.svg:25:41     - Unknown word (Segoe)      -- y="20" font-family="'Segoe UI', Arial, sans-serif
@@ -3890,7 +4094,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 12 in 1 file.
 
 ❌ [ERROR] dashboard-interactive.svg
-    1/1 dashboard-interactive.svg 940.16ms X
+    1/1 dashboard-interactive.svg 923.31ms X
     dashboard-interactive.svg:33:6      - Unknown word (soundcloud) -- .soundcloud-panel { animation-delay
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     dashboard-interactive.svg:53:25     - Unknown word (Segoe)      -- <text font-family="'Segoe UI', Arial, sans-serif
@@ -3920,7 +4124,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 13 in 1 file.
 
 ❌ [ERROR] dashboard-light.svg
-    1/1 dashboard-light.svg 908.61ms X
+    1/1 dashboard-light.svg 952.16ms X
     dashboard-light.svg:15:25     - Unknown word (Segoe)      -- <text font-family="'Segoe UI', Arial, sans-serif
     	 Suggestions: [Segos, segre, Segre, Segue, Sage]
     dashboard-light.svg:25:41     - Unknown word (Segoe)      -- y="20" font-family="'Segoe UI', Arial, sans-serif
@@ -3948,7 +4152,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 12 in 1 file.
 
 ❌ [ERROR] dashboard.svg
-    1/1 dashboard.svg 878.29ms X
+    1/1 dashboard.svg 907.66ms X
     dashboard.svg:1:47      - Unknown word (xlink)      -- org/2000/svg" xmlns:xlink="http://www.w3.org/
     	 Suggestions: [link, blink, clink, plink, slink]
     dashboard.svg:22:25     - Unknown word (Segoe)      -- <text font-family="'Segoe UI', Arial, sans-serif
@@ -3978,14 +4182,14 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] data/metrics/developer.json
 ✅ [SUCCESS] data/metrics/location.json
 ❌ [ERROR] data/metrics/oura.json
-    1/1 data/metrics/oura.json 805.48ms X
+    1/1 data/metrics/oura.json 807.50ms X
     data/metrics/oura.json:2:21      - Unknown word (oura)       -- "workflow_name": "oura",
     	 Suggestions: [odra, okra, ours, Odra, ora]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ✅ [SUCCESS] data/metrics/parallel-fetch.json
 ❌ [ERROR] data/metrics/soundcloud.json
-    1/1 data/metrics/soundcloud.json 826.25ms X
+    1/1 data/metrics/soundcloud.json 836.59ms X
     data/metrics/soundcloud.json:2:21      - Unknown word (soundcloud) -- "workflow_name": "soundcloud",
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
@@ -3993,7 +4197,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] data/metrics/test-workflow.json
 ✅ [SUCCESS] data/metrics/weather.json
 ❌ [ERROR] data/mock/README.md
-    1/1 data/mock/README.md 955.14ms X
+    1/1 data/mock/README.md 911.41ms X
     data/mock/README.md:7:9       - Unknown word (soundcloud) -- ### 1. `soundcloud-metadata.json`
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     data/mock/README.md:10:23     - Unknown word (soundcloud) -- Schema**: [`schemas/soundcloud-track.schema.json`]
@@ -4021,7 +4225,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 12 in 1 file.
 
 ❌ [ERROR] data/mock/developer-stats.json
-    1/1 data/mock/developer-stats.json 854.82ms X
+    1/1 data/mock/developer-stats.json 920.58ms X
     data/mock/developer-stats.json:2:16      - Unknown word (mockdev)    -- "username": "mockdev",
     	 Suggestions: [mocked, mocker, mucked, locked, mock]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
@@ -4030,7 +4234,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] data/mock/soundcloud-artwork.jpg
 ✅ [SUCCESS] data/mock/soundcloud-metadata.json
 ❌ [ERROR] data/mock/weather.json
-    1/1 data/mock/weather.json 848.39ms X
+    1/1 data/mock/weather.json 852.93ms X
     data/mock/weather.json:11:6      - Unknown word (weathercode) -- "weathercode": 2,
     	 Suggestions: [weathercock, weathered, weatherized, weatherize, weatherwise]
     data/mock/weather.json:21:6      - Unknown word (weathercode) -- "weathercode": 2
@@ -4038,7 +4242,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] data/quotes/quotes.json
-    1/1 data/quotes/quotes.json 1003.13ms X
+    1/1 data/quotes/quotes.json 971.39ms X
     data/quotes/quotes.json:54:22     - Unknown word (Booch)      -- "author": "Grady Booch",
     	 Suggestions: [bloch, Bloch, booth, Booth, Bosch]
     data/quotes/quotes.json:59:26     - Unknown word (Berard)     -- author": "Edward V. Berard",
@@ -4054,7 +4258,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] data/snapshots/README.md
 ✅ [SUCCESS] data/snapshots/daily/.gitkeep
 ❌ [ERROR] data/snapshots/daily/2025/12/2025-12-03.json
-    1/1 data/snapshots/daily/2025/12/2025-12-03.json 837.95ms X
+    1/1 data/snapshots/daily/2025/12/2025-12-03.json 818.87ms X
     data/snapshots/daily/2025/12/2025-12-03.json:27:6      - Unknown word (weathercode) -- "weathercode": 3,
     	 Suggestions: [weathercock, weathered, weatherized, weatherize, weatherwise]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
@@ -4064,7 +4268,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] data/snapshots/weekly/.gitkeep
 ✅ [SUCCESS] data/snapshots/weekly/2025-W49.json
 ❌ [ERROR] data/status/status-page.svg
-    1/1 data/status/status-page.svg 916.27ms X
+    1/1 data/status/status-page.svg 920.32ms X
     data/status/status-page.svg:4:71      - Unknown word (Segoe)      -- BlinkMacSystemFont, 'Segoe UI', sans-serif; font
     	 Suggestions: [Segos, segre, Segre, Segue, Sage]
     data/status/status-page.svg:5:71      - Unknown word (Segoe)      -- BlinkMacSystemFont, 'Segoe UI', sans-serif; font
@@ -4078,7 +4282,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] data/timezone.json
 ✅ [SUCCESS] developer/.gitkeep
 ❌ [ERROR] developer/developer_dashboard.svg
-    1/1 developer/developer_dashboard.svg 859.03ms X
+    1/1 developer/developer_dashboard.svg 870.68ms X
     developer/developer_dashboard.svg:1:403     - Unknown word (Segoe)      -- ffda" font-family="'Segoe UI', Arial, sans-serif
     	 Suggestions: [Segos, segre, Segre, Segue, Sage]
     developer/developer_dashboard.svg:2:15      - Unknown word (apos)       -- 💻 Alan&apos;s Developer Dashboard
@@ -4096,17 +4300,15 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 7 in 1 file.
 
 ❌ [ERROR] developer/stats.json
-    1/1 developer/stats.json 1010.68ms X
+    1/1 developer/stats.json 974.86ms X
     developer/stats.json:2:16      - Unknown word (szmyty)     -- "username": "szmyty",
     	 Suggestions: [stymy, smit, smtp, smut, stmt]
     developer/stats.json:3:17      - Unknown word (Szmyt)      -- "name": "Alan Szmyt",
     	 Suggestions: [Smit, Smut, Stmt, sumy, Sumy]
-    developer/stats.json:268:16    - Unknown word (gitreport)  -- "name": "gitreport",
-    	 Suggestions: [getreport, getReport, gitroot, gatepost, get-port]
-    CSpell: Files checked: 1, Issues found: 3 in 1 file.
+    CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] docs/API_RESILIENCE.md
-    1/1 docs/API_RESILIENCE.md 1135.35ms X
+    1/1 docs/API_RESILIENCE.md 1137.24ms X
     docs/API_RESILIENCE.md:49:40     - Unknown word (Oura)       -- detected (HTTP 429) from Oura API
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     docs/API_RESILIENCE.md:105:18    - Unknown word (Oura)       -- ✅ API recovered: Oura API - resetting circuit
@@ -4152,7 +4354,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 21 in 1 file.
 
 ❌ [ERROR] docs/API_TIMEOUT_RETRY_GUIDE.md
-    1/1 docs/API_TIMEOUT_RETRY_GUIDE.md 1066.06ms X
+    1/1 docs/API_TIMEOUT_RETRY_GUIDE.md 1093.36ms X
     docs/API_TIMEOUT_RETRY_GUIDE.md:67:14     - Unknown word (soundcloud) -- ### 1. fetch-soundcloud.sh
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     docs/API_TIMEOUT_RETRY_GUIDE.md:74:39     - Unknown word (Meteo)      -- curl command (Open-Meteo)
@@ -4192,7 +4394,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 18 in 1 file.
 
 ❌ [ERROR] docs/CACHING_BENCHMARKS.md
-    1/1 docs/CACHING_BENCHMARKS.md 858.07ms X
+    1/1 docs/CACHING_BENCHMARKS.md 857.09ms X
     docs/CACHING_BENCHMARKS.md:18:3      - Unknown word (soundcloud) -- | soundcloud-card.yml | 15-20s |
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     docs/CACHING_BENCHMARKS.md:19:23     - Unknown word (soundcloud) -- parallel-fetch.yml (soundcloud) | 15-20s | 12-18s
@@ -4210,7 +4412,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 7 in 1 file.
 
 ❌ [ERROR] docs/CACHING_QUICK_REFERENCE.md
-    1/1 docs/CACHING_QUICK_REFERENCE.md 834.37ms X
+    1/1 docs/CACHING_QUICK_REFERENCE.md 834.15ms X
     docs/CACHING_QUICK_REFERENCE.md:39:34     - Unknown word (pytest)     -- 'Pillow jsonschema pytest'
     	 Suggestions: [pest, pates, prest, pyres, pyxes]
     docs/CACHING_QUICK_REFERENCE.md:111:16    - Unknown word (pytest)     -- packages: 'pytest pytest-cov'
@@ -4220,7 +4422,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 3 in 1 file.
 
 ❌ [ERROR] docs/INTEGRATION_EXAMPLE.md
-    1/1 docs/INTEGRATION_EXAMPLE.md 855.49ms X
+    1/1 docs/INTEGRATION_EXAMPLE.md 846.80ms X
     docs/INTEGRATION_EXAMPLE.md:278:5     - Unknown word (OURA)       -- OURA_CALLS=0
     	 Suggestions: [ODRA, OKRA, OURS, Odra, ORA]
     docs/INTEGRATION_EXAMPLE.md:283:47    - Unknown word (OURA)       -- ouraring.com/... && ((OURA_CALLS++))
@@ -4231,8 +4433,56 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     	 Suggestions: [ODRA, OKRA, OURS, Odra, ORA]
     CSpell: Files checked: 1, Issues found: 4 in 1 file.
 
+❌ [ERROR] docs/LOCAL_DEVELOPMENT.md
+    1/1 docs/LOCAL_DEVELOPMENT.md 1102.26ms X
+    docs/LOCAL_DEVELOPMENT.md:21:26     - Unknown word (actrc)      -- Configuration files (`.actrc`, `.secrets.example
+    	 Suggestions: [acirc, Acirc, acer, acre, actg]
+    docs/LOCAL_DEVELOPMENT.md:58:1      - Unknown word (MAPBOX)     -- MAPBOX_TOKEN=pk.yourMapboxToken
+    	 Suggestions: [mbox, MBOX, MAMBO, MAALOX, MADDOX]
+    docs/LOCAL_DEVELOPMENT.md:58:21     - Unknown word (Mapbox)     -- MAPBOX_TOKEN=pk.yourMapboxToken
+    	 Suggestions: [Mbox, Mambo, maalox, Maalox, Maddox]
+    docs/LOCAL_DEVELOPMENT.md:59:1      - Unknown word (OURA)       -- OURA_PAT=yourOuraPersonalAccessTok
+    	 Suggestions: [ODRA, OKRA, OURS, Odra, ORA]
+    docs/LOCAL_DEVELOPMENT.md:59:14     - Unknown word (Oura)       -- OURA_PAT=yourOuraPersonalAccessToken
+    	 Suggestions: [odra, Odra, Okra, Ours, Ora]
+    docs/LOCAL_DEVELOPMENT.md:136:8     - Unknown word (pytest)     -- - Runs pytest or shell tests
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    docs/LOCAL_DEVELOPMENT.md:154:13    - Unknown word (MAPBOX)     -- - Optional: MAPBOX_TOKEN, OURA_PAT for
+    	 Suggestions: [mbox, MBOX, MAMBO, MAALOX, MADDOX]
+    docs/LOCAL_DEVELOPMENT.md:154:27    - Unknown word (OURA)       -- Optional: MAPBOX_TOKEN, OURA_PAT for full functionality
+    	 Suggestions: [ODRA, OKRA, OURS, Odra, ORA]
+    docs/LOCAL_DEVELOPMENT.md:179:5     - Unknown word (eventpath)  -- --eventpath .github/workflows/act
+    	 Suggestions: [eventuate, edentate, eventual, eventuated, eventuates]
+    docs/LOCAL_DEVELOPMENT.md:184:6     - Unknown word (actrc)      -- ### .actrc Configuration
+    	 Suggestions: [acirc, Acirc, acer, acre, actg]
+    docs/LOCAL_DEVELOPMENT.md:186:7     - Unknown word (actrc)      -- The `.actrc` file in the repository
+    	 Suggestions: [acirc, Acirc, acer, acre, actg]
+    docs/LOCAL_DEVELOPMENT.md:190:18    - Unknown word (catthehacker) -- -P ubuntu-latest=catthehacker/ubuntu:act-latest
+    	 Suggestions: []
+    docs/LOCAL_DEVELOPMENT.md:199:68    - Unknown word (actrc)        -- or create a local `.actrc.local` file.
+    	 Suggestions: [acirc, Acirc, acer, acre, actg]
+    docs/LOCAL_DEVELOPMENT.md:205:22    - Unknown word (catthehacker) -- `ubuntu-latest` → `catthehacker/ubuntu:act-latest`
+    	 Suggestions: []
+    docs/LOCAL_DEVELOPMENT.md:206:21    - Unknown word (catthehacker) -- - `ubuntu-22.04` → `catthehacker/ubuntu:act-22.04`
+    	 Suggestions: []
+    docs/LOCAL_DEVELOPMENT.md:207:21    - Unknown word (catthehacker) -- - `ubuntu-20.04` → `catthehacker/ubuntu:act-20.04`
+    	 Suggestions: []
+    docs/LOCAL_DEVELOPMENT.md:222:12    - Unknown word (eventpath)    -- act push --eventpath .github/workflows/act
+    	 Suggestions: [eventuate, edentate, eventual, eventuated, eventuates]
+    docs/LOCAL_DEVELOPMENT.md:225:20    - Unknown word (eventpath)    -- act pull_request --eventpath .github/workflows/act
+    	 Suggestions: [eventuate, edentate, eventual, eventuated, eventuates]
+    docs/LOCAL_DEVELOPMENT.md:228:25    - Unknown word (eventpath)    -- workflow_dispatch --eventpath .github/workflows/act
+    	 Suggestions: [eventuate, edentate, eventual, eventuated, eventuates]
+    docs/LOCAL_DEVELOPMENT.md:256:11    - Unknown word (pytest)       -- python -m pytest tests/ -v
+    	 Suggestions: [pest, pates, prest, pyres, pyxes]
+    docs/LOCAL_DEVELOPMENT.md:263:11    - Unknown word (mypy)         -- python -m mypy scripts/
+    	 Suggestions: [mopy, myopy, macy, many, maps]
+    docs/LOCAL_DEVELOPMENT.md:313:13    - Unknown word (catthehacker) -- docker pull catthehacker/ubuntu:act-latest
+    	 Suggestions: []
+    CSpell: Files checked: 1, Issues found: 22 in 1 file.
+
 ❌ [ERROR] docs/LOCATION_CARD_CHANGES.md
-    1/1 docs/LOCATION_CARD_CHANGES.md 971.69ms X
+    1/1 docs/LOCATION_CARD_CHANGES.md 990.26ms X
     docs/LOCATION_CARD_CHANGES.md:23:6      - Unknown word (Nominatim)  -- #### Nominatim API Error Detection
     	 Suggestions: [Nominate, Nominated, Nominates, Nominator, Nominalism]
     docs/LOCATION_CARD_CHANGES.md:28:43     - Unknown word (nominatim)  -- data to `location/debug_nominatim.json` and `location
@@ -4254,7 +4504,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 9 in 1 file.
 
 ❌ [ERROR] docs/MONITORING.md
-    1/1 docs/MONITORING.md 867.43ms X
+    1/1 docs/MONITORING.md 862.75ms X
     docs/MONITORING.md:33:43     - Unknown word (oura)       -- workflow-metrics.py oura --success --run-time
     	 Suggestions: [odra, okra, ours, Odra, ora]
     docs/MONITORING.md:36:43     - Unknown word (oura)       -- workflow-metrics.py oura --failure --error-message
@@ -4274,7 +4524,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 8 in 1 file.
 
 ❌ [ERROR] docs/OPTIMIZATION_GUIDE.md
-    1/1 docs/OPTIMIZATION_GUIDE.md 964.74ms X
+    1/1 docs/OPTIMIZATION_GUIDE.md 954.96ms X
     docs/OPTIMIZATION_GUIDE.md:23:9      - Unknown word (oura)       -- fetch-oura: # Runs in parallel
     	 Suggestions: [odra, okra, ours, Odra, ora]
     docs/OPTIMIZATION_GUIDE.md:25:9      - Unknown word (soundcloud) -- fetch-soundcloud: # Runs in parallel
@@ -4298,7 +4548,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 10 in 1 file.
 
 ❌ [ERROR] docs/README_LAYOUT_BEFORE_AFTER.md
-    1/1 docs/README_LAYOUT_BEFORE_AFTER.md 798.30ms X
+    1/1 docs/README_LAYOUT_BEFORE_AFTER.md 834.72ms X
     docs/README_LAYOUT_BEFORE_AFTER.md:183:3     - Unknown word (Oura)       -- ![Oura](https://github.com
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     docs/README_LAYOUT_BEFORE_AFTER.md:210:3     - Unknown word (Oura)       -- ![Oura](https://github.com
@@ -4306,7 +4556,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] docs/README_LAYOUT_CHANGELOG.md
-    1/1 docs/README_LAYOUT_CHANGELOG.md 873.94ms X
+    1/1 docs/README_LAYOUT_CHANGELOG.md 909.94ms X
     docs/README_LAYOUT_CHANGELOG.md:118:3     - Unknown word (Oura)       -- - Oura Health Dashboard
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     docs/README_LAYOUT_CHANGELOG.md:119:3     - Unknown word (Oura)       -- - Oura Mood Dashboard
@@ -4316,7 +4566,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 3 in 1 file.
 
 ❌ [ERROR] docs/README_SECTION_CHANGES.md
-    1/1 docs/README_SECTION_CHANGES.md 804.48ms X
+    1/1 docs/README_SECTION_CHANGES.md 858.56ms X
     docs/README_SECTION_CHANGES.md:141:4     - Unknown word (Oura)       -- 5. Oura Health Dashboard (Lines
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     docs/README_SECTION_CHANGES.md:142:4     - Unknown word (Oura)       -- 6. Oura Mood Dashboard (Lines
@@ -4324,7 +4574,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] docs/RELEASES.md
-    1/1 docs/RELEASES.md 810.33ms X
+    1/1 docs/RELEASES.md 860.28ms X
     docs/RELEASES.md:51:3      - Unknown word (pyproject)  -- **pyproject.toml:**
     	 Suggestions: [project, projects]
     docs/RELEASES.md:67:30     - Unknown word (pyproject)  -- VERSION CHANGELOG.md pyproject.toml dashboard-app/package
@@ -4338,7 +4588,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 5 in 1 file.
 
 ❌ [ERROR] docs/ROBUSTNESS_IMPROVEMENTS.md
-    1/1 docs/ROBUSTNESS_IMPROVEMENTS.md 992.33ms X
+    1/1 docs/ROBUSTNESS_IMPROVEMENTS.md 1058.87ms X
     docs/ROBUSTNESS_IMPROVEMENTS.md:20:16     - Unknown word (soundcloud) -- **Location**: `soundcloud/last-success.json`
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     docs/ROBUSTNESS_IMPROVEMENTS.md:25:10     - Unknown word (soundcloud) -- - `fetch-soundcloud.sh` saves successful
@@ -4368,7 +4618,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 13 in 1 file.
 
 ❌ [ERROR] docs/TROUBLESHOOTING.md
-    1/1 docs/TROUBLESHOOTING.md 1369.92ms X
+    1/1 docs/TROUBLESHOOTING.md 1428.30ms X
     docs/TROUBLESHOOTING.md:65:5      - Unknown word (Nominatim)  -- ### Nominatim Rate Limiting
     	 Suggestions: [Nominate, Nominated, Nominates, Nominator, Nominalism]
     docs/TROUBLESHOOTING.md:73:1      - Unknown word (Nominatim)  -- Nominatim has strict rate limits
@@ -4450,7 +4700,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 39 in 1 file.
 
 ❌ [ERROR] docs/UNIFIED_WORKFLOW_MIGRATION.md
-    1/1 docs/UNIFIED_WORKFLOW_MIGRATION.md 1087.40ms X
+    1/1 docs/UNIFIED_WORKFLOW_MIGRATION.md 1152.88ms X
     docs/UNIFIED_WORKFLOW_MIGRATION.md:18:5      - Unknown word (soundcloud) -- 2. `soundcloud-card.yml` - SoundCloud
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     docs/UNIFIED_WORKFLOW_MIGRATION.md:21:5      - Unknown word (oura)       -- 5. `oura.yml` - Oura Health Dashboard
@@ -4480,7 +4730,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 13 in 1 file.
 
 ❌ [ERROR] docs/WORKFLOWS.md
-    1/1 docs/WORKFLOWS.md 1018.76ms X
+    1/1 docs/WORKFLOWS.md 1082.99ms X
     docs/WORKFLOWS.md:14:11     - Unknown word (Oura)       -- E[Oura Health<br/>Every 6 hours
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     docs/WORKFLOWS.md:95:27     - Unknown word (Nominatim)  -- Fetch coordinates from Nominatim
@@ -4520,7 +4770,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 18 in 1 file.
 
 ❌ [ERROR] docs/WORKFLOW_CACHING.md
-    1/1 docs/WORKFLOW_CACHING.md 995.78ms X
+    1/1 docs/WORKFLOW_CACHING.md 1003.17ms X
     docs/WORKFLOW_CACHING.md:21:52     - Unknown word (pyproject)  -- requirements*.txt`, `pyproject.toml`, and `poetry.lock
     	 Suggestions: [project, projects]
     docs/WORKFLOW_CACHING.md:31:68     - Unknown word (pytest)     -- jsonschema`, `Pillow`, `pytest`)
@@ -4542,7 +4792,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 9 in 1 file.
 
 ❌ [ERROR] docs/architecture.md
-    1/1 docs/architecture.md 964.81ms X
+    1/1 docs/architecture.md 1053.55ms X
     docs/architecture.md:10:58     - Unknown word (Meteo)      -- and forecast via Open-Meteo API
     	 Suggestions: [Mete, Meted, Meter, Metes, Metro]
     docs/architecture.md:12:5      - Unknown word (Oura)       -- - **Oura Ring Health Metrics
@@ -4574,7 +4824,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 14 in 1 file.
 
 ❌ [ERROR] docs/cards.md
-    1/1 docs/cards.md 1148.08ms X
+    1/1 docs/cards.md 1122.29ms X
     docs/cards.md:27:3      - Unknown word (Nominatim)  -- - Nominatim for geocoding
     	 Suggestions: [Nominate, Nominated, Nominates, Nominator, Nominalism]
     docs/cards.md:49:8      - Unknown word (Meteo)      -- - Open-Meteo API (no API key required
@@ -4619,7 +4869,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 
 ✅ [SUCCESS] docs/markdown_valid_elements.md
 ❌ [ERROR] docs/style-guide.md
-    1/1 docs/style-guide.md 1024.27ms X
+    1/1 docs/style-guide.md 1107.31ms X
     docs/style-guide.md:11:34     - Unknown word (pipefail)   -- mode**: Use `set -euo pipefail` at the start
     	 Suggestions: [pipeful, pineal, pigtail, pintail, pitfall]
     docs/style-guide.md:20:10     - Unknown word (pipefail)   -- set -euo pipefail
@@ -4639,7 +4889,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 8 in 1 file.
 
 ❌ [ERROR] docs/workflows.md
-    1/1 docs/workflows.md 1033.58ms X
+    1/1 docs/workflows.md 1087.69ms X
     docs/workflows.md:27:73     - Unknown word (Oura)       -- Location, SoundCloud, Oura health
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     docs/workflows.md:39:8      - Unknown word (Meteo)      -- - Open-Meteo API (Weather data)
@@ -4692,7 +4942,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] location/location.json
 ✅ [SUCCESS] models/.gitkeep
 ❌ [ERROR] mypy.ini
-    1/1 mypy.ini 803.37ms X
+    1/1 mypy.ini 792.58ms X
     mypy.ini:1:2       - Unknown word (mypy)       -- [mypy]
     	 Suggestions: [mopy, myopy, macy, many, maps]
     mypy.ini:23:2      - Unknown word (mypy)       -- [mypy-scripts.lib.*]
@@ -4710,7 +4960,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] notebooks/.gitkeep
 ✅ [SUCCESS] oura/.gitkeep
 ❌ [ERROR] oura/health_dashboard.svg
-    1/1 oura/health_dashboard.svg 905.22ms X
+    1/1 oura/health_dashboard.svg 1041.98ms X
     oura/health_dashboard.svg:1:559     - Unknown word (Segoe)      -- ffda" font-family="'Segoe UI', Arial, sans-serif
     	 Suggestions: [Segos, segre, Segre, Segue, Sage]
     oura/health_dashboard.svg:2:10      - Unknown word (OURA)       -- 🧬 OURA HEALTH DASHBOARD
@@ -4752,7 +5002,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] oura/mood.json
 ✅ [SUCCESS] oura/mood_dashboard.svg
 ❌ [ERROR] poetry.toml
-    1/1 poetry.toml 818.36ms X
+    1/1 poetry.toml 871.40ms X
     poetry.toml:9:7       - Unknown word (Virtualenvs) -- # ─── Virtualenvs ───────────────────
     	 Suggestions: [Victualers, Virtueless]
     poetry.toml:10:2      - Unknown word (virtualenvs) -- [virtualenvs]
@@ -4764,7 +5014,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 4 in 1 file.
 
 ❌ [ERROR] profile.code-workspace
-    1/1 profile.code-workspace 1106.53ms X
+    1/1 profile.code-workspace 1170.28ms X
     profile.code-workspace:13:33     - Unknown word (esbenp)     -- defaultFormatter": "esbenp.prettier-vscode",
     	 Suggestions: [eben, essen, essene, Eben, Essen]
     profile.code-workspace:32:33     - Unknown word (TASKFILE)   -- words": ["cspell", "TASKFILE"],
@@ -4800,7 +5050,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 16 in 1 file.
 
 ❌ [ERROR] pyproject.toml
-    1/1 pyproject.toml 941.63ms X
+    1/1 pyproject.toml 950.15ms X
     pyproject.toml:9:13      - Unknown word (szmyty)     -- authors = ["szmyty <14865041+szmyty@users
     	 Suggestions: [stymy, smit, smtp, smut, stmt]
     pyproject.toml:17:1      - Unknown word (jsonschema) -- jsonschema = "4.23.0"
@@ -4822,13 +5072,13 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 9 in 1 file.
 
 ❌ [ERROR] quotes/quote.json
-    1/1 quotes/quote.json 900.37ms X
+    1/1 quotes/quote.json 913.08ms X
     quotes/quote.json:3:31      - Unknown word (Exupéry)    -- : "Antoine de Saint-Exupéry",
     	 Suggestions: [Expiry, Empery, Expert, Expr, Exprs]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] quotes/quote_card.svg
-    1/1 quotes/quote_card.svg 861.38ms X
+    1/1 quotes/quote_card.svg 905.68ms X
     quotes/quote_card.svg:1:403     - Unknown word (Segoe)      -- ffda" font-family="'Segoe UI', Arial, sans-serif
     	 Suggestions: [Segos, segre, Segre, Segue, Sage]
     quotes/quote_card.svg:1:538     - Unknown word (Segoe)      -- ffda" font-family="'Segoe UI', Arial, sans-serif
@@ -4844,7 +5094,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 6 in 1 file.
 
 ❌ [ERROR] requirements-dev.txt
-    1/1 requirements-dev.txt 810.23ms X
+    1/1 requirements-dev.txt 819.39ms X
     requirements-dev.txt:12:1      - Unknown word (isort)      -- isort==5.13.2
     	 Suggestions: [isqrt, iSqrt, Isqrt, ISqrt, sort]
     requirements-dev.txt:16:7      - Unknown word (jsonschema) -- check-jsonschema==0.30.0
@@ -4852,7 +5102,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] requirements.txt
-    1/1 requirements.txt 832.55ms X
+    1/1 requirements.txt 861.56ms X
     requirements.txt:2:63      - Unknown word (pathlib)    -- used extensively (json, pathlib, datetime, etc.)
     	 Suggestions: [pathic, pithily, patchily, pali, path]
     requirements.txt:6:1       - Unknown word (jsonschema) -- jsonschema==4.23.0
@@ -4862,7 +5112,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 3 in 1 file.
 
 ❌ [ERROR] schemas/README.md
-    1/1 schemas/README.md 871.53ms X
+    1/1 schemas/README.md 928.13ms X
     schemas/README.md:31:11     - Unknown word (Oura)       -- Validates Oura health snapshot data
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     schemas/README.md:33:5      - Unknown word (oura)       -- ### oura-metrics.schema.json
@@ -4877,13 +5127,13 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 
 ✅ [SUCCESS] schemas/developer-stats.schema.json
 ❌ [ERROR] schemas/health-snapshot.schema.json
-    1/1 schemas/health-snapshot.schema.json 838.10ms X
+    1/1 schemas/health-snapshot.schema.json 880.15ms X
     schemas/health-snapshot.schema.json:5:75      - Unknown word (Oura)       -- snapshot data derived from Oura metrics",
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] schemas/oura-metrics.schema.json
-    1/1 schemas/oura-metrics.schema.json 828.92ms X
+    1/1 schemas/oura-metrics.schema.json 862.38ms X
     schemas/oura-metrics.schema.json:4:13      - Unknown word (Oura)       -- "title": "Oura Ring Metrics",
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     schemas/oura-metrics.schema.json:5:34      - Unknown word (Oura)       -- description": "Schema for raw Oura Ring health metrics
@@ -4892,7 +5142,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 
 ✅ [SUCCESS] schemas/soundcloud-track.schema.json
 ❌ [ERROR] schemas/theme.schema.json
-    1/1 schemas/theme.schema.json 871.26ms X
+    1/1 schemas/theme.schema.json 914.81ms X
     schemas/theme.schema.json:102:14    - Unknown word (soundcloud) -- "soundcloud": {"type": "integer
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     schemas/theme.schema.json:114:14    - Unknown word (soundcloud) -- "soundcloud": {"type": "integer
@@ -4902,7 +5152,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 3 in 1 file.
 
 ❌ [ERROR] schemas/weather.schema.json
-    1/1 schemas/weather.schema.json 829.29ms X
+    1/1 schemas/weather.schema.json 859.65ms X
     schemas/weather.schema.json:39:36     - Unknown word (weathercode) -- required": ["temperature", "weathercode"],
     	 Suggestions: [weathercock, weathered, weatherized, weatherize, weatherwise]
     schemas/weather.schema.json:50:10     - Unknown word (weathercode) -- "weathercode": {
@@ -4911,8 +5161,9 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     	 Suggestions: [weathercock, weathered, weatherized, weatherize, weatherwise]
     CSpell: Files checked: 1, Issues found: 3 in 1 file.
 
+✅ [SUCCESS] scripts/act-test.sh
 ❌ [ERROR] scripts/audit_megalinter_config.py
-    1/1 scripts/audit_megalinter_config.py 979.88ms X
+    1/1 scripts/audit_megalinter_config.py 1082.56ms X
     scripts/audit_megalinter_config.py:52:17     - Unknown word (KUBECONFORM) -- "KUBERNETES_KUBECONFORM_DIRECTORY",
     	 Suggestions: []
     scripts/audit_megalinter_config.py:53:17     - Unknown word (KUBESCAPE)   -- "KUBERNETES_KUBESCAPE_DIRECTORY",
@@ -4920,7 +5171,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] scripts/comprehensive-audit.py
-    1/1 scripts/comprehensive-audit.py 1069.88ms X
+    1/1 scripts/comprehensive-audit.py 1114.57ms X
     scripts/comprehensive-audit.py:135:10    - Unknown word (soundcloud) -- "soundcloud": {
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     scripts/comprehensive-audit.py:136:30    - Unknown word (soundcloud) -- "script": "fetch-soundcloud.sh",
@@ -4954,7 +5205,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 15 in 1 file.
 
 ❌ [ERROR] scripts/dev-mode.sh
-    1/1 scripts/dev-mode.sh 835.70ms X
+    1/1 scripts/dev-mode.sh 882.03ms X
     scripts/dev-mode.sh:4:15      - Unknown word (soundcloud) -- # Card types: soundcloud, weather, developer
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     scripts/dev-mode.sh:4:47      - Unknown word (oura)       -- weather, developer, oura, all
@@ -4981,7 +5232,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 
 ✅ [SUCCESS] scripts/fetch-developer-stats.py
 ❌ [ERROR] scripts/fetch-location.sh
-    1/1 scripts/fetch-location.sh 1090.27ms X
+    1/1 scripts/fetch-location.sh 1135.53ms X
     scripts/fetch-location.sh:2:53      - Unknown word (Mapbox)     -- and static map from Mapbox
     	 Suggestions: [Mbox, Mambo, maalox, Maalox, Maddox]
     scripts/fetch-location.sh:5:43      - Unknown word (Nominatim)  -- location to coordinates via Nominatim
@@ -5041,7 +5292,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 28 in 1 file.
 
 ❌ [ERROR] scripts/fetch-oura.sh
-    1/1 scripts/fetch-oura.sh 869.62ms X
+    1/1 scripts/fetch-oura.sh 921.64ms X
     scripts/fetch-oura.sh:2:23      - Unknown word (Oura)       -- Script to fetch ALL Oura Ring health metrics
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     scripts/fetch-oura.sh:2:53      - Unknown word (Oura)       -- health metrics from Oura Cloud API v2
@@ -5087,7 +5338,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 21 in 1 file.
 
 ❌ [ERROR] scripts/fetch-soundcloud.sh
-    1/1 scripts/fetch-soundcloud.sh 914.56ms X
+    1/1 scripts/fetch-soundcloud.sh 946.44ms X
     scripts/fetch-soundcloud.sh:13:1      - Unknown word (SOUNDCLOUD) -- SOUNDCLOUD_USER="${SOUNDCLOUD_USER
     	 Suggestions: [COUNTCLOUD, Countcloud, countCloud, CountCloud]
     scripts/fetch-soundcloud.sh:13:20     - Unknown word (SOUNDCLOUD) -- SOUNDCLOUD_USER="${SOUNDCLOUD_USER:-playfunction}
@@ -5113,7 +5364,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 11 in 1 file.
 
 ❌ [ERROR] scripts/fetch-timezone.sh
-    1/1 scripts/fetch-timezone.sh 928.94ms X
+    1/1 scripts/fetch-timezone.sh 916.69ms X
     scripts/fetch-timezone.sh:5:43      - Unknown word (Nominatim)  -- location to coordinates via Nominatim
     	 Suggestions: [Nominate, Nominated, Nominates, Nominator, Nominalism]
     scripts/fetch-timezone.sh:6:35      - Unknown word (Meteo)      -- timezone info from Open-Meteo timezone API
@@ -5131,7 +5382,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 7 in 1 file.
 
 ❌ [ERROR] scripts/fetch-weather.sh
-    1/1 scripts/fetch-weather.sh 954.33ms X
+    1/1 scripts/fetch-weather.sh 997.91ms X
     scripts/fetch-weather.sh:2:42      - Unknown word (Meteo)      -- weather data from Open-Meteo API
     	 Suggestions: [Mete, Meted, Meter, Metes, Metro]
     scripts/fetch-weather.sh:5:43      - Unknown word (Nominatim)  -- location to coordinates via Nominatim
@@ -5175,7 +5426,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 20 in 1 file.
 
 ❌ [ERROR] scripts/fetch_quote.sh
-    1/1 scripts/fetch_quote.sh 770.66ms X
+    1/1 scripts/fetch_quote.sh 779.96ms X
     scripts/fetch_quote.sh:24:7      - Unknown word (zenquotes)  -- fetch_zenquotes() {
     	 Suggestions: []
     scripts/fetch_quote.sh:56:23     - Unknown word (zenquotes)  -- --arg source "zenquotes" \
@@ -5185,7 +5436,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 3 in 1 file.
 
 ❌ [ERROR] scripts/generate-card.py
-    1/1 scripts/generate-card.py 1032.69ms X
+    1/1 scripts/generate-card.py 1017.76ms X
     scripts/generate-card.py:114:54    - Unknown word (soundcloud) -- dimension("widths", "soundcloud")
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     scripts/generate-card.py:115:56    - Unknown word (soundcloud) -- dimension("heights", "soundcloud")
@@ -5211,7 +5462,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 11 in 1 file.
 
 ❌ [ERROR] scripts/generate-consolidated-dashboard.py
-    1/1 scripts/generate-consolidated-dashboard.py 1034.53ms X
+    1/1 scripts/generate-consolidated-dashboard.py 1038.23ms X
     scripts/generate-consolidated-dashboard.py:10:3      - Unknown word (Oura)       -- - Oura mood and health metrics
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     scripts/generate-consolidated-dashboard.py:43:10     - Unknown word (soundcloud) -- def load_soundcloud_data() -> Optional[Dict
@@ -5255,7 +5506,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 20 in 1 file.
 
 ❌ [ERROR] scripts/generate-developer-dashboard.py
-    1/1 scripts/generate-developer-dashboard.py 1067.01ms X
+    1/1 scripts/generate-developer-dashboard.py 1089.70ms X
     scripts/generate-developer-dashboard.py:7:17      - Unknown word (sparkline)  -- - Mini activity sparkline (commits over last
     	 Suggestions: [sparkling, sparkle, sparking, sparling, sparteine]
     scripts/generate-developer-dashboard.py:38:14     - Unknown word (sparkline)  -- generate_sparkline_path,
@@ -5273,7 +5524,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 7 in 1 file.
 
 ❌ [ERROR] scripts/generate-fallback-map.py
-    1/1 scripts/generate-fallback-map.py 947.35ms X
+    1/1 scripts/generate-fallback-map.py 1050.74ms X
     scripts/generate-fallback-map.py:3:36      - Unknown word (Mapbox)     -- fallback map image when Mapbox API is unavailable.
     	 Suggestions: [Mbox, Mambo, maalox, Maalox, Maddox]
     scripts/generate-fallback-map.py:46:68     - Unknown word (dejavu)     -- share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf
@@ -5287,7 +5538,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 5 in 1 file.
 
 ❌ [ERROR] scripts/generate-health-dashboard.py
-    1/1 scripts/generate-health-dashboard.py 1104.64ms X
+    1/1 scripts/generate-health-dashboard.py 1122.44ms X
     scripts/generate-health-dashboard.py:3:47      - Unknown word (Oura)       -- health dashboard SVG from Oura Ring metrics.
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     scripts/generate-health-dashboard.py:17:14     - Unknown word (sparkline)  -- generate_sparkline_path,
@@ -5319,7 +5570,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 14 in 1 file.
 
 ❌ [ERROR] scripts/generate-health-snapshot.py
-    1/1 scripts/generate-health-snapshot.py 897.77ms X
+    1/1 scripts/generate-health-snapshot.py 948.25ms X
     scripts/generate-health-snapshot.py:3:39      - Unknown word (Oura)       -- health snapshot from Oura Ring metrics.
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     scripts/generate-health-snapshot.py:4:23      - Unknown word (Oura)       -- This script reads raw Oura metrics from JSON and
@@ -5335,7 +5586,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 6 in 1 file.
 
 ❌ [ERROR] scripts/generate-interactive-dashboard.py
-    1/1 scripts/generate-interactive-dashboard.py 1050.41ms X
+    1/1 scripts/generate-interactive-dashboard.py 1030.82ms X
     scripts/generate-interactive-dashboard.py:45:10     - Unknown word (soundcloud) -- def load_soundcloud_data() -> Optional[Dict
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     scripts/generate-interactive-dashboard.py:69:10     - Unknown word (oura)       -- def load_oura_mood_data() -> Optional
@@ -5375,7 +5626,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 18 in 1 file.
 
 ❌ [ERROR] scripts/generate-location-card.py
-    1/1 scripts/generate-location-card.py 874.48ms X
+    1/1 scripts/generate-location-card.py 969.41ms X
     scripts/generate-location-card.py:158:61    - Unknown word (xlink)      -- org/2000/svg" xmlns:xlink="http://www.w3.org/
     	 Suggestions: [link, blink, clink, plink, slink]
     scripts/generate-location-card.py:197:12    - Unknown word (xlink)      -- xlink:href="data:image/png
@@ -5383,7 +5634,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] scripts/generate-oura-mood-card.py
-    1/1 scripts/generate-oura-mood-card.py 1137.44ms X
+    1/1 scripts/generate-oura-mood-card.py 1127.65ms X
     scripts/generate-oura-mood-card.py:3:32      - Unknown word (Oura)       -- styled SVG card for Oura Ring mood dashboard
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     scripts/generate-oura-mood-card.py:5:45      - Unknown word (sparkline)  -- key metrics, and a sparkline chart.
@@ -5419,7 +5670,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 16 in 1 file.
 
 ❌ [ERROR] scripts/generate-status-page.py
-    1/1 scripts/generate-status-page.py 909.54ms X
+    1/1 scripts/generate-status-page.py 979.32ms X
     scripts/generate-status-page.py:95:80     - Unknown word (Segoe)      -- BlinkMacSystemFont, 'Segoe UI', sans-serif; }}
     	 Suggestions: [Segos, segre, Segre, Segue, Sage]
     scripts/generate-status-page.py:117:72    - Unknown word (Segoe)      -- BlinkMacSystemFont, 'Segoe UI', sans-serif; font
@@ -5429,7 +5680,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 3 in 1 file.
 
 ❌ [ERROR] scripts/generate-summary-card.py
-    1/1 scripts/generate-summary-card.py 889.48ms X
+    1/1 scripts/generate-summary-card.py 948.37ms X
     scripts/generate-summary-card.py:161:16    - Unknown word (tspan)      -- Best: <tspan fill="{text_primary
     	 Suggestions: [span, Span, stan, tsana, Tsana]
     scripts/generate-summary-card.py:161:57    - Unknown word (tspan)      -- primary}">{max_sleep}</tspan> •  Worst: <tspan fill
@@ -5443,7 +5694,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 5 in 1 file.
 
 ❌ [ERROR] scripts/generate-themed-dashboard.py
-    1/1 scripts/generate-themed-dashboard.py 1130.56ms X
+    1/1 scripts/generate-themed-dashboard.py 1049.93ms X
     scripts/generate-themed-dashboard.py:43:10     - Unknown word (soundcloud) -- def load_soundcloud_data() -> Optional[Dict
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     scripts/generate-themed-dashboard.py:67:10     - Unknown word (oura)       -- def load_oura_mood_data() -> Optional
@@ -5485,7 +5736,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 19 in 1 file.
 
 ❌ [ERROR] scripts/generate-weather-card.py
-    1/1 scripts/generate-weather-card.py 976.77ms X
+    1/1 scripts/generate-weather-card.py 1000.86ms X
     scripts/generate-weather-card.py:54:42     - Unknown word (weathercode) -- gradient(is_day: int, weathercode: int) -> tuple[str,
     	 Suggestions: [weathercock, weathered, weatherized, weatherize, weatherwise]
     scripts/generate-weather-card.py:60:9      - Unknown word (weathercode) -- weathercode: WMO weather code (
@@ -5511,7 +5762,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] scripts/generate_megalinter_summary.py
 ✅ [SUCCESS] scripts/generate_quote_card.py
 ❌ [ERROR] scripts/health_check.sh
-    1/1 scripts/health_check.sh 976.06ms X
+    1/1 scripts/health_check.sh 1045.20ms X
     scripts/health_check.sh:14:7      - Unknown word (soundcloud) -- check_soundcloud() {
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     scripts/health_check.sh:34:26     - Unknown word (Meteo)      -- Function to check Open-Meteo API
@@ -5589,7 +5840,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] scripts/incremental-generate.py
 ✅ [SUCCESS] scripts/inject-footer.py
 ❌ [ERROR] scripts/lib/__init__.py
-    1/1 scripts/lib/__init__.py 874.53ms X
+    1/1 scripts/lib/__init__.py 883.00ms X
     scripts/lib/__init__.py:10:14     - Unknown word (sparkline)  -- generate_sparkline_path,
     	 Suggestions: [sparkling, sparkle, sparking, sparling, sparteine]
     scripts/lib/__init__.py:19:15     - Unknown word (sparkline)  -- "generate_sparkline_path",
@@ -5597,7 +5848,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] scripts/lib/card_base.py
-    1/1 scripts/lib/card_base.py 973.22ms X
+    1/1 scripts/lib/card_base.py 957.67ms X
     scripts/lib/card_base.py:42:45     - Unknown word (soundcloud) -- type of card (e.g., 'soundcloud', 'weather').
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     scripts/lib/card_base.py:54:49     - Unknown word (soundcloud) -- type of card (e.g., 'soundcloud', 'weather').
@@ -5607,13 +5858,13 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 3 in 1 file.
 
 ❌ [ERROR] scripts/lib/change_detection.py
-    1/1 scripts/lib/change_detection.py 833.70ms X
+    1/1 scripts/lib/change_detection.py 897.16ms X
     scripts/lib/change_detection.py:121:52    - Unknown word (oura)       -- in the cache (e.g., 'oura_metrics')
     	 Suggestions: [odra, okra, ours, Odra, ora]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] scripts/lib/common.sh
-    1/1 scripts/lib/common.sh 948.82ms X
+    1/1 scripts/lib/common.sh 897.30ms X
     scripts/lib/common.sh:129:22    - Unknown word (Oura)       -- is_circuit_open "Oura API"
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     scripts/lib/common.sh:170:25    - Unknown word (Oura)       -- record_api_failure "Oura API"
@@ -5649,26 +5900,26 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 16 in 1 file.
 
 ❌ [ERROR] scripts/lib/data_quality.py
-    1/1 scripts/lib/data_quality.py 890.58ms X
+    1/1 scripts/lib/data_quality.py 947.54ms X
     scripts/lib/data_quality.py:34:45     - Unknown word (levelname)  -- asctime)s - %(name)s - %(levelname)s - %(message)s"
     	 Suggestions: [livename, liveName, Livename, LiveName, leverage]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ✅ [SUCCESS] scripts/lib/logging.sh
 ❌ [ERROR] scripts/lib/logging_utils.py
-    1/1 scripts/lib/logging_utils.py 857.21ms X
+    1/1 scripts/lib/logging_utils.py 874.29ms X
     scripts/lib/logging_utils.py:62:31     - Unknown word (levelname)  -- '[%(asctime)s] [%(levelname)s] %(message)s',
     	 Suggestions: [livename, liveName, Livename, LiveName, leverage]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] scripts/lib/metrics.py
-    1/1 scripts/lib/metrics.py 823.39ms X
+    1/1 scripts/lib/metrics.py 873.01ms X
     scripts/lib/metrics.py:40:53     - Unknown word (oura)       -- the workflow (e.g., 'oura', 'weather', 'developer
     	 Suggestions: [odra, okra, ours, Odra, ora]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
 
 ❌ [ERROR] scripts/lib/utils.py
-    1/1 scripts/lib/utils.py 1274.09ms X
+    1/1 scripts/lib/utils.py 1305.85ms X
     scripts/lib/utils.py:34:45     - Unknown word (levelname)  -- asctime)s - %(name)s - %(levelname)s - %(message)s"
     	 Suggestions: [livename, liveName, Livename, LiveName, leverage]
     scripts/lib/utils.py:514:14    - Unknown word (sparkline)  -- def generate_sparkline_path(
@@ -5700,7 +5951,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 14 in 1 file.
 
 ❌ [ERROR] scripts/lib/weather_alerts.py
-    1/1 scripts/lib/weather_alerts.py 918.61ms X
+    1/1 scripts/lib/weather_alerts.py 920.88ms X
     scripts/lib/weather_alerts.py:3:36      - Unknown word (Meteo)      -- detection from Open-Meteo data.
     	 Suggestions: [Mete, Meted, Meter, Metes, Metro]
     scripts/lib/weather_alerts.py:13:5      - Unknown word (weathercode) -- weathercode: int,
@@ -5717,7 +5968,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 
 ✅ [SUCCESS] scripts/log_summary.py
 ❌ [ERROR] scripts/new-card.sh
-    1/1 scripts/new-card.sh 821.17ms X
+    1/1 scripts/new-card.sh 857.14ms X
     scripts/new-card.sh:37:49     - Unknown word (strava)     -- spotify, github-stats, strava
     	 Suggestions: [strata, starve, stave, strap, straw]
     scripts/new-card.sh:45:20     - Unknown word (strava)     -- $(basename "$0") strava
@@ -5727,7 +5978,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 3 in 1 file.
 
 ❌ [ERROR] scripts/oura-mood-engine.py
-    1/1 scripts/oura-mood-engine.py 866.87ms X
+    1/1 scripts/oura-mood-engine.py 884.74ms X
     scripts/oura-mood-engine.py:3:1       - Unknown word (Oura)       -- Oura Mood Engine - Compute
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     scripts/oura-mood-engine.py:3:53      - Unknown word (Oura)       -- classification from Oura Ring metrics.
@@ -5741,7 +5992,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 5 in 1 file.
 
 ❌ [ERROR] scripts/record-workflow-metrics.py
-    1/1 scripts/record-workflow-metrics.py 850.08ms X
+    1/1 scripts/record-workflow-metrics.py 856.61ms X
     scripts/record-workflow-metrics.py:26:44     - Unknown word (oura)       -- the workflow (e.g., 'oura', 'weather', 'developer
     	 Suggestions: [odra, okra, ours, Odra, ora]
     scripts/record-workflow-metrics.py:45:66     - Unknown word (oura)       -- call counts (e.g., '{\"oura\": 3, \"github\": 2
@@ -5749,7 +6000,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] scripts/store-historical-snapshot.py
-    1/1 scripts/store-historical-snapshot.py 954.70ms X
+    1/1 scripts/store-historical-snapshot.py 996.56ms X
     scripts/store-historical-snapshot.py:31:21     - Unknown word (Oura)       -- """Load current Oura health data."""
     	 Suggestions: [odra, Odra, Okra, Ours, Ora]
     scripts/store-historical-snapshot.py:32:34     - Unknown word (oura)       -- error = try_load_json("oura/health_snapshot.json
@@ -5767,7 +6018,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] soundcloud/last-success.json
 ✅ [SUCCESS] soundcloud/latest.json
 ❌ [ERROR] summary-monthly.svg
-    1/1 summary-monthly.svg 819.53ms X
+    1/1 summary-monthly.svg 887.34ms X
     summary-monthly.svg:15:25     - Unknown word (Segoe)      -- <text font-family="'Segoe UI', Arial, sans-serif
     	 Suggestions: [Segos, segre, Segre, Segue, Sage]
     summary-monthly.svg:22:25     - Unknown word (Segoe)      -- <text font-family="'Segoe UI', Arial, sans-serif
@@ -5791,7 +6042,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 10 in 1 file.
 
 ❌ [ERROR] summary-weekly.svg
-    1/1 summary-weekly.svg 799.29ms X
+    1/1 summary-weekly.svg 826.06ms X
     summary-weekly.svg:15:25     - Unknown word (Segoe)      -- <text font-family="'Segoe UI', Arial, sans-serif
     	 Suggestions: [Segos, segre, Segre, Segue, Sage]
     summary-weekly.svg:22:25     - Unknown word (Segoe)      -- <text font-family="'Segoe UI', Arial, sans-serif
@@ -5806,7 +6057,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 
 ✅ [SUCCESS] tests/__init__.py
 ❌ [ERROR] tests/test_cache.sh
-    1/1 tests/test_cache.sh 803.90ms X
+    1/1 tests/test_cache.sh 841.87ms X
     tests/test_cache.sh:99:60     - Unknown word (mykey)      -- cached_response "test" "mykey"
     	 Suggestions: [ykey, yKey, skyey, make, mike]
     tests/test_cache.sh:101:32    - Unknown word (mykey)      -- f "${CACHE_DIR}/test_mykey.json" ]; then
@@ -5824,7 +6075,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 7 in 1 file.
 
 ❌ [ERROR] tests/test_card_generators.py
-    1/1 tests/test_card_generators.py 977.90ms X
+    1/1 tests/test_card_generators.py 1023.25ms X
     tests/test_card_generators.py:28:58     - Unknown word (playcount)  -- generate-card.py format_playcount()
     	 Suggestions: [plotcount, planecount, plotCount, Plotcount, planeCount]
     tests/test_card_generators.py:29:12     - Unknown word (playcount)  -- def format_playcount(count: int) -> str:
@@ -5840,7 +6091,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 6 in 1 file.
 
 ❌ [ERROR] tests/test_change_detection.py
-    1/1 tests/test_change_detection.py 883.32ms X
+    1/1 tests/test_change_detection.py 935.60ms X
     tests/test_change_detection.py:90:30     - Unknown word (doesnt)     -- test_json_formatting_doesnt_affect_hash(self):
     	 Suggestions: [doesn't*, doest, dent, dest, does]
     CSpell: Files checked: 1, Issues found: 1 in 1 file.
@@ -5848,7 +6099,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] tests/test_data_quality.py
 ✅ [SUCCESS] tests/test_developer_dashboard.py
 ❌ [ERROR] tests/test_fallback.py
-    1/1 tests/test_fallback.py 987.61ms X
+    1/1 tests/test_fallback.py 999.67ms X
     tests/test_fallback.py:83:18     - Unknown word (weathercode) -- "weathercode": 0,
     	 Suggestions: [weathercock, weathered, weatherized, weatherize, weatherwise]
     tests/test_fallback.py:120:18    - Unknown word (weathercode) -- "weathercode": 0,
@@ -5866,7 +6117,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] tests/test_health_checks.sh
 ✅ [SUCCESS] tests/test_location_diagnostics.py
 ❌ [ERROR] tests/test_location_shell_diagnostics.sh
-    1/1 tests/test_location_shell_diagnostics.sh 846.66ms X
+    1/1 tests/test_location_shell_diagnostics.sh 904.95ms X
     tests/test_location_shell_diagnostics.sh:94:39     - Unknown word (nominatim)  -- exists "$OUTPUT_DIR/debug_nominatim.json" "Nominatim debug
     	 Suggestions: [nominate, nominated, nominates, nominator, nominalism]
     tests/test_location_shell_diagnostics.sh:94:56     - Unknown word (Nominatim)  -- debug_nominatim.json" "Nominatim debug JSON file created
@@ -5889,7 +6140,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 
 ✅ [SUCCESS] tests/test_log_summary.py
 ❌ [ERROR] tests/test_mapbox_integration.py
-    1/1 tests/test_mapbox_integration.py 910.39ms X
+    1/1 tests/test_mapbox_integration.py 989.31ms X
     tests/test_mapbox_integration.py:3:16      - Unknown word (Mapbox)     -- Unit tests for Mapbox integration and fallback
     	 Suggestions: [Mbox, Mambo, maalox, Maalox, Maddox]
     tests/test_mapbox_integration.py:6:33      - Unknown word (Mapbox)     -- map generation when Mapbox is unavailable
@@ -5901,7 +6152,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 4 in 1 file.
 
 ❌ [ERROR] tests/test_metrics.py
-    1/1 tests/test_metrics.py 851.27ms X
+    1/1 tests/test_metrics.py 891.24ms X
     tests/test_metrics.py:170:38    - Unknown word (oura)       -- calls={"github": 2, "oura": 1}
     	 Suggestions: [odra, okra, ours, Odra, ora]
     tests/test_metrics.py:173:38    - Unknown word (oura)       -- metrics["api_calls"]["oura"] == 1
@@ -5911,7 +6162,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 3 in 1 file.
 
 ❌ [ERROR] tests/test_new_card.sh
-    1/1 tests/test_new_card.sh 843.43ms X
+    1/1 tests/test_new_card.sh 857.42ms X
     tests/test_new_card.sh:174:34    - Unknown word (mycard)     -- "$NEW_CARD_SCRIPT" "mycard-" 2>&1 || true)
     	 Suggestions: [mylar, mazard, mylars, maynard, Mylar]
     tests/test_new_card.sh:425:27    - Unknown word (mytest)     -- scripts/new-card.sh mytest >/dev/null 2>&1
@@ -5931,7 +6182,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
 ✅ [SUCCESS] tests/test_theme_validation.py
 ✅ [SUCCESS] tests/test_time_utils.py
 ❌ [ERROR] tests/test_timeout_coverage.sh
-    1/1 tests/test_timeout_coverage.sh 796.46ms X
+    1/1 tests/test_timeout_coverage.sh 821.28ms X
     tests/test_timeout_coverage.sh:25:37     - Unknown word (soundcloud) -- DIR}/../scripts/fetch-soundcloud.sh"
     	 Suggestions: [countcloud, Countcloud, countCloud, CountCloud]
     tests/test_timeout_coverage.sh:28:37     - Unknown word (oura)       -- DIR}/../scripts/fetch-oura.sh"
@@ -5939,7 +6190,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] tests/test_utils.py
-    1/1 tests/test_utils.py 1072.60ms X
+    1/1 tests/test_utils.py 1045.57ms X
     tests/test_utils.py:19:14     - Unknown word (sparkline)  -- generate_sparkline_path,
     	 Suggestions: [sparkling, sparkle, sparking, sparling, sparteine]
     tests/test_utils.py:161:19    - Unknown word (Sparkline)  -- class TestGenerateSparklinePath:
@@ -5963,7 +6214,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 10 in 1 file.
 
 ❌ [ERROR] weather/debug_nominatim.json
-    1/1 weather/debug_nominatim.json 868.33ms X
+    1/1 weather/debug_nominatim.json 901.53ms X
     weather/debug_nominatim.json:1:25      - Unknown word (licence)    -- place_id":332736510,"licence":"Data © OpenStreetMap
     	 Suggestions: [license, licente, lucence, science, Science]
     weather/debug_nominatim.json:1:383     - Unknown word (boundingbox) -- assachusetts, United States","boundingbox":["42.2279112","42.
@@ -5971,7 +6222,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 2 in 1 file.
 
 ❌ [ERROR] weather/debug_nominatim_response.txt
-    1/1 weather/debug_nominatim_response.txt 821.22ms X
+    1/1 weather/debug_nominatim_response.txt 836.98ms X
     weather/debug_nominatim_response.txt:14:25     - Unknown word (licence)    -- place_id":332736510,"licence":"Data © OpenStreetMap
     	 Suggestions: [license, licente, lucence, science, Science]
     weather/debug_nominatim_response.txt:14:276    - Unknown word (addresstype) -- 0.7729506072169001,"addresstype":"city","name":"Boston
@@ -5981,7 +6232,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 3 in 1 file.
 
 ❌ [ERROR] weather/weather-today.svg
-    1/1 weather/weather-today.svg 825.53ms X
+    1/1 weather/weather-today.svg 845.86ms X
     weather/weather-today.svg:1:610     - Unknown word (Segoe)      -- ffda" font-family="'Segoe UI', Arial, sans-serif
     	 Suggestions: [Segos, segre, Segre, Segue, Sage]
     weather/weather-today.svg:3:29      - Unknown word (Segoe)      -- text><g font-family="'Segoe UI', Arial, sans-serif
@@ -6005,7 +6256,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/spell_cspell/
     CSpell: Files checked: 1, Issues found: 10 in 1 file.
 
 ❌ [ERROR] weather/weather.json
-    1/1 weather/weather.json 810.95ms X
+    1/1 weather/weather.json 872.27ms X
     weather/weather.json:11:6      - Unknown word (weathercode) -- "weathercode": 0,
     	 Suggestions: [weathercock, weathered, weatherized, weatherize, weatherwise]
     weather/weather.json:21:6      - Unknown word (weathercode) -- "weathercode": 3

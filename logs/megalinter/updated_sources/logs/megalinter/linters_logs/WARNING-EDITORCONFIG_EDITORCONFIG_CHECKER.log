@@ -2,6 +2,7 @@ Results of editorconfig-checker linter (version 3.3.0)
 See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editorconfig_checker/
 -----------------------------------------------
 
+✅ [SUCCESS] .actrc
 ✅ [SUCCESS] .czrc
 ❌ [ERROR] .devcontainer/devcontainer.json
     .devcontainer/devcontainer.json:
@@ -10,20 +11,21 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     	4-5: Wrong amount of left-padding spaces(want multiple of 4)
     	7: Wrong amount of left-padding spaces(want multiple of 4)
     	10: Wrong amount of left-padding spaces(want multiple of 4)
-    	12: Wrong amount of left-padding spaces(want multiple of 4)
-    	14: Wrong amount of left-padding spaces(want multiple of 4)
-    	16: Wrong amount of left-padding spaces(want multiple of 4)
-    	25-26: Wrong amount of left-padding spaces(want multiple of 4)
-    	33: Wrong amount of left-padding spaces(want multiple of 4)
-    	36: Wrong amount of left-padding spaces(want multiple of 4)
+    	13-15: Wrong amount of left-padding spaces(want multiple of 4)
+    	17: Wrong amount of left-padding spaces(want multiple of 4)
+    	19: Wrong amount of left-padding spaces(want multiple of 4)
+    	21: Wrong amount of left-padding spaces(want multiple of 4)
+    	30-31: Wrong amount of left-padding spaces(want multiple of 4)
     	38: Wrong amount of left-padding spaces(want multiple of 4)
-    	40: Wrong amount of left-padding spaces(want multiple of 4)
-    	42: Wrong amount of left-padding spaces(want multiple of 4)
-    	44: Wrong amount of left-padding spaces(want multiple of 4)
-    	46: Wrong amount of left-padding spaces(want multiple of 4)
-    	48: Wrong amount of left-padding spaces(want multiple of 4)
+    	41: Wrong amount of left-padding spaces(want multiple of 4)
+    	43: Wrong amount of left-padding spaces(want multiple of 4)
+    	45: Wrong amount of left-padding spaces(want multiple of 4)
+    	47: Wrong amount of left-padding spaces(want multiple of 4)
+    	49: Wrong amount of left-padding spaces(want multiple of 4)
+    	51: Wrong amount of left-padding spaces(want multiple of 4)
+    	53: Wrong amount of left-padding spaces(want multiple of 4)
     
-    17 errors found
+    18 errors found
 
 ✅ [SUCCESS] .devcontainer/postCreate.sh
 ✅ [SUCCESS] .editorconfig
@@ -96,6 +98,35 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     2 errors found
 
 ✅ [SUCCESS] .github/linters/.gitkeep
+❌ [ERROR] .github/workflows/ACT_COMPATIBILITY.md
+    .github/workflows/ACT_COMPATIBILITY.md:
+    	137: Wrong amount of left-padding spaces(want multiple of 4)
+    	140-141: Wrong amount of left-padding spaces(want multiple of 4)
+    	200-202: Wrong amount of left-padding spaces(want multiple of 4)
+    	205-207: Wrong amount of left-padding spaces(want multiple of 4)
+    	210-212: Wrong amount of left-padding spaces(want multiple of 4)
+    	215-217: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    6 errors found
+
+❌ [ERROR] .github/workflows/ACT_LIMITATIONS.md
+    .github/workflows/ACT_LIMITATIONS.md:
+    	43: Wrong amount of left-padding spaces(want multiple of 4)
+    	46-47: Wrong amount of left-padding spaces(want multiple of 4)
+    	49-51: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    3 errors found
+
+✅ [SUCCESS] .github/workflows/ACT_SETUP.md
+❌ [ERROR] .github/workflows/README.md
+    .github/workflows/README.md:
+    	114-117: Wrong amount of left-padding spaces(want multiple of 4)
+    	120-122: Wrong amount of left-padding spaces(want multiple of 4)
+    	125-127: Wrong amount of left-padding spaces(want multiple of 4)
+    	130-133: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
+
 ✅ [SUCCESS] .github/workflows/_archive/README.md
 ❌ [ERROR] .github/workflows/_archive/deploy-dashboard.yml
     .github/workflows/_archive/deploy-dashboard.yml:
@@ -222,6 +253,55 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     
     16 errors found
 
+❌ [ERROR] .github/workflows/act-demo.yml
+    .github/workflows/act-demo.yml:
+    	25: Trailing whitespace
+    	30: Trailing whitespace
+    	35: Trailing whitespace
+    	48: Trailing whitespace
+    	53: Trailing whitespace
+    	58: Trailing whitespace
+    	62: Trailing whitespace
+    	67: Trailing whitespace
+    	81: Trailing whitespace
+    	86: Trailing whitespace
+    	90: Trailing whitespace
+    	97: Trailing whitespace
+    	101: Trailing whitespace
+    	122: Trailing whitespace
+    	127: Trailing whitespace
+    
+    15 errors found
+
+❌ [ERROR] .github/workflows/act-events/pull_request.json
+    .github/workflows/act-events/pull_request.json:
+    	2-4: Wrong amount of left-padding spaces(want multiple of 4)
+    	10: Wrong amount of left-padding spaces(want multiple of 4)
+    	13-14: Wrong amount of left-padding spaces(want multiple of 4)
+    	17-18: Wrong amount of left-padding spaces(want multiple of 4)
+    	20-21: Wrong amount of left-padding spaces(want multiple of 4)
+    	25-26: Wrong amount of left-padding spaces(want multiple of 4)
+    	28: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    7 errors found
+
+❌ [ERROR] .github/workflows/act-events/push.json
+    .github/workflows/act-events/push.json:
+    	2: Wrong amount of left-padding spaces(want multiple of 4)
+    	5-6: Wrong amount of left-padding spaces(want multiple of 4)
+    	10-11: Wrong amount of left-padding spaces(want multiple of 4)
+    	13-20: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
+
+❌ [ERROR] .github/workflows/act-events/workflow_dispatch.json
+    .github/workflows/act-events/workflow_dispatch.json:
+    	2-4: Wrong amount of left-padding spaces(want multiple of 4)
+    	8-9: Wrong amount of left-padding spaces(want multiple of 4)
+    	11: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    3 errors found
+
 ❌ [ERROR] .github/workflows/build-profile.yml
     .github/workflows/build-profile.yml:
     	27: Trailing whitespace
@@ -339,6 +419,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
 ✅ [SUCCESS] .mailmap
 ✅ [SUCCESS] .megalinter.yml
 ✅ [SUCCESS] .pre-commit-config.yaml
+✅ [SUCCESS] .secrets.example
 ✅ [SUCCESS] .vscode/dictionaries/backend-terms.dictionary
 ✅ [SUCCESS] .vscode/dictionaries/devops-cloud-terms.dictionary
 ✅ [SUCCESS] .vscode/dictionaries/frontend-terms.dictionary
@@ -397,6 +478,16 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     	303-305: Wrong amount of left-padding spaces(want multiple of 4)
     
     19 errors found
+
+❌ [ERROR] IMPLEMENTATION_ACT_SUPPORT.md
+    IMPLEMENTATION_ACT_SUPPORT.md:
+    	76-82: Wrong amount of left-padding spaces(want multiple of 4)
+    	86-90: Wrong amount of left-padding spaces(want multiple of 4)
+    	93-98: Wrong amount of left-padding spaces(want multiple of 4)
+    	101-105: Wrong amount of left-padding spaces(want multiple of 4)
+    	108-112: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    5 errors found
 
 ❌ [ERROR] IMPLEMENTATION_SUMMARY.md
     IMPLEMENTATION_SUMMARY.md:
@@ -959,12 +1050,9 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     	244-245: Wrong amount of left-padding spaces(want multiple of 4)
     	253-254: Wrong amount of left-padding spaces(want multiple of 4)
     	256-257: Wrong amount of left-padding spaces(want multiple of 4)
-    	260-261: Wrong amount of left-padding spaces(want multiple of 4)
-    	264-265: Wrong amount of left-padding spaces(want multiple of 4)
-    	268-269: Wrong amount of left-padding spaces(want multiple of 4)
-    	271-272: Wrong amount of left-padding spaces(want multiple of 4)
+    	259-260: Wrong amount of left-padding spaces(want multiple of 4)
     
-    21 errors found
+    18 errors found
 
 ❌ [ERROR] dashboard-app/public/location/location.json
     dashboard-app/public/location/location.json:
@@ -1648,12 +1736,9 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     	244-245: Wrong amount of left-padding spaces(want multiple of 4)
     	253-254: Wrong amount of left-padding spaces(want multiple of 4)
     	256-257: Wrong amount of left-padding spaces(want multiple of 4)
-    	260-261: Wrong amount of left-padding spaces(want multiple of 4)
-    	264-265: Wrong amount of left-padding spaces(want multiple of 4)
-    	268-269: Wrong amount of left-padding spaces(want multiple of 4)
-    	271-272: Wrong amount of left-padding spaces(want multiple of 4)
+    	259-260: Wrong amount of left-padding spaces(want multiple of 4)
     
-    21 errors found
+    18 errors found
 
 ❌ [ERROR] docs/API_RESILIENCE.md
     docs/API_RESILIENCE.md:
@@ -1763,6 +1848,15 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     	354-355: Wrong amount of left-padding spaces(want multiple of 4)
     
     58 errors found
+
+❌ [ERROR] docs/LOCAL_DEVELOPMENT.md
+    docs/LOCAL_DEVELOPMENT.md:
+    	179: Wrong amount of left-padding spaces(want multiple of 4)
+    	334-337: Wrong amount of left-padding spaces(want multiple of 4)
+    	340-341: Wrong amount of left-padding spaces(want multiple of 4)
+    	344: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
 
 ❌ [ERROR] docs/LOCATION_CARD_CHANGES.md
     docs/LOCATION_CARD_CHANGES.md:
@@ -2494,6 +2588,15 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     	107-108: Wrong amount of left-padding spaces(want multiple of 4)
     
     25 errors found
+
+❌ [ERROR] scripts/act-test.sh
+    scripts/act-test.sh:
+    	64: Trailing whitespace
+    	69: Trailing whitespace
+    	71: Trailing whitespace
+    	81: Trailing whitespace
+    
+    4 errors found
 
 ✅ [SUCCESS] scripts/audit_megalinter_config.py
 ❌ [ERROR] scripts/comprehensive-audit.py

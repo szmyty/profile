@@ -4,14 +4,14 @@ NAME                                 VERSION                                   T
 Simple Launcher                      1.1.0.14                                  binary         (+11 duplicates)  
 actions/cache                        v4                                        github-action  (+1 duplicate)    
 actions/checkout                     HIDDEN_BY_MEGALINTER github-action                    
-actions/checkout                     v4                                        github-action  (+1 duplicate)    
+actions/checkout                     v4                                        github-action  (+2 duplicates)   
 actions/configure-pages              v4                                        github-action                    
 actions/deploy-pages                 v4                                        github-action                    
 actions/first-interaction            v1                                        github-action                    
 actions/github-script                v7                                        github-action  (+1 duplicate)    
 actions/setup-node                   v4                                        github-action                    
 actions/setup-python                 HIDDEN_BY_MEGALINTER github-action                    
-actions/setup-python                 v5                                        github-action  (+1 duplicate)    
+actions/setup-python                 v5                                        github-action  (+2 duplicates)   
 actions/upload-artifact              v4                                        github-action                    
 actions/upload-pages-artifact        v3                                        github-action                    
 asynckit                             0.4.0                                     npm                              

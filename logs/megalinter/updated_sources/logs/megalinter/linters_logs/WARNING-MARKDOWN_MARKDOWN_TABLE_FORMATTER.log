@@ -14,6 +14,16 @@ See documentation on https://megalinter.io/8.8.0/descriptors/markdown_markdown_t
     1 files contain markdown tables to format:
     - .github/actions/setup-environment/README.md
 
+❌ [ERROR] .github/workflows/ACT_COMPATIBILITY.md
+    1 files contain markdown tables to format:
+    - .github/workflows/ACT_COMPATIBILITY.md
+
+✅ [SUCCESS] .github/workflows/ACT_LIMITATIONS.md
+✅ [SUCCESS] .github/workflows/ACT_SETUP.md
+❌ [ERROR] .github/workflows/README.md
+    1 files contain markdown tables to format:
+    - .github/workflows/README.md
+
 ✅ [SUCCESS] .github/workflows/_archive/README.md
 ✅ [SUCCESS] CHANGELOG.md
 ✅ [SUCCESS] CONSOLIDATION_SUMMARY.md
@@ -21,6 +31,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/markdown_markdown_t
     1 files contain markdown tables to format:
     - GITHUB_MARKDOWN_AUDIT_COMPLETE.md
 
+✅ [SUCCESS] IMPLEMENTATION_ACT_SUPPORT.md
 ✅ [SUCCESS] IMPLEMENTATION_SUMMARY.md
 ❌ [ERROR] PERFORMANCE_IMPROVEMENTS_SUMMARY.md
     1 files contain markdown tables to format:
@@ -47,6 +58,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/markdown_markdown_t
     - docs/CACHING_QUICK_REFERENCE.md
 
 ✅ [SUCCESS] docs/INTEGRATION_EXAMPLE.md
+✅ [SUCCESS] docs/LOCAL_DEVELOPMENT.md
 ✅ [SUCCESS] docs/LOCATION_CARD_CHANGES.md
 ✅ [SUCCESS] docs/MONITORING.md
 ❌ [ERROR] docs/OPTIMIZATION_GUIDE.md

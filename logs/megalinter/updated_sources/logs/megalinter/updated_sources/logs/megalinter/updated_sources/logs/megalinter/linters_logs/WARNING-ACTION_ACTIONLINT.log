@@ -69,6 +69,16 @@ See documentation on https://megalinter.io/8.8.0/descriptors/action_actionlint/
     55 |         run: |
        |         ^~~~
 
+❌ [ERROR] .github/workflows/act-demo.yml
+    .github/workflows/act-demo.yml:32:9: shellcheck reported issue in this script: SC2012:info:2:1: Use find instead of ls to better handle non-alphanumeric filenames [shellcheck]
+       |
+    32 |         run: |
+       |         ^~~~
+    .github/workflows/act-demo.yml:37:9: shellcheck reported issue in this script: SC2010:warning:2:1: Don't use ls | grep. Use a glob or a for loop with a condition to allow non-alphanumeric filenames [shellcheck]
+       |
+    37 |         run: |
+       |         ^~~~
+
 ❌ [ERROR] .github/workflows/build-profile.yml
     .github/workflows/build-profile.yml:96:9: shellcheck reported issue in this script: SC2086:info:8:59: Double quote to prevent globbing and word splitting [shellcheck]
        |

@@ -1,20 +1,21 @@
 TAP version 13
-1..18
+1..19
 ok 1 - .devcontainer/postCreate.sh
-ok 2 - scripts/dev-mode.sh
-not ok 3 - scripts/fetch-location.sh
-not ok 4 - scripts/fetch-oura.sh
-not ok 5 - scripts/fetch-soundcloud.sh
-not ok 6 - scripts/fetch-timezone.sh
-not ok 7 - scripts/fetch-weather.sh
-not ok 8 - scripts/fetch_quote.sh
-not ok 9 - scripts/health_check.sh
-not ok 10 - scripts/lib/common.sh
-ok 11 - scripts/lib/logging.sh
-not ok 12 - scripts/new-card.sh
-not ok 13 - tests/test_cache.sh
-not ok 14 - tests/test_health_checks.sh
-not ok 15 - tests/test_location_shell_diagnostics.sh
-not ok 16 - tests/test_new_card.sh
-not ok 17 - tests/test_retry_logic.sh
-ok 18 - tests/test_timeout_coverage.sh
+ok 2 - scripts/act-test.sh
+ok 3 - scripts/dev-mode.sh
+not ok 4 - scripts/fetch-location.sh
+not ok 5 - scripts/fetch-oura.sh
+not ok 6 - scripts/fetch-soundcloud.sh
+not ok 7 - scripts/fetch-timezone.sh
+not ok 8 - scripts/fetch-weather.sh
+not ok 9 - scripts/fetch_quote.sh
+not ok 10 - scripts/health_check.sh
+not ok 11 - scripts/lib/common.sh
+ok 12 - scripts/lib/logging.sh
+not ok 13 - scripts/new-card.sh
+not ok 14 - tests/test_cache.sh
+not ok 15 - tests/test_health_checks.sh
+not ok 16 - tests/test_location_shell_diagnostics.sh
+not ok 17 - tests/test_new_card.sh
+not ok 18 - tests/test_retry_logic.sh
+ok 19 - tests/test_timeout_coverage.sh

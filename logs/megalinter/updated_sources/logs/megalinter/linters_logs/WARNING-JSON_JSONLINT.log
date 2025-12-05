@@ -3,6 +3,9 @@ See documentation on https://megalinter.io/8.8.0/descriptors/json_jsonlint/
 -----------------------------------------------
 
 ✅ [SUCCESS] .devcontainer/devcontainer.json
+✅ [SUCCESS] .github/workflows/act-events/pull_request.json
+✅ [SUCCESS] .github/workflows/act-events/push.json
+✅ [SUCCESS] .github/workflows/act-events/workflow_dispatch.json
 ✅ [SUCCESS] .vscode/extensions.json
 ✅ [SUCCESS] .vscode/launch.json
 ❌ [ERROR] .vscode/settings.json

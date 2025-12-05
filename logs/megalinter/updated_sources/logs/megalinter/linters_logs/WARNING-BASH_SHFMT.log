@@ -2,7 +2,93 @@ Results of shfmt linter (version 3.11.0)
 See documentation on https://megalinter.io/8.8.0/descriptors/bash_shfmt/
 -----------------------------------------------
 
-✅ [SUCCESS] .devcontainer/postCreate.sh
+❌ [ERROR] .devcontainer/postCreate.sh
+    diff .devcontainer/postCreate.sh.orig .devcontainer/postCreate.sh
+    --- .devcontainer/postCreate.sh.orig
+    +++ .devcontainer/postCreate.sh
+    @@ -37,7 +37,7 @@
+     
+     # Ensure .secrets is in .gitignore
+     if ! grep -q "^\.secrets$" .gitignore 2>/dev/null; then
+    -    echo ".secrets" >> .gitignore
+    +    echo ".secrets" >>.gitignore
+     fi
+     
+     echo "✅ Development environment setup complete!"
+
+❌ [ERROR] scripts/act-test.sh
+    diff scripts/act-test.sh.orig scripts/act-test.sh
+    --- scripts/act-test.sh.orig
+    +++ scripts/act-test.sh
+    @@ -11,7 +11,7 @@
+     NC='\033[0m' # No Color
+     
+     # Check if act is installed
+    -if ! command -v act &> /dev/null; then
+    +if ! command -v act &>/dev/null; then
+         echo -e "${RED}Error: act is not installed${NC}"
+         echo "Install it with: curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash"
+         exit 1
+    @@ -18,7 +18,7 @@
+     fi
+     
+     # Check if Docker is running
+    -if ! docker ps &> /dev/null; then
+    +if ! docker ps &>/dev/null; then
+         echo -e "${RED}Error: Docker is not running${NC}"
+         echo "Please start Docker and try again"
+         exit 1
+    @@ -61,14 +61,14 @@
+         local workflow=$1
+         local job=$2
+         local workflow_file=".github/workflows/${workflow}.yml"
+    -    
+    +
+         if [ ! -f "$workflow_file" ]; then
+             echo -e "${RED}Error: Workflow file not found: ${workflow_file}${NC}"
+             exit 1
+         fi
+    -    
+    +
+         echo -e "${GREEN}Running workflow: ${workflow}${NC}"
+    -    
+    +
+         # Check for secrets file
+         if [ -f ".secrets" ]; then
+             echo -e "${YELLOW}Using secrets from .secrets file${NC}"
+    @@ -78,7 +78,7 @@
+             echo "Copy .secrets.example to .secrets and add your tokens"
+             SECRET_FLAG=""
+         fi
+    -    
+    +
+         if [ -n "$job" ]; then
+             echo -e "${GREEN}Running job: ${job}${NC}"
+             # shellcheck disable=SC2086
+    @@ -92,13 +92,13 @@
+     
+     # Main script logic
+     case "$1" in
+    -    -h|--help|help)
+    -        usage
+    -        ;;
+    -    "")
+    -        list_workflows
+    -        ;;
+    -    *)
+    -        run_workflow "$1" "$2"
+    -        ;;
+    +-h | --help | help)
+    +    usage
+    +    ;;
+    +"")
+    +    list_workflows
+    +    ;;
+    +*)
+    +    run_workflow "$1" "$2"
+    +    ;;
+     esac
+
 ❌ [ERROR] scripts/dev-mode.sh
     diff scripts/dev-mode.sh.orig scripts/dev-mode.sh
     --- scripts/dev-mode.sh.orig

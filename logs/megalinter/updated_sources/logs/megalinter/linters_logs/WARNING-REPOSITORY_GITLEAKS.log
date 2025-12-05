@@ -15,25 +15,13 @@ Finding:     - Image Revision: REDACTED
 Secret:      REDACTED
 RuleID:      sourcegraph-access-token
 Entropy:     3.846439
-File:        logs/megalinter/updated_sources/logs/megalinter/updated_sources/logs/megalinter/mega-linter.log
-Line:        5
-Commit:      HIDDEN_BY_MEGALINTERAuthor:      Alan Szmyt
-Email:       szmyty@gmail.com
-Date:        2025-12-05T06:19:54Z
-Fingerprint: 087220919dcc3b20421d95663b9392771b1459de:logs/megalinter/updated_sources/logs/megalinter/updated_sources/logs/megalinter/mega-linter.log:sourcegraph-access-token:5
-Link:        https://github.com/szmyty/profile/blob/087220919dcc3b20421d95663b9392771b1459de/logs/megalinter/updated_sources/logs/megalinter/updated_sources/logs/megalinter/mega-linter.log#L5
-
-Finding:     - Image Revision: REDACTED
-Secret:      REDACTED
-RuleID:      sourcegraph-access-token
-Entropy:     3.846439
 File:        logs/megalinter/mega-linter.log
 Line:        5
 Commit:      HIDDEN_BY_MEGALINTERAuthor:      Alan Szmyt
 Email:       szmyty@gmail.com
-Date:        2025-12-05T06:19:54Z
-Fingerprint: 087220919dcc3b20421d95663b9392771b1459de:logs/megalinter/mega-linter.log:sourcegraph-access-token:5
-Link:        https://github.com/szmyty/profile/blob/087220919dcc3b20421d95663b9392771b1459de/logs/megalinter/mega-linter.log#L5
+Date:        2025-12-05T07:23:03Z
+Fingerprint: 98d67a9df13d4f10076600a6121be2fbcb5b0e9d:logs/megalinter/mega-linter.log:sourcegraph-access-token:5
+Link:        https://github.com/szmyty/profile/blob/98d67a9df13d4f10076600a6121be2fbcb5b0e9d/logs/megalinter/mega-linter.log#L5
 
 Finding:     - Image Revision: REDACTED
 Secret:      REDACTED
@@ -43,11 +31,35 @@ File:        logs/megalinter/updated_sources/logs/megalinter/mega-linter.log
 Line:        5
 Commit:      HIDDEN_BY_MEGALINTERAuthor:      Alan Szmyt
 Email:       szmyty@gmail.com
-Date:        2025-12-05T06:19:54Z
-Fingerprint: 087220919dcc3b20421d95663b9392771b1459de:logs/megalinter/updated_sources/logs/megalinter/mega-linter.log:sourcegraph-access-token:5
-Link:        https://github.com/szmyty/profile/blob/087220919dcc3b20421d95663b9392771b1459de/logs/megalinter/updated_sources/logs/megalinter/mega-linter.log#L5
+Date:        2025-12-05T07:23:03Z
+Fingerprint: 98d67a9df13d4f10076600a6121be2fbcb5b0e9d:logs/megalinter/updated_sources/logs/megalinter/mega-linter.log:sourcegraph-access-token:5
+Link:        https://github.com/szmyty/profile/blob/98d67a9df13d4f10076600a6121be2fbcb5b0e9d/logs/megalinter/updated_sources/logs/megalinter/mega-linter.log#L5
 
-6:36AM INF 1 commits scanned.
-6:36AM INF scanned ~25690920 bytes (25.69 MB) in 1m0.1s
-6:36AM WRN leaks found: 3
+Finding:     - Image Revision: REDACTED
+Secret:      REDACTED
+RuleID:      sourcegraph-access-token
+Entropy:     3.846439
+File:        logs/megalinter/updated_sources/logs/megalinter/updated_sources/logs/megalinter/mega-linter.log
+Line:        5
+Commit:      HIDDEN_BY_MEGALINTERAuthor:      Alan Szmyt
+Email:       szmyty@gmail.com
+Date:        2025-12-05T07:23:03Z
+Fingerprint: 98d67a9df13d4f10076600a6121be2fbcb5b0e9d:logs/megalinter/updated_sources/logs/megalinter/updated_sources/logs/megalinter/mega-linter.log:sourcegraph-access-token:5
+Link:        https://github.com/szmyty/profile/blob/98d67a9df13d4f10076600a6121be2fbcb5b0e9d/logs/megalinter/updated_sources/logs/megalinter/updated_sources/logs/megalinter/mega-linter.log#L5
+
+Finding:     - Image Revision: REDACTED
+Secret:      REDACTED
+RuleID:      sourcegraph-access-token
+Entropy:     3.846439
+File:        logs/megalinter/updated_sources/logs/megalinter/updated_sources/logs/megalinter/updated_sources/logs/megalinter/mega-linter.log
+Line:        5
+Commit:      HIDDEN_BY_MEGALINTERAuthor:      Alan Szmyt
+Email:       szmyty@gmail.com
+Date:        2025-12-05T07:23:03Z
+Fingerprint: 98d67a9df13d4f10076600a6121be2fbcb5b0e9d:logs/megalinter/updated_sources/logs/megalinter/updated_sources/logs/megalinter/updated_sources/logs/megalinter/mega-linter.log:sourcegraph-access-token:5
+Link:        https://github.com/szmyty/profile/blob/98d67a9df13d4f10076600a6121be2fbcb5b0e9d/logs/megalinter/updated_sources/logs/megalinter/updated_sources/logs/megalinter/updated_sources/logs/megalinter/mega-linter.log#L5
+
+7:33AM INF 1 commits scanned.
+7:33AM INF scanned ~32618649 bytes (32.62 MB) in 1m7.3s
+7:33AM WRN leaks found: 4
 

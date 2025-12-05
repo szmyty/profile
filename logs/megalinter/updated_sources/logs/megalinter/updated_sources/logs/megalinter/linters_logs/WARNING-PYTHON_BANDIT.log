@@ -4,7 +4,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
 
 ✅ [SUCCESS] scripts/audit_megalinter_config.py
 ❌ [ERROR] scripts/comprehensive-audit.py
-    Run started:2025-12-05 06:34:35.995174
+    Run started:2025-12-05 07:30:55.438437
     
     Test results:
     >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -103,7 +103,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] scripts/fetch-developer-stats.py
-    Run started:2025-12-05 06:34:36.600261
+    Run started:2025-12-05 07:30:56.282233
     
     Test results:
     >> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
@@ -151,7 +151,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
 ✅ [SUCCESS] scripts/generate_megalinter_summary.py
 ✅ [SUCCESS] scripts/generate_quote_card.py
 ❌ [ERROR] scripts/incremental-generate.py
-    Run started:2025-12-05 06:34:45.401309
+    Run started:2025-12-05 07:31:05.205220
     
     Test results:
     >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -210,7 +210,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
 ✅ [SUCCESS] scripts/validate-data-quality.py
 ✅ [SUCCESS] tests/__init__.py
 ❌ [ERROR] tests/test_card_generators.py
-    Run started:2025-12-05 06:34:54.024223
+    Run started:2025-12-05 07:31:13.408762
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -482,7 +482,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_change_detection.py
-    Run started:2025-12-05 06:34:55.287991
+    Run started:2025-12-05 07:31:14.582704
     
     Test results:
     >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -772,7 +772,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_data_quality.py
-    Run started:2025-12-05 06:34:56.644702
+    Run started:2025-12-05 07:31:15.594775
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -1324,7 +1324,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_developer_dashboard.py
-    Run started:2025-12-05 06:34:58.625892
+    Run started:2025-12-05 07:31:17.521779
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -1576,7 +1576,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_fallback.py
-    Run started:2025-12-05 06:34:59.954647
+    Run started:2025-12-05 07:31:18.582242
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -2048,7 +2048,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_location_diagnostics.py
-    Run started:2025-12-05 06:35:01.771314
+    Run started:2025-12-05 07:31:20.059620
     
     Test results:
     >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -2611,7 +2611,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_log_summary.py
-    Run started:2025-12-05 06:35:03.929579
+    Run started:2025-12-05 07:31:21.860927
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -3043,7 +3043,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_mapbox_integration.py
-    Run started:2025-12-05 06:35:05.541337
+    Run started:2025-12-05 07:31:23.215605
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -3328,7 +3328,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_metrics.py
-    Run started:2025-12-05 06:35:06.909432
+    Run started:2025-12-05 07:31:24.625872
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -3870,7 +3870,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_quote_card.py
-    Run started:2025-12-05 06:35:08.906353
+    Run started:2025-12-05 07:31:26.425406
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -4203,7 +4203,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_theme_validation.py
-    Run started:2025-12-05 06:35:10.233152
+    Run started:2025-12-05 07:31:27.755942
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -4415,7 +4415,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_time_utils.py
-    Run started:2025-12-05 06:35:11.299325
+    Run started:2025-12-05 07:31:28.819362
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -4717,7 +4717,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_bandit/
     Files skipped (0):
 
 ❌ [ERROR] tests/test_utils.py
-    Run started:2025-12-05 06:35:12.856249
+    Run started:2025-12-05 07:31:30.220575
     
     Test results:
     >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.

@@ -50,6 +50,11 @@ See documentation on https://megalinter.io/8.8.0/descriptors/yaml_prettier/
     [warn] .github/workflows/_archive/weather.yml
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
+❌ [ERROR] .github/workflows/act-demo.yml
+    Checking formatting...
+    [warn] .github/workflows/act-demo.yml
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
 ❌ [ERROR] .github/workflows/build-profile.yml
     Checking formatting...
     [warn] .github/workflows/build-profile.yml

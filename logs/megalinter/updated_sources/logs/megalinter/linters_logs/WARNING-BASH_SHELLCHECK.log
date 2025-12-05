@@ -3,6 +3,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/bash_shellcheck/
 -----------------------------------------------
 
 ✅ [SUCCESS] .devcontainer/postCreate.sh
+✅ [SUCCESS] scripts/act-test.sh
 ✅ [SUCCESS] scripts/dev-mode.sh
 ❌ [ERROR] scripts/fetch-location.sh
     

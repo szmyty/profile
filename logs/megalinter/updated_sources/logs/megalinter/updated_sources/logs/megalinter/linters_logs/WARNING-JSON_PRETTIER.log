@@ -7,6 +7,21 @@ See documentation on https://megalinter.io/8.8.0/descriptors/json_prettier/
     [warn] .devcontainer/devcontainer.json
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
+❌ [ERROR] .github/workflows/act-events/pull_request.json
+    Checking formatting...
+    [warn] .github/workflows/act-events/pull_request.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] .github/workflows/act-events/push.json
+    Checking formatting...
+    [warn] .github/workflows/act-events/push.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] .github/workflows/act-events/workflow_dispatch.json
+    Checking formatting...
+    [warn] .github/workflows/act-events/workflow_dispatch.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
 ✅ [SUCCESS] .vscode/extensions.json
 ✅ [SUCCESS] .vscode/launch.json
 ❌ [ERROR] .vscode/settings.json

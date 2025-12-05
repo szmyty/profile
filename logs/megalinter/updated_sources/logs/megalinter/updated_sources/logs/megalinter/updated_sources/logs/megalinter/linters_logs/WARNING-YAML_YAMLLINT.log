@@ -236,6 +236,30 @@ See documentation on https://megalinter.io/8.8.0/descriptors/yaml_yamllint/
       157:1     error    trailing spaces  (trailing-spaces)
       160:1     error    trailing spaces  (trailing-spaces)
 
+❌ [ERROR] .github/workflows/act-demo.yml
+    .github/workflows/act-demo.yml
+      5:1       warning  missing document start "---"  (document-start)
+      7:1       warning  truthy value should be one of [false, true]  (truthy)
+      25:1      error    trailing spaces  (trailing-spaces)
+      30:1      error    trailing spaces  (trailing-spaces)
+      35:1      error    trailing spaces  (trailing-spaces)
+      48:1      error    trailing spaces  (trailing-spaces)
+      53:1      error    trailing spaces  (trailing-spaces)
+      58:1      error    trailing spaces  (trailing-spaces)
+      61:81     error    line too long (92 > 80 characters)  (line-length)
+      62:1      error    trailing spaces  (trailing-spaces)
+      67:1      error    trailing spaces  (trailing-spaces)
+      70:81     error    line too long (87 > 80 characters)  (line-length)
+      81:1      error    trailing spaces  (trailing-spaces)
+      86:1      error    trailing spaces  (trailing-spaces)
+      90:1      error    trailing spaces  (trailing-spaces)
+      95:81     error    line too long (105 > 80 characters)  (line-length)
+      97:1      error    trailing spaces  (trailing-spaces)
+      101:1     error    trailing spaces  (trailing-spaces)
+      122:1     error    trailing spaces  (trailing-spaces)
+      127:1     error    trailing spaces  (trailing-spaces)
+      140:81    error    line too long (82 > 80 characters)  (line-length)
+
 ❌ [ERROR] .github/workflows/build-profile.yml
     .github/workflows/build-profile.yml
       1:1       warning  missing document start "---"  (document-start)

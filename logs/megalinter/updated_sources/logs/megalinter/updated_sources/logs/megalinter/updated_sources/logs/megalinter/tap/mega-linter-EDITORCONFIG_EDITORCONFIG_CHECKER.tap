@@ -1,330 +1,343 @@
 TAP version 13
-1..328
-ok 1 - .czrc
-not ok 2 - .devcontainer/devcontainer.json
-ok 3 - .devcontainer/postCreate.sh
-ok 4 - .editorconfig
-ok 5 - .gitattributes
-not ok 6 - .github/CODEOWNERS
-ok 7 - .github/FUNDING.yml
-ok 8 - .github/GOVERNANCE.md
-ok 9 - .github/actionlint.yaml
-not ok 10 - .github/actions/pip-install/README.md
-not ok 11 - .github/actions/pip-install/action.yml
-not ok 12 - .github/actions/setup-environment/README.md
-not ok 13 - .github/actions/setup-environment/action.yml
-ok 14 - .github/linters/.gitkeep
-ok 15 - .github/workflows/_archive/README.md
-not ok 16 - .github/workflows/_archive/deploy-dashboard.yml
-not ok 17 - .github/workflows/_archive/developer.yml
-not ok 18 - .github/workflows/_archive/location-card.yml
-ok 19 - .github/workflows/_archive/megalinter.yml
-not ok 20 - .github/workflows/_archive/oura.yml
-not ok 21 - .github/workflows/_archive/parallel-fetch.yml
-not ok 22 - .github/workflows/_archive/soundcloud-card.yml
-not ok 23 - .github/workflows/_archive/weather.yml
-not ok 24 - .github/workflows/build-profile.yml
-not ok 25 - .github/workflows/greetings.yml
-ok 26 - .github/workflows/monitoring.yml
-not ok 27 - .github/workflows/release.yml
-ok 28 - .github/workflows/tests.yml
-ok 29 - .gitignore
-ok 30 - .mailmap
-ok 31 - .megalinter.yml
-ok 32 - .pre-commit-config.yaml
-ok 33 - .vscode/dictionaries/backend-terms.dictionary
-ok 34 - .vscode/dictionaries/devops-cloud-terms.dictionary
-ok 35 - .vscode/dictionaries/frontend-terms.dictionary
-ok 36 - .vscode/dictionaries/programming-terms.dictionary
-ok 37 - .vscode/dictionaries/project-words.dictionary
-ok 38 - .vscode/dictionaries/software-terms.dictionary
-ok 39 - .vscode/extensions.json
-ok 40 - .vscode/launch.json
-not ok 41 - .vscode/settings.json
-ok 42 - .vscode/tasks.json
-ok 43 - CHANGELOG.md
-not ok 44 - CONSOLIDATION_SUMMARY.md
-not ok 45 - GITHUB_MARKDOWN_AUDIT_COMPLETE.md
-not ok 46 - IMPLEMENTATION_SUMMARY.md
-not ok 47 - PERFORMANCE_IMPROVEMENTS_SUMMARY.md
-not ok 48 - README.md
-not ok 49 - REFACTORING_REPORT.md
-not ok 50 - REPORT.md
-not ok 51 - SECURITY_SUMMARY.md
-not ok 52 - SECURITY_SUMMARY_API_RESILIENCE.md
-not ok 53 - VERSION
-ok 54 - assets/.gitkeep
-not ok 55 - assets/metadata.json
-ok 56 - assets/soundcloud-artwork.jpg
-ok 57 - assets/soundcloud-card.svg
-ok 58 - branding/badges/badge-template.svg
-ok 59 - branding/badges/social-badge.svg
-ok 60 - branding/badges/status-badge.svg
-ok 61 - branding/badges/tech-badge.svg
-ok 62 - branding/header.png
-ok 63 - branding/header.svg
-ok 64 - branding/logo.svg
-not ok 65 - config/META6.json
-ok 66 - config/analysis_options.yml
-not ok 67 - config/apex-pmd-ruleset.xml
-ok 68 - config/apt.conf
-ok 69 - config/dpkg.cfg
-not ok 70 - config/java-pmd-ruleset.xml
-ok 71 - config/lychee.toml
-ok 72 - config/lynis/custom.prf
-ok 73 - config/phpcs.xml
-not ok 74 - config/phpstan.neon.dist
-not ok 75 - config/psalm.xml
-not ok 76 - config/pyrightconfig.json
-ok 77 - config/styles/proselint/Airlinese.yml
-ok 78 - config/styles/proselint/AnimalLabels.yml
-ok 79 - config/styles/proselint/Annotations.yml
-ok 80 - config/styles/proselint/Apologizing.yml
-ok 81 - config/styles/proselint/Archaisms.yml
-ok 82 - config/styles/proselint/But.yml
-ok 83 - config/styles/proselint/Cliches.yml
-ok 84 - config/styles/proselint/CorporateSpeak.yml
-ok 85 - config/styles/proselint/Currency.yml
-ok 86 - config/styles/proselint/Cursing.yml
-ok 87 - config/styles/proselint/DateCase.yml
-ok 88 - config/styles/proselint/DateMidnight.yml
-ok 89 - config/styles/proselint/DateRedundancy.yml
-ok 90 - config/styles/proselint/DateSpacing.yml
-ok 91 - config/styles/proselint/DenizenLabels.yml
-ok 92 - config/styles/proselint/Diacritical.yml
-ok 93 - config/styles/proselint/GenderBias.yml
-ok 94 - config/styles/proselint/GroupTerms.yml
-ok 95 - config/styles/proselint/Hedging.yml
-ok 96 - config/styles/proselint/Hyperbole.yml
-ok 97 - config/styles/proselint/Jargon.yml
-ok 98 - config/styles/proselint/LGBTOffensive.yml
-ok 99 - config/styles/proselint/LGBTTerms.yml
-ok 100 - config/styles/proselint/Malapropisms.yml
-ok 101 - config/styles/proselint/Needless.yml
-ok 102 - config/styles/proselint/Nonwords.yml
-ok 103 - config/styles/proselint/Oxymorons.yml
-ok 104 - config/styles/proselint/P-Value.yml
-not ok 105 - config/styles/proselint/RASSyndrome.yml
-ok 106 - config/styles/proselint/README.md
-ok 107 - config/styles/proselint/Skunked.yml
-ok 108 - config/styles/proselint/Spelling.yml
-ok 109 - config/styles/proselint/Typography.yml
-not ok 110 - config/styles/proselint/Uncomparables.yml
-ok 111 - config/styles/proselint/Very.yml
-not ok 112 - config/styles/proselint/meta.json
-ok 113 - config/styles/write-good/Cliches.yml
-ok 114 - config/styles/write-good/E-Prime.yml
-ok 115 - config/styles/write-good/Illusions.yml
-ok 116 - config/styles/write-good/Passive.yml
-ok 117 - config/styles/write-good/README.md
-ok 118 - config/styles/write-good/So.yml
-ok 119 - config/styles/write-good/ThereIs.yml
-ok 120 - config/styles/write-good/TooWordy.yml
-ok 121 - config/styles/write-good/Weasel.yml
-not ok 122 - config/styles/write-good/meta.json
-ok 123 - config/sun_checks.xml
-ok 124 - config/terragrunt.hcl
-ok 125 - config/terrascan-config.toml
-not ok 126 - config/theme.json
-ok 127 - config/trivy-sbom.yaml
-ok 128 - config/trivy.yaml
-ok 129 - dashboard-app/.gitignore
-not ok 130 - dashboard-app/README.md
-not ok 131 - dashboard-app/eslint.config.js
-not ok 132 - dashboard-app/index.html
-ok 133 - dashboard-app/package-lock.json
-not ok 134 - dashboard-app/package.json
-ok 135 - dashboard-app/public/achievements/achievements.json
-ok 136 - dashboard-app/public/ai/identity.json
-not ok 137 - dashboard-app/public/config/theme.json
-not ok 138 - dashboard-app/public/developer/stats.json
-not ok 139 - dashboard-app/public/location/location.json
-not ok 140 - dashboard-app/public/oura/metrics.json
-not ok 141 - dashboard-app/public/oura/mood.json
-not ok 142 - dashboard-app/public/soundcloud/latest.json
-ok 143 - dashboard-app/public/vite.svg
-not ok 144 - dashboard-app/public/weather/weather.json
-ok 145 - dashboard-app/src/App.css
-not ok 146 - dashboard-app/src/App.tsx
-ok 147 - dashboard-app/src/assets/react.svg
-not ok 148 - dashboard-app/src/components/AIIdentityCard.tsx
-not ok 149 - dashboard-app/src/components/AchievementsCard.tsx
-not ok 150 - dashboard-app/src/components/Card.tsx
-not ok 151 - dashboard-app/src/components/DeveloperDashboardCard.tsx
-not ok 152 - dashboard-app/src/components/LocationCard.tsx
-not ok 153 - dashboard-app/src/components/MoodAvatarCard.tsx
-not ok 154 - dashboard-app/src/components/OuraHealthCard.tsx
-not ok 155 - dashboard-app/src/components/SoundCloudCard.tsx
-not ok 156 - dashboard-app/src/components/WeatherCard.tsx
-not ok 157 - dashboard-app/src/index.css
-not ok 158 - dashboard-app/src/main.tsx
-ok 159 - dashboard-app/src/styles/AIIdentityCard.css
-ok 160 - dashboard-app/src/styles/AchievementsCard.css
-ok 161 - dashboard-app/src/styles/Card.css
-ok 162 - dashboard-app/src/styles/DeveloperDashboardCard.css
-ok 163 - dashboard-app/src/styles/LocationCard.css
-ok 164 - dashboard-app/src/styles/MoodAvatarCard.css
-ok 165 - dashboard-app/src/styles/OuraHealthCard.css
-ok 166 - dashboard-app/src/styles/SoundCloudCard.css
-ok 167 - dashboard-app/src/styles/WeatherCard.css
-not ok 168 - dashboard-app/src/types.ts
-not ok 169 - dashboard-app/src/utils/dataFetcher.ts
-not ok 170 - dashboard-app/src/utils/fetchData.ts
-not ok 171 - dashboard-app/tsconfig.app.json
-not ok 172 - dashboard-app/tsconfig.json
-not ok 173 - dashboard-app/tsconfig.node.json
-not ok 174 - dashboard-app/vite.config.ts
-ok 175 - dashboard-dark.svg
-ok 176 - dashboard-interactive.svg
-ok 177 - dashboard-light.svg
-ok 178 - dashboard.svg
-not ok 179 - data/metrics/developer.json
-not ok 180 - data/metrics/location.json
-not ok 181 - data/metrics/oura.json
-not ok 182 - data/metrics/parallel-fetch.json
-not ok 183 - data/metrics/soundcloud.json
-not ok 184 - data/metrics/test-workflow.json
-not ok 185 - data/metrics/weather.json
-ok 186 - data/mock/README.md
-not ok 187 - data/mock/developer-stats.json
-not ok 188 - data/mock/oura-metrics.json
-ok 189 - data/mock/soundcloud-artwork.jpg
-not ok 190 - data/mock/soundcloud-metadata.json
-not ok 191 - data/mock/weather.json
-not ok 192 - data/quotes/quotes.json
-ok 193 - data/snapshots/README.md
-ok 194 - data/snapshots/daily/.gitkeep
-not ok 195 - data/snapshots/daily/2025/12/2025-12-03.json
-ok 196 - data/snapshots/monthly/.gitkeep
-not ok 197 - data/snapshots/monthly/2025-12.json
-ok 198 - data/snapshots/weekly/.gitkeep
-not ok 199 - data/snapshots/weekly/2025-W49.json
-ok 200 - data/status/status-page.svg
-not ok 201 - data/timezone.json
-ok 202 - developer/.gitkeep
-ok 203 - developer/developer_dashboard.svg
-not ok 204 - developer/stats.json
-not ok 205 - docs/API_RESILIENCE.md
-not ok 206 - docs/API_TIMEOUT_RETRY_GUIDE.md
-not ok 207 - docs/CACHING_BENCHMARKS.md
-not ok 208 - docs/CACHING_QUICK_REFERENCE.md
-not ok 209 - docs/INTEGRATION_EXAMPLE.md
-not ok 210 - docs/LOCATION_CARD_CHANGES.md
-not ok 211 - docs/MONITORING.md
-not ok 212 - docs/OPTIMIZATION_GUIDE.md
-ok 213 - docs/README_LAYOUT_BEFORE_AFTER.md
-not ok 214 - docs/README_LAYOUT_CHANGELOG.md
-not ok 215 - docs/README_SECTION_CHANGES.md
-not ok 216 - docs/RELEASES.md
-not ok 217 - docs/ROBUSTNESS_IMPROVEMENTS.md
-not ok 218 - docs/TROUBLESHOOTING.md
-not ok 219 - docs/UNIFIED_WORKFLOW_MIGRATION.md
-not ok 220 - docs/WORKFLOWS.md
-not ok 221 - docs/WORKFLOW_CACHING.md
-not ok 222 - docs/architecture.md
-not ok 223 - docs/cards.md
-not ok 224 - docs/markdown_valid_elements.md
-not ok 225 - docs/style-guide.md
-not ok 226 - docs/workflows.md
-not ok 227 - footer/README.md
-ok 228 - footer/footer.html
-ok 229 - location/.gitkeep
-ok 230 - location/location-card.svg
-ok 231 - location/location-map.png
-not ok 232 - location/location.json
-ok 233 - models/.gitkeep
-ok 234 - mypy.ini
-ok 235 - notebooks/.gitkeep
-ok 236 - oura/.gitkeep
-ok 237 - oura/health_dashboard.svg
-not ok 238 - oura/health_snapshot.json
-not ok 239 - oura/metrics.json
-not ok 240 - oura/mood.json
-ok 241 - oura/mood_dashboard.svg
-ok 242 - poetry.toml
-not ok 243 - profile.code-workspace
-ok 244 - pyproject.toml
-not ok 245 - quotes/quote.json
-ok 246 - quotes/quote_card.svg
-ok 247 - requirements-dev.txt
-ok 248 - requirements.txt
-ok 249 - schemas/README.md
-not ok 250 - schemas/developer-stats.schema.json
-not ok 251 - schemas/health-snapshot.schema.json
-not ok 252 - schemas/oura-metrics.schema.json
-not ok 253 - schemas/soundcloud-track.schema.json
-not ok 254 - schemas/theme.schema.json
-not ok 255 - schemas/weather.schema.json
-ok 256 - scripts/audit_megalinter_config.py
-not ok 257 - scripts/comprehensive-audit.py
-not ok 258 - scripts/dev-mode.sh
-not ok 259 - scripts/fetch-developer-stats.py
-not ok 260 - scripts/fetch-location.sh
-not ok 261 - scripts/fetch-oura.sh
-not ok 262 - scripts/fetch-soundcloud.sh
-not ok 263 - scripts/fetch-timezone.sh
-not ok 264 - scripts/fetch-weather.sh
-not ok 265 - scripts/fetch_quote.sh
-not ok 266 - scripts/generate-card.py
-not ok 267 - scripts/generate-consolidated-dashboard.py
-not ok 268 - scripts/generate-developer-dashboard.py
-not ok 269 - scripts/generate-fallback-map.py
-not ok 270 - scripts/generate-health-dashboard.py
-not ok 271 - scripts/generate-health-snapshot.py
-not ok 272 - scripts/generate-interactive-dashboard.py
-not ok 273 - scripts/generate-location-card.py
-not ok 274 - scripts/generate-oura-mood-card.py
-not ok 275 - scripts/generate-status-page.py
-not ok 276 - scripts/generate-summary-card.py
-not ok 277 - scripts/generate-themed-dashboard.py
-not ok 278 - scripts/generate-weather-card.py
-ok 279 - scripts/generate_megalinter_summary.py
-not ok 280 - scripts/generate_quote_card.py
-not ok 281 - scripts/health_check.sh
-not ok 282 - scripts/incremental-generate.py
-not ok 283 - scripts/inject-footer.py
-ok 284 - scripts/lib/__init__.py
-not ok 285 - scripts/lib/card_base.py
-not ok 286 - scripts/lib/change_detection.py
-not ok 287 - scripts/lib/common.sh
-not ok 288 - scripts/lib/data_quality.py
-not ok 289 - scripts/lib/logging.sh
-not ok 290 - scripts/lib/logging_utils.py
-not ok 291 - scripts/lib/metrics.py
-not ok 292 - scripts/lib/utils.py
-not ok 293 - scripts/lib/weather_alerts.py
-not ok 294 - scripts/log_summary.py
-not ok 295 - scripts/new-card.sh
-ok 296 - scripts/oura-mood-engine.py
-not ok 297 - scripts/record-workflow-metrics.py
-not ok 298 - scripts/store-historical-snapshot.py
-ok 299 - scripts/update-readme.py
-not ok 300 - scripts/validate-data-quality.py
-not ok 301 - soundcloud/last-success.json
-not ok 302 - soundcloud/latest.json
-ok 303 - summary-monthly.svg
-ok 304 - summary-weekly.svg
-ok 305 - tests/__init__.py
-not ok 306 - tests/test_cache.sh
-not ok 307 - tests/test_card_generators.py
-not ok 308 - tests/test_change_detection.py
-not ok 309 - tests/test_data_quality.py
-not ok 310 - tests/test_developer_dashboard.py
-ok 311 - tests/test_fallback.py
-not ok 312 - tests/test_health_checks.sh
-not ok 313 - tests/test_location_diagnostics.py
-not ok 314 - tests/test_location_shell_diagnostics.sh
-ok 315 - tests/test_log_summary.py
-not ok 316 - tests/test_mapbox_integration.py
-not ok 317 - tests/test_metrics.py
-not ok 318 - tests/test_new_card.sh
-not ok 319 - tests/test_quote_card.py
-not ok 320 - tests/test_retry_logic.sh
-not ok 321 - tests/test_theme_validation.py
-ok 322 - tests/test_time_utils.py
-not ok 323 - tests/test_timeout_coverage.sh
-not ok 324 - tests/test_utils.py
-ok 325 - weather/debug_nominatim.json
-not ok 326 - weather/debug_nominatim_response.txt
-ok 327 - weather/weather-today.svg
-not ok 328 - weather/weather.json
+1..341
+ok 1 - .actrc
+ok 2 - .czrc
+not ok 3 - .devcontainer/devcontainer.json
+ok 4 - .devcontainer/postCreate.sh
+ok 5 - .editorconfig
+ok 6 - .gitattributes
+not ok 7 - .github/CODEOWNERS
+ok 8 - .github/FUNDING.yml
+ok 9 - .github/GOVERNANCE.md
+ok 10 - .github/actionlint.yaml
+not ok 11 - .github/actions/pip-install/README.md
+not ok 12 - .github/actions/pip-install/action.yml
+not ok 13 - .github/actions/setup-environment/README.md
+not ok 14 - .github/actions/setup-environment/action.yml
+ok 15 - .github/linters/.gitkeep
+not ok 16 - .github/workflows/ACT_COMPATIBILITY.md
+not ok 17 - .github/workflows/ACT_LIMITATIONS.md
+ok 18 - .github/workflows/ACT_SETUP.md
+not ok 19 - .github/workflows/README.md
+ok 20 - .github/workflows/_archive/README.md
+not ok 21 - .github/workflows/_archive/deploy-dashboard.yml
+not ok 22 - .github/workflows/_archive/developer.yml
+not ok 23 - .github/workflows/_archive/location-card.yml
+ok 24 - .github/workflows/_archive/megalinter.yml
+not ok 25 - .github/workflows/_archive/oura.yml
+not ok 26 - .github/workflows/_archive/parallel-fetch.yml
+not ok 27 - .github/workflows/_archive/soundcloud-card.yml
+not ok 28 - .github/workflows/_archive/weather.yml
+not ok 29 - .github/workflows/act-demo.yml
+not ok 30 - .github/workflows/act-events/pull_request.json
+not ok 31 - .github/workflows/act-events/push.json
+not ok 32 - .github/workflows/act-events/workflow_dispatch.json
+not ok 33 - .github/workflows/build-profile.yml
+not ok 34 - .github/workflows/greetings.yml
+ok 35 - .github/workflows/monitoring.yml
+not ok 36 - .github/workflows/release.yml
+ok 37 - .github/workflows/tests.yml
+ok 38 - .gitignore
+ok 39 - .mailmap
+ok 40 - .megalinter.yml
+ok 41 - .pre-commit-config.yaml
+ok 42 - .secrets.example
+ok 43 - .vscode/dictionaries/backend-terms.dictionary
+ok 44 - .vscode/dictionaries/devops-cloud-terms.dictionary
+ok 45 - .vscode/dictionaries/frontend-terms.dictionary
+ok 46 - .vscode/dictionaries/programming-terms.dictionary
+ok 47 - .vscode/dictionaries/project-words.dictionary
+ok 48 - .vscode/dictionaries/software-terms.dictionary
+ok 49 - .vscode/extensions.json
+ok 50 - .vscode/launch.json
+not ok 51 - .vscode/settings.json
+ok 52 - .vscode/tasks.json
+ok 53 - CHANGELOG.md
+not ok 54 - CONSOLIDATION_SUMMARY.md
+not ok 55 - GITHUB_MARKDOWN_AUDIT_COMPLETE.md
+not ok 56 - IMPLEMENTATION_ACT_SUPPORT.md
+not ok 57 - IMPLEMENTATION_SUMMARY.md
+not ok 58 - PERFORMANCE_IMPROVEMENTS_SUMMARY.md
+not ok 59 - README.md
+not ok 60 - REFACTORING_REPORT.md
+not ok 61 - REPORT.md
+not ok 62 - SECURITY_SUMMARY.md
+not ok 63 - SECURITY_SUMMARY_API_RESILIENCE.md
+not ok 64 - VERSION
+ok 65 - assets/.gitkeep
+not ok 66 - assets/metadata.json
+ok 67 - assets/soundcloud-artwork.jpg
+ok 68 - assets/soundcloud-card.svg
+ok 69 - branding/badges/badge-template.svg
+ok 70 - branding/badges/social-badge.svg
+ok 71 - branding/badges/status-badge.svg
+ok 72 - branding/badges/tech-badge.svg
+ok 73 - branding/header.png
+ok 74 - branding/header.svg
+ok 75 - branding/logo.svg
+not ok 76 - config/META6.json
+ok 77 - config/analysis_options.yml
+not ok 78 - config/apex-pmd-ruleset.xml
+ok 79 - config/apt.conf
+ok 80 - config/dpkg.cfg
+not ok 81 - config/java-pmd-ruleset.xml
+ok 82 - config/lychee.toml
+ok 83 - config/lynis/custom.prf
+ok 84 - config/phpcs.xml
+not ok 85 - config/phpstan.neon.dist
+not ok 86 - config/psalm.xml
+not ok 87 - config/pyrightconfig.json
+ok 88 - config/styles/proselint/Airlinese.yml
+ok 89 - config/styles/proselint/AnimalLabels.yml
+ok 90 - config/styles/proselint/Annotations.yml
+ok 91 - config/styles/proselint/Apologizing.yml
+ok 92 - config/styles/proselint/Archaisms.yml
+ok 93 - config/styles/proselint/But.yml
+ok 94 - config/styles/proselint/Cliches.yml
+ok 95 - config/styles/proselint/CorporateSpeak.yml
+ok 96 - config/styles/proselint/Currency.yml
+ok 97 - config/styles/proselint/Cursing.yml
+ok 98 - config/styles/proselint/DateCase.yml
+ok 99 - config/styles/proselint/DateMidnight.yml
+ok 100 - config/styles/proselint/DateRedundancy.yml
+ok 101 - config/styles/proselint/DateSpacing.yml
+ok 102 - config/styles/proselint/DenizenLabels.yml
+ok 103 - config/styles/proselint/Diacritical.yml
+ok 104 - config/styles/proselint/GenderBias.yml
+ok 105 - config/styles/proselint/GroupTerms.yml
+ok 106 - config/styles/proselint/Hedging.yml
+ok 107 - config/styles/proselint/Hyperbole.yml
+ok 108 - config/styles/proselint/Jargon.yml
+ok 109 - config/styles/proselint/LGBTOffensive.yml
+ok 110 - config/styles/proselint/LGBTTerms.yml
+ok 111 - config/styles/proselint/Malapropisms.yml
+ok 112 - config/styles/proselint/Needless.yml
+ok 113 - config/styles/proselint/Nonwords.yml
+ok 114 - config/styles/proselint/Oxymorons.yml
+ok 115 - config/styles/proselint/P-Value.yml
+not ok 116 - config/styles/proselint/RASSyndrome.yml
+ok 117 - config/styles/proselint/README.md
+ok 118 - config/styles/proselint/Skunked.yml
+ok 119 - config/styles/proselint/Spelling.yml
+ok 120 - config/styles/proselint/Typography.yml
+not ok 121 - config/styles/proselint/Uncomparables.yml
+ok 122 - config/styles/proselint/Very.yml
+not ok 123 - config/styles/proselint/meta.json
+ok 124 - config/styles/write-good/Cliches.yml
+ok 125 - config/styles/write-good/E-Prime.yml
+ok 126 - config/styles/write-good/Illusions.yml
+ok 127 - config/styles/write-good/Passive.yml
+ok 128 - config/styles/write-good/README.md
+ok 129 - config/styles/write-good/So.yml
+ok 130 - config/styles/write-good/ThereIs.yml
+ok 131 - config/styles/write-good/TooWordy.yml
+ok 132 - config/styles/write-good/Weasel.yml
+not ok 133 - config/styles/write-good/meta.json
+ok 134 - config/sun_checks.xml
+ok 135 - config/terragrunt.hcl
+ok 136 - config/terrascan-config.toml
+not ok 137 - config/theme.json
+ok 138 - config/trivy-sbom.yaml
+ok 139 - config/trivy.yaml
+ok 140 - dashboard-app/.gitignore
+not ok 141 - dashboard-app/README.md
+not ok 142 - dashboard-app/eslint.config.js
+not ok 143 - dashboard-app/index.html
+ok 144 - dashboard-app/package-lock.json
+not ok 145 - dashboard-app/package.json
+ok 146 - dashboard-app/public/achievements/achievements.json
+ok 147 - dashboard-app/public/ai/identity.json
+not ok 148 - dashboard-app/public/config/theme.json
+not ok 149 - dashboard-app/public/developer/stats.json
+not ok 150 - dashboard-app/public/location/location.json
+not ok 151 - dashboard-app/public/oura/metrics.json
+not ok 152 - dashboard-app/public/oura/mood.json
+not ok 153 - dashboard-app/public/soundcloud/latest.json
+ok 154 - dashboard-app/public/vite.svg
+not ok 155 - dashboard-app/public/weather/weather.json
+ok 156 - dashboard-app/src/App.css
+not ok 157 - dashboard-app/src/App.tsx
+ok 158 - dashboard-app/src/assets/react.svg
+not ok 159 - dashboard-app/src/components/AIIdentityCard.tsx
+not ok 160 - dashboard-app/src/components/AchievementsCard.tsx
+not ok 161 - dashboard-app/src/components/Card.tsx
+not ok 162 - dashboard-app/src/components/DeveloperDashboardCard.tsx
+not ok 163 - dashboard-app/src/components/LocationCard.tsx
+not ok 164 - dashboard-app/src/components/MoodAvatarCard.tsx
+not ok 165 - dashboard-app/src/components/OuraHealthCard.tsx
+not ok 166 - dashboard-app/src/components/SoundCloudCard.tsx
+not ok 167 - dashboard-app/src/components/WeatherCard.tsx
+not ok 168 - dashboard-app/src/index.css
+not ok 169 - dashboard-app/src/main.tsx
+ok 170 - dashboard-app/src/styles/AIIdentityCard.css
+ok 171 - dashboard-app/src/styles/AchievementsCard.css
+ok 172 - dashboard-app/src/styles/Card.css
+ok 173 - dashboard-app/src/styles/DeveloperDashboardCard.css
+ok 174 - dashboard-app/src/styles/LocationCard.css
+ok 175 - dashboard-app/src/styles/MoodAvatarCard.css
+ok 176 - dashboard-app/src/styles/OuraHealthCard.css
+ok 177 - dashboard-app/src/styles/SoundCloudCard.css
+ok 178 - dashboard-app/src/styles/WeatherCard.css
+not ok 179 - dashboard-app/src/types.ts
+not ok 180 - dashboard-app/src/utils/dataFetcher.ts
+not ok 181 - dashboard-app/src/utils/fetchData.ts
+not ok 182 - dashboard-app/tsconfig.app.json
+not ok 183 - dashboard-app/tsconfig.json
+not ok 184 - dashboard-app/tsconfig.node.json
+not ok 185 - dashboard-app/vite.config.ts
+ok 186 - dashboard-dark.svg
+ok 187 - dashboard-interactive.svg
+ok 188 - dashboard-light.svg
+ok 189 - dashboard.svg
+not ok 190 - data/metrics/developer.json
+not ok 191 - data/metrics/location.json
+not ok 192 - data/metrics/oura.json
+not ok 193 - data/metrics/parallel-fetch.json
+not ok 194 - data/metrics/soundcloud.json
+not ok 195 - data/metrics/test-workflow.json
+not ok 196 - data/metrics/weather.json
+ok 197 - data/mock/README.md
+not ok 198 - data/mock/developer-stats.json
+not ok 199 - data/mock/oura-metrics.json
+ok 200 - data/mock/soundcloud-artwork.jpg
+not ok 201 - data/mock/soundcloud-metadata.json
+not ok 202 - data/mock/weather.json
+not ok 203 - data/quotes/quotes.json
+ok 204 - data/snapshots/README.md
+ok 205 - data/snapshots/daily/.gitkeep
+not ok 206 - data/snapshots/daily/2025/12/2025-12-03.json
+ok 207 - data/snapshots/monthly/.gitkeep
+not ok 208 - data/snapshots/monthly/2025-12.json
+ok 209 - data/snapshots/weekly/.gitkeep
+not ok 210 - data/snapshots/weekly/2025-W49.json
+ok 211 - data/status/status-page.svg
+not ok 212 - data/timezone.json
+ok 213 - developer/.gitkeep
+ok 214 - developer/developer_dashboard.svg
+not ok 215 - developer/stats.json
+not ok 216 - docs/API_RESILIENCE.md
+not ok 217 - docs/API_TIMEOUT_RETRY_GUIDE.md
+not ok 218 - docs/CACHING_BENCHMARKS.md
+not ok 219 - docs/CACHING_QUICK_REFERENCE.md
+not ok 220 - docs/INTEGRATION_EXAMPLE.md
+not ok 221 - docs/LOCAL_DEVELOPMENT.md
+not ok 222 - docs/LOCATION_CARD_CHANGES.md
+not ok 223 - docs/MONITORING.md
+not ok 224 - docs/OPTIMIZATION_GUIDE.md
+ok 225 - docs/README_LAYOUT_BEFORE_AFTER.md
+not ok 226 - docs/README_LAYOUT_CHANGELOG.md
+not ok 227 - docs/README_SECTION_CHANGES.md
+not ok 228 - docs/RELEASES.md
+not ok 229 - docs/ROBUSTNESS_IMPROVEMENTS.md
+not ok 230 - docs/TROUBLESHOOTING.md
+not ok 231 - docs/UNIFIED_WORKFLOW_MIGRATION.md
+not ok 232 - docs/WORKFLOWS.md
+not ok 233 - docs/WORKFLOW_CACHING.md
+not ok 234 - docs/architecture.md
+not ok 235 - docs/cards.md
+not ok 236 - docs/markdown_valid_elements.md
+not ok 237 - docs/style-guide.md
+not ok 238 - docs/workflows.md
+not ok 239 - footer/README.md
+ok 240 - footer/footer.html
+ok 241 - location/.gitkeep
+ok 242 - location/location-card.svg
+ok 243 - location/location-map.png
+not ok 244 - location/location.json
+ok 245 - models/.gitkeep
+ok 246 - mypy.ini
+ok 247 - notebooks/.gitkeep
+ok 248 - oura/.gitkeep
+ok 249 - oura/health_dashboard.svg
+not ok 250 - oura/health_snapshot.json
+not ok 251 - oura/metrics.json
+not ok 252 - oura/mood.json
+ok 253 - oura/mood_dashboard.svg
+ok 254 - poetry.toml
+not ok 255 - profile.code-workspace
+ok 256 - pyproject.toml
+not ok 257 - quotes/quote.json
+ok 258 - quotes/quote_card.svg
+ok 259 - requirements-dev.txt
+ok 260 - requirements.txt
+ok 261 - schemas/README.md
+not ok 262 - schemas/developer-stats.schema.json
+not ok 263 - schemas/health-snapshot.schema.json
+not ok 264 - schemas/oura-metrics.schema.json
+not ok 265 - schemas/soundcloud-track.schema.json
+not ok 266 - schemas/theme.schema.json
+not ok 267 - schemas/weather.schema.json
+not ok 268 - scripts/act-test.sh
+ok 269 - scripts/audit_megalinter_config.py
+not ok 270 - scripts/comprehensive-audit.py
+not ok 271 - scripts/dev-mode.sh
+not ok 272 - scripts/fetch-developer-stats.py
+not ok 273 - scripts/fetch-location.sh
+not ok 274 - scripts/fetch-oura.sh
+not ok 275 - scripts/fetch-soundcloud.sh
+not ok 276 - scripts/fetch-timezone.sh
+not ok 277 - scripts/fetch-weather.sh
+not ok 278 - scripts/fetch_quote.sh
+not ok 279 - scripts/generate-card.py
+not ok 280 - scripts/generate-consolidated-dashboard.py
+not ok 281 - scripts/generate-developer-dashboard.py
+not ok 282 - scripts/generate-fallback-map.py
+not ok 283 - scripts/generate-health-dashboard.py
+not ok 284 - scripts/generate-health-snapshot.py
+not ok 285 - scripts/generate-interactive-dashboard.py
+not ok 286 - scripts/generate-location-card.py
+not ok 287 - scripts/generate-oura-mood-card.py
+not ok 288 - scripts/generate-status-page.py
+not ok 289 - scripts/generate-summary-card.py
+not ok 290 - scripts/generate-themed-dashboard.py
+not ok 291 - scripts/generate-weather-card.py
+ok 292 - scripts/generate_megalinter_summary.py
+not ok 293 - scripts/generate_quote_card.py
+not ok 294 - scripts/health_check.sh
+not ok 295 - scripts/incremental-generate.py
+not ok 296 - scripts/inject-footer.py
+ok 297 - scripts/lib/__init__.py
+not ok 298 - scripts/lib/card_base.py
+not ok 299 - scripts/lib/change_detection.py
+not ok 300 - scripts/lib/common.sh
+not ok 301 - scripts/lib/data_quality.py
+not ok 302 - scripts/lib/logging.sh
+not ok 303 - scripts/lib/logging_utils.py
+not ok 304 - scripts/lib/metrics.py
+not ok 305 - scripts/lib/utils.py
+not ok 306 - scripts/lib/weather_alerts.py
+not ok 307 - scripts/log_summary.py
+not ok 308 - scripts/new-card.sh
+ok 309 - scripts/oura-mood-engine.py
+not ok 310 - scripts/record-workflow-metrics.py
+not ok 311 - scripts/store-historical-snapshot.py
+ok 312 - scripts/update-readme.py
+not ok 313 - scripts/validate-data-quality.py
+not ok 314 - soundcloud/last-success.json
+not ok 315 - soundcloud/latest.json
+ok 316 - summary-monthly.svg
+ok 317 - summary-weekly.svg
+ok 318 - tests/__init__.py
+not ok 319 - tests/test_cache.sh
+not ok 320 - tests/test_card_generators.py
+not ok 321 - tests/test_change_detection.py
+not ok 322 - tests/test_data_quality.py
+not ok 323 - tests/test_developer_dashboard.py
+ok 324 - tests/test_fallback.py
+not ok 325 - tests/test_health_checks.sh
+not ok 326 - tests/test_location_diagnostics.py
+not ok 327 - tests/test_location_shell_diagnostics.sh
+ok 328 - tests/test_log_summary.py
+not ok 329 - tests/test_mapbox_integration.py
+not ok 330 - tests/test_metrics.py
+not ok 331 - tests/test_new_card.sh
+not ok 332 - tests/test_quote_card.py
+not ok 333 - tests/test_retry_logic.sh
+not ok 334 - tests/test_theme_validation.py
+ok 335 - tests/test_time_utils.py
+not ok 336 - tests/test_timeout_coverage.sh
+not ok 337 - tests/test_utils.py
+ok 338 - weather/debug_nominatim.json
+not ok 339 - weather/debug_nominatim_response.txt
+ok 340 - weather/weather-today.svg
+not ok 341 - weather/weather.json

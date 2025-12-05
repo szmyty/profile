@@ -4,53 +4,53 @@ See documentation on https://megalinter.io/8.8.0/descriptors/repository_checkov/
 
 ❌ [ERROR] for workspace /github/workspace
 Linter raw log:
-2025-12-05 06:32:49,826 [MainThread  ] [INFO ]  Checking necessary system dependencies for helm checks.
-2025-12-05 06:32:50,160 [MainThread  ] [INFO ]  Found working version of helm dependencies: v3.16.3
-2025-12-05 06:32:50,161 [MainThread  ] [INFO ]  Checking necessary system dependencies for kustomize checks.
-2025-12-05 06:32:50,163 [MainThread  ] [INFO ]  Could not find usable tools locally to process kustomize checks. Framework will be disabled for this run.
-2025-12-05 06:32:50,163 [MainThread  ] [INFO ]  The following frameworks will automatically be disabled due to missing system dependencies: kustomize
-2025-12-05 06:32:50,807 [MainThread  ] [INFO ]  The framework "sca_image" is part of the "SCA" module, which is not enabled in the platform
-2025-12-05 06:32:50,807 [MainThread  ] [INFO ]  The framework "sca_package" is part of the "SCA" module, which is not enabled in the platform
-2025-12-05 06:32:50,807 [MainThread  ] [INFO ]  The framework "sast" is part of the "SAST" module, which is not enabled in the platform
-2025-12-05 06:32:50,807 [MainThread  ] [INFO ]  The framework "cdk" is part of the "SAST" module, which is not enabled in the platform
-2025-12-05 06:32:50,824 [MainThread  ] [INFO ]  Scanning root folder and producing fresh tf_definitions and context
-2025-12-05 06:32:50,824 [MainThread  ] [INFO ]  Parsing HCL files in source dir to graph
-2025-12-05 06:32:50,877 [MainThread  ] [INFO ]  Creating Serverless graph
-2025-12-05 06:32:50,886 [MainThread  ] [INFO ]  Successfully created Serverless graph
-2025-12-05 06:32:50,917 [MainThread  ] [INFO ]  Creating ARM graph
-2025-12-05 06:32:50,924 [MainThread  ] [INFO ]  Successfully created ARM graph
-2025-12-05 06:32:50,931 [MainThread  ] [INFO ]  creating CloudFormation graph
-2025-12-05 06:32:50,931 [MainThread  ] [INFO ]  [CloudformationLocalGraph] created 0 vertices
-2025-12-05 06:32:50,934 [MainThread  ] [INFO ]  [CloudformationLocalGraph] created 0 edges
-2025-12-05 06:32:50,934 [MainThread  ] [INFO ]  Rendering variables, graph has 0 vertices and 0 edges
-2025-12-05 06:32:50,935 [MainThread  ] [INFO ]  Successfully created CloudFormation graph
-2025-12-05 06:32:50,958 [MainThread  ] [INFO ]  creating Kubernetes graph
-2025-12-05 06:32:50,959 [MainThread  ] [INFO ]  Successfully created Kubernetes graph
-2025-12-05 06:32:50,960 [MainThread  ] [INFO ]  Custom detector found at /venvs/checkov/lib/python3.13/site-packages/checkov/secrets/plugins/custom_regex_detector.py. Loading...
-2025-12-05 06:32:50,949 [MainThread  ] [INFO ]  Creating Dockerfile graph
-2025-12-05 06:32:50,961 [MainThread  ] [INFO ]  Successfully created Dockerfile graph
-2025-12-05 06:32:50,986 [MainThread  ] [INFO ]  Creating vertices
-2025-12-05 06:32:50,990 [MainThread  ] [INFO ]  [TerraformLocalGraph] created 0 vertices
-2025-12-05 06:32:50,990 [MainThread  ] [INFO ]  Creating edges
-2025-12-05 06:32:50,990 [MainThread  ] [INFO ]  [TerraformLocalGraph] created 0 edges
-2025-12-05 06:32:51,035 [MainThread  ] [INFO ]  Secrets scanning will scan 114 files
-2025-12-05 06:32:51,055 [MainThread  ] [INFO ]  Starting download of modules of length 0
-2025-12-05 06:32:51,273 [MainThread  ] [INFO ]  Building graph from parsed module
-2025-12-05 06:32:51,297 [MainThread  ] [INFO ]  Creating vertices
-2025-12-05 06:32:51,297 [MainThread  ] [INFO ]  [TerraformLocalGraph] created 1 vertices
-2025-12-05 06:32:51,297 [MainThread  ] [INFO ]  Creating edges
-2025-12-05 06:32:51,298 [MainThread  ] [INFO ]  [TerraformLocalGraph] created 0 edges
-2025-12-05 06:32:51,298 [MainThread  ] [INFO ]  Rendering variables, graph has 1 vertices and 0 edges
-2025-12-05 06:32:51,299 [MainThread  ] [INFO ]  Building cross variable edges
-2025-12-05 06:32:51,299 [MainThread  ] [INFO ]  Found 0 cross variable edges
-2025-12-05 06:32:51,299 [MainThread  ] [INFO ]  Building S3 edges name references
-2025-12-05 06:32:51,299 [MainThread  ] [INFO ]  Found 0 S3 name references edges
-2025-12-05 06:32:52,780 [MainThread  ] [INFO ]  File ./oura/raw_activity.json Line 1 has a length of 34064, which is higher than the max 10000
-2025-12-05 06:32:55,880 [MainThread  ] [INFO ]  Creating Ansible graph
-2025-12-05 06:32:55,883 [MainThread  ] [INFO ]  Successfully created Ansible graph
-2025-12-05 06:32:55,963 [MainThread  ] [INFO ]  Cleanup the whole temp directory: /tmp/tmpom7jxg90
-2025-12-05 06:32:56,825 [MainThread  ] [INFO ]  Creating GitHubActions graph
-2025-12-05 06:32:56,850 [MainThread  ] [INFO ]  Successfully created GitHubActions graph
+2025-12-05 07:29:07,022 [MainThread  ] [INFO ]  Checking necessary system dependencies for helm checks.
+2025-12-05 07:29:07,300 [MainThread  ] [INFO ]  Found working version of helm dependencies: v3.16.3
+2025-12-05 07:29:07,300 [MainThread  ] [INFO ]  Checking necessary system dependencies for kustomize checks.
+2025-12-05 07:29:07,302 [MainThread  ] [INFO ]  Could not find usable tools locally to process kustomize checks. Framework will be disabled for this run.
+2025-12-05 07:29:07,302 [MainThread  ] [INFO ]  The following frameworks will automatically be disabled due to missing system dependencies: kustomize
+2025-12-05 07:29:07,783 [MainThread  ] [INFO ]  The framework "sca_image" is part of the "SCA" module, which is not enabled in the platform
+2025-12-05 07:29:07,783 [MainThread  ] [INFO ]  The framework "sca_package" is part of the "SCA" module, which is not enabled in the platform
+2025-12-05 07:29:07,783 [MainThread  ] [INFO ]  The framework "sast" is part of the "SAST" module, which is not enabled in the platform
+2025-12-05 07:29:07,783 [MainThread  ] [INFO ]  The framework "cdk" is part of the "SAST" module, which is not enabled in the platform
+2025-12-05 07:29:07,806 [MainThread  ] [INFO ]  Scanning root folder and producing fresh tf_definitions and context
+2025-12-05 07:29:07,807 [MainThread  ] [INFO ]  Parsing HCL files in source dir to graph
+2025-12-05 07:29:07,869 [MainThread  ] [INFO ]  Creating Serverless graph
+2025-12-05 07:29:07,870 [MainThread  ] [INFO ]  Successfully created Serverless graph
+2025-12-05 07:29:07,907 [MainThread  ] [INFO ]  Creating ARM graph
+2025-12-05 07:29:07,908 [MainThread  ] [INFO ]  Successfully created ARM graph
+2025-12-05 07:29:07,935 [MainThread  ] [INFO ]  creating CloudFormation graph
+2025-12-05 07:29:07,936 [MainThread  ] [INFO ]  Custom detector found at /venvs/checkov/lib/python3.13/site-packages/checkov/secrets/plugins/custom_regex_detector.py. Loading...
+2025-12-05 07:29:07,937 [MainThread  ] [INFO ]  Creating Dockerfile graph
+2025-12-05 07:29:07,938 [MainThread  ] [INFO ]  [CloudformationLocalGraph] created 0 vertices
+2025-12-05 07:29:07,938 [MainThread  ] [INFO ]  Successfully created Dockerfile graph
+2025-12-05 07:29:07,938 [MainThread  ] [INFO ]  [CloudformationLocalGraph] created 0 edges
+2025-12-05 07:29:07,938 [MainThread  ] [INFO ]  Rendering variables, graph has 0 vertices and 0 edges
+2025-12-05 07:29:07,939 [MainThread  ] [INFO ]  Successfully created CloudFormation graph
+2025-12-05 07:29:07,951 [MainThread  ] [INFO ]  creating Kubernetes graph
+2025-12-05 07:29:07,952 [MainThread  ] [INFO ]  Successfully created Kubernetes graph
+2025-12-05 07:29:07,981 [MainThread  ] [INFO ]  Creating vertices
+2025-12-05 07:29:07,981 [MainThread  ] [INFO ]  [TerraformLocalGraph] created 0 vertices
+2025-12-05 07:29:07,981 [MainThread  ] [INFO ]  Creating edges
+2025-12-05 07:29:07,982 [MainThread  ] [INFO ]  [TerraformLocalGraph] created 0 edges
+2025-12-05 07:29:08,000 [MainThread  ] [INFO ]  Starting download of modules of length 0
+2025-12-05 07:29:08,022 [MainThread  ] [INFO ]  Secrets scanning will scan 115 files
+2025-12-05 07:29:08,066 [MainThread  ] [INFO ]  Building graph from parsed module
+2025-12-05 07:29:08,066 [MainThread  ] [INFO ]  Creating vertices
+2025-12-05 07:29:08,066 [MainThread  ] [INFO ]  [TerraformLocalGraph] created 1 vertices
+2025-12-05 07:29:08,067 [MainThread  ] [INFO ]  Creating edges
+2025-12-05 07:29:08,068 [MainThread  ] [INFO ]  [TerraformLocalGraph] created 0 edges
+2025-12-05 07:29:08,068 [MainThread  ] [INFO ]  Rendering variables, graph has 1 vertices and 0 edges
+2025-12-05 07:29:08,070 [MainThread  ] [INFO ]  Building cross variable edges
+2025-12-05 07:29:08,070 [MainThread  ] [INFO ]  Found 0 cross variable edges
+2025-12-05 07:29:08,070 [MainThread  ] [INFO ]  Building S3 edges name references
+2025-12-05 07:29:08,071 [MainThread  ] [INFO ]  Found 0 S3 name references edges
+2025-12-05 07:29:09,696 [MainThread  ] [INFO ]  File ./oura/raw_activity.json Line 1 has a length of 34064, which is higher than the max 10000
+2025-12-05 07:29:13,017 [MainThread  ] [INFO ]  Creating Ansible graph
+2025-12-05 07:29:13,018 [MainThread  ] [INFO ]  Successfully created Ansible graph
+2025-12-05 07:29:13,042 [MainThread  ] [INFO ]  Cleanup the whole temp directory: /tmp/tmp0d9klx2y
+2025-12-05 07:29:14,190 [MainThread  ] [INFO ]  Creating GitHubActions graph
+2025-12-05 07:29:14,210 [MainThread  ] [INFO ]  Successfully created GitHubActions graph
 
 
        _               _
@@ -72,7 +72,7 @@ Error parsing file ./dashboard-app/tsconfig.node.json
 Error parsing file ./dashboard-app/tsconfig.app.json
 github_actions scan results:
 
-Passed checks: 762, Failed checks: 2, Skipped checks: 0
+Passed checks: 862, Failed checks: 2, Skipped checks: 0
 
 Check: CKV_GHA_3: "Suspicious use of curl with secrets"
 	PASSED for resource: jobs(validate)
@@ -539,6 +539,303 @@ Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
 Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
 	PASSED for resource: jobs(test-shell).steps[2](Run shell script tests)
 	File: /.github/workflows/tests.yml:60-67
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(list-files)
+	File: /.github/workflows/act-demo.yml:20-43
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(check-environment)
+	File: /.github/workflows/act-demo.yml:43-76
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(run-simple-test)
+	File: /.github/workflows/act-demo.yml:76-109
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(test-environment-vars)
+	File: /.github/workflows/act-demo.yml:109-138
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(summary)
+	File: /.github/workflows/act-demo.yml:138-161
+Check: CKV_GHA_5: "Found artifact build without evidence of cosign sign execution in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/act-demo.yml:19-161
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(list-files)
+	File: /.github/workflows/act-demo.yml:20-43
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(check-environment)
+	File: /.github/workflows/act-demo.yml:43-76
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(run-simple-test)
+	File: /.github/workflows/act-demo.yml:76-109
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(test-environment-vars)
+	File: /.github/workflows/act-demo.yml:109-138
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(summary)
+	File: /.github/workflows/act-demo.yml:138-161
+Check: CKV_GHA_6: "Found artifact build without evidence of cosign sbom attestation in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/act-demo.yml:19-161
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(list-files)
+	File: /.github/workflows/act-demo.yml:20-43
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(check-environment)
+	File: /.github/workflows/act-demo.yml:43-76
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(run-simple-test)
+	File: /.github/workflows/act-demo.yml:76-109
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(test-environment-vars)
+	File: /.github/workflows/act-demo.yml:109-138
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(summary)
+	File: /.github/workflows/act-demo.yml:138-161
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(list-files)
+	File: /.github/workflows/act-demo.yml:20-43
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(check-environment)
+	File: /.github/workflows/act-demo.yml:43-76
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(run-simple-test)
+	File: /.github/workflows/act-demo.yml:76-109
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(test-environment-vars)
+	File: /.github/workflows/act-demo.yml:109-138
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(summary)
+	File: /.github/workflows/act-demo.yml:138-161
+Check: CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty. "
+	PASSED for resource: on(act Demo - Simple Workflow)
+	File: /.github/workflows/act-demo.yml:8-15
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(list-files).steps[1](Checkout repository)
+	File: /.github/workflows/act-demo.yml:23-27
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(list-files).steps[2](List workflows)
+	File: /.github/workflows/act-demo.yml:26-32
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(list-files).steps[3](List scripts)
+	File: /.github/workflows/act-demo.yml:31-37
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(list-files).steps[4](Show repository structure)
+	File: /.github/workflows/act-demo.yml:36-43
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(check-environment).steps[1](Checkout repository)
+	File: /.github/workflows/act-demo.yml:46-50
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(check-environment).steps[2](Set up Python)
+	File: /.github/workflows/act-demo.yml:49-55
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(check-environment).steps[3](Check Python version)
+	File: /.github/workflows/act-demo.yml:54-60
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(check-environment).steps[4](Check installed packages)
+	File: /.github/workflows/act-demo.yml:59-64
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(check-environment).steps[5](Install dependencies)
+	File: /.github/workflows/act-demo.yml:63-69
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(check-environment).steps[6](Verify installations)
+	File: /.github/workflows/act-demo.yml:68-76
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(run-simple-test).steps[1](Checkout repository)
+	File: /.github/workflows/act-demo.yml:79-83
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(run-simple-test).steps[2](Set up Python)
+	File: /.github/workflows/act-demo.yml:82-88
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(run-simple-test).steps[3](Install test dependencies)
+	File: /.github/workflows/act-demo.yml:87-92
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(run-simple-test).steps[4](Run basic validation)
+	File: /.github/workflows/act-demo.yml:91-103
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(run-simple-test).steps[5](Count test files)
+	File: /.github/workflows/act-demo.yml:102-109
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(test-environment-vars).steps[1](Show GitHub context)
+	File: /.github/workflows/act-demo.yml:115-124
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(test-environment-vars).steps[2](Show custom variables)
+	File: /.github/workflows/act-demo.yml:123-129
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(test-environment-vars).steps[3](Show act-specific)
+	File: /.github/workflows/act-demo.yml:128-138
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(summary).steps[1](Summary)
+	File: /.github/workflows/act-demo.yml:143-161
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(list-files).steps[1](Checkout repository)
+	File: /.github/workflows/act-demo.yml:23-27
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(list-files).steps[2](List workflows)
+	File: /.github/workflows/act-demo.yml:26-32
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(list-files).steps[3](List scripts)
+	File: /.github/workflows/act-demo.yml:31-37
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(list-files).steps[4](Show repository structure)
+	File: /.github/workflows/act-demo.yml:36-43
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(check-environment).steps[1](Checkout repository)
+	File: /.github/workflows/act-demo.yml:46-50
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(check-environment).steps[2](Set up Python)
+	File: /.github/workflows/act-demo.yml:49-55
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(check-environment).steps[3](Check Python version)
+	File: /.github/workflows/act-demo.yml:54-60
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(check-environment).steps[4](Check installed packages)
+	File: /.github/workflows/act-demo.yml:59-64
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(check-environment).steps[5](Install dependencies)
+	File: /.github/workflows/act-demo.yml:63-69
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(check-environment).steps[6](Verify installations)
+	File: /.github/workflows/act-demo.yml:68-76
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(run-simple-test).steps[1](Checkout repository)
+	File: /.github/workflows/act-demo.yml:79-83
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(run-simple-test).steps[2](Set up Python)
+	File: /.github/workflows/act-demo.yml:82-88
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(run-simple-test).steps[3](Install test dependencies)
+	File: /.github/workflows/act-demo.yml:87-92
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(run-simple-test).steps[4](Run basic validation)
+	File: /.github/workflows/act-demo.yml:91-103
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(run-simple-test).steps[5](Count test files)
+	File: /.github/workflows/act-demo.yml:102-109
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(test-environment-vars).steps[1](Show GitHub context)
+	File: /.github/workflows/act-demo.yml:115-124
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(test-environment-vars).steps[2](Show custom variables)
+	File: /.github/workflows/act-demo.yml:123-129
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(test-environment-vars).steps[3](Show act-specific)
+	File: /.github/workflows/act-demo.yml:128-138
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(summary).steps[1](Summary)
+	File: /.github/workflows/act-demo.yml:143-161
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(list-files).steps[1](Checkout repository)
+	File: /.github/workflows/act-demo.yml:23-27
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(list-files).steps[2](List workflows)
+	File: /.github/workflows/act-demo.yml:26-32
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(list-files).steps[3](List scripts)
+	File: /.github/workflows/act-demo.yml:31-37
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(list-files).steps[4](Show repository structure)
+	File: /.github/workflows/act-demo.yml:36-43
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(check-environment).steps[1](Checkout repository)
+	File: /.github/workflows/act-demo.yml:46-50
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(check-environment).steps[2](Set up Python)
+	File: /.github/workflows/act-demo.yml:49-55
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(check-environment).steps[3](Check Python version)
+	File: /.github/workflows/act-demo.yml:54-60
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(check-environment).steps[4](Check installed packages)
+	File: /.github/workflows/act-demo.yml:59-64
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(check-environment).steps[5](Install dependencies)
+	File: /.github/workflows/act-demo.yml:63-69
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(check-environment).steps[6](Verify installations)
+	File: /.github/workflows/act-demo.yml:68-76
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(run-simple-test).steps[1](Checkout repository)
+	File: /.github/workflows/act-demo.yml:79-83
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(run-simple-test).steps[2](Set up Python)
+	File: /.github/workflows/act-demo.yml:82-88
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(run-simple-test).steps[3](Install test dependencies)
+	File: /.github/workflows/act-demo.yml:87-92
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(run-simple-test).steps[4](Run basic validation)
+	File: /.github/workflows/act-demo.yml:91-103
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(run-simple-test).steps[5](Count test files)
+	File: /.github/workflows/act-demo.yml:102-109
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(test-environment-vars).steps[1](Show GitHub context)
+	File: /.github/workflows/act-demo.yml:115-124
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(test-environment-vars).steps[2](Show custom variables)
+	File: /.github/workflows/act-demo.yml:123-129
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(test-environment-vars).steps[3](Show act-specific)
+	File: /.github/workflows/act-demo.yml:128-138
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(summary).steps[1](Summary)
+	File: /.github/workflows/act-demo.yml:143-161
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(list-files).steps[1](Checkout repository)
+	File: /.github/workflows/act-demo.yml:23-27
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(list-files).steps[2](List workflows)
+	File: /.github/workflows/act-demo.yml:26-32
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(list-files).steps[3](List scripts)
+	File: /.github/workflows/act-demo.yml:31-37
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(list-files).steps[4](Show repository structure)
+	File: /.github/workflows/act-demo.yml:36-43
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(check-environment).steps[1](Checkout repository)
+	File: /.github/workflows/act-demo.yml:46-50
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(check-environment).steps[2](Set up Python)
+	File: /.github/workflows/act-demo.yml:49-55
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(check-environment).steps[3](Check Python version)
+	File: /.github/workflows/act-demo.yml:54-60
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(check-environment).steps[4](Check installed packages)
+	File: /.github/workflows/act-demo.yml:59-64
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(check-environment).steps[5](Install dependencies)
+	File: /.github/workflows/act-demo.yml:63-69
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(check-environment).steps[6](Verify installations)
+	File: /.github/workflows/act-demo.yml:68-76
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(run-simple-test).steps[1](Checkout repository)
+	File: /.github/workflows/act-demo.yml:79-83
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(run-simple-test).steps[2](Set up Python)
+	File: /.github/workflows/act-demo.yml:82-88
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(run-simple-test).steps[3](Install test dependencies)
+	File: /.github/workflows/act-demo.yml:87-92
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(run-simple-test).steps[4](Run basic validation)
+	File: /.github/workflows/act-demo.yml:91-103
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(run-simple-test).steps[5](Count test files)
+	File: /.github/workflows/act-demo.yml:102-109
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(test-environment-vars).steps[1](Show GitHub context)
+	File: /.github/workflows/act-demo.yml:115-124
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(test-environment-vars).steps[2](Show custom variables)
+	File: /.github/workflows/act-demo.yml:123-129
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(test-environment-vars).steps[3](Show act-specific)
+	File: /.github/workflows/act-demo.yml:128-138
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(summary).steps[1](Summary)
+	File: /.github/workflows/act-demo.yml:143-161
 Check: CKV_GHA_3: "Suspicious use of curl with secrets"
 	PASSED for resource: jobs(build-profile)
 	File: /.github/workflows/build-profile.yml:26-769
@@ -2331,11 +2628,11 @@ Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
 	PASSED for resource: on(Monitoring & Alerts)
 	File: /.github/workflows/monitoring.yml:19-23
 Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+	PASSED for resource: on(act Demo - Simple Workflow)
+	File: /.github/workflows/act-demo.yml:15-18
+Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
 	PASSED for resource: on(Build Profile — Unified Orchestration Pipeline)
 	File: /.github/workflows/build-profile.yml:18-25
-Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
-	PASSED for resource: on(Developer Dashboard — GitHub Metrics + Visualization)
-	File: /.github/workflows/_archive/developer.yml:18-21
 Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
 	PASSED for resource: on(Unit Tests)
 	File: /.github/workflows/tests.yml:26-29
@@ -2343,23 +2640,26 @@ Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
 	PASSED for resource: on(Parallel Data Fetch & Card Generation)
 	File: /.github/workflows/_archive/parallel-fetch.yml:25-28
 Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
-	PASSED for resource: on(MegaLinter Diagnostic (Report-Only))
-	File: /.github/workflows/_archive/megalinter.yml:12-17
-Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
 	PASSED for resource: on(SoundCloud Latest Release Card)
 	File: /.github/workflows/_archive/soundcloud-card.yml:18-21
 Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
 	PASSED for resource: on(Location Map Card — Mapbox Static Map with Day/Night Theme)
 	File: /.github/workflows/_archive/location-card.yml:18-21
 Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+	PASSED for resource: on(Developer Dashboard — GitHub Metrics + Visualization)
+	File: /.github/workflows/_archive/developer.yml:18-21
+Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+	PASSED for resource: on(MegaLinter Diagnostic (Report-Only))
+	File: /.github/workflows/_archive/megalinter.yml:12-17
+Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+	PASSED for resource: on(Weather Card — Daily Conditions + Forecast)
+	File: /.github/workflows/_archive/weather.yml:18-21
+Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
 	PASSED for resource: on(Deploy Dashboard to GitHub Pages)
 	File: /.github/workflows/_archive/deploy-dashboard.yml:24-31
 Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
 	PASSED for resource: on(Oura Health Dashboard — Full Metrics + Unified Snapshot)
 	File: /.github/workflows/_archive/oura.yml:18-21
-Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
-	PASSED for resource: on(Weather Card — Daily Conditions + Forecast)
-	File: /.github/workflows/_archive/weather.yml:18-21
 Check: CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty. "
 	FAILED for resource: on(Release)
 	File: /.github/workflows/release.yml:9-15

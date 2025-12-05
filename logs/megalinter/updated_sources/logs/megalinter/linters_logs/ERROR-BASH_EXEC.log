@@ -3,6 +3,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/bash_bash_exec/
 -----------------------------------------------
 
 ✅ [SUCCESS] .devcontainer/postCreate.sh
+✅ [SUCCESS] scripts/act-test.sh
 ✅ [SUCCESS] scripts/dev-mode.sh
 ✅ [SUCCESS] scripts/fetch-location.sh
 ✅ [SUCCESS] scripts/fetch-oura.sh
