@@ -107,10 +107,14 @@ jobs:
           VERSION="${{ steps.get_version.outputs.version }}"
           
           # Extract the section for this version from CHANGELOG.md
-          # This gets content between [VERSION] and the next version header or end of file
-          awk "/\[$VERSION\]/,/^## \[/" CHANGELOG.md | \
-            grep -v "^## \[" | \
-            sed '/^$/d' > /tmp/release_notes.md
+          # Match version header with optional date: ## [VERSION] or ## [VERSION] - DATE
+          awk -v ver="$VERSION" '
+            /^## \[/ {
+              if (found && $0 !~ "\\[" ver "\\]") exit;
+              if ($0 ~ "\\[" ver "\\]") { found=1; next }
+            }
+            found { print }
+          ' CHANGELOG.md > /tmp/release_notes.md
           
           # Add a header
           echo "# Release v$VERSION" > /tmp/full_release_notes.md
