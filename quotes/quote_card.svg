@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="480" height="200" viewBox="0 0 480 200">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#DCE1E7"/>
+      <stop offset="100%" style="stop-color:#AAB1B8"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="480" height="200" rx="12" fill="url(#bg-gradient)"/>
+  <rect width="480" height="200" rx="12" fill="none" stroke="#64ffda" stroke-width="1" stroke-opacity="0.3"/>
+
+  <!-- Stylistic effects -->
+  
+    <!-- Vignette effect -->
+    <rect x="0" y="0" width="480" height="200" fill="black" opacity="0.05" rx="12"/>
+  
+  <!-- Quote marks -->
+  
+    <!-- Opening quote mark -->
+    <text x="15" y="35" font-family="'Segoe UI', Arial, sans-serif" font-size="32" fill="#64ffda" opacity="0.3">"</text>
+  
+  <!-- Quote text -->
+  <g id="quote-content">
+    <text x="30" y="50" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#ffffff" font-style="italic">The only way to do great work is to love what</text>
+    <text x="30" y="70" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#ffffff" font-style="italic">you do.</text>
+
+    <text x="30" y="110" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8892b0">— Steve Jobs</text>
+  </g>
+  
+  <!-- Sentiment/theme badge -->
+  
+    <!-- Sentiment badge -->
+    <text x="30" y="185" font-family="'Segoe UI', Arial, sans-serif" font-size="8" fill="#8892b0" opacity="0.7">Reflective • Wisdom</text>
+
+
+  <!-- Decorative accent -->
+  <rect x="460" y="15" width="4" height="170" rx="2" fill="#64ffda" fill-opacity="0.3"/>
+</svg>
