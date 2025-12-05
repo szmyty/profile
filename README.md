@@ -431,6 +431,23 @@ pre-commit install              # if using pip
 ./scripts/dev-mode.sh all
 ```
 
+**🎭 Running GitHub Actions Locally**
+
+Test workflows locally with `act` (available in devcontainer):
+
+```bash
+# List all workflows
+act -l
+
+# Run specific job
+act -j test-python
+
+# Run workflow with secrets
+act -j build-profile --secret-file .secrets
+```
+
+See [Local Development Guide](docs/LOCAL_DEVELOPMENT.md) for details.
+
 </details>
 
 <br/>
@@ -501,6 +518,7 @@ Output is saved to `dev-output/` directory. See [`data/mock/README.md`](data/moc
 
 <br/>
 
+- **[Local Development](docs/LOCAL_DEVELOPMENT.md)**: Run GitHub Actions locally with `act` for faster iteration
 - **[Monitoring Guide](docs/MONITORING.md)**: Monitoring, observability, and alerting features
 - **[Optimization Guide](docs/OPTIMIZATION_GUIDE.md)**: Performance optimizations and caching strategies
 - **[Workflows](docs/WORKFLOWS.md)**: Complete guide to GitHub Actions workflows and their dependencies
