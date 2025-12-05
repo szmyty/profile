@@ -25,6 +25,11 @@ try:
 except ImportError:
     OPENAI_AVAILABLE = False
 
+# OpenAI API configuration constants
+DEFAULT_MODEL = "gpt-4o-mini"
+API_TEMPERATURE = 0.3  # Lower temperature for more consistent responses
+API_MAX_TOKENS = 200
+
 
 def load_quote(quote_path: str) -> Dict[str, Any]:
     """
@@ -101,8 +106,8 @@ Respond ONLY with valid JSON, no other text."""
                 {"role": "system", "content": "You are an expert at analyzing quotes for emotional tone and aesthetic qualities. Always respond with valid JSON only."},
                 {"role": "user", "content": prompt}
             ],
-            temperature=0.3,  # Lower temperature for more consistent responses
-            max_tokens=200
+            temperature=API_TEMPERATURE,
+            max_tokens=API_MAX_TOKENS
         )
         
         # Extract and parse JSON response
@@ -221,7 +226,7 @@ def main():
             print(f"Author: {author}")
         
         # Try to analyze with LLM
-        model = os.environ.get("OPENAI_MODEL", "gpt-4o-mini")
+        model = os.environ.get("OPENAI_MODEL", DEFAULT_MODEL)
         
         try:
             print(f"🤖 Analyzing quote with {model}...")

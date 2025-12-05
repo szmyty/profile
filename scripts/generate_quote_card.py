@@ -52,8 +52,16 @@ class QuoteCard(CardBase):
         try:
             with open(analysis_path, 'r') as f:
                 self.analysis_data = json.load(f)
-        except (FileNotFoundError, json.JSONDecodeError, Exception):
-            print(f"⚠️  Warning: Could not load analysis from {analysis_path}, using neutral palette")
+        except FileNotFoundError:
+            print(f"⚠️  Warning: Analysis file not found: {analysis_path}, using neutral palette")
+            self.analysis_data = {
+                "color_profile": "neutral",
+                "style_keywords": [],
+                "sentiment": "reflective",
+                "tone": "contemplative"
+            }
+        except (json.JSONDecodeError, IOError, PermissionError) as e:
+            print(f"⚠️  Warning: Could not load analysis from {analysis_path}: {e}, using neutral palette")
             self.analysis_data = {
                 "color_profile": "neutral",
                 "style_keywords": [],
@@ -148,7 +156,14 @@ class QuoteCard(CardBase):
         # Cosmic/universe: subtle starfield
         if any(kw in keywords for kw in ["cosmic", "universe", "starfield"]):
             accent_color = self.get_color("text", "accent")
-            star_positions = [(50, 40), (150, 70), (350, 50), (420, 100), (280, 140)]
+            # Calculate star positions dynamically based on card dimensions
+            star_positions = [
+                (self.width * 0.1, self.height * 0.2),
+                (self.width * 0.3, self.height * 0.35),
+                (self.width * 0.7, self.height * 0.25),
+                (self.width * 0.85, self.height * 0.5),
+                (self.width * 0.55, self.height * 0.7),
+            ]
             for x, y in star_positions:
                 effects.append(f'''
     <circle cx="{x}" cy="{y}" r="1.5" fill="{accent_color}" opacity="0.4"/>''')
