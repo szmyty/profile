@@ -149,7 +149,28 @@ act --env-file .env -W .github/workflows/tests.yml
 act -j test-python --container-architecture linux/amd64
 ```
 
+## Known Limitations
+
+⚠️ **Important**: This repository uses custom composite actions that have limited support in act. See [ACT_LIMITATIONS.md](ACT_LIMITATIONS.md) for details and workarounds.
+
+**Key limitations**:
+- Workflows using `.github/actions/setup-environment` may not run correctly
+- Consider testing scripts directly or using simplified workflow versions
+- Full integration testing should use actual GitHub Actions
+
 ## Common Issues
+
+### Composite Action Errors
+
+If you see: `failed to read 'action.yml' from action 'Setup environment'`
+
+This is a known limitation with local composite actions. See [ACT_LIMITATIONS.md](ACT_LIMITATIONS.md) for workarounds.
+
+**Quick fix**: Test scripts directly instead:
+```bash
+# Instead of: act -j test-python
+python -m pytest tests/ -v
+```
 
 ### Docker Socket Permission
 
