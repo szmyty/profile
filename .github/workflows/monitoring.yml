@@ -11,13 +11,7 @@ on:
   workflow_dispatch:
   workflow_run:
     workflows:
-      - "Oura Health Dashboard — Full Metrics + Unified Snapshot"
-      - "Weather Card"
-      - "Developer Dashboard"
-      - "Location Card"
-      - "SoundCloud Card"
-      - "Parallel Data Fetch & Card Generation"
-      - "MegaLinter Diagnostic (Report-Only)"
+      - "Build Profile — Unified Orchestration Pipeline"
     types:
       - completed
 
