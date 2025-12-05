@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "profile"
-version = "0.1.0"
+version = "1.0.0"
 description = "GitHub Profile with Dynamic Cards"
 authors = ["szmyty <14865041+szmyty@users.noreply.github.com>"]
 readme = "README.md"
