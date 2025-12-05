@@ -78,7 +78,7 @@ jobs:
       
       - name: Validate JSON schemas
         run: |
-          poetry run check-jsonschema --schemafile schemas/theme-schema.json config/theme.json
+          poetry run check-jsonschema --schemafile schemas/theme.schema.json config/theme.json
 
   release:
     name: Create GitHub Release
