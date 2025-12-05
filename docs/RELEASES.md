@@ -155,7 +155,9 @@ Restructure entire dashboard architecture:
 echo "2.0.0" > VERSION
 # Update CHANGELOG.md with "Changed" section explaining breaking changes
 # Update pyproject.toml and package.json
-git commit -m "Restructure dashboard architecture (BREAKING CHANGE)"
+git commit -m "feat!: restructure dashboard architecture
+
+BREAKING CHANGE: Complete overhaul of dashboard architecture"
 git tag v2.0.0
 git push --tags
 ```

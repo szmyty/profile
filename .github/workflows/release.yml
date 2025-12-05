@@ -107,7 +107,11 @@ jobs:
           VERSION="${{ steps.get_version.outputs.version }}"
           
           # Extract the section for this version from CHANGELOG.md
-          # Match version header with optional date: ## [VERSION] or ## [VERSION] - DATE
+          # AWK logic:
+          # 1. Look for lines starting with "## [" (version headers)
+          # 2. When we find our version (e.g., "## [1.0.0] - 2025-12-05"), set found=1 and skip the header line
+          # 3. Print all lines until we hit the next version header (another "## [")
+          # 4. Exit when we encounter the next version section
           awk -v ver="$VERSION" '
             /^## \[/ {
               if (found && $0 !~ "\\[" ver "\\]") exit;
