@@ -96,8 +96,9 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     2 errors found
 
 ✅ [SUCCESS] .github/linters/.gitkeep
-❌ [ERROR] .github/workflows/deploy-dashboard.yml
-    .github/workflows/deploy-dashboard.yml:
+✅ [SUCCESS] .github/workflows/_archive/README.md
+❌ [ERROR] .github/workflows/_archive/deploy-dashboard.yml
+    .github/workflows/_archive/deploy-dashboard.yml:
     	37: Trailing whitespace
     	41: Trailing whitespace
     	48: Trailing whitespace
@@ -112,108 +113,215 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     
     11 errors found
 
-❌ [ERROR] .github/workflows/developer.yml
-    .github/workflows/developer.yml:
+❌ [ERROR] .github/workflows/_archive/developer.yml
+    .github/workflows/_archive/developer.yml:
     	23: Trailing whitespace
+    	29: Trailing whitespace
+    	47: Trailing whitespace
+    	54: Trailing whitespace
+    	61: Trailing whitespace
+    	64: Trailing whitespace
+    	98: Trailing whitespace
+    	101: Trailing whitespace
+    	106: Trailing whitespace
+    	109: Trailing whitespace
+    
+    10 errors found
+
+❌ [ERROR] .github/workflows/_archive/location-card.yml
+    .github/workflows/_archive/location-card.yml:
+    	23: Trailing whitespace
+    	29: Trailing whitespace
+    	45: Trailing whitespace
+    	65: Trailing whitespace
+    	72: Trailing whitespace
+    	79: Trailing whitespace
+    	82: Trailing whitespace
+    	129: Trailing whitespace
+    	132: Trailing whitespace
+    	135: Trailing whitespace
+    	138: Trailing whitespace
+    
+    11 errors found
+
+✅ [SUCCESS] .github/workflows/_archive/megalinter.yml
+❌ [ERROR] .github/workflows/_archive/oura.yml
+    .github/workflows/_archive/oura.yml:
+    	23: Trailing whitespace
+    	29: Trailing whitespace
     	42: Trailing whitespace
     	49: Trailing whitespace
     	56: Trailing whitespace
     	59: Trailing whitespace
-    	93: Trailing whitespace
-    	96: Trailing whitespace
-    	101: Trailing whitespace
-    	104: Trailing whitespace
-    
-    9 errors found
-
-❌ [ERROR] .github/workflows/location-card.yml
-    .github/workflows/location-card.yml:
-    	23: Trailing whitespace
-    	40: Trailing whitespace
-    	60: Trailing whitespace
-    	67: Trailing whitespace
-    	74: Trailing whitespace
-    	77: Trailing whitespace
-    	124: Trailing whitespace
-    	127: Trailing whitespace
-    	130: Trailing whitespace
-    	133: Trailing whitespace
+    	110: Trailing whitespace
+    	119: Trailing whitespace
+    	122: Trailing whitespace
+    	125: Trailing whitespace
     
     10 errors found
 
-✅ [SUCCESS] .github/workflows/megalinter.yml
-✅ [SUCCESS] .github/workflows/monitoring.yml
-❌ [ERROR] .github/workflows/oura.yml
-    .github/workflows/oura.yml:
-    	23: Trailing whitespace
-    	37: Trailing whitespace
-    	44: Trailing whitespace
-    	51: Trailing whitespace
-    	54: Trailing whitespace
-    	105: Trailing whitespace
+❌ [ERROR] .github/workflows/_archive/parallel-fetch.yml
+    .github/workflows/_archive/parallel-fetch.yml:
+    	36: Trailing whitespace
+    	48: Trailing whitespace
+    	55: Trailing whitespace
+    	62: Trailing whitespace
+    	65: Trailing whitespace
+    	83: Trailing whitespace
+    	96: Trailing whitespace
     	114: Trailing whitespace
-    	117: Trailing whitespace
-    	120: Trailing whitespace
+    	121: Trailing whitespace
+    	128: Trailing whitespace
+    	131: Trailing whitespace
+    	150: Trailing whitespace
+    	165: Trailing whitespace
+    	172: Trailing whitespace
+    	179: Trailing whitespace
+    	202: Trailing whitespace
+    	304: Trailing whitespace
+    	330: Trailing whitespace
+    	336: Trailing whitespace
+    	342: Trailing whitespace
+    	356: Trailing whitespace
+    	359: Trailing whitespace
+    
+    22 errors found
+
+❌ [ERROR] .github/workflows/_archive/soundcloud-card.yml
+    .github/workflows/_archive/soundcloud-card.yml:
+    	23: Trailing whitespace
+    	29: Trailing whitespace
+    	45: Trailing whitespace
+    	52: Trailing whitespace
+    	59: Trailing whitespace
+    	96: Trailing whitespace
+    	105: Trailing whitespace
+    	108: Trailing whitespace
+    	111: Trailing whitespace
     
     9 errors found
 
-❌ [ERROR] .github/workflows/parallel-fetch.yml
-    .github/workflows/parallel-fetch.yml:
-    	43: Trailing whitespace
-    	50: Trailing whitespace
-    	57: Trailing whitespace
-    	60: Trailing whitespace
-    	86: Trailing whitespace
-    	104: Trailing whitespace
-    	111: Trailing whitespace
-    	118: Trailing whitespace
-    	121: Trailing whitespace
-    	150: Trailing whitespace
-    	157: Trailing whitespace
-    	164: Trailing whitespace
-    	284: Trailing whitespace
-    	310: Trailing whitespace
-    	316: Trailing whitespace
-    	322: Trailing whitespace
-    	336: Trailing whitespace
-    	339: Trailing whitespace
-    
-    18 errors found
-
-❌ [ERROR] .github/workflows/soundcloud-card.yml
-    .github/workflows/soundcloud-card.yml:
+❌ [ERROR] .github/workflows/_archive/weather.yml
+    .github/workflows/_archive/weather.yml:
     	23: Trailing whitespace
-    	40: Trailing whitespace
-    	47: Trailing whitespace
-    	54: Trailing whitespace
-    	91: Trailing whitespace
-    	100: Trailing whitespace
-    	103: Trailing whitespace
-    	106: Trailing whitespace
+    	29: Trailing whitespace
+    	42: Trailing whitespace
+    	58: Trailing whitespace
+    	61: Trailing whitespace
+    	64: Trailing whitespace
+    	66: Trailing whitespace
+    	72: Trailing whitespace
+    	75: Trailing whitespace
+    	90: Trailing whitespace
+    	97: Trailing whitespace
+    	104: Trailing whitespace
+    	107: Trailing whitespace
+    	154: Trailing whitespace
+    	157: Trailing whitespace
+    	160: Trailing whitespace
     
-    8 errors found
+    16 errors found
+
+❌ [ERROR] .github/workflows/build-profile.yml
+    .github/workflows/build-profile.yml:
+    	27: Trailing whitespace
+    	36: Trailing whitespace
+    	46: Trailing whitespace
+    	51: Trailing whitespace
+    	61: Trailing whitespace
+    	65: Trailing whitespace
+    	72: Trailing whitespace
+    	78: Trailing whitespace
+    	87: Trailing whitespace
+    	98: Trailing whitespace
+    	119: Trailing whitespace
+    	130: Trailing whitespace
+    	140: Trailing whitespace
+    	150: Trailing whitespace
+    	171: Trailing whitespace
+    	182: Trailing whitespace
+    	203: Trailing whitespace
+    	211: Trailing whitespace
+    	232: Trailing whitespace
+    	240: Trailing whitespace
+    	261: Trailing whitespace
+    	268: Trailing whitespace
+    	270: Trailing whitespace
+    	284: Trailing whitespace
+    	291: Trailing whitespace
+    	304: Trailing whitespace
+    	320: Trailing whitespace
+    	333: Trailing whitespace
+    	346: Trailing whitespace
+    	359: Trailing whitespace
+    	366: Trailing whitespace
+    	378: Trailing whitespace
+    	385: Trailing whitespace
+    	397: Trailing whitespace
+    	404: Trailing whitespace
+    	448: Trailing whitespace
+    	465: Trailing whitespace
+    	472: Trailing whitespace
+    	479: Trailing whitespace
+    	486: Trailing whitespace
+    	493: Trailing whitespace
+    	502: Trailing whitespace
+    	509: Trailing whitespace
+    	516: Trailing whitespace
+    	519: Trailing whitespace
+    	534: Trailing whitespace
+    	542: Trailing whitespace
+    	546: Trailing whitespace
+    	551: Trailing whitespace
+    	554: Trailing whitespace
+    	565: Trailing whitespace
+    	569: Trailing whitespace
+    	575: Trailing whitespace
+    	580: Trailing whitespace
+    	588: Trailing whitespace
+    	601: Trailing whitespace
+    	605: Trailing whitespace
+    	613: Trailing whitespace
+    	624: Trailing whitespace
+    	632: Trailing whitespace
+    	640: Trailing whitespace
+    	643: Trailing whitespace
+    	647: Trailing whitespace
+    	655: Trailing whitespace
+    	663: Trailing whitespace
+    	669: Trailing whitespace
+    	674: Trailing whitespace
+    	681: Trailing whitespace
+    
+    68 errors found
+
+✅ [SUCCESS] .github/workflows/monitoring.yml
+❌ [ERROR] .github/workflows/release.yml
+    .github/workflows/release.yml:
+    	23: Trailing whitespace
+    	27: Trailing whitespace
+    	38: Trailing whitespace
+    	43: Trailing whitespace
+    	46: Trailing whitespace
+    	52: Trailing whitespace
+    	61: Trailing whitespace
+    	66: Trailing whitespace
+    	70: Trailing whitespace
+    	74: Trailing whitespace
+    	78: Trailing whitespace
+    	87: Trailing whitespace
+    	93: Trailing whitespace
+    	103: Trailing whitespace
+    	108: Trailing whitespace
+    	122: Trailing whitespace
+    	127: Trailing whitespace
+    	135: Trailing whitespace
+    	137: Trailing whitespace
+    	149: Trailing whitespace
+    
+    20 errors found
 
 ✅ [SUCCESS] .github/workflows/tests.yml
-❌ [ERROR] .github/workflows/weather.yml
-    .github/workflows/weather.yml:
-    	23: Trailing whitespace
-    	37: Trailing whitespace
-    	53: Trailing whitespace
-    	56: Trailing whitespace
-    	59: Trailing whitespace
-    	61: Trailing whitespace
-    	67: Trailing whitespace
-    	70: Trailing whitespace
-    	85: Trailing whitespace
-    	92: Trailing whitespace
-    	99: Trailing whitespace
-    	102: Trailing whitespace
-    	149: Trailing whitespace
-    	152: Trailing whitespace
-    	155: Trailing whitespace
-    
-    15 errors found
-
 ✅ [SUCCESS] .gitignore
 ✅ [SUCCESS] .mailmap
 ✅ [SUCCESS] .megalinter.yml
@@ -239,6 +347,20 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     7 errors found
 
 ✅ [SUCCESS] .vscode/tasks.json
+✅ [SUCCESS] CHANGELOG.md
+❌ [ERROR] CONSOLIDATION_SUMMARY.md
+    CONSOLIDATION_SUMMARY.md:
+    	129: Wrong amount of left-padding spaces(want multiple of 4)
+    	131: Wrong amount of left-padding spaces(want multiple of 4)
+    	133: Wrong amount of left-padding spaces(want multiple of 4)
+    	139-140: Wrong amount of left-padding spaces(want multiple of 4)
+    	146-150: Wrong amount of left-padding spaces(want multiple of 4)
+    	232-235: Wrong amount of left-padding spaces(want multiple of 4)
+    	238-240: Wrong amount of left-padding spaces(want multiple of 4)
+    	243-246: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    8 errors found
+
 ❌ [ERROR] GITHUB_MARKDOWN_AUDIT_COMPLETE.md
     GITHUB_MARKDOWN_AUDIT_COMPLETE.md:
     	33-36: Wrong amount of left-padding spaces(want multiple of 4)
@@ -297,7 +419,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
 
 ❌ [ERROR] README.md
     README.md:
-    	119: Wrong amount of left-padding spaces(want multiple of 4)
+    	117: Wrong amount of left-padding spaces(want multiple of 4)
     
     1 errors found
 
@@ -426,10 +548,16 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     
     16 errors found
 
+❌ [ERROR] VERSION
+    VERSION:
+    	Wrong line endings or no final newline
+    
+    1 errors found
+
 ✅ [SUCCESS] assets/.gitkeep
 ❌ [ERROR] assets/metadata.json
     assets/metadata.json:
-    	2-9: Wrong amount of left-padding spaces(want multiple of 4)
+    	2-10: Wrong amount of left-padding spaces(want multiple of 4)
     
     1 errors found
 
@@ -679,8 +807,8 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     dashboard-app/package.json:
     	2-6: Wrong amount of left-padding spaces(want multiple of 4)
     	11-12: Wrong amount of left-padding spaces(want multiple of 4)
-    	15-16: Wrong amount of left-padding spaces(want multiple of 4)
-    	29: Wrong amount of left-padding spaces(want multiple of 4)
+    	16-17: Wrong amount of left-padding spaces(want multiple of 4)
+    	30: Wrong amount of left-padding spaces(want multiple of 4)
     
     4 errors found
 
@@ -748,21 +876,34 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
 
 ❌ [ERROR] dashboard-app/public/developer/stats.json
     dashboard-app/public/developer/stats.json:
-    	2-8: Wrong amount of left-padding spaces(want multiple of 4)
-    	11-12: Wrong amount of left-padding spaces(want multiple of 4)
-    	14-15: Wrong amount of left-padding spaces(want multiple of 4)
-    	18-19: Wrong amount of left-padding spaces(want multiple of 4)
-    	22-23: Wrong amount of left-padding spaces(want multiple of 4)
-    	26-27: Wrong amount of left-padding spaces(want multiple of 4)
-    	30-31: Wrong amount of left-padding spaces(want multiple of 4)
-    	33-35: Wrong amount of left-padding spaces(want multiple of 4)
+    	Wrong line endings or no final newline
+    	2-10: Wrong amount of left-padding spaces(want multiple of 4)
+    	12-41: Wrong amount of left-padding spaces(want multiple of 4)
+    	45: Wrong amount of left-padding spaces(want multiple of 4)
+    	70-71: Wrong amount of left-padding spaces(want multiple of 4)
+    	96-97: Wrong amount of left-padding spaces(want multiple of 4)
+    	122-123: Wrong amount of left-padding spaces(want multiple of 4)
+    	148-149: Wrong amount of left-padding spaces(want multiple of 4)
+    	174-175: Wrong amount of left-padding spaces(want multiple of 4)
+    	200-201: Wrong amount of left-padding spaces(want multiple of 4)
+    	226: Wrong amount of left-padding spaces(want multiple of 4)
+    	229-235: Wrong amount of left-padding spaces(want multiple of 4)
+    	237-238: Wrong amount of left-padding spaces(want multiple of 4)
+    	241-242: Wrong amount of left-padding spaces(want multiple of 4)
+    	244-245: Wrong amount of left-padding spaces(want multiple of 4)
+    	253-254: Wrong amount of left-padding spaces(want multiple of 4)
+    	256-257: Wrong amount of left-padding spaces(want multiple of 4)
+    	260-261: Wrong amount of left-padding spaces(want multiple of 4)
+    	264-265: Wrong amount of left-padding spaces(want multiple of 4)
+    	268-269: Wrong amount of left-padding spaces(want multiple of 4)
+    	271-272: Wrong amount of left-padding spaces(want multiple of 4)
     
-    8 errors found
+    21 errors found
 
 ❌ [ERROR] dashboard-app/public/location/location.json
     dashboard-app/public/location/location.json:
-    	2-5: Wrong amount of left-padding spaces(want multiple of 4)
-    	9: Wrong amount of left-padding spaces(want multiple of 4)
+    	2-4: Wrong amount of left-padding spaces(want multiple of 4)
+    	7-9: Wrong amount of left-padding spaces(want multiple of 4)
     
     2 errors found
 
@@ -1174,18 +1315,45 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
 ❌ [ERROR] dashboard-app/src/utils/dataFetcher.ts
     dashboard-app/src/utils/dataFetcher.ts:
     	3-11: Wrong amount of left-padding spaces(want multiple of 4)
-    	17: Wrong amount of left-padding spaces(want multiple of 4)
-    	23: Trailing whitespace
-    	26-27: Wrong amount of left-padding spaces(want multiple of 4)
-    	30: Wrong amount of left-padding spaces(want multiple of 4)
-    	33: Wrong amount of left-padding spaces(want multiple of 4)
-    	37: Wrong amount of left-padding spaces(want multiple of 4)
-    	47: Wrong amount of left-padding spaces(want multiple of 4)
-    	57: Wrong amount of left-padding spaces(want multiple of 4)
-    	59: Wrong amount of left-padding spaces(want multiple of 4)
-    	69: Wrong amount of left-padding spaces(want multiple of 4)
+    	19: Wrong amount of left-padding spaces(want multiple of 4)
+    	29: Wrong amount of left-padding spaces(want multiple of 4)
+    	39: Wrong amount of left-padding spaces(want multiple of 4)
+    	41: Wrong amount of left-padding spaces(want multiple of 4)
+    	51: Wrong amount of left-padding spaces(want multiple of 4)
     
-    11 errors found
+    6 errors found
+
+❌ [ERROR] dashboard-app/src/utils/fetchData.ts
+    dashboard-app/src/utils/fetchData.ts:
+    	4-12: Wrong amount of left-padding spaces(want multiple of 4)
+    	21-25: Wrong amount of left-padding spaces(want multiple of 4)
+    	32: Wrong amount of left-padding spaces(want multiple of 4)
+    	34: Trailing whitespace
+    	36-37: Wrong amount of left-padding spaces(want multiple of 4)
+    	42-43: Wrong amount of left-padding spaces(want multiple of 4)
+    	47: Wrong amount of left-padding spaces(want multiple of 4)
+    	49: Wrong amount of left-padding spaces(want multiple of 4)
+    	52: Trailing whitespace
+    	54: Wrong amount of left-padding spaces(want multiple of 4)
+    	56: Wrong amount of left-padding spaces(want multiple of 4)
+    	58: Wrong amount of left-padding spaces(want multiple of 4)
+    	61: Wrong amount of left-padding spaces(want multiple of 4)
+    	64: Wrong amount of left-padding spaces(want multiple of 4)
+    	66-67: Wrong amount of left-padding spaces(want multiple of 4)
+    	69: Wrong amount of left-padding spaces(want multiple of 4)
+    	71: Trailing whitespace
+    	73: Wrong amount of left-padding spaces(want multiple of 4)
+    	80: Wrong amount of left-padding spaces(want multiple of 4)
+    	87: Wrong amount of left-padding spaces(want multiple of 4)
+    	94: Wrong amount of left-padding spaces(want multiple of 4)
+    	101: Wrong amount of left-padding spaces(want multiple of 4)
+    	108: Wrong amount of left-padding spaces(want multiple of 4)
+    	115: Wrong amount of left-padding spaces(want multiple of 4)
+    	122: Wrong amount of left-padding spaces(want multiple of 4)
+    	129: Wrong amount of left-padding spaces(want multiple of 4)
+    	136: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    27 errors found
 
 ❌ [ERROR] dashboard-app/tsconfig.app.json
     dashboard-app/tsconfig.app.json:
@@ -1371,16 +1539,29 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
 ✅ [SUCCESS] developer/developer_dashboard.svg
 ❌ [ERROR] developer/stats.json
     developer/stats.json:
-    	2-8: Wrong amount of left-padding spaces(want multiple of 4)
-    	11-12: Wrong amount of left-padding spaces(want multiple of 4)
-    	14-15: Wrong amount of left-padding spaces(want multiple of 4)
-    	18-19: Wrong amount of left-padding spaces(want multiple of 4)
-    	22-23: Wrong amount of left-padding spaces(want multiple of 4)
-    	26-27: Wrong amount of left-padding spaces(want multiple of 4)
-    	30-31: Wrong amount of left-padding spaces(want multiple of 4)
-    	33-35: Wrong amount of left-padding spaces(want multiple of 4)
+    	Wrong line endings or no final newline
+    	2-10: Wrong amount of left-padding spaces(want multiple of 4)
+    	12-41: Wrong amount of left-padding spaces(want multiple of 4)
+    	45: Wrong amount of left-padding spaces(want multiple of 4)
+    	70-71: Wrong amount of left-padding spaces(want multiple of 4)
+    	96-97: Wrong amount of left-padding spaces(want multiple of 4)
+    	122-123: Wrong amount of left-padding spaces(want multiple of 4)
+    	148-149: Wrong amount of left-padding spaces(want multiple of 4)
+    	174-175: Wrong amount of left-padding spaces(want multiple of 4)
+    	200-201: Wrong amount of left-padding spaces(want multiple of 4)
+    	226: Wrong amount of left-padding spaces(want multiple of 4)
+    	229-235: Wrong amount of left-padding spaces(want multiple of 4)
+    	237-238: Wrong amount of left-padding spaces(want multiple of 4)
+    	241-242: Wrong amount of left-padding spaces(want multiple of 4)
+    	244-245: Wrong amount of left-padding spaces(want multiple of 4)
+    	253-254: Wrong amount of left-padding spaces(want multiple of 4)
+    	256-257: Wrong amount of left-padding spaces(want multiple of 4)
+    	260-261: Wrong amount of left-padding spaces(want multiple of 4)
+    	264-265: Wrong amount of left-padding spaces(want multiple of 4)
+    	268-269: Wrong amount of left-padding spaces(want multiple of 4)
+    	271-272: Wrong amount of left-padding spaces(want multiple of 4)
     
-    8 errors found
+    21 errors found
 
 ❌ [ERROR] docs/API_RESILIENCE.md
     docs/API_RESILIENCE.md:
@@ -1580,6 +1761,12 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     
     13 errors found
 
+❌ [ERROR] docs/RELEASES.md
+    docs/RELEASES.md:
+    	60: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    1 errors found
+
 ❌ [ERROR] docs/ROBUSTNESS_IMPROVEMENTS.md
     docs/ROBUSTNESS_IMPROVEMENTS.md:
     	111-113: Wrong amount of left-padding spaces(want multiple of 4)
@@ -1664,6 +1851,15 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     
     71 errors found
 
+❌ [ERROR] docs/UNIFIED_WORKFLOW_MIGRATION.md
+    docs/UNIFIED_WORKFLOW_MIGRATION.md:
+    	200: Wrong amount of left-padding spaces(want multiple of 4)
+    	202-204: Wrong amount of left-padding spaces(want multiple of 4)
+    	206: Wrong amount of left-padding spaces(want multiple of 4)
+    	213-214: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    4 errors found
+
 ❌ [ERROR] docs/WORKFLOWS.md
     docs/WORKFLOWS.md:
     	222-223: Wrong amount of left-padding spaces(want multiple of 4)
@@ -1674,27 +1870,27 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     docs/WORKFLOW_CACHING.md:
     	38-39: Wrong amount of left-padding spaces(want multiple of 4)
     	71-72: Wrong amount of left-padding spaces(want multiple of 4)
-    	173-175: Wrong amount of left-padding spaces(want multiple of 4)
-    	178-180: Wrong amount of left-padding spaces(want multiple of 4)
-    	183-184: Wrong amount of left-padding spaces(want multiple of 4)
-    	202-207: Wrong amount of left-padding spaces(want multiple of 4)
-    	210-223: Wrong amount of left-padding spaces(want multiple of 4)
-    	226-230: Wrong amount of left-padding spaces(want multiple of 4)
-    	233-238: Wrong amount of left-padding spaces(want multiple of 4)
-    	243-251: Wrong amount of left-padding spaces(want multiple of 4)
+    	183-185: Wrong amount of left-padding spaces(want multiple of 4)
+    	188-190: Wrong amount of left-padding spaces(want multiple of 4)
+    	193-194: Wrong amount of left-padding spaces(want multiple of 4)
+    	212-217: Wrong amount of left-padding spaces(want multiple of 4)
+    	220-233: Wrong amount of left-padding spaces(want multiple of 4)
+    	236-240: Wrong amount of left-padding spaces(want multiple of 4)
+    	243-248: Wrong amount of left-padding spaces(want multiple of 4)
+    	253-261: Wrong amount of left-padding spaces(want multiple of 4)
     
     10 errors found
 
 ❌ [ERROR] docs/architecture.md
     docs/architecture.md:
-    	87-92: Wrong amount of left-padding spaces(want multiple of 4)
-    	95-99: Wrong amount of left-padding spaces(want multiple of 4)
-    	104-106: Wrong amount of left-padding spaces(want multiple of 4)
-    	114: Wrong amount of left-padding spaces(want multiple of 4)
-    	118-119: Wrong amount of left-padding spaces(want multiple of 4)
-    	122-123: Wrong amount of left-padding spaces(want multiple of 4)
-    	126: Wrong amount of left-padding spaces(want multiple of 4)
-    	159-160: Wrong amount of left-padding spaces(want multiple of 4)
+    	86-91: Wrong amount of left-padding spaces(want multiple of 4)
+    	94-98: Wrong amount of left-padding spaces(want multiple of 4)
+    	103-105: Wrong amount of left-padding spaces(want multiple of 4)
+    	113: Wrong amount of left-padding spaces(want multiple of 4)
+    	117-118: Wrong amount of left-padding spaces(want multiple of 4)
+    	121-122: Wrong amount of left-padding spaces(want multiple of 4)
+    	125: Wrong amount of left-padding spaces(want multiple of 4)
+    	178-179: Wrong amount of left-padding spaces(want multiple of 4)
     
     8 errors found
 
@@ -1760,29 +1956,10 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
 
 ❌ [ERROR] docs/workflows.md
     docs/workflows.md:
-    	26: Wrong amount of left-padding spaces(want multiple of 4)
-    	28-29: Wrong amount of left-padding spaces(want multiple of 4)
-    	31: Wrong amount of left-padding spaces(want multiple of 4)
-    	33-35: Wrong amount of left-padding spaces(want multiple of 4)
-    	42-43: Wrong amount of left-padding spaces(want multiple of 4)
-    	52: Wrong amount of left-padding spaces(want multiple of 4)
-    	128-129: Wrong amount of left-padding spaces(want multiple of 4)
-    	132-133: Wrong amount of left-padding spaces(want multiple of 4)
-    	136-137: Wrong amount of left-padding spaces(want multiple of 4)
-    	180-181: Wrong amount of left-padding spaces(want multiple of 4)
-    	184-185: Wrong amount of left-padding spaces(want multiple of 4)
-    	188-189: Wrong amount of left-padding spaces(want multiple of 4)
-    	229-230: Wrong amount of left-padding spaces(want multiple of 4)
-    	233-234: Wrong amount of left-padding spaces(want multiple of 4)
-    	237-238: Wrong amount of left-padding spaces(want multiple of 4)
-    	304-305: Wrong amount of left-padding spaces(want multiple of 4)
-    	308-309: Wrong amount of left-padding spaces(want multiple of 4)
-    	312-313: Wrong amount of left-padding spaces(want multiple of 4)
-    	316-317: Wrong amount of left-padding spaces(want multiple of 4)
-    	367-368: Wrong amount of left-padding spaces(want multiple of 4)
-    	372-373: Wrong amount of left-padding spaces(want multiple of 4)
+    	109-110: Wrong amount of left-padding spaces(want multiple of 4)
+    	121-125: Wrong amount of left-padding spaces(want multiple of 4)
     
-    21 errors found
+    2 errors found
 
 ❌ [ERROR] footer/README.md
     footer/README.md:
@@ -1793,10 +1970,12 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
 
 ✅ [SUCCESS] footer/footer.html
 ✅ [SUCCESS] location/.gitkeep
+✅ [SUCCESS] location/location-card.svg
+✅ [SUCCESS] location/location-map.png
 ❌ [ERROR] location/location.json
     location/location.json:
-    	2-5: Wrong amount of left-padding spaces(want multiple of 4)
-    	9: Wrong amount of left-padding spaces(want multiple of 4)
+    	2-4: Wrong amount of left-padding spaces(want multiple of 4)
+    	7-9: Wrong amount of left-padding spaces(want multiple of 4)
     
     2 errors found
 
@@ -2218,6 +2397,95 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     25 errors found
 
 ✅ [SUCCESS] scripts/audit_megalinter_config.py
+❌ [ERROR] scripts/comprehensive-audit.py
+    scripts/comprehensive-audit.py:
+    	28: Trailing whitespace
+    	34: Trailing whitespace
+    	38: Trailing whitespace
+    	42: Trailing whitespace
+    	47: Trailing whitespace
+    	52: Trailing whitespace
+    	56: Trailing whitespace
+    	60: Trailing whitespace
+    	78: Trailing whitespace
+    	81: Trailing whitespace
+    	84: Trailing whitespace
+    	88: Trailing whitespace
+    	92: Trailing whitespace
+    	95: Trailing whitespace
+    	99: Trailing whitespace
+    	105: Trailing whitespace
+    	112: Trailing whitespace
+    	114: Trailing whitespace
+    	117: Trailing whitespace
+    	126: Trailing whitespace
+    	171: Trailing whitespace
+    	175: Trailing whitespace
+    	178: Trailing whitespace
+    	184: Trailing whitespace
+    	199: Trailing whitespace
+    	207: Trailing whitespace
+    	213: Trailing whitespace
+    	226: Trailing whitespace
+    	229: Trailing whitespace
+    	238: Trailing whitespace
+    	240: Trailing whitespace
+    	245: Trailing whitespace
+    	248: Trailing whitespace
+    	259: Trailing whitespace
+    	264: Trailing whitespace
+    	269: Trailing whitespace
+    	280: Trailing whitespace
+    	285: Trailing whitespace
+    	289: Trailing whitespace
+    	293: Trailing whitespace
+    	298: Trailing whitespace
+    	306: Trailing whitespace
+    	310: Trailing whitespace
+    	314: Trailing whitespace
+    	323: Trailing whitespace
+    	333: Trailing whitespace
+    	343: Trailing whitespace
+    	352: Trailing whitespace
+    	362: Trailing whitespace
+    	370: Trailing whitespace
+    	374: Trailing whitespace
+    	381: Trailing whitespace
+    	388: Trailing whitespace
+    	393: Trailing whitespace
+    	396: Trailing whitespace
+    	399: Trailing whitespace
+    	405: Trailing whitespace
+    	413: Trailing whitespace
+    	422: Trailing whitespace
+    	425: Trailing whitespace
+    	428: Trailing whitespace
+    	431: Trailing whitespace
+    	436: Trailing whitespace
+    	440: Trailing whitespace
+    	444: Trailing whitespace
+    	448: Trailing whitespace
+    	452: Trailing whitespace
+    	454: Trailing whitespace
+    	457: Trailing whitespace
+    	464: Trailing whitespace
+    	473: Trailing whitespace
+    	478: Trailing whitespace
+    	481: Trailing whitespace
+    	484: Trailing whitespace
+    	488: Trailing whitespace
+    	495: Trailing whitespace
+    	502: Trailing whitespace
+    	507: Trailing whitespace
+    	518: Trailing whitespace
+    	521: Trailing whitespace
+    	532: Trailing whitespace
+    	542: Trailing whitespace
+    	547: Trailing whitespace
+    	550: Trailing whitespace
+    
+    84 errors found
+
 ❌ [ERROR] scripts/dev-mode.sh
     scripts/dev-mode.sh:
     	37: Trailing whitespace
@@ -3928,6 +4196,12 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     
     10 errors found
 
+❌ [ERROR] soundcloud/last-success.json
+    soundcloud/last-success.json:
+    	2-10: Wrong amount of left-padding spaces(want multiple of 4)
+    
+    1 errors found
+
 ❌ [ERROR] soundcloud/latest.json
     soundcloud/latest.json:
     	2-9: Wrong amount of left-padding spaces(want multiple of 4)
@@ -4370,6 +4644,14 @@ See documentation on https://megalinter.io/8.8.0/descriptors/editorconfig_editor
     	351: Trailing whitespace
     
     11 errors found
+
+✅ [SUCCESS] weather/debug_nominatim.json
+❌ [ERROR] weather/debug_nominatim_response.txt
+    weather/debug_nominatim_response.txt:
+    	Not all lines have the correct end of line character
+    	6: Trailing whitespace
+    
+    2 errors found
 
 ✅ [SUCCESS] weather/weather-today.svg
 ❌ [ERROR] weather/weather.json

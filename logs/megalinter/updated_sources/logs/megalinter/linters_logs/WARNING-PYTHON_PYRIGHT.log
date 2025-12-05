@@ -20,6 +20,96 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_pyright/
       scripts/audit_megalinter_config.py:360:5 - warning: Variable "success" is not accessed (reportUnusedVariable)
     4 errors, 2 warnings, 0 informations
 
+❌ [ERROR] scripts/comprehensive-audit.py
+    venv .venv subdirectory not found in venv path config.
+    scripts/comprehensive-audit.py
+      scripts/comprehensive-audit.py:11:8 - warning: Import "sys" is not accessed (reportUnusedImport)
+      scripts/comprehensive-audit.py:14:20 - warning: Import "Dict" is not accessed (reportUnusedImport)
+      scripts/comprehensive-audit.py:14:26 - warning: Import "List" is not accessed (reportUnusedImport)
+      scripts/comprehensive-audit.py:14:32 - warning: Import "Tuple" is not accessed (reportUnusedImport)
+      scripts/comprehensive-audit.py:37:9 - error: Type of "lines" is partially unknown
+        Type of "lines" is "list[Unknown]" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:37:9 - error: Type of "append" is partially unknown
+        Type of "append" is "(object: Unknown, /) -> None" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:41:9 - error: Type of "lines" is partially unknown
+        Type of "lines" is "list[Unknown]" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:41:9 - error: Type of "append" is partially unknown
+        Type of "append" is "(object: Unknown, /) -> None" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:45:9 - error: Type of "issues" is partially unknown
+        Type of "issues" is "list[Unknown]" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:45:9 - error: Type of "append" is partially unknown
+        Type of "append" is "(object: Unknown, /) -> None" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:46:9 - error: Type of "lines" is partially unknown
+        Type of "lines" is "list[Unknown]" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:46:9 - error: Type of "append" is partially unknown
+        Type of "append" is "(object: Unknown, /) -> None" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:50:9 - error: Type of "warnings" is partially unknown
+        Type of "warnings" is "list[Unknown]" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:50:9 - error: Type of "append" is partially unknown
+        Type of "append" is "(object: Unknown, /) -> None" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:51:9 - error: Type of "lines" is partially unknown
+        Type of "lines" is "list[Unknown]" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:51:9 - error: Type of "append" is partially unknown
+        Type of "append" is "(object: Unknown, /) -> None" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:55:9 - error: Type of "lines" is partially unknown
+        Type of "lines" is "list[Unknown]" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:55:9 - error: Type of "append" is partially unknown
+        Type of "append" is "(object: Unknown, /) -> None" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:59:9 - error: Type of "lines" is partially unknown
+        Type of "lines" is "list[Unknown]" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:59:9 - error: Type of "append" is partially unknown
+        Type of "append" is "(object: Unknown, /) -> None" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:65:48 - error: The method "utcnow" in class "datetime" is deprecated
+        Use timezone-aware objects to represent datetimes in UTC; e.g. by calling .now(datetime.timezone.utc) (reportDeprecated)
+      scripts/comprehensive-audit.py:66:46 - error: Type of "issues" is partially unknown
+        Type of "issues" is "list[Unknown]" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:66:46 - error: Argument type is partially unknown
+        Argument corresponds to parameter "obj" in function "len"
+        Argument type is "list[Unknown]" (reportUnknownArgumentType)
+      scripts/comprehensive-audit.py:67:42 - error: Type of "warnings" is partially unknown
+        Type of "warnings" is "list[Unknown]" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:67:42 - error: Argument type is partially unknown
+        Argument corresponds to parameter "obj" in function "len"
+        Argument type is "list[Unknown]" (reportUnknownArgumentType)
+      scripts/comprehensive-audit.py:69:26 - error: Type of "lines" is partially unknown
+        Type of "lines" is "list[Unknown]" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:69:26 - error: Argument type is partially unknown
+        Argument corresponds to parameter "lines" in function "writelines"
+        Argument type is "list[Unknown]" (reportUnknownArgumentType)
+      scripts/comprehensive-audit.py:186:9 - error: Type of "data_path" is partially unknown
+        Type of "data_path" is "Path | Unknown" (reportUnknownVariableType)
+      scripts/comprehensive-audit.py:186:21 - error: Operator "/" not supported for types "Path" and "str | None"
+        Operator "/" not supported for types "Path" and "None" (reportOperatorIssue)
+      scripts/comprehensive-audit.py:187:30 - error: Type of "exists" is partially unknown
+        Type of "exists" is "(() -> bool) | Unknown" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:188:16 - error: Type of "exists" is partially unknown
+        Type of "exists" is "(() -> bool) | Unknown" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:193:27 - error: Argument type is partially unknown
+        Argument corresponds to parameter "file" in function "open"
+        Argument type is "Path | Unknown" (reportUnknownArgumentType)
+      scripts/comprehensive-audit.py:209:9 - error: Type of "svg_path" is partially unknown
+        Type of "svg_path" is "Path | Unknown" (reportUnknownVariableType)
+      scripts/comprehensive-audit.py:209:20 - error: Operator "/" not supported for types "Path" and "str | None"
+        Operator "/" not supported for types "Path" and "None" (reportOperatorIssue)
+      scripts/comprehensive-audit.py:210:29 - error: Type of "exists" is partially unknown
+        Type of "exists" is "(() -> bool) | Unknown" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:211:16 - error: Type of "exists" is partially unknown
+        Type of "exists" is "(() -> bool) | Unknown" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:409:21 - warning: Variable "schema" is not accessed (reportUnusedVariable)
+      scripts/comprehensive-audit.py:540:13 - error: Type of "append" is partially unknown
+        Type of "append" is "(object: Unknown, /) -> None" (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:548:28 - error: Type of "issues" is unknown (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:548:28 - error: Argument type is unknown
+        Argument corresponds to parameter "obj" in function "len" (reportUnknownArgumentType)
+      scripts/comprehensive-audit.py:548:42 - error: Type of "_" is unknown (reportUnknownVariableType)
+      scripts/comprehensive-audit.py:548:45 - error: Type of "r" is unknown (reportUnknownVariableType)
+      scripts/comprehensive-audit.py:549:30 - error: Type of "warnings" is unknown (reportUnknownMemberType)
+      scripts/comprehensive-audit.py:549:30 - error: Argument type is unknown
+        Argument corresponds to parameter "obj" in function "len" (reportUnknownArgumentType)
+      scripts/comprehensive-audit.py:549:46 - error: Type of "_" is unknown (reportUnknownVariableType)
+      scripts/comprehensive-audit.py:549:49 - error: Type of "r" is unknown (reportUnknownVariableType)
+    41 errors, 5 warnings, 0 informations
+
 ❌ [ERROR] scripts/fetch-developer-stats.py
     venv .venv subdirectory not found in venv path config.
     scripts/fetch-developer-stats.py

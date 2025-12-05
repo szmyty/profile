@@ -14,50 +14,60 @@ See documentation on https://megalinter.io/8.8.0/descriptors/yaml_prettier/
     [warn] .github/actions/setup-environment/action.yml
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
-❌ [ERROR] .github/workflows/deploy-dashboard.yml
+❌ [ERROR] .github/workflows/_archive/deploy-dashboard.yml
     Checking formatting...
-    [warn] .github/workflows/deploy-dashboard.yml
+    [warn] .github/workflows/_archive/deploy-dashboard.yml
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
-❌ [ERROR] .github/workflows/developer.yml
+❌ [ERROR] .github/workflows/_archive/developer.yml
     Checking formatting...
-    [warn] .github/workflows/developer.yml
+    [warn] .github/workflows/_archive/developer.yml
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
-❌ [ERROR] .github/workflows/location-card.yml
+❌ [ERROR] .github/workflows/_archive/location-card.yml
     Checking formatting...
-    [warn] .github/workflows/location-card.yml
+    [warn] .github/workflows/_archive/location-card.yml
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
-✅ [SUCCESS] .github/workflows/megalinter.yml
+✅ [SUCCESS] .github/workflows/_archive/megalinter.yml
+❌ [ERROR] .github/workflows/_archive/oura.yml
+    Checking formatting...
+    [warn] .github/workflows/_archive/oura.yml
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] .github/workflows/_archive/parallel-fetch.yml
+    Checking formatting...
+    [warn] .github/workflows/_archive/parallel-fetch.yml
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] .github/workflows/_archive/soundcloud-card.yml
+    Checking formatting...
+    [warn] .github/workflows/_archive/soundcloud-card.yml
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] .github/workflows/_archive/weather.yml
+    Checking formatting...
+    [warn] .github/workflows/_archive/weather.yml
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] .github/workflows/build-profile.yml
+    Checking formatting...
+    [warn] .github/workflows/build-profile.yml
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
 ❌ [ERROR] .github/workflows/monitoring.yml
     Checking formatting...
     [warn] .github/workflows/monitoring.yml
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
-❌ [ERROR] .github/workflows/oura.yml
+❌ [ERROR] .github/workflows/release.yml
     Checking formatting...
-    [warn] .github/workflows/oura.yml
-    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
-
-❌ [ERROR] .github/workflows/parallel-fetch.yml
-    Checking formatting...
-    [warn] .github/workflows/parallel-fetch.yml
-    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
-
-❌ [ERROR] .github/workflows/soundcloud-card.yml
-    Checking formatting...
-    [warn] .github/workflows/soundcloud-card.yml
+    [warn] .github/workflows/release.yml
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
 ❌ [ERROR] .github/workflows/tests.yml
     Checking formatting...
     [warn] .github/workflows/tests.yml
-    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
-
-❌ [ERROR] .github/workflows/weather.yml
-    Checking formatting...
-    [warn] .github/workflows/weather.yml
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
 ✅ [SUCCESS] .megalinter.yml

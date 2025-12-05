@@ -2,81 +2,185 @@ Results of actionlint linter (version 1.7.7)
 See documentation on https://megalinter.io/8.8.0/descriptors/action_actionlint/
 -----------------------------------------------
 
-✅ [SUCCESS] .github/workflows/deploy-dashboard.yml
-✅ [SUCCESS] .github/workflows/developer.yml
-❌ [ERROR] .github/workflows/location-card.yml
-    .github/workflows/location-card.yml:35:9: shellcheck reported issue in this script: SC2086:info:8:23: Double quote to prevent globbing and word splitting [shellcheck]
+✅ [SUCCESS] .github/workflows/_archive/deploy-dashboard.yml
+✅ [SUCCESS] .github/workflows/_archive/developer.yml
+❌ [ERROR] .github/workflows/_archive/location-card.yml
+    .github/workflows/_archive/location-card.yml:40:9: shellcheck reported issue in this script: SC2086:info:8:23: Double quote to prevent globbing and word splitting [shellcheck]
        |
-    35 |         run: |
+    40 |         run: |
        |         ^~~~
-    .github/workflows/location-card.yml:35:9: shellcheck reported issue in this script: SC2086:info:10:29: Double quote to prevent globbing and word splitting [shellcheck]
+    .github/workflows/_archive/location-card.yml:40:9: shellcheck reported issue in this script: SC2086:info:10:29: Double quote to prevent globbing and word splitting [shellcheck]
        |
-    35 |         run: |
+    40 |         run: |
        |         ^~~~
-    .github/workflows/location-card.yml:35:9: shellcheck reported issue in this script: SC2086:info:11:24: Double quote to prevent globbing and word splitting [shellcheck]
+    .github/workflows/_archive/location-card.yml:40:9: shellcheck reported issue in this script: SC2086:info:11:24: Double quote to prevent globbing and word splitting [shellcheck]
        |
-    35 |         run: |
+    40 |         run: |
        |         ^~~~
 
-✅ [SUCCESS] .github/workflows/megalinter.yml
+✅ [SUCCESS] .github/workflows/_archive/megalinter.yml
+✅ [SUCCESS] .github/workflows/_archive/oura.yml
+❌ [ERROR] .github/workflows/_archive/parallel-fetch.yml
+    .github/workflows/_archive/parallel-fetch.yml:91:9: shellcheck reported issue in this script: SC2086:info:8:23: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    91 |         run: |
+       |         ^~~~
+    .github/workflows/_archive/parallel-fetch.yml:91:9: shellcheck reported issue in this script: SC2086:info:10:29: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    91 |         run: |
+       |         ^~~~
+    .github/workflows/_archive/parallel-fetch.yml:91:9: shellcheck reported issue in this script: SC2086:info:11:24: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    91 |         run: |
+       |         ^~~~
+
+✅ [SUCCESS] .github/workflows/_archive/soundcloud-card.yml
+❌ [ERROR] .github/workflows/_archive/weather.yml
+    .github/workflows/_archive/weather.yml:37:9: shellcheck reported issue in this script: SC2086:info:8:23: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    37 |         run: |
+       |         ^~~~
+    .github/workflows/_archive/weather.yml:37:9: shellcheck reported issue in this script: SC2086:info:10:29: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    37 |         run: |
+       |         ^~~~
+    .github/workflows/_archive/weather.yml:37:9: shellcheck reported issue in this script: SC2086:info:11:24: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    37 |         run: |
+       |         ^~~~
+    .github/workflows/_archive/weather.yml:55:9: shellcheck reported issue in this script: SC2086:info:14:23: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    55 |         run: |
+       |         ^~~~
+    .github/workflows/_archive/weather.yml:55:9: shellcheck reported issue in this script: SC2129:style:21:1: Consider using { cmd1; cmd2; } >> file instead of individual redirects [shellcheck]
+       |
+    55 |         run: |
+       |         ^~~~
+    .github/workflows/_archive/weather.yml:55:9: shellcheck reported issue in this script: SC2086:info:21:20: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    55 |         run: |
+       |         ^~~~
+    .github/workflows/_archive/weather.yml:55:9: shellcheck reported issue in this script: SC2086:info:22:20: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    55 |         run: |
+       |         ^~~~
+    .github/workflows/_archive/weather.yml:55:9: shellcheck reported issue in this script: SC2086:info:23:22: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    55 |         run: |
+       |         ^~~~
+
+❌ [ERROR] .github/workflows/build-profile.yml
+    .github/workflows/build-profile.yml:96:9: shellcheck reported issue in this script: SC2086:info:8:59: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    96 |         run: |
+       |         ^~~~
+    .github/workflows/build-profile.yml:96:9: shellcheck reported issue in this script: SC2086:info:10:23: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    96 |         run: |
+       |         ^~~~
+    .github/workflows/build-profile.yml:96:9: shellcheck reported issue in this script: SC2086:info:15:26: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    96 |         run: |
+       |         ^~~~
+    .github/workflows/build-profile.yml:96:9: shellcheck reported issue in this script: SC2086:info:19:25: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    96 |         run: |
+       |         ^~~~
+    .github/workflows/build-profile.yml:125:9: shellcheck reported issue in this script: SC2086:info:8:23: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    125 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:125:9: shellcheck reported issue in this script: SC2086:info:10:29: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    125 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:125:9: shellcheck reported issue in this script: SC2086:info:11:24: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    125 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:148:9: shellcheck reported issue in this script: SC2086:info:10:23: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    148 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:148:9: shellcheck reported issue in this script: SC2086:info:15:26: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    148 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:148:9: shellcheck reported issue in this script: SC2086:info:19:25: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    148 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:180:9: shellcheck reported issue in this script: SC2086:info:10:23: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    180 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:180:9: shellcheck reported issue in this script: SC2086:info:15:26: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    180 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:180:9: shellcheck reported issue in this script: SC2086:info:19:25: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    180 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:209:9: shellcheck reported issue in this script: SC2086:info:10:23: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    209 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:209:9: shellcheck reported issue in this script: SC2086:info:15:26: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    209 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:209:9: shellcheck reported issue in this script: SC2086:info:19:25: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    209 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:238:9: shellcheck reported issue in this script: SC2086:info:10:23: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    238 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:238:9: shellcheck reported issue in this script: SC2086:info:15:26: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    238 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:238:9: shellcheck reported issue in this script: SC2086:info:19:25: Double quote to prevent globbing and word splitting [shellcheck]
+        |
+    238 |         run: |
+        |         ^~~~
+    .github/workflows/build-profile.yml:402:9: shellcheck reported issue in this script: SC2162:info:48:87: read without -r will mangle backslashes [shellcheck]
+        |
+    402 |         run: |
+        |         ^~~~
+
 ❌ [ERROR] .github/workflows/monitoring.yml
-    .github/workflows/monitoring.yml:97:9: shellcheck reported issue in this script: SC2086:info:18:42: Double quote to prevent globbing and word splitting [shellcheck]
+    .github/workflows/monitoring.yml:91:9: shellcheck reported issue in this script: SC2086:info:18:42: Double quote to prevent globbing and word splitting [shellcheck]
        |
-    97 |         run: |
+    91 |         run: |
        |         ^~~~
-    .github/workflows/monitoring.yml:97:9: shellcheck reported issue in this script: SC2086:info:19:46: Double quote to prevent globbing and word splitting [shellcheck]
+    .github/workflows/monitoring.yml:91:9: shellcheck reported issue in this script: SC2086:info:19:46: Double quote to prevent globbing and word splitting [shellcheck]
        |
-    97 |         run: |
-       |         ^~~~
-
-✅ [SUCCESS] .github/workflows/oura.yml
-❌ [ERROR] .github/workflows/parallel-fetch.yml
-    .github/workflows/parallel-fetch.yml:81:9: shellcheck reported issue in this script: SC2086:info:8:23: Double quote to prevent globbing and word splitting [shellcheck]
-       |
-    81 |         run: |
-       |         ^~~~
-    .github/workflows/parallel-fetch.yml:81:9: shellcheck reported issue in this script: SC2086:info:10:29: Double quote to prevent globbing and word splitting [shellcheck]
-       |
-    81 |         run: |
-       |         ^~~~
-    .github/workflows/parallel-fetch.yml:81:9: shellcheck reported issue in this script: SC2086:info:11:24: Double quote to prevent globbing and word splitting [shellcheck]
-       |
-    81 |         run: |
+    91 |         run: |
        |         ^~~~
 
-✅ [SUCCESS] .github/workflows/soundcloud-card.yml
+❌ [ERROR] .github/workflows/release.yml
+    .github/workflows/release.yml:30:9: shellcheck reported issue in this script: SC2086:info:6:28: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    30 |         run: |
+       |         ^~~~
+    .github/workflows/release.yml:40:9: shellcheck reported issue in this script: SC2002:style:1:20: Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead [shellcheck]
+       |
+    40 |         run: |
+       |         ^~~~
+    .github/workflows/release.yml:96:9: shellcheck reported issue in this script: SC2086:info:6:28: Double quote to prevent globbing and word splitting [shellcheck]
+       |
+    96 |         run: |
+       |         ^~~~
+    .github/workflows/release.yml:106:9: shellcheck reported issue in this script: SC2129:style:19:1: Consider using { cmd1; cmd2; } >> file instead of individual redirects [shellcheck]
+        |
+    106 |         run: |
+        |         ^~~~
+    .github/workflows/release.yml:139:15: the runner of "softprops/action-gh-release@v1" action is too old to run on GitHub Actions. update the action's version to fix this issue [action]
+        |
+    139 |         uses: softprops/action-gh-release@v1
+        |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ✅ [SUCCESS] .github/workflows/tests.yml
-❌ [ERROR] .github/workflows/weather.yml
-    .github/workflows/weather.yml:32:9: shellcheck reported issue in this script: SC2086:info:8:23: Double quote to prevent globbing and word splitting [shellcheck]
-       |
-    32 |         run: |
-       |         ^~~~
-    .github/workflows/weather.yml:32:9: shellcheck reported issue in this script: SC2086:info:10:29: Double quote to prevent globbing and word splitting [shellcheck]
-       |
-    32 |         run: |
-       |         ^~~~
-    .github/workflows/weather.yml:32:9: shellcheck reported issue in this script: SC2086:info:11:24: Double quote to prevent globbing and word splitting [shellcheck]
-       |
-    32 |         run: |
-       |         ^~~~
-    .github/workflows/weather.yml:50:9: shellcheck reported issue in this script: SC2086:info:14:23: Double quote to prevent globbing and word splitting [shellcheck]
-       |
-    50 |         run: |
-       |         ^~~~
-    .github/workflows/weather.yml:50:9: shellcheck reported issue in this script: SC2129:style:21:1: Consider using { cmd1; cmd2; } >> file instead of individual redirects [shellcheck]
-       |
-    50 |         run: |
-       |         ^~~~
-    .github/workflows/weather.yml:50:9: shellcheck reported issue in this script: SC2086:info:21:20: Double quote to prevent globbing and word splitting [shellcheck]
-       |
-    50 |         run: |
-       |         ^~~~
-    .github/workflows/weather.yml:50:9: shellcheck reported issue in this script: SC2086:info:22:20: Double quote to prevent globbing and word splitting [shellcheck]
-       |
-    50 |         run: |
-       |         ^~~~
-    .github/workflows/weather.yml:50:9: shellcheck reported issue in this script: SC2086:info:23:22: Double quote to prevent globbing and word splitting [shellcheck]
-       |
-    50 |         run: |
-       |         ^~~~
-

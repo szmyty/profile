@@ -1,12 +1,14 @@
 TAP version 13
-1..10
-ok 1 - .github/workflows/deploy-dashboard.yml
-ok 2 - .github/workflows/developer.yml
-not ok 3 - .github/workflows/location-card.yml
-ok 4 - .github/workflows/megalinter.yml
-not ok 5 - .github/workflows/monitoring.yml
-ok 6 - .github/workflows/oura.yml
-not ok 7 - .github/workflows/parallel-fetch.yml
-ok 8 - .github/workflows/soundcloud-card.yml
-ok 9 - .github/workflows/tests.yml
-not ok 10 - .github/workflows/weather.yml
+1..12
+ok 1 - .github/workflows/_archive/deploy-dashboard.yml
+ok 2 - .github/workflows/_archive/developer.yml
+not ok 3 - .github/workflows/_archive/location-card.yml
+ok 4 - .github/workflows/_archive/megalinter.yml
+ok 5 - .github/workflows/_archive/oura.yml
+not ok 6 - .github/workflows/_archive/parallel-fetch.yml
+ok 7 - .github/workflows/_archive/soundcloud-card.yml
+not ok 8 - .github/workflows/_archive/weather.yml
+not ok 9 - .github/workflows/build-profile.yml
+not ok 10 - .github/workflows/monitoring.yml
+not ok 11 - .github/workflows/release.yml
+ok 12 - .github/workflows/tests.yml

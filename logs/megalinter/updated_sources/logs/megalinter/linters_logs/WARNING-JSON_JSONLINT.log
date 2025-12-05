@@ -71,5 +71,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/json_jsonlint/
 ✅ [SUCCESS] schemas/soundcloud-track.schema.json
 ✅ [SUCCESS] schemas/theme.schema.json
 ✅ [SUCCESS] schemas/weather.schema.json
+✅ [SUCCESS] soundcloud/last-success.json
 ✅ [SUCCESS] soundcloud/latest.json
+✅ [SUCCESS] weather/debug_nominatim.json
 ✅ [SUCCESS] weather/weather.json

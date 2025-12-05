@@ -23,6 +23,121 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_flake8/
     scripts/audit_megalinter_config.py:347:80: E501 line too long (89 > 79 characters)
     scripts/audit_megalinter_config.py:360:5: F841 local variable 'success' is assigned to but never used
 
+❌ [ERROR] scripts/comprehensive-audit.py
+    scripts/comprehensive-audit.py:11:1: F401 'sys' imported but unused
+    scripts/comprehensive-audit.py:14:1: F401 'typing.Dict' imported but unused
+    scripts/comprehensive-audit.py:14:1: F401 'typing.List' imported but unused
+    scripts/comprehensive-audit.py:14:1: F401 'typing.Tuple' imported but unused
+    scripts/comprehensive-audit.py:28:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:34:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:38:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:42:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:47:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:52:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:56:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:60:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:64:21: F541 f-string is missing placeholders
+    scripts/comprehensive-audit.py:78:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:81:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:84:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:88:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:91:80: E501 line too long (84 > 79 characters)
+    scripts/comprehensive-audit.py:92:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:93:80: E501 line too long (83 > 79 characters)
+    scripts/comprehensive-audit.py:94:80: E501 line too long (91 > 79 characters)
+    scripts/comprehensive-audit.py:95:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:98:80: E501 line too long (85 > 79 characters)
+    scripts/comprehensive-audit.py:99:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:104:80: E501 line too long (80 > 79 characters)
+    scripts/comprehensive-audit.py:105:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:109:80: E501 line too long (95 > 79 characters)
+    scripts/comprehensive-audit.py:111:80: E501 line too long (90 > 79 characters)
+    scripts/comprehensive-audit.py:112:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:114:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:117:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:126:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:171:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:173:80: E501 line too long (99 > 79 characters)
+    scripts/comprehensive-audit.py:174:80: E501 line too long (98 > 79 characters)
+    scripts/comprehensive-audit.py:175:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:178:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:180:80: E501 line too long (86 > 79 characters)
+    scripts/comprehensive-audit.py:183:80: E501 line too long (89 > 79 characters)
+    scripts/comprehensive-audit.py:184:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:189:80: E501 line too long (91 > 79 characters)
+    scripts/comprehensive-audit.py:199:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:206:80: E501 line too long (93 > 79 characters)
+    scripts/comprehensive-audit.py:207:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:212:80: E501 line too long (93 > 79 characters)
+    scripts/comprehensive-audit.py:213:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:222:80: E501 line too long (83 > 79 characters)
+    scripts/comprehensive-audit.py:225:80: E501 line too long (91 > 79 characters)
+    scripts/comprehensive-audit.py:226:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:228:80: E501 line too long (125 > 79 characters)
+    scripts/comprehensive-audit.py:229:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:238:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:240:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:245:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:248:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:259:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:264:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:269:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:271:80: E501 line too long (86 > 79 characters)
+    scripts/comprehensive-audit.py:273:80: E501 line too long (85 > 79 characters)
+    scripts/comprehensive-audit.py:275:80: E501 line too long (84 > 79 characters)
+    scripts/comprehensive-audit.py:277:80: E501 line too long (84 > 79 characters)
+    scripts/comprehensive-audit.py:280:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:285:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:289:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:293:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:298:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:306:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:310:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:314:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:323:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:333:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:343:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:352:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:362:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:370:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:374:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:381:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:388:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:393:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:396:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:399:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:405:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:409:21: F841 local variable 'schema' is assigned to but never used
+    scripts/comprehensive-audit.py:413:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:422:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:425:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:428:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:431:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:436:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:440:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:444:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:448:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:451:80: E501 line too long (86 > 79 characters)
+    scripts/comprehensive-audit.py:452:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:454:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:457:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:464:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:473:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:478:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:481:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:484:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:488:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:495:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:501:80: E501 line too long (94 > 79 characters)
+    scripts/comprehensive-audit.py:502:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:507:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:518:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:521:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:532:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:542:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:547:1: W293 blank line contains whitespace
+    scripts/comprehensive-audit.py:550:1: W293 blank line contains whitespace
+
 ❌ [ERROR] scripts/fetch-developer-stats.py
     scripts/fetch-developer-stats.py:18:80: E501 line too long (81 > 79 characters)
     scripts/fetch-developer-stats.py:19:80: E501 line too long (97 > 79 characters)

@@ -27,6 +27,76 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_ruff/
     Found 2 errors.
     [*] 1 fixable with the `--fix` option (1 hidden fix can be enabled with the `--unsafe-fixes` option).
 
+❌ [ERROR] scripts/comprehensive-audit.py
+    scripts/comprehensive-audit.py:11:8: F401 [*] `sys` imported but unused
+       |
+     9 | import re
+    10 | import subprocess
+    11 | import sys
+       |        ^^^ F401
+    12 | from datetime import datetime
+    13 | from pathlib import Path
+       |
+       = help: Remove unused import: `sys`
+    
+    scripts/comprehensive-audit.py:14:20: F401 [*] `typing.Dict` imported but unused
+       |
+    12 | from datetime import datetime
+    13 | from pathlib import Path
+    14 | from typing import Dict, List, Tuple
+       |                    ^^^^ F401
+    15 |
+    16 | # Base paths - use environment variable or current working directory
+       |
+       = help: Remove unused import
+    
+    scripts/comprehensive-audit.py:14:26: F401 [*] `typing.List` imported but unused
+       |
+    12 | from datetime import datetime
+    13 | from pathlib import Path
+    14 | from typing import Dict, List, Tuple
+       |                          ^^^^ F401
+    15 |
+    16 | # Base paths - use environment variable or current working directory
+       |
+       = help: Remove unused import
+    
+    scripts/comprehensive-audit.py:14:32: F401 [*] `typing.Tuple` imported but unused
+       |
+    12 | from datetime import datetime
+    13 | from pathlib import Path
+    14 | from typing import Dict, List, Tuple
+       |                                ^^^^^ F401
+    15 |
+    16 | # Base paths - use environment variable or current working directory
+       |
+       = help: Remove unused import
+    
+    scripts/comprehensive-audit.py:64:21: F541 [*] f-string without any placeholders
+       |
+    62 |         """Save report to file"""
+    63 |         with open(self.filename, 'w') as f:
+    64 |             f.write(f"# Audit Report\n")
+       |                     ^^^^^^^^^^^^^^^^^^^ F541
+    65 |             f.write(f"**Generated**: {datetime.utcnow().isoformat()}Z\n\n")
+    66 |             f.write(f"**Issues Found**: {len(self.issues)}\n")
+       |
+       = help: Remove extraneous `f` prefix
+    
+    scripts/comprehensive-audit.py:409:21: F841 Local variable `schema` is assigned to but never used
+        |
+    407 |             try:
+    408 |                 with open(schema_file) as f:
+    409 |                     schema = json.load(f)
+        |                     ^^^^^^ F841
+    410 |                 report.add_success(f"Schema valid: {schema_file.name}")
+    411 |             except json.JSONDecodeError as e:
+        |
+        = help: Remove assignment to unused variable `schema`
+    
+    Found 6 errors.
+    [*] 5 fixable with the `--fix` option (1 hidden fix can be enabled with the `--unsafe-fixes` option).
+
 ❌ [ERROR] scripts/fetch-developer-stats.py
     scripts/fetch-developer-stats.py:25:42: F401 [*] `datetime.timedelta` imported but unused
        |

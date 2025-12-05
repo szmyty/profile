@@ -1,60 +1,90 @@
 [0000]  WARN no explicit name and version provided for directory source, deriving artifact ID from the given path (which is not ideal)
-NAME                                 VERSION                                   TYPE                           
-./.github/actions/pip-install        UNKNOWN                                   github-action  (+3 duplicates)  
-./.github/actions/setup-environment  UNKNOWN                                   github-action  (+7 duplicates)  
-actions/cache                        v4                                        github-action  (+4 duplicates)  
-actions/checkout                     HIDDEN_BY_MEGALINTER github-action                   
-actions/checkout                     v4                                        github-action  (+1 duplicate)   
-actions/configure-pages              v4                                        github-action                   
-actions/deploy-pages                 v4                                        github-action                   
-actions/download-artifact            v4                                        github-action                   
-actions/github-script                v7                                        github-action                   
-actions/setup-node                   v4                                        github-action                   
-actions/setup-python                 HIDDEN_BY_MEGALINTER github-action                   
-actions/upload-artifact              v4                                        github-action  (+1 duplicate)   
-actions/upload-pages-artifact        v3                                        github-action                   
-attrs                                25.4.0                                    python                          
-black                                24.10.0                                   python         (+1 duplicate)   
-certifi                              2025.11.12                                python                          
-cfgv                                 3.5.0                                     python                          
-charset-normalizer                   3.4.4                                     python                          
-check-jsonschema                     0.30.0                                    python         (+1 duplicate)   
-click                                8.3.1                                     python                          
-colorama                             0.4.6                                     python                          
-dashboard-app                        0.0.0                                     npm                             
-distlib                              0.4.0                                     python                          
-filelock                             3.20.0                                    python                          
-flake8                               7.1.1                                     python         (+1 duplicate)   
-identify                             2.6.15                                    python                          
-idna                                 3.11                                      python                          
-iniconfig                            2.3.0                                     python                          
-isort                                5.13.2                                    python         (+1 duplicate)   
-jsonschema                           4.23.0                                    python         (+1 duplicate)   
-jsonschema-specifications            2025.9.1                                  python                          
-mccabe                               0.7.0                                     python                          
-mypy                                 1.13.0                                    python                          
-mypy-extensions                      1.1.0                                     python                          
-nodeenv                              1.9.1                                     python                          
-oxsecurity/megalinter                v8                                        github-action                   
-packaging                            25.0                                      python                          
-pathspec                             0.12.1                                    python                          
-pillow                               10.4.0                                    python         (+1 duplicate)   
-platformdirs                         4.5.0                                     python                          
-pluggy                               1.6.0                                     python                          
-pre-commit                           4.0.1                                     python         (+1 duplicate)   
-pycodestyle                          2.12.1                                    python                          
-pyflakes                             3.2.0                                     python                          
-pytest                               8.3.3                                     python         (+1 duplicate)   
-pyyaml                               6.0.3                                     python                          
-react                                19.2.1                                    npm                             
-react-dom                            19.2.1                                    npm                             
-referencing                          0.37.0                                    python                          
-regress                              2025.10.1                                 python                          
-requests                             2.32.5                                    python                          
-rpds-py                              0.30.0                                    python                          
-ruamel-yaml                          0.18.6                                    python                          
-ruamel-yaml-clib                     0.2.15                                    python                          
-scheduler                            0.27.0                                    npm                             
-typing-extensions                    4.15.0                                    python                          
-urllib3                              2.5.0                                     python                          
-virtualenv                           20.35.4                                   python
+NAME                                 VERSION                                   TYPE                            
+./.github/actions/setup-environment  UNKNOWN                                   github-action  (+1 duplicate)    
+Simple Launcher                      1.1.0.14                                  binary         (+11 duplicates)  
+actions/cache                        v4                                        github-action  (+1 duplicate)    
+actions/checkout                     HIDDEN_BY_MEGALINTER github-action                    
+actions/checkout                     v4                                        github-action  (+1 duplicate)    
+actions/configure-pages              v4                                        github-action                    
+actions/deploy-pages                 v4                                        github-action                    
+actions/github-script                v7                                        github-action  (+1 duplicate)    
+actions/setup-node                   v4                                        github-action                    
+actions/setup-python                 HIDDEN_BY_MEGALINTER github-action                    
+actions/setup-python                 v5                                        github-action  (+1 duplicate)    
+actions/upload-artifact              v4                                        github-action                    
+actions/upload-pages-artifact        v3                                        github-action                    
+asynckit                             0.4.0                                     npm                              
+attrs                                25.4.0                                    python         (+1 duplicate)    
+axios                                1.13.2                                    npm                              
+black                                24.10.0                                   python         (+2 duplicates)   
+call-bind-apply-helpers              1.0.2                                     npm                              
+certifi                              2025.11.12                                python         (+1 duplicate)    
+cfgv                                 3.5.0                                     python         (+1 duplicate)    
+charset-normalizer                   3.4.4                                     python         (+1 duplicate)    
+check-jsonschema                     0.30.0                                    python         (+2 duplicates)   
+click                                8.3.1                                     python         (+1 duplicate)    
+colorama                             0.4.6                                     python                           
+combined-stream                      1.0.8                                     npm                              
+dashboard-app                        0.0.0                                     npm                              
+delayed-stream                       1.0.0                                     npm                              
+distlib                              0.4.0                                     python         (+1 duplicate)    
+dunder-proto                         1.0.1                                     npm                              
+es-define-property                   1.0.1                                     npm                              
+es-errors                            1.3.0                                     npm                              
+es-object-atoms                      1.1.1                                     npm                              
+es-set-tostringtag                   2.1.0                                     npm                              
+filelock                             3.20.0                                    python         (+1 duplicate)    
+flake8                               7.1.1                                     python         (+2 duplicates)   
+follow-redirects                     1.15.11                                   npm                              
+form-data                            4.0.5                                     npm                              
+function-bind                        1.1.2                                     npm                              
+get-intrinsic                        1.3.0                                     npm                              
+get-proto                            1.0.1                                     npm                              
+github.com/evanw/esbuild             v0.0.0-20251101233416-208f539945b1        go-module      (+1 duplicate)    
+golang.org/x/sys                     v0.0.0-20220715151400-c0bba94af5f8        go-module      (+1 duplicate)    
+gopd                                 1.2.0                                     npm                              
+has-symbols                          1.1.0                                     npm                              
+has-tostringtag                      1.0.2                                     npm                              
+hasown                               2.0.2                                     npm                              
+identify                             2.6.15                                    python         (+1 duplicate)    
+idna                                 3.11                                      python         (+1 duplicate)    
+iniconfig                            2.3.0                                     python         (+1 duplicate)    
+isort                                5.13.2                                    python         (+2 duplicates)   
+jsonschema                           4.23.0                                    python         (+2 duplicates)   
+jsonschema-specifications            2025.9.1                                  python         (+1 duplicate)    
+math-intrinsics                      1.1.0                                     npm                              
+mccabe                               0.7.0                                     python         (+1 duplicate)    
+mime-db                              1.52.0                                    npm                              
+mime-types                           2.1.35                                    npm                              
+mypy                                 1.13.0                                    python         (+1 duplicate)    
+mypy-extensions                      1.1.0                                     python         (+1 duplicate)    
+nodeenv                              1.9.1                                     python         (+1 duplicate)    
+oxsecurity/megalinter                v8                                        github-action                    
+packaging                            25.0                                      python         (+1 duplicate)    
+pathspec                             0.12.1                                    python         (+1 duplicate)    
+pillow                               10.4.0                                    python         (+2 duplicates)   
+pip                                  25.3                                      python                           
+platformdirs                         4.5.0                                     python         (+1 duplicate)    
+pluggy                               1.6.0                                     python         (+1 duplicate)    
+pre-commit                           4.0.1                                     python         (+2 duplicates)   
+pre-commit-package                   dev-1                                     lua-rocks                        
+pre_commit_placeholder_package       0.0.0                                     gem                              
+proxy-from-env                       1.1.0                                     npm                              
+pycodestyle                          2.12.1                                    python         (+1 duplicate)    
+pyflakes                             3.2.0                                     python         (+1 duplicate)    
+pytest                               8.3.3                                     python         (+2 duplicates)   
+pyyaml                               6.0.3                                     python         (+1 duplicate)    
+react                                19.2.1                                    npm                              
+react-dom                            19.2.1                                    npm                              
+referencing                          0.37.0                                    python         (+1 duplicate)    
+regress                              2025.10.1                                 python         (+1 duplicate)    
+requests                             2.32.5                                    python         (+1 duplicate)    
+rpds-py                              0.30.0                                    python         (+1 duplicate)    
+ruamel-yaml                          0.18.6                                    python         (+1 duplicate)    
+ruamel-yaml-clib                     0.2.15                                    python         (+1 duplicate)    
+scheduler                            0.27.0                                    npm                              
+softprops/action-gh-release          v1                                        github-action                    
+stdlib                               go1.23.12                                 go-module      (+1 duplicate)    
+typing-extensions                    4.15.0                                    python         (+1 duplicate)    
+urllib3                              2.5.0                                     python         (+1 duplicate)    
+virtualenv                           20.35.4                                   python         (+1 duplicate)

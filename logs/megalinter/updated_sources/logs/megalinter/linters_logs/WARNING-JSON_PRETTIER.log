@@ -241,9 +241,19 @@ See documentation on https://megalinter.io/8.8.0/descriptors/json_prettier/
     [warn] schemas/weather.schema.json
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
+❌ [ERROR] soundcloud/last-success.json
+    Checking formatting...
+    [warn] soundcloud/last-success.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
 ❌ [ERROR] soundcloud/latest.json
     Checking formatting...
     [warn] soundcloud/latest.json
+    [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+❌ [ERROR] weather/debug_nominatim.json
+    Checking formatting...
+    [warn] weather/debug_nominatim.json
     [warn] Code style issues found in the above file. Run Prettier with --write to fix.
 
 ❌ [ERROR] weather/weather.json

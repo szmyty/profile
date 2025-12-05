@@ -5,7 +5,7 @@ See documentation on https://megalinter.io/8.8.0/descriptors/html_htmlhint/
 ✅ [SUCCESS] dashboard-app/index.html
 ❌ [ERROR] footer/footer.html
     
-    (node:5637) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+    (node:6730) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
     (Use `node --trace-deprecation ...` to show where the warning was created)
        footer/footer.html
           L5 |<div align="center">

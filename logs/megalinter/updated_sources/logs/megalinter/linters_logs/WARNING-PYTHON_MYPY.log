@@ -3,6 +3,73 @@ See documentation on https://megalinter.io/8.8.0/descriptors/python_mypy/
 -----------------------------------------------
 
 ✅ [SUCCESS] scripts/audit_megalinter_config.py
+❌ [ERROR] scripts/comprehensive-audit.py
+    scripts/comprehensive-audit.py:31:9: error: Need type annotation for "lines"
+    (hint: "lines: list[<type>] = ...")  [var-annotated]
+                self.lines = []
+                ^~~~~~~~~~
+    scripts/comprehensive-audit.py:32:9: error: Need type annotation for "issues"
+    (hint: "issues: list[<type>] = ...")  [var-annotated]
+                self.issues = []
+                ^~~~~~~~~~~
+    scripts/comprehensive-audit.py:33:9: error: Need type annotation for "warnings"
+    (hint: "warnings: list[<type>] = ...")  [var-annotated]
+                self.warnings = []
+                ^~~~~~~~~~~~~
+    scripts/comprehensive-audit.py:180:37: error: Value of type "object" is not
+    indexable  [index]
+                script_path = SCRIPTS_DIR / pipeline["script"] if pipeline["sc...
+                                            ^~~~~~~~~~~~~~~~~~
+    scripts/comprehensive-audit.py:183:68: error: Value of type "object" is not
+    indexable  [index]
+        ....add_issue(f"{card_name}: Fetch script missing - {pipeline['script']}"...
+                                                            ^~~~~~~~~~~~~~~~~~~
+    scripts/comprehensive-audit.py:186:33: error: Value of type "object" is not
+    indexable  [index]
+                data_path = REPO_ROOT / pipeline["data_file"]
+                                        ^~~~~~~~~~~~~~~~~~~~~
+    scripts/comprehensive-audit.py:189:67: error: Value of type "object" is not
+    indexable  [index]
+        ...t.add_warning(f"{card_name}: Data file missing - {pipeline['data_file'...
+                                                            ^~~~~~~~~~~~~~~~~~~~~~
+    scripts/comprehensive-audit.py:202:12: error: Value of type "object" is not
+    indexable  [index]
+                if pipeline["generator"]:
+                   ^~~~~~~~~~~~~~~~~~~~~
+    scripts/comprehensive-audit.py:203:38: error: Value of type "object" is not
+    indexable  [index]
+                    gen_path = SCRIPTS_DIR / pipeline["generator"]
+                                             ^~~~~~~~~~~~~~~~~~~~~
+    scripts/comprehensive-audit.py:206:69: error: Value of type "object" is not
+    indexable  [index]
+        ...ort.add_issue(f"{card_name}: Generator missing - {pipeline['generator'...
+                                                            ^~~~~~~~~~~~~~~~~~~~~~
+    scripts/comprehensive-audit.py:209:32: error: Value of type "object" is not
+    indexable  [index]
+                svg_path = REPO_ROOT / pipeline["output_svg"]
+                                       ^~~~~~~~~~~~~~~~~~~~~~
+    scripts/comprehensive-audit.py:212:68: error: Value of type "object" is not
+    indexable  [index]
+        ....add_warning(f"{card_name}: Output SVG missing - {pipeline['output_svg...
+                                                            ^~~~~~~~~~~~~~~~~~~~~~~
+    scripts/comprehensive-audit.py:220:39: error: Value of type "object" is not
+    indexable  [index]
+                        start_marker = f"<!-- {pipeline['readme_marker']}:STAR...
+                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+    scripts/comprehensive-audit.py:221:37: error: Value of type "object" is not
+    indexable  [index]
+                        end_marker = f"<!-- {pipeline['readme_marker']}:END --...
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~
+    scripts/comprehensive-audit.py:548:24: error: Generator has incompatible item
+    type "int"; expected "bool"  [misc]
+            total_issues = sum(len(r.issues) for _, r in results if r)
+                               ^~~~~~~~~~~~~
+    scripts/comprehensive-audit.py:549:26: error: Generator has incompatible item
+    type "int"; expected "bool"  [misc]
+            total_warnings = sum(len(r.warnings) for _, r in results if r)
+                                 ^~~~~~~~~~~~~~~
+    Found 16 errors in 1 file (checked 1 source file)
+
 ✅ [SUCCESS] scripts/fetch-developer-stats.py
 ❌ [ERROR] scripts/generate-card.py
     scripts/generate-card.py:13:1: error: Cannot find implementation or library

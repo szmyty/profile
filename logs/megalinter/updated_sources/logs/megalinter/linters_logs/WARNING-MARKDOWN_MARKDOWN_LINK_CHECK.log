@@ -10,13 +10,20 @@ See documentation on https://megalinter.io/8.8.0/descriptors/markdown_markdown_l
 
 ✅ [SUCCESS] .github/actions/pip-install/README.md
 ✅ [SUCCESS] .github/actions/setup-environment/README.md
+✅ [SUCCESS] .github/workflows/_archive/README.md
+❌ [ERROR] CHANGELOG.md
+    
+      ERROR: 2 dead links found in CHANGELOG.md !
+      [✖] https://github.com/szmyty/profile/compare/v1.0.0...HEAD → Status: 404
+      [✖] https://github.com/szmyty/profile/releases/tag/v1.0.0 → Status: 404
+
+✅ [SUCCESS] CONSOLIDATION_SUMMARY.md
 ✅ [SUCCESS] GITHUB_MARKDOWN_AUDIT_COMPLETE.md
 ✅ [SUCCESS] IMPLEMENTATION_SUMMARY.md
 ✅ [SUCCESS] PERFORMANCE_IMPROVEMENTS_SUMMARY.md
 ❌ [ERROR] README.md
     
-      ERROR: 3 dead links found in README.md !
-      [✖] https://szmyty.github.io/profile/ → Status: 404
+      ERROR: 2 dead links found in README.md !
       [✖] https://www.linkedin.com/in/szmyty → Status: 999
       [✖] branding/footer.svg → Status: 400
 
@@ -43,8 +50,10 @@ See documentation on https://megalinter.io/8.8.0/descriptors/markdown_markdown_l
       ERROR: 1 dead links found in docs/README_SECTION_CHANGES.md !
       [✖] #performance--monitoring → Status: 404
 
+✅ [SUCCESS] docs/RELEASES.md
 ✅ [SUCCESS] docs/ROBUSTNESS_IMPROVEMENTS.md
 ✅ [SUCCESS] docs/TROUBLESHOOTING.md
+✅ [SUCCESS] docs/UNIFIED_WORKFLOW_MIGRATION.md
 ✅ [SUCCESS] docs/WORKFLOWS.md
 ❌ [ERROR] docs/WORKFLOW_CACHING.md
     

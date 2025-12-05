@@ -1,5 +1,5 @@
 TAP version 13
-1..53
+1..55
 not ok 1 - .devcontainer/devcontainer.json
 ok 2 - .vscode/extensions.json
 ok 3 - .vscode/launch.json
@@ -51,5 +51,7 @@ not ok 48 - schemas/oura-metrics.schema.json
 not ok 49 - schemas/soundcloud-track.schema.json
 not ok 50 - schemas/theme.schema.json
 not ok 51 - schemas/weather.schema.json
-not ok 52 - soundcloud/latest.json
-not ok 53 - weather/weather.json
+not ok 52 - soundcloud/last-success.json
+not ok 53 - soundcloud/latest.json
+not ok 54 - weather/debug_nominatim.json
+not ok 55 - weather/weather.json

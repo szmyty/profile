@@ -1,0 +1,2319 @@
+Results of checkov linter (version 3.2.413)
+See documentation on https://megalinter.io/8.8.0/descriptors/repository_checkov/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /github/workspace
+Linter raw log:
+2025-12-05 05:07:37,430 [MainThread  ] [INFO ]  Checking necessary system dependencies for helm checks.
+2025-12-05 05:07:37,718 [MainThread  ] [INFO ]  Found working version of helm dependencies: v3.16.3
+2025-12-05 05:07:37,718 [MainThread  ] [INFO ]  Checking necessary system dependencies for kustomize checks.
+2025-12-05 05:07:37,720 [MainThread  ] [INFO ]  Could not find usable tools locally to process kustomize checks. Framework will be disabled for this run.
+2025-12-05 05:07:37,720 [MainThread  ] [INFO ]  The following frameworks will automatically be disabled due to missing system dependencies: kustomize
+2025-12-05 05:07:38,774 [MainThread  ] [INFO ]  The framework "sca_image" is part of the "SCA" module, which is not enabled in the platform
+2025-12-05 05:07:38,774 [MainThread  ] [INFO ]  The framework "sca_package" is part of the "SCA" module, which is not enabled in the platform
+2025-12-05 05:07:38,774 [MainThread  ] [INFO ]  The framework "sast" is part of the "SAST" module, which is not enabled in the platform
+2025-12-05 05:07:38,774 [MainThread  ] [INFO ]  The framework "cdk" is part of the "SAST" module, which is not enabled in the platform
+2025-12-05 05:07:38,785 [MainThread  ] [INFO ]  Scanning root folder and producing fresh tf_definitions and context
+2025-12-05 05:07:38,789 [MainThread  ] [INFO ]  Parsing HCL files in source dir to graph
+2025-12-05 05:07:38,833 [MainThread  ] [INFO ]  Creating Serverless graph
+2025-12-05 05:07:38,840 [MainThread  ] [INFO ]  Successfully created Serverless graph
+2025-12-05 05:07:38,883 [MainThread  ] [INFO ]  Creating ARM graph
+2025-12-05 05:07:38,887 [MainThread  ] [INFO ]  Successfully created ARM graph
+2025-12-05 05:07:38,891 [MainThread  ] [INFO ]  Creating Dockerfile graph
+2025-12-05 05:07:38,896 [MainThread  ] [INFO ]  Custom detector found at /venvs/checkov/lib/python3.13/site-packages/checkov/secrets/plugins/custom_regex_detector.py. Loading...
+2025-12-05 05:07:38,898 [MainThread  ] [INFO ]  creating CloudFormation graph
+2025-12-05 05:07:38,898 [MainThread  ] [INFO ]  [CloudformationLocalGraph] created 0 vertices
+2025-12-05 05:07:38,898 [MainThread  ] [INFO ]  [CloudformationLocalGraph] created 0 edges
+2025-12-05 05:07:38,898 [MainThread  ] [INFO ]  Rendering variables, graph has 0 vertices and 0 edges
+2025-12-05 05:07:38,899 [MainThread  ] [INFO ]  Successfully created CloudFormation graph
+2025-12-05 05:07:38,901 [MainThread  ] [INFO ]  Successfully created Dockerfile graph
+2025-12-05 05:07:38,937 [MainThread  ] [INFO ]  Creating vertices
+2025-12-05 05:07:38,940 [MainThread  ] [INFO ]  [TerraformLocalGraph] created 0 vertices
+2025-12-05 05:07:38,941 [MainThread  ] [INFO ]  Creating edges
+2025-12-05 05:07:38,941 [MainThread  ] [INFO ]  [TerraformLocalGraph] created 0 edges
+2025-12-05 05:07:38,941 [MainThread  ] [INFO ]  creating Kubernetes graph
+2025-12-05 05:07:38,942 [MainThread  ] [INFO ]  Successfully created Kubernetes graph
+2025-12-05 05:07:38,960 [MainThread  ] [INFO ]  Starting download of modules of length 0
+2025-12-05 05:07:38,976 [MainThread  ] [INFO ]  Secrets scanning will scan 112 files
+2025-12-05 05:07:39,091 [MainThread  ] [INFO ]  Building graph from parsed module
+2025-12-05 05:07:39,091 [MainThread  ] [INFO ]  Creating vertices
+2025-12-05 05:07:39,091 [MainThread  ] [INFO ]  [TerraformLocalGraph] created 1 vertices
+2025-12-05 05:07:39,091 [MainThread  ] [INFO ]  Creating edges
+2025-12-05 05:07:39,092 [MainThread  ] [INFO ]  [TerraformLocalGraph] created 0 edges
+2025-12-05 05:07:39,092 [MainThread  ] [INFO ]  Rendering variables, graph has 1 vertices and 0 edges
+2025-12-05 05:07:39,093 [MainThread  ] [INFO ]  Building cross variable edges
+2025-12-05 05:07:39,093 [MainThread  ] [INFO ]  Found 0 cross variable edges
+2025-12-05 05:07:39,093 [MainThread  ] [INFO ]  Building S3 edges name references
+2025-12-05 05:07:39,093 [MainThread  ] [INFO ]  Found 0 S3 name references edges
+2025-12-05 05:07:40,549 [MainThread  ] [INFO ]  File ./oura/raw_activity.json Line 1 has a length of 34064, which is higher than the max 10000
+2025-12-05 05:07:43,659 [MainThread  ] [INFO ]  Creating Ansible graph
+2025-12-05 05:07:43,660 [MainThread  ] [INFO ]  Successfully created Ansible graph
+2025-12-05 05:07:43,793 [MainThread  ] [INFO ]  Cleanup the whole temp directory: /tmp/tmp1_20efgh
+2025-12-05 05:07:44,781 [MainThread  ] [INFO ]  Creating GitHubActions graph
+2025-12-05 05:07:44,803 [MainThread  ] [INFO ]  Successfully created GitHubActions graph
+
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.2.413 
+Update available 3.2.413 -> 3.2.495
+Run pip3 install -U checkov to update 
+
+
+terraform_plan scan results:
+
+Passed checks: 0, Failed checks: 0, Skipped checks: 0, Parsing errors: 2
+
+Error parsing file ./dashboard-app/tsconfig.node.json
+Error parsing file ./dashboard-app/tsconfig.app.json
+github_actions scan results:
+
+Passed checks: 743, Failed checks: 1, Skipped checks: 0
+
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(validate)
+	File: /.github/workflows/release.yml:21-84
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(release)
+	File: /.github/workflows/release.yml:84-161
+Check: CKV_GHA_5: "Found artifact build without evidence of cosign sign execution in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/release.yml:20-161
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(validate)
+	File: /.github/workflows/release.yml:21-84
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(release)
+	File: /.github/workflows/release.yml:84-161
+Check: CKV_GHA_6: "Found artifact build without evidence of cosign sbom attestation in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/release.yml:20-161
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(validate)
+	File: /.github/workflows/release.yml:21-84
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(release)
+	File: /.github/workflows/release.yml:84-161
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(validate)
+	File: /.github/workflows/release.yml:21-84
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(release)
+	File: /.github/workflows/release.yml:84-161
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(validate).steps[1](Checkout code)
+	File: /.github/workflows/release.yml:25-29
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(validate).steps[2](Extract version from tag or input)
+	File: /.github/workflows/release.yml:28-40
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(validate).steps[3](Verify VERSION file matches tag)
+	File: /.github/workflows/release.yml:39-54
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(validate).steps[4](Verify CHANGELOG.md contains version)
+	File: /.github/workflows/release.yml:53-63
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(validate).steps[5](Setup Python)
+	File: /.github/workflows/release.yml:62-68
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(validate).steps[6](Install Poetry)
+	File: /.github/workflows/release.yml:67-72
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(validate).steps[7](Install dependencies)
+	File: /.github/workflows/release.yml:71-76
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(validate).steps[8](Run tests)
+	File: /.github/workflows/release.yml:75-80
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(validate).steps[9](Validate JSON schemas)
+	File: /.github/workflows/release.yml:79-84
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(release).steps[1](Checkout code)
+	File: /.github/workflows/release.yml:89-95
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(release).steps[2](Extract version)
+	File: /.github/workflows/release.yml:94-105
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(release).steps[3](Extract CHANGELOG for this version)
+	File: /.github/workflows/release.yml:104-139
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(release).steps[4](Create GitHub Release)
+	File: /.github/workflows/release.yml:138-151
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(release).steps[5](Trigger dashboard deployment)
+	File: /.github/workflows/release.yml:150-161
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(validate).steps[1](Checkout code)
+	File: /.github/workflows/release.yml:25-29
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(validate).steps[2](Extract version from tag or input)
+	File: /.github/workflows/release.yml:28-40
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(validate).steps[3](Verify VERSION file matches tag)
+	File: /.github/workflows/release.yml:39-54
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(validate).steps[4](Verify CHANGELOG.md contains version)
+	File: /.github/workflows/release.yml:53-63
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(validate).steps[5](Setup Python)
+	File: /.github/workflows/release.yml:62-68
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(validate).steps[6](Install Poetry)
+	File: /.github/workflows/release.yml:67-72
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(validate).steps[7](Install dependencies)
+	File: /.github/workflows/release.yml:71-76
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(validate).steps[8](Run tests)
+	File: /.github/workflows/release.yml:75-80
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(validate).steps[9](Validate JSON schemas)
+	File: /.github/workflows/release.yml:79-84
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(release).steps[1](Checkout code)
+	File: /.github/workflows/release.yml:89-95
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(release).steps[2](Extract version)
+	File: /.github/workflows/release.yml:94-105
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(release).steps[3](Extract CHANGELOG for this version)
+	File: /.github/workflows/release.yml:104-139
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(release).steps[4](Create GitHub Release)
+	File: /.github/workflows/release.yml:138-151
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(release).steps[5](Trigger dashboard deployment)
+	File: /.github/workflows/release.yml:150-161
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(validate).steps[1](Checkout code)
+	File: /.github/workflows/release.yml:25-29
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(validate).steps[2](Extract version from tag or input)
+	File: /.github/workflows/release.yml:28-40
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(validate).steps[3](Verify VERSION file matches tag)
+	File: /.github/workflows/release.yml:39-54
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(validate).steps[4](Verify CHANGELOG.md contains version)
+	File: /.github/workflows/release.yml:53-63
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(validate).steps[5](Setup Python)
+	File: /.github/workflows/release.yml:62-68
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(validate).steps[6](Install Poetry)
+	File: /.github/workflows/release.yml:67-72
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(validate).steps[7](Install dependencies)
+	File: /.github/workflows/release.yml:71-76
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(validate).steps[8](Run tests)
+	File: /.github/workflows/release.yml:75-80
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(validate).steps[9](Validate JSON schemas)
+	File: /.github/workflows/release.yml:79-84
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(release).steps[1](Checkout code)
+	File: /.github/workflows/release.yml:89-95
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(release).steps[2](Extract version)
+	File: /.github/workflows/release.yml:94-105
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(release).steps[3](Extract CHANGELOG for this version)
+	File: /.github/workflows/release.yml:104-139
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(release).steps[4](Create GitHub Release)
+	File: /.github/workflows/release.yml:138-151
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(release).steps[5](Trigger dashboard deployment)
+	File: /.github/workflows/release.yml:150-161
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(validate).steps[1](Checkout code)
+	File: /.github/workflows/release.yml:25-29
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(validate).steps[2](Extract version from tag or input)
+	File: /.github/workflows/release.yml:28-40
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(validate).steps[3](Verify VERSION file matches tag)
+	File: /.github/workflows/release.yml:39-54
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(validate).steps[4](Verify CHANGELOG.md contains version)
+	File: /.github/workflows/release.yml:53-63
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(validate).steps[5](Setup Python)
+	File: /.github/workflows/release.yml:62-68
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(validate).steps[6](Install Poetry)
+	File: /.github/workflows/release.yml:67-72
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(validate).steps[7](Install dependencies)
+	File: /.github/workflows/release.yml:71-76
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(validate).steps[8](Run tests)
+	File: /.github/workflows/release.yml:75-80
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(validate).steps[9](Validate JSON schemas)
+	File: /.github/workflows/release.yml:79-84
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(release).steps[1](Checkout code)
+	File: /.github/workflows/release.yml:89-95
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(release).steps[2](Extract version)
+	File: /.github/workflows/release.yml:94-105
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(release).steps[3](Extract CHANGELOG for this version)
+	File: /.github/workflows/release.yml:104-139
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(release).steps[4](Create GitHub Release)
+	File: /.github/workflows/release.yml:138-151
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(release).steps[5](Trigger dashboard deployment)
+	File: /.github/workflows/release.yml:150-161
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-status-page)
+	File: /.github/workflows/monitoring.yml:24-48
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(log-megalinter-results)
+	File: /.github/workflows/monitoring.yml:48-83
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(check-failures)
+	File: /.github/workflows/monitoring.yml:83-198
+Check: CKV_GHA_5: "Found artifact build without evidence of cosign sign execution in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/monitoring.yml:23-198
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-status-page)
+	File: /.github/workflows/monitoring.yml:24-48
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(log-megalinter-results)
+	File: /.github/workflows/monitoring.yml:48-83
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(check-failures)
+	File: /.github/workflows/monitoring.yml:83-198
+Check: CKV_GHA_6: "Found artifact build without evidence of cosign sbom attestation in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/monitoring.yml:23-198
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-status-page)
+	File: /.github/workflows/monitoring.yml:24-48
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(log-megalinter-results)
+	File: /.github/workflows/monitoring.yml:48-83
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(check-failures)
+	File: /.github/workflows/monitoring.yml:83-198
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-status-page)
+	File: /.github/workflows/monitoring.yml:24-48
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(log-megalinter-results)
+	File: /.github/workflows/monitoring.yml:48-83
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(check-failures)
+	File: /.github/workflows/monitoring.yml:83-198
+Check: CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty. "
+	PASSED for resource: on(Monitoring & Alerts)
+	File: /.github/workflows/monitoring.yml:4-19
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-status-page).steps[1](Setup environment)
+	File: /.github/workflows/monitoring.yml:26-30
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-status-page).steps[2](Generate status page)
+	File: /.github/workflows/monitoring.yml:29-34
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-status-page).steps[3](Commit and push status page)
+	File: /.github/workflows/monitoring.yml:33-48
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(log-megalinter-results).steps[1](Setup environment)
+	File: /.github/workflows/monitoring.yml:51-55
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(log-megalinter-results).steps[2](Log MegaLinter completion)
+	File: /.github/workflows/monitoring.yml:54-83
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(check-failures).steps[1](Setup environment)
+	File: /.github/workflows/monitoring.yml:86-90
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(check-failures).steps[2](Check for consecutive failures)
+	File: /.github/workflows/monitoring.yml:89-113
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(check-failures).steps[3](Create issue for repeated failures)
+	File: /.github/workflows/monitoring.yml:112-198
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-status-page).steps[1](Setup environment)
+	File: /.github/workflows/monitoring.yml:26-30
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-status-page).steps[2](Generate status page)
+	File: /.github/workflows/monitoring.yml:29-34
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-status-page).steps[3](Commit and push status page)
+	File: /.github/workflows/monitoring.yml:33-48
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(log-megalinter-results).steps[1](Setup environment)
+	File: /.github/workflows/monitoring.yml:51-55
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(log-megalinter-results).steps[2](Log MegaLinter completion)
+	File: /.github/workflows/monitoring.yml:54-83
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(check-failures).steps[1](Setup environment)
+	File: /.github/workflows/monitoring.yml:86-90
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(check-failures).steps[2](Check for consecutive failures)
+	File: /.github/workflows/monitoring.yml:89-113
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(check-failures).steps[3](Create issue for repeated failures)
+	File: /.github/workflows/monitoring.yml:112-198
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-status-page).steps[1](Setup environment)
+	File: /.github/workflows/monitoring.yml:26-30
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-status-page).steps[2](Generate status page)
+	File: /.github/workflows/monitoring.yml:29-34
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-status-page).steps[3](Commit and push status page)
+	File: /.github/workflows/monitoring.yml:33-48
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(log-megalinter-results).steps[1](Setup environment)
+	File: /.github/workflows/monitoring.yml:51-55
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(log-megalinter-results).steps[2](Log MegaLinter completion)
+	File: /.github/workflows/monitoring.yml:54-83
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(check-failures).steps[1](Setup environment)
+	File: /.github/workflows/monitoring.yml:86-90
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(check-failures).steps[2](Check for consecutive failures)
+	File: /.github/workflows/monitoring.yml:89-113
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(check-failures).steps[3](Create issue for repeated failures)
+	File: /.github/workflows/monitoring.yml:112-198
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-status-page).steps[1](Setup environment)
+	File: /.github/workflows/monitoring.yml:26-30
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-status-page).steps[2](Generate status page)
+	File: /.github/workflows/monitoring.yml:29-34
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-status-page).steps[3](Commit and push status page)
+	File: /.github/workflows/monitoring.yml:33-48
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(log-megalinter-results).steps[1](Setup environment)
+	File: /.github/workflows/monitoring.yml:51-55
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(log-megalinter-results).steps[2](Log MegaLinter completion)
+	File: /.github/workflows/monitoring.yml:54-83
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(check-failures).steps[1](Setup environment)
+	File: /.github/workflows/monitoring.yml:86-90
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(check-failures).steps[2](Check for consecutive failures)
+	File: /.github/workflows/monitoring.yml:89-113
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(check-failures).steps[3](Create issue for repeated failures)
+	File: /.github/workflows/monitoring.yml:112-198
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(test-python)
+	File: /.github/workflows/tests.yml:30-51
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(test-shell)
+	File: /.github/workflows/tests.yml:51-67
+Check: CKV_GHA_5: "Found artifact build without evidence of cosign sign execution in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/tests.yml:29-67
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(test-python)
+	File: /.github/workflows/tests.yml:30-51
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(test-shell)
+	File: /.github/workflows/tests.yml:51-67
+Check: CKV_GHA_6: "Found artifact build without evidence of cosign sbom attestation in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/tests.yml:29-67
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(test-python)
+	File: /.github/workflows/tests.yml:30-51
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(test-shell)
+	File: /.github/workflows/tests.yml:51-67
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(test-python)
+	File: /.github/workflows/tests.yml:30-51
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(test-shell)
+	File: /.github/workflows/tests.yml:51-67
+Check: CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty. "
+	PASSED for resource: on(Unit Tests)
+	File: /.github/workflows/tests.yml:4-26
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(test-python).steps[1](Setup environment)
+	File: /.github/workflows/tests.yml:34-41
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(test-python).steps[2](Run type checking with mypy)
+	File: /.github/workflows/tests.yml:40-47
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(test-python).steps[3](Run tests)
+	File: /.github/workflows/tests.yml:46-51
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(test-shell).steps[1](Setup environment)
+	File: /.github/workflows/tests.yml:55-61
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(test-shell).steps[2](Run shell script tests)
+	File: /.github/workflows/tests.yml:60-67
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(test-python).steps[1](Setup environment)
+	File: /.github/workflows/tests.yml:34-41
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(test-python).steps[2](Run type checking with mypy)
+	File: /.github/workflows/tests.yml:40-47
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(test-python).steps[3](Run tests)
+	File: /.github/workflows/tests.yml:46-51
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(test-shell).steps[1](Setup environment)
+	File: /.github/workflows/tests.yml:55-61
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(test-shell).steps[2](Run shell script tests)
+	File: /.github/workflows/tests.yml:60-67
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(test-python).steps[1](Setup environment)
+	File: /.github/workflows/tests.yml:34-41
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(test-python).steps[2](Run type checking with mypy)
+	File: /.github/workflows/tests.yml:40-47
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(test-python).steps[3](Run tests)
+	File: /.github/workflows/tests.yml:46-51
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(test-shell).steps[1](Setup environment)
+	File: /.github/workflows/tests.yml:55-61
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(test-shell).steps[2](Run shell script tests)
+	File: /.github/workflows/tests.yml:60-67
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(test-python).steps[1](Setup environment)
+	File: /.github/workflows/tests.yml:34-41
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(test-python).steps[2](Run type checking with mypy)
+	File: /.github/workflows/tests.yml:40-47
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(test-python).steps[3](Run tests)
+	File: /.github/workflows/tests.yml:46-51
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(test-shell).steps[1](Setup environment)
+	File: /.github/workflows/tests.yml:55-61
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(test-shell).steps[2](Run shell script tests)
+	File: /.github/workflows/tests.yml:60-67
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile)
+	File: /.github/workflows/build-profile.yml:26-717
+Check: CKV_GHA_5: "Found artifact build without evidence of cosign sign execution in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/build-profile.yml:25-717
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile)
+	File: /.github/workflows/build-profile.yml:26-717
+Check: CKV_GHA_6: "Found artifact build without evidence of cosign sbom attestation in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/build-profile.yml:25-717
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile)
+	File: /.github/workflows/build-profile.yml:26-717
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile)
+	File: /.github/workflows/build-profile.yml:26-717
+Check: CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty. "
+	PASSED for resource: on(Build Profile — Unified Orchestration Pipeline)
+	File: /.github/workflows/build-profile.yml:4-14
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[1](📦 Checkout repository)
+	File: /.github/workflows/build-profile.yml:32-38
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[2](🐍 Setup Python)
+	File: /.github/workflows/build-profile.yml:37-48
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[3](📦 Install system dependencies)
+	File: /.github/workflows/build-profile.yml:47-53
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[4](📦 Install Python dependencies)
+	File: /.github/workflows/build-profile.yml:52-63
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[5](📦 Install additional Python packages)
+	File: /.github/workflows/build-profile.yml:62-67
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[6](🟢 Setup Node.js)
+	File: /.github/workflows/build-profile.yml:66-74
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[7](📦 Install Node dependencies)
+	File: /.github/workflows/build-profile.yml:73-80
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[8](💾 Restore SVG hash cache)
+	File: /.github/workflows/build-profile.yml:79-92
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[9](🌐 Fetch Developer Statistics)
+	File: /.github/workflows/build-profile.yml:91-121
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[10](🌤️ Get GitHub Profile Location)
+	File: /.github/workflows/build-profile.yml:120-142
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[11](🌦️ Fetch Weather Data)
+	File: /.github/workflows/build-profile.yml:141-173
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[12](📍 Fetch Location Data)
+	File: /.github/workflows/build-profile.yml:172-205
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[13](🎵 Fetch SoundCloud Data)
+	File: /.github/workflows/build-profile.yml:204-234
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[14](🧬 Fetch Oura Health Data)
+	File: /.github/workflows/build-profile.yml:233-266
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[15](✅ Validate JSON Data)
+	File: /.github/workflows/build-profile.yml:265-293
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[16](✅ Validate Theme Configuration)
+	File: /.github/workflows/build-profile.yml:292-309
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[17](💻 Generate Developer Dashboard)
+	File: /.github/workflows/build-profile.yml:308-322
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[18](🌦️ Generate Weather Card)
+	File: /.github/workflows/build-profile.yml:321-335
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[19](📍 Generate Location Card)
+	File: /.github/workflows/build-profile.yml:334-348
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[20](🎵 Generate SoundCloud Card)
+	File: /.github/workflows/build-profile.yml:347-361
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[21](🧬 Generate Oura Health Dashboard)
+	File: /.github/workflows/build-profile.yml:360-380
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[22](🧬 Generate Oura Mood Dashboard)
+	File: /.github/workflows/build-profile.yml:379-402
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[23](🎨 Optimize SVGs with SVGO)
+	File: /.github/workflows/build-profile.yml:401-470
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[24](📝 Update README with All Cards)
+	File: /.github/workflows/build-profile.yml:469-524
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[25](🚀 Copy Data Files to Dashboard)
+	File: /.github/workflows/build-profile.yml:523-556
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[26](🚀 Build React Dashboard)
+	File: /.github/workflows/build-profile.yml:555-567
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[27](🚀 Setup GitHub Pages)
+	File: /.github/workflows/build-profile.yml:566-571
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[28](🚀 Upload Pages Artifact)
+	File: /.github/workflows/build-profile.yml:570-577
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[29](🚀 Deploy to GitHub Pages)
+	File: /.github/workflows/build-profile.yml:576-585
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[30](🔍 Create MegaLinter Output Directory)
+	File: /.github/workflows/build-profile.yml:584-590
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[31](🔍 Run MegaLinter (Report-Only))
+	File: /.github/workflows/build-profile.yml:589-603
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[32](🔍 Generate MegaLinter Summary)
+	File: /.github/workflows/build-profile.yml:602-615
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[33](🔍 Upload MegaLinter Reports)
+	File: /.github/workflows/build-profile.yml:614-629
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[34](📤 Commit and Push Changes)
+	File: /.github/workflows/build-profile.yml:628-686
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build-profile).steps[35](📊 Build Summary)
+	File: /.github/workflows/build-profile.yml:685-717
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[1](📦 Checkout repository)
+	File: /.github/workflows/build-profile.yml:32-38
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[2](🐍 Setup Python)
+	File: /.github/workflows/build-profile.yml:37-48
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[3](📦 Install system dependencies)
+	File: /.github/workflows/build-profile.yml:47-53
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[4](📦 Install Python dependencies)
+	File: /.github/workflows/build-profile.yml:52-63
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[5](📦 Install additional Python packages)
+	File: /.github/workflows/build-profile.yml:62-67
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[6](🟢 Setup Node.js)
+	File: /.github/workflows/build-profile.yml:66-74
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[7](📦 Install Node dependencies)
+	File: /.github/workflows/build-profile.yml:73-80
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[8](💾 Restore SVG hash cache)
+	File: /.github/workflows/build-profile.yml:79-92
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[9](🌐 Fetch Developer Statistics)
+	File: /.github/workflows/build-profile.yml:91-121
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[10](🌤️ Get GitHub Profile Location)
+	File: /.github/workflows/build-profile.yml:120-142
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[11](🌦️ Fetch Weather Data)
+	File: /.github/workflows/build-profile.yml:141-173
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[12](📍 Fetch Location Data)
+	File: /.github/workflows/build-profile.yml:172-205
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[13](🎵 Fetch SoundCloud Data)
+	File: /.github/workflows/build-profile.yml:204-234
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[14](🧬 Fetch Oura Health Data)
+	File: /.github/workflows/build-profile.yml:233-266
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[15](✅ Validate JSON Data)
+	File: /.github/workflows/build-profile.yml:265-293
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[16](✅ Validate Theme Configuration)
+	File: /.github/workflows/build-profile.yml:292-309
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[17](💻 Generate Developer Dashboard)
+	File: /.github/workflows/build-profile.yml:308-322
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[18](🌦️ Generate Weather Card)
+	File: /.github/workflows/build-profile.yml:321-335
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[19](📍 Generate Location Card)
+	File: /.github/workflows/build-profile.yml:334-348
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[20](🎵 Generate SoundCloud Card)
+	File: /.github/workflows/build-profile.yml:347-361
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[21](🧬 Generate Oura Health Dashboard)
+	File: /.github/workflows/build-profile.yml:360-380
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[22](🧬 Generate Oura Mood Dashboard)
+	File: /.github/workflows/build-profile.yml:379-402
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[23](🎨 Optimize SVGs with SVGO)
+	File: /.github/workflows/build-profile.yml:401-470
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[24](📝 Update README with All Cards)
+	File: /.github/workflows/build-profile.yml:469-524
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[25](🚀 Copy Data Files to Dashboard)
+	File: /.github/workflows/build-profile.yml:523-556
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[26](🚀 Build React Dashboard)
+	File: /.github/workflows/build-profile.yml:555-567
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[27](🚀 Setup GitHub Pages)
+	File: /.github/workflows/build-profile.yml:566-571
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[28](🚀 Upload Pages Artifact)
+	File: /.github/workflows/build-profile.yml:570-577
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[29](🚀 Deploy to GitHub Pages)
+	File: /.github/workflows/build-profile.yml:576-585
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[30](🔍 Create MegaLinter Output Directory)
+	File: /.github/workflows/build-profile.yml:584-590
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[31](🔍 Run MegaLinter (Report-Only))
+	File: /.github/workflows/build-profile.yml:589-603
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[32](🔍 Generate MegaLinter Summary)
+	File: /.github/workflows/build-profile.yml:602-615
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[33](🔍 Upload MegaLinter Reports)
+	File: /.github/workflows/build-profile.yml:614-629
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[34](📤 Commit and Push Changes)
+	File: /.github/workflows/build-profile.yml:628-686
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build-profile).steps[35](📊 Build Summary)
+	File: /.github/workflows/build-profile.yml:685-717
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[1](📦 Checkout repository)
+	File: /.github/workflows/build-profile.yml:32-38
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[2](🐍 Setup Python)
+	File: /.github/workflows/build-profile.yml:37-48
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[3](📦 Install system dependencies)
+	File: /.github/workflows/build-profile.yml:47-53
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[4](📦 Install Python dependencies)
+	File: /.github/workflows/build-profile.yml:52-63
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[5](📦 Install additional Python packages)
+	File: /.github/workflows/build-profile.yml:62-67
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[6](🟢 Setup Node.js)
+	File: /.github/workflows/build-profile.yml:66-74
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[7](📦 Install Node dependencies)
+	File: /.github/workflows/build-profile.yml:73-80
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[8](💾 Restore SVG hash cache)
+	File: /.github/workflows/build-profile.yml:79-92
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[9](🌐 Fetch Developer Statistics)
+	File: /.github/workflows/build-profile.yml:91-121
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[10](🌤️ Get GitHub Profile Location)
+	File: /.github/workflows/build-profile.yml:120-142
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[11](🌦️ Fetch Weather Data)
+	File: /.github/workflows/build-profile.yml:141-173
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[12](📍 Fetch Location Data)
+	File: /.github/workflows/build-profile.yml:172-205
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[13](🎵 Fetch SoundCloud Data)
+	File: /.github/workflows/build-profile.yml:204-234
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[14](🧬 Fetch Oura Health Data)
+	File: /.github/workflows/build-profile.yml:233-266
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[15](✅ Validate JSON Data)
+	File: /.github/workflows/build-profile.yml:265-293
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[16](✅ Validate Theme Configuration)
+	File: /.github/workflows/build-profile.yml:292-309
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[17](💻 Generate Developer Dashboard)
+	File: /.github/workflows/build-profile.yml:308-322
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[18](🌦️ Generate Weather Card)
+	File: /.github/workflows/build-profile.yml:321-335
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[19](📍 Generate Location Card)
+	File: /.github/workflows/build-profile.yml:334-348
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[20](🎵 Generate SoundCloud Card)
+	File: /.github/workflows/build-profile.yml:347-361
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[21](🧬 Generate Oura Health Dashboard)
+	File: /.github/workflows/build-profile.yml:360-380
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[22](🧬 Generate Oura Mood Dashboard)
+	File: /.github/workflows/build-profile.yml:379-402
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[23](🎨 Optimize SVGs with SVGO)
+	File: /.github/workflows/build-profile.yml:401-470
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[24](📝 Update README with All Cards)
+	File: /.github/workflows/build-profile.yml:469-524
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[25](🚀 Copy Data Files to Dashboard)
+	File: /.github/workflows/build-profile.yml:523-556
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[26](🚀 Build React Dashboard)
+	File: /.github/workflows/build-profile.yml:555-567
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[27](🚀 Setup GitHub Pages)
+	File: /.github/workflows/build-profile.yml:566-571
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[28](🚀 Upload Pages Artifact)
+	File: /.github/workflows/build-profile.yml:570-577
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[29](🚀 Deploy to GitHub Pages)
+	File: /.github/workflows/build-profile.yml:576-585
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[30](🔍 Create MegaLinter Output Directory)
+	File: /.github/workflows/build-profile.yml:584-590
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[31](🔍 Run MegaLinter (Report-Only))
+	File: /.github/workflows/build-profile.yml:589-603
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[32](🔍 Generate MegaLinter Summary)
+	File: /.github/workflows/build-profile.yml:602-615
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[33](🔍 Upload MegaLinter Reports)
+	File: /.github/workflows/build-profile.yml:614-629
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[34](📤 Commit and Push Changes)
+	File: /.github/workflows/build-profile.yml:628-686
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build-profile).steps[35](📊 Build Summary)
+	File: /.github/workflows/build-profile.yml:685-717
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[1](📦 Checkout repository)
+	File: /.github/workflows/build-profile.yml:32-38
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[2](🐍 Setup Python)
+	File: /.github/workflows/build-profile.yml:37-48
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[3](📦 Install system dependencies)
+	File: /.github/workflows/build-profile.yml:47-53
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[4](📦 Install Python dependencies)
+	File: /.github/workflows/build-profile.yml:52-63
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[5](📦 Install additional Python packages)
+	File: /.github/workflows/build-profile.yml:62-67
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[6](🟢 Setup Node.js)
+	File: /.github/workflows/build-profile.yml:66-74
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[7](📦 Install Node dependencies)
+	File: /.github/workflows/build-profile.yml:73-80
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[8](💾 Restore SVG hash cache)
+	File: /.github/workflows/build-profile.yml:79-92
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[9](🌐 Fetch Developer Statistics)
+	File: /.github/workflows/build-profile.yml:91-121
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[10](🌤️ Get GitHub Profile Location)
+	File: /.github/workflows/build-profile.yml:120-142
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[11](🌦️ Fetch Weather Data)
+	File: /.github/workflows/build-profile.yml:141-173
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[12](📍 Fetch Location Data)
+	File: /.github/workflows/build-profile.yml:172-205
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[13](🎵 Fetch SoundCloud Data)
+	File: /.github/workflows/build-profile.yml:204-234
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[14](🧬 Fetch Oura Health Data)
+	File: /.github/workflows/build-profile.yml:233-266
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[15](✅ Validate JSON Data)
+	File: /.github/workflows/build-profile.yml:265-293
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[16](✅ Validate Theme Configuration)
+	File: /.github/workflows/build-profile.yml:292-309
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[17](💻 Generate Developer Dashboard)
+	File: /.github/workflows/build-profile.yml:308-322
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[18](🌦️ Generate Weather Card)
+	File: /.github/workflows/build-profile.yml:321-335
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[19](📍 Generate Location Card)
+	File: /.github/workflows/build-profile.yml:334-348
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[20](🎵 Generate SoundCloud Card)
+	File: /.github/workflows/build-profile.yml:347-361
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[21](🧬 Generate Oura Health Dashboard)
+	File: /.github/workflows/build-profile.yml:360-380
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[22](🧬 Generate Oura Mood Dashboard)
+	File: /.github/workflows/build-profile.yml:379-402
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[23](🎨 Optimize SVGs with SVGO)
+	File: /.github/workflows/build-profile.yml:401-470
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[24](📝 Update README with All Cards)
+	File: /.github/workflows/build-profile.yml:469-524
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[25](🚀 Copy Data Files to Dashboard)
+	File: /.github/workflows/build-profile.yml:523-556
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[26](🚀 Build React Dashboard)
+	File: /.github/workflows/build-profile.yml:555-567
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[27](🚀 Setup GitHub Pages)
+	File: /.github/workflows/build-profile.yml:566-571
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[28](🚀 Upload Pages Artifact)
+	File: /.github/workflows/build-profile.yml:570-577
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[29](🚀 Deploy to GitHub Pages)
+	File: /.github/workflows/build-profile.yml:576-585
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[30](🔍 Create MegaLinter Output Directory)
+	File: /.github/workflows/build-profile.yml:584-590
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[31](🔍 Run MegaLinter (Report-Only))
+	File: /.github/workflows/build-profile.yml:589-603
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[32](🔍 Generate MegaLinter Summary)
+	File: /.github/workflows/build-profile.yml:602-615
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[33](🔍 Upload MegaLinter Reports)
+	File: /.github/workflows/build-profile.yml:614-629
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[34](📤 Commit and Push Changes)
+	File: /.github/workflows/build-profile.yml:628-686
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build-profile).steps[35](📊 Build Summary)
+	File: /.github/workflows/build-profile.yml:685-717
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-developer-dashboard)
+	File: /.github/workflows/_archive/developer.yml:22-120
+Check: CKV_GHA_5: "Found artifact build without evidence of cosign sign execution in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/_archive/developer.yml:21-120
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-developer-dashboard)
+	File: /.github/workflows/_archive/developer.yml:22-120
+Check: CKV_GHA_6: "Found artifact build without evidence of cosign sbom attestation in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/_archive/developer.yml:21-120
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-developer-dashboard)
+	File: /.github/workflows/_archive/developer.yml:22-120
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-developer-dashboard)
+	File: /.github/workflows/_archive/developer.yml:22-120
+Check: CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty. "
+	PASSED for resource: on(Developer Dashboard — GitHub Metrics + Visualization)
+	File: /.github/workflows/_archive/developer.yml:4-14
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-developer-dashboard).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/developer.yml:25-31
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-developer-dashboard).steps[2](Setup environment)
+	File: /.github/workflows/_archive/developer.yml:30-36
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-developer-dashboard).steps[3](Install additional dependencies)
+	File: /.github/workflows/_archive/developer.yml:35-41
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-developer-dashboard).steps[4](Fetch developer statistics)
+	File: /.github/workflows/_archive/developer.yml:40-69
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-developer-dashboard).steps[5](Generate developer dashboard SVG)
+	File: /.github/workflows/_archive/developer.yml:68-73
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-developer-dashboard).steps[6](Optimize SVG with SVGO)
+	File: /.github/workflows/_archive/developer.yml:72-89
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-developer-dashboard).steps[7](Update README with developer dashboard)
+	File: /.github/workflows/_archive/developer.yml:88-95
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-developer-dashboard).steps[8](Commit and push changes)
+	File: /.github/workflows/_archive/developer.yml:94-120
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-developer-dashboard).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/developer.yml:25-31
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-developer-dashboard).steps[2](Setup environment)
+	File: /.github/workflows/_archive/developer.yml:30-36
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-developer-dashboard).steps[3](Install additional dependencies)
+	File: /.github/workflows/_archive/developer.yml:35-41
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-developer-dashboard).steps[4](Fetch developer statistics)
+	File: /.github/workflows/_archive/developer.yml:40-69
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-developer-dashboard).steps[5](Generate developer dashboard SVG)
+	File: /.github/workflows/_archive/developer.yml:68-73
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-developer-dashboard).steps[6](Optimize SVG with SVGO)
+	File: /.github/workflows/_archive/developer.yml:72-89
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-developer-dashboard).steps[7](Update README with developer dashboard)
+	File: /.github/workflows/_archive/developer.yml:88-95
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-developer-dashboard).steps[8](Commit and push changes)
+	File: /.github/workflows/_archive/developer.yml:94-120
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-developer-dashboard).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/developer.yml:25-31
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-developer-dashboard).steps[2](Setup environment)
+	File: /.github/workflows/_archive/developer.yml:30-36
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-developer-dashboard).steps[3](Install additional dependencies)
+	File: /.github/workflows/_archive/developer.yml:35-41
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-developer-dashboard).steps[4](Fetch developer statistics)
+	File: /.github/workflows/_archive/developer.yml:40-69
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-developer-dashboard).steps[5](Generate developer dashboard SVG)
+	File: /.github/workflows/_archive/developer.yml:68-73
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-developer-dashboard).steps[6](Optimize SVG with SVGO)
+	File: /.github/workflows/_archive/developer.yml:72-89
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-developer-dashboard).steps[7](Update README with developer dashboard)
+	File: /.github/workflows/_archive/developer.yml:88-95
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-developer-dashboard).steps[8](Commit and push changes)
+	File: /.github/workflows/_archive/developer.yml:94-120
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-developer-dashboard).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/developer.yml:25-31
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-developer-dashboard).steps[2](Setup environment)
+	File: /.github/workflows/_archive/developer.yml:30-36
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-developer-dashboard).steps[3](Install additional dependencies)
+	File: /.github/workflows/_archive/developer.yml:35-41
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-developer-dashboard).steps[4](Fetch developer statistics)
+	File: /.github/workflows/_archive/developer.yml:40-69
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-developer-dashboard).steps[5](Generate developer dashboard SVG)
+	File: /.github/workflows/_archive/developer.yml:68-73
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-developer-dashboard).steps[6](Optimize SVG with SVGO)
+	File: /.github/workflows/_archive/developer.yml:72-89
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-developer-dashboard).steps[7](Update README with developer dashboard)
+	File: /.github/workflows/_archive/developer.yml:88-95
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-developer-dashboard).steps[8](Commit and push changes)
+	File: /.github/workflows/_archive/developer.yml:94-120
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-location-card)
+	File: /.github/workflows/_archive/location-card.yml:22-148
+Check: CKV_GHA_5: "Found artifact build without evidence of cosign sign execution in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/_archive/location-card.yml:21-148
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-location-card)
+	File: /.github/workflows/_archive/location-card.yml:22-148
+Check: CKV_GHA_6: "Found artifact build without evidence of cosign sbom attestation in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/_archive/location-card.yml:21-148
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-location-card)
+	File: /.github/workflows/_archive/location-card.yml:22-148
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-location-card)
+	File: /.github/workflows/_archive/location-card.yml:22-148
+Check: CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty. "
+	PASSED for resource: on(Location Map Card — Mapbox Static Map with Day/Night Theme)
+	File: /.github/workflows/_archive/location-card.yml:4-14
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-location-card).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/location-card.yml:25-31
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-location-card).steps[2](Setup environment)
+	File: /.github/workflows/_archive/location-card.yml:30-34
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-location-card).steps[3](Install additional dependencies)
+	File: /.github/workflows/_archive/location-card.yml:33-39
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-location-card).steps[4](Get GitHub profile location)
+	File: /.github/workflows/_archive/location-card.yml:38-56
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-location-card).steps[5](Fetch location data and static map)
+	File: /.github/workflows/_archive/location-card.yml:55-87
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-location-card).steps[6](Restore SVG hash cache)
+	File: /.github/workflows/_archive/location-card.yml:86-96
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-location-card).steps[7](Generate location SVG card)
+	File: /.github/workflows/_archive/location-card.yml:95-101
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-location-card).steps[8](Optimize SVG with SVGO)
+	File: /.github/workflows/_archive/location-card.yml:100-118
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-location-card).steps[9](Update README with location card)
+	File: /.github/workflows/_archive/location-card.yml:117-125
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-location-card).steps[10](Commit and push changes)
+	File: /.github/workflows/_archive/location-card.yml:124-148
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-location-card).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/location-card.yml:25-31
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-location-card).steps[2](Setup environment)
+	File: /.github/workflows/_archive/location-card.yml:30-34
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-location-card).steps[3](Install additional dependencies)
+	File: /.github/workflows/_archive/location-card.yml:33-39
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-location-card).steps[4](Get GitHub profile location)
+	File: /.github/workflows/_archive/location-card.yml:38-56
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-location-card).steps[5](Fetch location data and static map)
+	File: /.github/workflows/_archive/location-card.yml:55-87
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-location-card).steps[6](Restore SVG hash cache)
+	File: /.github/workflows/_archive/location-card.yml:86-96
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-location-card).steps[7](Generate location SVG card)
+	File: /.github/workflows/_archive/location-card.yml:95-101
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-location-card).steps[8](Optimize SVG with SVGO)
+	File: /.github/workflows/_archive/location-card.yml:100-118
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-location-card).steps[9](Update README with location card)
+	File: /.github/workflows/_archive/location-card.yml:117-125
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-location-card).steps[10](Commit and push changes)
+	File: /.github/workflows/_archive/location-card.yml:124-148
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-location-card).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/location-card.yml:25-31
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-location-card).steps[2](Setup environment)
+	File: /.github/workflows/_archive/location-card.yml:30-34
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-location-card).steps[3](Install additional dependencies)
+	File: /.github/workflows/_archive/location-card.yml:33-39
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-location-card).steps[4](Get GitHub profile location)
+	File: /.github/workflows/_archive/location-card.yml:38-56
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-location-card).steps[5](Fetch location data and static map)
+	File: /.github/workflows/_archive/location-card.yml:55-87
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-location-card).steps[6](Restore SVG hash cache)
+	File: /.github/workflows/_archive/location-card.yml:86-96
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-location-card).steps[7](Generate location SVG card)
+	File: /.github/workflows/_archive/location-card.yml:95-101
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-location-card).steps[8](Optimize SVG with SVGO)
+	File: /.github/workflows/_archive/location-card.yml:100-118
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-location-card).steps[9](Update README with location card)
+	File: /.github/workflows/_archive/location-card.yml:117-125
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-location-card).steps[10](Commit and push changes)
+	File: /.github/workflows/_archive/location-card.yml:124-148
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-location-card).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/location-card.yml:25-31
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-location-card).steps[2](Setup environment)
+	File: /.github/workflows/_archive/location-card.yml:30-34
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-location-card).steps[3](Install additional dependencies)
+	File: /.github/workflows/_archive/location-card.yml:33-39
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-location-card).steps[4](Get GitHub profile location)
+	File: /.github/workflows/_archive/location-card.yml:38-56
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-location-card).steps[5](Fetch location data and static map)
+	File: /.github/workflows/_archive/location-card.yml:55-87
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-location-card).steps[6](Restore SVG hash cache)
+	File: /.github/workflows/_archive/location-card.yml:86-96
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-location-card).steps[7](Generate location SVG card)
+	File: /.github/workflows/_archive/location-card.yml:95-101
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-location-card).steps[8](Optimize SVG with SVGO)
+	File: /.github/workflows/_archive/location-card.yml:100-118
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-location-card).steps[9](Update README with location card)
+	File: /.github/workflows/_archive/location-card.yml:117-125
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-location-card).steps[10](Commit and push changes)
+	File: /.github/workflows/_archive/location-card.yml:124-148
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-oura)
+	File: /.github/workflows/_archive/parallel-fetch.yml:30-77
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-weather)
+	File: /.github/workflows/_archive/parallel-fetch.yml:77-144
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-soundcloud)
+	File: /.github/workflows/_archive/parallel-fetch.yml:144-194
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-cards)
+	File: /.github/workflows/_archive/parallel-fetch.yml:194-368
+Check: CKV_GHA_5: "Found artifact build without evidence of cosign sign execution in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/_archive/parallel-fetch.yml:29-368
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-oura)
+	File: /.github/workflows/_archive/parallel-fetch.yml:30-77
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-weather)
+	File: /.github/workflows/_archive/parallel-fetch.yml:77-144
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-soundcloud)
+	File: /.github/workflows/_archive/parallel-fetch.yml:144-194
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-cards)
+	File: /.github/workflows/_archive/parallel-fetch.yml:194-368
+Check: CKV_GHA_6: "Found artifact build without evidence of cosign sbom attestation in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/_archive/parallel-fetch.yml:29-368
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-oura)
+	File: /.github/workflows/_archive/parallel-fetch.yml:30-77
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-weather)
+	File: /.github/workflows/_archive/parallel-fetch.yml:77-144
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-soundcloud)
+	File: /.github/workflows/_archive/parallel-fetch.yml:144-194
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-cards)
+	File: /.github/workflows/_archive/parallel-fetch.yml:194-368
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-oura)
+	File: /.github/workflows/_archive/parallel-fetch.yml:30-77
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-weather)
+	File: /.github/workflows/_archive/parallel-fetch.yml:77-144
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-soundcloud)
+	File: /.github/workflows/_archive/parallel-fetch.yml:144-194
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-cards)
+	File: /.github/workflows/_archive/parallel-fetch.yml:194-368
+Check: CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty. "
+	PASSED for resource: on(Parallel Data Fetch & Card Generation)
+	File: /.github/workflows/_archive/parallel-fetch.yml:4-21
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-oura).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/parallel-fetch.yml:32-38
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-oura).steps[2](Setup environment)
+	File: /.github/workflows/_archive/parallel-fetch.yml:37-43
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-oura).steps[3](Fetch Oura metrics)
+	File: /.github/workflows/_archive/parallel-fetch.yml:42-69
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-oura).steps[4](Upload Oura data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:68-77
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-weather).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/parallel-fetch.yml:79-85
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-weather).steps[2](Setup environment)
+	File: /.github/workflows/_archive/parallel-fetch.yml:84-90
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-weather).steps[3](Get GitHub profile location)
+	File: /.github/workflows/_archive/parallel-fetch.yml:89-107
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-weather).steps[4](Fetch weather data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:106-135
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-weather).steps[5](Upload Weather data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:134-144
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-soundcloud).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/parallel-fetch.yml:146-152
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-soundcloud).steps[2](Setup environment)
+	File: /.github/workflows/_archive/parallel-fetch.yml:151-155
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-soundcloud).steps[3](Install additional dependencies)
+	File: /.github/workflows/_archive/parallel-fetch.yml:154-160
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-soundcloud).steps[4](Fetch SoundCloud data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:159-184
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(fetch-soundcloud).steps[5](Upload SoundCloud data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:183-194
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-cards).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/parallel-fetch.yml:198-204
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-cards).steps[2](Setup environment)
+	File: /.github/workflows/_archive/parallel-fetch.yml:203-207
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-cards).steps[3](Install Python dependencies)
+	File: /.github/workflows/_archive/parallel-fetch.yml:206-212
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-cards).steps[4](Install npm dependencies)
+	File: /.github/workflows/_archive/parallel-fetch.yml:211-217
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-cards).steps[5](Download Oura data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:216-224
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-cards).steps[6](Download Weather data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:223-231
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-cards).steps[7](Download SoundCloud data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:230-239
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-cards).steps[8](Generate Oura cards)
+	File: /.github/workflows/_archive/parallel-fetch.yml:238-248
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-cards).steps[9](Generate Weather card)
+	File: /.github/workflows/_archive/parallel-fetch.yml:247-254
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-cards).steps[10](Generate SoundCloud card)
+	File: /.github/workflows/_archive/parallel-fetch.yml:253-260
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-cards).steps[11](Optimize SVGs with SVGO)
+	File: /.github/workflows/_archive/parallel-fetch.yml:259-324
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-cards).steps[12](Update README)
+	File: /.github/workflows/_archive/parallel-fetch.yml:323-353
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(generate-cards).steps[13](Commit and push changes)
+	File: /.github/workflows/_archive/parallel-fetch.yml:352-368
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-oura).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/parallel-fetch.yml:32-38
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-oura).steps[2](Setup environment)
+	File: /.github/workflows/_archive/parallel-fetch.yml:37-43
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-oura).steps[3](Fetch Oura metrics)
+	File: /.github/workflows/_archive/parallel-fetch.yml:42-69
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-oura).steps[4](Upload Oura data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:68-77
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-weather).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/parallel-fetch.yml:79-85
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-weather).steps[2](Setup environment)
+	File: /.github/workflows/_archive/parallel-fetch.yml:84-90
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-weather).steps[3](Get GitHub profile location)
+	File: /.github/workflows/_archive/parallel-fetch.yml:89-107
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-weather).steps[4](Fetch weather data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:106-135
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-weather).steps[5](Upload Weather data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:134-144
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-soundcloud).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/parallel-fetch.yml:146-152
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-soundcloud).steps[2](Setup environment)
+	File: /.github/workflows/_archive/parallel-fetch.yml:151-155
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-soundcloud).steps[3](Install additional dependencies)
+	File: /.github/workflows/_archive/parallel-fetch.yml:154-160
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-soundcloud).steps[4](Fetch SoundCloud data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:159-184
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(fetch-soundcloud).steps[5](Upload SoundCloud data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:183-194
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-cards).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/parallel-fetch.yml:198-204
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-cards).steps[2](Setup environment)
+	File: /.github/workflows/_archive/parallel-fetch.yml:203-207
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-cards).steps[3](Install Python dependencies)
+	File: /.github/workflows/_archive/parallel-fetch.yml:206-212
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-cards).steps[4](Install npm dependencies)
+	File: /.github/workflows/_archive/parallel-fetch.yml:211-217
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-cards).steps[5](Download Oura data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:216-224
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-cards).steps[6](Download Weather data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:223-231
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-cards).steps[7](Download SoundCloud data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:230-239
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-cards).steps[8](Generate Oura cards)
+	File: /.github/workflows/_archive/parallel-fetch.yml:238-248
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-cards).steps[9](Generate Weather card)
+	File: /.github/workflows/_archive/parallel-fetch.yml:247-254
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-cards).steps[10](Generate SoundCloud card)
+	File: /.github/workflows/_archive/parallel-fetch.yml:253-260
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-cards).steps[11](Optimize SVGs with SVGO)
+	File: /.github/workflows/_archive/parallel-fetch.yml:259-324
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-cards).steps[12](Update README)
+	File: /.github/workflows/_archive/parallel-fetch.yml:323-353
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(generate-cards).steps[13](Commit and push changes)
+	File: /.github/workflows/_archive/parallel-fetch.yml:352-368
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-oura).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/parallel-fetch.yml:32-38
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-oura).steps[2](Setup environment)
+	File: /.github/workflows/_archive/parallel-fetch.yml:37-43
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-oura).steps[3](Fetch Oura metrics)
+	File: /.github/workflows/_archive/parallel-fetch.yml:42-69
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-oura).steps[4](Upload Oura data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:68-77
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-weather).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/parallel-fetch.yml:79-85
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-weather).steps[2](Setup environment)
+	File: /.github/workflows/_archive/parallel-fetch.yml:84-90
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-weather).steps[3](Get GitHub profile location)
+	File: /.github/workflows/_archive/parallel-fetch.yml:89-107
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-weather).steps[4](Fetch weather data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:106-135
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-weather).steps[5](Upload Weather data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:134-144
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-soundcloud).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/parallel-fetch.yml:146-152
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-soundcloud).steps[2](Setup environment)
+	File: /.github/workflows/_archive/parallel-fetch.yml:151-155
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-soundcloud).steps[3](Install additional dependencies)
+	File: /.github/workflows/_archive/parallel-fetch.yml:154-160
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-soundcloud).steps[4](Fetch SoundCloud data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:159-184
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(fetch-soundcloud).steps[5](Upload SoundCloud data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:183-194
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-cards).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/parallel-fetch.yml:198-204
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-cards).steps[2](Setup environment)
+	File: /.github/workflows/_archive/parallel-fetch.yml:203-207
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-cards).steps[3](Install Python dependencies)
+	File: /.github/workflows/_archive/parallel-fetch.yml:206-212
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-cards).steps[4](Install npm dependencies)
+	File: /.github/workflows/_archive/parallel-fetch.yml:211-217
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-cards).steps[5](Download Oura data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:216-224
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-cards).steps[6](Download Weather data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:223-231
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-cards).steps[7](Download SoundCloud data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:230-239
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-cards).steps[8](Generate Oura cards)
+	File: /.github/workflows/_archive/parallel-fetch.yml:238-248
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-cards).steps[9](Generate Weather card)
+	File: /.github/workflows/_archive/parallel-fetch.yml:247-254
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-cards).steps[10](Generate SoundCloud card)
+	File: /.github/workflows/_archive/parallel-fetch.yml:253-260
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-cards).steps[11](Optimize SVGs with SVGO)
+	File: /.github/workflows/_archive/parallel-fetch.yml:259-324
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-cards).steps[12](Update README)
+	File: /.github/workflows/_archive/parallel-fetch.yml:323-353
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(generate-cards).steps[13](Commit and push changes)
+	File: /.github/workflows/_archive/parallel-fetch.yml:352-368
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-oura).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/parallel-fetch.yml:32-38
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-oura).steps[2](Setup environment)
+	File: /.github/workflows/_archive/parallel-fetch.yml:37-43
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-oura).steps[3](Fetch Oura metrics)
+	File: /.github/workflows/_archive/parallel-fetch.yml:42-69
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-oura).steps[4](Upload Oura data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:68-77
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-weather).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/parallel-fetch.yml:79-85
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-weather).steps[2](Setup environment)
+	File: /.github/workflows/_archive/parallel-fetch.yml:84-90
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-weather).steps[3](Get GitHub profile location)
+	File: /.github/workflows/_archive/parallel-fetch.yml:89-107
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-weather).steps[4](Fetch weather data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:106-135
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-weather).steps[5](Upload Weather data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:134-144
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-soundcloud).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/parallel-fetch.yml:146-152
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-soundcloud).steps[2](Setup environment)
+	File: /.github/workflows/_archive/parallel-fetch.yml:151-155
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-soundcloud).steps[3](Install additional dependencies)
+	File: /.github/workflows/_archive/parallel-fetch.yml:154-160
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-soundcloud).steps[4](Fetch SoundCloud data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:159-184
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(fetch-soundcloud).steps[5](Upload SoundCloud data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:183-194
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-cards).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/parallel-fetch.yml:198-204
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-cards).steps[2](Setup environment)
+	File: /.github/workflows/_archive/parallel-fetch.yml:203-207
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-cards).steps[3](Install Python dependencies)
+	File: /.github/workflows/_archive/parallel-fetch.yml:206-212
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-cards).steps[4](Install npm dependencies)
+	File: /.github/workflows/_archive/parallel-fetch.yml:211-217
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-cards).steps[5](Download Oura data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:216-224
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-cards).steps[6](Download Weather data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:223-231
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-cards).steps[7](Download SoundCloud data)
+	File: /.github/workflows/_archive/parallel-fetch.yml:230-239
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-cards).steps[8](Generate Oura cards)
+	File: /.github/workflows/_archive/parallel-fetch.yml:238-248
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-cards).steps[9](Generate Weather card)
+	File: /.github/workflows/_archive/parallel-fetch.yml:247-254
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-cards).steps[10](Generate SoundCloud card)
+	File: /.github/workflows/_archive/parallel-fetch.yml:253-260
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-cards).steps[11](Optimize SVGs with SVGO)
+	File: /.github/workflows/_archive/parallel-fetch.yml:259-324
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-cards).steps[12](Update README)
+	File: /.github/workflows/_archive/parallel-fetch.yml:323-353
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(generate-cards).steps[13](Commit and push changes)
+	File: /.github/workflows/_archive/parallel-fetch.yml:352-368
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-soundcloud-card)
+	File: /.github/workflows/_archive/soundcloud-card.yml:22-121
+Check: CKV_GHA_5: "Found artifact build without evidence of cosign sign execution in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/_archive/soundcloud-card.yml:21-121
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-soundcloud-card)
+	File: /.github/workflows/_archive/soundcloud-card.yml:22-121
+Check: CKV_GHA_6: "Found artifact build without evidence of cosign sbom attestation in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/_archive/soundcloud-card.yml:21-121
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-soundcloud-card)
+	File: /.github/workflows/_archive/soundcloud-card.yml:22-121
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-soundcloud-card)
+	File: /.github/workflows/_archive/soundcloud-card.yml:22-121
+Check: CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty. "
+	PASSED for resource: on(SoundCloud Latest Release Card)
+	File: /.github/workflows/_archive/soundcloud-card.yml:4-14
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-soundcloud-card).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/soundcloud-card.yml:25-31
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-soundcloud-card).steps[2](Setup environment)
+	File: /.github/workflows/_archive/soundcloud-card.yml:30-34
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-soundcloud-card).steps[3](Install additional dependencies)
+	File: /.github/workflows/_archive/soundcloud-card.yml:33-39
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-soundcloud-card).steps[4](Fetch SoundCloud data)
+	File: /.github/workflows/_archive/soundcloud-card.yml:38-64
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-soundcloud-card).steps[5](Restore SVG hash cache)
+	File: /.github/workflows/_archive/soundcloud-card.yml:63-72
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-soundcloud-card).steps[6](Generate SVG card)
+	File: /.github/workflows/_archive/soundcloud-card.yml:71-76
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-soundcloud-card).steps[7](Optimize SVG with SVGO)
+	File: /.github/workflows/_archive/soundcloud-card.yml:75-92
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-soundcloud-card).steps[8](Update README with card)
+	File: /.github/workflows/_archive/soundcloud-card.yml:91-102
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-soundcloud-card).steps[9](Commit and push changes)
+	File: /.github/workflows/_archive/soundcloud-card.yml:101-121
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-soundcloud-card).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/soundcloud-card.yml:25-31
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-soundcloud-card).steps[2](Setup environment)
+	File: /.github/workflows/_archive/soundcloud-card.yml:30-34
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-soundcloud-card).steps[3](Install additional dependencies)
+	File: /.github/workflows/_archive/soundcloud-card.yml:33-39
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-soundcloud-card).steps[4](Fetch SoundCloud data)
+	File: /.github/workflows/_archive/soundcloud-card.yml:38-64
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-soundcloud-card).steps[5](Restore SVG hash cache)
+	File: /.github/workflows/_archive/soundcloud-card.yml:63-72
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-soundcloud-card).steps[6](Generate SVG card)
+	File: /.github/workflows/_archive/soundcloud-card.yml:71-76
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-soundcloud-card).steps[7](Optimize SVG with SVGO)
+	File: /.github/workflows/_archive/soundcloud-card.yml:75-92
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-soundcloud-card).steps[8](Update README with card)
+	File: /.github/workflows/_archive/soundcloud-card.yml:91-102
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-soundcloud-card).steps[9](Commit and push changes)
+	File: /.github/workflows/_archive/soundcloud-card.yml:101-121
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-soundcloud-card).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/soundcloud-card.yml:25-31
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-soundcloud-card).steps[2](Setup environment)
+	File: /.github/workflows/_archive/soundcloud-card.yml:30-34
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-soundcloud-card).steps[3](Install additional dependencies)
+	File: /.github/workflows/_archive/soundcloud-card.yml:33-39
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-soundcloud-card).steps[4](Fetch SoundCloud data)
+	File: /.github/workflows/_archive/soundcloud-card.yml:38-64
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-soundcloud-card).steps[5](Restore SVG hash cache)
+	File: /.github/workflows/_archive/soundcloud-card.yml:63-72
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-soundcloud-card).steps[6](Generate SVG card)
+	File: /.github/workflows/_archive/soundcloud-card.yml:71-76
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-soundcloud-card).steps[7](Optimize SVG with SVGO)
+	File: /.github/workflows/_archive/soundcloud-card.yml:75-92
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-soundcloud-card).steps[8](Update README with card)
+	File: /.github/workflows/_archive/soundcloud-card.yml:91-102
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-soundcloud-card).steps[9](Commit and push changes)
+	File: /.github/workflows/_archive/soundcloud-card.yml:101-121
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-soundcloud-card).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/soundcloud-card.yml:25-31
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-soundcloud-card).steps[2](Setup environment)
+	File: /.github/workflows/_archive/soundcloud-card.yml:30-34
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-soundcloud-card).steps[3](Install additional dependencies)
+	File: /.github/workflows/_archive/soundcloud-card.yml:33-39
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-soundcloud-card).steps[4](Fetch SoundCloud data)
+	File: /.github/workflows/_archive/soundcloud-card.yml:38-64
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-soundcloud-card).steps[5](Restore SVG hash cache)
+	File: /.github/workflows/_archive/soundcloud-card.yml:63-72
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-soundcloud-card).steps[6](Generate SVG card)
+	File: /.github/workflows/_archive/soundcloud-card.yml:71-76
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-soundcloud-card).steps[7](Optimize SVG with SVGO)
+	File: /.github/workflows/_archive/soundcloud-card.yml:75-92
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-soundcloud-card).steps[8](Update README with card)
+	File: /.github/workflows/_archive/soundcloud-card.yml:91-102
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-soundcloud-card).steps[9](Commit and push changes)
+	File: /.github/workflows/_archive/soundcloud-card.yml:101-121
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(megalinter)
+	File: /.github/workflows/_archive/megalinter.yml:18-126
+Check: CKV_GHA_5: "Found artifact build without evidence of cosign sign execution in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/_archive/megalinter.yml:17-126
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(megalinter)
+	File: /.github/workflows/_archive/megalinter.yml:18-126
+Check: CKV_GHA_6: "Found artifact build without evidence of cosign sbom attestation in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/_archive/megalinter.yml:17-126
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(megalinter)
+	File: /.github/workflows/_archive/megalinter.yml:18-126
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(megalinter)
+	File: /.github/workflows/_archive/megalinter.yml:18-126
+Check: CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty. "
+	PASSED for resource: on(MegaLinter Diagnostic (Report-Only))
+	File: /.github/workflows/_archive/megalinter.yml:4-12
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(megalinter).steps[1](Checkout Code)
+	File: /.github/workflows/_archive/megalinter.yml:22-28
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(megalinter).steps[2](Create output directory)
+	File: /.github/workflows/_archive/megalinter.yml:27-32
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(megalinter).steps[3](Run MegaLinter (Report-Only Mode))
+	File: /.github/workflows/_archive/megalinter.yml:31-58
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(megalinter).steps[4](Run Config Audit)
+	File: /.github/workflows/_archive/megalinter.yml:57-64
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(megalinter).steps[5](Generate Summary Report)
+	File: /.github/workflows/_archive/megalinter.yml:63-69
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(megalinter).steps[6](Copy MegaLinter Reports)
+	File: /.github/workflows/_archive/megalinter.yml:68-85
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(megalinter).steps[7](Upload MegaLinter Artifacts)
+	File: /.github/workflows/_archive/megalinter.yml:84-95
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(megalinter).steps[8](Display Summary)
+	File: /.github/workflows/_archive/megalinter.yml:94-111
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(megalinter).steps[9](Commit Reports (if on main branch))
+	File: /.github/workflows/_archive/megalinter.yml:110-126
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(megalinter).steps[1](Checkout Code)
+	File: /.github/workflows/_archive/megalinter.yml:22-28
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(megalinter).steps[2](Create output directory)
+	File: /.github/workflows/_archive/megalinter.yml:27-32
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(megalinter).steps[3](Run MegaLinter (Report-Only Mode))
+	File: /.github/workflows/_archive/megalinter.yml:31-58
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(megalinter).steps[4](Run Config Audit)
+	File: /.github/workflows/_archive/megalinter.yml:57-64
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(megalinter).steps[5](Generate Summary Report)
+	File: /.github/workflows/_archive/megalinter.yml:63-69
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(megalinter).steps[6](Copy MegaLinter Reports)
+	File: /.github/workflows/_archive/megalinter.yml:68-85
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(megalinter).steps[7](Upload MegaLinter Artifacts)
+	File: /.github/workflows/_archive/megalinter.yml:84-95
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(megalinter).steps[8](Display Summary)
+	File: /.github/workflows/_archive/megalinter.yml:94-111
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(megalinter).steps[9](Commit Reports (if on main branch))
+	File: /.github/workflows/_archive/megalinter.yml:110-126
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(megalinter).steps[1](Checkout Code)
+	File: /.github/workflows/_archive/megalinter.yml:22-28
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(megalinter).steps[2](Create output directory)
+	File: /.github/workflows/_archive/megalinter.yml:27-32
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(megalinter).steps[3](Run MegaLinter (Report-Only Mode))
+	File: /.github/workflows/_archive/megalinter.yml:31-58
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(megalinter).steps[4](Run Config Audit)
+	File: /.github/workflows/_archive/megalinter.yml:57-64
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(megalinter).steps[5](Generate Summary Report)
+	File: /.github/workflows/_archive/megalinter.yml:63-69
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(megalinter).steps[6](Copy MegaLinter Reports)
+	File: /.github/workflows/_archive/megalinter.yml:68-85
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(megalinter).steps[7](Upload MegaLinter Artifacts)
+	File: /.github/workflows/_archive/megalinter.yml:84-95
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(megalinter).steps[8](Display Summary)
+	File: /.github/workflows/_archive/megalinter.yml:94-111
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(megalinter).steps[9](Commit Reports (if on main branch))
+	File: /.github/workflows/_archive/megalinter.yml:110-126
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(megalinter).steps[1](Checkout Code)
+	File: /.github/workflows/_archive/megalinter.yml:22-28
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(megalinter).steps[2](Create output directory)
+	File: /.github/workflows/_archive/megalinter.yml:27-32
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(megalinter).steps[3](Run MegaLinter (Report-Only Mode))
+	File: /.github/workflows/_archive/megalinter.yml:31-58
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(megalinter).steps[4](Run Config Audit)
+	File: /.github/workflows/_archive/megalinter.yml:57-64
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(megalinter).steps[5](Generate Summary Report)
+	File: /.github/workflows/_archive/megalinter.yml:63-69
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(megalinter).steps[6](Copy MegaLinter Reports)
+	File: /.github/workflows/_archive/megalinter.yml:68-85
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(megalinter).steps[7](Upload MegaLinter Artifacts)
+	File: /.github/workflows/_archive/megalinter.yml:84-95
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(megalinter).steps[8](Display Summary)
+	File: /.github/workflows/_archive/megalinter.yml:94-111
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(megalinter).steps[9](Commit Reports (if on main branch))
+	File: /.github/workflows/_archive/megalinter.yml:110-126
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-weather-card)
+	File: /.github/workflows/_archive/weather.yml:22-170
+Check: CKV_GHA_5: "Found artifact build without evidence of cosign sign execution in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/_archive/weather.yml:21-170
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-weather-card)
+	File: /.github/workflows/_archive/weather.yml:22-170
+Check: CKV_GHA_6: "Found artifact build without evidence of cosign sbom attestation in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/_archive/weather.yml:21-170
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-weather-card)
+	File: /.github/workflows/_archive/weather.yml:22-170
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-weather-card)
+	File: /.github/workflows/_archive/weather.yml:22-170
+Check: CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty. "
+	PASSED for resource: on(Weather Card — Daily Conditions + Forecast)
+	File: /.github/workflows/_archive/weather.yml:4-14
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-weather-card).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/weather.yml:25-31
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-weather-card).steps[2](Setup environment)
+	File: /.github/workflows/_archive/weather.yml:30-36
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-weather-card).steps[3](Get GitHub profile location)
+	File: /.github/workflows/_archive/weather.yml:35-53
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-weather-card).steps[4](Get coordinates from location)
+	File: /.github/workflows/_archive/weather.yml:52-82
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-weather-card).steps[5](Fetch weather data)
+	File: /.github/workflows/_archive/weather.yml:81-112
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-weather-card).steps[6](Restore SVG hash cache)
+	File: /.github/workflows/_archive/weather.yml:111-121
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-weather-card).steps[7](Generate weather SVG card)
+	File: /.github/workflows/_archive/weather.yml:120-126
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-weather-card).steps[8](Optimize SVG with SVGO)
+	File: /.github/workflows/_archive/weather.yml:125-143
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-weather-card).steps[9](Update README with weather card)
+	File: /.github/workflows/_archive/weather.yml:142-150
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-weather-card).steps[10](Commit and push changes)
+	File: /.github/workflows/_archive/weather.yml:149-170
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-weather-card).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/weather.yml:25-31
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-weather-card).steps[2](Setup environment)
+	File: /.github/workflows/_archive/weather.yml:30-36
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-weather-card).steps[3](Get GitHub profile location)
+	File: /.github/workflows/_archive/weather.yml:35-53
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-weather-card).steps[4](Get coordinates from location)
+	File: /.github/workflows/_archive/weather.yml:52-82
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-weather-card).steps[5](Fetch weather data)
+	File: /.github/workflows/_archive/weather.yml:81-112
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-weather-card).steps[6](Restore SVG hash cache)
+	File: /.github/workflows/_archive/weather.yml:111-121
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-weather-card).steps[7](Generate weather SVG card)
+	File: /.github/workflows/_archive/weather.yml:120-126
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-weather-card).steps[8](Optimize SVG with SVGO)
+	File: /.github/workflows/_archive/weather.yml:125-143
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-weather-card).steps[9](Update README with weather card)
+	File: /.github/workflows/_archive/weather.yml:142-150
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-weather-card).steps[10](Commit and push changes)
+	File: /.github/workflows/_archive/weather.yml:149-170
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-weather-card).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/weather.yml:25-31
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-weather-card).steps[2](Setup environment)
+	File: /.github/workflows/_archive/weather.yml:30-36
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-weather-card).steps[3](Get GitHub profile location)
+	File: /.github/workflows/_archive/weather.yml:35-53
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-weather-card).steps[4](Get coordinates from location)
+	File: /.github/workflows/_archive/weather.yml:52-82
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-weather-card).steps[5](Fetch weather data)
+	File: /.github/workflows/_archive/weather.yml:81-112
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-weather-card).steps[6](Restore SVG hash cache)
+	File: /.github/workflows/_archive/weather.yml:111-121
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-weather-card).steps[7](Generate weather SVG card)
+	File: /.github/workflows/_archive/weather.yml:120-126
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-weather-card).steps[8](Optimize SVG with SVGO)
+	File: /.github/workflows/_archive/weather.yml:125-143
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-weather-card).steps[9](Update README with weather card)
+	File: /.github/workflows/_archive/weather.yml:142-150
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-weather-card).steps[10](Commit and push changes)
+	File: /.github/workflows/_archive/weather.yml:149-170
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-weather-card).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/weather.yml:25-31
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-weather-card).steps[2](Setup environment)
+	File: /.github/workflows/_archive/weather.yml:30-36
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-weather-card).steps[3](Get GitHub profile location)
+	File: /.github/workflows/_archive/weather.yml:35-53
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-weather-card).steps[4](Get coordinates from location)
+	File: /.github/workflows/_archive/weather.yml:52-82
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-weather-card).steps[5](Fetch weather data)
+	File: /.github/workflows/_archive/weather.yml:81-112
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-weather-card).steps[6](Restore SVG hash cache)
+	File: /.github/workflows/_archive/weather.yml:111-121
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-weather-card).steps[7](Generate weather SVG card)
+	File: /.github/workflows/_archive/weather.yml:120-126
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-weather-card).steps[8](Optimize SVG with SVGO)
+	File: /.github/workflows/_archive/weather.yml:125-143
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-weather-card).steps[9](Update README with weather card)
+	File: /.github/workflows/_archive/weather.yml:142-150
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-weather-card).steps[10](Commit and push changes)
+	File: /.github/workflows/_archive/weather.yml:149-170
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:36-98
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(deploy)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:98-109
+Check: CKV_GHA_5: "Found artifact build without evidence of cosign sign execution in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/_archive/deploy-dashboard.yml:35-109
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:36-98
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(deploy)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:98-109
+Check: CKV_GHA_6: "Found artifact build without evidence of cosign sbom attestation in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/_archive/deploy-dashboard.yml:35-109
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:36-98
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(deploy)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:98-109
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:36-98
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(deploy)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:98-109
+Check: CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty. "
+	PASSED for resource: on(Deploy Dashboard to GitHub Pages)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:4-24
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build).steps[1](Checkout)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:39-43
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build).steps[2](Setup Node.js)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:42-50
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build).steps[3](Install dependencies)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:49-55
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build).steps[4](Copy data files to public directory)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:54-85
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build).steps[5](Build dashboard)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:84-90
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build).steps[6](Setup Pages)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:89-93
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(build).steps[7](Upload artifact)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:92-98
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(deploy).steps[1](Deploy to GitHub Pages)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:105-109
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build).steps[1](Checkout)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:39-43
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build).steps[2](Setup Node.js)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:42-50
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build).steps[3](Install dependencies)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:49-55
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build).steps[4](Copy data files to public directory)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:54-85
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build).steps[5](Build dashboard)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:84-90
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build).steps[6](Setup Pages)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:89-93
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(build).steps[7](Upload artifact)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:92-98
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(deploy).steps[1](Deploy to GitHub Pages)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:105-109
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build).steps[1](Checkout)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:39-43
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build).steps[2](Setup Node.js)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:42-50
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build).steps[3](Install dependencies)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:49-55
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build).steps[4](Copy data files to public directory)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:54-85
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build).steps[5](Build dashboard)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:84-90
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build).steps[6](Setup Pages)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:89-93
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(build).steps[7](Upload artifact)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:92-98
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(deploy).steps[1](Deploy to GitHub Pages)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:105-109
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build).steps[1](Checkout)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:39-43
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build).steps[2](Setup Node.js)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:42-50
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build).steps[3](Install dependencies)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:49-55
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build).steps[4](Copy data files to public directory)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:54-85
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build).steps[5](Build dashboard)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:84-90
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build).steps[6](Setup Pages)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:89-93
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(build).steps[7](Upload artifact)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:92-98
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(deploy).steps[1](Deploy to GitHub Pages)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:105-109
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-oura-health-dashboard)
+	File: /.github/workflows/_archive/oura.yml:22-136
+Check: CKV_GHA_5: "Found artifact build without evidence of cosign sign execution in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/_archive/oura.yml:21-136
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-oura-health-dashboard)
+	File: /.github/workflows/_archive/oura.yml:22-136
+Check: CKV_GHA_6: "Found artifact build without evidence of cosign sbom attestation in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/_archive/oura.yml:21-136
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-oura-health-dashboard)
+	File: /.github/workflows/_archive/oura.yml:22-136
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-oura-health-dashboard)
+	File: /.github/workflows/_archive/oura.yml:22-136
+Check: CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty. "
+	PASSED for resource: on(Oura Health Dashboard — Full Metrics + Unified Snapshot)
+	File: /.github/workflows/_archive/oura.yml:4-14
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/oura.yml:25-31
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[2](Setup environment)
+	File: /.github/workflows/_archive/oura.yml:30-36
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[3](Fetch Oura metrics)
+	File: /.github/workflows/_archive/oura.yml:35-64
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[4](Restore SVG hash cache)
+	File: /.github/workflows/_archive/oura.yml:63-72
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[5](Generate unified health snapshot)
+	File: /.github/workflows/_archive/oura.yml:71-76
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[6](Generate holistic health dashboard SVG)
+	File: /.github/workflows/_archive/oura.yml:75-80
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[7](Compute mood state)
+	File: /.github/workflows/_archive/oura.yml:79-84
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[8](Generate mood dashboard SVG card)
+	File: /.github/workflows/_archive/oura.yml:83-88
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[9](Optimize SVGs with SVGO)
+	File: /.github/workflows/_archive/oura.yml:87-106
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[10](Update README with dashboard cards)
+	File: /.github/workflows/_archive/oura.yml:105-116
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[11](Commit and push changes)
+	File: /.github/workflows/_archive/oura.yml:115-136
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/oura.yml:25-31
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[2](Setup environment)
+	File: /.github/workflows/_archive/oura.yml:30-36
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[3](Fetch Oura metrics)
+	File: /.github/workflows/_archive/oura.yml:35-64
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[4](Restore SVG hash cache)
+	File: /.github/workflows/_archive/oura.yml:63-72
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[5](Generate unified health snapshot)
+	File: /.github/workflows/_archive/oura.yml:71-76
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[6](Generate holistic health dashboard SVG)
+	File: /.github/workflows/_archive/oura.yml:75-80
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[7](Compute mood state)
+	File: /.github/workflows/_archive/oura.yml:79-84
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[8](Generate mood dashboard SVG card)
+	File: /.github/workflows/_archive/oura.yml:83-88
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[9](Optimize SVGs with SVGO)
+	File: /.github/workflows/_archive/oura.yml:87-106
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[10](Update README with dashboard cards)
+	File: /.github/workflows/_archive/oura.yml:105-116
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[11](Commit and push changes)
+	File: /.github/workflows/_archive/oura.yml:115-136
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/oura.yml:25-31
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[2](Setup environment)
+	File: /.github/workflows/_archive/oura.yml:30-36
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[3](Fetch Oura metrics)
+	File: /.github/workflows/_archive/oura.yml:35-64
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[4](Restore SVG hash cache)
+	File: /.github/workflows/_archive/oura.yml:63-72
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[5](Generate unified health snapshot)
+	File: /.github/workflows/_archive/oura.yml:71-76
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[6](Generate holistic health dashboard SVG)
+	File: /.github/workflows/_archive/oura.yml:75-80
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[7](Compute mood state)
+	File: /.github/workflows/_archive/oura.yml:79-84
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[8](Generate mood dashboard SVG card)
+	File: /.github/workflows/_archive/oura.yml:83-88
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[9](Optimize SVGs with SVGO)
+	File: /.github/workflows/_archive/oura.yml:87-106
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[10](Update README with dashboard cards)
+	File: /.github/workflows/_archive/oura.yml:105-116
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[11](Commit and push changes)
+	File: /.github/workflows/_archive/oura.yml:115-136
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[1](Checkout repository)
+	File: /.github/workflows/_archive/oura.yml:25-31
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[2](Setup environment)
+	File: /.github/workflows/_archive/oura.yml:30-36
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[3](Fetch Oura metrics)
+	File: /.github/workflows/_archive/oura.yml:35-64
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[4](Restore SVG hash cache)
+	File: /.github/workflows/_archive/oura.yml:63-72
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[5](Generate unified health snapshot)
+	File: /.github/workflows/_archive/oura.yml:71-76
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[6](Generate holistic health dashboard SVG)
+	File: /.github/workflows/_archive/oura.yml:75-80
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[7](Compute mood state)
+	File: /.github/workflows/_archive/oura.yml:79-84
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[8](Generate mood dashboard SVG card)
+	File: /.github/workflows/_archive/oura.yml:83-88
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[9](Optimize SVGs with SVGO)
+	File: /.github/workflows/_archive/oura.yml:87-106
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[10](Update README with dashboard cards)
+	File: /.github/workflows/_archive/oura.yml:105-116
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(update-oura-health-dashboard).steps[11](Commit and push changes)
+	File: /.github/workflows/_archive/oura.yml:115-136
+Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+	PASSED for resource: on(Release)
+	File: /.github/workflows/release.yml:15-20
+Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+	PASSED for resource: on(Monitoring & Alerts)
+	File: /.github/workflows/monitoring.yml:19-23
+Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+	PASSED for resource: on(Unit Tests)
+	File: /.github/workflows/tests.yml:26-29
+Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+	PASSED for resource: on(Developer Dashboard — GitHub Metrics + Visualization)
+	File: /.github/workflows/_archive/developer.yml:18-21
+Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+	PASSED for resource: on(Location Map Card — Mapbox Static Map with Day/Night Theme)
+	File: /.github/workflows/_archive/location-card.yml:18-21
+Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+	PASSED for resource: on(Build Profile — Unified Orchestration Pipeline)
+	File: /.github/workflows/build-profile.yml:18-25
+Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+	PASSED for resource: on(Parallel Data Fetch & Card Generation)
+	File: /.github/workflows/_archive/parallel-fetch.yml:25-28
+Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+	PASSED for resource: on(Weather Card — Daily Conditions + Forecast)
+	File: /.github/workflows/_archive/weather.yml:18-21
+Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+	PASSED for resource: on(SoundCloud Latest Release Card)
+	File: /.github/workflows/_archive/soundcloud-card.yml:18-21
+Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+	PASSED for resource: on(MegaLinter Diagnostic (Report-Only))
+	File: /.github/workflows/_archive/megalinter.yml:12-17
+Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+	PASSED for resource: on(Deploy Dashboard to GitHub Pages)
+	File: /.github/workflows/_archive/deploy-dashboard.yml:24-31
+Check: CKV2_GHA_1: "Ensure top-level permissions are not set to write-all"
+	PASSED for resource: on(Oura Health Dashboard — Full Metrics + Unified Snapshot)
+	File: /.github/workflows/_archive/oura.yml:18-21
+Check: CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty. "
+	FAILED for resource: on(Release)
+	File: /.github/workflows/release.yml:9-15
+
+		9  |       version:
+		10 |         description: 'Version to release (e.g., 1.0.0)'
+		11 |         required: true
+		12 |         type: string
+		13 | 
+		14 | permissions:
+		15 |   contents: write
+
+
+
