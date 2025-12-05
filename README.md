@@ -12,6 +12,7 @@
 <br/><br/>
 
 <!-- Badges Row -->
+[![Version](https://img.shields.io/github/v/tag/szmyty/profile?style=for-the-badge&logo=semver&logoColor=white&labelColor=1a1a2e&color=4a4e69&label=version)](https://github.com/szmyty/profile/releases)
 [![GitHub followers](https://img.shields.io/github/followers/szmyty?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e&color=4a4e69)](https://github.com/szmyty?tab=followers)
 ![Profile Views](https://komarev.com/ghpvc/?username=szmyty&style=for-the-badge&color=4a4e69&labelColor=1a1a2e)
 [![GitHub Stars](https://img.shields.io/github/stars/szmyty?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e&color=4a4e69)](https://github.com/szmyty?tab=repositories)
