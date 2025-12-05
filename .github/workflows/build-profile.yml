@@ -1,0 +1,715 @@
+name: Build Profile — Unified Orchestration Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  schedule:
+    # Run once per day at 6 AM UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: profile-update
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  build-profile:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # ===================================================================
+      # PHASE 1: Setup
+      # ===================================================================
+      - name: 📦 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: |
+            **/requirements*.txt
+            **/pyproject.toml
+            **/poetry.lock
+      
+      - name: 📦 Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq curl bc
+      
+      - name: 📦 Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f pyproject.toml ]; then
+            pip install poetry
+            poetry install --no-root
+          elif [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+      
+      - name: 📦 Install additional Python packages
+        run: |
+          pip install Pillow jsonschema
+      
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: dashboard-app/package-lock.json
+      
+      - name: 📦 Install Node dependencies
+        run: |
+          npm install -g svgo
+          cd dashboard-app
+          npm ci
+      
+      - name: 💾 Restore SVG hash cache
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: svg-hash-cache-${{ runner.os }}-${{ hashFiles('config/theme.json', 'scripts/generate-*.py', 'scripts/incremental-generate.py') }}
+          restore-keys: |
+            svg-hash-cache-${{ runner.os }}-
+            svg-hash-cache-
+      
+      # ===================================================================
+      # PHASE 2: Fetch All Data
+      # ===================================================================
+      - name: 🌐 Fetch Developer Statistics
+        id: fetch-developer
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+        run: |
+          mkdir -p developer/raw logs/developer
+          
+          echo "Fetching developer statistics..."
+          if ! python scripts/fetch-developer-stats.py "$GITHUB_REPOSITORY_OWNER" developer/stats.json.tmp 2>> logs/developer/developer.log; then
+            echo "⚠️ Warning: Failed to fetch developer statistics"
+            echo "Using cached data if available"
+            if [ ! -f developer/stats.json ]; then
+              echo '{"error": "Failed to fetch data", "username": "'${GITHUB_REPOSITORY_OWNER}'"}' > developer/stats.json
+            fi
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            if jq empty developer/stats.json.tmp 2>/dev/null; then
+              mv developer/stats.json.tmp developer/stats.json
+              echo "✅ Developer statistics fetched successfully"
+              echo "skip=false" >> $GITHUB_OUTPUT
+            else
+              echo "⚠️ Warning: Invalid JSON in stats file"
+              rm -f developer/stats.json.tmp
+              echo "skip=true" >> $GITHUB_OUTPUT
+            fi
+          fi
+        continue-on-error: true
+      
+      - name: 🌤️ Get GitHub Profile Location
+        id: location
+        env:
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          LOCATION=$(curl -sf "https://api.github.com/users/${GITHUB_REPOSITORY_OWNER}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+            -H "User-Agent: GitHub-Profile-Build" | jq -r '.location // empty')
+          
+          if [ -z "$LOCATION" ]; then
+            echo "⚠️ Warning: No location found in GitHub profile"
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "value=$LOCATION" >> $GITHUB_OUTPUT
+            echo "skip=false" >> $GITHUB_OUTPUT
+            echo "✅ Found location: $LOCATION"
+          fi
+        continue-on-error: true
+      
+      - name: 🌦️ Fetch Weather Data
+        id: fetch-weather
+        if: steps.location.outputs.skip != 'true'
+        env:
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ github.token }}
+          OUTPUT_DIR: weather
+        run: |
+          mkdir -p weather logs/weather
+          
+          echo "Fetching weather data..."
+          if ! scripts/fetch-weather.sh > weather/weather.json.tmp 2>> logs/weather/weather.log; then
+            echo "⚠️ Warning: Failed to fetch weather data"
+            echo "Using cached data if available"
+            if [ ! -f weather/weather.json ]; then
+              echo '{"error": "Failed to fetch data"}' > weather/weather.json
+            fi
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            if jq empty weather/weather.json.tmp 2>/dev/null; then
+              mv weather/weather.json.tmp weather/weather.json
+              echo "✅ Weather data fetched successfully"
+              echo "skip=false" >> $GITHUB_OUTPUT
+            else
+              echo "⚠️ Warning: Invalid JSON in weather file"
+              rm -f weather/weather.json.tmp
+              echo "skip=true" >> $GITHUB_OUTPUT
+            fi
+          fi
+        continue-on-error: true
+      
+      - name: 📍 Fetch Location Data
+        id: fetch-location
+        if: steps.location.outputs.skip != 'true'
+        env:
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ github.token }}
+          OUTPUT_DIR: location
+          MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
+        run: |
+          mkdir -p location logs/location
+          
+          echo "Fetching location data..."
+          if ! scripts/fetch-location.sh > location/location.json.tmp 2>> logs/location/location.log; then
+            echo "⚠️ Warning: Failed to fetch location data"
+            echo "Using cached data if available"
+            if [ ! -f location/location.json ]; then
+              echo '{"error": "Failed to fetch data"}' > location/location.json
+            fi
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            if jq empty location/location.json.tmp 2>/dev/null; then
+              mv location/location.json.tmp location/location.json
+              echo "✅ Location data fetched successfully"
+              echo "skip=false" >> $GITHUB_OUTPUT
+            else
+              echo "⚠️ Warning: Invalid JSON in location file"
+              rm -f location/location.json.tmp
+              echo "skip=true" >> $GITHUB_OUTPUT
+            fi
+          fi
+        continue-on-error: true
+      
+      - name: 🎵 Fetch SoundCloud Data
+        id: fetch-soundcloud
+        env:
+          SOUNDCLOUD_USER: playfunction
+          OUTPUT_DIR: assets
+        run: |
+          mkdir -p assets logs/soundcloud
+          
+          echo "Fetching SoundCloud data..."
+          if ! scripts/fetch-soundcloud.sh > assets/metadata.json.tmp 2>> logs/soundcloud/soundcloud.log; then
+            echo "⚠️ Warning: Failed to fetch SoundCloud data"
+            echo "Using cached data if available"
+            if [ ! -f assets/metadata.json ]; then
+              echo '{"error": "Failed to fetch data"}' > assets/metadata.json
+            fi
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            if jq empty assets/metadata.json.tmp 2>/dev/null; then
+              mv assets/metadata.json.tmp assets/metadata.json
+              echo "✅ SoundCloud data fetched successfully"
+              echo "skip=false" >> $GITHUB_OUTPUT
+            else
+              echo "⚠️ Warning: Invalid JSON in metadata file"
+              rm -f assets/metadata.json.tmp
+              echo "skip=true" >> $GITHUB_OUTPUT
+            fi
+          fi
+        continue-on-error: true
+      
+      - name: 🧬 Fetch Oura Health Data
+        id: fetch-oura
+        env:
+          OURA_PAT: ${{ secrets.OURA_PAT }}
+          OUTPUT_DIR: oura
+        run: |
+          mkdir -p oura logs/oura
+          
+          echo "Fetching Oura health data..."
+          if ! scripts/fetch-oura.sh > oura/metrics.json.tmp 2>> logs/oura/oura.log; then
+            echo "⚠️ Warning: Failed to fetch Oura data"
+            echo "Using cached data if available"
+            if [ ! -f oura/metrics.json ]; then
+              echo '{"error": "Failed to fetch data"}' > oura/metrics.json
+            fi
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            if jq empty oura/metrics.json.tmp 2>/dev/null; then
+              mv oura/metrics.json.tmp oura/metrics.json
+              echo "✅ Oura health data fetched successfully"
+              echo "skip=false" >> $GITHUB_OUTPUT
+            else
+              echo "⚠️ Warning: Invalid JSON in metrics file"
+              rm -f oura/metrics.json.tmp
+              echo "skip=true" >> $GITHUB_OUTPUT
+            fi
+          fi
+        continue-on-error: true
+      
+      # ===================================================================
+      # PHASE 3: Validate Data
+      # ===================================================================
+      - name: ✅ Validate JSON Data
+        run: |
+          echo "Validating JSON data files..."
+          
+          VALIDATION_FAILED=false
+          
+          # Validate all JSON files
+          for json_file in developer/stats.json weather/weather.json location/location.json assets/metadata.json oura/metrics.json; do
+            if [ -f "$json_file" ]; then
+              if jq empty "$json_file" 2>/dev/null; then
+                echo "✅ $json_file is valid"
+              else
+                echo "⚠️ Warning: $json_file is invalid JSON"
+                VALIDATION_FAILED=true
+              fi
+            else
+              echo "ℹ️ $json_file does not exist (skipped)"
+            fi
+          done
+          
+          if [ "$VALIDATION_FAILED" = true ]; then
+            echo "⚠️ Some JSON files failed validation, but continuing..."
+          else
+            echo "✅ All JSON files validated successfully"
+          fi
+        continue-on-error: true
+      
+      - name: ✅ Validate Theme Configuration
+        run: |
+          if [ -f config/theme.json ]; then
+            if jq empty config/theme.json 2>/dev/null; then
+              echo "✅ theme.json is valid"
+            else
+              echo "⚠️ Warning: theme.json is invalid JSON"
+            fi
+          else
+            echo "ℹ️ theme.json not found"
+          fi
+        continue-on-error: true
+      
+      # ===================================================================
+      # PHASE 4: Generate All SVG Cards
+      # ===================================================================
+      - name: 💻 Generate Developer Dashboard
+        if: steps.fetch-developer.outputs.skip != 'true'
+        run: |
+          echo "Generating developer dashboard..."
+          if python scripts/generate-developer-dashboard.py developer/stats.json developer/developer_dashboard.svg; then
+            echo "✅ Developer dashboard generated successfully"
+          else
+            echo "⚠️ Warning: Failed to generate developer dashboard"
+            # Create fallback card
+            echo '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400"><text x="400" y="200" text-anchor="middle" fill="#666">Developer Dashboard Unavailable</text></svg>' > developer/developer_dashboard.svg
+          fi
+        continue-on-error: true
+      
+      - name: 🌦️ Generate Weather Card
+        if: steps.fetch-weather.outputs.skip != 'true'
+        run: |
+          echo "Generating weather card..."
+          if python scripts/incremental-generate.py weather/weather.json weather/weather-today.svg scripts/generate-weather-card.py weather; then
+            echo "✅ Weather card generated successfully"
+          else
+            echo "⚠️ Warning: Failed to generate weather card"
+            # Create fallback card
+            echo '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400"><text x="400" y="200" text-anchor="middle" fill="#666">Weather Card Unavailable</text></svg>' > weather/weather-today.svg
+          fi
+        continue-on-error: true
+      
+      - name: 📍 Generate Location Card
+        if: steps.fetch-location.outputs.skip != 'true'
+        run: |
+          echo "Generating location card..."
+          if python scripts/incremental-generate.py location/location.json location/location-card.svg scripts/generate-location-card.py location location/location-map.png; then
+            echo "✅ Location card generated successfully"
+          else
+            echo "⚠️ Warning: Failed to generate location card"
+            # Create fallback card
+            echo '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400"><text x="400" y="200" text-anchor="middle" fill="#666">Location Card Unavailable</text></svg>' > location/location-card.svg
+          fi
+        continue-on-error: true
+      
+      - name: 🎵 Generate SoundCloud Card
+        if: steps.fetch-soundcloud.outputs.skip != 'true'
+        run: |
+          echo "Generating SoundCloud card..."
+          if python scripts/incremental-generate.py assets/metadata.json assets/soundcloud-card.svg scripts/generate-card.py soundcloud assets/soundcloud-artwork.jpg; then
+            echo "✅ SoundCloud card generated successfully"
+          else
+            echo "⚠️ Warning: Failed to generate SoundCloud card"
+            # Create fallback card
+            echo '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400"><text x="400" y="200" text-anchor="middle" fill="#666">SoundCloud Card Unavailable</text></svg>' > assets/soundcloud-card.svg
+          fi
+        continue-on-error: true
+      
+      - name: 🧬 Generate Oura Health Dashboard
+        if: steps.fetch-oura.outputs.skip != 'true'
+        run: |
+          echo "Generating Oura health snapshot..."
+          if python scripts/generate-health-snapshot.py oura/metrics.json oura/health_snapshot.json; then
+            echo "✅ Health snapshot generated"
+            
+            echo "Generating Oura health dashboard..."
+            if python scripts/incremental-generate.py oura/health_snapshot.json oura/health_dashboard.svg scripts/generate-health-dashboard.py oura_health; then
+              echo "✅ Oura health dashboard generated successfully"
+            else
+              echo "⚠️ Warning: Failed to generate Oura health dashboard"
+              echo '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400"><text x="400" y="200" text-anchor="middle" fill="#666">Health Dashboard Unavailable</text></svg>' > oura/health_dashboard.svg
+            fi
+          else
+            echo "⚠️ Warning: Failed to generate health snapshot"
+          fi
+        continue-on-error: true
+      
+      - name: 🧬 Generate Oura Mood Dashboard
+        if: steps.fetch-oura.outputs.skip != 'true'
+        run: |
+          echo "Computing mood state..."
+          if python scripts/oura-mood-engine.py oura/metrics.json oura/mood.json; then
+            echo "✅ Mood state computed"
+            
+            echo "Generating Oura mood dashboard..."
+            if python scripts/incremental-generate.py oura/mood.json oura/mood_dashboard.svg scripts/generate-oura-mood-card.py oura_mood oura/metrics.json; then
+              echo "✅ Oura mood dashboard generated successfully"
+            else
+              echo "⚠️ Warning: Failed to generate Oura mood dashboard"
+              echo '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400"><text x="400" y="200" text-anchor="middle" fill="#666">Mood Dashboard Unavailable</text></svg>' > oura/mood_dashboard.svg
+            fi
+          else
+            echo "⚠️ Warning: Failed to compute mood state"
+          fi
+        continue-on-error: true
+      
+      # ===================================================================
+      # PHASE 5: Optimize SVG Cards
+      # ===================================================================
+      - name: 🎨 Optimize SVGs with SVGO
+        run: |
+          echo "Optimizing SVG files..."
+          
+          # Create optimized SVGO config
+          cat > /tmp/svgo.config.js << 'EOF'
+          module.exports = {
+            multipass: true,
+            plugins: [
+              {
+                name: 'preset-default',
+                params: {
+                  overrides: {
+                    cleanupIds: {
+                      minify: true,
+                      preserve: [],
+                      preservePrefixes: [],
+                      force: true
+                    },
+                    removeViewBox: false,
+                    removeUselessDefs: true,
+                    cleanupNumericValues: {
+                      floatPrecision: 2
+                    },
+                    convertPathData: {
+                      floatPrecision: 2,
+                      transformPrecision: 5,
+                      applyTransforms: true,
+                      removeUseless: true,
+                      straightCurves: true,
+                      lineShorthands: true,
+                      curveSmoothShorthands: true
+                    }
+                  }
+                }
+              },
+              'removeXMLNS',
+              'removeScriptElement',
+              {
+                name: 'convertStyleToAttrs',
+                params: {
+                  onlyMatchedOnce: false
+                }
+              }
+            ]
+          };
+          EOF
+          
+          # Optimize all SVG files
+          find developer weather location assets oura -name "*.svg" -type f 2>/dev/null | while read svg; do
+            if [ -f "$svg" ]; then
+              ORIGINAL_SIZE=$(stat -c%s "$svg" 2>/dev/null || echo "0")
+              if [ "$ORIGINAL_SIZE" -gt 0 ]; then
+                svgo "$svg" -o "$svg" --config=/tmp/svgo.config.js --quiet 2>/dev/null || true
+                OPTIMIZED_SIZE=$(stat -c%s "$svg" 2>/dev/null || echo "0")
+                if [ "$OPTIMIZED_SIZE" -gt 0 ] && [ "$ORIGINAL_SIZE" -gt 0 ]; then
+                  # Use bc for safer division to avoid potential arithmetic errors
+                  REDUCTION=$(echo "100 - ($OPTIMIZED_SIZE * 100 / $ORIGINAL_SIZE)" | bc)
+                  echo "✅ $(basename "$svg"): ${ORIGINAL_SIZE} → ${OPTIMIZED_SIZE} bytes (${REDUCTION}% reduction)"
+                fi
+              fi
+            fi
+          done
+        continue-on-error: true
+      
+      # ===================================================================
+      # PHASE 6: Update README
+      # ===================================================================
+      - name: 📝 Update README with All Cards
+        run: |
+          echo "Updating README with all cards..."
+          
+          # Update developer dashboard
+          if [ -f "developer/developer_dashboard.svg" ]; then
+            python scripts/update-readme.py \
+              --marker DEVELOPER-DASHBOARD \
+              --content "![Developer Dashboard](./developer/developer_dashboard.svg)" || true
+          fi
+          
+          # Update weather card
+          if [ -f "weather/weather-today.svg" ]; then
+            python scripts/update-readme.py \
+              --marker WEATHER-CARD \
+              --content "![Today's Weather](./weather/weather-today.svg)" || true
+          fi
+          
+          # Update location card
+          if [ -f "location/location-card.svg" ]; then
+            python scripts/update-readme.py \
+              --marker LOCATION-CARD \
+              --content "![My Location](./location/location-card.svg)" || true
+          fi
+          
+          # Update SoundCloud card
+          if [ -f "assets/soundcloud-card.svg" ] && [ -f "assets/metadata.json" ]; then
+            PERMALINK_URL=$(jq -r '.permalink_url // "#"' assets/metadata.json)
+            CARD_CONTENT="[![SoundCloud Latest Track](assets/soundcloud-card.svg)](${PERMALINK_URL})"
+            python scripts/update-readme.py \
+              --marker SOUNDCLOUD-CARD \
+              --content "${CARD_CONTENT}" || true
+          fi
+          
+          # Update Oura health card
+          if [ -f "oura/health_dashboard.svg" ]; then
+            python scripts/update-readme.py \
+              --marker OURA-HEALTH-CARD \
+              --content "![Oura Health Dashboard](./oura/health_dashboard.svg)" || true
+          fi
+          
+          # Update Oura mood card
+          if [ -f "oura/mood_dashboard.svg" ]; then
+            python scripts/update-readme.py \
+              --marker OURA-MOOD-CARD \
+              --content "![Oura Mood Dashboard](./oura/mood_dashboard.svg)" || true
+          fi
+          
+          echo "✅ README updated with all available cards"
+        continue-on-error: true
+      
+      # ===================================================================
+      # PHASE 7: Build React Dashboard (Optional)
+      # ===================================================================
+      - name: 🚀 Copy Data Files to Dashboard
+        run: |
+          echo "Copying data files to dashboard public directory..."
+          mkdir -p dashboard-app/public/developer
+          mkdir -p dashboard-app/public/weather
+          mkdir -p dashboard-app/public/location
+          mkdir -p dashboard-app/public/oura
+          mkdir -p dashboard-app/public/soundcloud
+          mkdir -p dashboard-app/public/config
+          mkdir -p dashboard-app/public/achievements
+          mkdir -p dashboard-app/public/ai
+          
+          # Copy existing data files
+          cp -f developer/stats.json dashboard-app/public/developer/ 2>/dev/null || echo "developer/stats.json not found"
+          cp -f weather/weather.json dashboard-app/public/weather/ 2>/dev/null || echo "weather/weather.json not found"
+          cp -f location/location.json dashboard-app/public/location/ 2>/dev/null || echo "location/location.json not found"
+          cp -f oura/metrics.json dashboard-app/public/oura/ 2>/dev/null || echo "oura/metrics.json not found"
+          cp -f oura/mood.json dashboard-app/public/oura/ 2>/dev/null || echo "oura/mood.json not found"
+          cp -f config/theme.json dashboard-app/public/config/ 2>/dev/null || echo "config/theme.json not found"
+          
+          # Create placeholder files for features not yet implemented
+          echo "[]" > dashboard-app/public/achievements/achievements.json
+          echo '{"persona": "Coming soon", "traits": [], "insights": [], "updated_at": "2025-01-01T00:00:00Z"}' > dashboard-app/public/ai/identity.json
+          
+          # Try to copy soundcloud data if it exists
+          if [ -f "soundcloud/latest.json" ]; then
+            cp -f soundcloud/latest.json dashboard-app/public/soundcloud/
+          fi
+          
+          echo "✅ Data files copied to dashboard"
+        continue-on-error: true
+      
+      - name: 🚀 Build React Dashboard
+        run: |
+          echo "Building React dashboard..."
+          cd dashboard-app
+          if npm run build; then
+            echo "✅ React dashboard built successfully"
+          else
+            echo "⚠️ Warning: Failed to build React dashboard"
+          fi
+        continue-on-error: true
+      
+      - name: 🚀 Setup GitHub Pages
+        uses: actions/configure-pages@v4
+        continue-on-error: true
+      
+      - name: 🚀 Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dashboard-app/dist'
+        continue-on-error: true
+      
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      
+      # ===================================================================
+      # PHASE 8: Lint with MegaLinter (Report-Only)
+      # ===================================================================
+      - name: 🔍 Create MegaLinter Output Directory
+        run: |
+          mkdir -p logs/megalinter
+        continue-on-error: true
+      
+      - name: 🔍 Run MegaLinter (Report-Only)
+        uses: oxsecurity/megalinter@v8
+        env:
+          APPLY_FIXES: none
+          DISABLE_ERRORS: true
+          VALIDATE_ALL_CODEBASE: true
+          MEGALINTER_CONFIG: .megalinter.yml
+          REPORT_OUTPUT_FOLDER: logs/megalinter
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FAIL_IF_UPDATED_SOURCES: false
+          FAIL_IF_MISSING_LINTER_IN_FLAVOR: false
+        continue-on-error: true
+      
+      - name: 🔍 Generate MegaLinter Summary
+        run: |
+          python scripts/generate_megalinter_summary.py logs/megalinter logs/megalinter/summary.md || true
+          
+          if [ -f "logs/megalinter/summary.md" ]; then
+            echo "✅ MegaLinter summary generated"
+            cat logs/megalinter/summary.md
+          else
+            echo "ℹ️ MegaLinter summary not generated"
+          fi
+        continue-on-error: true
+      
+      - name: 🔍 Upload MegaLinter Reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: megalinter-reports
+          path: |
+            logs/megalinter/
+            megalinter-reports/
+          retention-days: 30
+        continue-on-error: true
+      
+      # ===================================================================
+      # PHASE 9: Commit & Push All Changes
+      # ===================================================================
+      - name: 📤 Commit and Push Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Add all relevant files
+          git add developer/stats.json developer/developer_dashboard.svg 2>/dev/null || true
+          git add weather/weather.json weather/weather-today.svg 2>/dev/null || true
+          git add location/location.json location/location-map.png location/location-card.svg 2>/dev/null || true
+          git add assets/metadata.json assets/soundcloud-card.svg assets/soundcloud-artwork.jpg 2>/dev/null || true
+          git add oura/metrics.json oura/mood.json oura/health_snapshot.json oura/health_dashboard.svg oura/mood_dashboard.svg 2>/dev/null || true
+          git add README.md 2>/dev/null || true
+          
+          # Add logs (always commit logs)
+          git add logs/ 2>/dev/null || true
+          
+          # Add debug files if they exist
+          git add developer/raw/*.json 2>/dev/null || true
+          git add location/debug_*.txt 2>/dev/null || true
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "ℹ️ No changes to commit"
+          else
+            # Create a comprehensive commit message using a temporary file
+            COMMIT_MSG_FILE=$(mktemp)
+            echo "🔄 Build profile — Update all cards and data" > "$COMMIT_MSG_FILE"
+            
+            # Add specific details if available
+            if [ -f "developer/stats.json" ]; then
+              USERNAME=$(jq -r '.username // "N/A"' developer/stats.json)
+              COMMITS=$(jq -r '.commit_activity.total_30_days // 0' developer/stats.json)
+              echo "" >> "$COMMIT_MSG_FILE"
+              echo "- Developer: ${USERNAME} (${COMMITS} commits in 30d)" >> "$COMMIT_MSG_FILE"
+            fi
+            
+            if [ -f "oura/mood.json" ]; then
+              MOOD=$(jq -r '.mood_name // "N/A"' oura/mood.json)
+              SCORE=$(jq -r '.mood_score // 0' oura/mood.json)
+              echo "- Health: ${MOOD} mood (${SCORE}/100)" >> "$COMMIT_MSG_FILE"
+            fi
+            
+            if [ -f "weather/weather.json" ]; then
+              LOCATION=$(jq -r '.location // "N/A"' weather/weather.json)
+              echo "- Weather: ${LOCATION}" >> "$COMMIT_MSG_FILE"
+            fi
+            
+            git commit -F "$COMMIT_MSG_FILE"
+            rm -f "$COMMIT_MSG_FILE"
+            git push
+            echo "✅ Changes committed and pushed successfully"
+          fi
+        continue-on-error: true
+      
+      # ===================================================================
+      # PHASE 10: Final Summary
+      # ===================================================================
+      - name: 📊 Build Summary
+        if: always()
+        run: |
+          echo "=============================================="
+          echo "  Build Profile Pipeline - Summary"
+          echo "=============================================="
+          echo ""
+          echo "Data Fetch Status:"
+          echo "  Developer Stats: ${{ steps.fetch-developer.outputs.skip != 'true' && '✅' || '⚠️ Skipped' }}"
+          echo "  Weather Data: ${{ steps.fetch-weather.outputs.skip != 'true' && '✅' || '⚠️ Skipped' }}"
+          echo "  Location Data: ${{ steps.fetch-location.outputs.skip != 'true' && '✅' || '⚠️ Skipped' }}"
+          echo "  SoundCloud Data: ${{ steps.fetch-soundcloud.outputs.skip != 'true' && '✅' || '⚠️ Skipped' }}"
+          echo "  Oura Health Data: ${{ steps.fetch-oura.outputs.skip != 'true' && '✅' || '⚠️ Skipped' }}"
+          echo ""
+          echo "Generated Cards:"
+          test -f developer/developer_dashboard.svg && echo "  ✅ Developer Dashboard" || echo "  ⚠️ Developer Dashboard"
+          test -f weather/weather-today.svg && echo "  ✅ Weather Card" || echo "  ⚠️ Weather Card"
+          test -f location/location-card.svg && echo "  ✅ Location Card" || echo "  ⚠️ Location Card"
+          test -f assets/soundcloud-card.svg && echo "  ✅ SoundCloud Card" || echo "  ⚠️ SoundCloud Card"
+          test -f oura/health_dashboard.svg && echo "  ✅ Oura Health Dashboard" || echo "  ⚠️ Oura Health Dashboard"
+          test -f oura/mood_dashboard.svg && echo "  ✅ Oura Mood Dashboard" || echo "  ⚠️ Oura Mood Dashboard"
+          echo ""
+          echo "Dashboard Status:"
+          test -d dashboard-app/dist && echo "  ✅ React Dashboard Built" || echo "  ⚠️ React Dashboard Not Built"
+          echo ""
+          echo "MegaLinter Status:"
+          test -f logs/megalinter/summary.md && echo "  ✅ Report Generated" || echo "  ℹ️ Report Not Generated"
+          echo ""
+          echo "=============================================="
+          echo "  Build Complete!"
+          echo "=============================================="

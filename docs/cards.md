@@ -13,7 +13,7 @@ The system generates five distinct dashboard cards, each displaying different pe
 **File**: `location/location-card.svg`  
 **Dimensions**: 480×400 pixels  
 **Schedule**: Daily at 6 AM UTC  
-**Workflow**: `location-card.yml`
+**Workflow**: `build-profile.yml` (Phase 2: Fetch Location, Phase 4: Generate Card)
 
 Displays the user's location with an embedded static map from OpenStreetMap.
 
@@ -34,7 +34,7 @@ Displays the user's location with an embedded static map from OpenStreetMap.
 **File**: `weather/weather-today.svg`  
 **Dimensions**: 480×230 pixels  
 **Schedule**: Daily at 7 AM UTC  
-**Workflow**: `weather.yml`
+**Workflow**: `build-profile.yml` (Phase 2: Fetch Weather, Phase 4: Generate Card)
 
 Shows current weather conditions and a 3-day forecast.
 
@@ -66,7 +66,7 @@ Shows current weather conditions and a 3-day forecast.
 **File**: `assets/soundcloud-card.svg`  
 **Dimensions**: 480×144 pixels  
 **Schedule**: Every 6 hours  
-**Workflow**: `soundcloud-card.yml`
+**Workflow**: `build-profile.yml` (Phase 2: Fetch SoundCloud, Phase 4: Generate Card)
 
 Displays the latest track from a SoundCloud profile.
 
@@ -88,7 +88,7 @@ Displays the latest track from a SoundCloud profile.
 **File**: `oura/health_dashboard.svg`  
 **Dimensions**: 480×365 pixels  
 **Schedule**: Every 6 hours  
-**Workflow**: `oura.yml`
+**Workflow**: `build-profile.yml` (Phase 2: Fetch Oura, Phase 4: Generate Card)
 
 Comprehensive health metrics dashboard from Oura Ring data.
 
@@ -123,7 +123,7 @@ Comprehensive health metrics dashboard from Oura Ring data.
 **File**: `oura/mood_dashboard.svg`  
 **Dimensions**: 480×250 pixels  
 **Schedule**: Every 6 hours  
-**Workflow**: `oura.yml`
+**Workflow**: `build-profile.yml` (Phase 2: Fetch Oura, Phase 4: Generate Card)
 
 Displays computed mood state based on Oura health metrics.
 

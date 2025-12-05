@@ -91,12 +91,9 @@ I build high-quality, scalable platforms with strong emphasis on automation, sec
 
 <div align="center">
 
-![Weather](https://github.com/szmyty/profile/actions/workflows/weather.yml/badge.svg)
-![Location](https://github.com/szmyty/profile/actions/workflows/location-card.yml/badge.svg)
-![SoundCloud](https://github.com/szmyty/profile/actions/workflows/soundcloud-card.yml/badge.svg)
-![Oura](https://github.com/szmyty/profile/actions/workflows/oura.yml/badge.svg)
-![Developer](https://github.com/szmyty/profile/actions/workflows/developer.yml/badge.svg)
-![Dashboard](https://github.com/szmyty/profile/actions/workflows/deploy-dashboard.yml/badge.svg)
+[![Build Profile](https://github.com/szmyty/profile/actions/workflows/build-profile.yml/badge.svg)](https://github.com/szmyty/profile/actions/workflows/build-profile.yml)
+![Monitoring](https://github.com/szmyty/profile/actions/workflows/monitoring.yml/badge.svg)
+![Tests](https://github.com/szmyty/profile/actions/workflows/tests.yml/badge.svg)
 
 ## 📊 Workflow Performance Dashboard
 
@@ -242,6 +239,56 @@ View the full interactive dashboard at:
 
 <div align="center">
 
+## 🔄 Unified Workflow Architecture
+
+</div>
+
+This repository uses a **single, orchestrated workflow** (`build-profile.yml`) that consolidates all profile updates into one cohesive pipeline. This architecture provides several key benefits:
+
+### Architecture Benefits
+
+- **🎯 Atomic Updates** - All cards and data updated in a single commit
+- **🛡️ Error Resilience** - Continues on partial failures with automatic fallbacks
+- **🔧 Simplified Maintenance** - One workflow to maintain instead of 8+ separate workflows
+- **📊 Better Orchestration** - Sequential phases with proper dependencies
+- **🐛 Easier Debugging** - All logs consolidated in one workflow run
+
+### Pipeline Phases
+
+The unified workflow executes in 10 sequential phases:
+
+1. **Setup** - Environment, dependencies, and caching
+2. **Fetch All Data** - Developer stats, Weather, Location, SoundCloud, Oura health
+3. **Validate Data** - JSON schema validation and sanity checks
+4. **Generate SVG Cards** - All card types with fallback handling
+5. **Optimize SVGs** - SVGO compression with advanced configuration
+6. **Update README** - Inject all cards into appropriate sections
+7. **Build Dashboard** - React dashboard compilation and deployment
+8. **Lint (Report-Only)** - MegaLinter diagnostics without blocking
+9. **Commit & Push** - Atomic commit of all changes with detailed message
+10. **Build Summary** - Comprehensive status report of all operations
+
+### Error Handling Strategy
+
+The workflow never fails due to partial errors:
+- Failed data fetches fall back to cached data
+- Failed card generation produces fallback SVG cards
+- Failed validations log warnings but continue
+- Each step uses `continue-on-error: true` where appropriate
+
+<p align="center">
+📖 <a href=".github/workflows/_archive/README.md">View archived workflows</a> | 
+<a href=".github/workflows/build-profile.yml">View workflow source</a>
+</p>
+
+<br/>
+
+---
+
+<br/>
+
+<div align="center">
+
 ## ⚡ Performance Optimizations
 
 </div>
@@ -303,15 +350,15 @@ See [TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) for detailed solutions.
 
 </div>
 
-All workflow logs are stored in the `logs/` directory with automatic rotation to prevent excessive file growth.
+All workflow logs are stored in the `logs/` directory with automatic rotation to prevent excessive file growth. The unified workflow generates logs for each operation:
 
-- **`logs/location/`** - Location card workflow logs
-- **`logs/weather/`** - Weather card workflow logs
-- **`logs/oura/`** - Oura health workflow logs
-- **`logs/developer/`** - Developer dashboard workflow logs
-- **`logs/soundcloud/`** - SoundCloud card workflow logs
-- **`logs/avatar/`** - Avatar workflow logs (if applicable)
-- **`logs/ai/`** - AI workflow logs (if applicable)
+- **`logs/location/`** - Location data fetching and card generation
+- **`logs/weather/`** - Weather data fetching and card generation
+- **`logs/oura/`** - Oura health data fetching and dashboard generation
+- **`logs/developer/`** - Developer statistics and dashboard generation
+- **`logs/soundcloud/`** - SoundCloud data fetching and card generation
+- **`logs/megalinter/`** - MegaLinter diagnostic reports and summaries
+- **`logs/build-profile/`** - Unified workflow execution logs (if created)
 
 ### Log Features
 

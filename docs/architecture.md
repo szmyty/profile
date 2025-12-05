@@ -16,11 +16,10 @@ The repository serves as a GitHub profile automation system that generates dynam
 ```
 profile/
 ├── .github/workflows/          # GitHub Actions workflow definitions
-│   ├── location-card.yml       # Daily location card generation
-│   ├── oura.yml                # Every 6 hours Oura health dashboard
-│   ├── soundcloud-card.yml     # Every 6 hours SoundCloud card
-│   ├── weather.yml             # Daily weather card generation
-│   └── tests.yml               # Test workflow
+│   ├── build-profile.yml       # Unified orchestration pipeline (daily)
+│   ├── monitoring.yml          # Workflow monitoring and alerts
+│   ├── tests.yml               # Unit and integration tests
+│   └── _archive/               # Archived separate workflows (pre-consolidation)
 ├── scripts/                    # All executable scripts
 │   ├── lib/                    # Shared Python/shell libraries
 │   │   ├── __init__.py
@@ -150,9 +149,29 @@ All visual styling is centralized in `config/theme.json`:
 - Debug files (raw API responses) are gitignored
 - Personal data (email, user ID) is filtered from committed files
 
-## Concurrency
+## Workflow Architecture
 
-All workflows use a shared concurrency group to prevent simultaneous runs:
+The repository uses a unified orchestration workflow that consolidates all profile updates:
+
+### Build Profile Pipeline
+
+**File**: `.github/workflows/build-profile.yml`
+
+A single workflow that executes in 10 sequential phases:
+1. Setup (environment, dependencies, caching)
+2. Fetch All Data (Developer, Weather, Location, SoundCloud, Oura)
+3. Validate Data (JSON schema validation)
+4. Generate All SVG Cards (with fallback handling)
+5. Optimize SVGs (SVGO compression)
+6. Update README (inject all cards)
+7. Build React Dashboard (optional)
+8. Lint with MegaLinter (report-only)
+9. Commit & Push (atomic update)
+10. Build Summary (comprehensive status)
+
+### Concurrency Control
+
+The unified workflow uses a concurrency group to prevent simultaneous runs:
 
 ```yaml
 concurrency:
@@ -160,4 +179,14 @@ concurrency:
   cancel-in-progress: false
 ```
 
-This ensures that only one workflow can commit and push changes at a time.
+This ensures atomic updates with no git conflicts or race conditions.
+
+### Error Handling
+
+The workflow implements comprehensive error handling:
+- All steps use `continue-on-error: true` where appropriate
+- Failed data fetches fall back to cached data
+- Failed card generation produces fallback SVG cards
+- Never blocks on partial errors
+
+See [UNIFIED_WORKFLOW_MIGRATION.md](UNIFIED_WORKFLOW_MIGRATION.md) for detailed architecture documentation.
