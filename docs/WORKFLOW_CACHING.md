@@ -90,39 +90,18 @@ restore-keys: svg-hash-cache-
 
 ## Workflow-Specific Caching Implementation
 
-### developer.yml
-- **Base deps**: Via setup-environment (requirements.txt)
-- **Additional deps**: jsonschema via pip-install action
-- **Expected speedup**: ~10-15 seconds per run
+> **Note**: As of December 5, 2024, multiple workflows have been consolidated into a single unified workflow (`build-profile.yml`). The caching strategy has been enhanced to support this new architecture.
 
-### location-card.yml
-- **Base deps**: Via setup-environment (requirements.txt)
-- **Additional deps**: Pillow via pip-install action
-- **SVG caching**: Uses incremental-generate.py
-- **Expected speedup**: ~15-20 seconds per run
+### build-profile.yml (Unified Pipeline)
+The main orchestration workflow implements comprehensive multi-level caching:
 
-### soundcloud-card.yml
-- **Base deps**: Via setup-environment (requirements.txt)
-- **Additional deps**: Pillow via pip-install action
-- **SVG caching**: Uses incremental-generate.py
-- **Expected speedup**: ~15-20 seconds per run
-
-### oura.yml
-- **Base deps**: Skipped (install-python-deps: 'false')
-- **No additional deps**: Pure bash workflow
-- **SVG caching**: Uses incremental-generate.py
-- **Expected speedup**: N/A (no Python deps)
-
-### weather.yml
-- **Base deps**: Skipped (install-python-deps: 'false')
-- **No additional deps**: Pure bash workflow
-- **SVG caching**: Uses incremental-generate.py
-- **Expected speedup**: N/A (no Python deps)
-
-### parallel-fetch.yml
-- **fetch-soundcloud job**: Pillow via pip-install action
-- **generate-cards job**: Pillow via pip-install action
-- **Expected speedup**: ~20-30 seconds per run (cache shared between jobs)
+- **Python Package Cache**: Via setup-python action (requirements.txt, pyproject.toml, poetry.lock)
+- **Pip Cache**: ~/.cache/pip caching for faster package installation
+- **Additional Python Packages**: Pillow, jsonschema installed with optimized caching
+- **Node.js Cache**: NPM packages for dashboard build and SVGO optimization
+- **SVG Hash Cache**: Incremental generation for all card types
+- **Expected speedup**: ~2-3 minutes per run with warm caches
+- **Full run time**: 8-12 minutes (cold) → 5-8 minutes (warm cache)
 
 ### tests.yml
 - **Base deps**: Via setup-environment (requirements.txt)
@@ -133,6 +112,37 @@ restore-keys: svg-hash-cache-
 - **Base deps**: Via setup-environment (requirements.txt)
 - **No additional deps**: Only uses base dependencies
 - **Expected speedup**: ~5-10 seconds per run
+
+### Archived Workflows (Pre-Consolidation)
+
+The following workflows have been archived but their caching strategies are preserved for reference:
+
+#### developer.yml (archived)
+- Base deps via setup-environment, jsonschema via pip-install
+- Expected speedup: ~10-15 seconds per run
+
+#### location-card.yml (archived)
+- Base deps via setup-environment, Pillow via pip-install
+- SVG caching with incremental-generate.py
+- Expected speedup: ~15-20 seconds per run
+
+#### soundcloud-card.yml (archived)
+- Base deps via setup-environment, Pillow via pip-install
+- SVG caching with incremental-generate.py
+- Expected speedup: ~15-20 seconds per run
+
+#### oura.yml (archived)
+- No Python deps (pure bash workflow)
+- SVG caching with incremental-generate.py
+
+#### weather.yml (archived)
+- No Python deps (pure bash workflow)
+- SVG caching with incremental-generate.py
+
+#### parallel-fetch.yml (archived)
+- Pillow via pip-install in multiple jobs
+- Cache shared between jobs
+- Expected speedup: ~20-30 seconds per run
 
 ## Performance Benchmarks
 
