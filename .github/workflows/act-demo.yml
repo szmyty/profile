@@ -11,6 +11,9 @@ on:
       - main
       - 'feature/**'
 
+permissions:
+  contents: read
+
 jobs:
   # Simple job that lists files
   list-files:
