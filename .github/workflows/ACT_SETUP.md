@@ -142,10 +142,10 @@ act -v -W .github/workflows/tests.yml
 act --env-file .env -W .github/workflows/tests.yml
 ```
 
-### Running Specific Steps
+### Specify Container Architecture
 
 ```bash
-# Run only up to a specific step (useful for debugging)
+# Run with specific architecture (useful for M1/M2 Macs)
 act -j test-python --container-architecture linux/amd64
 ```
 
