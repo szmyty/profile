@@ -144,6 +144,20 @@ View the full interactive dashboard at:
 
 <div align="center">
 
+## ✨ Quote of the Day
+
+</div>
+
+<p align="center">
+<!-- QUOTE-CARD:START -->
+![Quote of the Day](./quotes/quote_card.svg)
+<!-- QUOTE-CARD:END -->
+</p>
+
+<br/>
+
+<div align="center">
+
 ## 📍 My Location
 
 </div>
