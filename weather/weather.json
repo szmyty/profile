@@ -6,20 +6,20 @@
     "lon": -71.0578303
   },
   "current": {
-    "temperature": -8.0,
-    "wind_speed": 17.6,
+    "temperature": -8.9,
+    "wind_speed": 17.2,
     "weathercode": 0,
     "is_day": 0,
     "condition": "Clear sky",
     "emoji": "🌙"
   },
   "daily": {
-    "temperature_max": -3.6,
-    "temperature_min": -11.7,
+    "temperature_max": -3.5,
+    "temperature_min": -11.9,
     "sunrise": "2025-12-05T06:58",
     "sunset": "2025-12-05T16:11",
     "weathercode": 3
   },
   "timezone": "America/New_York",
-  "updated_at": "2025-12-05T05:05:04Z"
+  "updated_at": "2025-12-05T05:48:49Z"
 }
