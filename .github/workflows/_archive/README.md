@@ -3,7 +3,7 @@
 This directory contains workflows that have been consolidated into the unified `build-profile.yml` workflow.
 
 ## Consolidation Date
-December 5, 2024
+December 2024
 
 ## Archived Workflows
 

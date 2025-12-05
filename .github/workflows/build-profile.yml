@@ -47,7 +47,7 @@ jobs:
       - name: 📦 Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y jq curl
+          sudo apt-get install -y jq curl bc
       
       - name: 📦 Install Python dependencies
         run: |
@@ -80,8 +80,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .cache
-          key: svg-hash-cache-${{ github.run_id }}
+          key: svg-hash-cache-${{ runner.os }}-${{ hashFiles('config/theme.json', 'scripts/generate-*.py', 'scripts/incremental-generate.py') }}
           restore-keys: |
+            svg-hash-cache-${{ runner.os }}-
             svg-hash-cache-
       
       # ===================================================================
@@ -96,11 +97,11 @@ jobs:
           mkdir -p developer/raw logs/developer
           
           echo "Fetching developer statistics..."
-          if ! python scripts/fetch-developer-stats.py "${{ github.repository_owner }}" developer/stats.json.tmp 2>> logs/developer/developer.log; then
+          if ! python scripts/fetch-developer-stats.py "$GITHUB_REPOSITORY_OWNER" developer/stats.json.tmp 2>> logs/developer/developer.log; then
             echo "⚠️ Warning: Failed to fetch developer statistics"
             echo "Using cached data if available"
             if [ ! -f developer/stats.json ]; then
-              echo '{"error": "Failed to fetch data", "username": "'${{ github.repository_owner }}'"}' > developer/stats.json
+              echo '{"error": "Failed to fetch data", "username": "'${GITHUB_REPOSITORY_OWNER}'"}' > developer/stats.json
             fi
             echo "skip=true" >> $GITHUB_OUTPUT
           else
@@ -118,10 +119,13 @@ jobs:
       
       - name: 🌤️ Get GitHub Profile Location
         id: location
+        env:
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
-          LOCATION=$(curl -sf "https://api.github.com/users/${{ github.repository_owner }}" \
+          LOCATION=$(curl -sf "https://api.github.com/users/${GITHUB_REPOSITORY_OWNER}" \
             -H "Accept: application/vnd.github.v3+json" \
-            -H "Authorization: Bearer ${{ github.token }}" \
+            -H "Authorization: Bearer ${GITHUB_TOKEN}" \
             -H "User-Agent: GitHub-Profile-Build" | jq -r '.location // empty')
           
           if [ -z "$LOCATION" ]; then
@@ -449,8 +453,9 @@ jobs:
               if [ "$ORIGINAL_SIZE" -gt 0 ]; then
                 svgo "$svg" -o "$svg" --config=/tmp/svgo.config.js --quiet 2>/dev/null || true
                 OPTIMIZED_SIZE=$(stat -c%s "$svg" 2>/dev/null || echo "0")
-                if [ "$ORIGINAL_SIZE" -gt 0 ]; then
-                  REDUCTION=$(( 100 - OPTIMIZED_SIZE * 100 / ORIGINAL_SIZE ))
+                if [ "$OPTIMIZED_SIZE" -gt 0 ] && [ "$ORIGINAL_SIZE" -gt 0 ]; then
+                  # Use bc for safer division to avoid potential arithmetic errors
+                  REDUCTION=$(echo "100 - ($OPTIMIZED_SIZE * 100 / $ORIGINAL_SIZE)" | bc)
                   echo "✅ $(basename "$svg"): ${ORIGINAL_SIZE} → ${OPTIMIZED_SIZE} bytes (${REDUCTION}% reduction)"
                 fi
               fi
@@ -644,28 +649,31 @@ jobs:
           if git diff --staged --quiet; then
             echo "ℹ️ No changes to commit"
           else
-            # Create a comprehensive commit message
-            COMMIT_MSG="🔄 Build profile — Update all cards and data"
+            # Create a comprehensive commit message using a temporary file
+            COMMIT_MSG_FILE=$(mktemp)
+            echo "🔄 Build profile — Update all cards and data" > "$COMMIT_MSG_FILE"
             
             # Add specific details if available
             if [ -f "developer/stats.json" ]; then
               USERNAME=$(jq -r '.username // "N/A"' developer/stats.json)
               COMMITS=$(jq -r '.commit_activity.total_30_days // 0' developer/stats.json)
-              COMMIT_MSG="${COMMIT_MSG}\n\n- Developer: ${USERNAME} (${COMMITS} commits in 30d)"
+              echo "" >> "$COMMIT_MSG_FILE"
+              echo "- Developer: ${USERNAME} (${COMMITS} commits in 30d)" >> "$COMMIT_MSG_FILE"
             fi
             
             if [ -f "oura/mood.json" ]; then
               MOOD=$(jq -r '.mood_name // "N/A"' oura/mood.json)
               SCORE=$(jq -r '.mood_score // 0' oura/mood.json)
-              COMMIT_MSG="${COMMIT_MSG}\n- Health: ${MOOD} mood (${SCORE}/100)"
+              echo "- Health: ${MOOD} mood (${SCORE}/100)" >> "$COMMIT_MSG_FILE"
             fi
             
             if [ -f "weather/weather.json" ]; then
               LOCATION=$(jq -r '.location // "N/A"' weather/weather.json)
-              COMMIT_MSG="${COMMIT_MSG}\n- Weather: ${LOCATION}"
+              echo "- Weather: ${LOCATION}" >> "$COMMIT_MSG_FILE"
             fi
             
-            echo -e "$COMMIT_MSG" | git commit -F -
+            git commit -F "$COMMIT_MSG_FILE"
+            rm -f "$COMMIT_MSG_FILE"
             git push
             echo "✅ Changes committed and pushed successfully"
           fi

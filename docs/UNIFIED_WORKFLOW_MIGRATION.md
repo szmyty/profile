@@ -6,7 +6,7 @@ This document describes the migration from multiple separate workflows to a sing
 
 ## Migration Date
 
-**December 5, 2024**
+**December 2024** (PR merged: TBD)
 
 ## Summary of Changes
 

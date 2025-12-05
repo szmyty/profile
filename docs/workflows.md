@@ -6,7 +6,7 @@ This document describes the GitHub Actions workflows that power the profile auto
 
 The repository uses a **unified orchestration workflow** (`build-profile.yml`) that consolidates all profile updates into a single cohesive pipeline. This replaced the previous architecture of 8+ separate workflows.
 
-> **Migration Note**: The old separate workflows were consolidated on December 5, 2024. See [UNIFIED_WORKFLOW_MIGRATION.md](UNIFIED_WORKFLOW_MIGRATION.md) for details.
+> **Migration Note**: The old separate workflows were consolidated in December 2024. See [UNIFIED_WORKFLOW_MIGRATION.md](UNIFIED_WORKFLOW_MIGRATION.md) for details.
 
 ## Active Workflows
 
