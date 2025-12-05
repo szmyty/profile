@@ -84,6 +84,14 @@
           "snow": ["#4a5568", "#6b7280"],
           "storm": ["#1a202c", "#2d3748"],
           "night": ["#0f0f23", "#1a1a2e"]
+        },
+        "emotion": {
+          "warm": ["#FFAD7A", "#FF6F5E"],
+          "cool": ["#7ABEFF", "#4A6FFF"],
+          "neutral": ["#DCE1E7", "#AAB1B8"],
+          "ethereal": ["#C8A9FF", "#E7D1FF"],
+          "cosmic": ["#6A00FF", "#B691FF"],
+          "grounded": ["#A26F4E", "#D2B48C"]
         }
       }
     },
@@ -170,6 +178,14 @@
           "snow": ["#e0f2fe", "#bae6fd"],
           "storm": ["#64748b", "#475569"],
           "night": ["#1e293b", "#334155"]
+        },
+        "emotion": {
+          "warm": ["#FFB88C", "#FF8A65"],
+          "cool": ["#90CAF9", "#64B5F6"],
+          "neutral": ["#E0E0E0", "#BDBDBD"],
+          "ethereal": ["#D1C4E9", "#F3E5F5"],
+          "cosmic": ["#9575CD", "#CE93D8"],
+          "grounded": ["#BCAAA4", "#D7CCC8"]
         }
       }
     }
@@ -256,6 +272,14 @@
       "snow": ["#4a5568", "#6b7280"],
       "storm": ["#1a202c", "#2d3748"],
       "night": ["#0f0f23", "#1a1a2e"]
+    },
+    "emotion": {
+      "warm": ["#FFAD7A", "#FF6F5E"],
+      "cool": ["#7ABEFF", "#4A6FFF"],
+      "neutral": ["#DCE1E7", "#AAB1B8"],
+      "ethereal": ["#C8A9FF", "#E7D1FF"],
+      "cosmic": ["#6A00FF", "#B691FF"],
+      "grounded": ["#A26F4E", "#D2B48C"]
     }
   },
   "typography": {
@@ -300,7 +324,8 @@
       "mood": 480,
       "health_dashboard": 480,
       "location": 480,
-      "developer_dashboard": 800
+      "developer_dashboard": 800,
+      "quote": 480
     },
     "heights": {
       "soundcloud": 144,
@@ -308,7 +333,8 @@
       "mood": 250,
       "health_dashboard": 365,
       "location": 400,
-      "developer_dashboard": 420
+      "developer_dashboard": 420,
+      "quote": 200
     },
     "map": {
       "margin": 20,

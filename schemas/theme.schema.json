@@ -104,7 +104,8 @@
             "mood": {"type": "integer", "minimum": 1},
             "health_dashboard": {"type": "integer", "minimum": 1},
             "location": {"type": "integer", "minimum": 1},
-            "developer_dashboard": {"type": "integer", "minimum": 1}
+            "developer_dashboard": {"type": "integer", "minimum": 1},
+            "quote": {"type": "integer", "minimum": 1}
           },
           "additionalProperties": false
         },
@@ -116,7 +117,8 @@
             "mood": {"type": "integer", "minimum": 1},
             "health_dashboard": {"type": "integer", "minimum": 1},
             "location": {"type": "integer", "minimum": 1},
-            "developer_dashboard": {"type": "integer", "minimum": 1}
+            "developer_dashboard": {"type": "integer", "minimum": 1},
+            "quote": {"type": "integer", "minimum": 1}
           },
           "additionalProperties": false
         },
@@ -365,6 +367,18 @@
             "snow": {"$ref": "#/$defs/gradient"},
             "storm": {"$ref": "#/$defs/gradient"},
             "night": {"$ref": "#/$defs/gradient"}
+          },
+          "additionalProperties": false
+        },
+        "emotion": {
+          "type": "object",
+          "properties": {
+            "warm": {"$ref": "#/$defs/gradient"},
+            "cool": {"$ref": "#/$defs/gradient"},
+            "neutral": {"$ref": "#/$defs/gradient"},
+            "ethereal": {"$ref": "#/$defs/gradient"},
+            "cosmic": {"$ref": "#/$defs/gradient"},
+            "grounded": {"$ref": "#/$defs/gradient"}
           },
           "additionalProperties": false
         }

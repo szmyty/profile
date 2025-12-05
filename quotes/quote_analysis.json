@@ -1,0 +1,14 @@
+{
+  "sentiment": "reflective",
+  "tone": "contemplative",
+  "theme": "wisdom",
+  "color_profile": "neutral",
+  "style_keywords": [
+    "gentle",
+    "soft"
+  ],
+  "fallback": true,
+  "fallback_reason": "LLM not available or API key not set",
+  "llm_version": "gpt-4o-mini",
+  "interpreted_at": "2025-12-05T05:07:27.819200+00:00"
+}
