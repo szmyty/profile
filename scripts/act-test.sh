@@ -81,10 +81,10 @@ run_workflow() {
     
     if [ -n "$job" ]; then
         echo -e "${GREEN}Running job: ${job}${NC}"
-        act -W "$workflow_file" -j "$job" $SECRET_FLAG
+        act -W "$workflow_file" -j "$job" ${SECRET_FLAG}
     else
         echo -e "${GREEN}Running all jobs in workflow${NC}"
-        act -W "$workflow_file" $SECRET_FLAG
+        act -W "$workflow_file" ${SECRET_FLAG}
     fi
 }
 

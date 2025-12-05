@@ -242,8 +242,8 @@ Edit these files to customize the event data for testing.
 **Recommended approach**:
 - ✅ Test individual scripts directly (see examples below)
 - ✅ Use act for workflow syntax validation
-- ✅ Use act for simple, linear workflows
-- ⚠️ Use GitHub Actions for full integration testing
+- ✅ Use act-demo.yml workflow which is designed to work with act
+- ⚠️ Use GitHub Actions for full integration testing of complex workflows
 
 See [ACT_LIMITATIONS.md](../.github/workflows/ACT_LIMITATIONS.md) for complete details and workarounds.
 

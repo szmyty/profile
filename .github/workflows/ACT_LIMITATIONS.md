@@ -4,7 +4,7 @@ This document describes known limitations when running GitHub Actions locally wi
 
 ## Composite Actions Not Fully Supported
 
-**Issue**: The repository uses custom composite actions in `.github/actions/setup-environment` and `.github/actions/pip-install`. These may not work correctly with act.
+**Issue**: The repository uses custom composite actions (`.github/actions/setup-environment` and `.github/actions/pip-install`). These may not work correctly with act.
 
 **Error Message**:
 ```
