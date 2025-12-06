@@ -7,6 +7,11 @@ inputs:
     required: false
     default: './dashboard-app/dist'
 
+outputs:
+  page_url:
+    description: 'URL of the deployed GitHub Pages site'
+    value: ${{ steps.deployment.outputs.page_url }}
+
 runs:
   using: 'composite'
   steps:

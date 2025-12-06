@@ -23,28 +23,20 @@ permissions:
 
 jobs:
   # ===================================================================
-  # Setup Job
+  # Main Build Job - Fetch and Generate All Content
   # ===================================================================
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 📦 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-      
-      - name: 🔧 Setup environment
-        uses: ./.github/actions/setup
-  
-  # ===================================================================
-  # Fetch Jobs
-  # ===================================================================
-  fetch-developer:
-    needs: setup
+  build-profile:
     runs-on: ubuntu-latest
     outputs:
-      skip: ${{ steps.fetch.outputs.skip }}
+      fetch-developer-skip: ${{ steps.fetch-developer.outputs.skip }}
+      fetch-location-skip: ${{ steps.fetch-location.outputs.skip }}
+      fetch-weather-skip: ${{ steps.fetch-weather.outputs.skip }}
+      fetch-soundcloud-skip: ${{ steps.fetch-soundcloud.outputs.skip }}
+      fetch-oura-skip: ${{ steps.fetch-oura.outputs.skip }}
+      fetch-quote-skip: ${{ steps.fetch-quote.outputs.skip }}
+    
     steps:
+      # Setup Phase
       - name: 📦 Checkout repository
         uses: actions/checkout@v4
         with:
@@ -53,278 +45,153 @@ jobs:
       - name: 🔧 Setup environment
         uses: ./.github/actions/setup
       
+      # Fetch Phase
       - name: 🌐 Fetch developer statistics
-        id: fetch
+        id: fetch-developer
         uses: ./.github/actions/fetch-developer
         with:
           github-token: ${{ github.token }}
           username: ${{ github.repository_owner }}
-  
-  fetch-location:
-    needs: setup
-    runs-on: ubuntu-latest
-    outputs:
-      skip: ${{ steps.fetch.outputs.skip }}
-      location: ${{ steps.fetch.outputs.location }}
-    steps:
-      - name: 📦 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-      
-      - name: 🔧 Setup environment
-        uses: ./.github/actions/setup
+        continue-on-error: true
       
       - name: 📍 Fetch location data
-        id: fetch
+        id: fetch-location
         uses: ./.github/actions/fetch-location
         with:
           github-token: ${{ github.token }}
           username: ${{ github.repository_owner }}
           mapbox-token: ${{ secrets.MAPBOX_TOKEN }}
-  
-  fetch-weather:
-    needs: fetch-location
-    runs-on: ubuntu-latest
-    if: needs.fetch-location.outputs.skip != 'true'
-    outputs:
-      skip: ${{ steps.fetch.outputs.skip }}
-    steps:
-      - name: 📦 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-      
-      - name: 🔧 Setup environment
-        uses: ./.github/actions/setup
+        continue-on-error: true
       
       - name: 🌦️ Fetch weather data
-        id: fetch
+        id: fetch-weather
+        if: steps.fetch-location.outputs.skip != 'true'
         uses: ./.github/actions/fetch-weather
         with:
           github-token: ${{ github.token }}
           username: ${{ github.repository_owner }}
-  
-  fetch-soundcloud:
-    needs: setup
-    runs-on: ubuntu-latest
-    outputs:
-      skip: ${{ steps.fetch.outputs.skip }}
-    steps:
-      - name: 📦 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-      
-      - name: 🔧 Setup environment
-        uses: ./.github/actions/setup
+        continue-on-error: true
       
       - name: 🎵 Fetch SoundCloud data
-        id: fetch
+        id: fetch-soundcloud
         uses: ./.github/actions/fetch-soundcloud
         with:
           soundcloud-user: playfunction
-  
-  fetch-oura:
-    needs: setup
-    runs-on: ubuntu-latest
-    outputs:
-      skip: ${{ steps.fetch.outputs.skip }}
-    steps:
-      - name: 📦 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-      
-      - name: 🔧 Setup environment
-        uses: ./.github/actions/setup
+        continue-on-error: true
       
       - name: 🧬 Fetch Oura health data
-        id: fetch
+        id: fetch-oura
         uses: ./.github/actions/fetch-oura
         with:
           oura-pat: ${{ secrets.OURA_PAT }}
-  
-  fetch-quote:
-    needs: setup
-    runs-on: ubuntu-latest
-    outputs:
-      skip: ${{ steps.fetch.outputs.skip }}
-    steps:
-      - name: 📦 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-      
-      - name: 🔧 Setup environment
-        uses: ./.github/actions/setup
+        continue-on-error: true
       
       - name: ✨ Fetch quote of the day
-        id: fetch
+        id: fetch-quote
         uses: ./.github/actions/fetch-quote
-  
-  # ===================================================================
-  # Generation Jobs
-  # ===================================================================
-  generate-developer-dashboard:
-    needs: fetch-developer
-    runs-on: ubuntu-latest
-    if: needs.fetch-developer.outputs.skip != 'true'
-    steps:
-      - name: 📦 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
+        continue-on-error: true
       
-      - name: 🔧 Setup environment
-        uses: ./.github/actions/setup
+      # Validation Phase
+      - name: ✅ Validate JSON Data
+        run: |
+          echo "Validating JSON data files..."
+          
+          VALIDATION_FAILED=false
+          
+          # Validate all JSON files
+          for json_file in developer/stats.json weather/weather.json location/location.json assets/metadata.json oura/metrics.json quotes/quote.json; do
+            if [ -f "$json_file" ]; then
+              if jq empty "$json_file" 2>/dev/null; then
+                echo "✅ $json_file is valid"
+              else
+                echo "⚠️ Warning: $json_file is invalid JSON"
+                VALIDATION_FAILED=true
+              fi
+            else
+              echo "ℹ️ $json_file does not exist (skipped)"
+            fi
+          done
+          
+          if [ "$VALIDATION_FAILED" = true ]; then
+            echo "⚠️ Some JSON files failed validation, but continuing..."
+          else
+            echo "✅ All JSON files validated successfully"
+          fi
+        continue-on-error: true
       
+      # Generation Phase
       - name: 💻 Generate developer dashboard
+        if: steps.fetch-developer.outputs.skip != 'true'
         uses: ./.github/actions/generate-developer-dashboard
-  
-  generate-quote-card:
-    needs: fetch-quote
-    runs-on: ubuntu-latest
-    if: needs.fetch-quote.outputs.skip != 'true'
-    steps:
-      - name: 📦 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-      
-      - name: 🔧 Setup environment
-        uses: ./.github/actions/setup
+        continue-on-error: true
       
       - name: ✨ Generate quote card
+        if: steps.fetch-quote.outputs.skip != 'true'
         uses: ./.github/actions/generate-quote-card
-  
-  generate-weather-card:
-    needs: fetch-weather
-    runs-on: ubuntu-latest
-    if: needs.fetch-weather.outputs.skip != 'true'
-    steps:
-      - name: 📦 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-      
-      - name: 🔧 Setup environment
-        uses: ./.github/actions/setup
+        continue-on-error: true
       
       - name: 🌦️ Generate weather card
+        if: steps.fetch-weather.outputs.skip != 'true'
         uses: ./.github/actions/generate-weather-card
-  
-  generate-location-card:
-    needs: fetch-location
-    runs-on: ubuntu-latest
-    if: needs.fetch-location.outputs.skip != 'true'
-    steps:
-      - name: 📦 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-      
-      - name: 🔧 Setup environment
-        uses: ./.github/actions/setup
+        continue-on-error: true
       
       - name: 📍 Generate location card
+        if: steps.fetch-location.outputs.skip != 'true'
         uses: ./.github/actions/generate-location-card
-  
-  generate-soundcloud-card:
-    needs: fetch-soundcloud
-    runs-on: ubuntu-latest
-    if: needs.fetch-soundcloud.outputs.skip != 'true'
-    steps:
-      - name: 📦 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-      
-      - name: 🔧 Setup environment
-        uses: ./.github/actions/setup
+        continue-on-error: true
       
       - name: 🎵 Generate SoundCloud card
+        if: steps.fetch-soundcloud.outputs.skip != 'true'
         uses: ./.github/actions/generate-soundcloud-card
-  
-  generate-oura-dashboard:
-    needs: fetch-oura
-    runs-on: ubuntu-latest
-    if: needs.fetch-oura.outputs.skip != 'true'
-    steps:
-      - name: 📦 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-      
-      - name: 🔧 Setup environment
-        uses: ./.github/actions/setup
+        continue-on-error: true
       
       - name: 🧬 Generate Oura health dashboard
+        if: steps.fetch-oura.outputs.skip != 'true'
         uses: ./.github/actions/generate-oura-dashboard
-  
-  generate-oura-mood:
-    needs: fetch-oura
-    runs-on: ubuntu-latest
-    if: needs.fetch-oura.outputs.skip != 'true'
-    steps:
-      - name: 📦 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-      
-      - name: 🔧 Setup environment
-        uses: ./.github/actions/setup
+        continue-on-error: true
       
       - name: 🧬 Generate Oura mood dashboard
+        if: steps.fetch-oura.outputs.skip != 'true'
         uses: ./.github/actions/generate-oura-mood
-  
-  # ===================================================================
-  # Post-Processing Jobs
-  # ===================================================================
-  optimize-svgs:
-    needs:
-      - generate-developer-dashboard
-      - generate-quote-card
-      - generate-weather-card
-      - generate-location-card
-      - generate-soundcloud-card
-      - generate-oura-dashboard
-      - generate-oura-mood
-    runs-on: ubuntu-latest
-    if: always()
-    steps:
-      - name: 📦 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
+        continue-on-error: true
       
-      - name: 🔧 Setup environment
-        uses: ./.github/actions/setup
-      
+      # Optimization Phase
       - name: 🎨 Optimize SVG files
         uses: ./.github/actions/optimize-svgs
-  
-  update-readme:
-    needs: optimize-svgs
-    runs-on: ubuntu-latest
-    steps:
-      - name: 📦 Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
+        continue-on-error: true
       
-      - name: 🔧 Setup environment
-        uses: ./.github/actions/setup
-      
+      # Update README
       - name: 📝 Update README
         uses: ./.github/actions/update-readme
+        continue-on-error: true
+      
+      # Upload artifacts for the deploy job
+      - name: 📤 Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: profile-data
+          path: |
+            developer/
+            weather/
+            location/
+            assets/
+            oura/
+            quotes/
+            README.md
+            logs/
+          retention-days: 1
   
+  # ===================================================================
+  # Deploy to GitHub Pages
+  # ===================================================================
   deploy-pages:
-    needs: update-readme
+    needs: build-profile
     runs-on: ubuntu-latest
+    if: always()
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    
     steps:
       - name: 📦 Checkout repository
         uses: actions/checkout@v4
@@ -333,6 +200,12 @@ jobs:
       
       - name: 🔧 Setup environment
         uses: ./.github/actions/setup
+      
+      - name: 📥 Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: profile-data
+          path: .
       
       - name: 🚀 Deploy to GitHub Pages
         id: deployment
@@ -343,14 +216,21 @@ jobs:
   # Commit Changes
   # ===================================================================
   commit-changes:
-    needs: deploy-pages
+    needs: build-profile
     runs-on: ubuntu-latest
     if: always()
+    
     steps:
       - name: 📦 Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+      
+      - name: 📥 Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: profile-data
+          path: .
       
       - name: 📤 Commit and Push Changes
         run: |
@@ -383,20 +263,20 @@ jobs:
             
             # Add specific details if available
             if [ -f "developer/stats.json" ]; then
-              USERNAME=$(jq -r '.username // "N/A"' developer/stats.json)
-              COMMITS=$(jq -r '.commit_activity.total_30_days // 0' developer/stats.json)
+              USERNAME=$(jq -r '.username // "N/A"' developer/stats.json 2>/dev/null || echo "N/A")
+              COMMITS=$(jq -r '.commit_activity.total_30_days // 0' developer/stats.json 2>/dev/null || echo "0")
               echo "" >> "$COMMIT_MSG_FILE"
               echo "- Developer: ${USERNAME} (${COMMITS} commits in 30d)" >> "$COMMIT_MSG_FILE"
             fi
             
             if [ -f "oura/mood.json" ]; then
-              MOOD=$(jq -r '.mood_name // "N/A"' oura/mood.json)
-              SCORE=$(jq -r '.mood_score // 0' oura/mood.json)
+              MOOD=$(jq -r '.mood_name // "N/A"' oura/mood.json 2>/dev/null || echo "N/A")
+              SCORE=$(jq -r '.mood_score // 0' oura/mood.json 2>/dev/null || echo "0")
               echo "- Health: ${MOOD} mood (${SCORE}/100)" >> "$COMMIT_MSG_FILE"
             fi
             
             if [ -f "weather/weather.json" ]; then
-              LOCATION=$(jq -r '.location // "N/A"' weather/weather.json)
+              LOCATION=$(jq -r '.location // "N/A"' weather/weather.json 2>/dev/null || echo "N/A")
               echo "- Weather: ${LOCATION}" >> "$COMMIT_MSG_FILE"
             fi
             
@@ -412,20 +292,24 @@ jobs:
   # ===================================================================
   build-summary:
     needs:
-      - fetch-developer
-      - fetch-quote
-      - fetch-weather
-      - fetch-location
-      - fetch-soundcloud
-      - fetch-oura
+      - build-profile
+      - deploy-pages
       - commit-changes
     runs-on: ubuntu-latest
     if: always()
+    
     steps:
       - name: 📦 Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+      
+      - name: 📥 Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: profile-data
+          path: .
+        continue-on-error: true
       
       - name: 📊 Build Summary
         run: |
@@ -434,12 +318,12 @@ jobs:
           echo "=============================================="
           echo ""
           echo "Data Fetch Status:"
-          echo "  Developer Stats: ${{ needs.fetch-developer.outputs.skip != 'true' && '✅' || '⚠️ Skipped' }}"
-          echo "  Quote of the Day: ${{ needs.fetch-quote.outputs.skip != 'true' && '✅' || '⚠️ Skipped' }}"
-          echo "  Weather Data: ${{ needs.fetch-weather.outputs.skip != 'true' && '✅' || '⚠️ Skipped' }}"
-          echo "  Location Data: ${{ needs.fetch-location.outputs.skip != 'true' && '✅' || '⚠️ Skipped' }}"
-          echo "  SoundCloud Data: ${{ needs.fetch-soundcloud.outputs.skip != 'true' && '✅' || '⚠️ Skipped' }}"
-          echo "  Oura Health Data: ${{ needs.fetch-oura.outputs.skip != 'true' && '✅' || '⚠️ Skipped' }}"
+          echo "  Developer Stats: ${{ needs.build-profile.outputs.fetch-developer-skip != 'true' && '✅' || '⚠️ Skipped' }}"
+          echo "  Quote of the Day: ${{ needs.build-profile.outputs.fetch-quote-skip != 'true' && '✅' || '⚠️ Skipped' }}"
+          echo "  Weather Data: ${{ needs.build-profile.outputs.fetch-weather-skip != 'true' && '✅' || '⚠️ Skipped' }}"
+          echo "  Location Data: ${{ needs.build-profile.outputs.fetch-location-skip != 'true' && '✅' || '⚠️ Skipped' }}"
+          echo "  SoundCloud Data: ${{ needs.build-profile.outputs.fetch-soundcloud-skip != 'true' && '✅' || '⚠️ Skipped' }}"
+          echo "  Oura Health Data: ${{ needs.build-profile.outputs.fetch-oura-skip != 'true' && '✅' || '⚠️ Skipped' }}"
           echo ""
           echo "Generated Cards:"
           test -f developer/developer_dashboard.svg && echo "  ✅ Developer Dashboard" || echo "  ⚠️ Developer Dashboard"
