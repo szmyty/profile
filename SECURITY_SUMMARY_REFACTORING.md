@@ -62,7 +62,10 @@ permissions:
 
 ### 6. Dependency Management
 ✅ **Secure Practices**:
-- Pinned action versions used (e.g., `@v4`, `@v5`)
+- Pinned action versions with security patches:
+  - `actions/download-artifact@v4.1.3` (patched: arbitrary file write CVE)
+  - `actions/upload-artifact@v4.4.3` (latest stable)
+  - Other actions use specific versions (`@v4`, `@v5`)
 - Official GitHub actions used where possible
 - System dependencies installed via apt
 - Python/Node dependencies cached for integrity
@@ -97,11 +100,18 @@ permissions:
 
 ## Vulnerability Assessment
 
-### Potential Risks Identified
-None - No security vulnerabilities found during analysis.
+### Vulnerabilities Identified and Fixed
 
-### Mitigations Applied
-N/A - No vulnerabilities to mitigate.
+#### 1. actions/download-artifact Arbitrary File Write (CVE)
+- **Severity**: Medium
+- **Affected Versions**: >= 4.0.0, < 4.1.3
+- **Description**: Arbitrary file write vulnerability via artifact extraction
+- **Mitigation**: Updated to `actions/download-artifact@v4.1.3` (patched version)
+- **Status**: ✅ FIXED
+
+### Additional Security Improvements
+- Updated `actions/upload-artifact` to `v4.4.3` for latest security patches
+- All action versions now explicitly pinned for security and reproducibility
 
 ## Comparison with Original Workflow
 
