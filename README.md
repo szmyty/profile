@@ -192,7 +192,7 @@ View the full interactive dashboard at:
 
 <p align="center">
 <!-- SOUNDCLOUD-CARD:START -->
-[![SoundCloud Latest Track](assets/soundcloud-card.svg)](https://soundcloud.com/playfunction/prescience_v2)
+[![SoundCloud Latest Track](assets/soundcloud-card.svg)](https://soundcloud.com/playfunction/starme)
 <!-- SOUNDCLOUD-CARD:END -->
 </p>
 
