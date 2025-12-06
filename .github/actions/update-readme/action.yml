@@ -1,0 +1,63 @@
+name: 'Update README with Cards'
+description: 'Update README.md with all generated SVG cards'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: 📝 Update README with All Cards
+      shell: bash
+      run: |
+        echo "Updating README with all cards..."
+        
+        # Update developer dashboard
+        if [ -f "developer/developer_dashboard.svg" ]; then
+          python scripts/update-readme.py \
+            --marker DEVELOPER-DASHBOARD \
+            --content "![Developer Dashboard](./developer/developer_dashboard.svg)" || true
+        fi
+        
+        # Update quote card
+        if [ -f "quotes/quote_card.svg" ]; then
+          python scripts/update-readme.py \
+            --marker QUOTE-CARD \
+            --content "![Quote of the Day](./quotes/quote_card.svg)" || true
+        fi
+        
+        # Update weather card
+        if [ -f "weather/weather-today.svg" ]; then
+          python scripts/update-readme.py \
+            --marker WEATHER-CARD \
+            --content "![Today's Weather](./weather/weather-today.svg)" || true
+        fi
+        
+        # Update location card
+        if [ -f "location/location-card.svg" ]; then
+          python scripts/update-readme.py \
+            --marker LOCATION-CARD \
+            --content "![My Location](./location/location-card.svg)" || true
+        fi
+        
+        # Update SoundCloud card
+        if [ -f "assets/soundcloud-card.svg" ] && [ -f "assets/metadata.json" ]; then
+          PERMALINK_URL=$(jq -r '.permalink_url // "#"' assets/metadata.json)
+          CARD_CONTENT="[![SoundCloud Latest Track](assets/soundcloud-card.svg)](${PERMALINK_URL})"
+          python scripts/update-readme.py \
+            --marker SOUNDCLOUD-CARD \
+            --content "${CARD_CONTENT}" || true
+        fi
+        
+        # Update Oura health card
+        if [ -f "oura/health_dashboard.svg" ]; then
+          python scripts/update-readme.py \
+            --marker OURA-HEALTH-CARD \
+            --content "![Oura Health Dashboard](./oura/health_dashboard.svg)" || true
+        fi
+        
+        # Update Oura mood card
+        if [ -f "oura/mood_dashboard.svg" ]; then
+          python scripts/update-readme.py \
+            --marker OURA-MOOD-CARD \
+            --content "![Oura Mood Dashboard](./oura/mood_dashboard.svg)" || true
+        fi
+        
+        echo "✅ README updated with all available cards"

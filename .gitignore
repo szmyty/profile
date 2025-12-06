@@ -53,3 +53,4 @@ reports/megalinter/
 # act (GitHub Actions local runner)
 .secrets
 .actrc.local
+actionlint
