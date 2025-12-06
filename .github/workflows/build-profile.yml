@@ -253,6 +253,14 @@ jobs:
           git add developer/raw/*.json 2>/dev/null || true
           git add location/debug_*.txt 2>/dev/null || true
           
+          # Helper function for safe jq extraction
+          safe_jq() {
+            local file=$1
+            local query=$2
+            local default=$3
+            jq -r "$query // \"$default\"" "$file" 2>/dev/null || echo "$default"
+          }
+          
           # Check if there are changes to commit
           if git diff --staged --quiet; then
             echo "ℹ️ No changes to commit"
@@ -263,20 +271,20 @@ jobs:
             
             # Add specific details if available
             if [ -f "developer/stats.json" ]; then
-              USERNAME=$(jq -r '.username // "N/A"' developer/stats.json 2>/dev/null || echo "N/A")
-              COMMITS=$(jq -r '.commit_activity.total_30_days // 0' developer/stats.json 2>/dev/null || echo "0")
+              USERNAME=$(safe_jq "developer/stats.json" ".username" "N/A")
+              COMMITS=$(safe_jq "developer/stats.json" ".commit_activity.total_30_days" "0")
               echo "" >> "$COMMIT_MSG_FILE"
               echo "- Developer: ${USERNAME} (${COMMITS} commits in 30d)" >> "$COMMIT_MSG_FILE"
             fi
             
             if [ -f "oura/mood.json" ]; then
-              MOOD=$(jq -r '.mood_name // "N/A"' oura/mood.json 2>/dev/null || echo "N/A")
-              SCORE=$(jq -r '.mood_score // 0' oura/mood.json 2>/dev/null || echo "0")
+              MOOD=$(safe_jq "oura/mood.json" ".mood_name" "N/A")
+              SCORE=$(safe_jq "oura/mood.json" ".mood_score" "0")
               echo "- Health: ${MOOD} mood (${SCORE}/100)" >> "$COMMIT_MSG_FILE"
             fi
             
             if [ -f "weather/weather.json" ]; then
-              LOCATION=$(jq -r '.location // "N/A"' weather/weather.json 2>/dev/null || echo "N/A")
+              LOCATION=$(safe_jq "weather/weather.json" ".location" "N/A")
               echo "- Weather: ${LOCATION}" >> "$COMMIT_MSG_FILE"
             fi
             
@@ -317,25 +325,42 @@ jobs:
           echo "  Build Profile Pipeline - Summary"
           echo "=============================================="
           echo ""
+          
+          # Helper function to display status
+          show_status() {
+            if [ "$1" = "success" ]; then
+              echo "  ✅ $2"
+            else
+              echo "  ⚠️ $2"
+            fi
+          }
+          
           echo "Data Fetch Status:"
-          echo "  Developer Stats: ${{ needs.build-profile.outputs.fetch-developer-skip != 'true' && '✅' || '⚠️ Skipped' }}"
-          echo "  Quote of the Day: ${{ needs.build-profile.outputs.fetch-quote-skip != 'true' && '✅' || '⚠️ Skipped' }}"
-          echo "  Weather Data: ${{ needs.build-profile.outputs.fetch-weather-skip != 'true' && '✅' || '⚠️ Skipped' }}"
-          echo "  Location Data: ${{ needs.build-profile.outputs.fetch-location-skip != 'true' && '✅' || '⚠️ Skipped' }}"
-          echo "  SoundCloud Data: ${{ needs.build-profile.outputs.fetch-soundcloud-skip != 'true' && '✅' || '⚠️ Skipped' }}"
-          echo "  Oura Health Data: ${{ needs.build-profile.outputs.fetch-oura-skip != 'true' && '✅' || '⚠️ Skipped' }}"
+          show_status "${{ needs.build-profile.outputs.fetch-developer-skip != 'true' && 'success' || 'skip' }}" "Developer Stats"
+          show_status "${{ needs.build-profile.outputs.fetch-quote-skip != 'true' && 'success' || 'skip' }}" "Quote of the Day"
+          show_status "${{ needs.build-profile.outputs.fetch-weather-skip != 'true' && 'success' || 'skip' }}" "Weather Data"
+          show_status "${{ needs.build-profile.outputs.fetch-location-skip != 'true' && 'success' || 'skip' }}" "Location Data"
+          show_status "${{ needs.build-profile.outputs.fetch-soundcloud-skip != 'true' && 'success' || 'skip' }}" "SoundCloud Data"
+          show_status "${{ needs.build-profile.outputs.fetch-oura-skip != 'true' && 'success' || 'skip' }}" "Oura Health Data"
+          
           echo ""
           echo "Generated Cards:"
-          test -f developer/developer_dashboard.svg && echo "  ✅ Developer Dashboard" || echo "  ⚠️ Developer Dashboard"
-          test -f quotes/quote_card.svg && echo "  ✅ Quote of the Day Card" || echo "  ⚠️ Quote of the Day Card"
-          test -f weather/weather-today.svg && echo "  ✅ Weather Card" || echo "  ⚠️ Weather Card"
-          test -f location/location-card.svg && echo "  ✅ Location Card" || echo "  ⚠️ Location Card"
-          test -f assets/soundcloud-card.svg && echo "  ✅ SoundCloud Card" || echo "  ⚠️ SoundCloud Card"
-          test -f oura/health_dashboard.svg && echo "  ✅ Oura Health Dashboard" || echo "  ⚠️ Oura Health Dashboard"
-          test -f oura/mood_dashboard.svg && echo "  ✅ Oura Mood Dashboard" || echo "  ⚠️ Oura Mood Dashboard"
+          for card in "developer/developer_dashboard.svg:Developer Dashboard" \
+                      "quotes/quote_card.svg:Quote of the Day Card" \
+                      "weather/weather-today.svg:Weather Card" \
+                      "location/location-card.svg:Location Card" \
+                      "assets/soundcloud-card.svg:SoundCloud Card" \
+                      "oura/health_dashboard.svg:Oura Health Dashboard" \
+                      "oura/mood_dashboard.svg:Oura Mood Dashboard"; do
+            file="${card%%:*}"
+            name="${card##*:}"
+            test -f "$file" && show_status "success" "$name" || show_status "skip" "$name"
+          done
+          
           echo ""
           echo "Dashboard Status:"
-          test -d dashboard-app/dist && echo "  ✅ React Dashboard Built" || echo "  ⚠️ React Dashboard Not Built"
+          test -d dashboard-app/dist && show_status "success" "React Dashboard Built" || show_status "skip" "React Dashboard Not Built"
+          
           echo ""
           echo "=============================================="
           echo "  Build Complete!"

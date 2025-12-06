@@ -105,12 +105,10 @@ Use the test workflow to test individual composite actions:
 2. Locally with act:
    ```bash
    # Test fetch-developer action
-   act workflow_dispatch -W .github/workflows/test-individual-actions.yml \
-     --input action=fetch-developer
+   act workflow_dispatch -W .github/workflows/test-individual-actions.yml --input action=fetch-developer
 
    # Test generate-weather-card action
-   act workflow_dispatch -W .github/workflows/test-individual-actions.yml \
-     --input action=generate-weather-card
+   act workflow_dispatch -W .github/workflows/test-individual-actions.yml --input action=generate-weather-card
    ```
 
 ### Using Environment Variables

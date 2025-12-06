@@ -32,7 +32,7 @@ runs:
         GITHUB_TOKEN: ${{ inputs.github-token }}
       run: |
         LOCATION=$(curl -sf "https://api.github.com/users/${GITHUB_REPOSITORY_OWNER}" \
-          -H "Accept: application/vnd.github.v3+json" \
+          -H "Accept: application/vnd.github+json" \
           -H "Authorization: Bearer ${GITHUB_TOKEN}" \
           -H "User-Agent: GitHub-Profile-Build" | jq -r '.location // empty')
         
