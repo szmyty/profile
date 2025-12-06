@@ -234,7 +234,7 @@ The unified workflow integrates with the monitoring system:
 
 ## Archived Workflows
 
-All old workflows are preserved in `.github/workflows/_archive/` with a detailed README explaining the consolidation.
+All old workflows have been removed as part of the repository cleanup in December 2024. They were previously preserved in `.github/workflows/_archive/` and can be found in the Git history if needed.
 
 ## Migration Checklist
 
@@ -259,9 +259,9 @@ The unified workflow has been validated:
 
 ## Rollback Plan
 
-If issues arise, the old workflows can be restored from `.github/workflows/_archive/`:
+If issues arise, the old workflows can be restored from Git history:
 
-1. Copy desired workflow files from `_archive/` to parent directory
+1. Check out the desired workflow files from Git history before the cleanup
 2. Update `monitoring.yml` to reference old workflow names
 3. Revert README badge changes
 4. Delete or disable `build-profile.yml`
@@ -287,7 +287,6 @@ Potential improvements to the unified workflow:
 
 ## Related Documentation
 
-- [`.github/workflows/_archive/README.md`](../.github/workflows/_archive/README.md) - Archived workflow information
 - [`TROUBLESHOOTING.md`](TROUBLESHOOTING.md) - Common issues and solutions
 - [`MONITORING.md`](MONITORING.md) - Monitoring and alerting documentation
 - [`WORKFLOW_CACHING.md`](WORKFLOW_CACHING.md) - Caching strategy and optimization

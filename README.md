@@ -292,8 +292,7 @@ The workflow never fails due to partial errors:
 - Each step uses `continue-on-error: true` where appropriate
 
 <p align="center">
-📖 <a href=".github/workflows/_archive/README.md">View archived workflows</a> | 
-<a href=".github/workflows/build-profile.yml">View workflow source</a>
+📖 <a href=".github/workflows/build-profile.yml">View workflow source</a>
 </p>
 
 <br/>

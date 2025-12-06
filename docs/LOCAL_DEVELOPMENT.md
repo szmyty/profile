@@ -245,8 +245,6 @@ Edit these files to customize the event data for testing.
 - ✅ Use act-demo.yml workflow which is designed to work with act
 - ⚠️ Use GitHub Actions for full integration testing of complex workflows
 
-See [ACT_LIMITATIONS.md](../.github/workflows/ACT_LIMITATIONS.md) for complete details and workarounds.
-
 ### Direct Script Testing (Recommended)
 
 Instead of using act with the full workflows, test scripts directly:
@@ -435,7 +433,7 @@ rm -rf ~/.cache/act/
 - [act GitHub Repository](https://github.com/nektos/act)
 - [act Documentation](https://nektosact.com/)
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [Repository Workflow Documentation](.github/workflows/ACT_SETUP.md)
+- [Repository Workflow Documentation](../.github/workflows/README.md)
 
 ## Summary
 
