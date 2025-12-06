@@ -18,8 +18,7 @@ profile/
 ├── .github/workflows/          # GitHub Actions workflow definitions
 │   ├── build-profile.yml       # Unified orchestration pipeline (daily)
 │   ├── monitoring.yml          # Workflow monitoring and alerts
-│   ├── tests.yml               # Unit and integration tests
-│   └── _archive/               # Archived separate workflows (pre-consolidation)
+│   └── tests.yml               # Unit and integration tests
 ├── scripts/                    # All executable scripts
 │   ├── lib/                    # Shared Python/shell libraries
 │   │   ├── __init__.py

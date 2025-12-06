@@ -15,11 +15,8 @@ This directory contains GitHub Actions workflows for the profile repository.
 
 ## Local Development with act
 
-You can run workflows locally using `act` in the devcontainer. See the comprehensive guides:
+You can run workflows locally using `act` in the devcontainer. See:
 
-- **[ACT_SETUP.md](ACT_SETUP.md)** - Complete setup and usage guide
-- **[ACT_COMPATIBILITY.md](ACT_COMPATIBILITY.md)** - Which workflows work with act
-- **[ACT_LIMITATIONS.md](ACT_LIMITATIONS.md)** - Known issues and workarounds
 - **[Local Development Guide](../../docs/LOCAL_DEVELOPMENT.md)** - Full development documentation
 
 ### Quick Start
@@ -42,8 +39,6 @@ python -m pytest tests/ -v
 - Test scripts directly instead of using act
 - Use act for syntax validation only
 - Use GitHub Actions for full integration testing
-
-See [ACT_LIMITATIONS.md](ACT_LIMITATIONS.md) for details.
 
 ## Workflow Event Payloads
 
@@ -137,7 +132,6 @@ These actions are reused across multiple workflows to reduce duplication.
 1. Create workflow file in `.github/workflows/`
 2. Test locally with act or direct script execution
 3. Document in this README
-4. Update [ACT_COMPATIBILITY.md](ACT_COMPATIBILITY.md) if applicable
 
 ### Modifying Existing Workflows
 
@@ -156,8 +150,6 @@ These actions are reused across multiple workflows to reduce duplication.
 4. Check for missing secrets or environment variables
 
 ### act Not Working
-
-See [ACT_LIMITATIONS.md](ACT_LIMITATIONS.md) for known issues and workarounds.
 
 Common solutions:
 - Use `act-demo.yml` workflow for testing
