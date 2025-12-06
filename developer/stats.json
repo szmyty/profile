@@ -240,7 +240,7 @@
     "merged": 0
   },
   "issues": {
-    "opened": 41
+    "opened": 42
   },
   "languages": {
     "Jupyter Notebook": 55.7,
@@ -251,11 +251,6 @@
     "TypeScript": 2.0,
     "Other": 3.7
   },
-  "top_repositories": [
-    {
-      "name": "flutter_skeleton",
-      "commits": 1
-    }
-  ],
-  "updated_at": "2025-12-05T07:26:22Z"
+  "top_repositories": [],
+  "updated_at": "2025-12-06T01:29:55Z"
 }

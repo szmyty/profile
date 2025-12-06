@@ -1,6 +1,6 @@
 {
   "mood_name": "Quiet Neutrality",
-  "mood_score": 55.8,
+  "mood_score": 56.3,
   "mood_icon": "\u2601\ufe0f",
   "mood_color_gradient": [
     "#a8c0ff",
@@ -17,10 +17,10 @@
   "raw_scores": {
     "sleep_score": 50,
     "readiness_score": 60,
-    "activity_score": 59,
+    "activity_score": 62,
     "hrv": 43,
     "resting_hr": 72,
     "temp_deviation": 83
   },
-  "computed_at": "2025-12-05T07:26:33Z"
+  "computed_at": "2025-12-06T01:30:07Z"
 }

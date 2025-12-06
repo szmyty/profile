@@ -1,7 +1,7 @@
 {
   "sleep_score": 50,
   "readiness_score": 60,
-  "activity_score": 59,
+  "activity_score": 62,
   "hrv": 43,
   "resting_hr": 72,
   "temp_deviation": 83,
@@ -48,19 +48,19 @@
     "timestamp": "2025-12-05T00:00:00.000+00:00"
   },
   "activity": {
-    "id": "0498943f-0857-45eb-b044-c6f2455dd3f1",
+    "id": "3446d92a-32c1-4828-b7b0-6d9aad07a11d",
     "active_calories": 0,
     "average_met_minutes": 0.0,
     "class_5_min": "",
     "contributors": {
-      "meet_daily_targets": 32,
+      "meet_daily_targets": 28,
       "move_every_hour": 100,
       "recovery_time": 100,
-      "stay_active": 74,
+      "stay_active": 96,
       "training_frequency": 1,
-      "training_volume": 34
+      "training_volume": 35
     },
-    "day": "2025-12-04",
+    "day": "2025-12-05",
     "equivalent_walking_distance": 0,
     "high_activity_met_minutes": 0,
     "high_activity_time": 0,
@@ -1513,20 +1513,20 @@
         0.9,
         0.9
       ],
-      "timestamp": "2025-12-04T04:00:00.000-05:00"
+      "timestamp": "2025-12-05T04:00:00.000-05:00"
     },
-    "meters_to_target": 9100,
+    "meters_to_target": 5500,
     "non_wear_time": 0,
     "resting_time": 0,
-    "score": 59,
+    "score": 62,
     "sedentary_met_minutes": 0,
     "sedentary_time": 0,
     "steps": 0,
-    "target_calories": 500,
-    "target_meters": 10000,
-    "timestamp": "2025-12-04T04:00:00.000-05:00",
+    "target_calories": 300,
+    "target_meters": 6000,
+    "timestamp": "2025-12-05T04:00:00.000-05:00",
     "total_calories": 1889
   },
   "heart_rate": {},
-  "updated_at": "2025-12-05T07:26:31Z"
+  "updated_at": "2025-12-06T01:30:05Z"
 }

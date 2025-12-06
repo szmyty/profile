@@ -103,3 +103,38 @@ Saved raw data: developer/raw/stats_raw.json
 [2025-12-05T07:26:22Z] [INFO] Ended at: 2025-12-05T07:26:22.491164+00:00Z
 [2025-12-05T07:26:22Z] [INFO] ============================================================
 [2025-12-05T07:26:22Z] [INFO] ============================================================
+[2025-12-06T01:29:49Z] [INFO] Logging initialized: logs/developer/developer.log
+[2025-12-06T01:29:49Z] [INFO] Logging initialized: logs/developer/developer.log
+[2025-12-06T01:29:49Z] [INFO] ============================================================
+[2025-12-06T01:29:49Z] [INFO] ============================================================
+[2025-12-06T01:29:49Z] [INFO] Workflow: developer
+[2025-12-06T01:29:49Z] [INFO] Workflow: developer
+[2025-12-06T01:29:49Z] [INFO] Description: Developer Statistics - Fetch Data
+[2025-12-06T01:29:49Z] [INFO] Description: Developer Statistics - Fetch Data
+[2025-12-06T01:29:49Z] [INFO] Started at: 2025-12-06T01:29:49.767525+00:00Z
+[2025-12-06T01:29:49Z] [INFO] Started at: 2025-12-06T01:29:49.767525+00:00Z
+[2025-12-06T01:29:49Z] [INFO] ============================================================
+[2025-12-06T01:29:49Z] [INFO] ============================================================
+[2025-12-06T01:29:49Z] [INFO] Fetching developer statistics for: szmyty
+[2025-12-06T01:29:49Z] [INFO] Fetching developer statistics for: szmyty
+Fetching data for user: szmyty
+Fetching repositories...
+Fetching events...
+Calculating language statistics...
+Fetching top repositories...
+[2025-12-06T01:29:55Z] [INFO] Developer stats saved to: developer/stats.json.tmp
+[2025-12-06T01:29:55Z] [INFO] Developer stats saved to: developer/stats.json.tmp
+[2025-12-06T01:29:55Z] [INFO] Total repositories: N/A
+[2025-12-06T01:29:55Z] [INFO] Total repositories: N/A
+[2025-12-06T01:29:55Z] [INFO] Total commits (30 days): 0
+[2025-12-06T01:29:55Z] [INFO] Total commits (30 days): 0
+Developer stats saved to: developer/stats.json.tmp
+Saved raw data: developer/raw/stats_raw.json
+[2025-12-06T01:29:55Z] [INFO] ============================================================
+[2025-12-06T01:29:55Z] [INFO] ============================================================
+[2025-12-06T01:29:55Z] [INFO] Workflow: developer - COMPLETED SUCCESSFULLY
+[2025-12-06T01:29:55Z] [INFO] Workflow: developer - COMPLETED SUCCESSFULLY
+[2025-12-06T01:29:55Z] [INFO] Ended at: 2025-12-06T01:29:55.873098+00:00Z
+[2025-12-06T01:29:55Z] [INFO] Ended at: 2025-12-06T01:29:55.873098+00:00Z
+[2025-12-06T01:29:55Z] [INFO] ============================================================
+[2025-12-06T01:29:55Z] [INFO] ============================================================
