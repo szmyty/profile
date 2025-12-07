@@ -35,19 +35,18 @@ def find_markdown_images_in_html(content: str, filepath: str) -> List[Tuple[int,
     """
     issues = []
     lines = content.split("\n")
-    in_html_block = False
-    html_block_start = 0
+    html_block_depth = 0  # Track nesting depth of HTML blocks
 
     # HTML block opening tags that should not contain markdown syntax
-    html_block_tags = [
-        r"<p\s",
-        r"<p>",
-        r"<div\s",
-        r"<div>",
-        r"<section\s",
-        r"<section>",
-        r"<article\s",
-        r"<article>",
+    html_block_opening_tags = [
+        (r"<p\s", r"</p>"),
+        (r"<p>", r"</p>"),
+        (r"<div\s", r"</div>"),
+        (r"<div>", r"</div>"),
+        (r"<section\s", r"</section>"),
+        (r"<section>", r"</section>"),
+        (r"<article\s", r"</article>"),
+        (r"<article>", r"</article>"),
     ]
 
     # Markdown image pattern
@@ -62,19 +61,14 @@ def find_markdown_images_in_html(content: str, filepath: str) -> List[Tuple[int,
 
     for i, line in enumerate(lines, start=1):
         # Check if we're entering an HTML block
-        if not in_html_block:
-            for tag in html_block_tags:
-                if re.search(tag, line):
-                    in_html_block = True
-                    html_block_start = i
-                    break
-
-        # Check if we're exiting an HTML block
-        if in_html_block and re.search(r"</(?:p|div|section|article)>", line):
-            in_html_block = False
+        for opening_tag, closing_tag in html_block_opening_tags:
+            if re.search(opening_tag, line):
+                html_block_depth += 1
+            if re.search(closing_tag, line):
+                html_block_depth = max(0, html_block_depth - 1)
 
         # If we're inside an HTML block, check for markdown images
-        if in_html_block and markdown_image_pattern.search(line):
+        if html_block_depth > 0 and markdown_image_pattern.search(line):
             # Skip if it's a badge (these render fine in GitHub)
             is_badge = any(re.search(pattern, line) for pattern in badge_patterns)
             if not is_badge:
