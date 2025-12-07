@@ -52,6 +52,13 @@ def find_markdown_images_in_html(content: str, filepath: str) -> List[Tuple[int,
 
     # Markdown image pattern
     markdown_image_pattern = re.compile(r"!\[.*?\]\(.*?\)")
+    
+    # Badge patterns to exclude (these render fine in GitHub)
+    badge_patterns = [
+        r"img\.shields\.io",
+        r"komarev\.com/ghpvc",
+        r"badge\.svg",
+    ]
 
     for i, line in enumerate(lines, start=1):
         # Check if we're entering an HTML block
@@ -68,7 +75,10 @@ def find_markdown_images_in_html(content: str, filepath: str) -> List[Tuple[int,
 
         # If we're inside an HTML block, check for markdown images
         if in_html_block and markdown_image_pattern.search(line):
-            issues.append((i, line.strip()))
+            # Skip if it's a badge (these render fine in GitHub)
+            is_badge = any(re.search(pattern, line) for pattern in badge_patterns)
+            if not is_badge:
+                issues.append((i, line.strip()))
 
     return issues
 
