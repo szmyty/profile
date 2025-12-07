@@ -34,25 +34,25 @@
     "sleep_regularity": null
   },
   "activity": {
-    "score": 65,
-    "day": "2025-12-05",
-    "steps": 4851,
-    "active_calories": 334,
-    "total_calories": 2592,
-    "target_calories": 650,
-    "equivalent_walking_distance": 5945,
-    "target_meters": 12000,
-    "inactivity_alerts": 1,
-    "low_activity_time": 14640,
-    "medium_activity_time": 720,
+    "score": 63,
+    "day": "2025-12-06",
+    "steps": 239,
+    "active_calories": 27,
+    "total_calories": 1977,
+    "target_calories": 500,
+    "equivalent_walking_distance": 416,
+    "target_meters": 10000,
+    "inactivity_alerts": 0,
+    "low_activity_time": 1740,
+    "medium_activity_time": 120,
     "high_activity_time": 0,
-    "average_met_minutes": 1.40625,
-    "meet_daily_targets": 48,
-    "move_every_hour": 95,
+    "average_met_minutes": 1.34375,
+    "meet_daily_targets": 43,
+    "move_every_hour": 100,
     "recovery_time": 100,
-    "stay_active": 80,
+    "stay_active": 72,
     "training_frequency": 1,
-    "training_volume": 45
+    "training_volume": 41
   },
   "heart_rate": {
     "latest_bpm": null,
@@ -60,5 +60,5 @@
     "resting_bpm": null,
     "trend_values": []
   },
-  "updated_at": "2025-12-06T12:07:28Z"
+  "updated_at": "2025-12-07T01:18:00Z"
 }
