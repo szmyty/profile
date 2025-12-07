@@ -23,8 +23,8 @@ click = "^8.1.7"
 # FastAPI and server
 fastapi = "^0.115.6"
 uvicorn = {extras = ["standard"], version = "^0.34.0"}
-# HTTP client for API requests
-httpx = "^0.28.1"
+# HTTP client for API requests (future: replace subprocess calls with direct HTTP)
+# httpx = "^0.28.1"  # TODO: Uncomment when implementing direct HTTP clients
 
 [tool.poetry.group.dev.dependencies]
 pytest = "8.3.3"

@@ -32,9 +32,18 @@ class GitHubClient:
             
         Returns:
             DeveloperStats model with user statistics
+            
+        Note:
+            Current implementation uses subprocess to call legacy script.
+            Future: Replace with direct GitHub API calls using httpx for:
+            - Better performance (no subprocess overhead)
+            - Proper async support
+            - Better error handling
+            - Easier testing (mock HTTP instead of subprocess)
         """
-        # For now, use the existing script as a wrapper
-        # TODO: Refactor to use httpx directly
+        # TODO: Replace subprocess wrapper with direct HTTP implementation
+        # Example: async with httpx.AsyncClient() as client:
+        #             response = await client.get(f"https://api.github.com/users/{username}")
         script_path = Path(__file__).parent.parent.parent.parent / "scripts" / "fetch-developer-stats.py"
         
         if output_path is None:
