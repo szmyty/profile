@@ -98,7 +98,7 @@ I build high-quality, scalable platforms with strong emphasis on automation, sec
 
 ## 📊 Workflow Performance Dashboard
 
-![Workflow Performance](./dashboard.svg)
+<img src="./dashboard.svg" alt="Workflow Performance" width="100%"/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════ -->
 <!-- 🌐 LIVE DASHBOARD                                                          -->
@@ -134,11 +134,13 @@ View the full interactive dashboard at:
 
 </div>
 
-<p align="center">
+<div align="center">
+
 <!-- DEVELOPER-DASHBOARD:START -->
-![Developer Dashboard](./developer/developer_dashboard.svg)
+<img src="./developer/developer_dashboard.svg" alt="Developer Dashboard" width="100%"/>
 <!-- DEVELOPER-DASHBOARD:END -->
-</p>
+
+</div>
 
 <br/>
 
@@ -148,11 +150,13 @@ View the full interactive dashboard at:
 
 </div>
 
-<p align="center">
+<div align="center">
+
 <!-- QUOTE-CARD:START -->
-![Quote of the Day](./quotes/quote_card.svg)
+<img src="./quotes/quote_card.svg" alt="Quote of the Day" width="100%"/>
 <!-- QUOTE-CARD:END -->
-</p>
+
+</div>
 
 <br/>
 
@@ -162,11 +166,13 @@ View the full interactive dashboard at:
 
 </div>
 
-<p align="center">
+<div align="center">
+
 <!-- LOCATION-CARD:START -->
-![My Location](./location/location-card.svg)
+<img src="./location/location-card.svg" alt="My Location" width="100%"/>
 <!-- LOCATION-CARD:END -->
-</p>
+
+</div>
 
 <br/>
 
@@ -176,11 +182,13 @@ View the full interactive dashboard at:
 
 </div>
 
-<p align="center">
+<div align="center">
+
 <!-- WEATHER-CARD:START -->
-![Today's Weather](./weather/weather-today.svg)
+<img src="./weather/weather-today.svg" alt="Today's Weather" width="100%"/>
 <!-- WEATHER-CARD:END -->
-</p>
+
+</div>
 
 <br/>
 
@@ -190,11 +198,13 @@ View the full interactive dashboard at:
 
 </div>
 
-<p align="center">
+<div align="center">
+
 <!-- SOUNDCLOUD-CARD:START -->
-[![SoundCloud Latest Track](assets/soundcloud-card.svg)](https://soundcloud.com/playfunction/starme)
+<a href="https://soundcloud.com/playfunction/starme" target="_blank" rel="noopener noreferrer"><img src="assets/soundcloud-card.svg" alt="SoundCloud Latest Track" width="100%"/></a>
 <!-- SOUNDCLOUD-CARD:END -->
-</p>
+
+</div>
 
 <br/>
 
@@ -204,11 +214,13 @@ View the full interactive dashboard at:
 
 </div>
 
-<p align="center">
+<div align="center">
+
 <!-- OURA-HEALTH-CARD:START -->
-![Oura Health Dashboard](./oura/health_dashboard.svg)
+<img src="./oura/health_dashboard.svg" alt="Oura Health Dashboard" width="100%"/>
 <!-- OURA-HEALTH-CARD:END -->
-</p>
+
+</div>
 
 <br/>
 
@@ -218,11 +230,13 @@ View the full interactive dashboard at:
 
 </div>
 
-<p align="center">
+<div align="center">
+
 <!-- OURA-MOOD-CARD:START -->
-![Oura Mood Dashboard](./oura/mood_dashboard.svg)
+<img src="./oura/mood_dashboard.svg" alt="Oura Mood Dashboard" width="100%"/>
 <!-- OURA-MOOD-CARD:END -->
-</p>
+
+</div>
 
 <br/>
 
@@ -236,11 +250,13 @@ View the full interactive dashboard at:
 
 </div>
 
-<p align="center">
+<div align="center">
+
 <!-- STATUS-PAGE:START -->
-![System Status](./data/status/status-page.svg)
+<img src="./data/status/status-page.svg" alt="System Status" width="100%"/>
 <!-- STATUS-PAGE:END -->
-</p>
+
+</div>
 
 <p align="center">
 <a href="docs/MONITORING.md">📖 View detailed monitoring documentation</a>
