@@ -33,9 +33,16 @@ def fetch():
 @click.option("--output", "-o", default="weather/weather.json", help="Output JSON file path")
 def weather(output: str):
     """Fetch current weather data."""
+    from profile_engine.services.data_service import DataService
+    
     click.echo(f"Fetching weather data to {output}...")
-    # TODO: Implement weather fetching
-    click.echo("✅ Weather data fetched successfully")
+    try:
+        service = DataService()
+        service.fetch_weather(Path(output))
+        click.echo("✅ Weather data fetched successfully")
+    except Exception as e:
+        click.echo(f"❌ Error: {e}", err=True)
+        sys.exit(1)
 
 
 @fetch.command()
@@ -44,9 +51,18 @@ def weather(output: str):
 @click.option("--token", "-t", envvar="GITHUB_TOKEN", help="GitHub API token")
 def developer(username: str, output: str, token: Optional[str]):
     """Fetch GitHub developer statistics."""
+    from profile_engine.services.data_service import DataService
+    
     click.echo(f"Fetching developer statistics for {username}...")
-    # TODO: Implement developer stats fetching
-    click.echo("✅ Developer statistics fetched successfully")
+    try:
+        service = DataService()
+        if token:
+            service.github_client.token = token
+        service.fetch_developer_stats(username, Path(output))
+        click.echo("✅ Developer statistics fetched successfully")
+    except Exception as e:
+        click.echo(f"❌ Error: {e}", err=True)
+        sys.exit(1)
 
 
 @fetch.command()
@@ -94,9 +110,16 @@ def generate():
 @click.option("--theme", "-t", default="config/theme.json", help="Theme configuration file")
 def weather_card(input: str, output: str, theme: str):
     """Generate weather card SVG."""
+    from profile_engine.generators.card_generator import CardGenerator
+    
     click.echo(f"Generating weather card from {input}...")
-    # TODO: Implement weather card generation
-    click.echo(f"✅ Weather card generated: {output}")
+    try:
+        generator = CardGenerator()
+        generator.generate_weather_card(Path(input), Path(output), Path(theme) if theme else None)
+        click.echo(f"✅ Weather card generated: {output}")
+    except Exception as e:
+        click.echo(f"❌ Error: {e}", err=True)
+        sys.exit(1)
 
 
 @generate.command("developer-dashboard")
@@ -105,9 +128,16 @@ def weather_card(input: str, output: str, theme: str):
 @click.option("--theme", "-t", default="config/theme.json", help="Theme configuration file")
 def developer_dashboard(input: str, output: str, theme: str):
     """Generate developer dashboard SVG."""
+    from profile_engine.generators.card_generator import CardGenerator
+    
     click.echo(f"Generating developer dashboard from {input}...")
-    # TODO: Implement developer dashboard generation
-    click.echo(f"✅ Developer dashboard generated: {output}")
+    try:
+        generator = CardGenerator()
+        generator.generate_developer_dashboard(Path(input), Path(output), Path(theme) if theme else None)
+        click.echo(f"✅ Developer dashboard generated: {output}")
+    except Exception as e:
+        click.echo(f"❌ Error: {e}", err=True)
+        sys.exit(1)
 
 
 @generate.command("oura-dashboard")
