@@ -203,6 +203,81 @@ def build_profile(username: Optional[str], skip_fetch: bool, skip_generate: bool
 
 
 # =============================================================================
+# Sanitize Commands - Sanitize SVG files
+# =============================================================================
+
+@cli.group()
+def sanitize():
+    """Sanitize SVG files for GitHub compatibility."""
+    pass
+
+
+@sanitize.command("svg")
+@click.argument("svg_file", type=click.Path(exists=True, path_type=Path))
+@click.option("--output", "-o", type=click.Path(path_type=Path), help="Output file (default: overwrite input)")
+@click.option("--strict", is_flag=True, help="Fail on any issues instead of trying to fix")
+def sanitize_svg_command(svg_file: Path, output: Optional[Path], strict: bool):
+    """Sanitize a single SVG file."""
+    from profile_engine.utils.sanitize_svg import sanitize_svg
+    
+    click.echo(f"Sanitizing {svg_file}...")
+    
+    success, warnings = sanitize_svg(svg_file, output, strict=strict)
+    
+    if warnings:
+        click.echo("\nWarnings:")
+        for warning in warnings:
+            click.echo(f"  ⚠️  {warning}")
+    
+    if success:
+        output_path = output or svg_file
+        click.echo(f"\n✅ Successfully sanitized: {output_path}")
+    else:
+        click.echo(f"\n❌ Failed to sanitize {svg_file}", err=True)
+        sys.exit(1)
+
+
+@sanitize.command("all")
+@click.option("--directory", "-d", default=".", type=click.Path(exists=True, path_type=Path), help="Directory to scan")
+@click.option("--pattern", "-p", default="*.svg", help="Glob pattern for SVG files")
+@click.option("--strict", is_flag=True, help="Fail on any issues instead of trying to fix")
+def sanitize_all_command(directory: Path, pattern: str, strict: bool):
+    """Sanitize all SVG files in a directory."""
+    from profile_engine.utils.sanitize_svg import sanitize_all_svgs
+    
+    click.echo(f"Scanning for SVG files in {directory}...")
+    
+    results = sanitize_all_svgs(directory, pattern, strict=strict)
+    
+    if not results:
+        click.echo("No SVG files found.")
+        return
+    
+    click.echo(f"\nProcessed {len(results)} SVG files:")
+    
+    success_count = 0
+    failure_count = 0
+    
+    for svg_path, (success, warnings) in results.items():
+        if success:
+            success_count += 1
+            status = "✅"
+        else:
+            failure_count += 1
+            status = "❌"
+        
+        click.echo(f"  {status} {svg_path}")
+        if warnings:
+            for warning in warnings:
+                click.echo(f"      ⚠️  {warning}")
+    
+    click.echo(f"\nSummary: {success_count} succeeded, {failure_count} failed")
+    
+    if failure_count > 0:
+        sys.exit(1)
+
+
+# =============================================================================
 # Serve Command - Start FastAPI server
 # =============================================================================
 
