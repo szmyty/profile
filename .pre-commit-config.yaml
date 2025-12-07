@@ -79,3 +79,14 @@ repos:
       - id: prettier
         types_or: [svg, json, yaml, markdown]
         args: [--write]
+
+  # Custom markdown linting
+  - repo: local
+    hooks:
+      - id: lint-markdown-images
+        name: Lint markdown images in HTML blocks
+        entry: python scripts/lint-markdown-images.py
+        language: system
+        types: [markdown]
+        files: ^README\.md$
+        pass_filenames: true
