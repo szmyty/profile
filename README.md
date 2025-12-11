@@ -15,14 +15,12 @@
 ![Profile Views](https://komarev.com/ghpvc/?username=szmyty&style=for-the-badge&color=4a4e69&labelColor=1a1a2e)
 [![GitHub Stars](https://img.shields.io/github/stars/szmyty?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e&color=4a4e69)](https://github.com/szmyty?tab=repositories)
 [![CI](https://img.shields.io/github/actions/workflow/status/szmyty/szmyty/metrics.yml?style=for-the-badge&logo=github-actions&logoColor=white&labelColor=1a1a2e&color=4a4e69&label=CI)](https://github.com/szmyty/szmyty/actions)
-
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-4a4e69.svg?style=for-the-badge&labelColor=1a1a2e)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/szmyty/profile?style=for-the-badge&logo=git&logoColor=white&labelColor=1a1a2e&color=4a4e69&label=commits)
 ![GitHub last commit](https://img.shields.io/github/last-commit/szmyty/profile?style=for-the-badge&logoColor=white&labelColor=1a1a2e&color=4a4e69)
 ![Repo Size](https://img.shields.io/github/languages/code-size/szmyty/profile?style=for-the-badge&logoColor=white&labelColor=1a1a2e&color=4a4e69)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-4a4e69.svg?style=for-the-badge&labelColor=1a1a2e)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 </div>
 
@@ -596,7 +594,7 @@ Supporting and contributing to open-source initiatives
 
 [![EFF](https://img.shields.io/badge/EFF-Digital%20Rights-d32027?style=for-the-badge&logo=eff&logoColor=white)](https://www.eff.org/)
 [![Apache](https://img.shields.io/badge/Apache-Foundation-d22128?style=for-the-badge&logo=apache&logoColor=white)](https://www.apache.org/)
-[![Open Source Initiative](https://img.shields.io/badge/OSI-Open%20Source-3da639?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](https://opensource.org/)
+[![Open Source Initiative](https://img.shields.io/badge/OSI-Open%20Source-3da639?style=for-the-badge&logo=opensourceinitiative&logoColor=white)][openSourceInitiativeUrl]
 
 <br/><br/>
 
@@ -661,3 +659,5 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 [poetryUrl]: https://python-poetry.org/
 [githubActionsBadge]: https://img.shields.io/badge/Powered%20by-GitHub%20Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white
 [githubActionsUrl]: https://github.com/features/actions
+
+[openSourceInitiativeUrl]: https://opensource.org/
