@@ -6,9 +6,10 @@ This composite action consolidates common setup steps used across all GitHub wor
 
 - **Repository Checkout**: Clones the repository with minimal fetch depth for performance
 - **Python Setup**: Configures Python with the specified version
+- **Python Virtual Environment**: Creates an isolated `.venv` directory for all Python packages
 - **Pip Caching**: Automatically caches pip dependencies for faster builds
 - **System Dependencies**: Installs required system packages (jq, curl, etc.)
-- **Python Dependencies**: Optionally installs Python packages from requirements.txt
+- **Python Dependencies**: Optionally installs Python packages from requirements.txt or Poetry
 
 ## Usage
 
@@ -98,10 +99,11 @@ steps:
 
 ## Performance Optimizations
 
-1. **Pip Caching**: Uses `actions/setup-python@v5` with built-in pip caching, which significantly speeds up workflow runs by caching installed packages based on requirements file hashes
-2. **Shallow Clone**: Uses `fetch-depth: 1` for faster repository checkout
-3. **Conditional Installation**: Only installs requested system packages
-4. **Smart Dependency Detection**: Automatically detects and uses Poetry or pip based on project structure
+1. **Python Virtual Environment**: All Python dependencies are installed in an isolated `.venv` directory, preventing conflicts with system packages and ensuring PEP 668 compliance (Python 3.12+)
+2. **Pip Caching**: Uses `actions/setup-python@v5` with built-in pip caching, which significantly speeds up workflow runs by caching installed packages based on requirements file hashes
+3. **Shallow Clone**: Uses `fetch-depth: 1` for faster repository checkout
+4. **Conditional Installation**: Only installs requested system packages
+5. **Smart Dependency Detection**: Automatically detects and uses Poetry or pip based on project structure
 
 For additional package caching beyond base requirements, see the [pip-install action](../pip-install/README.md).
 
@@ -110,6 +112,9 @@ For additional package caching beyond base requirements, see the [pip-install ac
 - All scripts in the `scripts/` directory already have execute permissions in the repository, so there's no need to run `chmod +x` on them in workflows
 - The action uses pinned SHA versions for GitHub actions for security
 - System packages are only installed if explicitly requested to minimize installation time
+- Python packages are installed in an isolated virtual environment (`.venv`), which is automatically activated for subsequent workflow steps
+- The virtual environment approach ensures compatibility with Python 3.12+ and prevents PEP 668 "externally managed environment" errors
+- Works seamlessly with both GitHub Actions runners and local `act` execution
 
 ## Migration Guide
 

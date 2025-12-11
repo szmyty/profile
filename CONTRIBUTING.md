@@ -57,6 +57,7 @@ Contributions to improve documentation, fix bugs, or add features are welcome:
 - Node.js 20+
 - Poetry (for Python dependency management)
 - npm (for Node.js dependencies)
+- (Optional) [act](https://github.com/nektos/act) for local GitHub Actions testing
 
 ### Local Development
 
@@ -70,6 +71,8 @@ Contributions to improve documentation, fix bugs, or add features are welcome:
    ```bash
    poetry install
    ```
+   
+   **Note:** GitHub Actions workflows automatically create and use a Python virtual environment (`.venv`) to ensure isolation and PEP 668 compliance. This virtual environment is already in `.gitignore`.
 
 3. **Install Node.js dependencies:**
    ```bash
@@ -87,6 +90,36 @@ Contributions to improve documentation, fix bugs, or add features are welcome:
    cd dashboard-app
    npm run build
    ```
+
+### Testing Workflows Locally with act
+
+You can test GitHub Actions workflows locally using [act](https://github.com/nektos/act):
+
+1. **Install act:**
+   ```bash
+   # macOS
+   brew install act
+   
+   # Linux
+   curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
+   ```
+
+2. **Create a `.secrets` file** (copy from `.secrets.example`):
+   ```bash
+   cp .secrets.example .secrets
+   # Edit .secrets and add your tokens
+   ```
+
+3. **Run a workflow:**
+   ```bash
+   # Test individual action
+   act --job test-action --input action=fetch-location --secret-file .secrets
+   
+   # Test the act demo workflow
+   act -W .github/workflows/act-demo.yml
+   ```
+
+**Note:** The setup actions now use Python virtual environments, which prevents PEP 668 errors when running with act on Python 3.12+.
 
 ## ✨ Recognition
 
