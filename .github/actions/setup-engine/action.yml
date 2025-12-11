@@ -40,6 +40,8 @@ runs:
         pip install -e ./engine
         echo "$GITHUB_WORKSPACE/.venv/bin" >> $GITHUB_PATH
         echo "✅ Profile Engine installed in virtual environment"
+        # Verify installation works within the activated venv
+        which profile-engine
         profile-engine --version
     
     - name: 📦 Install legacy dependencies (for backward compatibility)
