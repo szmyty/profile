@@ -232,3 +232,255 @@ Diagnostic info saved to location/debug_map_headers.txt
 [2025-12-06T01:29:59Z] [INFO] Ended at: 2025-12-06T01:29:59Z
 [2025-12-06T01:29:59Z] [INFO] ============================================================
 [2025-12-06T01:29:59Z] [INFO] ============================================================
+Logging initialized: logs/location/location.log
+[2025-12-06T04:20:31Z] [INFO] ============================================================
+[2025-12-06T04:20:31Z] [INFO] ============================================================
+[2025-12-06T04:20:31Z] [INFO] Workflow: Location Card - Fetch Data
+[2025-12-06T04:20:31Z] [INFO] Workflow: Location Card - Fetch Data
+[2025-12-06T04:20:31Z] [INFO] Started at: 2025-12-06T04:20:31Z
+[2025-12-06T04:20:31Z] [INFO] Started at: 2025-12-06T04:20:31Z
+[2025-12-06T04:20:31Z] [INFO] ============================================================
+[2025-12-06T04:20:31Z] [INFO] ============================================================
+[2025-12-06T04:20:31Z] [INFO] Fetching GitHub location...
+[2025-12-06T04:20:31Z] [INFO] Fetching GitHub location...
+Fetching GitHub profile location for szmyty...
+Location saved to cache: Boston, Massachusetts
+[2025-12-06T04:20:31Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-06T04:20:31Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-06T04:20:31Z] [INFO] Converting location to coordinates...
+[2025-12-06T04:20:31Z] [INFO] Converting location to coordinates...
+Converting location to coordinates: Boston, Massachusetts
+🔍 Health check: Nominatim API...
+❌ Nominatim API unhealthy (HTTP 302)
+Warning: Nominatim API health check failed, but continuing anyway...
+Diagnostic info saved to location/debug_nominatim.json
+Note: Debug files contain location data and are excluded from git commits
+✅ Found coordinates: 42.3588336, -71.0578303
+   Display name: Boston, Suffolk County, Massachusetts, United States
+Cached response for nominatim:Qm9zdG9uLCBNYXNzYWNodXNldHRz
+[2025-12-06T04:20:33Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-06T04:20:33Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-06T04:20:33Z] [INFO] Output directory: location
+[2025-12-06T04:20:33Z] [INFO] Output directory: location
+[2025-12-06T04:20:33Z] [INFO] Downloading static map...
+[2025-12-06T04:20:33Z] [INFO] Downloading static map...
+Downloading static map from Mapbox centered on 42.3588336, -71.0578303...
+🔍 Health check: Mapbox API...
+❌ Mapbox API unhealthy (HTTP 404)
+[2025-12-06T04:20:33Z] [WARN] Mapbox API health check failed, but continuing anyway...
+[2025-12-06T04:20:33Z] [WARN] Mapbox API health check failed, but continuing anyway...
+Determining time of day for coordinates 42.3588336, -71.0578303...
+Diagnostic info saved to location/debug_meteo_response.txt
+Sunrise: 2025-12-05T06:58 (epoch: 1764917880)
+Sunset: 2025-12-05T16:11 (epoch: 1764951060)
+Current: 2025-12-06T04:20 (epoch: 1764994833)
+🌙 Night detected - using dark theme
+Using Mapbox style: mapbox/dark-v11
+Diagnostic info saved to location/debug_map_response.txt
+Diagnostic info saved to location/debug_map_headers.txt
+✅ Static map saved to location/location-map.png
+   → Style: mapbox/dark-v11
+   → Theme: dark
+[2025-12-06T04:20:34Z] [INFO] Static map downloaded successfully
+[2025-12-06T04:20:34Z] [INFO] Static map downloaded successfully
+[2025-12-06T04:20:34Z] [INFO] Generating location JSON output...
+[2025-12-06T04:20:34Z] [INFO] Generating location JSON output...
+[2025-12-06T04:20:34Z] [INFO] Location data generated successfully
+[2025-12-06T04:20:34Z] [INFO] Location data generated successfully
+[2025-12-06T04:20:34Z] [INFO] ============================================================
+[2025-12-06T04:20:34Z] [INFO] ============================================================
+[2025-12-06T04:20:34Z] [INFO] Workflow: Location Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-06T04:20:34Z] [INFO] Workflow: Location Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-06T04:20:34Z] [INFO] Ended at: 2025-12-06T04:20:34Z
+[2025-12-06T04:20:34Z] [INFO] Ended at: 2025-12-06T04:20:34Z
+[2025-12-06T04:20:34Z] [INFO] ============================================================
+[2025-12-06T04:20:34Z] [INFO] ============================================================
+Logging initialized: logs/location/location.log
+[2025-12-06T06:08:58Z] [INFO] ============================================================
+[2025-12-06T06:08:58Z] [INFO] ============================================================
+[2025-12-06T06:08:58Z] [INFO] Workflow: Location Card - Fetch Data
+[2025-12-06T06:08:58Z] [INFO] Workflow: Location Card - Fetch Data
+[2025-12-06T06:08:58Z] [INFO] Started at: 2025-12-06T06:08:58Z
+[2025-12-06T06:08:58Z] [INFO] Started at: 2025-12-06T06:08:58Z
+[2025-12-06T06:08:58Z] [INFO] ============================================================
+[2025-12-06T06:08:58Z] [INFO] ============================================================
+[2025-12-06T06:08:58Z] [INFO] Fetching GitHub location...
+[2025-12-06T06:08:58Z] [INFO] Fetching GitHub location...
+Fetching GitHub profile location for szmyty...
+Location saved to cache: Boston, Massachusetts
+[2025-12-06T06:08:58Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-06T06:08:58Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-06T06:08:58Z] [INFO] Converting location to coordinates...
+[2025-12-06T06:08:58Z] [INFO] Converting location to coordinates...
+Converting location to coordinates: Boston, Massachusetts
+🔍 Health check: Nominatim API...
+❌ Nominatim API unhealthy (HTTP 302)
+Warning: Nominatim API health check failed, but continuing anyway...
+Diagnostic info saved to location/debug_nominatim.json
+Note: Debug files contain location data and are excluded from git commits
+✅ Found coordinates: 42.3588336, -71.0578303
+   Display name: Boston, Suffolk County, Massachusetts, United States
+Cached response for nominatim:Qm9zdG9uLCBNYXNzYWNodXNldHRz
+[2025-12-06T06:09:00Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-06T06:09:00Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-06T06:09:00Z] [INFO] Output directory: location
+[2025-12-06T06:09:00Z] [INFO] Output directory: location
+[2025-12-06T06:09:00Z] [INFO] Downloading static map...
+[2025-12-06T06:09:00Z] [INFO] Downloading static map...
+Downloading static map from Mapbox centered on 42.3588336, -71.0578303...
+🔍 Health check: Mapbox API...
+❌ Mapbox API unhealthy (HTTP 404)
+[2025-12-06T06:09:00Z] [WARN] Mapbox API health check failed, but continuing anyway...
+[2025-12-06T06:09:00Z] [WARN] Mapbox API health check failed, but continuing anyway...
+Determining time of day for coordinates 42.3588336, -71.0578303...
+Diagnostic info saved to location/debug_meteo_response.txt
+Sunrise: 2025-12-06T06:59 (epoch: 1765004340)
+Sunset: 2025-12-06T16:11 (epoch: 1765037460)
+Current: 2025-12-06T06:09 (epoch: 1765001341)
+🌙 Night detected - using dark theme
+Using Mapbox style: mapbox/dark-v11
+Diagnostic info saved to location/debug_map_response.txt
+Diagnostic info saved to location/debug_map_headers.txt
+✅ Static map saved to location/location-map.png
+   → Style: mapbox/dark-v11
+   → Theme: dark
+[2025-12-06T06:09:01Z] [INFO] Static map downloaded successfully
+[2025-12-06T06:09:01Z] [INFO] Static map downloaded successfully
+[2025-12-06T06:09:01Z] [INFO] Generating location JSON output...
+[2025-12-06T06:09:01Z] [INFO] Generating location JSON output...
+[2025-12-06T06:09:01Z] [INFO] Location data generated successfully
+[2025-12-06T06:09:01Z] [INFO] Location data generated successfully
+[2025-12-06T06:09:01Z] [INFO] ============================================================
+[2025-12-06T06:09:01Z] [INFO] ============================================================
+[2025-12-06T06:09:01Z] [INFO] Workflow: Location Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-06T06:09:01Z] [INFO] Workflow: Location Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-06T06:09:01Z] [INFO] Ended at: 2025-12-06T06:09:01Z
+[2025-12-06T06:09:01Z] [INFO] Ended at: 2025-12-06T06:09:01Z
+[2025-12-06T06:09:01Z] [INFO] ============================================================
+[2025-12-06T06:09:01Z] [INFO] ============================================================
+Logging initialized: logs/location/location.log
+[2025-12-06T12:07:19Z] [INFO] ============================================================
+[2025-12-06T12:07:19Z] [INFO] ============================================================
+[2025-12-06T12:07:19Z] [INFO] Workflow: Location Card - Fetch Data
+[2025-12-06T12:07:19Z] [INFO] Workflow: Location Card - Fetch Data
+[2025-12-06T12:07:19Z] [INFO] Started at: 2025-12-06T12:07:19Z
+[2025-12-06T12:07:19Z] [INFO] Started at: 2025-12-06T12:07:19Z
+[2025-12-06T12:07:19Z] [INFO] ============================================================
+[2025-12-06T12:07:19Z] [INFO] ============================================================
+[2025-12-06T12:07:19Z] [INFO] Fetching GitHub location...
+[2025-12-06T12:07:19Z] [INFO] Fetching GitHub location...
+Fetching GitHub profile location for szmyty...
+Location saved to cache: Boston, Massachusetts
+[2025-12-06T12:07:19Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-06T12:07:19Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-06T12:07:19Z] [INFO] Converting location to coordinates...
+[2025-12-06T12:07:19Z] [INFO] Converting location to coordinates...
+Converting location to coordinates: Boston, Massachusetts
+🔍 Health check: Nominatim API...
+❌ Nominatim API unhealthy (HTTP 302)
+Warning: Nominatim API health check failed, but continuing anyway...
+Diagnostic info saved to location/debug_nominatim.json
+Note: Debug files contain location data and are excluded from git commits
+✅ Found coordinates: 42.3588336, -71.0578303
+   Display name: Boston, Suffolk County, Massachusetts, United States
+Cached response for nominatim:Qm9zdG9uLCBNYXNzYWNodXNldHRz
+[2025-12-06T12:07:21Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-06T12:07:21Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-06T12:07:21Z] [INFO] Output directory: location
+[2025-12-06T12:07:21Z] [INFO] Output directory: location
+[2025-12-06T12:07:21Z] [INFO] Downloading static map...
+[2025-12-06T12:07:21Z] [INFO] Downloading static map...
+Downloading static map from Mapbox centered on 42.3588336, -71.0578303...
+🔍 Health check: Mapbox API...
+❌ Mapbox API unhealthy (HTTP 404)
+[2025-12-06T12:07:21Z] [WARN] Mapbox API health check failed, but continuing anyway...
+[2025-12-06T12:07:21Z] [WARN] Mapbox API health check failed, but continuing anyway...
+Determining time of day for coordinates 42.3588336, -71.0578303...
+Diagnostic info saved to location/debug_meteo_response.txt
+Sunrise: 2025-12-06T06:59 (epoch: 1765004340)
+Sunset: 2025-12-06T16:11 (epoch: 1765037460)
+Current: 2025-12-06T12:07 (epoch: 1765022842)
+☀️ Day detected - using light theme
+Using Mapbox style: mapbox/light-v11
+Diagnostic info saved to location/debug_map_response.txt
+Diagnostic info saved to location/debug_map_headers.txt
+✅ Static map saved to location/location-map.png
+   → Style: mapbox/light-v11
+   → Theme: light
+[2025-12-06T12:07:22Z] [INFO] Static map downloaded successfully
+[2025-12-06T12:07:22Z] [INFO] Static map downloaded successfully
+[2025-12-06T12:07:22Z] [INFO] Generating location JSON output...
+[2025-12-06T12:07:22Z] [INFO] Generating location JSON output...
+[2025-12-06T12:07:22Z] [INFO] Location data generated successfully
+[2025-12-06T12:07:22Z] [INFO] Location data generated successfully
+[2025-12-06T12:07:22Z] [INFO] ============================================================
+[2025-12-06T12:07:22Z] [INFO] ============================================================
+[2025-12-06T12:07:22Z] [INFO] Workflow: Location Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-06T12:07:22Z] [INFO] Workflow: Location Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-06T12:07:22Z] [INFO] Ended at: 2025-12-06T12:07:22Z
+[2025-12-06T12:07:22Z] [INFO] Ended at: 2025-12-06T12:07:22Z
+[2025-12-06T12:07:22Z] [INFO] ============================================================
+[2025-12-06T12:07:22Z] [INFO] ============================================================
+Logging initialized: logs/location/location.log
+[2025-12-07T01:17:51Z] [INFO] ============================================================
+[2025-12-07T01:17:51Z] [INFO] ============================================================
+[2025-12-07T01:17:51Z] [INFO] Workflow: Location Card - Fetch Data
+[2025-12-07T01:17:51Z] [INFO] Workflow: Location Card - Fetch Data
+[2025-12-07T01:17:51Z] [INFO] Started at: 2025-12-07T01:17:51Z
+[2025-12-07T01:17:51Z] [INFO] Started at: 2025-12-07T01:17:51Z
+[2025-12-07T01:17:51Z] [INFO] ============================================================
+[2025-12-07T01:17:51Z] [INFO] ============================================================
+[2025-12-07T01:17:51Z] [INFO] Fetching GitHub location...
+[2025-12-07T01:17:51Z] [INFO] Fetching GitHub location...
+Fetching GitHub profile location for szmyty...
+Location saved to cache: Boston, Massachusetts
+[2025-12-07T01:17:51Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-07T01:17:51Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-07T01:17:51Z] [INFO] Converting location to coordinates...
+[2025-12-07T01:17:51Z] [INFO] Converting location to coordinates...
+Converting location to coordinates: Boston, Massachusetts
+🔍 Health check: Nominatim API...
+❌ Nominatim API unhealthy (HTTP 302)
+Warning: Nominatim API health check failed, but continuing anyway...
+Diagnostic info saved to location/debug_nominatim.json
+Note: Debug files contain location data and are excluded from git commits
+✅ Found coordinates: 42.3588336, -71.0578303
+   Display name: Boston, Suffolk County, Massachusetts, United States
+Cached response for nominatim:Qm9zdG9uLCBNYXNzYWNodXNldHRz
+[2025-12-07T01:17:53Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-07T01:17:53Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-07T01:17:53Z] [INFO] Output directory: location
+[2025-12-07T01:17:53Z] [INFO] Output directory: location
+[2025-12-07T01:17:53Z] [INFO] Downloading static map...
+[2025-12-07T01:17:53Z] [INFO] Downloading static map...
+Downloading static map from Mapbox centered on 42.3588336, -71.0578303...
+🔍 Health check: Mapbox API...
+❌ Mapbox API unhealthy (HTTP 404)
+[2025-12-07T01:17:53Z] [WARN] Mapbox API health check failed, but continuing anyway...
+[2025-12-07T01:17:53Z] [WARN] Mapbox API health check failed, but continuing anyway...
+Determining time of day for coordinates 42.3588336, -71.0578303...
+Diagnostic info saved to location/debug_meteo_response.txt
+Sunrise: 2025-12-06T06:59 (epoch: 1765004340)
+Sunset: 2025-12-06T16:11 (epoch: 1765037460)
+Current: 2025-12-07T01:17 (epoch: 1765070274)
+🌙 Night detected - using dark theme
+Using Mapbox style: mapbox/dark-v11
+Diagnostic info saved to location/debug_map_response.txt
+Diagnostic info saved to location/debug_map_headers.txt
+✅ Static map saved to location/location-map.png
+   → Style: mapbox/dark-v11
+   → Theme: dark
+[2025-12-07T01:17:54Z] [INFO] Static map downloaded successfully
+[2025-12-07T01:17:54Z] [INFO] Static map downloaded successfully
+[2025-12-07T01:17:54Z] [INFO] Generating location JSON output...
+[2025-12-07T01:17:54Z] [INFO] Generating location JSON output...
+[2025-12-07T01:17:54Z] [INFO] Location data generated successfully
+[2025-12-07T01:17:54Z] [INFO] Location data generated successfully
+[2025-12-07T01:17:54Z] [INFO] ============================================================
+[2025-12-07T01:17:54Z] [INFO] ============================================================
+[2025-12-07T01:17:54Z] [INFO] Workflow: Location Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-07T01:17:54Z] [INFO] Workflow: Location Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-07T01:17:54Z] [INFO] Ended at: 2025-12-07T01:17:54Z
+[2025-12-07T01:17:54Z] [INFO] Ended at: 2025-12-07T01:17:54Z
+[2025-12-07T01:17:54Z] [INFO] ============================================================
+[2025-12-07T01:17:54Z] [INFO] ============================================================

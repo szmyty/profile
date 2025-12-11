@@ -10,15 +10,15 @@
     </linearGradient>
   </defs>
   
-  <!-- Badge background -->
-  <rect width="140" height="28" rx="6" fill="url(#statusGradient)"/>
   
-  <!-- Badge border -->
-  <rect x="0.5" y="0.5" width="139" height="27" rx="5.5" fill="none" stroke="#4a4e69" stroke-width="1" opacity="0.5"/>
+  <rect width="140" height="28" rx="6" fill="url(#statusGradient)" />
   
-  <!-- Status indicator -->
-  <circle cx="16" cy="14" r="5" fill="url(#accentGradient)"/>
   
-  <!-- Badge label -->
+  <rect x="0.5" y="0.5" width="139" height="27" rx="5.5" fill="none" stroke="#4a4e69" stroke-width="1" opacity="0.5" />
+  
+  
+  <circle cx="16" cy="14" r="5" fill="url(#accentGradient)" />
+  
+  
   <text x="78" y="18" font-family="'SF Mono', 'Fira Code', 'Monaco', monospace" font-size="11" fill="#e2e8f0" text-anchor="middle" font-weight="500">Status</text>
 </svg>

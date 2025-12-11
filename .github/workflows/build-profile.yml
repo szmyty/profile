@@ -160,6 +160,14 @@ jobs:
         uses: ./.github/actions/optimize-svgs
         continue-on-error: true
       
+      # Sanitization Phase
+      - name: 🧹 Sanitize all generated SVG files
+        run: |
+          echo "Sanitizing SVG files for GitHub compatibility..."
+          profile-engine sanitize all
+          echo "✅ SVG sanitization complete"
+        continue-on-error: false
+      
       # Update README
       - name: 📝 Update README
         uses: ./.github/actions/update-readme

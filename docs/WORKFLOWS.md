@@ -177,7 +177,7 @@ The following workflows were consolidated into `build-profile.yml`:
 - `megalinter.yml` - Code Linting
 - `deploy-dashboard.yml` - React Dashboard Deployment
 
-These archived workflows are preserved in `.github/workflows/_archive/` for reference.
+These workflows were removed during the December 2024 repository cleanup. They can be found in the Git history if needed.
 
 ## Triggering Workflows
 

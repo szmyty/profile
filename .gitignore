@@ -6,6 +6,10 @@ __pycache__/
 .pytest_cache/
 .venv/
 venv/
+*.egg-info/
+dist/
+build/
+.eggs/
 
 # OS files
 .DS_Store
@@ -54,3 +58,9 @@ reports/megalinter/
 .secrets
 .actrc.local
 actionlint
+
+# Engine artifacts
+engine/.pytest_cache/
+engine/dist/
+engine/build/
+engine/*.egg-info/

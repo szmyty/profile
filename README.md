@@ -9,14 +9,18 @@
 <!-- Branded Header Banner -->
 <img src="branding/header.svg" alt="Alan Szmyt - Software Engineer • DevOps & Cloud • AI-Assisted Systems" width="100%"/>
 
-<br/><br/>
-
 <!-- Badges Row -->
-[![Version](https://img.shields.io/github/v/tag/szmyty/profile?style=for-the-badge&logo=semver&logoColor=white&labelColor=1a1a2e&color=4a4e69&label=version)](https://github.com/szmyty/profile/releases)
+[![Version][versionBadge]][releasesUrl]
 [![GitHub followers](https://img.shields.io/github/followers/szmyty?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e&color=4a4e69)](https://github.com/szmyty?tab=followers)
 ![Profile Views](https://komarev.com/ghpvc/?username=szmyty&style=for-the-badge&color=4a4e69&labelColor=1a1a2e)
 [![GitHub Stars](https://img.shields.io/github/stars/szmyty?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e&color=4a4e69)](https://github.com/szmyty?tab=repositories)
 [![CI](https://img.shields.io/github/actions/workflow/status/szmyty/szmyty/metrics.yml?style=for-the-badge&logo=github-actions&logoColor=white&labelColor=1a1a2e&color=4a4e69&label=CI)](https://github.com/szmyty/szmyty/actions)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/szmyty/profile?style=for-the-badge&logo=git&logoColor=white&labelColor=1a1a2e&color=4a4e69&label=commits)
+![GitHub last commit](https://img.shields.io/github/last-commit/szmyty/profile?style=for-the-badge&logoColor=white&labelColor=1a1a2e&color=4a4e69)
+![Repo Size](https://img.shields.io/github/languages/code-size/szmyty/profile?style=for-the-badge&logoColor=white&labelColor=1a1a2e&color=4a4e69)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-4a4e69.svg?style=for-the-badge&labelColor=1a1a2e)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 </div>
 
@@ -98,7 +102,7 @@ I build high-quality, scalable platforms with strong emphasis on automation, sec
 
 ## 📊 Workflow Performance Dashboard
 
-![Workflow Performance](./dashboard.svg)
+<img src="./dashboard.svg" alt="Workflow Performance" width="100%"/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════ -->
 <!-- 🌐 LIVE DASHBOARD                                                          -->
@@ -134,11 +138,13 @@ View the full interactive dashboard at:
 
 </div>
 
-<p align="center">
+<div align="center">
+
 <!-- DEVELOPER-DASHBOARD:START -->
-![Developer Dashboard](./developer/developer_dashboard.svg)
+<img src="./developer/developer_dashboard.svg" alt="Developer Dashboard" width="100%"/>
 <!-- DEVELOPER-DASHBOARD:END -->
-</p>
+
+</div>
 
 <br/>
 
@@ -148,11 +154,13 @@ View the full interactive dashboard at:
 
 </div>
 
-<p align="center">
+<div align="center">
+
 <!-- QUOTE-CARD:START -->
-![Quote of the Day](./quotes/quote_card.svg)
+<img src="./quotes/quote_card.svg" alt="Quote of the Day" width="100%"/>
 <!-- QUOTE-CARD:END -->
-</p>
+
+</div>
 
 <br/>
 
@@ -162,11 +170,13 @@ View the full interactive dashboard at:
 
 </div>
 
-<p align="center">
+<div align="center">
+
 <!-- LOCATION-CARD:START -->
-![My Location](./location/location-card.svg)
+<img src="./location/location-card.svg" alt="My Location" width="100%"/>
 <!-- LOCATION-CARD:END -->
-</p>
+
+</div>
 
 <br/>
 
@@ -176,11 +186,13 @@ View the full interactive dashboard at:
 
 </div>
 
-<p align="center">
+<div align="center">
+
 <!-- WEATHER-CARD:START -->
-![Today's Weather](./weather/weather-today.svg)
+<img src="./weather/weather-today.svg" alt="Today's Weather" width="100%"/>
 <!-- WEATHER-CARD:END -->
-</p>
+
+</div>
 
 <br/>
 
@@ -190,11 +202,13 @@ View the full interactive dashboard at:
 
 </div>
 
-<p align="center">
+<div align="center">
+
 <!-- SOUNDCLOUD-CARD:START -->
-[![SoundCloud Latest Track](assets/soundcloud-card.svg)](https://soundcloud.com/playfunction/prescience_v2)
+<a href="https://soundcloud.com/playfunction/starme" target="_blank" rel="noopener noreferrer"><img src="assets/soundcloud-card.svg" alt="SoundCloud Latest Track" width="100%"/></a>
 <!-- SOUNDCLOUD-CARD:END -->
-</p>
+
+</div>
 
 <br/>
 
@@ -204,11 +218,13 @@ View the full interactive dashboard at:
 
 </div>
 
-<p align="center">
+<div align="center">
+
 <!-- OURA-HEALTH-CARD:START -->
-![Oura Health Dashboard](./oura/health_dashboard.svg)
+<img src="./oura/health_dashboard.svg" alt="Oura Health Dashboard" width="100%"/>
 <!-- OURA-HEALTH-CARD:END -->
-</p>
+
+</div>
 
 <br/>
 
@@ -218,11 +234,13 @@ View the full interactive dashboard at:
 
 </div>
 
-<p align="center">
+<div align="center">
+
 <!-- OURA-MOOD-CARD:START -->
-![Oura Mood Dashboard](./oura/mood_dashboard.svg)
+<img src="./oura/mood_dashboard.svg" alt="Oura Mood Dashboard" width="100%"/>
 <!-- OURA-MOOD-CARD:END -->
-</p>
+
+</div>
 
 <br/>
 
@@ -236,11 +254,13 @@ View the full interactive dashboard at:
 
 </div>
 
-<p align="center">
+<div align="center">
+
 <!-- STATUS-PAGE:START -->
-![System Status](./data/status/status-page.svg)
+<img src="./data/status/status-page.svg" alt="System Status" width="100%"/>
 <!-- STATUS-PAGE:END -->
-</p>
+
+</div>
 
 <p align="center">
 <a href="docs/MONITORING.md">📖 View detailed monitoring documentation</a>
@@ -292,8 +312,7 @@ The workflow never fails due to partial errors:
 - Each step uses `continue-on-error: true` where appropriate
 
 <p align="center">
-📖 <a href=".github/workflows/_archive/README.md">View archived workflows</a> | 
-<a href=".github/workflows/build-profile.yml">View workflow source</a>
+📖 <a href=".github/workflows/build-profile.yml">View workflow source</a>
 </p>
 
 <br/>
@@ -575,7 +594,7 @@ Supporting and contributing to open-source initiatives
 
 [![EFF](https://img.shields.io/badge/EFF-Digital%20Rights-d32027?style=for-the-badge&logo=eff&logoColor=white)](https://www.eff.org/)
 [![Apache](https://img.shields.io/badge/Apache-Foundation-d22128?style=for-the-badge&logo=apache&logoColor=white)](https://www.apache.org/)
-[![Open Source Initiative](https://img.shields.io/badge/OSI-Open%20Source-3da639?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](https://opensource.org/)
+[![Open Source Initiative](https://img.shields.io/badge/OSI-Open%20Source-3da639?style=for-the-badge&logo=opensourceinitiative&logoColor=white)][openSourceInitiativeUrl]
 
 <br/><br/>
 
@@ -595,8 +614,50 @@ Supporting and contributing to open-source initiatives
 
 <br/>
 
-![Powered by GitHub Actions](https://img.shields.io/badge/Powered%20by-GitHub%20Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
+[![Powered by GitHub Actions][githubActionsBadge]][githubActionsUrl]
 ![Made with Python](https://img.shields.io/badge/Made%20with-Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Automated with Poetry](https://img.shields.io/badge/Automated%20with-Poetry-60A5FA?style=flat-square&logo=poetry&logoColor=white)
+[![Automated with Poetry][poetryBadge]][poetryUrl]
+
 
 </div>
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/szmyty"><img src="https://avatars.githubusercontent.com/u/14865041?v=4?s=100" width="100px;" alt="Alan Szmyt"/><br /><sub><b>Alan Szmyt</b></sub></a><br /><a href="#code-szmyty" title="Code">💻</a> <a href="#design-szmyty" title="Design">🎨</a> <a href="#ideas-szmyty" title="Ideas & Planning">🤔</a> <a href="#maintenance-szmyty" title="Maintenance">🚧</a> <a href="#infra-szmyty" title="Infrastructure">🚇</a> <a href="#doc-szmyty" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/apps/github-copilot"><img src="https://avatars.githubusercontent.com/in/29110?v=4?s=100" width="100px;" alt="GitHub Copilot"/><br /><sub><b>GitHub Copilot</b></sub></a><br /><a href="#code-github-copilot[bot]" title="Code">💻</a> <a href="#ideas-github-copilot[bot]" title="Ideas & Planning">🤔</a> <a href="#tool-github-copilot[bot]" title="Tools">🔧</a> <a href="#automation-github-copilot[bot]" title="Automation">🤖</a></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td align="center" size="13px" colspan="7">
+        <img src="https://raw.githubusercontent.com/all-contributors/all-contributors-cli/1b8533af435da9854653492b1327a23a4dbd0a10/assets/logo-small.svg">
+          <a href="https://all-contributors.js.org/docs/en/bot/usage">Add your contributions</a>
+        </img>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+[versionBadge]: https://img.shields.io/github/v/tag/szmyty/profile?style=for-the-badge&logo=semver&logoColor=white&labelColor=1a1a2e&color=4a4e69&label=version "Version"
+[releasesUrl]: https://github.com/szmyty/profile/releases
+[poetryBadge]: https://img.shields.io/badge/Automated%20with-Poetry-60A5FA?style=flat-square&logo=poetry&logoColor=white
+[poetryUrl]: https://python-poetry.org/
+[githubActionsBadge]: https://img.shields.io/badge/Powered%20by-GitHub%20Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white
+[githubActionsUrl]: https://github.com/features/actions
+
+[openSourceInitiativeUrl]: https://opensource.org/

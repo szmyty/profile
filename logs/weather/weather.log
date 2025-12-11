@@ -304,3 +304,187 @@ Cached response for weather:NDIuMzU4ODMzNiwtNzEuMDU3ODMwMw==
 [2025-12-06T01:30:00Z] [INFO] Ended at: 2025-12-06T01:30:00Z
 [2025-12-06T01:30:00Z] [INFO] ============================================================
 [2025-12-06T01:30:00Z] [INFO] ============================================================
+Logging initialized: logs/weather/weather.log
+[2025-12-06T04:20:34Z] [INFO] ============================================================
+[2025-12-06T04:20:34Z] [INFO] ============================================================
+[2025-12-06T04:20:34Z] [INFO] Workflow: Weather Card - Fetch Data
+[2025-12-06T04:20:34Z] [INFO] Workflow: Weather Card - Fetch Data
+[2025-12-06T04:20:34Z] [INFO] Started at: 2025-12-06T04:20:34Z
+[2025-12-06T04:20:34Z] [INFO] Started at: 2025-12-06T04:20:34Z
+[2025-12-06T04:20:34Z] [INFO] ============================================================
+[2025-12-06T04:20:34Z] [INFO] ============================================================
+[2025-12-06T04:20:34Z] [INFO] Fetching GitHub location...
+[2025-12-06T04:20:34Z] [INFO] Fetching GitHub location...
+Fetching GitHub profile location for szmyty...
+Location saved to cache: Boston, Massachusetts
+[2025-12-06T04:20:34Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-06T04:20:34Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-06T04:20:34Z] [INFO] Converting location to coordinates...
+[2025-12-06T04:20:34Z] [INFO] Converting location to coordinates...
+Converting location to coordinates: Boston, Massachusetts
+Cache hit for nominatim:Qm9zdG9uLCBNYXNzYWNodXNldHRz
+Using cached coordinates
+[2025-12-06T04:20:34Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-06T04:20:34Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-06T04:20:34Z] [INFO] Fetching weather data from Open-Meteo...
+[2025-12-06T04:20:34Z] [INFO] Fetching weather data from Open-Meteo...
+Fetching weather data from Open-Meteo...
+🔍 Health check: Open-Meteo API...
+✅ Open-Meteo API is healthy (HTTP 200)
+Cached response for weather:NDIuMzU4ODMzNiwtNzEuMDU3ODMwMw==
+[2025-12-06T04:20:35Z] [INFO] Weather data fetched successfully
+[2025-12-06T04:20:35Z] [INFO] Weather data fetched successfully
+[2025-12-06T04:20:35Z] [INFO] Output directory: weather
+[2025-12-06T04:20:35Z] [INFO] Output directory: weather
+[2025-12-06T04:20:35Z] [INFO] Generating weather JSON output...
+[2025-12-06T04:20:35Z] [INFO] Generating weather JSON output...
+[2025-12-06T04:20:35Z] [INFO] Current conditions: Mainly clear (🌙), -6.4°C
+[2025-12-06T04:20:35Z] [INFO] Current conditions: Mainly clear (🌙), -6.4°C
+[2025-12-06T04:20:35Z] [INFO] Weather data generated successfully
+[2025-12-06T04:20:35Z] [INFO] Weather data generated successfully
+[2025-12-06T04:20:35Z] [INFO] ============================================================
+[2025-12-06T04:20:35Z] [INFO] ============================================================
+[2025-12-06T04:20:35Z] [INFO] Workflow: Weather Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-06T04:20:35Z] [INFO] Workflow: Weather Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-06T04:20:35Z] [INFO] Ended at: 2025-12-06T04:20:35Z
+[2025-12-06T04:20:35Z] [INFO] Ended at: 2025-12-06T04:20:35Z
+[2025-12-06T04:20:35Z] [INFO] ============================================================
+[2025-12-06T04:20:35Z] [INFO] ============================================================
+Logging initialized: logs/weather/weather.log
+[2025-12-06T06:09:01Z] [INFO] ============================================================
+[2025-12-06T06:09:01Z] [INFO] ============================================================
+[2025-12-06T06:09:01Z] [INFO] Workflow: Weather Card - Fetch Data
+[2025-12-06T06:09:01Z] [INFO] Workflow: Weather Card - Fetch Data
+[2025-12-06T06:09:01Z] [INFO] Started at: 2025-12-06T06:09:01Z
+[2025-12-06T06:09:01Z] [INFO] Started at: 2025-12-06T06:09:01Z
+[2025-12-06T06:09:01Z] [INFO] ============================================================
+[2025-12-06T06:09:01Z] [INFO] ============================================================
+[2025-12-06T06:09:01Z] [INFO] Fetching GitHub location...
+[2025-12-06T06:09:01Z] [INFO] Fetching GitHub location...
+Fetching GitHub profile location for szmyty...
+Location saved to cache: Boston, Massachusetts
+[2025-12-06T06:09:01Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-06T06:09:01Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-06T06:09:01Z] [INFO] Converting location to coordinates...
+[2025-12-06T06:09:01Z] [INFO] Converting location to coordinates...
+Converting location to coordinates: Boston, Massachusetts
+Cache hit for nominatim:Qm9zdG9uLCBNYXNzYWNodXNldHRz
+Using cached coordinates
+[2025-12-06T06:09:02Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-06T06:09:02Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-06T06:09:02Z] [INFO] Fetching weather data from Open-Meteo...
+[2025-12-06T06:09:02Z] [INFO] Fetching weather data from Open-Meteo...
+Fetching weather data from Open-Meteo...
+🔍 Health check: Open-Meteo API...
+✅ Open-Meteo API is healthy (HTTP 200)
+Cached response for weather:NDIuMzU4ODMzNiwtNzEuMDU3ODMwMw==
+[2025-12-06T06:09:03Z] [INFO] Weather data fetched successfully
+[2025-12-06T06:09:03Z] [INFO] Weather data fetched successfully
+[2025-12-06T06:09:03Z] [INFO] Output directory: weather
+[2025-12-06T06:09:03Z] [INFO] Output directory: weather
+[2025-12-06T06:09:03Z] [INFO] Generating weather JSON output...
+[2025-12-06T06:09:03Z] [INFO] Generating weather JSON output...
+[2025-12-06T06:09:03Z] [INFO] Current conditions: Clear sky (🌙), -6.4°C
+[2025-12-06T06:09:03Z] [INFO] Current conditions: Clear sky (🌙), -6.4°C
+[2025-12-06T06:09:03Z] [INFO] Weather data generated successfully
+[2025-12-06T06:09:03Z] [INFO] Weather data generated successfully
+[2025-12-06T06:09:03Z] [INFO] ============================================================
+[2025-12-06T06:09:03Z] [INFO] ============================================================
+[2025-12-06T06:09:03Z] [INFO] Workflow: Weather Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-06T06:09:03Z] [INFO] Workflow: Weather Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-06T06:09:03Z] [INFO] Ended at: 2025-12-06T06:09:03Z
+[2025-12-06T06:09:03Z] [INFO] Ended at: 2025-12-06T06:09:03Z
+[2025-12-06T06:09:03Z] [INFO] ============================================================
+[2025-12-06T06:09:03Z] [INFO] ============================================================
+Logging initialized: logs/weather/weather.log
+[2025-12-06T12:07:22Z] [INFO] ============================================================
+[2025-12-06T12:07:22Z] [INFO] ============================================================
+[2025-12-06T12:07:22Z] [INFO] Workflow: Weather Card - Fetch Data
+[2025-12-06T12:07:22Z] [INFO] Workflow: Weather Card - Fetch Data
+[2025-12-06T12:07:22Z] [INFO] Started at: 2025-12-06T12:07:22Z
+[2025-12-06T12:07:22Z] [INFO] Started at: 2025-12-06T12:07:22Z
+[2025-12-06T12:07:22Z] [INFO] ============================================================
+[2025-12-06T12:07:22Z] [INFO] ============================================================
+[2025-12-06T12:07:22Z] [INFO] Fetching GitHub location...
+[2025-12-06T12:07:22Z] [INFO] Fetching GitHub location...
+Fetching GitHub profile location for szmyty...
+Location saved to cache: Boston, Massachusetts
+[2025-12-06T12:07:22Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-06T12:07:22Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-06T12:07:22Z] [INFO] Converting location to coordinates...
+[2025-12-06T12:07:22Z] [INFO] Converting location to coordinates...
+Converting location to coordinates: Boston, Massachusetts
+Cache hit for nominatim:Qm9zdG9uLCBNYXNzYWNodXNldHRz
+Using cached coordinates
+[2025-12-06T12:07:22Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-06T12:07:22Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-06T12:07:22Z] [INFO] Fetching weather data from Open-Meteo...
+[2025-12-06T12:07:22Z] [INFO] Fetching weather data from Open-Meteo...
+Fetching weather data from Open-Meteo...
+🔍 Health check: Open-Meteo API...
+✅ Open-Meteo API is healthy (HTTP 200)
+Cached response for weather:NDIuMzU4ODMzNiwtNzEuMDU3ODMwMw==
+[2025-12-06T12:07:24Z] [INFO] Weather data fetched successfully
+[2025-12-06T12:07:24Z] [INFO] Weather data fetched successfully
+[2025-12-06T12:07:24Z] [INFO] Output directory: weather
+[2025-12-06T12:07:24Z] [INFO] Output directory: weather
+[2025-12-06T12:07:24Z] [INFO] Generating weather JSON output...
+[2025-12-06T12:07:24Z] [INFO] Generating weather JSON output...
+[2025-12-06T12:07:24Z] [INFO] Current conditions: Overcast (☁️), -4.1°C
+[2025-12-06T12:07:24Z] [INFO] Current conditions: Overcast (☁️), -4.1°C
+[2025-12-06T12:07:24Z] [INFO] Weather data generated successfully
+[2025-12-06T12:07:24Z] [INFO] Weather data generated successfully
+[2025-12-06T12:07:24Z] [INFO] ============================================================
+[2025-12-06T12:07:24Z] [INFO] ============================================================
+[2025-12-06T12:07:24Z] [INFO] Workflow: Weather Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-06T12:07:24Z] [INFO] Workflow: Weather Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-06T12:07:24Z] [INFO] Ended at: 2025-12-06T12:07:24Z
+[2025-12-06T12:07:24Z] [INFO] Ended at: 2025-12-06T12:07:24Z
+[2025-12-06T12:07:24Z] [INFO] ============================================================
+[2025-12-06T12:07:24Z] [INFO] ============================================================
+Logging initialized: logs/weather/weather.log
+[2025-12-07T01:17:54Z] [INFO] ============================================================
+[2025-12-07T01:17:54Z] [INFO] ============================================================
+[2025-12-07T01:17:54Z] [INFO] Workflow: Weather Card - Fetch Data
+[2025-12-07T01:17:54Z] [INFO] Workflow: Weather Card - Fetch Data
+[2025-12-07T01:17:54Z] [INFO] Started at: 2025-12-07T01:17:54Z
+[2025-12-07T01:17:54Z] [INFO] Started at: 2025-12-07T01:17:54Z
+[2025-12-07T01:17:54Z] [INFO] ============================================================
+[2025-12-07T01:17:54Z] [INFO] ============================================================
+[2025-12-07T01:17:54Z] [INFO] Fetching GitHub location...
+[2025-12-07T01:17:54Z] [INFO] Fetching GitHub location...
+Fetching GitHub profile location for szmyty...
+Location saved to cache: Boston, Massachusetts
+[2025-12-07T01:17:54Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-07T01:17:54Z] [INFO] GitHub location: Boston, Massachusetts
+[2025-12-07T01:17:54Z] [INFO] Converting location to coordinates...
+[2025-12-07T01:17:54Z] [INFO] Converting location to coordinates...
+Converting location to coordinates: Boston, Massachusetts
+Cache hit for nominatim:Qm9zdG9uLCBNYXNzYWNodXNldHRz
+Using cached coordinates
+[2025-12-07T01:17:54Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-07T01:17:54Z] [INFO] Coordinates: lat=42.3588336, lon=-71.0578303
+[2025-12-07T01:17:54Z] [INFO] Fetching weather data from Open-Meteo...
+[2025-12-07T01:17:54Z] [INFO] Fetching weather data from Open-Meteo...
+Fetching weather data from Open-Meteo...
+🔍 Health check: Open-Meteo API...
+✅ Open-Meteo API is healthy (HTTP 200)
+Cached response for weather:NDIuMzU4ODMzNiwtNzEuMDU3ODMwMw==
+[2025-12-07T01:17:55Z] [INFO] Weather data fetched successfully
+[2025-12-07T01:17:55Z] [INFO] Weather data fetched successfully
+[2025-12-07T01:17:55Z] [INFO] Output directory: weather
+[2025-12-07T01:17:55Z] [INFO] Output directory: weather
+[2025-12-07T01:17:55Z] [INFO] Generating weather JSON output...
+[2025-12-07T01:17:55Z] [INFO] Generating weather JSON output...
+[2025-12-07T01:17:55Z] [INFO] Current conditions: Mainly clear (🌙), -0.3°C
+[2025-12-07T01:17:55Z] [INFO] Current conditions: Mainly clear (🌙), -0.3°C
+[2025-12-07T01:17:55Z] [INFO] Weather data generated successfully
+[2025-12-07T01:17:55Z] [INFO] Weather data generated successfully
+[2025-12-07T01:17:55Z] [INFO] ============================================================
+[2025-12-07T01:17:55Z] [INFO] ============================================================
+[2025-12-07T01:17:55Z] [INFO] Workflow: Weather Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-07T01:17:55Z] [INFO] Workflow: Weather Card - Fetch Data - COMPLETED SUCCESSFULLY
+[2025-12-07T01:17:55Z] [INFO] Ended at: 2025-12-07T01:17:55Z
+[2025-12-07T01:17:55Z] [INFO] Ended at: 2025-12-07T01:17:55Z
+[2025-12-07T01:17:55Z] [INFO] ============================================================
+[2025-12-07T01:17:55Z] [INFO] ============================================================
