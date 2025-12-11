@@ -66,6 +66,8 @@ runs:
       if: inputs.install-python-deps == 'true'
       shell: bash
       run: |
+        python3 -m venv .venv
+        source .venv/bin/activate
         python -m pip install --upgrade pip
         
         # Determine whether to use Poetry
@@ -86,3 +88,6 @@ runs:
         else
           echo "No dependency file found (requirements.txt or pyproject.toml)"
         fi
+        
+        echo "$GITHUB_WORKSPACE/.venv/bin" >> $GITHUB_PATH
+        echo "✅ Python dependencies installed in virtual environment"
