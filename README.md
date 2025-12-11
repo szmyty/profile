@@ -9,17 +9,20 @@
 <!-- Branded Header Banner -->
 <img src="branding/header.svg" alt="Alan Szmyt - Software Engineer • DevOps & Cloud • AI-Assisted Systems" width="100%"/>
 
-<br/><br/>
-
 <!-- Badges Row -->
-[![Version](https://img.shields.io/github/v/tag/szmyty/profile?style=for-the-badge&logo=semver&logoColor=white&labelColor=1a1a2e&color=4a4e69&label=version)](https://github.com/szmyty/profile/releases)
+[![Version][versionBadge]][releasesUrl]
 [![GitHub followers](https://img.shields.io/github/followers/szmyty?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e&color=4a4e69)](https://github.com/szmyty?tab=followers)
 ![Profile Views](https://komarev.com/ghpvc/?username=szmyty&style=for-the-badge&color=4a4e69&labelColor=1a1a2e)
 [![GitHub Stars](https://img.shields.io/github/stars/szmyty?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e&color=4a4e69)](https://github.com/szmyty?tab=repositories)
 [![CI](https://img.shields.io/github/actions/workflow/status/szmyty/szmyty/metrics.yml?style=for-the-badge&logo=github-actions&logoColor=white&labelColor=1a1a2e&color=4a4e69&label=CI)](https://github.com/szmyty/szmyty/actions)
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-4a4e69.svg?style=for-the-badge&labelColor=1a1a2e)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/szmyty/profile?style=for-the-badge&logo=git&logoColor=white&labelColor=1a1a2e&color=4a4e69&label=commits)
+![GitHub last commit](https://img.shields.io/github/last-commit/szmyty/profile?style=for-the-badge&logoColor=white&labelColor=1a1a2e&color=4a4e69)
+![Repo Size](https://img.shields.io/github/languages/code-size/szmyty/profile?style=for-the-badge&logoColor=white&labelColor=1a1a2e&color=4a4e69)
 
 </div>
 
@@ -613,9 +616,10 @@ Supporting and contributing to open-source initiatives
 
 <br/>
 
-![Powered by GitHub Actions](https://img.shields.io/badge/Powered%20by-GitHub%20Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
+[![Powered by GitHub Actions][githubActionsBadge]][githubActionsUrl]
 ![Made with Python](https://img.shields.io/badge/Made%20with-Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Automated with Poetry](https://img.shields.io/badge/Automated%20with-Poetry-60A5FA?style=flat-square&logo=poetry&logoColor=white)
+[![Automated with Poetry][poetryBadge]][poetryUrl]
+
 
 </div>
 
@@ -650,3 +654,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+[versionBadge]: https://img.shields.io/github/v/tag/szmyty/profile?style=for-the-badge&logo=semver&logoColor=white&labelColor=1a1a2e&color=4a4e69&label=version "Version"
+[releasesUrl]: https://github.com/szmyty/profile/releases
+[poetryBadge]: https://img.shields.io/badge/Automated%20with-Poetry-60A5FA?style=flat-square&logo=poetry&logoColor=white
+[poetryUrl]: https://python-poetry.org/
+[githubActionsBadge]: https://img.shields.io/badge/Powered%20by-GitHub%20Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white
+[githubActionsUrl]: https://github.com/features/actions
