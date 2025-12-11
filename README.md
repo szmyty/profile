@@ -17,6 +17,9 @@
 ![Profile Views](https://komarev.com/ghpvc/?username=szmyty&style=for-the-badge&color=4a4e69&labelColor=1a1a2e)
 [![GitHub Stars](https://img.shields.io/github/stars/szmyty?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e&color=4a4e69)](https://github.com/szmyty?tab=repositories)
 [![CI](https://img.shields.io/github/actions/workflow/status/szmyty/szmyty/metrics.yml?style=for-the-badge&logo=github-actions&logoColor=white&labelColor=1a1a2e&color=4a4e69&label=CI)](https://github.com/szmyty/szmyty/actions)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-4a4e69.svg?style=for-the-badge&labelColor=1a1a2e)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 </div>
 
@@ -615,3 +618,35 @@ Supporting and contributing to open-source initiatives
 ![Automated with Poetry](https://img.shields.io/badge/Automated%20with-Poetry-60A5FA?style=flat-square&logo=poetry&logoColor=white)
 
 </div>
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/szmyty"><img src="https://avatars.githubusercontent.com/u/14865041?v=4?s=100" width="100px;" alt="Alan Szmyt"/><br /><sub><b>Alan Szmyt</b></sub></a><br /><a href="#code-szmyty" title="Code">💻</a> <a href="#design-szmyty" title="Design">🎨</a> <a href="#ideas-szmyty" title="Ideas & Planning">🤔</a> <a href="#maintenance-szmyty" title="Maintenance">🚧</a> <a href="#infra-szmyty" title="Infrastructure">🚇</a> <a href="#doc-szmyty" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/apps/github-copilot"><img src="https://avatars.githubusercontent.com/in/29110?v=4?s=100" width="100px;" alt="GitHub Copilot"/><br /><sub><b>GitHub Copilot</b></sub></a><br /><a href="#code-github-copilot[bot]" title="Code">💻</a> <a href="#ideas-github-copilot[bot]" title="Ideas & Planning">🤔</a> <a href="#tool-github-copilot[bot]" title="Tools">🔧</a> <a href="#automation-github-copilot[bot]" title="Automation">🤖</a></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td align="center" size="13px" colspan="7">
+        <img src="https://raw.githubusercontent.com/all-contributors/all-contributors-cli/1b8533af435da9854653492b1327a23a4dbd0a10/assets/logo-small.svg">
+          <a href="https://all-contributors.js.org/docs/en/bot/usage">Add your contributions</a>
+        </img>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
