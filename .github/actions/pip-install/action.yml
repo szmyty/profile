@@ -58,6 +58,12 @@ runs:
     - name: Install packages
       shell: bash
       run: |
+        # Activate venv if it exists
+        if [ -d ".venv" ]; then
+          source .venv/bin/activate
+          echo "Using virtual environment at .venv"
+        fi
+        
         PACKAGES="${{ steps.cache-key.outputs.packages }}"
         
         if [ "${{ steps.pip-cache.outputs.cache-hit }}" = "true" ]; then

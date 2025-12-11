@@ -30,9 +30,16 @@ runs:
         sudo apt-get update
         sudo apt-get install -y jq curl bc
     
+    - name: 🔧 Create Python virtual environment
+      shell: bash
+      run: |
+        python3 -m venv .venv
+        echo "✅ Virtual environment created at .venv"
+    
     - name: 📦 Install Python dependencies
       shell: bash
       run: |
+        source .venv/bin/activate
         python -m pip install --upgrade pip
         if [ -f pyproject.toml ]; then
           pip install poetry
@@ -40,10 +47,13 @@ runs:
         elif [ -f requirements.txt ]; then
           pip install -r requirements.txt
         fi
+        echo "$GITHUB_WORKSPACE/.venv/bin" >> $GITHUB_PATH
+        echo "✅ Python dependencies installed in virtual environment"
     
     - name: 📦 Install additional Python packages
       shell: bash
       run: |
+        source .venv/bin/activate
         pip install Pillow jsonschema
     
     - name: 🟢 Setup Node.js
